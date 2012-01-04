@@ -170,16 +170,16 @@ engine#</dia:string>
     </dia:object>
     <dia:object type="UML - Component" version="0" id="O2">
       <dia:attribute name="obj_pos">
-        <dia:point val="3.9,19.5"/>
+        <dia:point val="4.65,20.25"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="3.85,19.45;10.8025,23.05"/>
+        <dia:rectangle val="4.6,20.2;11.5525,23.8"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="3.9,19.5"/>
+        <dia:point val="4.65,20.25"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
         <dia:real val="6.8525"/>
@@ -209,7 +209,7 @@ server#</dia:string>
             <dia:real val="0.80000000000000004"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="6.3,20.795"/>
+            <dia:point val="7.05,21.545"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -279,14 +279,14 @@ TreeView-like)#</dia:string>
         <dia:point val="24.75,18.8"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="10.6838,18.7421;24.8079,21.6538"/>
+        <dia:rectangle val="11.4147,18.7402;24.8098,22.1983"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="conn_endpoints">
         <dia:point val="24.75,18.8"/>
-        <dia:point val="10.8023,21.2512"/>
+        <dia:point val="11.5521,21.7971"/>
       </dia:attribute>
       <dia:attribute name="text_colour">
         <dia:color val="#000000"/>
@@ -301,7 +301,7 @@ TreeView-like)#</dia:string>
         <dia:enum val="0"/>
       </dia:attribute>
       <dia:attribute name="text_pos">
-        <dia:point val="19.15,21.25"/>
+        <dia:point val="19.5249,21.5229"/>
       </dia:attribute>
       <dia:connections>
         <dia:connection handle="0" to="O1" connection="9"/>
@@ -344,16 +344,16 @@ TreeView-like)#</dia:string>
     </dia:object>
     <dia:object type="UML - Message" version="0" id="O6">
       <dia:attribute name="obj_pos">
-        <dia:point val="7.82625,19.5"/>
+        <dia:point val="8.57625,20.25"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="7.77047,16.9969;24.8489,19.5558"/>
+        <dia:rectangle val="8.51833,16.9974;24.8687,20.3079"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="conn_endpoints">
-        <dia:point val="7.82625,19.5"/>
+        <dia:point val="8.57625,20.25"/>
         <dia:point val="24.75,17.4"/>
       </dia:attribute>
       <dia:attribute name="text_colour">
@@ -369,7 +369,7 @@ TreeView-like)#</dia:string>
         <dia:enum val="0"/>
       </dia:attribute>
       <dia:attribute name="text_pos">
-        <dia:point val="14.05,18.05"/>
+        <dia:point val="14.425,18.425"/>
       </dia:attribute>
       <dia:connections>
         <dia:connection handle="0" to="O2" connection="1"/>
