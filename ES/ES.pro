@@ -63,14 +63,8 @@ HEADERS  += ui/varswnd.h \
 
 FORMS    +=
 
-RC_FILE = resIcon.rc
-
 RESOURCES += \
     res.qrc \
-
-
-OTHER_FILES += \
-    resIcon.rc
 
 
 
