@@ -15,18 +15,16 @@ SOURCES += main.cpp\
     core/nslot.cpp \
     core/nframe.cpp \
     core/nkbmanager.cpp \
-    core/nframenetmode.cpp \
-    ui/nobjectpropertieseditor.cpp \
     editor/lgen2objectpropertieseditor.cpp \
-    editor/lgen2diagrameditor.cpp
+    editor/lgen2diagrameditor.cpp \
+    core/nframenetmodel.cpp
 
 HEADERS  += mainwindow.hpp \
     core/nslot.h \
     core/nframe.h \
     core/nkbmanager.h \
-    core/nframenetmode.h \
-    ui/nobjectpropertieseditor.h \
     editor/lgen2objectpropertieseditor.hpp \
-    editor/lgen2diagrameditor.hpp
+    editor/lgen2diagrameditor.hpp \
+    core/nframenetmodel.h
 
 FORMS    += mainwindow.ui
