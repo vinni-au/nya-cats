@@ -3,11 +3,11 @@
 
 #include <QAbstractItemModel>
 
-class NFramenetMode : public QAbstractItemModel
+class NFramenetModel : public QAbstractItemModel
 {
     Q_OBJECT
 public:
-    explicit NFramenetMode(QObject *parent = 0);
+    explicit NFramenetModel(QObject *parent = 0);
 
 signals:
 

@@ -1,6 +1,6 @@
 #include "nframenetmode.h"
 
-NFramenetMode::NFramenetMode(QObject *parent) :
+NFramenetModel::NFramenetModel(QObject *parent) :
     QAbstractItemModel(parent)
 {
 }
