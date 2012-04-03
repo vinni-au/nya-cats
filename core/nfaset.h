@@ -12,13 +12,17 @@
 //Получать доступ к значению и к имени
 //Сериализация в xml
 
+namespace FasetType
+{
+enum FASET_TYPE
+{
+    type_int,
+    type_string
+};
+}
 
 class NFaset : public QObject
 {
-    enum FASET_TYPE
-    {
-        type_int,type_string
-    };
 
 
     Q_OBJECT
@@ -39,7 +43,7 @@ public:
     void setIntValue(int value);
 
     //type
-    FASET_TYPE type();
+    FasetType::FASET_TYPE type();
     //void setType(FASET_TYPE type);
 
 
@@ -54,7 +58,7 @@ signals:
 public slots:
 
 private:
-    FASET_TYPE m_type;
+    FasetType::FASET_TYPE m_type;
 
     QString m_name;
     //value будет фишечка))) множественные значения фасета

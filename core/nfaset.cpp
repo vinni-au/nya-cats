@@ -4,18 +4,18 @@
 NFaset::NFaset(QObject *parent/*=0*/) :
     QObject(parent)
 {
-    this->m_type = NFaset::type_string;
+    this->m_type = FasetType::type_string;
     this->m_intValue = 0;
 }
 
 NFaset::NFaset(QString name,QObject *parent/*=0*/)
 {
     m_name=name;
-    this->m_type = NFaset::type_string;
+    this->m_type = FasetType::type_string;
     this->m_intValue = 0;
 }
 
-NFaset::FASET_TYPE NFaset::type()
+FasetType::FASET_TYPE NFaset::type()
 {
     return m_type;
 }
@@ -43,13 +43,13 @@ int NFaset::getIntValue()
 void NFaset::setStringValue(QString value)
 {
     this->m_stringValue=value;
-    this->m_type = NFaset::type_string;
+    this->m_type = FasetType::type_string;
 }
 
 void NFaset::setIntValue(int value)
 {
     this->m_intValue = value;
-    this->m_type = NFaset::type_int;
+    this->m_type = FasetType::type_int;
 }
 
 
@@ -62,10 +62,10 @@ QDomElement NFaset::toXml(QDomDocument& doc)
 
     switch(type())
     {
-    case type_int:
+    case FasetType::type_int:
         faset.setAttribute("value",this->getIntValue());
         break;
-    case type_string:
+    case FasetType::type_string:
         faset.setAttribute("value",this->getStringValue());
         break;
     default:
@@ -80,13 +80,13 @@ void NFaset::fromXml(QDomElement &faset)
 {
 
     this->setName(faset.attribute("name"));
-    this->m_type =(FASET_TYPE) faset.attribute("type").toInt();
+    this->m_type =(FasetType::FASET_TYPE) faset.attribute("type").toInt();
     switch(type())
     {
-    case type_int:
+    case FasetType::type_int:
         this->setIntValue( faset.attribute("value").toInt());
         break;
-    case type_string:
+    case FasetType::type_string:
         this->setStringValue( faset.attribute("value"));
         break;
     default:

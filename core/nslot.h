@@ -3,10 +3,11 @@
 
 #include <QObject>
 #include <QList>
+#include <QVariant>
 
 #include "nfaset.h"
 
-
+//вариант наследования
 #define INHERIT_OVERRIDE    "override"
 #define INHERIT_SAME        "same"
 
@@ -21,18 +22,28 @@ public:
     explicit NSlot(QObject *parent = 0);
 
     NFaset *getFasetByName(QString name);
-    QString name();
+
+    QString name();//имя слота
+    void setName(QString name);
+
+    QVariant value();//значение слота
+    void setValue(QVariant value);
+
 
     //системность
     bool isSystem();
     void setSystem(bool isSystem);
+
+    //сериализация
+    QDomElement toXml(QDomDocument& doc);
+    void fromXml(QDomElement &slot);
 signals:
 
 public slots:
 
 private:
     bool m_system;
-    QList<NFaset*> fasets;//список фасетов для поиска
+    QList<NFaset*> m_fasets;//список фасетов для поиска
 public:
     NFaset slotName;
     NFaset slotType;
