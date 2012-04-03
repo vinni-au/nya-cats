@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui xml
 
 TARGET = nya-cats
 TEMPLATE = app
@@ -17,7 +17,8 @@ SOURCES += main.cpp\
     core/nkbmanager.cpp \
     editor/lgen2objectpropertieseditor.cpp \
     editor/lgen2diagrameditor.cpp \
-    core/nframenetmodel.cpp
+    core/nframenetmodel.cpp \
+    core/nfaset.cpp
 
 HEADERS  += mainwindow.hpp \
     core/nslot.h \
@@ -25,6 +26,9 @@ HEADERS  += mainwindow.hpp \
     core/nkbmanager.h \
     editor/lgen2objectpropertieseditor.hpp \
     editor/lgen2diagrameditor.hpp \
-    core/nframenetmodel.h
+    core/nframenetmodel.h \
+    core/nfaset.h
 
 FORMS    += mainwindow.ui
+
+

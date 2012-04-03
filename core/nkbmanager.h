@@ -4,6 +4,9 @@
 #include <QObject>
 #include <QMap>
 
+
+//Менеджер базы знаний
+//Управляет базой знаний через апи. Создание фреймов, слотов. Сохранение. Загрузка БЗ.
 class NKBManager : public QObject
 {
     Q_OBJECT
@@ -14,19 +17,19 @@ public:
 
 signals:
     //Для диаграмм
-    void frameAdded(unsigned id);
+    //void frameAdded(unsigned id);
 
 public slots:
     ///От диаграмм
-    void selectFrame(unsigned id);
+    //void selectFrame(unsigned id);
     //
-    void addFrame(QString name);
-    void deleteFrame(unsigned id);
+    //void addFrame(QString name);
+   // void deleteFrame(unsigned id);
     //source id, destination id
-    void addIsa(unsigned sid, unsigned did);
-    void addApo(unsigned sid, unsigned did);
+    //void addIsa(unsigned sid, unsigned did);
+    //void addApo(unsigned sid, unsigned did);
 
-    void deleteLink(unsigned sid, unsigned did);
+   // void deleteLink(unsigned sid, unsigned did);
 
 };
 
