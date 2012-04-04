@@ -1,50 +1,13 @@
-#include "nkbmanager.h"
+#include "saver.h"
+#include <QDebug>
 
-NKBManager::NKBManager(QObject *parent) :
+Saver::Saver(QObject *parent) :
     QObject(parent)
 {
 }
-
-//интерфейсные методы
-///От диаграмм
-void NKBManager::selectFrame(unsigned id)
-{
-
-}
-
-void NKBManager::addFrame(QString name)
-{
-
-}
-
-void NKBManager::deleteFrame(unsigned id)
-{
-
-}
-
-//source id, destination id
-void NKBManager::addIsa(unsigned sid, unsigned did)
-{
-
-}
-
-void NKBManager::addApo(unsigned sid, unsigned did)
-{
-
-}
-
-void NKBManager::deleteLink(unsigned sid, unsigned did)
-{
-
-}
-
-//конец интерфейсные методы
-
-
-
-
+//перенести в менеджер БЗ
 bool
-NKBManager::SaveAs()
+Saver::SaveAs()
 {
 //!!    if(!DataModels::instance()->isValid())
 //    {
@@ -69,7 +32,7 @@ NKBManager::SaveAs()
 }
 
 bool
-NKBManager::mayBeSave()
+Saver::mayBeSave()
 {
 //    qDebug()<<"ESmain::maybeSave()";
 
@@ -123,7 +86,7 @@ NKBManager::mayBeSave()
 }
 
 bool
-NKBManager::areUsure(QString quest)
+Saver::areUsure(QString quest)
 {
 //    QMessageBox mb;
 //    mb.setWindowTitle("А вы уверены?");

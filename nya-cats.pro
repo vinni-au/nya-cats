@@ -23,7 +23,10 @@ SOURCES += main.cpp\
     core/domains/domainnode.cpp \
     core/domains/domainmodel.cpp \
     core/domains/domain.cpp \
-    core/domains/validator.cpp
+    core/validator.cpp \
+    ui/mylistview.cpp \
+    ui/domainwnd.cpp \
+    ui/saver.cpp
 
 HEADERS  += mainwindow.hpp \
     core/nslot.h \
@@ -37,9 +40,16 @@ HEADERS  += mainwindow.hpp \
     core/domains/domainnode.h \
     core/domains/domainmodel.h \
     core/domains/domain.h \
-    core/domains/validator.h
+    core/validator.h \
+    ui/mylistview.h \
+    ui/domainwnd.h \
+    ui/saver.h
 
 FORMS    += mainwindow.ui
+
+
+
+
 
 
 

@@ -11,7 +11,7 @@
 #include <QDomDocument>
 #include <QVariant>
 
-#include "validator.h"
+#include "../validator.h"
 
 class DomainModel : public QAbstractItemModel
 {

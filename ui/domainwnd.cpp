@@ -2,9 +2,10 @@
 #include <QDebug>
 #include <QStringList>
 
-DomainWnd::DomainWnd(QWidget *parent) :
+DomainWnd::DomainWnd(DomainModel* model,QWidget *parent) :
     QMainWindow(parent)
 {
+    setModel(model);
     wgtMain = new QWidget();
     this->setCentralWidget(wgtMain);
     layVertical = new QVBoxLayout();
@@ -82,8 +83,8 @@ DomainWnd::DomainWnd(QWidget *parent) :
 
     connect(lwDomainName,SIGNAL(currentItemChanged(QModelIndex)),SLOT(onDomainSelected(QModelIndex)));
 
-    this->lwDomainName->setModel(DataModels::instance()->domainModel);
-    this->lwValues->setModel(DataModels::instance()->domainModel);
+    this->lwDomainName->setModel(this->m_domainModel);
+    this->lwValues->setModel(m_domainModel);
 
     connect(lwDomainName,SIGNAL(activated(QModelIndex)),SLOT(onEditDomain()));
     connect(lwValues,SIGNAL(activated(QModelIndex)),SLOT(onEditValue()));
@@ -116,11 +117,11 @@ DomainWnd::DomainWnd(QWidget *parent) :
 ///////////////////////
 
 
-    lwDomainName->selectionModel()->setCurrentIndex(DataModels::instance()->domainModel->index(0,1,QModelIndex()),QItemSelectionModel::ClearAndSelect);
+    lwDomainName->selectionModel()->setCurrentIndex(m_domainModel->index(0,1,QModelIndex()),QItemSelectionModel::ClearAndSelect);
 
     onDataLoaded();
     editStop();
-    connect(DataModels::instance(),SIGNAL(sigDataLoaded()),SLOT(onDataLoaded()));
+ //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   connect(DataModels::instance(),SIGNAL(sigDataLoaded()),SLOT(onDataLoaded()));
 }
 
 void
@@ -147,7 +148,7 @@ DomainWnd::onAddDomain()
 {
     qDebug()<<"onAddDomain()";
 
-    QModelIndex index = DataModels::instance()->domainModel->addDomain();
+    QModelIndex index = m_domainModel->addDomain();
     lwDomainName->edit(index);
     lwDomainName->selectionModel()->setCurrentIndex(index,QItemSelectionModel::ClearAndSelect);
     lwDomainName->scrollTo(index);
@@ -177,7 +178,7 @@ DomainWnd::onDeleteDomain()
 
     QModelIndex index = lwDomainName->currentIndex();
     if(index.isValid())
-        DataModels::instance()->domainModel->deleteDomain(index);
+        m_domainModel->deleteDomain(index);
 }
 
 void
@@ -188,7 +189,7 @@ DomainWnd::onAddValue()
     if(!isEditMode())
         return;
     QModelIndex domaindIndex=lwDomainName->currentIndex();
-    QModelIndex valueIndex = DataModels::instance()->domainModel->addValue(domaindIndex);
+    QModelIndex valueIndex = m_domainModel->addValue(domaindIndex);
     lwValues->edit(valueIndex);
     lwValues->selectionModel()->setCurrentIndex(valueIndex,QItemSelectionModel::ClearAndSelect);
     lwValues->scrollTo(valueIndex);
@@ -215,7 +216,7 @@ DomainWnd::onDeleteValue()
         return;
 
     QModelIndex valueIndex = lwValues->currentIndex();
-    DataModels::instance()->domainModel->deleteValue(valueIndex);
+    m_domainModel->deleteValue(valueIndex);
 }
 
 void
@@ -290,7 +291,7 @@ DomainWnd::editStart()
     editMode = true;
 
     lwDomainName->setDragEnabled(true);
-    DataModels::instance()->domainModel->setItemsIsEditable(true);
+    m_domainModel->setItemsIsEditable(true);
     lwValues->setDragEnabled(true);
 
     btnAddDomain->setVisible(true);
@@ -312,7 +313,7 @@ DomainWnd::editStop()
     editMode = false;
 
     lwDomainName->setDragEnabled(false);
-    DataModels::instance()->domainModel->setItemsIsEditable(false);
+    m_domainModel->setItemsIsEditable(false);
     lwValues->setDragEnabled(false);
 
     btnAddDomain->setVisible(false);
@@ -348,21 +349,21 @@ DomainWnd::closeEvent(QCloseEvent *event)
 void
 DomainWnd::onDataLoaded()
 {
-    QModelIndex firstDomainIndex = DataModels::instance()->domainModel->index(0,0,QModelIndex());
+    QModelIndex firstDomainIndex = m_domainModel->index(0,0,QModelIndex());
     lwDomainName->selectionModel()->setCurrentIndex(firstDomainIndex,QItemSelectionModel::ClearAndSelect);
-    QModelIndex firstValIndex = DataModels::instance()->domainModel->index(0,0,firstDomainIndex);
+    QModelIndex firstValIndex = m_domainModel->index(0,0,firstDomainIndex);
     lwValues->selectionModel()->setCurrentIndex(firstValIndex,QItemSelectionModel::ClearAndSelect);
 }
 
 void
 DomainWnd::onOkSaveClick()
 {
-    if(DataModels::instance()->isValid())
+ //!!!!   if(DataModels::instance()->isValid())
     {
-        DataModels::instance()->save();
+        //!!!DataModels::instance()->save();
         editStop();
     }
-    else
+ //!!!!   else
     {
         QMessageBox::warning(this,"Ошибка при сохранении!","Неверные данные!");
     }
@@ -371,11 +372,11 @@ DomainWnd::onOkSaveClick()
 void
 DomainWnd::onCancelClick()
 {
-    if(DataModels::instance()->reload())
+    //!!!if(DataModels::instance()->reload())
     {
         editStop();
     }
-    else
+    //!!else
         QMessageBox::critical(this,"Ошибка!","Не удалось откатить!");
 }
 
@@ -396,7 +397,7 @@ DomainWnd::maybeClose()
 {
     if(Saver::mayBeSave())//пытаемся сохранить
     {
-        if(DataModels::instance()->saved())//нажал сохранить
+        if(1/*!!!!DataModels::instance()->saved()*/)//нажал сохранить
         {
             editStop();
         }
@@ -411,4 +412,11 @@ bool
 DomainWnd::isEditMode()
 {
     return editMode;
+}
+
+
+void
+DomainWnd::setModel(DomainModel *model)
+{
+    this->m_domainModel = model;
 }

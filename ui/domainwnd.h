@@ -12,7 +12,7 @@
 #include <QShortcut>
 #include <QMessageBox>
 #include <QCloseEvent>
-#include "core/datamodels.h"
+#include "core/domains/domainmodel.h"
 #include "mylistview.h"
 #include "saver.h"
 
@@ -21,9 +21,11 @@ class DomainWnd : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit DomainWnd(QWidget *parent = 0);
+    explicit DomainWnd(DomainModel* model,QWidget *parent = 0);
     void retranslate();
     bool isEditMode();
+
+    void setModel(DomainModel* model);
 signals:
     void sigClosed();
 public slots:
@@ -53,6 +55,8 @@ private:
     void editStop();
     void closeEvent(QCloseEvent *event);
 private:
+    DomainModel* m_domainModel;
+
     bool editMode;
     QWidget *wgtMain;
     QLayout *layVertical;

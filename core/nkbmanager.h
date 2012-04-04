@@ -6,6 +6,7 @@
 
 #include "nframe.h"
 #include "nproc.h"
+#include "domains/domainmodel.h"
 
 //Менеджер базы знаний
 //Управляет базой знаний через апи. Создание фреймов, слотов. Сохранение. Загрузка БЗ.
@@ -16,6 +17,11 @@ public:
     explicit NKBManager(QObject *parent = 0);
 
     QMap<unsigned, QString> frameNames();
+
+    static bool SaveAs();
+    static bool mayBeSave();
+    static bool areUsure(QString quest);
+
 
 signals:
     //Для диаграмм
@@ -37,7 +43,7 @@ private:
     QList<NFrame*> frames;
     //QList<продукционная программа
     QList<NProc*> procs;
-    //QList<NDomain*> domains;
+    DomainModel domainModel;
 };
 
 #endif // NKBMANAGER_H
