@@ -25,7 +25,7 @@ public:
     NSlot* getSlotByName(QString name);
 
 
-    int parentFrame();
+    QString parentFrame();
 
     int id();
 

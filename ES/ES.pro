@@ -34,7 +34,7 @@ SOURCES += main.cpp\
     ui/resultswnd.cpp \
     ui/saver.cpp \
     core/validator.cpp \
-    ui/mycombobox.cpp
+    ui/mycombobox.cpp \
 
 HEADERS  += ui/varswnd.h \
     ui/ruleswnd.h \
@@ -59,12 +59,14 @@ HEADERS  += ui/varswnd.h \
     ui/resultswnd.h \
     ui/saver.h \
     core/validator.h \
-    ui/mycombobox.h
+    ui/mycombobox.h \
 
 FORMS    +=
 
 RESOURCES += \
     res.qrc \
+
+
 
 
 

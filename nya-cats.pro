@@ -18,7 +18,12 @@ SOURCES += main.cpp\
     editor/lgen2objectpropertieseditor.cpp \
     editor/lgen2diagrameditor.cpp \
     core/nframenetmodel.cpp \
-    core/nfaset.cpp
+    core/nfaset.cpp \
+    core/nproc.cpp \
+    core/domains/domainnode.cpp \
+    core/domains/domainmodel.cpp \
+    core/domains/domain.cpp \
+    core/domains/validator.cpp
 
 HEADERS  += mainwindow.hpp \
     core/nslot.h \
@@ -27,8 +32,19 @@ HEADERS  += mainwindow.hpp \
     editor/lgen2objectpropertieseditor.hpp \
     editor/lgen2diagrameditor.hpp \
     core/nframenetmodel.h \
-    core/nfaset.h
+    core/nfaset.h \
+    core/nproc.h \
+    core/domains/domainnode.h \
+    core/domains/domainmodel.h \
+    core/domains/domain.h \
+    core/domains/validator.h
 
 FORMS    += mainwindow.ui
+
+
+
+
+
+
 
 

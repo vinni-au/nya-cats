@@ -130,5 +130,7 @@ void NSlot::fromXml(QDomElement &slot)
             continue;
         }
         faset->fromXml(fasetEl);
+
+        fasetEl.nextSibling().toElement();
     }
 }
