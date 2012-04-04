@@ -3,6 +3,10 @@
 
 #include <QObject>
 #include <QMap>
+#include <QFile>
+#include <QMessageBox>
+#include <qfiledialog.h>
+#include <QDebug>
 
 #include "nframe.h"
 #include "nproc.h"
@@ -18,14 +22,27 @@ public:
 
     QMap<unsigned, QString> frameNames();
 
-    static bool SaveAs();
-    static bool mayBeSave();
-    static bool areUsure(QString quest);
+    bool SaveAs();
+    bool mayBeSave();
+    bool areUsure(QString quest);
 
+    void saveToXml(QTextStream &stream);
+    void readFromXml(QFile &file);
+    bool saved();
+    void save();
+    bool saveAs(QString filePath);
+    bool Open(QString filePath);
+    void Clear();
+
+    bool isValid();
+    bool reload();
 
 signals:
     //Для диаграмм
     void frameAdded(unsigned id);
+
+    void sigDataLoaded();
+    void sigErrorWhileValidating(QString errorText);
 
 public slots:
     ///От диаграмм
@@ -38,12 +55,15 @@ public slots:
     void addApo(unsigned sid, unsigned did);
 
     void deleteLink(unsigned sid, unsigned did);
-
+    void onDataChanged();
 private:
     QList<NFrame*> frames;
     //QList<продукционная программа
     QList<NProc*> procs;
     DomainModel domainModel;
+
+    bool        dirty;          //true - если произведены изменения
+    QFile       *file;
 };
 
 #endif // NKBMANAGER_H

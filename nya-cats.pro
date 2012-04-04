@@ -26,7 +26,16 @@ SOURCES += main.cpp\
     core/validator.cpp \
     ui/mylistview.cpp \
     ui/domainwnd.cpp \
-    ui/saver.cpp
+    ui/saver.cpp \
+    core/production/nproduction.cpp \
+    core/production/rulenode.cpp \
+    core/production/rulemodel.cpp \
+    core/production/rule.cpp \
+    core/production/expr.cpp \
+    ui/ruleswnd.cpp \
+    ui/mycombobox.cpp \
+    ui/labeledtextbox.cpp \
+    ui/expreditor.cpp
 
 HEADERS  += mainwindow.hpp \
     core/nslot.h \
@@ -43,9 +52,28 @@ HEADERS  += mainwindow.hpp \
     core/validator.h \
     ui/mylistview.h \
     ui/domainwnd.h \
-    ui/saver.h
+    ui/saver.h \
+    core/production/nproduction.h \
+    core/production/rulenode.h \
+    core/production/rulemodel.h \
+    core/production/rule.h \
+    core/production/expr.h \
+    ui/ruleswnd.h \
+    ui/mycombobox.h \
+    ui/labeledtextbox.h \
+    ui/expreditor.h
 
 FORMS    += mainwindow.ui
+
+
+
+
+
+
+
+
+
+
 
 
 
