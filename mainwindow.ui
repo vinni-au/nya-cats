@@ -6,37 +6,70 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>446</width>
-    <height>312</height>
+    <width>475</width>
+    <height>369</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>NYA CATS</string>
   </property>
   <widget class="QWidget" name="centralWidget"/>
-  <widget class="QMenuBar" name="menuBar">
+  <widget class="QMenuBar" name="mainMenuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>446</width>
+     <width>475</width>
      <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menu">
+   <widget class="QMenu" name="menuFile">
     <property name="title">
      <string>Файл</string>
     </property>
+    <addaction name="actCreate"/>
+    <addaction name="actOpen"/>
+    <addaction name="separator"/>
+    <addaction name="actClose"/>
+    <addaction name="separator"/>
+    <addaction name="actSave"/>
+    <addaction name="actSaveAs"/>
+    <addaction name="separator"/>
     <addaction name="actExit"/>
    </widget>
-   <widget class="QMenu" name="menu_2">
+   <widget class="QMenu" name="menuInfo">
     <property name="title">
      <string>Справка</string>
     </property>
     <addaction name="actAbout"/>
    </widget>
-   <addaction name="menu"/>
-   <addaction name="menu_2"/>
+   <widget class="QMenu" name="menuKB">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="title">
+     <string>База знаний</string>
+    </property>
+    <addaction name="actFrameEditor"/>
+    <addaction name="actDomainEditor"/>
+   </widget>
+   <widget class="QMenu" name="menuGame">
+    <property name="title">
+     <string>Игра</string>
+    </property>
+    <addaction name="actStartGame"/>
+    <addaction name="actShowOutput"/>
+   </widget>
+   <widget class="QMenu" name="menuOptions">
+    <property name="title">
+     <string>Настройки</string>
+    </property>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuKB"/>
+   <addaction name="menuGame"/>
+   <addaction name="menuOptions"/>
+   <addaction name="menuInfo"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -46,7 +79,7 @@
     <bool>false</bool>
    </attribute>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QStatusBar" name="mainStatusBar"/>
   <action name="actExit">
    <property name="text">
     <string>Выход</string>
@@ -55,6 +88,63 @@
   <action name="actAbout">
    <property name="text">
     <string>О программе</string>
+   </property>
+  </action>
+  <action name="actCreate">
+   <property name="text">
+    <string>Создать</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actOpen">
+   <property name="text">
+    <string>Открыть...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actClose">
+   <property name="text">
+    <string>Закрыть</string>
+   </property>
+  </action>
+  <action name="actSave">
+   <property name="text">
+    <string>Сохранить</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actSaveAs">
+   <property name="text">
+    <string>Сохранить как...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="actFrameEditor">
+   <property name="text">
+    <string>Редактор фреймов</string>
+   </property>
+  </action>
+  <action name="actDomainEditor">
+   <property name="text">
+    <string>Редактор доменов</string>
+   </property>
+  </action>
+  <action name="actStartGame">
+   <property name="text">
+    <string>Начать игру</string>
+   </property>
+  </action>
+  <action name="actShowOutput">
+   <property name="text">
+    <string>Показать вывод</string>
    </property>
   </action>
  </widget>

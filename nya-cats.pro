@@ -35,7 +35,9 @@ SOURCES += main.cpp\
     ui/ruleswnd.cpp \
     ui/mycombobox.cpp \
     ui/labeledtextbox.cpp \
-    ui/expreditor.cpp
+    ui/expreditor.cpp \
+    ui/frameeditorwnd.cpp \
+    ui/sloteditorwnd.cpp
 
 HEADERS  += mainwindow.hpp \
     core/nslot.h \
@@ -61,9 +63,27 @@ HEADERS  += mainwindow.hpp \
     ui/ruleswnd.h \
     ui/mycombobox.h \
     ui/labeledtextbox.h \
-    ui/expreditor.h
+    ui/expreditor.h \
+    ui/frameeditorwnd.h \
+    ui/sloteditorwnd.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    ui/frameeditorwnd.ui \
+    ui/sloteditorwnd.ui
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
