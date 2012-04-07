@@ -9,8 +9,6 @@ NFrame::NFrame(QObject *parent) :
 
     m_slots.append(&name);
     m_slots.append(&is_a);
-
-
 }
 
 

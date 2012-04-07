@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QtXml/QDomDocument>
+#include <QVariant>
 
 
 //Что:Фасет слота
@@ -12,14 +13,6 @@
 //Получать доступ к значению и к имени
 //Сериализация в xml
 
-namespace FasetType
-{
-enum FASET_TYPE
-{
-    type_int,
-    type_string
-};
-}
 
 class NFaset : public QObject
 {
@@ -27,6 +20,7 @@ class NFaset : public QObject
 
     Q_OBJECT
     Q_PROPERTY(QString name READ name WRITE setName SCRIPTABLE true)//имя
+    Q_PROPERTY(QVariant value READ value WRITE setValue SCRIPTABLE true)//имя
 
 public:
     explicit NFaset(QObject *parent = 0);
@@ -42,11 +36,8 @@ public:
     void setStringValue(QString value);
     void setIntValue(int value);
 
-    //type
-    FasetType::FASET_TYPE type();
-    //void setType(FASET_TYPE type);
-
-
+    QVariant value();
+    void setValue(QVariant val);
 
     //сериализация
     QDomElement toXml(QDomDocument& doc);
@@ -58,12 +49,9 @@ signals:
 public slots:
 
 private:
-    FasetType::FASET_TYPE m_type;
 
-    QString m_name;
-    //value будет фишечка))) множественные значения фасета
-    QString m_stringValue;
-    int m_intValue;
+    QString m_name;         //имя фасета
+    QVariant m_value;       //значение фасета
 
 };
 

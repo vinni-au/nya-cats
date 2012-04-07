@@ -4,22 +4,16 @@
 NFaset::NFaset(QObject *parent/*=0*/) :
     QObject(parent)
 {
-    this->m_type = FasetType::type_string;
-    this->m_intValue = 0;
+
 }
 
 NFaset::NFaset(QString name,QObject *parent/*=0*/)
 {
     m_name=name;
-    this->m_type = FasetType::type_string;
-    this->m_intValue = 0;
+    this->m_value.clear();
 }
 
-FasetType::FASET_TYPE NFaset::type()
-{
-    return m_type;
-}
-
+//имя
 QString NFaset::name()
 {
     return m_name;
@@ -27,70 +21,59 @@ QString NFaset::name()
 void NFaset::setName(QString name)
 {
     m_name=name;
+    emit nameChanged();
 }
 
+//значение
+QVariant NFaset::value()
+{
+    return m_value;
+}
+
+void NFaset::setValue(QVariant val)
+{
+    m_value = val;
+    emit valueChanged();
+}
+//
 
 QString NFaset::getStringValue()
 {
-    return m_stringValue;
+    return m_value.toString();
 }
 
 int NFaset::getIntValue()
 {
-    return m_intValue;
+    return m_value.toInt();
 }
 
 void NFaset::setStringValue(QString value)
 {
-    this->m_stringValue=value;
-    this->m_type = FasetType::type_string;
+    this->m_value = value;
+    emit valueChanged();
 }
 
 void NFaset::setIntValue(int value)
 {
-    this->m_intValue = value;
-    this->m_type = FasetType::type_int;
+    this->m_value = value;
+    emit valueChanged();
 }
+
 
 
 //сериализация
 QDomElement NFaset::toXml(QDomDocument& doc)
 {
-    QDomElement faset = doc.createElement("faset"); //doc.appendChild(domains);
+    QDomElement faset = doc.createElement("faset");
     faset.setAttribute("name",this->name());
-    faset.setAttribute("type",this->type());
-
-    switch(type())
-    {
-    case FasetType::type_int:
-        faset.setAttribute("value",this->getIntValue());
-        break;
-    case FasetType::type_string:
-        faset.setAttribute("value",this->getStringValue());
-        break;
-    default:
-        qDebug()<<"NFaset::toXml "<<"Неизвестный тип фасета при сериализации";
-        break;
-    }
-
+    faset.setAttribute("value",this->value().toString());
     return faset;
 }
 
 void NFaset::fromXml(QDomElement &faset)
 {
-
     this->setName(faset.attribute("name"));
-    this->m_type =(FasetType::FASET_TYPE) faset.attribute("type").toInt();
-    switch(type())
-    {
-    case FasetType::type_int:
-        this->setIntValue( faset.attribute("value").toInt());
-        break;
-    case FasetType::type_string:
-        this->setStringValue( faset.attribute("value"));
-        break;
-    default:
-        qDebug()<<"NFaset::fromXml "<<"Неизвестный тип фасета при десериализации";
-        break;
-    }
+    this->setValue(faset.attribute("value"));
 }
+
+

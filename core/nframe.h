@@ -22,10 +22,9 @@ class NFrame : public QObject
 public:
     explicit NFrame(QObject *parent = 0);
 
-    NSlot* getSlotByName(QString name);
+    NSlot* getSlotByName(QString name);     //получить слот по имени
 
-
-    QString parentFrame();
+    QString parentFrame();                  //получить имя родительского фрейма
 
     int id();
 

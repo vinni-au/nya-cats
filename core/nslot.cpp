@@ -8,34 +8,32 @@ NSlot::NSlot(QObject *parent) :
 
     //инициализация слотов
     slotName.setName("name");
-    slotName.setStringValue("defName");
+    slotName.setValue("defName");
     m_fasets.append(&slotName);
 
     slotType.setName("slot_type");
-    slotType.setStringValue("domain");
+    slotType.setValue("domain");
     m_fasets.append(&slotType);
 
     slotValue.setName("value");
-    slotValue.setStringValue("defValue");
+    slotValue.setValue("defValue");
     m_fasets.append(&slotValue);
 
     slotDefaultValue.setName("default_value");
-    slotDefaultValue.setStringValue("");
+    slotDefaultValue.setValue("");
     m_fasets.append(&slotDefaultValue);
 
     slotMarkerType.setName("marker_type");
-    slotMarkerType.setStringValue("domain");
+    slotMarkerType.setValue("domain");
     m_fasets.append(&slotMarkerType);
 
     slotMarker.setName("marker");
-    slotMarker.setStringValue("defDomain");
+    slotMarker.setValue("defDomain");
     m_fasets.append(&slotMarker);
 
     slotInheritanceType.setName("inheritance_type");
-    slotInheritanceType.setStringValue(INHERIT_SAME);
+    slotInheritanceType.setValue(INHERIT_SAME);
     m_fasets.append(&slotInheritanceType);
-
-
 }
 
 
@@ -44,12 +42,13 @@ bool NSlot::isSystem()
 {
     return m_system;
 }
-
 void NSlot::setSystem(bool isSystem)
 {
     this->m_system = isSystem;
 }
 
+//получение фасета по имени
+//для оптимизации в дальнейшем можно заюзать мапу фасетов по имени
 NFaset* NSlot::getFasetByName(QString name)
 {
     NFaset* faset=NULL;
@@ -62,35 +61,24 @@ NFaset* NSlot::getFasetByName(QString name)
     }
     return faset;
 }
-QString NSlot::name()//имя слота
+//имя слота
+QString NSlot::name()
 {
     return this->getFasetByName("name")->getStringValue();
 }
-
 void NSlot::setName(QString name)
 {
     this->getFasetByName("name")->setStringValue(name);
 }
-QVariant NSlot::value()//значение слота
+//значение слота
+QVariant NSlot::value()
 {
     NFaset* valFaset = getFasetByName("value");
-    switch(valFaset->type())
-    {
-    case FasetType::type_int:
-        return QVariant(valFaset->getIntValue());
-        break;
-
-    case FasetType::type_string:
-        return QVariant(valFaset->getStringValue());
-        break;
-
-    };
-    return QVariant();
+    return valFaset->value();
 }
 void NSlot::setValue(QVariant value)
 {
-    this->getFasetByName("value")->setStringValue(value.toString());
-    this->getFasetByName("value")->setIntValue(value.toInt());//сомнительно!
+    this->getFasetByName("value")->setValue(value);
 }
 
 QDomElement NSlot::toXml(QDomDocument& doc)
