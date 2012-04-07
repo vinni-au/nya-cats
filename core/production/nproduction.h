@@ -2,6 +2,10 @@
 #define NPRODUCTION_H
 
 #include <QObject>
+#include "rulemodel.h"
+
+//Продукционная программка
+//будет содержать модель для правил RuleModel
 
 class NProduction : public QObject
 {
@@ -9,13 +13,19 @@ class NProduction : public QObject
 public:
     explicit NProduction(QObject *parent = 0);
 
+    RuleModel* getModel();
+
+    //сериализация
+    QDomElement toXml(QDomDocument &doc);
+    void fromXml(QDomElement &production);
 signals:
 
 public slots:
 
 private:
+    RuleModel m_ruleModel;
 
-
+    QString m_name;
 };
 
 #endif // NPRODUCTION_H

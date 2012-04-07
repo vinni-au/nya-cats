@@ -11,6 +11,7 @@
 #include "nframe.h"
 #include "nproc.h"
 #include "domains/domainmodel.h"
+#include "production/nproduction.h"
 
 //Менеджер базы знаний
 //Управляет базой знаний через апи. Создание фреймов, слотов. Сохранение. Загрузка БЗ.
@@ -57,13 +58,13 @@ public slots:
     void deleteLink(unsigned sid, unsigned did);
     void onDataChanged();
 private:
-    QList<NFrame*> frames;
-    //QList<продукционная программа
-    QList<NProc*> procs;
-    DomainModel domainModel;
+    QList<NFrame*> m_frames;              //список фреймов
+    QList<NProduction*> m_productions;    //список продукционных программок
+    QList<NProc*> m_procs;                //спимок процедур на qscript
+    DomainModel m_domainModel;            //модель доменов
 
-    bool        dirty;          //true - если произведены изменения
-    QFile       *file;
+    bool        dirty;                  //Признак того, что есть несохраненные изменения. true - если произведены изменения
+    QFile       *file;                  //ссылка на файл БЗ
 };
 
 #endif // NKBMANAGER_H

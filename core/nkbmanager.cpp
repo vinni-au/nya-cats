@@ -8,7 +8,7 @@ NKBManager::NKBManager(QObject *parent) :
 
     Clear();
 
-    connect(&domainModel,SIGNAL(sigDataChanged()),SLOT(onDataChanged()));
+    connect(&m_domainModel,SIGNAL(sigDataChanged()),SLOT(onDataChanged()));
 
     //контроль целостности модели
     //QObject::connect(domainModel,SIGNAL(sigDomainDeleted(QString)),varModel,SLOT(onDomainDeleted(QString)));
@@ -22,7 +22,7 @@ NKBManager::NKBManager(QObject *parent) :
     //!QObject::connect(varModel,SIGNAL(sigVarDomainChanged(QString,QString,QString)),ruleModel,SLOT(onVarDomainChanged(QString,QString,QString)));
 
     //сигналы об ошибках валидации
-    connect(&domainModel,SIGNAL(sigErrorWhileValidating(QString)),SIGNAL(sigErrorWhileValidating(QString)));
+    connect(&m_domainModel,SIGNAL(sigErrorWhileValidating(QString)),SIGNAL(sigErrorWhileValidating(QString)));
     //connect(varModel,SIGNAL(sigErrorWhileValidating(QString)),SIGNAL(sigErrorWhileValidating(QString)));
     //connect(ruleModel,SIGNAL(sigErrorWhileValidating(QString)),SIGNAL(sigErrorWhileValidating(QString)));
 }
@@ -206,17 +206,36 @@ NKBManager::areUsure(QString quest)
 void
 NKBManager::saveToXml(QTextStream &stream)
 {
-//    QDomDocument doc;
+    QDomDocument doc;
+    QDomElement kbEl = doc.createElement("kb");   doc.appendChild(kbEl);
+    QDomElement domainsEl = m_domainModel.toXml(doc);   kbEl.appendChild(domainsEl);
+    QDomElement framesEl = doc.createElement("frames"); kbEl.appendChild(framesEl);
 
-//    QDomElement es = doc.createElement("es");   doc.appendChild(es);
+    //Фреймы в xml
+    NFrame *frame;
+    foreach(frame,m_frames)
+    {
+        QDomElement frameEl = frame->toXml(doc);
+        framesEl.appendChild(frameEl);
+    }
+    //процедуры
+    QDomElement procsEl = doc.createElement("procs"); kbEl.appendChild(procsEl);
+    NProc *proc;
+    foreach(proc,m_procs)
+    {
+        QDomElement procEl = proc->toXml(doc);
+        procsEl.appendChild(procEl);
+    }
+    //продукции
+    QDomElement productionsEl = doc.createElement("productions"); kbEl.appendChild(productionsEl);
+    NProduction *production;
+    foreach(production,m_productions)
+    {
+        QDomElement productionEl = production->toXml(doc);
+        productionsEl.appendChild(productionEl);
+    }
 
-//    QDomElement domains = DataModels::instance()->domainModel->toXml(doc);   es.appendChild(domains);
-
-//    QDomElement vars = DataModels::instance()->varModel->toXml(doc);   es.appendChild(vars);
-
-//    QDomElement rules = DataModels::instance()->ruleModel->toXml(doc);   es.appendChild(rules);
-
-//    doc.save(stream,4);
+    doc.save(stream,4);
 
 }
 void
@@ -297,7 +316,7 @@ NKBManager::Open(QString filePath)
 void
 NKBManager::Clear()
 {
-    domainModel.setDomains(new QList<Domain*>());
+    m_domainModel.setDomains(new QList<Domain*>());
 //    varModel->setVariables(new QList<Variable*>());
 //    ruleModel->setRules(new QList<Rule*>());
 
