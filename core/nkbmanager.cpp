@@ -241,23 +241,50 @@ NKBManager::saveToXml(QTextStream &stream)
 void
 NKBManager::readFromXml(QFile &file)
 {
-//    QDomDocument doc;
-//    if(!doc.setContent(&file))
-//    {
-//        qDebug()<<"DataModels::readFromXml: Не удалось считать файл: "<<file.fileName();
-//        return;
-//    }
-//    QDomElement es = doc.documentElement();
-//    QDomElement domains = es.firstChildElement("domains");
-//    this->domainModel->fromXml(domains);
-//    QDomElement vars = es.firstChildElement("vars");
-//    this->varModel->fromXml(vars);
-//    QDomElement rules = es.firstChildElement("rules");
-//    this->ruleModel->fromXml(rules);
-//    file.close();
+    QDomDocument doc;
+    if(!doc.setContent(&file))
+    {
+        qDebug()<<"NKBManager::readFromXml: Не удалось считать файл: "<<file.fileName();
+        return;
+    }
 
-//    dirty=false;
-//    emit sigDataLoaded();
+    QDomElement kbEl = doc.documentElement();
+    //домены
+    QDomElement domainsEl = kbEl.firstChildElement("domains");
+    m_domainModel.fromXml(domainsEl);
+    //фреймы
+    QDomElement framesEl = kbEl.firstChildElement("frames");
+    QDomElement frameEl = framesEl.firstChild().toElement();
+    while(!frameEl.isNull())
+    {
+        NFrame *frame = new NFrame();
+        frame->fromXml(frameEl);
+        m_frames.append(frame);
+        frameEl = frameEl.nextSibling().toElement();
+    }
+    //процедуры
+    QDomElement procsEl = kbEl.firstChildElement("procs");
+    QDomElement procEl = procsEl.firstChild().toElement();
+    while(!procEl.isNull())
+    {
+        NProc *proc = new NProc();
+        proc->fromXml(procEl);
+        m_procs.append(proc);
+        procEl = procEl.nextSibling().toElement();
+    }
+    //продукции
+    QDomElement productionsEl = kbEl.firstChildElement("productions");
+    QDomElement prodictionEl = productionsEl.firstChild().toElement();
+    while(!prodictionEl.isNull())
+    {
+        NProduction *production = new NProduction();
+        production->fromXml(prodictionEl);
+        m_productions.append(production);
+        prodictionEl = prodictionEl.nextSibling().toElement();
+    }
+    file.close();
+    dirty=false;
+    emit sigDataLoaded();
 }
 
 bool
@@ -313,16 +340,16 @@ NKBManager::Open(QString filePath)
     dirty=false;
     return true;
 }
-void
+void//todo
 NKBManager::Clear()
 {
     m_domainModel.setDomains(new QList<Domain*>());
-//    varModel->setVariables(new QList<Variable*>());
-//    ruleModel->setRules(new QList<Rule*>());
+    m_frames.clear();
+    m_productions.clear();
+    m_procs.clear();
 
     file = NULL;
     dirty = false;
-
 }
 void
 NKBManager::onDataChanged()
@@ -331,7 +358,7 @@ NKBManager::onDataChanged()
     dirty = true;
 }
 
-bool
+bool//todo
 NKBManager::isValid()
 {
     //return domainModel->isValid()&&varModel->isValid()&&ruleModel->isValid();

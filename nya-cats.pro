@@ -17,7 +17,7 @@ SOURCES += main.cpp\
     core/nkbmanager.cpp \
     editor/lgen2objectpropertieseditor.cpp \
     editor/lgen2diagrameditor.cpp \
-    core/nframenetmodel.cpp \
+    core/frame_model/nframenetmodel.cpp \
     core/nfaset.cpp \
     core/nproc.cpp \
     core/domains/domainnode.cpp \
@@ -37,7 +37,8 @@ SOURCES += main.cpp\
     ui/labeledtextbox.cpp \
     ui/expreditor.cpp \
     ui/frameeditorwnd.cpp \
-    ui/sloteditorwnd.cpp
+    ui/sloteditorwnd.cpp \
+    core/frame_model/nframenode.cpp
 
 HEADERS  += mainwindow.hpp \
     core/nslot.h \
@@ -45,7 +46,7 @@ HEADERS  += mainwindow.hpp \
     core/nkbmanager.h \
     editor/lgen2objectpropertieseditor.hpp \
     editor/lgen2diagrameditor.hpp \
-    core/nframenetmodel.h \
+    core/frame_model/nframenetmodel.h \
     core/nfaset.h \
     core/nproc.h \
     core/domains/domainnode.h \
@@ -65,11 +66,14 @@ HEADERS  += mainwindow.hpp \
     ui/labeledtextbox.h \
     ui/expreditor.h \
     ui/frameeditorwnd.h \
-    ui/sloteditorwnd.h
+    ui/sloteditorwnd.h \
+    core/frame_model/nframenode.h
 
 FORMS    += mainwindow.ui \
     ui/frameeditorwnd.ui \
     ui/sloteditorwnd.ui
+
+
 
 
 

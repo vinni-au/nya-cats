@@ -31,6 +31,8 @@ public:
     //сериализация
     QDomElement toXml(QDomDocument& doc);
     void fromXml(QDomElement &frame);
+
+    int slotCount();
 signals:
 
 public slots:

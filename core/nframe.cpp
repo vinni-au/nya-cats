@@ -91,3 +91,9 @@ void NFrame::fromXml(QDomElement &frame)
         slotEl.nextSibling().toElement();
     }
 }
+
+
+int NFrame::slotCount()
+{
+    return m_slots.count();
+}
