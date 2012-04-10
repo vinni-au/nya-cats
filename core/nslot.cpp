@@ -61,6 +61,15 @@ NFaset* NSlot::getFasetByName(QString name)
     }
     return faset;
 }
+
+NFaset* NSlot::getFasetByIndex(int inx)
+{
+    if(inx+1>m_fasets.count() || inx<0)
+        return NULL;
+
+    return m_fasets.at(inx);
+}
+
 //имя слота
 QString NSlot::name()
 {

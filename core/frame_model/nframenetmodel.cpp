@@ -93,39 +93,53 @@ NFramenetModel::data(const QModelIndex &index, int role) const
     if(!node)
         return QVariant();
 
-//    if(index.column()==0)
-//    {
-//        if(role==Qt::EditRole)          //при редактировании
+    NFrame *frame;
+    NSlot *slotName;
+    NFaset *faset;
+    NSlot *slot;
+    int column;
+
+    switch(node->type)
+    {
+    case NFrameNode::Root:
+        return "root";
+        break;
+    case NFrameNode::FrameName:
+        frame = node->frame;
+        if(!frame)
+            return "errNoFrame";
+        slotName = frame->getSlotByName("name");
+        if(!slotName)
+            return "errSlotName";
+
+        return slotName->value();
+        break;
+    case NFrameNode::SlotName:
+        column = index.column();
+
+        frame = node->frame;
+        slot = frame->getSlotByIndex(index.row());
+
+        faset = slot->getFasetByIndex(column);
+        return faset->value();
+//        if(column == 0)//имя слота
 //        {
-//            if(node->type==DomainNode::DomainName)
-//            {
-//                return node->domain->name;
-//            }
-//            else if(node->type==DomainNode::DomainValue)
-//            {
-//                return node->domain->values.at(index.row());
-//            }
+//        }
+//        else
+//        {
+
 //        }
 
-//        //отображение
-//        switch(node->type)
-//        {
-//        case DomainNode::Root:
-//            return "root";
+        break;
+    default:
+        qDebug()<<"NFramenetModel::data  неизвестный тип node";
+        break;
+    }
 
-//        case DomainNode::DomainName:
-//            return node->domain->name;
-
-//        case DomainNode::DomainValue:
-//            return node->domain->values.at(index.row());
-//        default:
-//            return "Unkn";
-//        }
-//    }
     return QVariant();
 }
 bool
-NFramenetModel::setData(const QModelIndex &index, const QVariant &value, int role)
+NFramenetModel::setData(const QModelIndex &index, const QVariant &value, int role)//изменение данных пока не планируется, хотя возможно Саньку это понадобится
 {
 //    if(index.isValid() && role==Qt::EditRole)
 //    {
@@ -182,12 +196,12 @@ NFramenetModel::setData(const QModelIndex &index, const QVariant &value, int rol
 Qt::ItemFlags
 NFramenetModel::flags(const QModelIndex &index) const
 {
-//    Qt::ItemFlags flags = QAbstractItemModel::flags(index);
-//    return flags;
-    Qt::ItemFlags flag = Qt::ItemIsDragEnabled|Qt::ItemIsDropEnabled|Qt::ItemIsEnabled | Qt::ItemIsSelectable ;
-    if(itemsIsEditable)
-        flag|= Qt::ItemIsEditable;
-    return flag;
+    Qt::ItemFlags flags = QAbstractItemModel::flags(index);
+    return flags;
+//    Qt::ItemFlags flag = Qt::ItemIsDragEnabled|Qt::ItemIsDropEnabled|Qt::ItemIsEnabled | Qt::ItemIsSelectable ;
+//    if(itemsIsEditable)
+//        flag|= Qt::ItemIsEditable;
+//    return flag;
 }
 bool
 NFramenetModel::removeRow(int row, const QModelIndex &parent)

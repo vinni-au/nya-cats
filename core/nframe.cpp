@@ -97,3 +97,11 @@ int NFrame::slotCount()
 {
     return m_slots.count();
 }
+
+NSlot* NFrame::getSlotByIndex(int inx)
+{
+    if(inx+1>m_slots.count() || inx<0)
+        return NULL;
+
+    return m_slots.at(inx);
+}

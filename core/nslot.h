@@ -22,6 +22,7 @@ public:
     explicit NSlot(QObject *parent = 0);
 
     NFaset *getFasetByName(QString name);
+    NFaset *getFasetByIndex(int inx);
 
     QString name();//имя слота
     void setName(QString name);
