@@ -7,10 +7,9 @@ class LGen2DiagramEditor : public QGraphicsView
 {
     Q_OBJECT
 
-
-
 public:
     explicit LGen2DiagramEditor(QWidget *parent = 0);
+
 
 signals:
 
