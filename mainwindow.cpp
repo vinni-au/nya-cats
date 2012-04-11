@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    viz = new Visualizer(this);
+    viz = new GameField(this);
     QHBoxLayout *layout = new QHBoxLayout;
     layout->addWidget(viz);
     ui->centralWidget->setLayout(layout);

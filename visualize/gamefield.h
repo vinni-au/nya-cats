@@ -6,11 +6,11 @@
 QT_FORWARD_DECLARE_CLASS(QGraphicsScene)
 QT_FORWARD_DECLARE_CLASS(QGraphicsView)
 
-class Visualizer : public QWidget
+class GameField : public QWidget
 {
     Q_OBJECT
 public:
-    Visualizer(QWidget *parent = 0);
+    GameField(QWidget *parent = 0);
 
 private:
     void populateScene();

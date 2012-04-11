@@ -4,7 +4,7 @@
 #include <QMainWindow>
 
 #include "ui/domainwnd.h"
-#include "visualize/visualizer.h"
+#include "visualize/gamefield.h"
 
 namespace Ui {
     class MainWindow;
@@ -19,7 +19,7 @@ public:
     ~MainWindow();
 
 protected:
-    Visualizer *viz;
+    GameField *viz;
 
 private slots:
     void on_actExit_triggered();
