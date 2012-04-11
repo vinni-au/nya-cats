@@ -17,6 +17,9 @@ SOURCES += main.cpp\
     core/nkbmanager.cpp \
     editor/lgen2objectpropertieseditor.cpp \
     editor/lgen2diagrameditor.cpp \
+    editor/arrow.cpp \
+    editor/diagramitem.cpp \
+    editor/diagramscene.cpp \
     core/frame_model/nframenetmodel.cpp \
     core/nfaset.cpp \
     core/nproc.cpp \
@@ -38,7 +41,9 @@ SOURCES += main.cpp\
     ui/expreditor.cpp \
     ui/frameeditorwnd.cpp \
     ui/sloteditorwnd.cpp \
-    core/frame_model/nframenode.cpp
+    core/frame_model/nframenode.cpp \
+    visualize/visualizer.cpp \
+    visualize/view.cpp
 
 HEADERS  += mainwindow.hpp \
     core/nslot.h \
@@ -46,6 +51,9 @@ HEADERS  += mainwindow.hpp \
     core/nkbmanager.h \
     editor/lgen2objectpropertieseditor.hpp \
     editor/lgen2diagrameditor.hpp \
+    editor/arrow.hpp \
+    editor/diagramitem.hpp \
+    editor/diagramscene.hpp \
     core/frame_model/nframenetmodel.h \
     core/nfaset.h \
     core/nproc.h \
@@ -67,11 +75,25 @@ HEADERS  += mainwindow.hpp \
     ui/expreditor.h \
     ui/frameeditorwnd.h \
     ui/sloteditorwnd.h \
-    core/frame_model/nframenode.h
+    core/frame_model/nframenode.h \
+    visualize/visualizer.h \
+    visualize/view.h
 
 FORMS    += mainwindow.ui \
     ui/frameeditorwnd.ui \
     ui/sloteditorwnd.ui
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

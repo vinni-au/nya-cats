@@ -1,11 +1,18 @@
 #include "mainwindow.hpp"
 #include "ui_mainwindow.h"
 
+#include <QtGui>
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    viz = new Visualizer(this);
+    QHBoxLayout *layout = new QHBoxLayout;
+    layout->addWidget(viz);
+    ui->centralWidget->setLayout(layout);
 }
 
 MainWindow::~MainWindow()
