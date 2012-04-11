@@ -7,9 +7,10 @@ DiagramItem::DiagramItem(unsigned id, DiagramType type, QString title, QMenu *co
 {
     switch (m_type) {
         case Node:
-            m_polygon << QPointF(-100, -100) << QPointF(100, -100)
-                      << QPointF(100, 100) << QPointF(-100, 100)
-                      << QPointF(-100, -100);
+        default:
+            m_polygon << QPointF(-50, -25) << QPointF(-50, 25)
+                      << QPointF(50, 25) << QPointF(50, -25)
+                      << QPointF(-50, -25);
             break;
     }
     setPolygon(m_polygon);
@@ -57,7 +58,8 @@ void DiagramItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 {
     scene()->clearSelection();
     setSelected(true);
-    m_contextMenu->exec(event->screenPos());
+    if (m_contextMenu)
+        m_contextMenu->exec(event->screenPos());
 }
 
 QVariant DiagramItem::itemChange(GraphicsItemChange change, const QVariant &value)
@@ -69,4 +71,10 @@ QVariant DiagramItem::itemChange(GraphicsItemChange change, const QVariant &valu
     }
 
     return value;
+}
+
+void DiagramItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+{
+    QGraphicsPolygonItem::paint(painter, option, widget);
+    painter->drawText(0, 0, m_title);
 }

@@ -11,6 +11,7 @@ Arrow::Arrow(DiagramItem *startItem, DiagramItem *endItem,
 {
     setFlag(QGraphicsItem::ItemIsSelectable, true);
     m_color = Qt::black;
+    setPen(QPen(m_color, 2, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
 }
 
 QRectF Arrow::boundingRect() const
@@ -36,8 +37,8 @@ void Arrow::updatePosition()
     setLine(line);
 }
 
-void Arrow::paint(QPainter *painter, const QStyleOptionGraphicsItem *,
-           QWidget *)
+void Arrow::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
+           QWidget *widget)
 {
     if (m_startItem->collidesWithItem(m_endItem))
         return;
@@ -78,6 +79,7 @@ void Arrow::paint(QPainter *painter, const QStyleOptionGraphicsItem *,
     m_arrowHead << line().p1() << arrowP1 << arrowP2;
     painter->drawLine(line());
     painter->drawPolygon(m_arrowHead);
+
     if (isSelected()) {
         painter->setPen(QPen(m_color, 1, Qt::DashLine));
         QLineF myLine = line();
@@ -86,4 +88,8 @@ void Arrow::paint(QPainter *painter, const QStyleOptionGraphicsItem *,
         myLine.translate(0,-8.0);
         painter->drawLine(myLine);
     }
+
+    int x = (m_startItem->pos().x() + m_endItem->pos().x()) / 2;
+    int y = (m_startItem->pos().y() + m_endItem->pos().y()) / 2;
+    painter->drawText(x, y, m_text);
 }
