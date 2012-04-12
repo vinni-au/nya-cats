@@ -346,7 +346,7 @@ RulesWnd::onAddIfClick()
             QModelIndex ruleIndex = lbListRules->currentIndex();
             QModelIndex index = this->ruleModel->addIf(ruleIndex);
             Expr *expr = exprEditor.getExpr();
-            this->ruleModel->setData(index,(uint)expr,Qt::EditRole);
+            this->ruleModel->setData(index,reinterpret_cast<unsigned long long>(expr),Qt::EditRole);
         }
     }
     while(exprEditor.startAgain);
@@ -374,7 +374,7 @@ RulesWnd::onEditIfClick()
     if(exprEditor.exec())
     {
         Expr *expr = exprEditor.getExpr();
-        this->ruleModel->setData(ifIndex,(uint)expr,Qt::EditRole);
+        this->ruleModel->setData(ifIndex,reinterpret_cast<unsigned long long>(expr),Qt::EditRole);
     }
 }
 
@@ -398,7 +398,7 @@ RulesWnd::onAddThenClick()
             QModelIndex ruleIndex = lbListRules->currentIndex();
             QModelIndex index = this->ruleModel->addThen(ruleIndex);
             Expr *expr = exprEditor.getExpr();
-            this->ruleModel->setData(index,(uint)expr,Qt::EditRole);
+            this->ruleModel->setData(index,reinterpret_cast<unsigned long long>(expr),Qt::EditRole);
         }
     }
     while(exprEditor.startAgain);
@@ -426,7 +426,7 @@ RulesWnd::onEditThenClick()
     if(exprEditor.exec())
     {
         Expr *expr = exprEditor.getExpr();
-        this->ruleModel->setData(thenIndex,(uint)expr,Qt::EditRole);
+        this->ruleModel->setData(thenIndex,reinterpret_cast<unsigned long long>(expr),Qt::EditRole);
     }
 }
 
