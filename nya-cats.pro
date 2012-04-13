@@ -44,7 +44,9 @@ SOURCES += main.cpp\
     core/frame_model/nframenode.cpp \
     visualize/view.cpp \
     visualize/gameitem.cpp \
-    visualize/gamefield.cpp
+    visualize/gamefield.cpp \
+    visualize/grid.cpp \
+    visualize/gameunit.cpp
 
 HEADERS  += mainwindow.hpp \
     core/nslot.h \
@@ -79,11 +81,17 @@ HEADERS  += mainwindow.hpp \
     core/frame_model/nframenode.h \
     visualize/view.h \
     visualize/gameitem.h \
-    visualize/gamefield.h
+    visualize/gamefield.h \
+    visualize/grid.h \
+    visualize/gameunit.h
 
 FORMS    += mainwindow.ui \
     ui/frameeditorwnd.ui \
     ui/sloteditorwnd.ui
+
+
+
+
 
 
 
