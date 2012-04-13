@@ -26,6 +26,8 @@ private slots:
 
     void on_actAbout_triggered();
 
+    void on_actFrameEditor_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

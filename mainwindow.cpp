@@ -1,5 +1,6 @@
 #include "mainwindow.hpp"
 #include "ui_mainwindow.h"
+#include "ui/kbeditorwindow.hpp"
 
 #include <QtGui>
 
@@ -29,4 +30,10 @@ void MainWindow::on_actAbout_triggered()
 {
     DomainWnd wnd(new DomainModel());
     wnd.show();
+}
+
+void MainWindow::on_actFrameEditor_triggered()
+{
+    KBEditorWindow* wnd = new KBEditorWindow;
+    wnd->show();
 }
