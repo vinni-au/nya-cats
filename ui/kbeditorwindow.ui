@@ -21,6 +21,12 @@
        <enum>Qt::Horizontal</enum>
       </property>
       <widget class="LGen2ObjectPropertiesEditor" name="treeView">
+       <property name="maximumSize">
+        <size>
+         <width>300</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <property name="baseSize">
         <size>
          <width>0</width>
@@ -44,6 +50,16 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
   </widget>
  </widget>
  <customwidgets>
