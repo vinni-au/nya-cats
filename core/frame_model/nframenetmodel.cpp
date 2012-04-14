@@ -114,7 +114,7 @@ NFramenetModel::data(const QModelIndex &index, int role) const
 
         return slotName->value();
         break;
-    case NFrameNode::SlotName:
+    case NFrameNode::Faset:
         column = index.column();
 
         frame = node->frame;
@@ -141,21 +141,59 @@ NFramenetModel::data(const QModelIndex &index, int role) const
 bool
 NFramenetModel::setData(const QModelIndex &index, const QVariant &value, int role)//изменение данных пока не планируется, хотя возможно Саньку это понадобится
 {
-//    if(index.isValid() && role==Qt::EditRole)
-//    {
+    if(index.isValid() && role==Qt::EditRole)
+    {
 //        if(value.toString().trimmed() == "")
 //        {
 //            emit sigErrorWhileValidating(QString("Пустое значение запрещено!"));
 //            return false;    //можно испустить какой-нибудь сигнал
 //        }
-//        DomainNode *node=nodeFromIndex(index);
-//        Domain *domain=node->domain;
-//        if(!domain)
-//            qt_assert("нету домена","",109);
-//        switch(node->type)
-//        {
-//        case DomainNode::Root:
-//            break;
+        NFrameNode *node=nodeFromIndex(index);
+        NFrame *frame=node->frame;
+        if(!frame)
+            qt_assert("нету фрейма. NFramenetModel::setData ","",109);
+
+
+        NSlot *slotName;
+        NFaset *faset;
+        NSlot *slot;
+        int column;
+
+        switch(node->type)
+        {
+        case NFrameNode::Root:
+            break;
+
+        case NFrameNode::FrameName:
+            frame = node->frame;
+            if(!frame)
+                return "errNoFrame";
+            slotName = frame->getSlotByName("name");
+            if(!slotName)
+                return "errSlotName";
+
+            slotName->setValue(value);
+
+            emit dataChanged(index,index);
+            emit sigDataChanged();
+            return true;
+            break;
+
+        case NFrameNode::Faset:
+            column = index.column();
+
+            frame = node->frame;
+            slot = frame->getSlotByIndex(index.row());
+
+            faset = slot->getFasetByIndex(column);
+            faset->setValue(value);
+
+            emit dataChanged(index,index);
+            emit sigDataChanged();
+            return true;
+            break;
+
+
 //        case DomainNode::DomainName:
 //            if(!domainExists(value.toString().trimmed()))
 //            {
@@ -171,28 +209,15 @@ NFramenetModel::setData(const QModelIndex &index, const QVariant &value, int rol
 //                emit sigErrorWhileValidating(QString("Домен с именем %1 уже есть!").arg("'"+value.toString()+"'"));
 //            }
 //            break;
-//        case DomainNode::DomainValue:
-//            if(!valueExists(domain,value.toString().trimmed()))
-//            {
-//                emit sigDomainValueChanged(domain->name.trimmed(),domain->values.data()[index.row()].trimmed(),value.toString().trimmed());//сигнал об изменении значения
-//                domain->values.data()[index.row()]= value.toString().trimmed();
-//                emit dataChanged(index,index);
-//                emit sigDataChanged();
-//                return true;
-//            }
-//            else
-//            {
-//                emit sigValueExists(index,value);
-//                emit sigErrorWhileValidating(QString("Значение домена %1 с именем %2 уже есть!").arg("'"+domain->name+"'").arg("'"+value.toString()+"'"));
-//            }
-//            break;
-//        default:
-//            qDebug()<<"DomainModel::setData// case default:";
-//            break;
-//        }
-//    }
+
+        default:
+            qDebug()<<"DomainModel::setData// case default:";
+            break;
+        }
+    }
     return false;
 }
+
 Qt::ItemFlags
 NFramenetModel::flags(const QModelIndex &index) const
 {
@@ -203,106 +228,117 @@ NFramenetModel::flags(const QModelIndex &index) const
 //        flag|= Qt::ItemIsEditable;
 //    return flag;
 }
+
 bool
 NFramenetModel::removeRow(int row, const QModelIndex &parent)
 {
-//    if (row >= 0 && row < rowCount(parent))
-//    {
-//        beginRemoveRows(parent, row, row);
+    if (row >= 0 && row < rowCount(parent))
+    {
+        beginRemoveRows(parent, row, row);
 
-//        DomainNode *parentNode = nodeFromIndex(parent);
-//        DomainNode *node = parentNode->children.at(row);
-//        Domain *domain=NULL;
-//        int inx;
-//        switch(parentNode->type)
-//        {
-//        case DomainNode::Root:          //удаляем домены
-//            domain=node->domain;
-//            emit sigDomainDeleted(domain->name);                    //оповещение об удалении домена(пока не удален)
-//            inx = domains->indexOf(domain);
-//           // domains->remove(inx);
-//            domains->removeAt(inx);
-//            parentNode->children.removeAt(row);//delete?
-//            emit sigDataChanged();
-//            break;
-//        case DomainNode::DomainName:    //удаляем значения
-//            parentNode->children.removeAt(row);
-//            domain=parentNode->domain;
-//            emit sigDomainValueDeleted(domain->name, domain->values.at(row));    //сигнал об удалении значения
-//            domain->values.remove(row);
-//            emit sigDataChanged();
-//            break;
-//        case DomainNode::DomainValue:
-//            break;
-//        }
+        NFrameNode *parentNode = nodeFromIndex(parent);
+        NFrameNode *node = parentNode->children.at(row);
+        NFrame *frame=NULL;
+        int inx;
+        switch(parentNode->type)//родитель
+        {
+        case NFrameNode::Root:          //удаляем фреймы
+            frame=node->frame;
+            //emit sigDomainDeleted(domain->name);                    //оповещение об удалении домена(пока не удален)
+            inx = frames->indexOf(frame);
+           // domains->remove(inx);
+            frames->removeAt(inx);
+            parentNode->children.removeAt(row);//delete?
+            emit sigDataChanged();
+            break;
+        case NFrameNode::FrameName:    //удаляем слоты
+            parentNode->children.removeAt(row);
+            frame=parentNode->frame;
+            //emit sigDomainValueDeleted(domain->name, domain->values.at(row));    //сигнал об удалении значения
+            frame->removeSlot(row);
+            emit sigDataChanged();
+            break;
+        case NFrameNode::Faset:
+            break;
+        }
 
-//        endRemoveRows();
-//        return true;
-//    }
+        endRemoveRows();
+        return true;
+    }
     return false;
 }
+
 bool
 NFramenetModel::insertRow(int row, const QModelIndex &parent)
 {
-//    if (row >= 0)
-//    {
-//        beginInsertRows(parent,row,row);
+    if (row >= 0)
+    {
+        beginInsertRows(parent,row,row);
 
-//        DomainNode *parentNode = nodeFromIndex(parent);
-//        DomainNode *node;
-//        Domain *domain=NULL;
-//        Domain *newDomain=NULL;
+        NFrameNode *parentNode = nodeFromIndex(parent);
+        NFrameNode *node;
+        NFrame *frame=NULL;
+        NFrame *newFrame=NULL;
+        NSlot *slot=NULL;
 
-//        switch(parentNode->type)
-//        {
-//        case DomainNode::Root://добавляем домены
-//            newDomain = new Domain(generateNewUniqueDomainName());
-//            node=new DomainNode(DomainNode::DomainName,newDomain,true,rootNode);
-//            //this->domains->append(newDomain);
-//            domains->insert(row,newDomain);
-//            emit sigDataChanged();
-//            break;
-//        case DomainNode::DomainName://добавляем значения
-//            domain = parentNode->domain;
-//            node=new DomainNode(DomainNode::DomainValue,domain,true,parentNode);
-//            domain->values.insert(row,generateNewUniqueDomainValue(domain));
-//            emit sigDataChanged();
-//            break;
-//        case DomainNode::DomainValue:
-//            break;
-//        }
-//        endInsertRows();
-//        return true;
-//    }
+        switch(parentNode->type)
+        {
+        case NFrameNode::Root://добавляем новый фрейм
+            newFrame = new NFrame();//сгенерировать уникальлное имя???
+            node=new NFrameNode(NFrameNode::FrameName,newFrame,true,rootNode);
+            //this->domains->append(newDomain);
+            frames->insert(row,newFrame);
+            emit sigDataChanged();
+            break;
+
+
+        case NFrameNode::FrameName://добавляем новый слот
+            frame = parentNode->frame;
+            node=new NFrameNode(NFrameNode::Faset,frame,true,parentNode);
+
+            slot = new NSlot();
+            frame->insertSlot(row,slot);///имя слота????
+
+            emit sigDataChanged();
+            break;
+        case NFrameNode::Faset://DO NOTHING
+            break;
+        }
+        endInsertRows();
+        return true;
+    }
     return false;
 }
 
 void
 NFramenetModel::setFrames( QList<NFrame *> *frames )
 {
-//    qDebug()<<"DomainModel::setDomains";
-//    //здесь делаем разбор списка доменов
-//    //строим на основе списка дерево DomainNode
-//    //this->domains->clear();//хотя может надо удалить?
+    qDebug()<<"NFramenetModel::setFrames";
+    //здесь делаем разбор списка фреймов
+    //строим на основе списка дерево DomainNode
 
-//    this->domains=domains;
-//    rootNode->children.clear();
+    this->frames->clear();
 
+    this->frames = frames;
+    rootNode->children.clear();
 
-//    Domain *domain;
-//    foreach(domain,*domains)
-//    {
-//        DomainNode *nameNode=new DomainNode(DomainNode::DomainName,domain,true,rootNode);
-//        //значения
-//        DomainNode *valNode;
-//        QString val;
-//        foreach(val,domain->values)
-//        {
-//            valNode=new DomainNode(DomainNode::DomainValue,domain,true,nameNode);
-//        }
-//    }
-//    reset();
-//    emit sigDataChanged();
+    NFrame *frame;
+
+    foreach(frame,*frames)
+    {
+        NFrameNode *frameNode = new NFrameNode(NFrameNode::FrameName,frame,true,rootNode);
+        //слоты
+        NSlot *slot;
+        NFrameNode *slotNode;
+        for(int i=0;i<frame->slotCount();i++)
+        {
+            slot = frame->getSlotByIndex(i);
+            slotNode = new NFrameNode(NFrameNode::Faset,frame,true,frameNode);
+        }
+    }
+    reset();
+    emit sigDataChanged();
+
 }
 
 //Qt::DropActions

@@ -34,6 +34,9 @@ public:
     void fromXml(QDomElement &frame);
 
     int slotCount();
+    void addSlot(NSlot *slot);
+    void insertSlot(int row,NSlot *slot);
+    void removeSlot(int row);
 signals:
 
 public slots:

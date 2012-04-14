@@ -105,3 +105,25 @@ NSlot* NFrame::getSlotByIndex(int inx)
 
     return m_slots.at(inx);
 }
+void NFrame::addSlot(NSlot *slot)
+{
+    this->m_slots.append(slot);
+}
+
+void NFrame::insertSlot(int row,NSlot *slot)
+{
+    if(row>-1 && row <m_slots.count()-1)
+        m_slots.insert(row,slot);
+    else
+        qDebug()<<"Не могу вставить слота во фрейм";
+}
+
+void NFrame::removeSlot(int row)
+{
+
+    if(row>-1 && row <m_slots.count()-1)
+        m_slots.removeAt(row);
+    else
+        qDebug()<<"Не могу удалить слота во фрейм";
+
+}
