@@ -1,4 +1,4 @@
-#include "kbeditorwindow.hpp"
+п»ї#include "kbeditorwindow.hpp"
 #include "ui_kbeditorwindow.h"
 #include <QInputDialog>
 
@@ -25,17 +25,17 @@ KBEditorWindow::~KBEditorWindow()
 void KBEditorWindow::on_btnAddFrame_clicked()
 {
     bool ok;
-    QString name = QInputDialog::getText(this, "Создать фрейм", "Введите имя фрейма:", QLineEdit::Normal, QString(), &ok);
+    QString name = QInputDialog::getText(this, "РЎРѕР·РґР°С‚СЊ С„СЂРµР№Рј", "Р’РІРµРґРёС‚Рµ РёРјСЏ С„СЂРµР№РјР°:", QLineEdit::Normal, QString(), &ok);
 
     if (ok && !name.isEmpty()) {
-        //Выполнить запрос к менеджеру БЗ на добавление фрейма
+        //Р’С‹РїРѕР»РЅРёС‚СЊ Р·Р°РїСЂРѕСЃ Рє РјРµРЅРµРґР¶РµСЂСѓ Р‘Р— РЅР° РґРѕР±Р°РІР»РµРЅРёРµ С„СЂРµР№РјР°
         if(m_kbManager->addFrame(name))
         {
             //ok
         }
         else
         {
-            QMessageBox::information(this,"","Не удалось добавить фрейм",QMessageBox::Ok);
+            QMessageBox::information(this,"","РќРµ СѓРґР°Р»РѕСЃСЊ РґРѕР±Р°РІРёС‚СЊ С„СЂРµР№Рј",QMessageBox::Ok);
         }
     }
 }
@@ -44,12 +44,12 @@ void KBEditorWindow::on_btnDeleteFrame_clicked()
 {
     int frameId=-1;
 
-    //TODO Получить ид выделенного фрейма
+    //TODO РџРѕР»СѓС‡РёС‚СЊ РёРґ РІС‹РґРµР»РµРЅРЅРѕРіРѕ С„СЂРµР№РјР°
     QModelIndex index = ui->treeView->selectionModel()->currentIndex();
 
     if(!index.isValid())
     {
-        QMessageBox::information(this,"","Ни один фрейм не выбран",QMessageBox::Ok);
+        QMessageBox::information(this,"","РќРё РѕРґРёРЅ С„СЂРµР№Рј РЅРµ РІС‹Р±СЂР°РЅ",QMessageBox::Ok);
         return;
     }
     NFramenetModel *model = qobject_cast<NFramenetModel*>(ui->treeView->model());
@@ -58,7 +58,7 @@ void KBEditorWindow::on_btnDeleteFrame_clicked()
 
     if(frameId<0)
     {
-        QMessageBox::information(this,"","Не удалось удалить фрейм",QMessageBox::Ok);
+        QMessageBox::information(this,"","РќРµ СѓРґР°Р»РѕСЃСЊ СѓРґР°Р»РёС‚СЊ С„СЂРµР№Рј",QMessageBox::Ok);
         return;
     }
 
