@@ -48,6 +48,8 @@ public:
 
     //bool isValid();
     //void setItemsIsEditable(bool isEditable);
+private:
+    int getFreeId();
 signals:
     void sigValueExists(QModelIndex index,QVariant value);
     void sigDataChanged();

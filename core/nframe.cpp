@@ -1,7 +1,7 @@
 #include "nframe.h"
 #include <QDebug>
 
-NFrame::NFrame(QObject *parent) :
+NFrame::NFrame(unsigned id,QObject *parent) :
     QObject(parent)
 {
     name.setName("name");

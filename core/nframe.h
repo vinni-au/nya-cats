@@ -20,7 +20,7 @@ class NFrame : public QObject
 {
     Q_OBJECT
 public:
-    explicit NFrame(QObject *parent = 0);
+    explicit NFrame(unsigned id,QObject *parent = 0);
 
     NSlot* getSlotByName(QString name);     //получить слот по имени
     NSlot* getSlotByIndex(int inx);

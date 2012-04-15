@@ -52,7 +52,7 @@ bool NKBManager::addFrame(QString name)
     if(frameExists(name))
         return false;
 
-    NFrame *frame = new NFrame();
+    NFrame *frame = new NFrame(getFreeId());
     frame->name.setValue(name);
     m_frames.append(frame);
 
@@ -286,7 +286,7 @@ NKBManager::readFromXml(QFile &file)
     QDomElement frameEl = framesEl.firstChild().toElement();
     while(!frameEl.isNull())
     {
-        NFrame *frame = new NFrame();
+        NFrame *frame = new NFrame(0);
         frame->fromXml(frameEl);
         m_frames.append(frame);
         frameEl = frameEl.nextSibling().toElement();

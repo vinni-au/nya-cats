@@ -284,7 +284,7 @@ NFramenetModel::insertRow(int row, const QModelIndex &parent)
         switch(parentNode->type)
         {
         case NFrameNode::Root://добавляем новый фрейм
-            newFrame = new NFrame();//сгенерировать уникальлное имя???
+            newFrame = new NFrame(getFreeId());//сгенерировать уникальлное имя???
             node=new NFrameNode(NFrameNode::FrameName,newFrame,true,rootNode);
             //this->domains->append(newDomain);
             frames->insert(row,newFrame);
@@ -647,3 +647,18 @@ NFramenetModel::setFrames( QList<NFrame *> *frames )
 //    }
 //    return "";
 //}
+
+int NFramenetModel::getFreeId()
+{
+    NFrame *frame;
+    int maxId=-1;
+    foreach(frame,*frames)
+    {
+        if(frame->id()>maxId)
+        {
+            maxId=frame->id();
+        }
+    }
+
+    return ++maxId;
+}
