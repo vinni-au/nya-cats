@@ -17,6 +17,12 @@ public:
     explicit LGen2DiagramEditor(QWidget *parent = 0);
 
 signals:
+    void frameSelected(unsigned id);
+    void linkSelected(unsigned sid, unsigned eid);
+    void selectionCleared();
+
+protected slots:
+    void sceneSelectionChanged();
 
 public slots:
     //Добавить вершину с внутренним идентификатором id, надписью title, и типом type

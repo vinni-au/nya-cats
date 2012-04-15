@@ -7,6 +7,9 @@ LGen2DiagramEditor::LGen2DiagramEditor(QWidget *parent) :
 
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+
+    QObject::connect(m_scene, SIGNAL(selectionChanged()),
+                     SLOT(sceneSelectionChanged()));
 }
 
 void LGen2DiagramEditor::addNode(unsigned id, QString title, DiagramItem::DiagramType type)
@@ -23,4 +26,22 @@ void LGen2DiagramEditor::addLink(unsigned sid, unsigned did, QString title)
     i1->addArrow(a);
     i2->addArrow(a);
     m_scene->addItem(a);
+}
+
+void LGen2DiagramEditor::sceneSelectionChanged()
+{
+    QList<QGraphicsItem*> items = m_scene->selectedItems();
+    if (items.count() == 1) {
+        DiagramItem* item = qgraphicsitem_cast<DiagramItem*>(items[0]);
+        if (item) {
+            if (item->type() == DiagramItem::Node)
+                emit frameSelected(item->id());
+        } else {
+            Arrow* arrow = qgraphicsitem_cast<DiagramItem*>(items[0]);
+            if (arrow)
+                emit linkSelected(arrow->startItem()->id(), arrow->endItem()->id());
+        }
+    }
+    if (!items.count())
+        emit selectionCleared();
 }

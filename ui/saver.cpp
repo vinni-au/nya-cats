@@ -28,7 +28,7 @@ Saver::SaveAs()
 //        return true;
 //    }
 //    else
-//        return false;
+        return false;
 }
 
 bool
@@ -82,7 +82,7 @@ Saver::mayBeSave()
 //            break;
 //        }
 //    }
-//    return true;
+    return true;
 }
 
 bool
@@ -103,5 +103,5 @@ Saver::areUsure(QString quest)
 //        return false;
 //        break;
 //    }
-//    return false;
+    return false;
 }

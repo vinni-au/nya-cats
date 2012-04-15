@@ -52,6 +52,8 @@ private:
 
     DiagramItem::DiagramType m_itemType;
 
+    QGraphicsLineItem* m_line;
+
 signals:
 
 public slots:

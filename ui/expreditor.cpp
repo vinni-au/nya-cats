@@ -148,7 +148,7 @@ ExprEditor::dataIsValid()//валидация
 //    if(DataModels::instance()->domainModel->valueExists(sDomain,cmbVal->currentText().trimmed()))
 //        return true;
 //    else
-//        return false;
+        return false;
 }
 
 void

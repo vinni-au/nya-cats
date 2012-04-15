@@ -1,5 +1,6 @@
 #include "kbeditorwindow.hpp"
 #include "ui_kbeditorwindow.h"
+#include <QInputDialog>
 
 KBEditorWindow::KBEditorWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -13,37 +14,12 @@ KBEditorWindow::~KBEditorWindow()
     delete ui;
 }
 
-void KBEditorWindow::on_btnAddFrame_clicked()
+void KBEditorWindow::on_act_addFrame_triggered()
 {
+    bool ok;
+    QString name = QInputDialog::getText(this, "Создать фрейм", "Введите имя фрейма:", QLineEdit::Normal, QString(), &ok);
 
-}
-
-void KBEditorWindow::on_btnDeleteFrame_clicked()
-{
-
-}
-
-void KBEditorWindow::on_btnAddSlot_clicked()
-{
-
-}
-
-void KBEditorWindow::on_btnEditSlot_clicked()
-{
-
-}
-
-void KBEditorWindow::on_btnDeleteSlot_clicked()
-{
-
-}
-
-void KBEditorWindow::on_btnOk_clicked()
-{
-
-}
-
-void KBEditorWindow::on_btnCancel_clicked()
-{
-
+    if (ok && !name.isEmpty()) {
+        //Выполнить запрос к менеджеру БЗ на добавление фрейма
+    }
 }
