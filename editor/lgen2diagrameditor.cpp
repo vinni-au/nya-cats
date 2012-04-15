@@ -46,7 +46,7 @@ void LGen2DiagramEditor::sceneSelectionChanged()
         emit selectionCleared();
 }
 
-void LGen2DiagramEditor::selectedFrameId()
+unsigned LGen2DiagramEditor::selectedFrameId()
 {
     QList<QGraphicsItem*> items = m_scene->selectedItems();
     if (items.count() == 1) {
