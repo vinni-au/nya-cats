@@ -37,7 +37,7 @@ void LGen2DiagramEditor::sceneSelectionChanged()
             if (item->type() == DiagramItem::Node)
                 emit frameSelected(item->id());
         } else {
-            Arrow* arrow = qgraphicsitem_cast<DiagramItem*>(items[0]);
+            Arrow* arrow = qgraphicsitem_cast<Arrow*>(items[0]);
             if (arrow)
                 emit linkSelected(arrow->startItem()->id(), arrow->endItem()->id());
         }
