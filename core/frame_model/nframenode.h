@@ -9,7 +9,7 @@ class NFrameNode : public QObject
     Q_OBJECT
 public:
     //тип вершины
-    enum Type {Root,FrameName,SlotName,Faset};
+    enum Type {Root,FrameName,Faset};
     explicit NFrameNode(Type type,NFrame *frame,bool createBackLink,NFrameNode *parent = 0);
     ~NFrameNode();
 

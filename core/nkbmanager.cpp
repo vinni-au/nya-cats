@@ -5,6 +5,7 @@ NKBManager::NKBManager(QObject *parent) :
 {
     dirty = false;
     file = NULL;
+    m_framenetModel = NULL;
 
     Clear();
 
@@ -29,19 +30,47 @@ NKBManager::NKBManager(QObject *parent) :
 
 //интерфейсные методы
 ///От диаграмм
+QMap<unsigned, QString> NKBManager::frameNames()
+{
+    NFrame *frame;
+    QMap<unsigned, QString> map;
+
+    foreach(frame,m_frames)
+    {
+        map.insert(frame->id(),frame->name.value().toString());
+    }
+    return map;
+}
+
 void NKBManager::selectFrame(unsigned id)
 {
 
 }
 
-void NKBManager::addFrame(QString name)
+bool NKBManager::addFrame(QString name)
 {
+    if(frameExists(name))
+        return false;
 
+    NFrame *frame = new NFrame();
+    frame->name.setValue(name);
+    m_frames.append(frame);
+
+    emit frameAdded(frame->id());
+
+    return true;
 }
 
-void NKBManager::deleteFrame(unsigned id)
+bool NKBManager::deleteFrame(unsigned id)
 {
+    NFrame *frame = getFrameById(id);
+    if(!frame)
+        return false;
 
+    m_frames.removeOne(frame);
+
+    emit frameDeleted(id);
+    return true;
 }
 
 //source id, destination id
@@ -378,4 +407,56 @@ bool NKBManager::reload()
     }
     dirty = false;
     return true;
+}
+
+NFrame* NKBManager::getFrameById(int id)
+{
+    NFrame *frame=NULL;
+    foreach(frame,m_frames)
+    {
+        if(frame->id()>id)
+        {
+            return frame;
+        }
+    }
+    return frame;
+}
+
+int NKBManager::getFreeId()
+{
+    NFrame *frame;
+    int maxId=-1;
+    foreach(frame,m_frames)
+    {
+        if(frame->id()>maxId)
+        {
+            maxId=frame->id();
+        }
+    }
+
+    return ++maxId;
+}
+
+bool NKBManager::frameExists(QString name)
+{
+    NFrame *frame;
+    foreach(frame,m_frames)
+    {
+        if(frame->name.value()==name)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+NFramenetModel *NKBManager::getFrameNetModel()
+{
+    if(!m_framenetModel)
+    {
+        m_framenetModel = new NFramenetModel();
+        m_framenetModel->setFrames(&m_frames);
+    }
+
+    return m_framenetModel;
 }

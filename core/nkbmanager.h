@@ -12,6 +12,7 @@
 #include "nproc.h"
 #include "domains/domainmodel.h"
 #include "production/nproduction.h"
+#include "./frame_model/nframenetmodel.h"
 
 //Менеджер базы знаний
 //Управляет базой знаний через апи. Создание фреймов, слотов. Сохранение. Загрузка БЗ.
@@ -38,9 +39,17 @@ public:
     bool isValid();
     bool reload();
 
+    bool frameExists(QString name);
+
+    NFramenetModel *getFrameNetModel();
+private:
+    NFrame *getFrameById(int id);
+    int getFreeId();
+
 signals:
     //Для диаграмм
     void frameAdded(unsigned id);
+    void frameDeleted(unsigned id);
 
     void sigDataLoaded();
     void sigErrorWhileValidating(QString errorText);
@@ -49,8 +58,8 @@ public slots:
     ///От диаграмм
     void selectFrame(unsigned id);
     //
-    void addFrame(QString name);
-    void deleteFrame(unsigned id);
+    bool addFrame(QString name);
+    bool deleteFrame(unsigned id);
     //source id, destination id
     void addIsa(unsigned sid, unsigned did);
     void addApo(unsigned sid, unsigned did);
@@ -59,6 +68,7 @@ public slots:
     void onDataChanged();
 private:
     QList<NFrame*> m_frames;              //список фреймов
+    NFramenetModel *m_framenetModel;
     QList<NProduction*> m_productions;    //список продукционных программок
     QList<NProc*> m_procs;                //спимок процедур на qscript
     DomainModel m_domainModel;            //модель доменов
