@@ -19,7 +19,7 @@ void GameGrid::Init()
         for (int j = 0; j < m_iYCount; j++)
         {
             QRectF rect(i * m_iXSize, j * m_iYSize, m_iXSize, m_iYSize);
-            QColor color(100, 100, 100, 100);
+            QColor color(200, 200, 200, 100);
             GridCell *cell = new GridCell(i, j, rect, color);
             m_Cells.append(cell);
             this->addItem(cell);

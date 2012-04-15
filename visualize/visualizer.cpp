@@ -18,6 +18,6 @@ Visualizer::Visualizer(QWidget *parent) :
 
 void Visualizer::populateScene()
 {
-    scene = new GameGrid(10, 10, 30, 30, this);
+    scene = new GameGrid(10, 10, 50, 50, this);
     scene->Init();
 }

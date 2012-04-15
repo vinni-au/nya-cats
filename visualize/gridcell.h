@@ -15,6 +15,7 @@ public:
     GridCell(int x, int y, QRectF rect, QColor &color, QGraphicsItem *parent = 0);
 
     QRectF boundingRect() const;
+    QPainterPath shape() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *item, QWidget *widget);
 
 protected:
