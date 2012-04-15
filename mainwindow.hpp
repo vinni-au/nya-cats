@@ -4,7 +4,7 @@
 #include <QMainWindow>
 
 #include "ui/domainwnd.h"
-#include "visualize/gamefield.h"
+#include "visualize/visualizer.h"
 
 #include "core/nkbmanager.h"
 
@@ -24,7 +24,7 @@ public:
 
     void closeEvent(QCloseEvent *event);
 protected:
-    GameField *viz;
+    Visualizer *viz;
 
 private slots:
     void on_actExit_triggered();

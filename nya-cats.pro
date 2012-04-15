@@ -42,11 +42,11 @@ SOURCES += main.cpp\
     ui/frameeditorwnd.cpp \
     ui/sloteditorwnd.cpp \
     core/frame_model/nframenode.cpp \
-    visualize/view.cpp \
-    visualize/gameitem.cpp \
-    visualize/gamefield.cpp \
     ui/kbeditorwindow.cpp \
-    visualize/grid.cpp
+    visualize/view.cpp \
+    visualize/gridcell.cpp \
+    visualize/gamegrid.cpp \
+    visualize/visualizer.cpp
 
 HEADERS  += mainwindow.hpp \
     core/nslot.h \
@@ -79,13 +79,31 @@ HEADERS  += mainwindow.hpp \
     ui/frameeditorwnd.h \
     ui/sloteditorwnd.h \
     core/frame_model/nframenode.h \
-    visualize/view.h \
-    visualize/gameitem.h \
-    visualize/gamefield.h \
     ui/kbeditorwindow.hpp \
-    visualize/grid.h
+    visualize/view.h \
+    visualize/gridcell.h \
+    visualize/gamegrid.h \
+    visualize/visualizer.h
 
 FORMS    += mainwindow.ui \
     ui/frameeditorwnd.ui \
     ui/sloteditorwnd.ui \
     ui/kbeditorwindow.ui
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -2,20 +2,21 @@
 #define VISUALIZER_H
 
 #include <QtGui/qwidget.h>
+#include <QGraphicsScene>
+#include <QGraphicsView>
 
-QT_FORWARD_DECLARE_CLASS(QGraphicsScene)
-QT_FORWARD_DECLARE_CLASS(QGraphicsView)
+#include "gamegrid.h"
 
-class GameField : public QWidget
+class Visualizer : public QWidget
 {
     Q_OBJECT
 public:
-    GameField(QWidget *parent = 0);
+    Visualizer(QWidget *parent = 0);
 
 private:
     void populateScene();
 
-    QGraphicsScene *scene;
+   GameGrid *scene;
 
 signals:
 

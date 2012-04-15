@@ -2,8 +2,7 @@
 #define VIEW_H
 
 #include <QFrame>
-
-QT_FORWARD_DECLARE_CLASS(QGraphicsView)
+#include <QGraphicsView>
 
 class View : public QFrame
 {
