@@ -66,6 +66,11 @@ public slots:
 
     void deleteLink(unsigned sid, unsigned did);
     void onDataChanged();
+
+    void setDirty(bool dirty);
+
+    QFile* file();
+    void setFile(QFile *file);
 private:
     QList<NFrame*> m_frames;              //список фреймов
     NFramenetModel *m_framenetModel;
@@ -73,8 +78,8 @@ private:
     QList<NProc*> m_procs;                //спимок процедур на qscript
     DomainModel m_domainModel;            //модель доменов
 
-    bool        dirty;                  //Признак того, что есть несохраненные изменения. true - если произведены изменения
-    QFile       *file;                  //ссылка на файл БЗ
+    bool        m_dirty;                  //Признак того, что есть несохраненные изменения. true - если произведены изменения
+    QFile       *m_file;                  //ссылка на файл БЗ
 };
 
 #endif // NKBMANAGER_H

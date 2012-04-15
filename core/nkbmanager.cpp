@@ -3,8 +3,8 @@
 NKBManager::NKBManager(QObject *parent) :
     QObject(parent)
 {
-    dirty = false;
-    file = NULL;
+    m_dirty = false;
+    m_file = NULL;
     m_framenetModel = NULL;
 
     Clear();
@@ -140,7 +140,7 @@ NKBManager::mayBeSave()
             qDebug()<<"Сохранить";
             if(this->isValid())
             {
-                if(this->file!=NULL)
+                if(this->file()!=NULL)
                 {
                     qDebug()<<"Просто сохранить";
                     this->save();
@@ -312,30 +312,30 @@ NKBManager::readFromXml(QFile &file)
         prodictionEl = prodictionEl.nextSibling().toElement();
     }
     file.close();
-    dirty=false;
+    m_dirty=false;
     emit sigDataLoaded();
 }
 
 bool
 NKBManager::saved()
 {
-    return !dirty;
+    return !m_dirty;
 }
 
 void
 NKBManager::save()
 {
-    if(!file)
+    if(!m_file)
     {
         qDebug("NKBManager::save() нет файла");
         return;
     }
 
-    file->open(QIODevice::WriteOnly);
-    QTextStream stream(file);
+    m_file->open(QIODevice::WriteOnly);
+    QTextStream stream(m_file);
     saveToXml(stream);
-    file->close();
-    dirty = false;
+    m_file->close();
+    m_dirty = false;
 }
 bool
 NKBManager::saveAs(QString filePath)
@@ -347,7 +347,7 @@ NKBManager::saveAs(QString filePath)
 //        qDebug()<<"Такой файл уже существует";
 //        return false;
 //    }
-    this->file = newFile;
+    m_file = newFile;
     save();
     return true;
 }
@@ -362,11 +362,11 @@ NKBManager::Open(QString filePath)
         qDebug()<<"Нет такого файла";
         return false;
     }
-    this->file = newFile;
-    file->open(QIODevice::ReadOnly);
+    this->m_file = newFile;
+    m_file->open(QIODevice::ReadOnly);
     readFromXml(*newFile);
-    file->close();
-    dirty=false;
+    m_file->close();
+    m_dirty=false;
     return true;
 }
 void//todo
@@ -377,35 +377,35 @@ NKBManager::Clear()
     m_productions.clear();
     m_procs.clear();
 
-    file = NULL;
-    dirty = false;
+    m_file = NULL;
+    m_dirty = false;
 }
 void
 NKBManager::onDataChanged()
 {
     qDebug()<<"NKBManager::onDataChanged()";
-    dirty = true;
+    m_dirty = true;
 }
 
 bool//todo
 NKBManager::isValid()
 {
     //return domainModel->isValid()&&varModel->isValid()&&ruleModel->isValid();
-    return 0;
+    return true;
 }
 
 bool NKBManager::reload()
 {
-    if(this->file!=NULL)
+    if(this->file()!=NULL)
     {
-        this->readFromXml(*(this->file));
+        this->readFromXml(*(this->file()));
     }
     else
     {
         this->Clear();
 
     }
-    dirty = false;
+    m_dirty = false;
     return true;
 }
 
@@ -459,4 +459,18 @@ NFramenetModel *NKBManager::getFrameNetModel()
     }
 
     return m_framenetModel;
+}
+void NKBManager::setDirty(bool dirty)
+{
+    this->m_dirty = dirty;
+}
+
+QFile* NKBManager::file()
+{
+    return this->m_file;
+}
+
+void NKBManager::setFile(QFile *file)
+{
+    m_file = file;
 }
