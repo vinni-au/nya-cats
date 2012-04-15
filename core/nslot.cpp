@@ -131,3 +131,8 @@ void NSlot::fromXml(QDomElement &slot)
         fasetEl.nextSibling().toElement();
     }
 }
+
+int NSlot::fasetCount()
+{
+    return m_fasets.count();
+}

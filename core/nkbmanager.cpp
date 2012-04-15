@@ -56,6 +56,8 @@ bool NKBManager::addFrame(QString name)
     frame->name.setValue(name);
     m_frames.append(frame);
 
+    m_framenetModel->setFrames(&m_frames);
+
     emit frameAdded(frame->id());
 
     return true;
@@ -68,6 +70,8 @@ bool NKBManager::deleteFrame(unsigned id)
         return false;
 
     m_frames.removeOne(frame);
+
+    m_framenetModel->setFrames(&m_frames);
 
     emit frameDeleted(id);
     return true;
@@ -434,7 +438,7 @@ int NKBManager::getFreeId()
         }
     }
 
-    return ++maxId;
+    return (maxId+1);
 }
 
 bool NKBManager::frameExists(QString name)

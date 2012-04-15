@@ -31,6 +31,9 @@ public:
     //мои
     void setFrames( QList<NFrame*> *frames);
 
+    int getIdByIndex(QModelIndex index);
+
+    void update();
     //QModelIndex addDomain();
     //void editDomain(QModelIndex domain,QString newName);
     //void deleteDomain(QModelIndex domain);

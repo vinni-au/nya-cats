@@ -35,7 +35,7 @@ void MainWindow::on_actAbout_triggered()
 
 void MainWindow::on_actFrameEditor_triggered()
 {
-    KBEditorWindow* wnd = new KBEditorWindow;
+    KBEditorWindow* wnd = new KBEditorWindow(&m_kbManager,this);
     wnd->show();
 }
 
@@ -146,6 +146,7 @@ MainWindow::closeEvent(QCloseEvent *event)
 
 void MainWindow::on_actDomainEditor_triggered()
 {
-    DomainWnd wnd(m_kbManager.getDomainModel(),this);
-    wnd.show();
+    DomainWnd *wnd = new DomainWnd(m_kbManager.getDomainModel(),this);
+    wnd->setWindowModality(Qt::WindowModal);
+    wnd->show();
 }

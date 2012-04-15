@@ -9,6 +9,8 @@ NFrame::NFrame(unsigned id,QObject *parent) :
 
     m_slots.append(&name);
     m_slots.append(&is_a);
+
+    this->m_id = id;
 }
 
 

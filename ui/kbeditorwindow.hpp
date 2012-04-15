@@ -2,6 +2,7 @@
 #define KBEDITORWINDOW_HPP
 
 #include <QMainWindow>
+#include "core/nkbmanager.h"
 
 namespace Ui {
     class KBEditorWindow;
@@ -12,14 +13,29 @@ class KBEditorWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit KBEditorWindow(QWidget *parent = 0);
+    explicit KBEditorWindow(NKBManager *kbManager,QWidget *parent = 0);
     ~KBEditorWindow();
 
 private slots:
-    void on_act_addFrame_triggered();
+
+    void on_btnAddFrame_clicked();
+
+    void on_btnDeleteFrame_clicked();
+
+    void on_btnAddSlot_clicked();
+
+    void on_btnEditSlot_clicked();
+
+    void on_btnDeleteSlot_clicked();
+
+    void on_btnOk_clicked();
+
+    void on_btnCancel_clicked();
 
 private:
     Ui::KBEditorWindow *ui;
+
+    NKBManager *m_kbManager;
 };
 
 #endif // KBEDITORWINDOW_HPP

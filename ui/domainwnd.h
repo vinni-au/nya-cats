@@ -1,4 +1,4 @@
-#ifndef DOMAINWND_H
+п»ї#ifndef DOMAINWND_H
 #define DOMAINWND_H
 
 #include <QWidget>
@@ -44,14 +44,14 @@ public slots:
     void onShortcutSwitch();
 
     void onDataLoaded();
-    void maybeClose();//на самом деле не закрывает форму
+    void maybeClose();//РЅР° СЃР°РјРѕРј РґРµР»Рµ РЅРµ Р·Р°РєСЂС‹РІР°РµС‚ С„РѕСЂРјСѓ
     void onCloseClick();
 
     void onOkSaveClick();
     void onCancelClick();
     void onEditModeClick();
 private:
-    void editStart();//для работы с режимом редактирования
+    void editStart();//РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ СЂРµР¶РёРјРѕРј СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ
     void editStop();
     void closeEvent(QCloseEvent *event);
 private:
@@ -61,7 +61,7 @@ private:
     QWidget *wgtMain;
     QLayout *layVertical;
 
-    QSplitter   *splitter;//разделитель
+    QSplitter   *splitter;//СЂР°Р·РґРµР»РёС‚РµР»СЊ
 
     QWidget     *wDomainPanel;
     QVBoxLayout *hlayDomainName;
@@ -82,7 +82,7 @@ private:
     QPushButton *btnEditValue;
     QPushButton *btnDeleteValue;
 
-    QHBoxLayout *layBtnsEditMode;// лэйаут для режима редактирования
+    QHBoxLayout *layBtnsEditMode;// Р»СЌР№Р°СѓС‚ РґР»СЏ СЂРµР¶РёРјР° СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ
      QWidget     *wgtBtnsEditMode;
       QPushButton *btnEditMode;
       QPushButton *btnClose;

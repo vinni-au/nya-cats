@@ -63,7 +63,7 @@ NFramenetModel::columnCount(const QModelIndex &parent) const
     if(parentNode->type == NFrameNode::FrameName)
     {
         NFrame *frame = parentNode->frame;
-        return frame->slotCount();
+        return frame->getSlotByName("name")->fasetCount();
     }
     else
         return 1;
@@ -317,7 +317,7 @@ NFramenetModel::setFrames( QList<NFrame *> *frames )
     //здесь делаем разбор списка фреймов
     //строим на основе списка дерево DomainNode
 
-    this->frames->clear();
+    //this->frames->clear();
 
     this->frames = frames;
     rootNode->children.clear();
@@ -660,5 +660,20 @@ int NFramenetModel::getFreeId()
         }
     }
 
-    return ++maxId;
+    return (maxId+1);
+}
+
+int NFramenetModel::getIdByIndex(QModelIndex index)
+{
+    NFrameNode *node = nodeFromIndex(index);
+    if(!node)
+       return -1;
+
+    NFrame *frame = node->frame;
+    return frame->id();
+}
+
+void NFramenetModel::update()
+{
+    this->reset();
 }

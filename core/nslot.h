@@ -38,6 +38,8 @@ public:
     //сериализация
     QDomElement toXml(QDomDocument& doc);
     void fromXml(QDomElement &slot);
+
+    int fasetCount();
 signals:
 
 public slots:

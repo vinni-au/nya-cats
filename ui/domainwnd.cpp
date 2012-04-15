@@ -6,123 +6,123 @@
 DomainWnd::DomainWnd(DomainModel* model,QWidget *parent) :
     QMainWindow(parent)
 {
-//  //  setModel(model);
-//    wgtMain = new QWidget();
-//    this->setCentralWidget(wgtMain);
-//    layVertical = new QVBoxLayout();
-//    wgtMain->setLayout(layVertical);
+    setModel(model);
+    wgtMain = new QWidget();
+    this->setCentralWidget(wgtMain);
+    layVertical = new QVBoxLayout();
+    wgtMain->setLayout(layVertical);
 
-//    splitter=new QSplitter(this);
-//    splitter->setOrientation(Qt::Horizontal);
-//    splitter->setChildrenCollapsible(false);
-//    splitter->setMidLineWidth(4);
-//    layVertical->addWidget(splitter);
+    splitter=new QSplitter(this);
+    splitter->setOrientation(Qt::Horizontal);
+    splitter->setChildrenCollapsible(false);
+    splitter->setMidLineWidth(4);
+    layVertical->addWidget(splitter);
 
-//    //левая половина
-//    hlayDomainName=new QVBoxLayout();
-//    lbDomainName=new QLabel();
-//    lwDomainName=new MyListView();
-//    btnAddDomain=new QPushButton();
-//    btnEditDomain=new QPushButton();
-//    btnDeleteDomain=new QPushButton();
-//    hlayDomainName->addWidget(lbDomainName);
-//    hlayDomainName->addWidget(lwDomainName);
-//    hlayDomainName->addWidget(btnAddDomain);
-//    hlayDomainName->addWidget(btnEditDomain);
-//    hlayDomainName->addWidget(btnDeleteDomain);
+    //левая половина
+    hlayDomainName=new QVBoxLayout();
+    lbDomainName=new QLabel();
+    lwDomainName=new MyListView();
+    btnAddDomain=new QPushButton();
+    btnEditDomain=new QPushButton();
+    btnDeleteDomain=new QPushButton();
+    hlayDomainName->addWidget(lbDomainName);
+    hlayDomainName->addWidget(lwDomainName);
+    hlayDomainName->addWidget(btnAddDomain);
+    hlayDomainName->addWidget(btnEditDomain);
+    hlayDomainName->addWidget(btnDeleteDomain);
 
-//    wDomainPanel=new QWidget();
-//    wDomainPanel->setLayout(hlayDomainName);
-//    splitter->addWidget(wDomainPanel);
+    wDomainPanel=new QWidget();
+    wDomainPanel->setLayout(hlayDomainName);
+    splitter->addWidget(wDomainPanel);
 
-//    //правая половина
-//    hlayValues=new QVBoxLayout();
-//    lbValue=new QLabel();
-//    lwValues=new MyListView();
-//    btnAddValue=new QPushButton();
-//    btnEditValue=new QPushButton();
-//    btnDeleteValue=new QPushButton();
-//    hlayValues->addWidget(lbValue);
-//    hlayValues->addWidget(lwValues);
-//    hlayValues->addWidget(btnAddValue);
-//    hlayValues->addWidget(btnEditValue);
-//    hlayValues->addWidget(btnDeleteValue);
+    //правая половина
+    hlayValues=new QVBoxLayout();
+    lbValue=new QLabel();
+    lwValues=new MyListView();
+    btnAddValue=new QPushButton();
+    btnEditValue=new QPushButton();
+    btnDeleteValue=new QPushButton();
+    hlayValues->addWidget(lbValue);
+    hlayValues->addWidget(lwValues);
+    hlayValues->addWidget(btnAddValue);
+    hlayValues->addWidget(btnEditValue);
+    hlayValues->addWidget(btnDeleteValue);
 
-//    wValuePanel=new QWidget();
-//    wValuePanel->setLayout(hlayValues);
-//    splitter->addWidget(wValuePanel);
-//    ///
-//    //this->setCentralWidget(splitter);
+    wValuePanel=new QWidget();
+    wValuePanel->setLayout(hlayValues);
+    splitter->addWidget(wValuePanel);
+    ///
+    //this->setCentralWidget(splitter);
 
-//    //для режима редактирования
-//    wgtBtnsEditMode = new QWidget();
-//    wgtBtnsEditMode->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Fixed);
-//    layBtnsEditMode = new QHBoxLayout();//кнопки для режима редактирования
-//    wgtBtnsEditMode->setLayout(layBtnsEditMode);
-//    btnOkSave   =   new QPushButton("ОК");
-//    btnCancel   =   new QPushButton("Отмена");
-//    btnEditMode =   new QPushButton("Редактировать");
-//    btnClose    =   new QPushButton("Закрыть");
-//    layBtnsEditMode->addWidget(btnOkSave);
-//    layBtnsEditMode->addWidget(btnCancel);
-//    layBtnsEditMode->addWidget(btnEditMode);
-//    layBtnsEditMode->addWidget(btnClose);
-//    connect(btnOkSave,SIGNAL(clicked()),SLOT(onOkSaveClick()));
-//    connect(btnCancel,SIGNAL(clicked()),SLOT(onCancelClick()));
-//    connect(btnEditMode,SIGNAL(clicked()),SLOT(onEditModeClick()));
-//    connect(btnClose,SIGNAL(clicked()),SLOT(onCloseClick()));
-//    layVertical->addWidget(wgtBtnsEditMode);
+    //для режима редактирования
+    wgtBtnsEditMode = new QWidget();
+    wgtBtnsEditMode->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Fixed);
+    layBtnsEditMode = new QHBoxLayout();//кнопки для режима редактирования
+    wgtBtnsEditMode->setLayout(layBtnsEditMode);
+    btnOkSave   =   new QPushButton("ОК");
+    btnCancel   =   new QPushButton("Отмена");
+    btnEditMode =   new QPushButton("Редактировать");
+    btnClose    =   new QPushButton("Закрыть");
+    layBtnsEditMode->addWidget(btnOkSave);
+    layBtnsEditMode->addWidget(btnCancel);
+    layBtnsEditMode->addWidget(btnEditMode);
+    layBtnsEditMode->addWidget(btnClose);
+    connect(btnOkSave,SIGNAL(clicked()),SLOT(onOkSaveClick()));
+    connect(btnCancel,SIGNAL(clicked()),SLOT(onCancelClick()));
+    connect(btnEditMode,SIGNAL(clicked()),SLOT(onEditModeClick()));
+    connect(btnClose,SIGNAL(clicked()),SLOT(onCloseClick()));
+    layVertical->addWidget(wgtBtnsEditMode);
 
-//    this->retranslate();
+    this->retranslate();
 
-//    QObject::connect(btnAddDomain,SIGNAL(clicked()),this,SLOT(onAddDomain()));
-//    QObject::connect(btnEditDomain,SIGNAL(clicked()),this,SLOT(onEditDomain()));
-//    QObject::connect(btnDeleteDomain,SIGNAL(clicked()),this,SLOT(onDeleteDomain()));
-//    QObject::connect(btnAddValue,SIGNAL(clicked()),this,SLOT(onAddValue()));
-//    QObject::connect(btnEditValue,SIGNAL(clicked()),this,SLOT(onEditValue()));
-//    QObject::connect(btnDeleteValue,SIGNAL(clicked()),this,SLOT(onDeleteValue()));
+    QObject::connect(btnAddDomain,SIGNAL(clicked()),this,SLOT(onAddDomain()));
+    QObject::connect(btnEditDomain,SIGNAL(clicked()),this,SLOT(onEditDomain()));
+    QObject::connect(btnDeleteDomain,SIGNAL(clicked()),this,SLOT(onDeleteDomain()));
+    QObject::connect(btnAddValue,SIGNAL(clicked()),this,SLOT(onAddValue()));
+    QObject::connect(btnEditValue,SIGNAL(clicked()),this,SLOT(onEditValue()));
+    QObject::connect(btnDeleteValue,SIGNAL(clicked()),this,SLOT(onDeleteValue()));
 
-//    connect(lwDomainName,SIGNAL(currentItemChanged(QModelIndex)),SLOT(onDomainSelected(QModelIndex)));
+    connect(lwDomainName,SIGNAL(currentItemChanged(QModelIndex)),SLOT(onDomainSelected(QModelIndex)));
 
-// //   this->lwDomainName->setModel(this->m_domainModel);
-// //   this->lwValues->setModel(m_domainModel);
+    this->lwDomainName->setModel(this->m_domainModel);
+    this->lwValues->setModel(m_domainModel);
 
-//    connect(lwDomainName,SIGNAL(activated(QModelIndex)),SLOT(onEditDomain()));
-//    connect(lwValues,SIGNAL(activated(QModelIndex)),SLOT(onEditValue()));
+    connect(lwDomainName,SIGNAL(activated(QModelIndex)),SLOT(onEditDomain()));
+    connect(lwValues,SIGNAL(activated(QModelIndex)),SLOT(onEditValue()));
 
-//    //shortcuts
-//    QAction *actAdd = new QAction(this);
-//    actAdd->setShortcut(QKeySequence("Ctrl++"));
-//    connect(actAdd,SIGNAL(triggered()),SLOT(onShortcutAdd()));
-//    lwValues->addAction(actAdd);
+    //shortcuts
+    QAction *actAdd = new QAction(this);
+    actAdd->setShortcut(QKeySequence("Ctrl++"));
+    connect(actAdd,SIGNAL(triggered()),SLOT(onShortcutAdd()));
+    lwValues->addAction(actAdd);
 
-//    QAction *actDelete = new QAction(this);
-//    actDelete->setShortcut(QKeySequence("Ctrl+Delete"));
-//    connect(actDelete,SIGNAL(triggered()),SLOT(onShortcutDelete()));
-//    lwValues->addAction(actDelete);
+    QAction *actDelete = new QAction(this);
+    actDelete->setShortcut(QKeySequence("Ctrl+Delete"));
+    connect(actDelete,SIGNAL(triggered()),SLOT(onShortcutDelete()));
+    lwValues->addAction(actDelete);
 
-//    QShortcut *shortcutSwitch = new QShortcut(QKeySequence("Ctrl+*"),this);
-//    connect(shortcutSwitch,SIGNAL(activated()),SLOT(onShortcutSwitch()));
-//            /////////////////////
+    QShortcut *shortcutSwitch = new QShortcut(QKeySequence("Ctrl+*"),this);
+    connect(shortcutSwitch,SIGNAL(activated()),SLOT(onShortcutSwitch()));
+            /////////////////////
 
-////    QVector< Domain*> *domains=new  QVector< Domain*>();
-////    Domain *domain=new Domain("Логический");
-////    domain->values<<"Правда"<<"Ложь";
-////    *domains << domain;
-
-
-////    domain=new Domain("Числовой");
-////    domain->values<<"Один"<<"Два"<<"Три";
-////    *domains << domain;
-/////    DataModels::instance()->domainModel->setDomains(domains);
-/////////////////////////
+//    QVector< Domain*> *domains=new  QVector< Domain*>();
+//    Domain *domain=new Domain("Логический");
+//    domain->values<<"Правда"<<"Ложь";
+//    *domains << domain;
 
 
-//    //lwDomainName->selectionModel()->setCurrentIndex(m_domainModel->index(0,1,QModelIndex()),QItemSelectionModel::ClearAndSelect);
+//    domain=new Domain("Числовой");
+//    domain->values<<"Один"<<"Два"<<"Три";
+//    *domains << domain;
+///    DataModels::instance()->domainModel->setDomains(domains);
+///////////////////////
 
-//    //onDataLoaded();
-////    editStop();
-// //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   connect(DataModels::instance(),SIGNAL(sigDataLoaded()),SLOT(onDataLoaded()));
+
+    lwDomainName->selectionModel()->setCurrentIndex(m_domainModel->index(0,1,QModelIndex()),QItemSelectionModel::ClearAndSelect);
+
+    onDataLoaded();
+    editStop();
+ //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   connect(DataModels::instance(),SIGNAL(sigDataLoaded()),SLOT(onDataLoaded()));
 }
 
 void
