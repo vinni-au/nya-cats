@@ -1,0 +1,111 @@
+<kb>
+    <domains/>
+    <frames>
+        <frame type="0" id="0">
+            <slots>
+                <slot system="0">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="domain" name="slot_type"/>
+                        <faset value="asda" name="value"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="domain" name="marker_type"/>
+                        <faset value="defDomain" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="domain" name="slot_type"/>
+                        <faset value="defValue" name="value"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="domain" name="marker_type"/>
+                        <faset value="defDomain" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="105" id="1">
+            <slots>
+                <slot system="0">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="domain" name="slot_type"/>
+                        <faset value="asad" name="value"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="domain" name="marker_type"/>
+                        <faset value="defDomain" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="domain" name="slot_type"/>
+                        <faset value="defValue" name="value"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="domain" name="marker_type"/>
+                        <faset value="defDomain" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="105" id="2">
+            <slots>
+                <slot system="0">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="domain" name="slot_type"/>
+                        <faset value="asfsgd" name="value"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="domain" name="marker_type"/>
+                        <faset value="defDomain" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="domain" name="slot_type"/>
+                        <faset value="defValue" name="value"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="domain" name="marker_type"/>
+                        <faset value="defDomain" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="327785" id="3">
+            <slots>
+                <slot system="0">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="domain" name="slot_type"/>
+                        <faset value="sgdsg" name="value"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="domain" name="marker_type"/>
+                        <faset value="defDomain" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="domain" name="slot_type"/>
+                        <faset value="defValue" name="value"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="domain" name="marker_type"/>
+                        <faset value="defDomain" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+    </frames>
+    <procs/>
+    <productions/>
+</kb>

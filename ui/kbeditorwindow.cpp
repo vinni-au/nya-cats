@@ -67,25 +67,34 @@ void KBEditorWindow::on_btnDeleteFrame_clicked()
 
 void KBEditorWindow::on_btnAddSlot_clicked()
 {
-
+    QModelIndex index = ui->treeView->selectionModel()->currentIndex();
+    NFramenetModel *model = qobject_cast<NFramenetModel*>(ui->treeView->model());
+    model->insertRow(0,index);
 }
 
 void KBEditorWindow::on_btnEditSlot_clicked()
 {
+    SlotEditorWnd *wnd = new SlotEditorWnd(this);
+    wnd->setModal(true);
 
+    wnd->show();
 }
 
 void KBEditorWindow::on_btnDeleteSlot_clicked()
 {
-
+    QModelIndex index = ui->treeView->selectionModel()->currentIndex();
+    NFramenetModel *model = qobject_cast<NFramenetModel*>(ui->treeView->model());
+    model->removeRow(index.row(),model->parent(index));
 }
 
 void KBEditorWindow::on_btnOk_clicked()
 {
-
+    this->m_kbManager->save();
+    close();
 }
 
 void KBEditorWindow::on_btnCancel_clicked()
 {
-
+    m_kbManager->reload();
+    close();
 }

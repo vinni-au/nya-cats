@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "core/nkbmanager.h"
+#include "sloteditorwnd.h"
 
 namespace Ui {
     class KBEditorWindow;
