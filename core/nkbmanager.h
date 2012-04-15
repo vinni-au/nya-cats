@@ -41,10 +41,11 @@ public:
 
     bool frameExists(QString name);
 
-    NFramenetModel *getFrameNetModel();
+    NFramenetModel  *getFrameNetModel();
+    DomainModel     *getDomainModel();
 private:
-    NFrame *getFrameById(int id);
-    int getFreeId();
+    NFrame  *getFrameById(int id);
+    int     getFreeId();
 
 signals:
     //Для диаграмм
@@ -72,14 +73,14 @@ public slots:
     QFile* file();
     void setFile(QFile *file);
 private:
-    QList<NFrame*> m_frames;              //список фреймов
-    NFramenetModel *m_framenetModel;
-    QList<NProduction*> m_productions;    //список продукционных программок
-    QList<NProc*> m_procs;                //спимок процедур на qscript
-    DomainModel m_domainModel;            //модель доменов
+    QList<NFrame*>      m_frames;               //список фреймов
+    NFramenetModel      *m_framenetModel;
+    QList<NProduction*> m_productions;          //список продукционных программок
+    QList<NProc*>       m_procs;                //спимок процедур на qscript
+    DomainModel         m_domainModel;          //модель доменов
 
-    bool        m_dirty;                  //Признак того, что есть несохраненные изменения. true - если произведены изменения
-    QFile       *m_file;                  //ссылка на файл БЗ
+    bool        m_dirty;                        //Признак того, что есть несохраненные изменения. true - если произведены изменения
+    QFile       *m_file;                        //ссылка на файл БЗ
 };
 
 #endif // NKBMANAGER_H

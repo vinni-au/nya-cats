@@ -15,6 +15,21 @@ public:
     explicit KBEditorWindow(QWidget *parent = 0);
     ~KBEditorWindow();
 
+private slots:
+    void on_btnAddFrame_clicked();
+
+    void on_btnDeleteFrame_clicked();
+
+    void on_btnAddSlot_clicked();
+
+    void on_btnEditSlot_clicked();
+
+    void on_btnDeleteSlot_clicked();
+
+    void on_btnOk_clicked();
+
+    void on_btnCancel_clicked();
+
 private:
     Ui::KBEditorWindow *ui;
 };

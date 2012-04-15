@@ -474,3 +474,8 @@ void NKBManager::setFile(QFile *file)
 {
     m_file = file;
 }
+
+DomainModel* NKBManager::getDomainModel()
+{
+    return &m_domainModel;
+}

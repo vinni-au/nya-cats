@@ -146,6 +146,6 @@ MainWindow::closeEvent(QCloseEvent *event)
 
 void MainWindow::on_actDomainEditor_triggered()
 {
-    DomainWnd wnd(new DomainModel());
+    DomainWnd wnd(m_kbManager.getDomainModel(),this);
     wnd.show();
 }
