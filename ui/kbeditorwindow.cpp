@@ -17,9 +17,9 @@ KBEditorWindow::~KBEditorWindow()
 void KBEditorWindow::on_act_addFrame_triggered()
 {
     bool ok;
-    QString name = QInputDialog::getText(this, "Создать фрейм", "Введите имя фрейма:", QLineEdit::Normal, QString(), &ok);
+    QString name = QInputDialog::getText(this, "РЎРѕР·РґР°С‚СЊ С„СЂРµР№Рј", "Р’РІРµРґРёС‚Рµ РёРјСЏ С„СЂРµР№РјР°:", QLineEdit::Normal, QString(), &ok);
 
     if (ok && !name.isEmpty()) {
-        //Выполнить запрос к менеджеру БЗ на добавление фрейма
+        //Р’С‹РїРѕР»РЅРёС‚СЊ Р·Р°РїСЂРѕСЃ Рє РјРµРЅРµРґР¶РµСЂСѓ Р‘Р— РЅР° РґРѕР±Р°РІР»РµРЅРёРµ С„СЂРµР№РјР°
     }
 }

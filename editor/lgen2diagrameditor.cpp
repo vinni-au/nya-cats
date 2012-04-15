@@ -45,3 +45,14 @@ void LGen2DiagramEditor::sceneSelectionChanged()
     if (!items.count())
         emit selectionCleared();
 }
+
+void LGen2DiagramEditor::selectedFrameId()
+{
+    QList<QGraphicsItem*> items = m_scene->selectedItems();
+    if (items.count() == 1) {
+        DiagramItem* item = qgraphicsitem_cast<DiagramItem*>(items[0]);
+        if (item)
+            if (item->type() == DiagramItem::Node)
+                return item->id();
+    }
+}

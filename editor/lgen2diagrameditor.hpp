@@ -16,6 +16,8 @@ class LGen2DiagramEditor : public QGraphicsView
 public:
     explicit LGen2DiagramEditor(QWidget *parent = 0);
 
+    unsigned selectedFrameId();
+
 signals:
     void frameSelected(unsigned id);
     void linkSelected(unsigned sid, unsigned eid);
