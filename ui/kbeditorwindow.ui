@@ -23,14 +23,14 @@
       <item>
        <widget class="QPushButton" name="btnAddFrame">
         <property name="text">
-         <string>Добавить фрейм</string>
+         <string>Р”РѕР±Р°РІРёС‚СЊ С„СЂРµР№Рј</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="btnDeleteFrame">
         <property name="text">
-         <string>Удалить фрейм</string>
+         <string>РЈРґР°Р»РёС‚СЊ С„СЂРµР№Рј</string>
         </property>
        </widget>
       </item>
@@ -53,21 +53,21 @@
       <item>
        <widget class="QPushButton" name="btnAddSlot">
         <property name="text">
-         <string>Добавить слот</string>
+         <string>Р”РѕР±Р°РІРёС‚СЊ СЃР»РѕС‚</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="btnEditSlot">
         <property name="text">
-         <string>Редактировать слот</string>
+         <string>РР·РјРµРЅРёС‚СЊ СЃР»РѕС‚</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="btnDeleteSlot">
         <property name="text">
-         <string>Удалить слот</string>
+         <string>РЈРґР°РёС‚СЊ СЃР»РѕС‚</string>
         </property>
        </widget>
       </item>
@@ -87,14 +87,14 @@
       <item>
        <widget class="QPushButton" name="btnOk">
         <property name="text">
-         <string>ОК</string>
+         <string>РћРљ</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="btnCancel">
         <property name="text">
-         <string>Отмена</string>
+         <string>РћС‚РјРµРЅР°</string>
         </property>
        </widget>
       </item>
@@ -142,7 +142,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
