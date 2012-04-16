@@ -40,6 +40,11 @@ public:
 
     bool addSlot(QModelIndex& frameIndex);
     bool deleteSlot(QModelIndex& slotIndex);
+
+    bool setSlotFasetValue(QModelIndex slotIndex,QString fasetName,QVariant value);
+    QVariant getSlotFasetValue(QModelIndex slotIndex,QString fasetName);
+
+    bool isSlot(QModelIndex slotIndex);
     //QModelIndex addDomain();
     //void editDomain(QModelIndex domain,QString newName);
     //void deleteDomain(QModelIndex domain);

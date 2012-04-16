@@ -82,9 +82,18 @@ void KBEditorWindow::on_btnAddSlot_clicked()
 
 void KBEditorWindow::on_btnEditSlot_clicked()
 {
-    SlotEditorWnd *wnd = new SlotEditorWnd(this);
-    wnd->setModal(true);
-    wnd->show();
+    QModelIndex index = ui->treeView->selectionModel()->currentIndex();
+    NFramenetModel *model = qobject_cast<NFramenetModel*>(ui->treeView->model());
+    if(model->isSlot(index))
+    {
+        SlotEditorWnd *wnd = new SlotEditorWnd(index,m_kbManager,this);
+        wnd->setModal(true);
+        wnd->show();
+    }
+    else
+    {
+        QMessageBox::information(this,"","Выделите слот, пожалуйста.",QMessageBox::Ok);
+    }
 }
 
 void KBEditorWindow::on_btnDeleteSlot_clicked()

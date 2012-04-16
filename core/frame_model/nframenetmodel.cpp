@@ -731,21 +731,62 @@ QVariant NFramenetModel::headerData(int section, Qt::Orientation orientation, in
 
     QString str = slot.getFasetByIndex(section)->name();
     return QVariant( str);
+}
 
-//             switch (section) {
-//                 case 0:
-//                     return QVariant("Name");
-//                 case 1:
-//                     return QVariant("Personnel");
-//                 case 2:
-//                     return QVariant("Holiday");
-//                 case 3:
-//                     return QVariant("Date");
-//                 case 4:
-//                     return QVariant("Drunk by one");
-//                 default:
-//                     return QVariant();
-//             }
-//    return QAbstractItemModel::headerData(section,orientation,role);
 
+bool NFramenetModel::setSlotFasetValue(QModelIndex slotIndex,QString fasetName,QVariant value)
+{
+    if(!slotIndex.isValid())
+        return false;
+    if(fasetName=="")
+        return false;
+    NFrameNode *node = nodeFromIndex(slotIndex);
+    if(!node)
+        return false;
+    if(node->type!=NFrameNode::Faset)
+        return false;
+
+    NFrame *frame = node->frame;
+
+    if(!frame)
+        return false;
+
+    NSlot *slot = frame->getSlotByIndex(slotIndex.row());
+    NFaset *faset = slot->getFasetByName(fasetName);
+    if(!faset)
+        return false;
+    faset->setValue(value);
+}
+
+QVariant NFramenetModel::getSlotFasetValue(QModelIndex slotIndex,QString fasetName)
+{
+    if(!slotIndex.isValid())
+        return QVariant();
+    if(fasetName=="")
+        return QVariant();
+    NFrameNode *node = nodeFromIndex(slotIndex);
+    if(!node)
+        return QVariant();
+    if(node->type!=NFrameNode::Faset)
+        return QVariant();
+
+    NFrame *frame = node->frame;
+
+    if(!frame)
+        return QVariant();
+
+    NSlot *slot = frame->getSlotByIndex(slotIndex.row());
+    NFaset *faset = slot->getFasetByName(fasetName);
+    if(!faset)
+        return QVariant();
+    return faset->value();
+}
+bool NFramenetModel::isSlot(QModelIndex slotIndex)
+{
+    NFrameNode *node = nodeFromIndex(slotIndex);
+    if(!node)
+        return false;
+    if(node->type!=NFrameNode::Faset)
+        return false;
+    return true;
 }
