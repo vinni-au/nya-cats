@@ -118,6 +118,9 @@
          <height>0</height>
         </size>
        </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::ActionsContextMenu</enum>
+       </property>
       </widget>
       <widget class="LGen2DiagramEditor" name="graphicsView"/>
      </widget>
@@ -142,7 +145,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

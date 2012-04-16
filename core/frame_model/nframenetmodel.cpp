@@ -6,11 +6,15 @@ NFramenetModel::NFramenetModel(QObject *parent) :
 {
     rootNode=new NFrameNode(NFrameNode::Root,NULL,NULL);
     itemsIsEditable = true;
+
+
 }
+
 NFramenetModel::~NFramenetModel()
 {
     delete rootNode;
 }
+
 void
 NFramenetModel::setRootNode(NFrameNode *node)
 {
@@ -18,17 +22,19 @@ NFramenetModel::setRootNode(NFrameNode *node)
     rootNode=node;
     reset();
 }
+
 QModelIndex
 NFramenetModel::index(int row, int column, const QModelIndex &parent) const
 {
-    if(!rootNode||row<0||column<0)
+    if(!rootNode || row<0 || column<0)
         return QModelIndex();
     NFrameNode *parentNode=nodeFromIndex(parent);
     NFrameNode *childNode=parentNode->children.value(row);
     if(!childNode)
         return QModelIndex();
-    return createIndex(row,0,childNode);
+    return createIndex(row,column,childNode);
 }
+
 NFrameNode*
 NFramenetModel::nodeFromIndex(const QModelIndex &index) const
 {
@@ -41,33 +47,27 @@ NFramenetModel::nodeFromIndex(const QModelIndex &index) const
         return rootNode;
     }
 }
+
 int
 NFramenetModel::rowCount(const QModelIndex &parent) const
 {
-    if(parent.column()>0)
-        return 0;
     NFrameNode *parentNode=nodeFromIndex(parent);
     if(!parentNode)
         return 0;
     return parentNode->children.count();
 }
+
 int
 NFramenetModel::columnCount(const QModelIndex &parent) const
 {
-    if(parent.column()>0)
-        return 0;
     NFrameNode *parentNode=nodeFromIndex(parent);
     if(!parentNode)
         return 0;
 
-    if(parentNode->type == NFrameNode::FrameName)
-    {
-        NFrame *frame = parentNode->frame;
-        return frame->getSlotByName("name")->fasetCount();
-    }
-    else
-        return 1;
+    NSlot slot;
+    return slot.fasetCount();
 }
+
 QModelIndex
 NFramenetModel::parent(const QModelIndex &child) const
 {
@@ -105,6 +105,10 @@ NFramenetModel::data(const QModelIndex &index, int role) const
         return "root";
         break;
     case NFrameNode::FrameName:
+
+        if(index.column()!=0)
+            break;
+
         frame = node->frame;
         if(!frame)
             return "errNoFrame";
@@ -119,17 +123,11 @@ NFramenetModel::data(const QModelIndex &index, int role) const
 
         frame = node->frame;
         slot = frame->getSlotByIndex(index.row());
-
         faset = slot->getFasetByIndex(column);
+//!!!???
+        if(faset->name()=="name" && slot->isSystem())
+            return QString("#").append(faset->value().toString());
         return faset->value();
-//        if(column == 0)//имя слота
-//        {
-//        }
-//        else
-//        {
-
-//        }
-
         break;
     default:
         qDebug()<<"NFramenetModel::data  неизвестный тип node";
@@ -239,6 +237,7 @@ NFramenetModel::removeRow(int row, const QModelIndex &parent)
         NFrameNode *parentNode = nodeFromIndex(parent);
         NFrameNode *node = parentNode->children.at(row);
         NFrame *frame=NULL;
+        NSlot *slot=NULL;
         int inx;
         switch(parentNode->type)//родитель
         {
@@ -252,9 +251,20 @@ NFramenetModel::removeRow(int row, const QModelIndex &parent)
             emit sigDataChanged();
             break;
         case NFrameNode::FrameName:    //удаляем слоты
-            parentNode->children.removeAt(row);
+
             frame=parentNode->frame;
+
+            slot = frame->getSlotByIndex(row);
+            if(!slot)
+                qDebug()<<"NFramenetModel::removeRow slot is null";
+
+            if(slot->isSystem())
+                break;
+
+            parentNode->children.removeAt(row);
             //emit sigDomainValueDeleted(domain->name, domain->values.at(row));    //сигнал об удалении значения
+
+
             frame->removeSlot(row);
             emit sigDataChanged();
             break;
@@ -676,4 +686,66 @@ int NFramenetModel::getIdByIndex(QModelIndex index)
 void NFramenetModel::update()
 {
     this->reset();
+}
+
+bool NFramenetModel::addSlot(QModelIndex& frameIndex)
+{
+    NFrameNode *node = nodeFromIndex(frameIndex);
+
+    if(!node)
+        return false;
+
+    if(node->type!=NFrameNode::FrameName)
+        return false;
+
+    int row = node->children.count();
+    if(!insertRow(row,frameIndex))
+        return false;
+
+    return true;
+}
+bool NFramenetModel::deleteSlot(QModelIndex& slotIndex)
+{
+    NFrameNode *node = nodeFromIndex(slotIndex);
+    if(!node)
+        return false;
+    if(node->type!=NFrameNode::Faset)
+        return false;
+    int row = slotIndex.row();
+    QModelIndex frameIndex =(QModelIndex) parent(slotIndex);
+    if(!removeRow(row,frameIndex))
+        return false;
+    return true;
+}
+QVariant NFramenetModel::headerData(int section, Qt::Orientation orientation, int role) const
+{
+
+    if (role != Qt::DisplayRole)
+             return QVariant();
+    if (orientation != Qt::Horizontal)
+        return QVariant();
+
+    NSlot slot;
+    if(section > slot.fasetCount())
+        return QVariant();
+
+    QString str = slot.getFasetByIndex(section)->name();
+    return QVariant( str);
+
+//             switch (section) {
+//                 case 0:
+//                     return QVariant("Name");
+//                 case 1:
+//                     return QVariant("Personnel");
+//                 case 2:
+//                     return QVariant("Holiday");
+//                 case 3:
+//                     return QVariant("Date");
+//                 case 4:
+//                     return QVariant("Drunk by one");
+//                 default:
+//                     return QVariant();
+//             }
+//    return QAbstractItemModel::headerData(section,orientation,role);
+
 }

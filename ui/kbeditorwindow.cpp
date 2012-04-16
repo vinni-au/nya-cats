@@ -8,19 +8,24 @@ KBEditorWindow::KBEditorWindow(NKBManager *kbManager,QWidget *parent) :
 {
     ui->setupUi(this);
 
-
-
     this->m_kbManager = kbManager;
 
     this->ui->treeView->setModel(m_kbManager->getFrameNetModel());
+
+    m_simpleView = false;
+    setSimpleView(m_simpleView);
+    //Контекстное меню для инспектора объектов
+    QAction *actSwitch = new QAction("Переключить вид простой/подробный",ui->treeView);
+    ui->treeView->addAction(actSwitch);
+    QObject::connect(actSwitch,SIGNAL(triggered()),SLOT(onSimpleViewSwitched()));
+
+    ui->treeView->header()->setResizeMode(QHeaderView::ResizeToContents);
 }
 
 KBEditorWindow::~KBEditorWindow()
 {
     delete ui;
 }
-
-
 
 void KBEditorWindow::on_btnAddFrame_clicked()
 {
@@ -69,14 +74,16 @@ void KBEditorWindow::on_btnAddSlot_clicked()
 {
     QModelIndex index = ui->treeView->selectionModel()->currentIndex();
     NFramenetModel *model = qobject_cast<NFramenetModel*>(ui->treeView->model());
-    model->insertRow(0,index);
+    if(!model->addSlot(index))
+    {
+        QMessageBox::information(this,"","Не удалось добавить слот. Фрейм не выбран",QMessageBox::Ok);
+    }
 }
 
 void KBEditorWindow::on_btnEditSlot_clicked()
 {
     SlotEditorWnd *wnd = new SlotEditorWnd(this);
     wnd->setModal(true);
-
     wnd->show();
 }
 
@@ -84,7 +91,10 @@ void KBEditorWindow::on_btnDeleteSlot_clicked()
 {
     QModelIndex index = ui->treeView->selectionModel()->currentIndex();
     NFramenetModel *model = qobject_cast<NFramenetModel*>(ui->treeView->model());
-    model->removeRow(index.row(),model->parent(index));
+    if(!model->deleteSlot(index))
+    {
+        QMessageBox::information(this,"","Не выбран слот",QMessageBox::Ok);
+    }
 }
 
 void KBEditorWindow::on_btnOk_clicked()
@@ -97,4 +107,19 @@ void KBEditorWindow::on_btnCancel_clicked()
 {
     m_kbManager->reload();
     close();
+}
+
+void KBEditorWindow::onSimpleViewSwitched()
+{
+    m_simpleView = !m_simpleView;
+    setSimpleView(m_simpleView);
+}
+
+void KBEditorWindow::setSimpleView(bool isSimple)
+{
+    ui->treeView->setColumnHidden(1,isSimple);
+    ui->treeView->setColumnHidden(3,isSimple);
+    ui->treeView->setColumnHidden(4,isSimple);
+    ui->treeView->setColumnHidden(5,isSimple);
+    ui->treeView->setColumnHidden(6,isSimple);
 }

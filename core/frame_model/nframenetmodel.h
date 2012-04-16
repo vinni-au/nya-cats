@@ -3,6 +3,7 @@
 
 #include <QAbstractItemModel>
 #include "nframenode.h"
+#include "core/nframe.h"
 
 class NFramenetModel : public QAbstractItemModel
 {
@@ -27,6 +28,8 @@ public:
     virtual bool removeRow(int row, const QModelIndex &parent);
     virtual bool insertRow(int row, const QModelIndex &parent);
 
+    virtual QVariant headerData(int section, Qt::Orientation orientation, int role) const;
+
     //virtual Qt::DropActions supportedDropActions() const;
     //мои
     void setFrames( QList<NFrame*> *frames);
@@ -34,6 +37,9 @@ public:
     int getIdByIndex(QModelIndex index);
 
     void update();
+
+    bool addSlot(QModelIndex& frameIndex);
+    bool deleteSlot(QModelIndex& slotIndex);
     //QModelIndex addDomain();
     //void editDomain(QModelIndex domain,QString newName);
     //void deleteDomain(QModelIndex domain);
@@ -76,6 +82,8 @@ private:
     NFrameNode *rootNode;
 
     bool itemsIsEditable;
+
+    bool m_simpleView;
 
 };
 

@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "core/nkbmanager.h"
 #include "sloteditorwnd.h"
+#include <QAction>
 
 namespace Ui {
     class KBEditorWindow;
@@ -17,6 +18,8 @@ public:
     explicit KBEditorWindow(NKBManager *kbManager,QWidget *parent = 0);
     ~KBEditorWindow();
 
+
+    void setSimpleView(bool isSimple);
 private slots:
 
     void on_btnAddFrame_clicked();
@@ -33,10 +36,13 @@ private slots:
 
     void on_btnCancel_clicked();
 
+    void onSimpleViewSwitched();
 private:
     Ui::KBEditorWindow *ui;
 
     NKBManager *m_kbManager;
+
+    bool m_simpleView;
 };
 
 #endif // KBEDITORWINDOW_HPP

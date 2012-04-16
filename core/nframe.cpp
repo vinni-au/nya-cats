@@ -7,6 +7,9 @@ NFrame::NFrame(unsigned id,QObject *parent) :
     name.setName("name");
     is_a.setName("is_a");
 
+    name.setSystem(true);
+    is_a.setSystem(true);
+
     m_slots.append(&name);
     m_slots.append(&is_a);
 
@@ -114,10 +117,10 @@ void NFrame::addSlot(NSlot *slot)
 
 void NFrame::insertSlot(int row,NSlot *slot)
 {
-    if(row>-1 && row <m_slots.count()-1)
+   // if(row>-1 && row <m_slots.count())
         m_slots.insert(row,slot);
-    else
-        qDebug()<<"Не могу вставить слота во фрейм";
+   //// else
+   //     qDebug()<<"Не могу вставить слота во фрейм";
 }
 
 void NFrame::removeSlot(int row)
