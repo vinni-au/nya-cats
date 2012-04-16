@@ -12,16 +12,16 @@
 #include <QShortcut>
 #include <QMessageBox>
 #include <QCloseEvent>
-#include "core/domains/domainmodel.h"
 #include "mylistview.h"
 #include "saver.h"
+#include "core/nkbmanager.h"
 
 
 class DomainWnd : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit DomainWnd(DomainModel* model,QWidget *parent = 0);
+    explicit DomainWnd(NKBManager *kbManager,QWidget *parent = 0);
     void retranslate();
     bool isEditMode();
 
@@ -56,6 +56,7 @@ private:
     void closeEvent(QCloseEvent *event);
 private:
     DomainModel* m_domainModel;
+    NKBManager *m_kbManager;
 
     bool editMode;
     QWidget *wgtMain;

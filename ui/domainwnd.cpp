@@ -3,10 +3,11 @@
 #include <QStringList>
 
 
-DomainWnd::DomainWnd(DomainModel* model,QWidget *parent) :
+DomainWnd::DomainWnd(NKBManager *kbManager,QWidget *parent) :
     QMainWindow(parent)
 {
-    setModel(model);
+
+    setModel(kbManager->getDomainModel());
     wgtMain = new QWidget();
     this->setCentralWidget(wgtMain);
     layVertical = new QVBoxLayout();
@@ -142,8 +143,6 @@ DomainWnd::retranslate()
     btnDeleteValue->setText(tr("Удалить значение"));
 }
 
-
-
 void
 DomainWnd::onAddDomain()
 {
@@ -155,6 +154,7 @@ DomainWnd::onAddDomain()
     lwDomainName->scrollTo(index);
 
 }
+
 void
 DomainWnd::onEditDomain()
 {
@@ -162,19 +162,17 @@ DomainWnd::onEditDomain()
     if(!isEditMode())
         return;
 
-    if(!Saver::areUsure("Вы действительно хотите редактировать имя домена? \nИмя домена будет изменено во всех переменных. \nПродолжить?"))
-        return;
-
     QModelIndex index = lwDomainName->currentIndex();
     lwDomainName->edit(index);
 }
+
 void
 DomainWnd::onDeleteDomain()
 {
     qDebug()<<"DomainWnd::onEditDomain()";
     if(!isEditMode())
         return;
-    if(!Saver::areUsure("Вы действительно хотите удалить домен? \nБудут удалены все переменные этого домена. \nПродолжить?"))
+    if(!m_kbManager->areUsure("Вы действительно хотите удалить домен? \nБудут удалены все переменные этого домена. \nПродолжить?"))
         return;
 
     QModelIndex index = lwDomainName->currentIndex();
@@ -185,7 +183,6 @@ DomainWnd::onDeleteDomain()
 void
 DomainWnd::onAddValue()
 {
-
     qDebug()<<"DomainWnd::onAddValue()";
     if(!isEditMode())
         return;
@@ -195,25 +192,27 @@ DomainWnd::onAddValue()
     lwValues->selectionModel()->setCurrentIndex(valueIndex,QItemSelectionModel::ClearAndSelect);
     lwValues->scrollTo(valueIndex);
 }
+
 void
 DomainWnd::onEditValue()
 {
     qDebug()<<"DomainWnd::onEditValue())";
     if(!isEditMode())
         return;
-    if(!Saver::areUsure("Вы действительно хотите изменить значение? \nБудут изменены значения во всех правилах. \nПродолжить?"))
+    if(!m_kbManager->areUsure("Вы действительно хотите изменить значение? \nБудут изменены значения во всех правилах. \nПродолжить?"))
         return;
 
     QModelIndex valueIndex = lwValues->currentIndex();
     lwValues->edit(valueIndex);
 }
+
 void
 DomainWnd::onDeleteValue()
 {
     qDebug()<<"DomainWnd::onDeleteValue()";
     if(!isEditMode())
         return;
-    if(!Saver::areUsure("Вы действительно удалить значение значение? \nБудут удалены все посылки правил, где встерчается это значение. \nПродолжить?"))
+    if(!m_kbManager->areUsure("Вы действительно удалить значение значение? \nБудут удалены все посылки правил, где встерчается это значение. \nПродолжить?"))
         return;
 
     QModelIndex valueIndex = lwValues->currentIndex();
@@ -225,10 +224,8 @@ DomainWnd::onDomainSelected(QModelIndex index)
 {
     qDebug()<<"DomainWnd::onDomainSelected(QModelIndex index)";
    // QModelIndex valIndex=DataModels::instance()->domainModel->index(0,0,index);
-
     if(index.isValid() && index.model()->data(index)!= "root")
     {
-
         lwValues->setRootIndex(index);
     }
 }
@@ -249,6 +246,7 @@ DomainWnd::onShortcutAdd()
         onAddValue();
     }
 }
+
 void
 DomainWnd::onShortcutDelete()
 {
@@ -359,12 +357,12 @@ DomainWnd::onDataLoaded()
 void
 DomainWnd::onOkSaveClick()
 {
- //!!!!   if(DataModels::instance()->isValid())
+    if(m_kbManager->isValid())
     {
-        //!!!DataModels::instance()->save();
+        m_kbManager->save();
         editStop();
     }
- //!!!!   else
+    else
     {
         QMessageBox::warning(this,"Ошибка при сохранении!","Неверные данные!");
     }
@@ -373,11 +371,11 @@ DomainWnd::onOkSaveClick()
 void
 DomainWnd::onCancelClick()
 {
-    //!!!if(DataModels::instance()->reload())
+    if(m_kbManager->reload())
     {
         editStop();
     }
-    //!!else
+    else
         QMessageBox::critical(this,"Ошибка!","Не удалось откатить!");
 }
 
@@ -398,7 +396,7 @@ DomainWnd::maybeClose()
 {
     if(Saver::mayBeSave())//пытаемся сохранить
     {
-        if(1/*!!!!DataModels::instance()->saved()*/)//нажал сохранить
+        if(m_kbManager->saved())//нажал сохранить
         {
             editStop();
         }
