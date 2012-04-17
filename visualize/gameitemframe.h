@@ -1,6 +1,7 @@
 #ifndef GAMEITEMFRAME_H
 #define GAMEITEMFRAME_H
 
+#include <QGraphicsItem>
 #include <QGraphicsPixmapItem>
 #include "gameitem.h"
 
@@ -20,6 +21,10 @@ public:
 
     void SetItem(GameItem *item);
     GameItem* GetItem();
+
+protected:
+    void hoverEnterEvent(QGraphicsSceneHoverEvent *event);
+    void hoverLeaveEvent(QGraphicsSceneHoverEvent *event);
 };
 
 #endif // GAMEITEMFRAME_H

@@ -11,18 +11,36 @@
 class GameGrid : public QGraphicsScene
 {
 protected:
-    int m_iXCount;
-    int m_iYCount;
-    int m_iXSize;
-    int m_iYSize;
+    int m_iXCellCount;
+    int m_iYCellCount;
+    int m_iXCellSize;
+    int m_iYCellSize;
 
     bool m_bIsGridVisible;
 
     QList<GridCell*> m_Cells;
-    QList<GameItemFrame*> m_Frames;
+
+//    class ItemsFrame : public QGraphicsItem
+//    {
+//    protected:
+//        QRectF m_Rect;
+
+//        QList<GameItemFrame*> m_Items;
+
+//    public:
+//        ItemsFrame(QRectF rect);
+//        void AddItem(GameItemFrame* item);
+
+//    protected:
+//        QRectF boundingRect() const;
+//        QPainterPath shape() const;
+//        void paint(QPainter *painter, const QStyleOptionGraphicsItem *item, QWidget *widget);
+//    };
+
+//    ItemsFrame* m_ItemsFrame;
 
 public:
-    GameGrid(int xCount, int yCount, int xSize, int ySize, QObject * parent = 0);
+    GameGrid(int xCellCount, int yCellCount, int xCellSize, int yCellSize, QObject * parent = 0);
     void Init();
 };
 

@@ -1,6 +1,7 @@
 #include "gameitemframe.h"
+#include <QtGui>
 
-GameItemFrame::GameItemFrame(GameItem* item, QRectF rect, QColor &color, QGraphicsItem *parent = 0) :
+GameItemFrame::GameItemFrame(GameItem* item, QRectF rect, QColor &color, QGraphicsItem *parent) :
     QGraphicsPixmapItem(parent),
     m_Rect(rect),
     m_Color(color)
@@ -22,7 +23,7 @@ QPainterPath GameItemFrame::shape() const
 
 void GameItemFrame::paint(QPainter *painter, const QStyleOptionGraphicsItem *item, QWidget *widget)
 {
-    QColor fillColor = (option->state & QStyle::State_MouseOver) ? m_Color.dark(255) : m_Color;
+    QColor fillColor = (item->state & QStyle::State_MouseOver) ? m_Color.dark(255) : m_Color;
     QBrush b = painter->brush();
     QPen p = painter->pen();
 
@@ -41,7 +42,7 @@ void GameItemFrame::SetItem(GameItem *item)
         return;
 
     m_GameItem = item;
-    this->setPixmap(item->GetPicture());
+    //this->setPixmap(item->GetPicture());
 }
 
 GameItem* GameItemFrame::GetItem()
