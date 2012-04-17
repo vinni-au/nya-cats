@@ -26,9 +26,11 @@ QPainterPath GridCell::shape() const
 
 void GridCell::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
+
     QColor fillColor = (option->state & QStyle::State_MouseOver) ? m_Color.dark(255) : m_Color;
     QBrush b = painter->brush();
     QPen p = painter->pen();
+
     painter->setBrush(fillColor);
     painter->setPen(m_Color);
     painter->drawRect(m_Rect);

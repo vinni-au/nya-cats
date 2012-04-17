@@ -2,14 +2,17 @@
 #define GRIDCELL_H
 
 #include <QGraphicsPixmapItem>
+#include "gameitem.h"
 
 class GridCell : public QGraphicsPixmapItem
 {
 protected:
     int m_iXIndex;
     int m_iYIndex;
+
     QRectF m_Rect;
     QColor m_Color;
+    GameItem *m_GameItem;
 
 public:
     GridCell(int x, int y, QRectF rect, QColor &color, QGraphicsItem *parent = 0);

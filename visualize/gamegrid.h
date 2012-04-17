@@ -5,7 +5,7 @@
 #include <QGraphicsScene>
 
 #include "gridcell.h"
-
+#include "gameitemframe.h"
 
 
 class GameGrid : public QGraphicsScene
@@ -19,6 +19,7 @@ protected:
     bool m_bIsGridVisible;
 
     QList<GridCell*> m_Cells;
+    QList<GameItemFrame*> m_Frames;
 
 public:
     GameGrid(int xCount, int yCount, int xSize, int ySize, QObject * parent = 0);

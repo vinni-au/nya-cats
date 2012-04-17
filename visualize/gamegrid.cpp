@@ -15,6 +15,7 @@ void GameGrid::Init()
 {
     this->addRect(0, 0, m_iXCount * m_iXSize, m_iYCount * m_iXSize);
 
+    // Добавляем ячейки
     for (int i = 0; i < m_iXCount; i++)
         for (int j = 0; j < m_iYCount; j++)
         {
@@ -24,4 +25,6 @@ void GameGrid::Init()
             m_Cells.append(cell);
             this->addItem(cell);
         }
+
+
 }
