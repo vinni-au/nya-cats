@@ -1,21 +1,33 @@
 #include "lgen2diagrameditor.hpp"
 
 LGen2DiagramEditor::LGen2DiagramEditor(QWidget *parent) :
-    QGraphicsView(parent)
+    QGraphicsView(parent), m_zoomc(1.3)
 {
     m_scene = new DiagramScene;
 
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 
+    setRenderHint(QPainter::Antialiasing);
+
+    setScene(m_scene);
+
     QObject::connect(m_scene, SIGNAL(selectionChanged()),
                      SLOT(sceneSelectionChanged()));
 }
 
-void LGen2DiagramEditor::addNode(unsigned id, QString title, DiagramItem::DiagramType type)
+void LGen2DiagramEditor::addNode(unsigned id, QString title)
 {
-    DiagramItem* node = new DiagramItem(id, type, title);
+    DiagramItem* node = new DiagramItem(id, DiagramItem::Node, title);
+    m_items.insert(id, node);
     m_scene->addItem(node);
+}
+
+void LGen2DiagramEditor::deleteNode(unsigned id)
+{
+    DiagramItem* item = m_items[id];
+    item->removeArrows();
+    m_scene->removeItem(m_items[id]);
 }
 
 void LGen2DiagramEditor::addLink(unsigned sid, unsigned did, QString title)
@@ -55,4 +67,14 @@ unsigned LGen2DiagramEditor::selectedFrameId()
             if (item->type() == DiagramItem::Node)
                 return item->id();
     }
+}
+
+void LGen2DiagramEditor::zoomIn()
+{
+    scale(1.3, 1.3);
+}
+
+void LGen2DiagramEditor::zoonOut()
+{
+    scale(1 / 1.3, 1 / 1.3);
 }

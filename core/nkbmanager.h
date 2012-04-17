@@ -49,7 +49,7 @@ private:
 
 signals:
     //Для диаграмм
-    void frameAdded(unsigned id);
+    void frameAdded(unsigned id, QString name);
     void frameDeleted(unsigned id);
 
     void sigDataLoaded();

@@ -20,6 +20,17 @@ KBEditorWindow::KBEditorWindow(NKBManager *kbManager,QWidget *parent) :
     QObject::connect(actSwitch,SIGNAL(triggered()),SLOT(onSimpleViewSwitched()));
 
     ui->treeView->header()->setResizeMode(QHeaderView::ResizeToContents);
+
+    QObject::connect(ui->btn_zoomIn, SIGNAL(clicked()),
+                     ui->graphicsView, SLOT(zoomIn()));
+    QObject::connect(ui->btn_zoomOut, SIGNAL(clicked()),
+                     ui->graphicsView, SLOT(zoonOut()));
+
+    //Соединяем сигналы/слоты менеджера БЗ и диаграмминга
+    QObject::connect(m_kbManager, SIGNAL(frameAdded(uint,QString)),
+                     ui->graphicsView, SLOT(addNode(uint,QString)));
+    QObject::connect(m_kbManager, SIGNAL(frameDeleted(uint)),
+                     ui->graphicsView, SLOT(deleteNode(uint)));
 }
 
 KBEditorWindow::~KBEditorWindow()
@@ -131,4 +142,20 @@ void KBEditorWindow::setSimpleView(bool isSimple)
     ui->treeView->setColumnHidden(4,isSimple);
     ui->treeView->setColumnHidden(5,isSimple);
     ui->treeView->setColumnHidden(6,isSimple);
+}
+
+void KBEditorWindow::on_btn_addIsa_toggled(bool checked)
+{
+    if (checked) {
+        ui->btn_addSub->setChecked(false);
+        ui->graphicsView->scene()->setMode(DiagramScene::InsertLine);
+    } else ui->graphicsView->scene()->setMode(DiagramScene::MoveItem);
+}
+
+void KBEditorWindow::on_btn_addSub_toggled(bool checked)
+{
+    if (checked) {
+        ui->btn_addIsa->setChecked(false);
+        ui->graphicsView->scene()->setMode(DiagramScene::InsertLine);
+    } else ui->graphicsView->scene()->setMode(DiagramScene::MoveItem);
 }

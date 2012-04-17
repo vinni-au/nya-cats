@@ -49,6 +49,7 @@ void Arrow::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
     painter->setPen(myPen);
     painter->setBrush(m_color);
     QLineF centerLine(m_startItem->pos(), m_endItem->pos());
+
     QPolygonF endPolygon = m_endItem->polygon();
     QPointF p1 = endPolygon.first() + m_endItem->pos();
     QPointF p2;
@@ -65,7 +66,20 @@ void Arrow::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
         p1 = p2;
     }
 
-    setLine(QLineF(intersectPoint, m_startItem->pos()));
+    QPolygonF startPolygon = m_startItem->polygon();
+    p1 = startPolygon.first() + m_startItem->pos();
+    QPointF intersectPoint1;
+    for (int i = 1; i < startPolygon.count(); ++i) {
+        p2 = endPolygon.at(i) + m_startItem->pos();
+        polyLine = QLineF(p1, p2);
+        QLineF::IntersectType intersectType =
+                polyLine.intersect(centerLine, &intersectPoint1);
+
+        if (intersectType == QLineF::BoundedIntersection)
+            break;
+        p1 = p2;
+    }
+    setLine(QLineF(intersectPoint, intersectPoint1));
     double angle = ::acos(line().dx() / line().length());
     if (line().dy() >= 0)
         angle = (Pi * 2) - angle;
@@ -77,17 +91,12 @@ void Arrow::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
 
     m_arrowHead.clear();
     m_arrowHead << line().p1() << arrowP1 << arrowP2;
+
+    if (isSelected())
+        painter->setPen(QPen(m_color, 2, Qt::DotLine));
+
     painter->drawLine(line());
     painter->drawPolygon(m_arrowHead);
-
-    if (isSelected()) {
-        painter->setPen(QPen(m_color, 1, Qt::DashLine));
-        QLineF myLine = line();
-        myLine.translate(0, 4.0);
-        painter->drawLine(myLine);
-        myLine.translate(0,-8.0);
-        painter->drawLine(myLine);
-    }
 
     int x = (m_startItem->pos().x() + m_endItem->pos().x()) / 2;
     int y = (m_startItem->pos().y() + m_endItem->pos().y()) / 2;

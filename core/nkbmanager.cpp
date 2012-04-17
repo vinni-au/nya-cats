@@ -58,7 +58,7 @@ bool NKBManager::addFrame(QString name)
 
     m_framenetModel->setFrames(&m_frames);
 
-    emit frameAdded(frame->id());
+    emit frameAdded(frame->id(), frame->name.value().toString());
 
     return true;
 }

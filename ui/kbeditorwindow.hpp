@@ -37,6 +37,11 @@ private slots:
     void on_btnCancel_clicked();
 
     void onSimpleViewSwitched();
+
+    void on_btn_addIsa_toggled(bool checked);
+
+    void on_btn_addSub_toggled(bool checked);
+
 private:
     Ui::KBEditorWindow *ui;
 
