@@ -73,9 +73,13 @@ void NFrame::fromXml(QDomElement &frame)
     }
     QDomElement slotEl = slotsEl.firstChild().toElement();
     NSlot* slot;
+    int i=0;
     while(!slotEl.isNull())
     {
-        slot = getSlotByName(slotEl.attribute("name"));
+        //QString attr = slotEl.attribute("name");
+        slot = getSlotByIndex(i);
+        i++;
+       // slot = getSlotByName(slotEl.attribute("name"));
         if(slot)//такой слот есть (системный)
         {
             if(slot->isSystem())
@@ -93,7 +97,7 @@ void NFrame::fromXml(QDomElement &frame)
             newSlot->fromXml(slotEl);
             this->m_slots.append(newSlot);
         }
-        slotEl.nextSibling().toElement();
+        slotEl=slotEl.nextSibling().toElement();
     }
 }
 

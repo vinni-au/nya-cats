@@ -11,6 +11,7 @@ NKBManager::NKBManager(QObject *parent) :
 
     connect(&m_domainModel,SIGNAL(sigDataChanged()),SLOT(onDataChanged()));
 
+
     //контроль целостности модели
     //QObject::connect(domainModel,SIGNAL(sigDomainDeleted(QString)),varModel,SLOT(onDomainDeleted(QString)));
     //QObject::connect(domainModel,SIGNAL(sigDomainNameChanged(QString,QString)),varModel,SLOT(onDomainNameChanged(QString,QString)));
@@ -60,6 +61,8 @@ bool NKBManager::addFrame(QString name)
 
     emit frameAdded(frame->id(), frame->name.value().toString());
 
+    setDirty(true);
+
     return true;
 }
 
@@ -74,6 +77,9 @@ bool NKBManager::deleteFrame(unsigned id)
     m_framenetModel->setFrames(&m_frames);
 
     emit frameDeleted(id);
+
+    setDirty(true);
+
     return true;
 }
 
@@ -130,7 +136,7 @@ NKBManager::mayBeSave()
 
     if(!this->saved())
     {
-        qDebug()<<"ЭС не сохранена";
+        qDebug()<<"БЗ не сохранена";
         QMessageBox mb;
         mb.setWindowTitle("Сохранить?");
         mb.setText(tr("Сохранить предыдущие действия?"));
@@ -381,6 +387,11 @@ NKBManager::Clear()
     m_productions.clear();
     m_procs.clear();
 
+    if(m_framenetModel)
+    {
+        m_framenetModel->setFrames(&m_frames);
+    }
+
     m_file = NULL;
     m_dirty = false;
 }
@@ -400,15 +411,15 @@ NKBManager::isValid()
 
 bool NKBManager::reload()
 {
+    QFile *tmpF = m_file;
+    this->Clear();
+    m_file = tmpF;
+
     if(this->file()!=NULL)
     {
         this->readFromXml(*(this->file()));
     }
-    else
-    {
-        this->Clear();
 
-    }
     m_dirty = false;
     return true;
 }
@@ -460,6 +471,7 @@ NFramenetModel *NKBManager::getFrameNetModel()
     {
         m_framenetModel = new NFramenetModel();
         m_framenetModel->setFrames(&m_frames);
+        connect(m_framenetModel,SIGNAL(sigDataChanged()),SLOT(onDataChanged()));
     }
 
     return m_framenetModel;

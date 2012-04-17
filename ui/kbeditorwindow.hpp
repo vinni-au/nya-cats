@@ -5,6 +5,7 @@
 #include "core/nkbmanager.h"
 #include "sloteditorwnd.h"
 #include <QAction>
+#include <QCloseEvent>
 
 namespace Ui {
     class KBEditorWindow;
@@ -41,7 +42,8 @@ private slots:
     void on_btn_addIsa_toggled(bool checked);
 
     void on_btn_addSub_toggled(bool checked);
-
+private:
+    void closeEvent(QCloseEvent *event);
 private:
     Ui::KBEditorWindow *ui;
 

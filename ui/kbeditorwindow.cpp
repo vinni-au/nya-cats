@@ -159,3 +159,32 @@ void KBEditorWindow::on_btn_addSub_toggled(bool checked)
         ui->graphicsView->scene()->setMode(DiagramScene::InsertLine);
     } else ui->graphicsView->scene()->setMode(DiagramScene::MoveItem);
 }
+
+
+void
+KBEditorWindow::closeEvent(QCloseEvent *event)
+{
+    qDebug()<<"KBEditorWindow::closeEvent";
+
+    if(m_kbManager->mayBeSave())//пытаемся сохранить
+    {
+        if(m_kbManager->saved())//нажал сохранить
+        {
+
+        }
+        else
+        {
+            on_btnCancel_clicked();
+        }
+    }
+    else
+    {
+        event->ignore();
+        return;
+    }
+
+    event->accept();
+    //emit sigClosed();
+}
+
+

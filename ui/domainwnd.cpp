@@ -359,8 +359,10 @@ DomainWnd::onOkSaveClick()
 {
     if(m_kbManager->isValid())
     {
-        m_kbManager->save();
-        editStop();
+        if(m_kbManager->mayBeSave())
+        {
+            editStop();
+        }
     }
     else
     {
@@ -394,7 +396,7 @@ DomainWnd::onCloseClick()
 void
 DomainWnd::maybeClose()
 {
-    if(Saver::mayBeSave())//пытаемся сохранить
+    if(m_kbManager->mayBeSave())//пытаемся сохранить
     {
         if(m_kbManager->saved())//нажал сохранить
         {
