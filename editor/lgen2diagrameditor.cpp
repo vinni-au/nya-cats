@@ -1,7 +1,7 @@
 #include "lgen2diagrameditor.hpp"
 
 LGen2DiagramEditor::LGen2DiagramEditor(QWidget *parent) :
-    QGraphicsView(parent), m_zoomc(1.3)
+    QGraphicsView(parent)
 {
     m_scene = new DiagramScene;
 

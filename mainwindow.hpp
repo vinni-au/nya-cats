@@ -48,7 +48,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
-    NKBManager m_kbManager;
+    NKBManager* m_kbManager;
 
 
 };

@@ -11,8 +11,6 @@ class LGen2DiagramEditor : public QGraphicsView
 
     DiagramScene* m_scene;
 
-    qreal m_zoomc;
-
     QMap<unsigned, DiagramItem*> m_items;
 
 public:

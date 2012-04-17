@@ -4,7 +4,7 @@
 
 
 DomainWnd::DomainWnd(NKBManager *kbManager,QWidget *parent) :
-    QMainWindow(parent)
+    QMainWindow(parent), m_kbManager(kbManager)
 {
 
     setModel(kbManager->getDomainModel());
