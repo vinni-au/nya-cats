@@ -1,11 +1,11 @@
 #include "gameitem.h"
 
-GameItem::GameItem(QPixmap *pic) :
+GameItem::GameItem(QPixmap &pic) :
     m_Pic(pic)
 {
 }
 
-QPixmap* GameItem::GetPicture()
+QPixmap& GameItem::GetPic()
 {
     return m_Pic;
 }

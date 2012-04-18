@@ -44,11 +44,12 @@ SOURCES += main.cpp\
     core/frame_model/nframenode.cpp \
     ui/kbeditorwindow.cpp \
     visualize/view.cpp \
-    visualize/gridcell.cpp \
-    visualize/gamegrid.cpp \
     visualize/visualizer.cpp \
-    visualize/gameitem.cpp \
-    visualize/gameitemframe.cpp
+    visualize/gamescene.cpp \
+    visualize/gameitembase.cpp \
+    visualize/grid.cpp \
+    visualize/itemtemplatesframe.cpp \
+    visualize/gameitem.cpp
 
 HEADERS  += mainwindow.hpp \
     core/nslot.h \
@@ -83,16 +84,57 @@ HEADERS  += mainwindow.hpp \
     core/frame_model/nframenode.h \
     ui/kbeditorwindow.hpp \
     visualize/view.h \
-    visualize/gridcell.h \
-    visualize/gamegrid.h \
     visualize/visualizer.h \
-    visualize/gameitem.h \
-    visualize/gameitemframe.h
+    visualize/gamescene.h \
+    visualize/gameitembase.h \
+    visualize/grid.h \
+    visualize/itemtemplatesframe.h \
+    visualize/gameitem.h
 
 FORMS    += mainwindow.ui \
     ui/frameeditorwnd.ui \
     ui/sloteditorwnd.ui \
     ui/kbeditorwindow.ui
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

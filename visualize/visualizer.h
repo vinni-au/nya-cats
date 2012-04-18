@@ -5,20 +5,21 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 
-#include "gamegrid.h"
+#include "gamescene.h"
+#include "gameitem.h"
 
 class Visualizer : public QWidget
 {
     Q_OBJECT
+private:
+    void populateScene();
+    GameScene *scene;
+
 public:
     Visualizer(QWidget *parent = 0);
 
-private:
-    void populateScene();
-
-   GameGrid *scene;
-
 signals:
+    void AddItemTemplate(GameItem* item);
 
 public slots:
 
