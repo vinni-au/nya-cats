@@ -62,10 +62,12 @@ public slots:
     bool addFrame(QString name);
     bool deleteFrame(unsigned id);
     //source id, destination id
-    void addIsa(unsigned sid, unsigned did);
-    void addApo(unsigned sid, unsigned did);
+    bool addIsa(unsigned sid, unsigned did);
+    bool addApo(unsigned sid, unsigned did);
 
-    void deleteLink(unsigned sid, unsigned did);
+    bool deleteIsa(unsigned sid, unsigned did);
+    bool deleteApo(unsigned sid, unsigned did);
+
     void onDataChanged();
 
     void setDirty(bool dirty);

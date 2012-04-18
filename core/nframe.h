@@ -37,6 +37,7 @@ public:
     void addSlot(NSlot *slot);
     void insertSlot(int row,NSlot *slot);
     void removeSlot(int row);
+    void removeSlot(NSlot *slot);
 signals:
 
 public slots:

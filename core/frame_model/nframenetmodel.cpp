@@ -756,6 +756,7 @@ bool NFramenetModel::setSlotFasetValue(QModelIndex slotIndex,QString fasetName,Q
     if(!faset)
         return false;
     faset->setValue(value);
+    return true;
 }
 
 QVariant NFramenetModel::getSlotFasetValue(QModelIndex slotIndex,QString fasetName)

@@ -136,3 +136,7 @@ void NFrame::removeSlot(int row)
         qDebug()<<"Не могу удалить слота во фрейм";
 
 }
+void NFrame::removeSlot(NSlot *slot)
+{
+    m_slots.removeOne(slot);
+}

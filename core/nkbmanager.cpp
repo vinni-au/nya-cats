@@ -84,19 +84,92 @@ bool NKBManager::deleteFrame(unsigned id)
 }
 
 //source id, destination id
-void NKBManager::addIsa(unsigned sid, unsigned did)
+bool NKBManager::addIsa(unsigned sid, unsigned did)
 {
+    NFrame *sFrame = getFrameById(sid);
+    NFrame *dFrame = getFrameById(did);
 
+    if((!sFrame) || (!dFrame) )
+    {
+        qDebug()<<"void NKBManager::addIsa  Связь не создана. Нет фреймов.";
+        return false;
+    }
+    QString destName = dFrame->name.value().toString();
+    sFrame->getSlotByName("is_a")->setValue( destName );
+
+    return true;
 }
 
-void NKBManager::addApo(unsigned sid, unsigned did)
+bool NKBManager::addApo(unsigned sid, unsigned did)
 {
+    NFrame *sFrame = getFrameById(sid);
+    NFrame *dFrame = getFrameById(did);
 
+    if((!sFrame) || (!dFrame) )
+    {
+        qDebug()<<"NKBManager::addApo  Связь не создана. Нет фреймов.";
+        return false;
+    }
+
+    QString sFrameName = sFrame->name.value().toString();
+
+    NSlot *slot = new NSlot();
+    slot->setName(sFrameName);
+    slot->getFasetByName("type")->setValue("frame");
+    slot->setValue(sFrameName);
+
+    dFrame->addSlot(slot);
+
+    return true;
 }
 
-void NKBManager::deleteLink(unsigned sid, unsigned did)
-{
 
+bool NKBManager::deleteIsa(unsigned sid, unsigned did)
+{
+    NFrame *sFrame = getFrameById(sid);
+    NFrame *dFrame = getFrameById(did);
+
+    if((!sFrame) || (!dFrame) )
+    {
+        qDebug()<<"void NKBManager::addIsa  Связь не удалена. Нет фреймов.";
+        return false;
+    }
+
+    NSlot *slot = sFrame->getSlotByName("is_a");
+    QString isaFrameName = slot->value().toString();
+
+    if(isaFrameName.isEmpty())
+    {
+        qDebug()<<"void NKBManager::addIsa  Связь не удалена. Ее нет).";
+            return false;
+    }
+
+    slot->setValue("");
+    return true;
+}
+
+bool NKBManager::deleteApo(unsigned sid, unsigned did)
+{
+    NFrame *sFrame = getFrameById(sid);
+    NFrame *dFrame = getFrameById(did);
+
+    if((!sFrame) || (!dFrame) )
+    {
+        qDebug()<<"NKBManager::deleteApo  Связь не удалена. Нет фреймов.";
+        return false;
+    }
+
+    QString sFrameName = sFrame->name.value().toString();
+
+    NSlot *slot = dFrame->getSlotByName(sFrameName);
+    if(!slot)
+    {
+        qDebug()<<"NKBManager::deleteApo  Связь не удалена. Нет связи.";
+        return false;
+    }
+
+    dFrame->removeSlot(slot);
+    return true;
 }
 
 //конец интерфейсные методы
