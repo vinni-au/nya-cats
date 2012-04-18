@@ -46,9 +46,9 @@ SOURCES += main.cpp\
     visualize/view.cpp \
     visualize/visualizer.cpp \
     visualize/gamescene.cpp \
-    visualize/gameitembase.cpp \
     visualize/grid.cpp \
-    visualize/itemtemplatesframe.cpp \
+    visualize/cell.cpp \
+    visualize/gameitemfactory.cpp \
     visualize/gameitem.cpp
 
 HEADERS  += mainwindow.hpp \
@@ -86,15 +86,27 @@ HEADERS  += mainwindow.hpp \
     visualize/view.h \
     visualize/visualizer.h \
     visualize/gamescene.h \
-    visualize/gameitembase.h \
     visualize/grid.h \
-    visualize/itemtemplatesframe.h \
+    visualize/cell.h \
+    visualize/gameitemfactory.h \
     visualize/gameitem.h
 
 FORMS    += mainwindow.ui \
     ui/frameeditorwnd.ui \
     ui/sloteditorwnd.ui \
     ui/kbeditorwindow.ui
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

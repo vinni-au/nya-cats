@@ -6,7 +6,6 @@
 #include <QGraphicsView>
 
 #include "gamescene.h"
-#include "gameitem.h"
 
 class Visualizer : public QWidget
 {
@@ -19,7 +18,6 @@ public:
     Visualizer(QWidget *parent = 0);
 
 signals:
-    void AddItemTemplate(GameItem* item);
 
 public slots:
 

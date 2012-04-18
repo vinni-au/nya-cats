@@ -1,7 +1,9 @@
 #include "gameitem.h"
 
-GameItem::GameItem(QPixmap &pic) :
-    m_Pic(pic)
+GameItem::GameItem(GameItemType type, QPixmap& pic, int team) :
+   m_Type(type)
+  ,m_Pic(pic)
+  ,m_Team(team)
 {
 }
 

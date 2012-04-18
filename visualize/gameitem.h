@@ -3,13 +3,22 @@
 
 #include <QtGui>
 
+enum GameItemType
+{
+    gitWarior,
+    gitHealer,
+    gitArcher
+};
+
 class GameItem
 {
 protected:
-    QPixmap m_Pic;
+    GameItemType    m_Type;
+    QPixmap         m_Pic;
+    int             m_Team;
 
 public:
-    GameItem(QPixmap &pic);
+    GameItem(GameItemType type, QPixmap& pic, int team);
     QPixmap& GetPic();
 };
 

@@ -11,13 +11,10 @@ void GameScene::CreateGrid(int count, QRectF &rect, QColor &color)
     m_Grid = new Grid(count, rect, color, this);
 }
 
-void GameScene::CreateItemsFrame(QRectF &rect, QColor &color)
+void GameScene::CreateFactory(GameItem* item, QRectF& rect)
 {
-    m_ItemsFrame = new ItemTemplatesFrame(rect, color, this);
-    this->addItem(m_ItemsFrame);
-}
+    if (!m_FactoryFrame)
+        m_FactoryFrame = new FactoryFrame(this);
 
-void GameScene::AddItemTemplate(GameItem* item)
-{
-    m_ItemsFrame->AddItemTemplate(item);
+    m_FactoryFrame->AddItem(item, rect);
 }

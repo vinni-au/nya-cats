@@ -2,6 +2,7 @@
 
 #include "view.h"
 #include "visualizer.h"
+#include "gameitem.h"
 
 Visualizer::Visualizer(QWidget *parent) :
     QWidget(parent)
@@ -19,23 +20,23 @@ Visualizer::Visualizer(QWidget *parent) :
 void Visualizer::populateScene()
 {
     QColor col(100, 100, 100, 50);
-    QRectF rect(0, 0, 500, 500);
-    QRectF rect1(-70, 0, 60, 100);
+    QRectF rect(0, 0, 600, 600);
+    QRectF rect1(-70, 0, 60,60);
+    QRectF rect2(-70, 70, 60, 60);
+    QRectF rect3(-70, 140, 60, 60);
 
     scene = new GameScene(this);
     scene->CreateGrid(10, rect, col);
-    scene->CreateItemsFrame(rect1, col);
 
-    QPixmap pic1("D:\\_develop\\QtProjects\\nya-cats\\visualize\\doc.gif");
-    QPixmap pic2("D:\\_develop\\QtProjects\\nya-cats\\visualize\\war.gif");
-    QPixmap pic3("D:\\_develop\\QtProjects\\nya-cats\\visualize\\hant.gif");
+    QPixmap pic1("..\\nya-cats\\visualize\\doc.gif");
+    QPixmap pic2("..\\nya-cats\\visualize\\war.gif");
+    QPixmap pic3("..\\nya-cats\\visualize\\hant.gif");
 
-    GameItem* item = new GameItem(pic1);
-    scene->AddItemTemplate(item);
+    GameItem* giWarior = new GameItem(gitWarior, pic2, 0);
+    GameItem* giHealer = new GameItem(gitHealer, pic1, 0);
+    GameItem* giArcher = new GameItem(gitArcher, pic3, 0);
 
-    item = new GameItem(pic2);
-    scene->AddItemTemplate(item);
-
-    item = new GameItem(pic3);
-    scene->AddItemTemplate(item);
+    scene->CreateFactory(giWarior, rect1);
+    scene->CreateFactory(giHealer, rect2);
+    scene->CreateFactory(giArcher, rect3);
 }

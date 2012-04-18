@@ -1,23 +1,22 @@
 #ifndef GAMESCENE_H
 #define GAMESCENE_H
 
+#include <QtGui>
 #include <QList>
 #include <QGraphicsScene>
 #include "grid.h"
-#include "itemtemplatesframe.h"
-#include "gameitem.h"
+#include "gameitemfactory.h"
 
 class GameScene : public QGraphicsScene
 {
 protected:
-    Grid *m_Grid;
-    ItemTemplatesFrame *m_ItemsFrame;
+    Grid*           m_Grid;
+    FactoryFrame*   m_FactoryFrame;
 
 public:
     GameScene(QObject* parent = 0);
     void CreateGrid(int count, QRectF &rect, QColor& color);
-    void CreateItemsFrame(QRectF &rect, QColor& color);
-    void AddItemTemplate(GameItem* item);
+    void CreateFactory(GameItem* item, QRectF& rect);
 };
 
 #endif // GAMESCENE_H
