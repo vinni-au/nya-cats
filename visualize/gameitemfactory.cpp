@@ -9,7 +9,7 @@ FactoryFrame::FactoryFrame(QGraphicsScene* scene) :
 void FactoryFrame::AddItem(GameItem* item, QRectF& rect)
 {
     GameItemFactory* factory = new GameItemFactory(item, rect);
-    //m_FactoryList.append(factory);
+    m_FactoryList.append(factory);
     m_Scene->addItem(factory);
 }
 
