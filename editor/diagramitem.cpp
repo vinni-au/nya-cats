@@ -37,6 +37,26 @@ void DiagramItem::removeArrows()
     }
 }
 
+void DiagramItem::removeArrowTo(DiagramItem *item)
+{
+    foreach (Arrow* arrow, m_arrows) {
+        if (arrow->endItem() == item) {
+            scene()->removeItem(arrow);
+            delete arrow;
+        }
+    }
+}
+
+void DiagramItem::removeArrowFrom(DiagramItem *item)
+{
+    foreach (Arrow* arrow, m_arrows) {
+        if (arrow->startItem() == item) {
+            scene()->removeItem(arrow);
+            delete arrow;
+        }
+    }
+}
+
 void DiagramItem::addArrow(Arrow *arrow)
 {
     m_arrows << arrow;

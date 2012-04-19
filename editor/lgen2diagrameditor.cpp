@@ -27,7 +27,8 @@ void LGen2DiagramEditor::deleteNode(unsigned id)
 {
     DiagramItem* item = m_items[id];
     item->removeArrows();
-    m_scene->removeItem(m_items[id]);
+    m_scene->removeItem(item);
+    delete item;
 }
 
 void LGen2DiagramEditor::addLink(unsigned sid, unsigned did, QString title)
@@ -38,6 +39,14 @@ void LGen2DiagramEditor::addLink(unsigned sid, unsigned did, QString title)
     i1->addArrow(a);
     i2->addArrow(a);
     m_scene->addItem(a);
+}
+
+void LGen2DiagramEditor::deleteLink(unsigned sid, unsigned did)
+{
+    DiagramItem* si = m_items[sid];
+    DiagramItem* di = m_items[did];
+    si->removeArrowTo(di);
+    di->removeArrowFrom(si);
 }
 
 void LGen2DiagramEditor::sceneSelectionChanged()
@@ -77,4 +86,9 @@ void LGen2DiagramEditor::zoomIn()
 void LGen2DiagramEditor::zoonOut()
 {
     scale(1 / 1.3, 1 / 1.3);
+}
+
+QDomElement LGen2DiagramEditor::toXML(QDomDocument &doc)
+{
+
 }

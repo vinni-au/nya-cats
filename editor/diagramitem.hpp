@@ -21,6 +21,9 @@ public:
     void removeArrow(Arrow *arrow);
     void removeArrows();
 
+    void removeArrowTo(DiagramItem* item);
+    void removeArrowFrom(DiagramItem* item);
+
     DiagramType diagramType() const
     {   return m_type;  }
 

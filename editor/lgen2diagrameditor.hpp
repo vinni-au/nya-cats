@@ -3,6 +3,7 @@
 
 #include <QMap>
 #include <QGraphicsView>
+#include <QDomElement>
 #include "diagramscene.hpp"
 
 class LGen2DiagramEditor : public QGraphicsView
@@ -20,6 +21,8 @@ public:
     {   return m_scene; }
 
     unsigned selectedFrameId();
+
+    QDomElement toXML(QDomDocument &doc);
 
 signals:
     void frameSelected(unsigned id);
@@ -39,6 +42,7 @@ public slots:
     //Добавить связь между от вершины с идентификатором sid до вершины с идентификатором did
     //и надписью title
     void addLink(unsigned sid, unsigned did, QString title);
+    void deleteLink(unsigned sid, unsigned did);
 
 };
 
