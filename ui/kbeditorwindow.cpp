@@ -88,7 +88,7 @@ void KBEditorWindow::on_btnAddSlot_clicked()
 {
     QModelIndex index = ui->treeView->selectionModel()->currentIndex();
     NFramenetModel *model = qobject_cast<NFramenetModel*>(ui->treeView->model());
-    if(!model->addSlot(index))
+    if(! (model->addSlot(index).isValid()))
     {
         QMessageBox::information(this,"","Не удалось добавить слот. Фрейм не выбран",QMessageBox::Ok);
     }
