@@ -2,7 +2,7 @@
 
 
 GameScene::GameScene(QObject* parent) :
-    QGraphicsScene(parent), m_FactoryFrame(0)
+    QGraphicsScene(parent)
   ,m_FactoryFrame(NULL)
 {
 }
