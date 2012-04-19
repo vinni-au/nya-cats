@@ -58,6 +58,7 @@ private:
     QGraphicsLineItem* m_line;
 
 signals:
+    void arrowAdded(Arrow* arrow);
 
 public slots:
 

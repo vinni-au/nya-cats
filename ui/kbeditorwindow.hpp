@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "core/nkbmanager.h"
 #include "sloteditorwnd.h"
+#include "./../editor/arrow.hpp"
 #include <QAction>
 #include <QCloseEvent>
 
@@ -21,29 +22,23 @@ public:
 
 
     void setSimpleView(bool isSimple);
+
 private slots:
-
     void on_btnAddFrame_clicked();
-
     void on_btnDeleteFrame_clicked();
-
     void on_btnAddSlot_clicked();
-
     void on_btnEditSlot_clicked();
-
     void on_btnDeleteSlot_clicked();
-
     void on_btnOk_clicked();
-
     void on_btnCancel_clicked();
-
     void onSimpleViewSwitched();
-
     void on_btn_addIsa_toggled(bool checked);
-
     void on_btn_addSub_toggled(bool checked);
+    void arrowAdded(Arrow* arrow);
+
 private:
     void closeEvent(QCloseEvent *event);
+
 private:
     Ui::KBEditorWindow *ui;
 

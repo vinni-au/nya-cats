@@ -66,6 +66,7 @@ void DiagramScene::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)
             arrow->setZValue(-1000.0);
             addItem(arrow);
             arrow->updatePosition();
+            emit arrowAdded(arrow);
         }
     }
     m_line = 0;

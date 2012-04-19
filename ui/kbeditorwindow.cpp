@@ -26,6 +26,9 @@ KBEditorWindow::KBEditorWindow(NKBManager *kbManager,QWidget *parent) :
     QObject::connect(ui->btn_zoomOut, SIGNAL(clicked()),
                      ui->graphicsView, SLOT(zoonOut()));
 
+    QObject::connect(ui->graphicsView->scene(), SIGNAL(arrowAdded(Arrow*)),
+                     SLOT(arrowAdded(Arrow*)));
+
     //Соединяем сигналы/слоты менеджера БЗ и диаграмминга
     QObject::connect(m_kbManager, SIGNAL(frameAdded(uint,QString)),
                      ui->graphicsView, SLOT(addNode(uint,QString)));
@@ -185,6 +188,18 @@ KBEditorWindow::closeEvent(QCloseEvent *event)
 
     event->accept();
     //emit sigClosed();
+}
+
+void KBEditorWindow::arrowAdded(Arrow *arrow)
+{
+    bool isIsa = ui->btn_addIsa->isChecked();
+    if (isIsa) {
+        if (!m_kbManager->addIsa(arrow->startItem()->id(), arrow->endItem()->id()))
+            ui->graphicsView->scene()->removeItem(arrow);
+    } else {
+        if (!m_kbManager->addApo(arrow->startItem()->id(), arrow->endItem()->id()))
+            ui->graphicsView->scene()->removeItem(arrow);
+    }
 }
 
 

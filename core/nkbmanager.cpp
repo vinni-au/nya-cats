@@ -97,6 +97,8 @@ bool NKBManager::addIsa(unsigned sid, unsigned did)
     QString destName = dFrame->name.value().toString();
     sFrame->getSlotByName("is_a")->setValue( destName );
 
+    qDebug()<<"void NKBManager::addIsa Создана связь is-a";
+
     return true;
 }
 
