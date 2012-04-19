@@ -24,10 +24,12 @@ protected:
    GameItem* m_Item;
    QRectF    m_Rect;
 
+   QList<QPointF> stuff;
+
 public:
     GameItemFactory(GameItem* item, QRectF& rect);
-    //QRectF boundingRect() const;
-    //QPainterPath shape() const;
+    QRectF boundingRect() const;
+    QPainterPath shape() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *item, QWidget *widget);
 
 protected:

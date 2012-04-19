@@ -6,6 +6,7 @@
 
 Visualizer::Visualizer(QWidget *parent) :
     QWidget(parent)
+  ,m_ItemsCount(0)
 {
     populateScene();
 
@@ -19,24 +20,46 @@ Visualizer::Visualizer(QWidget *parent) :
 
 void Visualizer::populateScene()
 {
+    // быдлобыдлокод
+
     QColor col(100, 100, 100, 50);
     QRectF rect(0, 0, 600, 600);
-    QRectF rect1(-70, 0, 60,60);
-    QRectF rect2(-70, 70, 60, 60);
-    QRectF rect3(-70, 140, 60, 60);
 
     scene = new GameScene(this);
     scene->CreateGrid(10, rect, col);
 
-    QPixmap pic1("..\\nya-cats\\visualize\\doc.gif");
-    QPixmap pic2("..\\nya-cats\\visualize\\war.gif");
-    QPixmap pic3("..\\nya-cats\\visualize\\hant.gif");
+    AddGameItem(gitWarior, gtRed);
+    AddGameItem(gitWarior, gtBlue);
+    AddGameItem(gitHealer, gtRed);
+    AddGameItem(gitHealer, gtBlue);
+    AddGameItem(gitArcher, gtRed);
+    AddGameItem(gitArcher, gtBlue);
+}
 
-    GameItem* giWarior = new GameItem(gitWarior, pic2, 0);
-    GameItem* giHealer = new GameItem(gitHealer, pic1, 0);
-    GameItem* giArcher = new GameItem(gitArcher, pic3, 0);
+void Visualizer::AddGameItem(GameItemType type, GameTeam team)
+{
+    // быдлобыдлокод
 
-    scene->CreateFactory(giWarior, rect1);
-    scene->CreateFactory(giHealer, rect2);
-    scene->CreateFactory(giArcher, rect3);
+    QString path = "..\\nya-cats\\visualize\\";
+    QRectF rect;
+
+    if (type == gitWarior)
+    {
+        path += "war.gif";
+        rect.setRect(-70, 0, 60,60);
+    }
+    else if (type == gitHealer)
+    {
+        path += "doc.gif";
+        rect.setRect(-70, 70, 60, 60);
+    }
+    else
+    {
+        path += "hant.gif";
+        rect.setRect(-70, 140, 60, 60);
+    }
+
+    QPixmap pic(path);
+    GameItem* item = new GameItem(type, pic, team, m_ItemsCount++);
+    scene->CreateFactory(item, rect);
 }

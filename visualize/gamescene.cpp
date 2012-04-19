@@ -3,6 +3,7 @@
 
 GameScene::GameScene(QObject* parent) :
     QGraphicsScene(parent), m_FactoryFrame(0)
+  ,m_FactoryFrame(NULL)
 {
 }
 

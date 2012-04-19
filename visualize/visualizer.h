@@ -6,6 +6,7 @@
 #include <QGraphicsView>
 
 #include "gamescene.h"
+#include "gameitem.h"
 
 class Visualizer : public QWidget
 {
@@ -13,9 +14,11 @@ class Visualizer : public QWidget
 private:
     void populateScene();
     GameScene *scene;
+    int m_ItemsCount;
 
 public:
     Visualizer(QWidget *parent = 0);
+    void AddGameItem(GameItemType type, GameTeam team);
 
 signals:
 
