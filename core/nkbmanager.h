@@ -43,6 +43,8 @@ public:
 
     NFramenetModel  *getFrameNetModel();
     DomainModel     *getDomainModel();
+
+
 private:
     NFrame  *getFrameById(int id);
     int     getFreeId();

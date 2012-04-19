@@ -688,21 +688,21 @@ void NFramenetModel::update()
     this->reset();
 }
 
-bool NFramenetModel::addSlot(QModelIndex& frameIndex)
+QModelIndex NFramenetModel::addSlot(QModelIndex& frameIndex)
 {
     NFrameNode *node = nodeFromIndex(frameIndex);
 
     if(!node)
-        return false;
+        return QModelIndex();
 
     if(node->type!=NFrameNode::FrameName)
-        return false;
+        return QModelIndex();
 
     int row = node->children.count();
     if(!insertRow(row,frameIndex))
-        return false;
+        return QModelIndex();
 
-    return true;
+    return createIndex(row,0,node->children.at(row));
 }
 bool NFramenetModel::deleteSlot(QModelIndex& slotIndex)
 {
@@ -790,4 +790,55 @@ bool NFramenetModel::isSlot(QModelIndex slotIndex)
     if(node->type!=NFrameNode::Faset)
         return false;
     return true;
+}
+
+
+QModelIndex NFramenetModel::getFrameIndexById(int id)
+{
+    NFrame *frame;
+    int row=-1;
+    foreach(frame,*frames)
+    {
+        row++;
+        if(frame->id()==id)
+            break;
+    }
+
+    if(row<0)
+        return QModelIndex();
+
+    return createIndex(row,0,rootNode->children.at(row));
+}
+QModelIndex NFramenetModel::getSlotFasetIndex(QModelIndex frameIndex,QString slotName,QString fasetName)
+{
+    NFrameNode *frameNode = nodeFromIndex(frameIndex);
+
+    NFrame *frame = frameNode->frame;
+    int row = frame->getSlotIndexByName(slotName);
+    NFrameNode *slotNode = frameNode->children.at(row);
+    NSlot *slot=frame->getSlotByName(slotName);
+
+    if(!slot || row<0)
+        return QModelIndex();
+
+    int column = slot->getFasetIndexByName(fasetName);
+
+    return createIndex(row,column,slotNode);
+}
+QModelIndex  NFramenetModel::getSlotFasetIndex(QModelIndex slotIndex,QString fasetName)
+{
+    NFrameNode *slotNode0 = nodeFromIndex(slotIndex);
+    NFrameNode *frameNode = slotNode0->parent;
+
+    NFrame *frame = frameNode->frame;
+    int row = slotIndex.row();
+    NFrameNode *slotNode = frameNode->children.at(row);
+    NSlot *slot=frame->getSlotByIndex(row);
+
+    if(!slot || row<0)
+        return QModelIndex();
+
+    int column = slot->getFasetIndexByName(fasetName);
+
+    return createIndex(row,column,slotNode);
 }

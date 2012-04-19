@@ -38,13 +38,19 @@ public:
 
     void update();
 
-    bool addSlot(QModelIndex& frameIndex);
+    QModelIndex addSlot(QModelIndex& frameIndex);
     bool deleteSlot(QModelIndex& slotIndex);
 
     bool setSlotFasetValue(QModelIndex slotIndex,QString fasetName,QVariant value);
     QVariant getSlotFasetValue(QModelIndex slotIndex,QString fasetName);
 
     bool isSlot(QModelIndex slotIndex);
+
+    //QModelIndex getIndexOfSlot(int frameId,QString slotName);//для обновления данных в модели
+
+    QModelIndex getFrameIndexById(int id);
+    QModelIndex getSlotFasetIndex(QModelIndex frameIndex,QString slotName,QString fasetName);
+    QModelIndex getSlotFasetIndex(QModelIndex slotIndex,QString fasetName);
     //QModelIndex addDomain();
     //void editDomain(QModelIndex domain,QString newName);
     //void deleteDomain(QModelIndex domain);

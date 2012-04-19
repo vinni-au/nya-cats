@@ -40,7 +40,7 @@ public:
     void fromXml(QDomElement &slot);
 
     int fasetCount();
-
+    int getFasetIndexByName(QString name);
 signals:
 
 public slots:

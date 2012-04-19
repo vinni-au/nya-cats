@@ -140,3 +140,13 @@ void NFrame::removeSlot(NSlot *slot)
 {
     m_slots.removeOne(slot);
 }
+
+int NFrame::getSlotIndexByName(QString name)
+{
+    for(int i=0;i<m_slots.count();++i)
+    {
+        if(m_slots.at(i)->name()==name)
+            return i;
+    }
+    return -1;
+}

@@ -95,9 +95,17 @@ bool NKBManager::addIsa(unsigned sid, unsigned did)
         return false;
     }
     QString destName = dFrame->name.value().toString();
-    sFrame->getSlotByName("is_a")->setValue( destName );
 
+
+    //магический код изменения значения в тривью
+    //sFrame->getSlotByName("is_a")->setValue( destName );
+    QModelIndex sFrameIndex = m_framenetModel->getFrameIndexById(sFrame->id());
+    QModelIndex slotIndex = m_framenetModel->getSlotFasetIndex(sFrameIndex,"is_a","value");
+    m_framenetModel->setData(slotIndex,destName,Qt::EditRole);
+    //
     qDebug()<<"void NKBManager::addIsa Создана связь is-a";
+
+    //m_framenetModel->update();
 
     return true;
 }
@@ -114,13 +122,25 @@ bool NKBManager::addApo(unsigned sid, unsigned did)
     }
 
     QString sFrameName = sFrame->name.value().toString();
+    //
+//    NSlot *slot = new NSlot();
+//    slot->setName(sFrameName);
+//    slot->getFasetByName("type")->setValue("frame");
+//    slot->setValue(sFrameName);
 
-    NSlot *slot = new NSlot();
-    slot->setName(sFrameName);
-    slot->getFasetByName("type")->setValue("frame");
-    slot->setValue(sFrameName);
+//    dFrame->addSlot(slot);
+//    m_framenetModel->update();
+    QModelIndex frameIndex = m_framenetModel->getFrameIndexById(dFrame->id());
+    QModelIndex slotIndex = m_framenetModel->addSlot(frameIndex);
 
-    dFrame->addSlot(slot);
+    QModelIndex fasetNameIndex = m_framenetModel->getSlotFasetIndex(slotIndex,"name");
+    m_framenetModel->setData(fasetNameIndex,sFrameName,Qt::EditRole);//имя слота
+    QModelIndex fasetTypeIndex =m_framenetModel->getSlotFasetIndex(slotIndex,"type");
+    m_framenetModel->setData(fasetTypeIndex,"frame",Qt::EditRole);//тип слота
+    QModelIndex fasetValueIndex =m_framenetModel->getSlotFasetIndex(slotIndex,"value");
+    m_framenetModel->setData(fasetValueIndex,sFrameName,Qt::EditRole);//значение слота
+
+    //
 
     return true;
 }
@@ -504,7 +524,7 @@ NFrame* NKBManager::getFrameById(int id)
     NFrame *frame=NULL;
     foreach(frame,m_frames)
     {
-        if(frame->id()>id)
+        if(frame->id()==id)
         {
             return frame;
         }
@@ -570,3 +590,4 @@ DomainModel* NKBManager::getDomainModel()
 {
     return &m_domainModel;
 }
+

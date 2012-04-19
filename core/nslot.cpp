@@ -136,3 +136,13 @@ int NSlot::fasetCount()
 {
     return m_fasets.count();
 }
+
+int NSlot::getFasetIndexByName(QString name)
+{
+    for(int i=0;i<m_fasets.count();++i)
+    {
+        if(m_fasets.at(i)->name()==name)
+            return i;
+    }
+    return -1;
+}

@@ -25,6 +25,8 @@ public:
     NSlot* getSlotByName(QString name);     //получить слот по имени
     NSlot* getSlotByIndex(int inx);
 
+    int getSlotIndexByName(QString name);
+
     QString parentFrame();                  //получить имя родительского фрейма
 
     int id();
