@@ -173,7 +173,7 @@ KBEditorWindow::closeEvent(QCloseEvent *event)
     {
         if(m_kbManager->saved())//нажал сохранить
         {
-
+            ;
         }
         else
         {
@@ -196,9 +196,17 @@ void KBEditorWindow::arrowAdded(Arrow *arrow)
     if (isIsa) {
         if (!m_kbManager->addIsa(arrow->startItem()->id(), arrow->endItem()->id()))
             ui->graphicsView->scene()->removeItem(arrow);
+        else {
+            arrow->setText("is-a");
+            arrow->setColor(Qt::darkGreen);
+        }
     } else {
         if (!m_kbManager->addApo(arrow->startItem()->id(), arrow->endItem()->id()))
             ui->graphicsView->scene()->removeItem(arrow);
+        else {
+            arrow->setText("sub");
+            arrow->setColor(Qt::darkYellow);
+        }
     }
 }
 

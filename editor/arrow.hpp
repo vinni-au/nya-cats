@@ -24,6 +24,9 @@ public:
     int type() const
     {   return Type;    }
 
+    void setText(QString text)
+    {   m_text = text;  }
+
     QRectF boundingRect() const;
 
     QPainterPath shape() const;
