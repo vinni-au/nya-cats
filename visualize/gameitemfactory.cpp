@@ -19,14 +19,14 @@ GameItemFactory::GameItemFactory(GameItem* item, QRectF& rect) :
   ,m_Item(item)
   ,m_Rect(rect)
 {
-    setShapeMode(QGraphicsPixmapItem::MaskShape);
-    setFlags(ItemIsSelectable | ItemIsMovable);
+    setFlags(ItemIsMovable);
     setAcceptsHoverEvents(true);
-    setAcceptDrops(true);
 
     QPixmap pic = item->GetPic();
     setOffset(rect.x(), rect.y());
     setPixmap(pic.scaled(rect.width(), rect.height()));
+
+    setCursor(Qt::OpenHandCursor);
 }
 
 QRectF GameItemFactory::boundingRect() const
@@ -62,7 +62,7 @@ void GameItemFactory::paint(QPainter *painter, const QStyleOptionGraphicsItem *o
 void GameItemFactory::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
     update();
-    QGraphicsItem::hoverEnterEvent(event);
+    QGraphicsPixmapItem::hoverEnterEvent(event);
 }
 
 void GameItemFactory::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
@@ -73,18 +73,40 @@ void GameItemFactory::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 
 void GameItemFactory::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-    update();
-    QGraphicsPixmapItem::mousePressEvent(event);
+    setCursor(Qt::ClosedHandCursor);
 }
 
 void GameItemFactory::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
-    update();
-    QGraphicsPixmapItem::mouseMoveEvent(event);
+    QDrag *drag = new QDrag(event->widget());
+    GameMimeData *mime = new GameMimeData;
+    drag->setMimeData(mime);
+
+//    switch (m_Item->GetType())
+//    {
+//    case gitWarior:
+//         mime->setText("new gitWarior");
+//         break;
+
+//    case gitHealer:
+//         mime->setText("new gitHealer");
+//         break;
+
+//    case gitArcher:
+//         mime->setText("new gitArcher");
+//         break;
+//    }
+    mime->SetItem(new GameItem(m_Item->GetType(), m_Item->GetPic(), m_Item->GetTeam(), 1));
+
+    QPixmap pic = m_Item->GetPic();
+    drag->setPixmap(pic.scaled(m_Rect.height(), m_Rect.width()));
+    drag->setHotSpot(QPoint(15, 20));
+
+    drag->exec();
+    setCursor(Qt::OpenHandCursor);
 }
 
 void GameItemFactory::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
-    QGraphicsPixmapItem::mouseReleaseEvent(event);
-    update();
+    setCursor(Qt::OpenHandCursor);
 }

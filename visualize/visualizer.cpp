@@ -28,12 +28,32 @@ void Visualizer::populateScene()
     scene = new GameScene(this);
     scene->CreateGrid(10, rect, col);
 
-    AddGameItem(gitWarior, gtRed);
-    AddGameItem(gitWarior, gtBlue);
-    AddGameItem(gitHealer, gtRed);
-    AddGameItem(gitHealer, gtBlue);
-    AddGameItem(gitArcher, gtRed);
-    AddGameItem(gitArcher, gtBlue);
+//    AddGameItem(gitWarior, gtRed);
+//    AddGameItem(gitWarior, gtBlue);
+//    AddGameItem(gitHealer, gtRed);
+//    AddGameItem(gitHealer, gtBlue);
+//    AddGameItem(gitArcher, gtRed);
+//    AddGameItem(gitArcher, gtBlue);
+
+    QRectF rect1(-70, 0, 60, 60);
+    QRectF rect2(-70, 70, 60, 60);
+    QRectF rect3(-70, 140, 60, 60);
+    QRectF rect4(-70, 210, 60, 60);
+    QRectF rect5(-70, 280, 60, 60);
+    QRectF rect6(-70, 350, 60, 60);
+
+    QPixmap pic1("..\\nya-cats\\visualize\\war.gif");
+    QPixmap pic2("..\\nya-cats\\visualize\\doc.gif");
+    QPixmap pic3("..\\nya-cats\\visualize\\hant.gif");
+
+    scene->CreateFactory(new GameItem(gitWarior, pic1, gtRed, -1), rect1);
+    scene->CreateFactory(new GameItem(gitHealer, pic2, gtRed, -1), rect2);
+    scene->CreateFactory(new GameItem(gitArcher, pic3, gtRed, -1), rect3);
+
+    scene->CreateFactory(new GameItem(gitWarior, pic1, gtBlue, -1), rect4);
+    scene->CreateFactory(new GameItem(gitHealer, pic2, gtBlue, -1), rect5);
+    scene->CreateFactory(new GameItem(gitArcher, pic3, gtBlue, -1), rect6);
+
 }
 
 void Visualizer::AddGameItem(GameItemType type, GameTeam team)
@@ -46,7 +66,7 @@ void Visualizer::AddGameItem(GameItemType type, GameTeam team)
     if (type == gitWarior)
     {
         path += "war.gif";
-        rect.setRect(-70, 0, 60,60);
+        rect.setRect(-70, 0, 60, 60);
     }
     else if (type == gitHealer)
     {
