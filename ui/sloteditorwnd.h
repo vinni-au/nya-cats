@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QModelIndex>
+#include <QStringListModel>
 #include "core/frame_model/nframenetmodel.h"
 #include "core/nkbmanager.h"
 
@@ -25,6 +26,8 @@ private slots:
     void on_buttonBox_accepted();
 
     void on_buttonBox_rejected();
+
+    void on_cmbSlotType_currentIndexChanged(int index);
 
 private:
     Ui::SlotEditorWnd *ui;

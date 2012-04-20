@@ -65,10 +65,70 @@ SlotEditorWnd::~SlotEditorWnd()
 
 void SlotEditorWnd::on_buttonBox_accepted()
 {
-
+    //проверка??
+    NFramenetModel* model = m_kbManager->getFrameNetModel();
+    model->setSlotFasetValue(m_slotIndex,"name",ui->lineEdit->text().trimmed());//имя
+    model->setSlotFasetValue(m_slotIndex,"slot_type",ui->cmbSlotType->currentText());//имя
+    model->setSlotFasetValue(m_slotIndex,"domain",ui->cmbSlotDomain->currentText());//имя
+    model->setSlotFasetValue(m_slotIndex,"value",ui->cmbSlotValue->currentText());//имя
+    model->setSlotFasetValue(m_slotIndex,"default_value",ui->cmbDefaultValue->currentText());//имя
+    model->setSlotFasetValue(m_slotIndex,"inheritance",ui->cmbInheritance->currentText());//имя
+    model->setSlotFasetValue(m_slotIndex,"marker_type",ui->cmbMarkerType->currentText());//имя
+    model->setSlotFasetValue(m_slotIndex,"marker",ui->cmbMarkerValue->currentText());//имя
 }
 
 void SlotEditorWnd::on_buttonBox_rejected()
 {
 
+}
+
+void SlotEditorWnd::on_cmbSlotType_currentIndexChanged(int index)
+{
+    QString slotType = ui->cmbSlotType->currentText();
+    qDebug()<<"SlotEditorWnd::on_cmbSlotType_currentIndexChanged "<<slotType;
+
+    if(slotType.isEmpty())
+        return;
+
+    ui->lineEdit->setEnabled(true);
+    ui->cmbSlotType->setEnabled(true);
+    ui->cmbSlotDomain->setEnabled(true);
+    ui->cmbSlotValue->setEnabled(true);
+    ui->cmbDefaultValue->setEnabled(true);
+    ui->cmbInheritance->setEnabled(true);
+    ui->cmbMarkerType->setEnabled(true);
+    ui->cmbMarkerValue->setEnabled(true);
+
+
+    if(slotType == "string")
+    {
+
+    }
+    else if(slotType == "int")
+    {
+        ui->cmbSlotDomain->setEnabled(false);
+        ui->cmbSlotValue->setEnabled(false);
+        ui->cmbSlotDomain->setModel(new QStringListModel());//опустошаем комбик доменов
+        ui->cmbSlotValue->setModel(new QStringListModel());
+
+
+        ui->cmbDefaultValue->addItem("0");
+
+        ui->cmbMarkerType->clear();
+        ui->cmbMarkerType->addItem("production");
+        ui->cmbMarkerType->addItem("procedure");
+    }
+    else if(slotType == "frame")
+    {
+        ui->cmbSlotDomain->setEnabled(false);
+        ui->cmbSlotValue->setEnabled(true);
+
+        QMap<unsigned,QString> frames =  m_kbManager->frameNames();
+
+        QMapIterator<unsigned,QString> i(frames);
+        while (i.hasNext()) {
+             i.next();
+             ui->cmbDefaultValue->addItem(i.value());
+         }
+    }
 }

@@ -8,7 +8,7 @@ NSlot::NSlot(QObject *parent) :
 
     //инициализация слотов
     slotName.setName("name");
-    slotName.setValue("defName");
+    slotName.setValue("");
     m_fasets.append(&slotName);
 
     slotType.setName("slot_type");
@@ -16,7 +16,7 @@ NSlot::NSlot(QObject *parent) :
     m_fasets.append(&slotType);
 
     slotValue.setName("value");
-    slotValue.setValue("defValue");
+    slotValue.setValue("");
     m_fasets.append(&slotValue);
 
     slotDefaultValue.setName("default_value");
@@ -28,7 +28,7 @@ NSlot::NSlot(QObject *parent) :
     m_fasets.append(&slotMarkerType);
 
     slotMarker.setName("marker");
-    slotMarker.setValue("defDomain");
+    slotMarker.setValue("");
     m_fasets.append(&slotMarker);
 
     slotInheritanceType.setName("inheritance_type");
