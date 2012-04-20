@@ -42,7 +42,11 @@ public slots:
     //Добавить связь между от вершины с идентификатором sid до вершины с идентификатором did
     //и надписью title
     void addLink(unsigned sid, unsigned did, QString title);
+    //Удалить связь
     void deleteLink(unsigned sid, unsigned did);
+
+    void selectNode(unsigned id);
+    void selectLink(unsigned sid, unsigned did);
 
 };
 

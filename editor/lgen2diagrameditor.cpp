@@ -9,6 +9,7 @@ LGen2DiagramEditor::LGen2DiagramEditor(QWidget *parent) :
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 
     setRenderHint(QPainter::Antialiasing);
+    setViewportUpdateMode(QGraphicsView::FullViewportUpdate);
 
     setScene(m_scene);
 
@@ -76,6 +77,16 @@ unsigned LGen2DiagramEditor::selectedFrameId()
             if (item->type() == DiagramItem::Node)
                 return item->id();
     }
+}
+
+void LGen2DiagramEditor::selectNode(unsigned id)
+{
+    scene()->setSelectionArea(QPainterPath(), Qt::ContainsItemShape, QTransform(Qt::Uninitialized));
+}
+
+void LGen2DiagramEditor::selectLink(unsigned sid, unsigned did)
+{
+
 }
 
 void LGen2DiagramEditor::zoomIn()
