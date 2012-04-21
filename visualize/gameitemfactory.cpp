@@ -82,20 +82,6 @@ void GameItemFactory::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
     GameMimeData *mime = new GameMimeData;
     drag->setMimeData(mime);
 
-//    switch (m_Item->GetType())
-//    {
-//    case gitWarior:
-//         mime->setText("new gitWarior");
-//         break;
-
-//    case gitHealer:
-//         mime->setText("new gitHealer");
-//         break;
-
-//    case gitArcher:
-//         mime->setText("new gitArcher");
-//         break;
-//    }
     mime->SetItem(new GameItem(m_Item->GetType(), m_Item->GetPic(), m_Item->GetTeam(), 1));
 
     QPixmap pic = m_Item->GetPic();

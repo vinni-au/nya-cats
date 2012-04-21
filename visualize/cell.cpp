@@ -9,14 +9,11 @@ Cell::Cell(int xIndex, int yIndex, QRectF &rect, QColor &color) :
 {
     setAcceptsHoverEvents(true);
     setAcceptDrops(true);
+    setAcceptedMouseButtons(Qt::LeftButton);
 }
 
 void Cell::SetGameItem(GameItem* item)
 {
-//    QPixmap pic = item->GetPic();
-    //setOffset(m_Rect.x(), m_Rect.y());
-    //setPixmap(pic.scaled(m_Rect.width(), m_Rect.height()));
-
     m_Item = item;
     update();
 }
@@ -103,11 +100,46 @@ void Cell::dragLeaveEvent(QGraphicsSceneDragDropEvent *event)
 void Cell::dropEvent(QGraphicsSceneDragDropEvent *event)
 {
     GameMimeData *myData =
-                 (GameMimeData*)(event->mimeData());
+            (GameMimeData*)(event->mimeData());
 
     if (myData)
     {
         SetGameItem(myData->GetItem());
     }
     update();
+}
+
+void Cell::mousePressEvent(QGraphicsSceneMouseEvent *event)
+{
+    if (m_Item)
+        setCursor(Qt::ClosedHandCursor);
+}
+
+void Cell::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+{
+    if (QLineF(event->screenPos(), event->buttonDownScreenPos(Qt::LeftButton))
+        .length() < QApplication::startDragDistance() || m_Item == NULL) {
+        return;
+    }
+
+    QDrag *drag = new QDrag(event->widget());
+    GameMimeData *mime = new GameMimeData;
+    drag->setMimeData(mime);
+
+    mime->SetItem(m_Item);
+
+    QPixmap pic = m_Item->GetPic();
+    drag->setPixmap(pic.scaled(m_Rect.height(), m_Rect.width()));
+    drag->setHotSpot(QPoint(15, 20));
+
+    drag->exec();
+    setCursor(Qt::OpenHandCursor);
+    m_Item = NULL;
+    update();
+}
+
+void Cell::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+{
+    if (m_Item)
+        setCursor(Qt::OpenHandCursor);
 }
