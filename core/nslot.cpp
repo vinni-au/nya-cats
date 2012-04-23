@@ -12,7 +12,7 @@ NSlot::NSlot(QObject *parent) :
     m_fasets.append(&slotName);
 
     slotType.setName("slot_type");
-    slotType.setValue("domain");
+    slotType.setValue("");
     m_fasets.append(&slotType);
 
     slotValue.setName("value");
@@ -24,7 +24,7 @@ NSlot::NSlot(QObject *parent) :
     m_fasets.append(&slotDefaultValue);
 
     slotMarkerType.setName("marker_type");
-    slotMarkerType.setValue("domain");
+    slotMarkerType.setValue("");
     m_fasets.append(&slotMarkerType);
 
     slotMarker.setName("marker");

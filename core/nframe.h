@@ -27,7 +27,8 @@ public:
 
     int getSlotIndexByName(QString name);
 
-    QString parentFrame();                  //получить имя родительского фрейма
+    QString     parentFrame();                  //получить имя родительского фрейма
+    void        setParentName(QString name);       //установить родителя
 
     int id();
 
@@ -40,6 +41,8 @@ public:
     void insertSlot(int row,NSlot *slot);
     void removeSlot(int row);
     void removeSlot(NSlot *slot);
+
+    QString frameName();
 signals:
 
 public slots:

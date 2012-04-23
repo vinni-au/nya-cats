@@ -1,0 +1,129 @@
+<kb>
+    <domains/>
+    <frames>
+        <frame type="105" id="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="domain" name="slot_type"/>
+                        <faset value="Ситуация" name="value"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="domain" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="domain" name="slot_type"/>
+                        <faset value="" name="value"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="domain" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="105" id="1">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="domain" name="slot_type"/>
+                        <faset value="Есть враги" name="value"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="domain" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="domain" name="slot_type"/>
+                        <faset value="Ситуация" name="value"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="domain" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="соседи" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="value"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="domain" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="враги" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="value"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="domain" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="" name="name"/>
+                        <faset value="domain" name="slot_type"/>
+                        <faset value="" name="value"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="domain" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="-703687" id="2">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="domain" name="slot_type"/>
+                        <faset value="Ячейка" name="value"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="domain" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="domain" name="slot_type"/>
+                        <faset value="" name="value"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="domain" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="" name="value"/>
+                        <faset value="Ситуация" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+    </frames>
+    <procs/>
+    <productions/>
+</kb>

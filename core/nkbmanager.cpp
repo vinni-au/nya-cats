@@ -72,6 +72,9 @@ bool NKBManager::deleteFrame(unsigned id)
     if(!frame)
         return false;
 
+    //удаление связей
+    deleteLinks(id);
+
     m_frames.removeOne(frame);
 
     m_framenetModel->setFrames(&m_frames);
@@ -81,6 +84,32 @@ bool NKBManager::deleteFrame(unsigned id)
     setDirty(true);
 
     return true;
+}
+void NKBManager::deleteLinks(int id)
+{
+    NFrame* frame = getFrameById(id);
+    if(!frame)
+        return;
+
+    QString frameName = frame->frameName();
+    //удаление связей is_a, указывающих на фрейм
+    foreach(frame,m_frames)
+    {
+        if(frame->parentFrame() == frameName)
+        {
+            frame->setParentName("");
+        }
+    }
+    //удаление слотов фреймов, в которые фрейм входит как субфрейм
+    foreach(frame,m_frames)
+    {
+        NSlot *slot = frame->getSlotByName(frameName);
+        if(slot)
+        {
+            frame->removeSlot(slot);
+        }
+    }
+
 }
 
 //source id, destination id
@@ -94,13 +123,36 @@ bool NKBManager::addIsa(unsigned sid, unsigned did)
         qDebug()<<"void NKBManager::addIsa  Связь не создана. Нет фреймов.";
         return false;
     }
-    QString destName = dFrame->name.value().toString();
 
+    QString destName = dFrame->name.value().toString();
 
     //магический код изменения значения в тривью
     //sFrame->getSlotByName("is_a")->setValue( destName );
     QModelIndex sFrameIndex = m_framenetModel->getFrameIndexById(sFrame->id());
     QModelIndex slotIndex = m_framenetModel->getSlotFasetIndex(sFrameIndex,"is_a","value");
+
+    //можно добавить связь?
+    QString existingValue = m_framenetModel->data(slotIndex,Qt::DisplayRole).toString();//связь is_a уже есть
+    if(!existingValue.isEmpty())
+        return false;
+
+    //проверка на обратную связь is_a
+    QModelIndex dFrameIndex = m_framenetModel->getFrameIndexById(dFrame->id());
+    QModelIndex destFrameSlotIndex = m_framenetModel->getSlotFasetIndex(dFrameIndex,"is_a","value");
+    QString destFrameSlotVal = m_framenetModel->data(destFrameSlotIndex,Qt::DisplayRole).toString();
+    if(destFrameSlotVal == sFrame->name.value())
+        return false;
+
+    //проверка связи a_part_of. если связь есть, is-a нельзя. причем в обе стороны
+    NSlot* subframeSlot =  dFrame->getSlotByName(  sFrame->getSlotByName("name")->value().toString()   );
+    if(subframeSlot)
+        return false;
+
+    subframeSlot =  sFrame->getSlotByName(  dFrame->getSlotByName("name")->value().toString()   );
+    if(subframeSlot)
+        return false;
+    //
+
     m_framenetModel->setData(slotIndex,destName,Qt::EditRole);
     //
     qDebug()<<"void NKBManager::addIsa Создана связь is-a";
@@ -121,7 +173,23 @@ bool NKBManager::addApo(unsigned sid, unsigned did)
         return false;
     }
 
-    QString sFrameName = sFrame->name.value().toString();
+    //проверка связи a_part_of.
+    NSlot* subframeSlot =  dFrame->getSlotByName(  sFrame->getSlotByName("name")->value().toString()   );
+    if(subframeSlot)
+        return false;
+
+    subframeSlot =  sFrame->getSlotByName(  dFrame->getSlotByName("name")->value().toString()   );
+    if(subframeSlot)
+        return false;
+    //
+    //проверка связи is_a между источником и стоком
+    if(sFrame->parentFrame() == dFrame->frameName())
+        return false;
+    if(dFrame->parentFrame() == sFrame->frameName())
+        return false;
+    //
+
+    QString sFrameName = sFrame->frameName();
     //
 //    NSlot *slot = new NSlot();
 //    slot->setName(sFrameName);
@@ -135,7 +203,7 @@ bool NKBManager::addApo(unsigned sid, unsigned did)
 
     QModelIndex fasetNameIndex = m_framenetModel->getSlotFasetIndex(slotIndex,"name");
     m_framenetModel->setData(fasetNameIndex,sFrameName,Qt::EditRole);//имя слота
-    QModelIndex fasetTypeIndex =m_framenetModel->getSlotFasetIndex(slotIndex,"type");
+    QModelIndex fasetTypeIndex =m_framenetModel->getSlotFasetIndex(slotIndex,"slot_type");
     m_framenetModel->setData(fasetTypeIndex,"frame",Qt::EditRole);//тип слота
     QModelIndex fasetValueIndex =m_framenetModel->getSlotFasetIndex(slotIndex,"value");
     m_framenetModel->setData(fasetValueIndex,sFrameName,Qt::EditRole);//значение слота

@@ -27,7 +27,7 @@ NSlot* NFrame::getSlotByName(QString name)
             return slot;
         }
     }
-    return slot;
+    return NULL;
 }
 
 
@@ -149,4 +149,15 @@ int NFrame::getSlotIndexByName(QString name)
             return i;
     }
     return -1;
+}
+
+
+QString NFrame::frameName()
+{
+    return name.value().toString();
+}
+
+void NFrame::setParentName(QString name)
+{
+    getSlotByName("is_a")->setValue(name);
 }

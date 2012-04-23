@@ -50,6 +50,9 @@ private:
     NFrame  *getFrameById(int id);
     int     getFreeId();
 
+    void deleteLinks(int id);
+
+
 signals:
     //Для диаграмм
     void frameAdded(unsigned id, QString name);
