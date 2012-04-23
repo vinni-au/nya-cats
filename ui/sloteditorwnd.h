@@ -6,6 +6,7 @@
 #include <QStringListModel>
 #include "core/frame_model/nframenetmodel.h"
 #include "core/nkbmanager.h"
+#include "ruleswnd.h"
 
 namespace Ui {
     class SlotEditorWnd;
@@ -29,6 +30,9 @@ private slots:
 
     void on_cmbSlotType_currentIndexChanged(int index);
 
+    void on_btnEditMarker_clicked();
+
+    void onProductionAdded(NProduction *production);
 private:
     Ui::SlotEditorWnd *ui;
     QModelIndex m_slotIndex;

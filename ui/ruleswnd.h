@@ -20,18 +20,19 @@
 
 #include "expreditor.h"
 #include "core/production/rulemodel.h"
+#include "core/production/nproduction.h"
 
-class ESMain;
 
 class RulesWnd : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit RulesWnd(RuleModel* ruleModel, QWidget *parent = 0);
+    explicit RulesWnd(NProduction *production, QWidget *parent = 0);
     virtual ~RulesWnd();
     bool isEditMode();
 signals:
     void sigClosed();
+    void sigProductionAdded(NProduction *production);
 public slots:
     void retranslate();
 
@@ -64,6 +65,8 @@ public slots:
 
     void onDataLoaded();
     void maybeClose();//на самом деле не закрывает форму
+
+
 private:
     void editStart();//для работы с режимом редактирования
     void editStop();

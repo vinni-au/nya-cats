@@ -70,7 +70,7 @@ void SlotEditorWnd::on_buttonBox_accepted()
     model->setSlotFasetValue(m_slotIndex,"name",ui->lineEdit->text().trimmed());//имя
     model->setSlotFasetValue(m_slotIndex,"slot_type",ui->cmbSlotType->currentText());//имя
     model->setSlotFasetValue(m_slotIndex,"domain",ui->cmbSlotDomain->currentText());//имя
-    model->setSlotFasetValue(m_slotIndex,"value",ui->cmbSlotValue->currentText());//имя
+    //model->setSlotFasetValue(m_slotIndex,"value",ui->cmbSlotValue->currentText());//имя
     model->setSlotFasetValue(m_slotIndex,"default_value",ui->cmbDefaultValue->currentText());//имя
     model->setSlotFasetValue(m_slotIndex,"inheritance",ui->cmbInheritance->currentText());//имя
     model->setSlotFasetValue(m_slotIndex,"marker_type",ui->cmbMarkerType->currentText());//имя
@@ -93,7 +93,7 @@ void SlotEditorWnd::on_cmbSlotType_currentIndexChanged(int index)
     ui->lineEdit->setEnabled(true);
     ui->cmbSlotType->setEnabled(true);
     ui->cmbSlotDomain->setEnabled(true);
-    ui->cmbSlotValue->setEnabled(true);
+    //ui->cmbSlotValue->setEnabled(true);
     ui->cmbDefaultValue->setEnabled(true);
     ui->cmbInheritance->setEnabled(true);
     ui->cmbMarkerType->setEnabled(true);
@@ -107,9 +107,9 @@ void SlotEditorWnd::on_cmbSlotType_currentIndexChanged(int index)
     else if(slotType == "int")
     {
         ui->cmbSlotDomain->setEnabled(false);
-        ui->cmbSlotValue->setEnabled(false);
+        //ui->cmbSlotValue->setEnabled(false);
         ui->cmbSlotDomain->setModel(new QStringListModel());//опустошаем комбик доменов
-        ui->cmbSlotValue->setModel(new QStringListModel());
+        //ui->cmbSlotValue->setModel(new QStringListModel());
 
 
         ui->cmbDefaultValue->addItem("0");
@@ -121,7 +121,7 @@ void SlotEditorWnd::on_cmbSlotType_currentIndexChanged(int index)
     else if(slotType == "frame")
     {
         ui->cmbSlotDomain->setEnabled(false);
-        ui->cmbSlotValue->setEnabled(true);
+        //ui->cmbSlotValue->setEnabled(true);
 
         QMap<unsigned,QString> frames =  m_kbManager->frameNames();
 
@@ -131,4 +131,31 @@ void SlotEditorWnd::on_cmbSlotType_currentIndexChanged(int index)
              ui->cmbDefaultValue->addItem(i.value());
          }
     }
+}
+
+void SlotEditorWnd::on_btnEditMarker_clicked()
+{
+    if(ui->cmbMarkerType->currentText() == "domain")
+    {
+
+    }
+    else if(ui->cmbMarkerType->currentText() == "production")
+    {
+        qDebug()<<"Добавление продукции";
+
+        NProduction *production = new NProduction();
+        RulesWnd *rWnd = new RulesWnd(production,this);
+        QObject::connect(rWnd,SIGNAL(sigProductionAdded(NProduction*)),this,SLOT(onProductionAdded(NProduction*)));
+        rWnd->show();
+    }
+    else if(ui->cmbMarkerType->currentText() == "procedure")
+    {
+
+    }
+}
+
+
+void SlotEditorWnd::onProductionAdded(NProduction *production)
+{
+    QMessageBox::information(this,"SlotEditorWnd::onProductionAdded","Опачки, продукция добавлена.",QMessageBox::NoButton);
 }

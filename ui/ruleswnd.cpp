@@ -3,11 +3,10 @@
 
 #include "saver.h"
 
-RulesWnd::RulesWnd(RuleModel* ruleModel,QWidget *parent) :
+RulesWnd::RulesWnd(NProduction *production,QWidget *parent) :
     QMainWindow(parent)
 {
-    this->ruleModel = ruleModel;
-    this->esMain = esMain;
+    this->ruleModel = production->getModel();
 
     splMain=new QSplitter(Qt::Vertical);
     splMain->setChildrenCollapsible(false);

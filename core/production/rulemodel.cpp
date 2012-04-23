@@ -5,6 +5,7 @@ RuleModel::RuleModel(QObject *parent) :
     QAbstractItemModel(parent)
 {
     rootNode=new RuleNode(RuleNode::Root,NULL,NULL);
+    rules = new QList<Rule*>();
 }
 RuleModel::~RuleModel()
 {

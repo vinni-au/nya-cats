@@ -18,6 +18,8 @@ public:
     //сериализация
     QDomElement toXml(QDomDocument &doc);
     void fromXml(QDomElement &production);
+
+
 signals:
 
 public slots:

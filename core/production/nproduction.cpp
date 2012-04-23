@@ -3,6 +3,7 @@
 NProduction::NProduction(QObject *parent) :
     QObject(parent)
 {
+
 }
 
 RuleModel* NProduction::getModel()
@@ -29,3 +30,5 @@ void NProduction::fromXml(QDomElement &production)
 
     this->m_ruleModel.fromXml(rulesEl);
 }
+
+
