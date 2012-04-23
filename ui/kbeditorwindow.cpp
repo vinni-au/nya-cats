@@ -12,6 +12,9 @@ KBEditorWindow::KBEditorWindow(NKBManager *kbManager,QWidget *parent) :
 
     this->ui->treeView->setModel(m_kbManager->getFrameNetModel());
 
+    QDomElement diagramElement = m_kbManager->diagramNode().toElement();
+    this->ui->graphicsView->fromXML(diagramElement);
+
     m_simpleView = false;
     setSimpleView(m_simpleView);
     //Контекстное меню для инспектора объектов
@@ -135,6 +138,7 @@ void KBEditorWindow::on_btnDeleteSlot_clicked()
 
 void KBEditorWindow::on_btnOk_clicked()
 {
+    this->m_kbManager->setDiagramNode( ui->graphicsView->toXML( m_kbManager->doc  ) );
     this->m_kbManager->save();
     close();
 }

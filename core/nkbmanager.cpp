@@ -408,7 +408,7 @@ NKBManager::areUsure(QString quest)
 void
 NKBManager::saveToXml(QTextStream &stream)
 {
-    QDomDocument doc;
+
     QDomElement kbEl = doc.createElement("kb");   doc.appendChild(kbEl);
     QDomElement domainsEl = m_domainModel.toXml(doc);   kbEl.appendChild(domainsEl);
     QDomElement framesEl = doc.createElement("frames"); kbEl.appendChild(framesEl);
@@ -436,6 +436,9 @@ NKBManager::saveToXml(QTextStream &stream)
         QDomElement productionEl = production->toXml(doc);
         productionsEl.appendChild(productionEl);
     }
+
+    //диаграммы
+    kbEl.appendChild( m_diagramElement );
 
     doc.save(stream,4);
 
@@ -484,6 +487,8 @@ NKBManager::readFromXml(QFile &file)
         m_productions.append(production);
         prodictionEl = prodictionEl.nextSibling().toElement();
     }
+    //диаграммы
+    m_diagramElement=kbEl.firstChildElement("diagram");
     file.close();
     m_dirty=false;
     emit sigDataLoaded();
@@ -664,3 +669,12 @@ DomainModel* NKBManager::getDomainModel()
     return &m_domainModel;
 }
 
+QDomElement NKBManager::diagramNode()
+{
+    return m_diagramElement;
+}
+
+void NKBManager::setDiagramNode(QDomElement node)
+{
+    m_diagramElement = node;
+}

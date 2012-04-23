@@ -46,6 +46,9 @@ public:
 
     unsigned getIdByIndex(QModelIndex);
 
+    QDomElement diagramNode();
+    void        setDiagramNode(QDomElement node);
+
 private:
     NFrame  *getFrameById(int id);
     int     getFreeId();
@@ -87,8 +90,13 @@ private:
     QList<NProc*>       m_procs;                //спимок процедур на qscript
     DomainModel         m_domainModel;          //модель доменов
 
+    QDomElement         m_diagramElement;       //данные для диаграммы
+
     bool        m_dirty;                        //Признак того, что есть несохраненные изменения. true - если произведены изменения
     QFile       *m_file;                        //ссылка на файл БЗ
+
+public:
+    QDomDocument doc;
 };
 
 #endif // NKBMANAGER_H
