@@ -13,6 +13,7 @@ class LGen2DiagramEditor : public QGraphicsView
     DiagramScene* m_scene;
 
     QMap<unsigned, DiagramItem*> m_items;
+    QList<Arrow*> m_links;
 
 public:
     explicit LGen2DiagramEditor(QWidget *parent = 0);
@@ -23,14 +24,17 @@ public:
     unsigned selectedFrameId();
 
     QDomElement toXML(QDomDocument &doc);
+    void fromXML(QDomElement &doc);
 
 signals:
     void frameSelected(unsigned id);
+    void nodeDeleted(unsigned id);
     void linkSelected(unsigned sid, unsigned eid);
     void selectionCleared();
 
 protected slots:
     void sceneSelectionChanged();
+    void deleteSelectedItem();
 
 public slots:
     void zoomIn();

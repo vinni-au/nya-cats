@@ -29,6 +29,13 @@ KBEditorWindow::KBEditorWindow(NKBManager *kbManager,QWidget *parent) :
     QObject::connect(ui->graphicsView->scene(), SIGNAL(arrowAdded(Arrow*)),
                      SLOT(arrowAdded(Arrow*)));
 
+    QObject::connect(ui->graphicsView, SIGNAL(frameSelected(uint)),
+                     SLOT(frameSelectedOnDiagram(uint)));
+    QObject::connect(ui->graphicsView, SIGNAL(nodeDeleted(uint)),
+                     SLOT(frameDeletedOnDiagram(uint)));
+    QObject::connect(ui->treeView->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
+                     SLOT(treeviewSelectionChanged(QItemSelection,QItemSelection)));
+
     //Соединяем сигналы/слоты менеджера БЗ и диаграмминга
     QObject::connect(m_kbManager, SIGNAL(frameAdded(uint,QString)),
                      ui->graphicsView, SLOT(addNode(uint,QString)));
@@ -39,6 +46,12 @@ KBEditorWindow::KBEditorWindow(NKBManager *kbManager,QWidget *parent) :
 KBEditorWindow::~KBEditorWindow()
 {
     delete ui;
+}
+
+void KBEditorWindow::frameDeletedOnDiagram(unsigned id)
+{
+    if (m_kbManager->deleteFrame(id))
+        ui->graphicsView->deleteNode(id);
 }
 
 void KBEditorWindow::on_btnAddFrame_clicked()
@@ -210,4 +223,22 @@ void KBEditorWindow::arrowAdded(Arrow *arrow)
     }
 }
 
+void KBEditorWindow::frameSelectedOnDiagram(unsigned id)
+{
+    QModelIndex index = m_kbManager->getFrameNetModel()->getFrameIndexById(id);
+    QItemSelectionModel* smodel = ui->treeView->selectionModel();
+    smodel->clear();
+    smodel->setCurrentIndex(index, QItemSelectionModel::Select);
+    ui->treeView->setSelectionModel(smodel);
+    ui->treeView->expand(index);
+}
+
+void KBEditorWindow::treeviewSelectionChanged(QItemSelection selected, QItemSelection deselected)
+{
+    if (selected.count() == 1) {
+        QModelIndex sindex = selected.indexes().at(0);
+        unsigned id = m_kbManager->getIdByIndex(sindex);
+        ui->graphicsView->selectNode(id);
+    }
+}
 

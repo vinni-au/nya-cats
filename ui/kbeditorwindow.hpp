@@ -35,9 +35,15 @@ private slots:
     void on_btn_addIsa_toggled(bool checked);
     void on_btn_addSub_toggled(bool checked);
     void arrowAdded(Arrow* arrow);
+    void frameSelectedOnDiagram(unsigned id);
+    void frameDeletedOnDiagram(unsigned id);
+    void treeviewSelectionChanged(QItemSelection,QItemSelection);
 
-private:
+protected:
     void closeEvent(QCloseEvent *event);
+
+signals:
+    void frameSelectedOnTreeView(unsigned id);
 
 private:
     Ui::KBEditorWindow *ui;

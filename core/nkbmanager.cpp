@@ -532,6 +532,11 @@ NFrame* NKBManager::getFrameById(int id)
     return frame;
 }
 
+unsigned NKBManager::getIdByIndex(QModelIndex index)
+{
+    return getFrameNetModel()->getIdByIndex(index);
+}
+
 int NKBManager::getFreeId()
 {
     NFrame *frame;

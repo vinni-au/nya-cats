@@ -26,6 +26,8 @@ public:
 
     void setText(QString text)
     {   m_text = text;  }
+    QString text() const
+    {   return m_text;  }
 
     QRectF boundingRect() const;
 

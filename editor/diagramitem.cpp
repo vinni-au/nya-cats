@@ -96,5 +96,11 @@ QVariant DiagramItem::itemChange(GraphicsItemChange change, const QVariant &valu
 void DiagramItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     QGraphicsPolygonItem::paint(painter, option, widget);
-    painter->drawText(0, 0, m_title);
+    painter->drawText(-47, 0, m_title);
+}
+
+void DiagramItem::imitateMousePress()
+{
+    mousePressEvent(new QGraphicsSceneMouseEvent(QEvent::MouseButtonPress));
+    mouseReleaseEvent(new QGraphicsSceneMouseEvent(QEvent::MouseButtonRelease));
 }

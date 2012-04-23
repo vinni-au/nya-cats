@@ -44,6 +44,7 @@ public:
     NFramenetModel  *getFrameNetModel();
     DomainModel     *getDomainModel();
 
+    unsigned getIdByIndex(QModelIndex);
 
 private:
     NFrame  *getFrameById(int id);
