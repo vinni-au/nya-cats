@@ -116,7 +116,7 @@ NFramenetModel::data(const QModelIndex &index, int role) const
         if(!slotName)
             return "errSlotName";
 
-        return slotName->value();
+        return slotName->defValue();
         break;
     case NFrameNode::Faset:
         column = index.column();
@@ -170,7 +170,7 @@ NFramenetModel::setData(const QModelIndex &index, const QVariant &value, int rol
             if(!slotName)
                 return "errSlotName";
 
-            slotName->setValue(value);
+            slotName->setDefValue(value);
 
             emit dataChanged(index,index);
             emit sigDataChanged();

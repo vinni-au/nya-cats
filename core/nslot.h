@@ -27,8 +27,11 @@ public:
     QString name();//имя слота
     void setName(QString name);
 
-    QVariant value();//значение слота
-    void setValue(QVariant value);
+    //QVariant value();//значение слота
+    //void setValue(QVariant value);
+
+    QVariant defValue();//задание отсутствия
+    void setDefValue(QVariant value);
 
 
     //системность
@@ -51,7 +54,7 @@ private:
 public:
     NFaset slotName;
     NFaset slotType;
-    NFaset slotValue;
+    //NFaset slotValue;
     NFaset slotDefaultValue;
     NFaset slotMarkerType;
     NFaset slotMarker;

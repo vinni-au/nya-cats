@@ -15,9 +15,9 @@ NSlot::NSlot(QObject *parent) :
     slotType.setValue("");
     m_fasets.append(&slotType);
 
-    slotValue.setName("value");
-    slotValue.setValue("");
-    m_fasets.append(&slotValue);
+    //slotValue.setName("value");
+    //slotValue.setValue("");
+    //m_fasets.append(&slotValue);
 
     slotDefaultValue.setName("default_value");
     slotDefaultValue.setValue("");
@@ -80,15 +80,15 @@ void NSlot::setName(QString name)
     this->getFasetByName("name")->setStringValue(name);
 }
 //значение слота
-QVariant NSlot::value()
-{
-    NFaset* valFaset = getFasetByName("value");
-    return valFaset->value();
-}
-void NSlot::setValue(QVariant value)
-{
-    this->getFasetByName("value")->setValue(value);
-}
+//QVariant NSlot::value()
+//{
+//    NFaset* valFaset = getFasetByName("value");
+//    return valFaset->value();
+//}
+//void NSlot::setValue(QVariant value)
+//{
+//    this->getFasetByName("value")->setValue(value);
+//}
 
 QDomElement NSlot::toXml(QDomDocument& doc)
 {
@@ -145,4 +145,15 @@ int NSlot::getFasetIndexByName(QString name)
             return i;
     }
     return -1;
+}
+
+
+QVariant NSlot::defValue()
+{
+    return slotDefaultValue.value();
+}
+
+void NSlot::setDefValue(QVariant value)
+{
+    slotDefaultValue.setValue(value);
 }

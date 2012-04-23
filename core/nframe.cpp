@@ -33,7 +33,7 @@ NSlot* NFrame::getSlotByName(QString name)
 
 QString NFrame::parentFrame()
 {
-    return this->is_a.value().toString();
+    return this->is_a.defValue().toString();
 }
 
 int NFrame::id()
@@ -154,10 +154,10 @@ int NFrame::getSlotIndexByName(QString name)
 
 QString NFrame::frameName()
 {
-    return name.value().toString();
+    return name.defValue().toString();
 }
 
 void NFrame::setParentName(QString name)
 {
-    getSlotByName("is_a")->setValue(name);
+    getSlotByName("is_a")->setDefValue(name);
 }

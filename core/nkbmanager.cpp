@@ -38,7 +38,7 @@ QMap<unsigned, QString> NKBManager::frameNames()
 
     foreach(frame,m_frames)
     {
-        map.insert(frame->id(),frame->name.value().toString());
+        map.insert(frame->id(),frame->name.defValue().toString());
     }
     return map;
 }
@@ -54,12 +54,12 @@ bool NKBManager::addFrame(QString name)
         return false;
 
     NFrame *frame = new NFrame(getFreeId());
-    frame->name.setValue(name);
+    frame->name.setDefValue(name);
     m_frames.append(frame);
 
     m_framenetModel->setFrames(&m_frames);
 
-    emit frameAdded(frame->id(), frame->name.value().toString());
+    emit frameAdded(frame->id(), frame->name.defValue().toString());
 
     setDirty(true);
 
@@ -124,12 +124,12 @@ bool NKBManager::addIsa(unsigned sid, unsigned did)
         return false;
     }
 
-    QString destName = dFrame->name.value().toString();
+    QString destName = dFrame->name.defValue().toString();
 
     //магический код изменения значения в тривью
     //sFrame->getSlotByName("is_a")->setValue( destName );
     QModelIndex sFrameIndex = m_framenetModel->getFrameIndexById(sFrame->id());
-    QModelIndex slotIndex = m_framenetModel->getSlotFasetIndex(sFrameIndex,"is_a","value");
+    QModelIndex slotIndex = m_framenetModel->getSlotFasetIndex(sFrameIndex,"is_a","default_value");
 
     //можно добавить связь?
     QString existingValue = m_framenetModel->data(slotIndex,Qt::DisplayRole).toString();//связь is_a уже есть
@@ -138,17 +138,17 @@ bool NKBManager::addIsa(unsigned sid, unsigned did)
 
     //проверка на обратную связь is_a
     QModelIndex dFrameIndex = m_framenetModel->getFrameIndexById(dFrame->id());
-    QModelIndex destFrameSlotIndex = m_framenetModel->getSlotFasetIndex(dFrameIndex,"is_a","value");
+    QModelIndex destFrameSlotIndex = m_framenetModel->getSlotFasetIndex(dFrameIndex,"is_a","default_value");
     QString destFrameSlotVal = m_framenetModel->data(destFrameSlotIndex,Qt::DisplayRole).toString();
-    if(destFrameSlotVal == sFrame->name.value())
+    if(destFrameSlotVal == sFrame->name.defValue())
         return false;
 
     //проверка связи a_part_of. если связь есть, is-a нельзя. причем в обе стороны
-    NSlot* subframeSlot =  dFrame->getSlotByName(  sFrame->getSlotByName("name")->value().toString()   );
+    NSlot* subframeSlot =  dFrame->getSlotByName(  sFrame->getSlotByName("name")->defValue().toString()   );
     if(subframeSlot)
         return false;
 
-    subframeSlot =  sFrame->getSlotByName(  dFrame->getSlotByName("name")->value().toString()   );
+    subframeSlot =  sFrame->getSlotByName(  dFrame->getSlotByName("name")->defValue().toString()   );
     if(subframeSlot)
         return false;
     //
@@ -174,11 +174,11 @@ bool NKBManager::addApo(unsigned sid, unsigned did)
     }
 
     //проверка связи a_part_of.
-    NSlot* subframeSlot =  dFrame->getSlotByName(  sFrame->getSlotByName("name")->value().toString()   );
+    NSlot* subframeSlot =  dFrame->getSlotByName(  sFrame->getSlotByName("name")->defValue().toString()   );
     if(subframeSlot)
         return false;
 
-    subframeSlot =  sFrame->getSlotByName(  dFrame->getSlotByName("name")->value().toString()   );
+    subframeSlot =  sFrame->getSlotByName(  dFrame->getSlotByName("name")->defValue().toString()   );
     if(subframeSlot)
         return false;
     //
@@ -205,7 +205,7 @@ bool NKBManager::addApo(unsigned sid, unsigned did)
     m_framenetModel->setData(fasetNameIndex,sFrameName,Qt::EditRole);//имя слота
     QModelIndex fasetTypeIndex =m_framenetModel->getSlotFasetIndex(slotIndex,"slot_type");
     m_framenetModel->setData(fasetTypeIndex,"frame",Qt::EditRole);//тип слота
-    QModelIndex fasetValueIndex =m_framenetModel->getSlotFasetIndex(slotIndex,"value");
+    QModelIndex fasetValueIndex =m_framenetModel->getSlotFasetIndex(slotIndex,"default_value");
     m_framenetModel->setData(fasetValueIndex,sFrameName,Qt::EditRole);//значение слота
 
     //
@@ -226,7 +226,7 @@ bool NKBManager::deleteIsa(unsigned sid, unsigned did)
     }
 
     NSlot *slot = sFrame->getSlotByName("is_a");
-    QString isaFrameName = slot->value().toString();
+    QString isaFrameName = slot->defValue().toString();
 
     if(isaFrameName.isEmpty())
     {
@@ -234,7 +234,7 @@ bool NKBManager::deleteIsa(unsigned sid, unsigned did)
             return false;
     }
 
-    slot->setValue("");
+    slot->setDefValue("");
     return true;
 }
 
@@ -249,7 +249,7 @@ bool NKBManager::deleteApo(unsigned sid, unsigned did)
         return false;
     }
 
-    QString sFrameName = sFrame->name.value().toString();
+    QString sFrameName = sFrame->name.defValue().toString();
 
     NSlot *slot = dFrame->getSlotByName(sFrameName);
     if(!slot)
@@ -630,7 +630,7 @@ bool NKBManager::frameExists(QString name)
     NFrame *frame;
     foreach(frame,m_frames)
     {
-        if(frame->name.value()==name)
+        if(frame->name.defValue()==name)
         {
             return true;
         }
