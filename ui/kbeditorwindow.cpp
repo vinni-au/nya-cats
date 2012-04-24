@@ -12,6 +12,11 @@ KBEditorWindow::KBEditorWindow(NKBManager *kbManager,QWidget *parent) :
 
     this->ui->treeView->setModel(m_kbManager->getFrameNetModel());
 
+    QMenu* contextMenu = new QMenu;
+    contextMenu->addAction("Добавить фрейм", ui->btnAddFrame, SLOT(click()));
+
+    ui->graphicsView->setContextMenu(contextMenu);
+
     QDomElement diagramElement = m_kbManager->diagramNode().toElement();
     this->ui->graphicsView->fromXML(diagramElement);
 
@@ -44,6 +49,7 @@ KBEditorWindow::KBEditorWindow(NKBManager *kbManager,QWidget *parent) :
                      ui->graphicsView, SLOT(addNode(uint,QString)));
     QObject::connect(m_kbManager, SIGNAL(frameDeleted(uint)),
                      ui->graphicsView, SLOT(deleteNode(uint)));
+
 }
 
 KBEditorWindow::~KBEditorWindow()
@@ -214,6 +220,7 @@ void KBEditorWindow::arrowAdded(Arrow *arrow)
         if (!m_kbManager->addIsa(arrow->startItem()->id(), arrow->endItem()->id()))
             ui->graphicsView->scene()->removeItem(arrow);
         else {
+            ui->graphicsView->addArrow(arrow);
             arrow->setText("is-a");
             arrow->setColor(Qt::darkGreen);
         }
@@ -221,6 +228,7 @@ void KBEditorWindow::arrowAdded(Arrow *arrow)
         if (!m_kbManager->addApo(arrow->startItem()->id(), arrow->endItem()->id()))
             ui->graphicsView->scene()->removeItem(arrow);
         else {
+            ui->graphicsView->addArrow(arrow);
             arrow->setText("sub");
             arrow->setColor(Qt::darkYellow);
         }

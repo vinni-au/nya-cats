@@ -11,7 +11,7 @@ Arrow::Arrow(DiagramItem *startItem, DiagramItem *endItem,
 {
     setFlag(QGraphicsItem::ItemIsSelectable, true);
     m_color = Qt::black;
-    setPen(QPen(m_color, 2, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+    setPen(QPen(m_color, 4, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
 }
 
 QRectF Arrow::boundingRect() const

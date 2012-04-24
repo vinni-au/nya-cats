@@ -15,8 +15,10 @@ class LGen2DiagramEditor : public QGraphicsView
     QMap<unsigned, DiagramItem*> m_items;
     QList<Arrow*> m_links;
 
+    QMenu* m_contextMenu;
+
 public:
-    explicit LGen2DiagramEditor(QWidget *parent = 0);
+    explicit LGen2DiagramEditor(QWidget *parent = 0, QMenu* contextMenu = 0);
 
     DiagramScene* scene() const
     {   return m_scene; }
@@ -26,11 +28,17 @@ public:
     QDomElement toXML(QDomDocument &doc);
     void fromXML(QDomElement &doc);
 
+    void setContextMenu(QMenu* menu)
+    {   m_contextMenu = menu;   }
+
 signals:
     void frameSelected(unsigned id);
     void nodeDeleted(unsigned id);
     void linkSelected(unsigned sid, unsigned eid);
     void selectionCleared();
+
+protected:
+    virtual void contextMenuEvent(QContextMenuEvent *event);
 
 protected slots:
     void sceneSelectionChanged();
@@ -46,6 +54,7 @@ public slots:
     //Добавить связь между от вершины с идентификатором sid до вершины с идентификатором did
     //и надписью title
     void addLink(unsigned sid, unsigned did, QString title);
+    void addArrow(Arrow* arrow);
     //Удалить связь
     void deleteLink(unsigned sid, unsigned did);
 

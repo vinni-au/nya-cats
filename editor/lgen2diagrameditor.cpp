@@ -1,7 +1,8 @@
 #include "lgen2diagrameditor.hpp"
+#include <QContextMenuEvent>
 
-LGen2DiagramEditor::LGen2DiagramEditor(QWidget *parent) :
-    QGraphicsView(parent)
+LGen2DiagramEditor::LGen2DiagramEditor(QWidget *parent, QMenu *contextMenu):
+    QGraphicsView(parent), m_contextMenu(contextMenu)
 {
     m_scene = new DiagramScene;
 
@@ -27,6 +28,11 @@ void LGen2DiagramEditor::addNode(unsigned id, QString title)
     DiagramItem* node = new DiagramItem(id, DiagramItem::Node, title, menu);
     m_items.insert(id, node);
     m_scene->addItem(node);
+}
+
+void LGen2DiagramEditor::addArrow(Arrow *arrow)
+{
+    m_links << arrow;
 }
 
 void LGen2DiagramEditor::deleteNode(unsigned id)
@@ -187,4 +193,14 @@ void LGen2DiagramEditor::fromXML(QDomElement &elem)
             }
         }
     }
+}
+
+void LGen2DiagramEditor::contextMenuEvent(QContextMenuEvent *event)
+{
+    m_scene->clearSelection();
+    QPointF pos = mapToScene(event->pos());
+    if (!m_scene->itemAt(pos)) {
+        if (m_contextMenu)
+            m_contextMenu->exec(event->globalPos());
+    } else QGraphicsView::contextMenuEvent(event);
 }
