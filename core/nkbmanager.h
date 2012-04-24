@@ -49,6 +49,13 @@ public:
     QDomElement diagramNode();
     void        setDiagramNode(QDomElement node);
 
+    bool productionExists(QString name);
+    NProduction *getProduction(QString name);
+
+    void reloadProduction(NProduction *production);
+    void addProduction(NProduction *prod);
+    QStringList getProductionNames();
+    QStringList getProceduresNames();
 private:
     NFrame  *getFrameById(int id);
     int     getFreeId();

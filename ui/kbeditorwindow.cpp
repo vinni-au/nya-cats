@@ -254,3 +254,8 @@ void KBEditorWindow::treeviewSelectionChanged(QItemSelection selected, QItemSele
     }
 }
 
+
+void KBEditorWindow::on_treeView_doubleClicked(const QModelIndex &index)
+{
+    this->on_btnEditSlot_clicked();
+}

@@ -53,7 +53,8 @@ SlotEditorWnd::SlotEditorWnd(QModelIndex slotIndex,NKBManager *kbManager,QWidget
     int slotMarkerTypeIndex = ui->cmbMarkerType->findText(slotMarkerType);
     ui->cmbMarkerType->setCurrentIndex(slotMarkerTypeIndex);
     //значение маркера
-
+    QString slotMarkerValue = model->getSlotFasetValue(slotIndex,"marker").toString() ;
+    ui->cmbMarkerValue->setCurrentIndex( ui->cmbMarkerValue->findText( slotMarkerValue ) );
 }
 
 SlotEditorWnd::~SlotEditorWnd()
@@ -142,10 +143,49 @@ void SlotEditorWnd::on_btnEditMarker_clicked()
     else if(ui->cmbMarkerType->currentText() == "production")
     {
         qDebug()<<"Добавление продукции";
+        QString prodName;
+        bool newProd = true;
+        NProduction *production = NULL;
 
-        NProduction *production = new NProduction();
-        RulesWnd *rWnd = new RulesWnd(production,this);
-        QObject::connect(rWnd,SIGNAL(sigProductionAdded(NProduction*)),this,SLOT(onProductionAdded(NProduction*)));
+        if(ui->cmbMarkerValue->currentText().trimmed().isEmpty())
+        {//добавить
+            bool ok;
+            QString name = QInputDialog::getText(this, "Создать продукии", "Введите имя продукционной программы:", QLineEdit::Normal, QString(), &ok);
+            if (ok && !name.isEmpty())
+            {
+                if(!(m_kbManager->productionExists(name)))
+                {
+                    production = new NProduction();
+                    production->setName(name);
+                    newProd = true;
+                }
+                else
+                {
+                    QMessageBox::information(this,"","Прод. программа с таким именем уже существует",QMessageBox::Ok);
+                    return;
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
+        else
+        {//изменить
+            prodName = ui->cmbMarkerValue->currentText().trimmed();
+            production = m_kbManager->getProduction(prodName);
+            if(!production)
+            {
+                QMessageBox::information(this,"","Не удалось найти продукционную программу",QMessageBox::Ok);
+                return;
+            }
+            newProd = false;
+        }
+
+
+        RulesWnd *rWnd = new RulesWnd(m_kbManager,production,newProd,this);
+        rWnd->setWindowModality(Qt::WindowModal);
+        QObject::connect(rWnd,SIGNAL(sigProductionAdded(NProduction*,bool)),this,SLOT(onProductionAdded(NProduction*,bool)));
         rWnd->show();
     }
     else if(ui->cmbMarkerType->currentText() == "procedure")
@@ -155,7 +195,41 @@ void SlotEditorWnd::on_btnEditMarker_clicked()
 }
 
 
-void SlotEditorWnd::onProductionAdded(NProduction *production)
+void SlotEditorWnd::onProductionAdded(NProduction *production, bool newProd)
 {
     QMessageBox::information(this,"SlotEditorWnd::onProductionAdded","Опачки, продукция добавлена.",QMessageBox::NoButton);
+    if(m_kbManager->productionExists(production->name()))
+    {
+        //изменение
+    }
+    else
+    {
+        //добавление
+        m_kbManager->addProduction(production);
+    }
+    ui->cmbMarkerValue->addItem(production->name());
+    ui->cmbMarkerValue->setCurrentIndex( ui->cmbMarkerValue->findText(production->name()) );
+    m_kbManager->mayBeSave();
+}
+
+void SlotEditorWnd::on_cmbMarkerType_currentIndexChanged(const QString &arg1)
+{
+    QString markerType = arg1;
+    if(markerType == "domain")
+    {
+
+    }
+    else if(markerType == "production")
+    {
+        ui->cmbMarkerValue->clear();
+        QStringList names = m_kbManager->getProductionNames();
+        ui->cmbMarkerValue->addItems(names);
+
+    }
+    else if(markerType == "procedure")
+    {
+        ui->cmbMarkerValue->clear();
+        QStringList names = m_kbManager->getProceduresNames();
+        ui->cmbMarkerValue->addItems(names);
+    }
 }

@@ -678,3 +678,84 @@ void NKBManager::setDiagramNode(QDomElement node)
 {
     m_diagramElement = node;
 }
+
+bool NKBManager::productionExists(QString name)
+{
+    NProduction* p;
+    foreach(p,this->m_productions)
+    {
+        if(p->name() == name)
+            return true;
+    }
+    return false;
+}
+
+NProduction *NKBManager::getProduction(QString name)
+{
+    NProduction* p;
+    foreach(p,this->m_productions)
+    {
+        if(p->name() == name)
+            return p;
+    }
+    return NULL;
+}
+
+void NKBManager::reloadProduction(NProduction *production)
+{
+    if(!m_productions.contains(production))
+        return;
+
+    QDomDocument doc;
+    if(!doc.setContent(file()))
+    {
+        qDebug()<<"NKBManager::reloadProduction: Не удалось считать файл: "<<file()->fileName();
+        return;
+    }
+
+    QDomElement kbEl = doc.documentElement();
+    //продукции
+    QDomElement productionsEl = kbEl.firstChildElement("productions");
+    QDomElement prodictionEl = productionsEl.firstChild().toElement();
+    while(!prodictionEl.isNull())
+    {
+        if(prodictionEl.attribute("name") == production->name())
+        {
+            production->clear();
+            production->fromXml(prodictionEl);
+            break;
+        }
+        prodictionEl = prodictionEl.nextSibling().toElement();
+    }
+
+    file()->close();
+    m_dirty=false;
+    emit sigDataLoaded();
+}
+
+void NKBManager::addProduction(NProduction *prod)
+{
+    m_productions.append(prod);
+}
+
+QStringList NKBManager::getProductionNames()
+{
+    QStringList names;
+    NProduction *p;
+    foreach(p,m_productions)
+    {
+        names<<p->name();
+    }
+    return names;
+}
+
+QStringList NKBManager::getProceduresNames()
+{
+    QStringList names;
+    NProc *p;
+    foreach(p,m_procs)
+    {
+        names<<p->name();
+    }
+    return names;
+}

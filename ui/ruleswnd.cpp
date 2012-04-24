@@ -3,9 +3,12 @@
 
 #include "saver.h"
 
-RulesWnd::RulesWnd(NProduction *production,QWidget *parent) :
+RulesWnd::RulesWnd(NKBManager *manager, NProduction *production, bool newProd, QWidget *parent):
     QMainWindow(parent)
 {
+    m_kbManager = manager;
+    m_production = production;
+    m_newProd = newProd;
     this->ruleModel = production->getModel();
 
     splMain=new QSplitter(Qt::Vertical);
@@ -538,9 +541,9 @@ RulesWnd::onCloseClick()
 void
 RulesWnd::maybeClose()
 {
-    if(Saver::mayBeSave())//пытаемся сохранить
+    if(m_kbManager->mayBeSave())//пытаемся сохранить
     {
-        if(/*DataModels::instance()->saved()*/1)//нажал сохранить
+        if(m_kbManager->saved())//нажал сохранить
         {
             editStop();
         }
@@ -615,6 +618,7 @@ RulesWnd::onOkSaveClick()
     {
   //!      DataModels::instance()->save();
         editStop();
+        emit sigProductionAdded(m_production,m_newProd);
     }
     else
     {
@@ -625,12 +629,22 @@ RulesWnd::onOkSaveClick()
 void
 RulesWnd::onCancelClick()
 {
-    if(/*DataModels::instance()->reload()*/1)
+//    if(/*DataModels::instance()->reload()*/1)
+//    {
+//        editStop();
+//    }
+//    else
+//        QMessageBox::critical(this,"Ошибка!","Не удалось откатить!");
+    if(!m_newProd)
     {
-        editStop();
+        m_kbManager->reloadProduction(m_production);
     }
     else
-        QMessageBox::critical(this,"Ошибка!","Не удалось откатить!");
+    {
+        m_production->clear();
+    }
+
+    editStop();
 }
 
 
@@ -666,6 +680,7 @@ bool RulesWnd::event(QEvent *event)
     }
     return QWidget::event(event);
 }
+
 
 bool
 RulesWnd::isEditMode()

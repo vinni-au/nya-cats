@@ -32,3 +32,17 @@ void NProduction::fromXml(QDomElement &production)
 }
 
 
+QString NProduction::name()
+{
+    return m_name;
+}
+
+void NProduction::setName(QString name)
+{
+    m_name= name;
+}
+
+void NProduction::clear()
+{
+    m_ruleModel.setRules(new QList<Rule*>());
+}

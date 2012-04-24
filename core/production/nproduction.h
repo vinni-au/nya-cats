@@ -20,6 +20,10 @@ public:
     void fromXml(QDomElement &production);
 
 
+    QString name();
+    void    setName(QString name);
+
+    void clear();
 signals:
 
 public slots:

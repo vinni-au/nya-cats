@@ -21,18 +21,19 @@
 #include "expreditor.h"
 #include "core/production/rulemodel.h"
 #include "core/production/nproduction.h"
+#include "core/nkbmanager.h"
 
 
 class RulesWnd : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit RulesWnd(NProduction *production, QWidget *parent = 0);
+    explicit RulesWnd(NKBManager* manager, NProduction *production,bool newProd, QWidget *parent = 0);
     virtual ~RulesWnd();
     bool isEditMode();
 signals:
     void sigClosed();
-    void sigProductionAdded(NProduction *production);
+    void sigProductionAdded(NProduction *production,bool newProd);
 public slots:
     void retranslate();
 
@@ -77,6 +78,10 @@ private:
 
 
 private:
+    NKBManager *m_kbManager;
+    NProduction* m_production;
+    bool m_newProd;             //новая или существующая
+
     RuleModel* ruleModel;
 
     bool editMode;

@@ -39,6 +39,8 @@ private slots:
     void frameDeletedOnDiagram(unsigned id);
     void treeviewSelectionChanged(QItemSelection,QItemSelection);
 
+    void on_treeView_doubleClicked(const QModelIndex &index);
+
 protected:
     void closeEvent(QCloseEvent *event);
 
