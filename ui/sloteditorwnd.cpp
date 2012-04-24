@@ -183,7 +183,7 @@ void SlotEditorWnd::on_btnEditMarker_clicked()
         }
 
 
-        RulesWnd *rWnd = new RulesWnd(m_kbManager,production,newProd,this);
+        RulesWnd *rWnd = new RulesWnd(m_kbManager,production,newProd,m_slotIndex,this);
         rWnd->setWindowModality(Qt::WindowModal);
         QObject::connect(rWnd,SIGNAL(sigProductionAdded(NProduction*,bool)),this,SLOT(onProductionAdded(NProduction*,bool)));
         rWnd->show();

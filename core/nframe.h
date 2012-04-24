@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QList>
+#include <QStringList>
 
 #include "nslot.h"
 
@@ -43,6 +44,9 @@ public:
     void removeSlot(NSlot *slot);
 
     QString frameName();
+
+    QStringList getSimpleSlotNames();
+    QStringList getSubframesSlotNames();
 signals:
 
 public slots:

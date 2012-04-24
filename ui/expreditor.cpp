@@ -1,9 +1,11 @@
 #include "expreditor.h"
 #include <QDebug>
 
-ExprEditor::ExprEditor(TypeExpr typeExpr,TypeAction typeAction,QWidget *parent) :
+ExprEditor::ExprEditor(NKBManager* manager,QModelIndex slotIndex,TypeExpr typeExpr,TypeAction typeAction,QWidget *parent) :
     QDialog(parent)
 {
+    m_kbManager = manager;
+    m_slotIndex = slotIndex;
     this->typeExpr=typeExpr;
     this->typeAction=typeAction;
     /*QVBoxLayout **/layMain=new QVBoxLayout();                     this->setLayout(layMain);
@@ -42,6 +44,11 @@ ExprEditor::ExprEditor(TypeExpr typeExpr,TypeAction typeAction,QWidget *parent) 
     retranslate();
 
 //!    this->cmbVar->setModel(DataModels::instance()->varModel);
+    QString frameName = m_kbManager->getFrameNetModel()->getFrameNameByIndex(m_slotIndex);
+    QStringList slots1= m_kbManager->getVarsWithParents(frameName);
+    cmbVar->addItems(slots1);
+
+
     if(typeExpr == ExprEditor::IfExpr)
     {
 

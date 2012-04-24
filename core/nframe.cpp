@@ -161,3 +161,31 @@ void NFrame::setParentName(QString name)
 {
     getSlotByName("is_a")->setDefValue(name);
 }
+
+QStringList NFrame::getSimpleSlotNames()
+{
+    QStringList slotNames;
+    NSlot* slot;
+    foreach(slot,m_slots)
+    {
+        if(slot->getFasetByName("slot_type")->value()!="frame")
+        {
+            slotNames<<slot->name();
+        }
+    }
+    return slotNames;
+}
+
+QStringList NFrame::getSubframesSlotNames()
+{
+    QStringList slotNames;
+    NSlot* slot;
+    foreach(slot,m_slots)
+    {
+        if(slot->getFasetByName("slot_type")->value()=="frame")
+        {
+            slotNames<<slot->name();
+        }
+    }
+    return slotNames;
+}

@@ -68,6 +68,8 @@ public:
 
     //bool isValid();
     //void setItemsIsEditable(bool isEditable);
+
+    QString getFrameNameByIndex(QModelIndex index);
 private:
     int getFreeId();
 signals:

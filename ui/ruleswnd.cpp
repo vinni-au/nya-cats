@@ -3,12 +3,13 @@
 
 #include "saver.h"
 
-RulesWnd::RulesWnd(NKBManager *manager, NProduction *production, bool newProd, QWidget *parent):
+RulesWnd::RulesWnd(NKBManager *manager, NProduction *production, bool newProd,QModelIndex slotIndex, QWidget *parent):
     QMainWindow(parent)
 {
     m_kbManager = manager;
     m_production = production;
     m_newProd = newProd;
+    m_slotIndex = slotIndex;
     this->ruleModel = production->getModel();
 
     splMain=new QSplitter(Qt::Vertical);
@@ -340,7 +341,7 @@ void
 RulesWnd::onAddIfClick()
 {
     qDebug()<<"RulesWnd::onAddIfClick()";
-    ExprEditor exprEditor(ExprEditor::IfExpr,ExprEditor::AddAction);
+    ExprEditor exprEditor(m_kbManager,m_slotIndex, ExprEditor::IfExpr,ExprEditor::AddAction);
     do
     {
         if(exprEditor.exec())
@@ -361,7 +362,7 @@ RulesWnd::onEditIfClick()
     QModelIndex ifIndex = lbIf->currentIndex();
     if(!ifIndex.isValid())
         return;
-    ExprEditor exprEditor(ExprEditor::IfExpr,ExprEditor::EditAction);
+    ExprEditor exprEditor(m_kbManager,m_slotIndex,ExprEditor::IfExpr,ExprEditor::EditAction);
     //получаем выражение по частям
     QString sVar = this->ruleModel->getExprPart(ifIndex,RuleModel::ExprVar);
     QString sSign = this->ruleModel->getExprPart(ifIndex,RuleModel::ExprSign);
@@ -392,7 +393,7 @@ void
 RulesWnd::onAddThenClick()
 {
     qDebug()<<"RulesWnd::onAddThenClick()";
-    ExprEditor exprEditor(ExprEditor::ThenExpr,ExprEditor::AddAction);
+    ExprEditor exprEditor(m_kbManager,m_slotIndex,ExprEditor::ThenExpr,ExprEditor::AddAction);
     do
     {
         if(exprEditor.exec())
@@ -413,7 +414,7 @@ RulesWnd::onEditThenClick()
     QModelIndex thenIndex = lbThen->currentIndex();
     if(!thenIndex.isValid())
         return;
-    ExprEditor exprEditor(ExprEditor::ThenExpr,ExprEditor::EditAction);
+    ExprEditor exprEditor(m_kbManager,m_slotIndex,ExprEditor::ThenExpr,ExprEditor::EditAction);
     //получаем выражение по частям
     QString sVar = this->ruleModel->getExprPart(thenIndex,RuleModel::ExprVar);
     QString sSign = this->ruleModel->getExprPart(thenIndex,RuleModel::ExprSign);

@@ -56,8 +56,14 @@ public:
     void addProduction(NProduction *prod);
     QStringList getProductionNames();
     QStringList getProceduresNames();
+
+    QStringList getVars(QString frameName);
+    QStringList getVarsWithParents(QString frameName);
+
+
 private:
     NFrame  *getFrameById(int id);
+    NFrame *getFrameByName(QString name);
     int     getFreeId();
 
     void deleteLinks(int id);

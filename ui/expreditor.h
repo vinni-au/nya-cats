@@ -13,6 +13,7 @@
 #include "mycombobox.h"
 #include "core/production/expr.h"
 #include "saver.h"
+#include "core/nkbmanager.h"
 
 class ExprEditor : public QDialog
 {
@@ -20,7 +21,7 @@ class ExprEditor : public QDialog
 public:
     enum TypeExpr {IfExpr,ThenExpr};
     enum TypeAction{AddAction,EditAction};
-    explicit ExprEditor(TypeExpr typeExpr,TypeAction typeAction, QWidget *parent = 0);
+    explicit ExprEditor(NKBManager* manager,QModelIndex slotIndex,TypeExpr typeExpr,TypeAction typeAction, QWidget *parent = 0);
 
     void retranslate();
     Expr* getExpr();
@@ -46,6 +47,8 @@ public slots:
 private:
     bool dataIsValid();
 public:
+    NKBManager *m_kbManager;
+    QModelIndex m_slotIndex;
     TypeExpr    typeExpr;
     TypeAction  typeAction;
     bool startAgain;

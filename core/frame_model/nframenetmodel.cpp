@@ -843,3 +843,8 @@ QModelIndex  NFramenetModel::getSlotFasetIndex(QModelIndex slotIndex,QString fas
 
     return createIndex(row,column,slotNode);
 }
+
+QString NFramenetModel::getFrameNameByIndex(QModelIndex index)
+{
+    return getSlotFasetValue(index,"name").toString();
+}

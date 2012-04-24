@@ -759,3 +759,61 @@ QStringList NKBManager::getProceduresNames()
     }
     return names;
 }
+
+NFrame *NKBManager::getFrameByName(QString name)
+{
+    NFrame *frame=NULL;
+    foreach(frame,m_frames)
+    {
+        if(frame->frameName()==name)
+        {
+            return frame;
+        }
+    }
+    return NULL;
+}
+
+QStringList NKBManager::getVars(QString frameName)
+{
+    NFrame *frame = getFrameByName(frameName);
+
+    QStringList ownSlots = frame->getSimpleSlotNames();//собственные слоты
+
+    QStringList subFs = frame->getSubframesSlotNames();
+    QStringList subframeSlots;
+    foreach(QString subF,subFs)
+    {
+        QString prefix=subF.append(".");
+        subframeSlots = getVars(subF);
+
+        for(int i=0;i<subframeSlots.count();++i)
+        {
+            subframeSlots.replace(i,prefix+subframeSlots.at(i) );
+        }
+    }
+
+    ownSlots.append(subframeSlots);
+    return ownSlots;
+}
+
+
+QStringList NKBManager::getVarsWithParents(QString frameName)
+{
+    QStringList allSlots = getVars(frameName);
+
+    NFrame *frame = getFrameByName(frameName);
+
+    while(frame)
+    {
+        QString parent = frame->parentFrame();
+        if(!parent.isEmpty())
+        {
+            QStringList parentSlots = getVars(parent);
+            allSlots.append(parentSlots);
+        }
+        frame = getFrameByName(parent);
+    }
+    return allSlots;
+}
+
+
