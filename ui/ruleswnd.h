@@ -28,7 +28,7 @@ class RulesWnd : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit RulesWnd(NKBManager* manager, NProduction *production,bool newProd,QModelIndex slotIndex, QWidget *parent = 0);
+    explicit RulesWnd(NKBManager* manager, NProduction *production,bool newProd,QModelIndex slotIndex,QString domain, QWidget *parent = 0);
     virtual ~RulesWnd();
     bool isEditMode();
 signals:
@@ -78,6 +78,7 @@ private:
 
 
 private:
+    QString m_domain;
     NKBManager *m_kbManager;
     QModelIndex m_slotIndex;
     NProduction* m_production;

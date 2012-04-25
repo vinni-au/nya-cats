@@ -17,17 +17,20 @@ SlotEditorWnd::SlotEditorWnd(QModelIndex slotIndex,NKBManager *kbManager,QWidget
     ui->cmbSlotType->addItem("string");
     ui->cmbSlotType->addItem("int");
     ui->cmbSlotType->addItem("frame");
+    ui->cmbSlotType->addItem("domain");
 
 
     QString slotType = model->getSlotFasetValue(slotIndex,"slot_type").toString() ;
     int slotTypeIndex = ui->cmbSlotType->findText(slotType);
+    if(slotTypeIndex==-1)
+        slotTypeIndex=3;
     ui->cmbSlotType->setCurrentIndex(slotTypeIndex);
 
 
     //домен
     ui->cmbSlotDomain->setModel( kbManager->getDomainModel()  );
 
-    QString slotDomain = model->getSlotFasetValue(slotIndex,"domain").toString() ;
+    QString slotDomain = model->getSlotFasetValue(slotIndex,"slot_type").toString() ;
     int slotDomainIndex = ui->cmbSlotDomain->findText(slotDomain);
     ui->cmbSlotDomain->setCurrentIndex(slotDomainIndex);
     //значение
@@ -69,8 +72,15 @@ void SlotEditorWnd::on_buttonBox_accepted()
     //проверка??
     NFramenetModel* model = m_kbManager->getFrameNetModel();
     model->setSlotFasetValue(m_slotIndex,"name",ui->lineEdit->text().trimmed());//имя
-    model->setSlotFasetValue(m_slotIndex,"slot_type",ui->cmbSlotType->currentText());//имя
-    model->setSlotFasetValue(m_slotIndex,"domain",ui->cmbSlotDomain->currentText());//имя
+    if(ui->cmbSlotType->currentText() == "domain")
+    {
+        model->setSlotFasetValue(m_slotIndex,"slot_type",ui->cmbSlotDomain->currentText());
+    }
+    else
+    {
+        model->setSlotFasetValue(m_slotIndex,"slot_type",ui->cmbSlotType->currentText());
+    }
+
     //model->setSlotFasetValue(m_slotIndex,"value",ui->cmbSlotValue->currentText());//имя
     model->setSlotFasetValue(m_slotIndex,"default_value",ui->cmbDefaultValue->currentText());//имя
     model->setSlotFasetValue(m_slotIndex,"inheritance",ui->cmbInheritance->currentText());//имя
@@ -103,7 +113,7 @@ void SlotEditorWnd::on_cmbSlotType_currentIndexChanged(int index)
 
     if(slotType == "string")
     {
-
+        ui->cmbSlotDomain->setEnabled(false);
     }
     else if(slotType == "int")
     {
@@ -131,6 +141,10 @@ void SlotEditorWnd::on_cmbSlotType_currentIndexChanged(int index)
              i.next();
              ui->cmbDefaultValue->addItem(i.value());
          }
+    }
+    else if(slotType == "domain")
+    {
+        ui->cmbSlotDomain->setModel( m_kbManager->getDomainModel()  );
     }
 }
 
@@ -183,7 +197,7 @@ void SlotEditorWnd::on_btnEditMarker_clicked()
         }
 
 
-        RulesWnd *rWnd = new RulesWnd(m_kbManager,production,newProd,m_slotIndex,this);
+        RulesWnd *rWnd = new RulesWnd(m_kbManager,production,newProd,m_slotIndex,ui->cmbSlotDomain->currentText(),this);
         rWnd->setWindowModality(Qt::WindowModal);
         QObject::connect(rWnd,SIGNAL(sigProductionAdded(NProduction*,bool)),this,SLOT(onProductionAdded(NProduction*,bool)));
         rWnd->show();

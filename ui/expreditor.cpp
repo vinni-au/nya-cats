@@ -1,11 +1,12 @@
 #include "expreditor.h"
 #include <QDebug>
 
-ExprEditor::ExprEditor(NKBManager* manager,QModelIndex slotIndex,TypeExpr typeExpr,TypeAction typeAction,QWidget *parent) :
+ExprEditor::ExprEditor(NKBManager* manager,QModelIndex slotIndex,QString domain,TypeExpr typeExpr,TypeAction typeAction,QWidget *parent) :
     QDialog(parent)
 {
     m_kbManager = manager;
     m_slotIndex = slotIndex;
+    m_domain = domain;
     this->typeExpr=typeExpr;
     this->typeAction=typeAction;
     /*QVBoxLayout **/layMain=new QVBoxLayout();                     this->setLayout(layMain);
@@ -106,31 +107,30 @@ ExprEditor::retranslate()
 void
 ExprEditor::onCurrentVarChanged(int inx)
 {
-//    qDebug()<<"ExprEditor::onCurrentVarChanged";
-//    QModelIndex index = DataModels::instance()->varModel->index(inx,0,QModelIndex());
-//    QModelIndex domainIndexInVar = DataModels::instance()->varModel->index(2,0,index);
-//    QString domainName = DataModels::instance()->varModel->data(domainIndexInVar,Qt::DisplayRole).toString();
-//    qDebug()<<domainName;
+    QString frameName = m_kbManager->getFrameNetModel()->getFrameNameByIndex( m_slotIndex );
+    QString slotName = m_kbManager->getFrameNetModel()->getSlotFasetValue( m_slotIndex,"default_value"  ).toString();
+    QString domain;
+    if(cmbVar->currentText() == slotName)
+    {//домен берем из конструктора
+        domain = m_domain;
+    }
+    else
+    {//домен берем из сети фреймов
+        domain = m_kbManager->getDomainByString( frameName, cmbVar->currentText()  );
+    }
 
-//    if(domainName == "")
-//    {
-//        cmbVal->setModel(new QStringListModel());
-//        cmbVal->clear();
-//        return;
-//    }
+    if(domain.isEmpty())
+    {
+        cmbVal->setModel(new QStringListModel());
+        return;
+    }
 
-//    QModelIndex domainIndex = DataModels::instance()->domainModel->indexByName(domainName);
-//    if(!domainIndex.isValid())
-//    {
-//        cmbVal->setModel(NULL);
-//        cmbVal->clear();
-//        return;
-//    }
-
-//    cmbVal->setModel(DataModels::instance()->domainModel);
-//    cmbVal->setRootModelIndex(domainIndex);
-//    cmbVal->setCurrentIndex(0);
+    QModelIndex domainIndex = m_kbManager->getDomainModel()->indexByName(domain);
+    cmbVal->setModel(m_kbManager->getDomainModel());
+    cmbVal->setRootModelIndex(domainIndex);
+    cmbVal->setCurrentIndex(0);
 }
+
 Expr*
 ExprEditor::getExpr()
 {
@@ -155,7 +155,8 @@ ExprEditor::dataIsValid()//валидация
 //    if(DataModels::instance()->domainModel->valueExists(sDomain,cmbVal->currentText().trimmed()))
 //        return true;
 //    else
-        return false;
+//        return false;
+    return true;
 }
 
 void

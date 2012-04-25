@@ -820,3 +820,30 @@ QStringList NKBManager::getVarsWithParents(QString frameName)
 }
 
 
+QString NKBManager::getDomainByString( QString frameName, QString str  )
+{
+    NSlot *slot = getSlotByString(frameName,str);
+    if(!slot)
+        return "";
+    NFaset* faset = slot->getFasetByName( "slot_type" );
+    return faset->value().toString();
+}
+
+NSlot * NKBManager::getSlotByString( QString frameName, QString str  )
+{
+    NFrame* frame = getFrameByName(frameName);
+    if(!frame)
+        return NULL;
+    if(!str.contains("."))
+    {//просто слот
+        return frame->getSlotByName(str);
+    }
+    else
+    {//субфреймы
+        int pointInx = str.indexOf(".");
+        QString newStr = str.right(pointInx);
+        QString subfName = str.left(pointInx);
+        return getSlotByString(subfName,newStr);
+    }
+    return NULL;
+}

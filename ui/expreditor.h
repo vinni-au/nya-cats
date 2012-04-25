@@ -21,7 +21,7 @@ class ExprEditor : public QDialog
 public:
     enum TypeExpr {IfExpr,ThenExpr};
     enum TypeAction{AddAction,EditAction};
-    explicit ExprEditor(NKBManager* manager,QModelIndex slotIndex,TypeExpr typeExpr,TypeAction typeAction, QWidget *parent = 0);
+    explicit ExprEditor(NKBManager* manager,QModelIndex slotIndex,QString domain,TypeExpr typeExpr,TypeAction typeAction, QWidget *parent = 0);
 
     void retranslate();
     Expr* getExpr();
@@ -49,6 +49,7 @@ private:
 public:
     NKBManager *m_kbManager;
     QModelIndex m_slotIndex;
+    QString m_domain;//домен слота, в котором продукция
     TypeExpr    typeExpr;
     TypeAction  typeAction;
     bool startAgain;

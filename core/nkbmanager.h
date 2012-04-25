@@ -60,7 +60,8 @@ public:
     QStringList getVars(QString frameName);
     QStringList getVarsWithParents(QString frameName);
 
-
+    QString getDomainByString( QString frameName, QString str  );
+    NSlot * getSlotByString( QString frameName, QString str  );
 private:
     NFrame  *getFrameById(int id);
     NFrame *getFrameByName(QString name);

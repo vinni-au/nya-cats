@@ -1,5 +1,10 @@
 <kb>
-    <domains/>
+    <domains>
+        <domain Name="Domain1">
+            <domain_value>Value1</domain_value>
+            <domain_value>Value2</domain_value>
+        </domain>
+    </domains>
     <frames>
         <frame type="105" id="0">
             <slots>
@@ -26,10 +31,10 @@
                 <slot system="0">
                     <fasets>
                         <faset value="2" name="name"/>
-                        <faset value="string" name="slot_type"/>
+                        <faset value="Domain1" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="production" name="marker_type"/>
-                        <faset value="qwert" name="marker"/>
+                        <faset value="q" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -38,6 +43,16 @@
                         <faset value="22" name="name"/>
                         <faset value="frame" name="slot_type"/>
                         <faset value="22" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="33" name="name"/>
+                        <faset value="Domain1" name="slot_type"/>
+                        <faset value="" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -147,6 +162,28 @@
                     <ifs/>
                     <thens/>
                 </rule>
+                <rule Name="Rule2">
+                    <reason>qwe</reason>
+                    <ifs>
+                        <if>
+                            <var>2</var>
+                            <sign>=</sign>
+                            <val>Value1</val>
+                        </if>
+                        <if>
+                            <var>2</var>
+                            <sign>=</sign>
+                            <val>Value2</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>2</var>
+                            <sign>=</sign>
+                            <val>Value2</val>
+                        </then>
+                    </thens>
+                </rule>
             </rules>
         </production>
         <production name="qwert">
@@ -165,10 +202,10 @@
         </production>
     </productions>
     <diagram>
-        <item x="-114.4" title="1" y="61.8" id="0"/>
+        <item x="-118.4" title="1" y="74.80000000000001" id="0"/>
         <item x="-198.5" title="22" y="222" id="1"/>
-        <item x="-273.0000000000001" title="333" y="380.9" id="2"/>
-        <item x="-25.6" title="PARENT" y="-74.60000000000002" id="3"/>
+        <item x="-287.0000000000001" title="333" y="369.9" id="2"/>
+        <item x="-40.59999999999999" title="PARENT" y="-47.60000000000002" id="3"/>
         <link sid="1" did="0" text="sub"/>
         <link sid="2" did="1" text="sub"/>
         <link sid="0" did="3" text="is-a"/>
