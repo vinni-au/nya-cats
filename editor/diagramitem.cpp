@@ -104,6 +104,10 @@ void DiagramItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *optio
 {
     QGraphicsPolygonItem::paint(painter, option, widget);
     painter->drawText(-47, 0, m_title);
+    if (isSelected()) {
+        painter->setBrush(QBrush(QColor(0, 0, 255, 40)));
+        painter->drawPolygon(polygon());
+    }
 }
 
 void DiagramItem::imitateMousePress()
