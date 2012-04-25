@@ -21,8 +21,8 @@ LGen2DiagramEditor::LGen2DiagramEditor(QWidget *parent, QMenu *contextMenu):
 
 void LGen2DiagramEditor::addNode(unsigned id, QString title)
 {
-    QMenu* menu = new QMenu;
-    QAction* act = menu->addAction("Удалить фрейм");
+    static QMenu* menu = new QMenu;
+    static QAction* act = menu->addAction("Удалить фрейм");
     QObject::connect(act, SIGNAL(triggered()),
                      SLOT(deleteSelectedItem()));
     DiagramItem* node = new DiagramItem(id, DiagramItem::Node, title, menu);
@@ -166,6 +166,10 @@ QDomElement LGen2DiagramEditor::toXML(QDomDocument &doc)
 
 void LGen2DiagramEditor::fromXML(QDomElement &elem)
 {
+    static QMenu* menu = new QMenu;
+    static QAction* act = menu->addAction("Удалить фрейм");
+    QObject::connect(act, SIGNAL(triggered()),
+                     SLOT(deleteSelectedItem()));
     if (elem.tagName() == "diagram") {
         QDomNodeList nodes = elem.childNodes();
         int count = nodes.count();
@@ -176,7 +180,7 @@ void LGen2DiagramEditor::fromXML(QDomElement &elem)
                 QString title = e.attribute("title");
                 qreal x = e.attribute("x").toDouble();
                 qreal y = e.attribute("y").toDouble();
-                DiagramItem* item = new DiagramItem(id, DiagramItem::Node, title);
+                DiagramItem* item = new DiagramItem(id, DiagramItem::Node, title, menu);
                 item->setX(x);
                 item->setY(y);
                 m_items.insert(id, item);
@@ -188,6 +192,12 @@ void LGen2DiagramEditor::fromXML(QDomElement &elem)
                 DiagramItem* start = m_items.value(sid, 0);
                 DiagramItem* end = m_items.value(did, 0);
                 Arrow* a = new Arrow(start, end, text);
+                if (text == "is-a")
+                    a->setColor(Qt::darkGreen);
+                else if (text == "sub")
+                    a->setColor(Qt::darkYellow);
+                start->addArrow(a);
+                end->addArrow(a);
                 m_links << a;
                 m_scene->addItem(a);
             }

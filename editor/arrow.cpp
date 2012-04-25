@@ -1,5 +1,6 @@
 #include "arrow.hpp"
 #include <math.h>
+#include <QGraphicsSceneContextMenuEvent>
 
 const qreal Pi = 3.1415926535;
 
@@ -7,7 +8,7 @@ Arrow::Arrow(DiagramItem *startItem, DiagramItem *endItem,
              QString text, QGraphicsItem *parent,
              QGraphicsScene *scene)
     : QGraphicsLineItem(parent, scene), m_startItem(startItem),
-      m_endItem(endItem), m_text(text)
+      m_endItem(endItem), m_text(text), m_contextMenu(0)
 {
     setFlag(QGraphicsItem::ItemIsSelectable, true);
     m_color = Qt::black;
@@ -26,8 +27,9 @@ QRectF Arrow::boundingRect() const
 
 QPainterPath Arrow::shape() const
 {
+    //TODO добавить шейп вокрук текста
     QPainterPath path = QGraphicsLineItem::shape();
-    path.addPolygon(m_arrowHead);
+    path.addPolygon(m_arrowHead);    
     return path;
 }
 
@@ -35,6 +37,14 @@ void Arrow::updatePosition()
 {
     QLineF line(mapFromItem(m_startItem, 0, 0), mapFromItem(m_endItem, 0, 0));
     setLine(line);
+}
+
+void Arrow::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
+{
+    scene()->clearSelection();
+    setSelected(true);
+    if (m_contextMenu)
+        m_contextMenu->exec(event->screenPos());
 }
 
 void Arrow::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,

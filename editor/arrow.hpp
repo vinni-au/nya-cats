@@ -8,12 +8,12 @@ class DiagramItem;
 
 class Arrow : public QGraphicsLineItem
 {
-    //TODO надпись на стрелке
     DiagramItem *m_startItem;
     DiagramItem *m_endItem;
     QColor m_color;
     QPolygonF m_arrowHead;
     QString m_text;
+    QMenu* m_contextMenu;
 
 public:
     enum { Type = UserType + 2 };
@@ -23,6 +23,9 @@ public:
 
     int type() const
     {   return Type;    }
+
+    void setContextMenu(QMenu* menu)
+    {   m_contextMenu = menu;   }
 
     void setText(QString text)
     {   m_text = text;  }
@@ -46,6 +49,7 @@ public:
 protected:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
                QWidget *widget = 0);
+    void contextMenuEvent(QGraphicsSceneContextMenuEvent *event);
 
 };
 
