@@ -3,12 +3,12 @@
 #include <QInputDialog>
 
 KBEditorWindow::KBEditorWindow(NKBManager *kbManager,QWidget *parent) :
-    QMainWindow(parent),
+    QMainWindow(parent), m_kbManager(kbManager),
     ui(new Ui::KBEditorWindow)
 {
     ui->setupUi(this);
 
-    this->m_kbManager = kbManager;
+    ui->splitter->setSizes(QList<int>() << 1 << 4);
 
     this->ui->treeView->setModel(m_kbManager->getFrameNetModel());
 
