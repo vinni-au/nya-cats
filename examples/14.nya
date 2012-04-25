@@ -143,8 +143,52 @@
                 <slot system="0">
                     <fasets>
                         <faset value="IUYIUY" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="uyuy" name="default_value"/>
+                        <faset value="Domain1" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="qq" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="qq" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="-1163005939" id="4">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="" name="slot_type"/>
+                        <faset value="qq" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="sssssss" name="name"/>
+                        <faset value="Domain1" name="slot_type"/>
+                        <faset value="" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -159,7 +203,18 @@
             <rules>
                 <rule Name="Rule1">
                     <reason></reason>
-                    <ifs/>
+                    <ifs>
+                        <if>
+                            <var>is_a</var>
+                            <sign>=</sign>
+                            <val></val>
+                        </if>
+                        <if>
+                            <var>33</var>
+                            <sign>=</sign>
+                            <val>Value1</val>
+                        </if>
+                    </ifs>
                     <thens/>
                 </rule>
                 <rule Name="Rule2">
@@ -206,8 +261,280 @@
         <item x="-198.5" title="22" y="222" id="1"/>
         <item x="-287.0000000000001" title="333" y="369.9" id="2"/>
         <item x="-40.59999999999999" title="PARENT" y="-47.60000000000002" id="3"/>
+        <item x="13" title="qq" y="75" id="4"/>
         <link sid="1" did="0" text="sub"/>
         <link sid="2" did="1" text="sub"/>
         <link sid="0" did="3" text="is-a"/>
+        <link sid="4" did="3" text="sub"/>
+    </diagram>
+</kb>
+<kb>
+    <domains>
+        <domain Name="Domain1">
+            <domain_value>Value1</domain_value>
+            <domain_value>Value2</domain_value>
+        </domain>
+    </domains>
+    <frames>
+        <frame type="105" id="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="" name="slot_type"/>
+                        <faset value="1" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="" name="slot_type"/>
+                        <faset value="PARENT" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="2" name="name"/>
+                        <faset value="Domain1" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="q" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="22" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="22" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="33" name="name"/>
+                        <faset value="Domain1" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="105" id="1">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="" name="slot_type"/>
+                        <faset value="22" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="333" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="333" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="2">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="" name="slot_type"/>
+                        <faset value="333" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="327684" id="3">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="" name="slot_type"/>
+                        <faset value="PARENT" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="IUYIUY" name="name"/>
+                        <faset value="Domain1" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="qq" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="qq" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="-1163005939" id="4">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="" name="slot_type"/>
+                        <faset value="qq" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="sssssss" name="name"/>
+                        <faset value="Domain1" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+    </frames>
+    <procs/>
+    <productions>
+        <production name="q">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>is_a</var>
+                            <sign>=</sign>
+                            <val></val>
+                        </if>
+                        <if>
+                            <var>33</var>
+                            <sign>=</sign>
+                            <val>Value1</val>
+                        </if>
+                    </ifs>
+                    <thens/>
+                </rule>
+                <rule Name="Rule2">
+                    <reason>qwe</reason>
+                    <ifs>
+                        <if>
+                            <var>2</var>
+                            <sign>=</sign>
+                            <val>Value1</val>
+                        </if>
+                        <if>
+                            <var>2</var>
+                            <sign>=</sign>
+                            <val>Value2</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>2</var>
+                            <sign>=</sign>
+                            <val>Value2</val>
+                        </then>
+                    </thens>
+                </rule>
+            </rules>
+        </production>
+        <production name="qwert">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs/>
+                    <thens/>
+                </rule>
+                <rule Name="Rule2">
+                    <reason></reason>
+                    <ifs/>
+                    <thens/>
+                </rule>
+            </rules>
+        </production>
+    </productions>
+    <diagram>
+        <item x="-118.4" title="1" y="74.80000000000001" id="0"/>
+        <item x="-198.5" title="22" y="222" id="1"/>
+        <item x="-287.0000000000001" title="333" y="369.9" id="2"/>
+        <item x="-40.59999999999999" title="PARENT" y="-47.60000000000002" id="3"/>
+        <item x="13" title="qq" y="75" id="4"/>
+        <link sid="1" did="0" text="sub"/>
+        <link sid="2" did="1" text="sub"/>
+        <link sid="0" did="3" text="is-a"/>
+        <link sid="4" did="3" text="sub"/>
     </diagram>
 </kb>

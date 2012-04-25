@@ -834,16 +834,37 @@ NSlot * NKBManager::getSlotByString( QString frameName, QString str  )
     NFrame* frame = getFrameByName(frameName);
     if(!frame)
         return NULL;
+
+    //тут надо еще наследование учесть
     if(!str.contains("."))
     {//просто слот
-        return frame->getSlotByName(str);
+        NSlot* slot = frame->getSlotByName(str);
+        if(!slot)
+        {//ищем в родительском
+            return getSlotByString(frame->parentFrame(),str);
+        }
+        else
+        {
+            return slot;
+        }
     }
     else
     {//субфреймы
         int pointInx = str.indexOf(".");
-        QString newStr = str.right(pointInx);
+        QString newStr = str.right(str.length()-pointInx-1);
         QString subfName = str.left(pointInx);
-        return getSlotByString(subfName,newStr);
+
+        //проверяем наличие слота субфрейма
+        NSlot* slot = frame->getSlotByName(subfName);
+        if(!slot)
+        {//ищем в родительском
+            return getSlotByString(frame->parentFrame(),str);
+        }
+        else
+        {
+            return getSlotByString(subfName,newStr);
+        }
+
     }
     return NULL;
 }

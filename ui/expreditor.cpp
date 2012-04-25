@@ -119,7 +119,7 @@ ExprEditor::onCurrentVarChanged(int inx)
         domain = m_kbManager->getDomainByString( frameName, cmbVar->currentText()  );
     }
 
-    if(domain.isEmpty())
+    if(domain.isEmpty() || domain == "string" || domain == "int" ||domain == "frame" )
     {
         cmbVal->setModel(new QStringListModel());
         return;
