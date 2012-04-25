@@ -1,4 +1,5 @@
 #include "diagramitem.hpp"
+#include "diagramscene.hpp"
 
 DiagramItem::DiagramItem(unsigned id, DiagramType type, QString title, QMenu *contextMenu,
                          QGraphicsItem *parent, QGraphicsScene *scene) :
@@ -42,6 +43,7 @@ void DiagramItem::removeArrowTo(DiagramItem *item)
     foreach (Arrow* arrow, m_arrows) {
         if (arrow->endItem() == item) {
             scene()->removeItem(arrow);
+            m_arrows.removeAll(arrow);
             delete arrow;
         }
     }
@@ -51,8 +53,13 @@ void DiagramItem::removeArrowFrom(DiagramItem *item)
 {
     foreach (Arrow* arrow, m_arrows) {
         if (arrow->startItem() == item) {
-            scene()->removeItem(arrow);
-            delete arrow;
+            //TODO жёсткий костыль, метод по сути не работает теперь!!!
+            /*DiagramScene* s = static_cast<DiagramScene*>(scene());
+            if (s) {
+                s->removeItem(arrow);
+                m_arrows.removeAll(arrow);
+                delete arrow;
+            }*/
         }
     }
 }

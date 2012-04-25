@@ -41,6 +41,10 @@ KBEditorWindow::KBEditorWindow(NKBManager *kbManager,QWidget *parent) :
                      SLOT(frameSelectedOnDiagram(uint)));
     QObject::connect(ui->graphicsView, SIGNAL(nodeDeleted(uint)),
                      SLOT(frameDeletedOnDiagram(uint)));
+    QObject::connect(ui->graphicsView, SIGNAL(isaDeleted(uint,uint)),
+                     SLOT(isaDeletedOnDiagram(uint,uint)));
+    QObject::connect(ui->graphicsView, SIGNAL(apoDeleted(uint,uint)),
+                     SLOT(apoDeletedOnDiagram(uint,uint)));
     QObject::connect(ui->treeView->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
                      SLOT(treeviewSelectionChanged(QItemSelection,QItemSelection)));
 
@@ -61,6 +65,18 @@ void KBEditorWindow::frameDeletedOnDiagram(unsigned id)
 {
     if (m_kbManager->deleteFrame(id))
         ui->graphicsView->deleteNode(id);
+}
+
+void KBEditorWindow::isaDeletedOnDiagram(unsigned sid, unsigned did)
+{
+    if (m_kbManager->deleteIsa(sid, did))
+        ui->graphicsView->deleteLink(sid, did);
+}
+
+void KBEditorWindow::apoDeletedOnDiagram(unsigned sid, unsigned did)
+{
+    if (m_kbManager->deleteApo(sid, did))
+        ui->graphicsView->deleteLink(sid, did);
 }
 
 void KBEditorWindow::on_btnAddFrame_clicked()

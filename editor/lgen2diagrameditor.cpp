@@ -22,9 +22,7 @@ LGen2DiagramEditor::LGen2DiagramEditor(QWidget *parent, QMenu *contextMenu):
 void LGen2DiagramEditor::addNode(unsigned id, QString title)
 {
     static QMenu* menu = new QMenu;
-    static QAction* act = menu->addAction("Удалить фрейм");
-    QObject::connect(act, SIGNAL(triggered()),
-                     SLOT(deleteSelectedItem()));
+    static QAction* act = menu->addAction("Удалить фрейм", this, SLOT(deleteSelectedItem()));
     DiagramItem* node = new DiagramItem(id, DiagramItem::Node, title, menu);
     m_items.insert(id, node);
     m_scene->addItem(node);
@@ -32,6 +30,9 @@ void LGen2DiagramEditor::addNode(unsigned id, QString title)
 
 void LGen2DiagramEditor::addArrow(Arrow *arrow)
 {
+    static QMenu* menu = new QMenu;
+    static QAction* act = menu->addAction("Удалить связь", this, SLOT(deleteSelectedLink()));
+    arrow->setContextMenu(menu);
     m_links << arrow;
 }
 
@@ -50,7 +51,10 @@ void LGen2DiagramEditor::addLink(unsigned sid, unsigned did, QString title)
 {
     DiagramItem* i1 = m_items[sid];
     DiagramItem* i2 = m_items[did];
+    static QMenu* menu = new QMenu;
+    static QAction* act = menu->addAction("Удалить связь", this, SLOT(deleteSelectedLink()));
     Arrow* a = new Arrow(i1, i2, title);
+    a->setContextMenu(menu);
     m_links << a;
     i1->addArrow(a);
     i2->addArrow(a);
@@ -122,6 +126,20 @@ void LGen2DiagramEditor::deleteSelectedItem()
         emit nodeDeleted(id);
 }
 
+void LGen2DiagramEditor::deleteSelectedLink()
+{
+    QList<QGraphicsItem*> items = m_scene->selectedItems();
+    if (items.count() == 1) {
+        Arrow* a = qgraphicsitem_cast<Arrow*>(items[0]);
+        if (a) {
+            if (a->text() == "is-a")
+                emit isaDeleted(a->startItem()->id(), a->endItem()->id());
+            else if (a->text() == "sub")
+                emit apoDeleted(a->startItem()->id(), a->endItem()->id());
+        }
+    }
+}
+
 void LGen2DiagramEditor::selectLink(unsigned sid, unsigned did)
 {
     //Вроде как нафиг не нужно
@@ -191,7 +209,10 @@ void LGen2DiagramEditor::fromXML(QDomElement &elem)
                 unsigned did = e.attribute("did").toUInt();
                 DiagramItem* start = m_items.value(sid, 0);
                 DiagramItem* end = m_items.value(did, 0);
+                static QMenu* menu = new QMenu;
+                static QAction* act = menu->addAction("Удалить связь", this, SLOT(deleteSelectedLink()));
                 Arrow* a = new Arrow(start, end, text);
+                a->setContextMenu(menu);
                 if (text == "is-a")
                     a->setColor(Qt::darkGreen);
                 else if (text == "sub")

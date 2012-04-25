@@ -34,8 +34,10 @@ public:
 signals:
     void frameSelected(unsigned id);
     void nodeDeleted(unsigned id);
-    void linkSelected(unsigned sid, unsigned eid);
     void selectionCleared();
+    void linkSelected(unsigned, unsigned);
+    void isaDeleted(unsigned sid, unsigned did);
+    void apoDeleted(unsigned sid, unsigned did);
 
 protected:
     virtual void contextMenuEvent(QContextMenuEvent *event);
@@ -43,6 +45,7 @@ protected:
 protected slots:
     void sceneSelectionChanged();
     void deleteSelectedItem();
+    void deleteSelectedLink();
 
 public slots:
     void zoomIn();

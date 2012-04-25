@@ -38,6 +38,8 @@ private slots:
     void frameSelectedOnDiagram(unsigned id);
     void frameDeletedOnDiagram(unsigned id);
     void treeviewSelectionChanged(QItemSelection,QItemSelection);
+    void isaDeletedOnDiagram(unsigned sid, unsigned did);
+    void apoDeletedOnDiagram(unsigned sid, unsigned did);
 
     void on_treeView_doubleClicked(const QModelIndex &index);
 
