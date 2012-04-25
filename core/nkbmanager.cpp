@@ -878,3 +878,42 @@ NSlot * NKBManager::getSlotByString( QString frameName, QString str  )
     }
     return NULL;
 }
+
+// Для МЛВ
+NFrame* NKBManager::GetFrameByName(QString name)
+{
+    return NULL;
+}
+
+NFrame* NKBManager::GetFrameParent(NFrame* frame)
+{
+    return NULL;
+}
+
+QList<NFrame*> NKBManager::GetFrameChildren(NFrame* frame)
+{
+    QList<NFrame*> list;
+    return list;
+}
+
+NFrame* NKBManager::GetFrameInstanse(NFrame* frame)
+{
+    return NULL;
+}
+
+QList<NSlot*> NKBManager::GetFrameSlots(NFrame* frame)
+{
+    QList<NSlot*> list;
+    return list;
+}
+
+Domain* NKBManager::GetSlotDomain(NSlot* slot)
+{
+    return NULL;
+}
+
+QList<NFaset*> NKBManager::GetSlotFasets(NSlot* slot)
+{
+    QList<NFaset*> list;
+    return list;
+}

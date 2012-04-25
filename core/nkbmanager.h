@@ -62,6 +62,17 @@ public:
 
     QString getDomainByString( QString frameName, QString str  );
     NSlot * getSlotByString( QString frameName, QString str  );
+
+    // Для МЛВ
+    NFrame*         GetFrameByName      (QString name);
+    NFrame*         GetFrameParent      (NFrame* frame);
+    NFrame*         GetFrameInstanse    (NFrame* frame);
+    QList<NFrame*>  GetFrameChildren    (NFrame* frame);
+    QList<NSlot*>   GetFrameSlots       (NFrame* frame);
+
+    Domain*         GetSlotDomain       (NSlot* slot);
+    QList<NFaset*>  GetSlotFasets       (NSlot* slot);
+
 private:
     NFrame  *getFrameById(int id);
     NFrame *getFrameByName(QString name);
