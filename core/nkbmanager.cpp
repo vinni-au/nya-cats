@@ -776,6 +776,8 @@ NFrame *NKBManager::getFrameByName(QString name)
 QStringList NKBManager::getVars(QString frameName)
 {
     NFrame *frame = getFrameByName(frameName);
+    if(!frame)
+        return QStringList();
 
     QStringList ownSlots = frame->getSimpleSlotNames();//собственные слоты
 
@@ -783,7 +785,7 @@ QStringList NKBManager::getVars(QString frameName)
     QStringList subframeSlots;
     foreach(QString subF,subFs)
     {
-        QString prefix=subF.append(".");
+        QString prefix=subF+QString(".");
         subframeSlots = getVars(subF);
 
         for(int i=0;i<subframeSlots.count();++i)
@@ -813,6 +815,7 @@ QStringList NKBManager::getVarsWithParents(QString frameName)
         }
         frame = getFrameByName(parent);
     }
+    allSlots.removeDuplicates();
     return allSlots;
 }
 
