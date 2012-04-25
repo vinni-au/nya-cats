@@ -110,5 +110,6 @@ void Arrow::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
 
     int x = (m_startItem->pos().x() + m_endItem->pos().x()) / 2;
     int y = (m_startItem->pos().y() + m_endItem->pos().y()) / 2;
+    painter->setPen(QPen(Qt::black, 3));
     painter->drawText(x, y, m_text);
 }
