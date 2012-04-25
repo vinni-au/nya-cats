@@ -258,8 +258,16 @@ bool NKBManager::deleteApo(unsigned sid, unsigned did)
         return false;
     }
 
-    dFrame->removeSlot(slot);
-    return true;
+//    dFrame->removeSlot(slot);
+//    return true;
+
+    //
+    QModelIndex frameIndex = m_framenetModel->getFrameIndexById(did);
+    QModelIndex slotIndex = m_framenetModel->getSlotFasetIndex(frameIndex,sFrameName,"name");
+
+    return m_framenetModel->deleteSlot(slotIndex);
+
+
 }
 
 //конец интерфейсные методы
@@ -467,6 +475,7 @@ NKBManager::readFromXml(QFile &file)
         m_frames.append(frame);
         frameEl = frameEl.nextSibling().toElement();
     }
+    getFrameNetModel()->setFrames(&m_frames);
     //процедуры
     QDomElement procsEl = kbEl.firstChildElement("procs");
     QDomElement procEl = procsEl.firstChild().toElement();
@@ -559,6 +568,7 @@ NKBManager::Clear()
     {
         m_framenetModel->setFrames(&m_frames);
     }
+    m_diagramElement = QDomElement();
 
     m_file = NULL;
     m_dirty = false;
