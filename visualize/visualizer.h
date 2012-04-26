@@ -7,6 +7,7 @@
 
 #include "gamescene.h"
 #include "gameitem.h"
+#include "grid.h"
 
 class Visualizer : public QWidget
 {
@@ -19,6 +20,9 @@ private:
 public:
     Visualizer(QWidget *parent = 0);
     void AddGameItem(GameItemType type, GameTeam team);
+
+    void Update();
+    Grid* GetGrid();
 
 signals:
 

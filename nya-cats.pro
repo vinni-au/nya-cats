@@ -50,7 +50,8 @@ SOURCES += main.cpp\
     visualize/cell.cpp \
     visualize/gameitemfactory.cpp \
     visualize/gameitem.cpp \
-    core/production/nproductionmlv.cpp
+    core/production/nproductionmlv.cpp \
+    mlv/mlv.cpp
 
 HEADERS  += mainwindow.hpp \
     core/nslot.h \
@@ -91,7 +92,8 @@ HEADERS  += mainwindow.hpp \
     visualize/cell.h \
     visualize/gameitemfactory.h \
     visualize/gameitem.h \
-    core/production/nproductionmlv.h
+    core/production/nproductionmlv.h \
+    mlv/mlv.h
 
 FORMS    += mainwindow.ui \
     ui/frameeditorwnd.ui \

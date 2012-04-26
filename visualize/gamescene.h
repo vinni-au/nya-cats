@@ -17,6 +17,8 @@ public:
     GameScene(QObject* parent = 0);
     void CreateGrid(int count, QRectF &rect, QColor& color);
     void CreateFactory(GameItem* item, QRectF& rect);
+
+    Grid* GetGrid();
 };
 
 #endif // GAMESCENE_H

@@ -19,3 +19,8 @@ void GameScene::CreateFactory(GameItem* item, QRectF& rect)
 
     m_FactoryFrame->AddItem(item, rect);
 }
+
+Grid* GameScene::GetGrid()
+{
+    return m_Grid;
+}

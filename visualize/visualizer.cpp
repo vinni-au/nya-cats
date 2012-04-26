@@ -56,6 +56,16 @@ void Visualizer::populateScene()
 
 }
 
+void Visualizer::Update()
+{
+
+}
+
+Grid* Visualizer::GetGrid()
+{
+    return scene->GetGrid();
+}
+
 void Visualizer::AddGameItem(GameItemType type, GameTeam team)
 {
     // быдлобыдлокод

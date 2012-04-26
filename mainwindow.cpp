@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "ui/kbeditorwindow.hpp"
 
+
 #include <QtGui>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -16,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->centralWidget->setLayout(layout);
 
     m_kbManager = new NKBManager();
+    m_mlv = new MLV(m_kbManager, viz->GetGrid());
 }
 
 MainWindow::~MainWindow()

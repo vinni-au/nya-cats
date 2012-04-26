@@ -7,6 +7,7 @@
 #include "visualize/visualizer.h"
 
 #include "core/nkbmanager.h"
+#include "mlv/mlv.h"
 
 namespace Ui {
     class MainWindow;
@@ -49,6 +50,7 @@ private:
     Ui::MainWindow *ui;
 
     NKBManager* m_kbManager;
+    MLV* m_mlv;
 
 
 };
