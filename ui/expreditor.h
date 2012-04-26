@@ -27,6 +27,7 @@ public:
     Expr* getExpr();
 
     void selectVar(QModelIndex index);
+    void selectVar(QString var);
     void selectSign(QString sign);
     void selectVal(QString val);
 

@@ -203,6 +203,13 @@ ExprEditor::selectVar(QModelIndex index)
     if(index.row()==0)
         onCurrentVarChanged(index.row());
 }
+
+void ExprEditor::selectVar(QString var)
+{
+    int i=cmbVar->findText(var);
+    cmbVar->setCurrentIndex(i);
+}
+
 void
 ExprEditor::selectSign(QString sign)
 {

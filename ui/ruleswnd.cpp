@@ -372,6 +372,7 @@ RulesWnd::onEditIfClick()
 //!    QModelIndex varIndexInVarModel = DataModels::instance()->varModel->indexByName(sVar);
 
 //!    exprEditor.selectVar(varIndexInVarModel);       //выбираем переменную
+    exprEditor.selectVar(sVar);
     exprEditor.selectSign(sSign);                   //выбираем знак
     exprEditor.selectVal(sVal);                     //выбираем значение
 
@@ -424,6 +425,7 @@ RulesWnd::onEditThenClick()
 //!    QModelIndex varIndexInVarModel = DataModels::instance()->varModel->indexByName(sVar);
 
  //!   exprEditor.selectVar(varIndexInVarModel);       //выбираем переменную
+    exprEditor.selectVar(sVar);
     exprEditor.selectSign(sSign);                   //выбираем знак
     exprEditor.selectVal(sVal);                     //выбираем значение
 

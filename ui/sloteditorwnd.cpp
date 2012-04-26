@@ -211,7 +211,7 @@ void SlotEditorWnd::on_btnEditMarker_clicked()
 
 void SlotEditorWnd::onProductionAdded(NProduction *production, bool newProd)
 {
-    QMessageBox::information(this,"SlotEditorWnd::onProductionAdded","Опачки, продукция добавлена.",QMessageBox::NoButton);
+    //QMessageBox::information(this,"SlotEditorWnd::onProductionAdded","Опачки, продукция добавлена.",QMessageBox::NoButton);
     if(m_kbManager->productionExists(production->name()))
     {
         //изменение
@@ -238,6 +238,7 @@ void SlotEditorWnd::on_cmbMarkerType_currentIndexChanged(const QString &arg1)
         ui->cmbMarkerValue->clear();
         QStringList names = m_kbManager->getProductionNames();
         ui->cmbMarkerValue->addItems(names);
+        ui->cmbMarkerValue->addItem("");
 
     }
     else if(markerType == "procedure")
@@ -245,5 +246,6 @@ void SlotEditorWnd::on_cmbMarkerType_currentIndexChanged(const QString &arg1)
         ui->cmbMarkerValue->clear();
         QStringList names = m_kbManager->getProceduresNames();
         ui->cmbMarkerValue->addItems(names);
+        ui->cmbMarkerValue->addItem("");
     }
 }

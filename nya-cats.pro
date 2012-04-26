@@ -49,7 +49,8 @@ SOURCES += main.cpp\
     visualize/grid.cpp \
     visualize/cell.cpp \
     visualize/gameitemfactory.cpp \
-    visualize/gameitem.cpp
+    visualize/gameitem.cpp \
+    core/production/nproductionmlv.cpp
 
 HEADERS  += mainwindow.hpp \
     core/nslot.h \
@@ -89,12 +90,19 @@ HEADERS  += mainwindow.hpp \
     visualize/grid.h \
     visualize/cell.h \
     visualize/gameitemfactory.h \
-    visualize/gameitem.h
+    visualize/gameitem.h \
+    core/production/nproductionmlv.h
 
 FORMS    += mainwindow.ui \
     ui/frameeditorwnd.ui \
     ui/sloteditorwnd.ui \
     ui/kbeditorwindow.ui
+
+RESOURCES += \
+    res.qrc
+
+
+RC_FILE = resIcon.rc
 
 
 

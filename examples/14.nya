@@ -231,9 +231,9 @@
                             <val>Value1</val>
                         </if>
                         <if>
-                            <var>2</var>
-                            <sign>=</sign>
-                            <val>Value2</val>
+                            <var>stringslot</var>
+                            <sign>!=</sign>
+                            <val>asd</val>
                         </if>
                     </ifs>
                     <thens>
