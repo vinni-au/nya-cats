@@ -51,7 +51,8 @@ SOURCES += main.cpp\
     visualize/gameitemfactory.cpp \
     visualize/gameitem.cpp \
     core/production/nproductionmlv.cpp \
-    mlv/mlv.cpp
+    mlv/mlv.cpp \
+    ui/codeeditor.cpp
 
 HEADERS  += mainwindow.hpp \
     core/nslot.h \
@@ -93,7 +94,8 @@ HEADERS  += mainwindow.hpp \
     visualize/gameitemfactory.h \
     visualize/gameitem.h \
     core/production/nproductionmlv.h \
-    mlv/mlv.h
+    mlv/mlv.h \
+    ui/codeeditor.hpp
 
 FORMS    += mainwindow.ui \
     ui/frameeditorwnd.ui \
@@ -105,77 +107,3 @@ RESOURCES += \
 
 
 RC_FILE = resIcon.rc
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
