@@ -58,6 +58,9 @@ SlotEditorWnd::SlotEditorWnd(QModelIndex slotIndex,NKBManager *kbManager,QWidget
     //значение маркера
     QString slotMarkerValue = model->getSlotFasetValue(slotIndex,"marker").toString() ;
     ui->cmbMarkerValue->setCurrentIndex( ui->cmbMarkerValue->findText( slotMarkerValue ) );
+
+    //начальная позиция курсока
+    ui->lineEdit->setFocus();
 }
 
 SlotEditorWnd::~SlotEditorWnd()

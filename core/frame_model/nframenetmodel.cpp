@@ -697,6 +697,15 @@ QModelIndex NFramenetModel::addSlot(QModelIndex& frameIndex)
     if(!node)
         return QModelIndex();
 
+    if(node->type==NFrameNode::Faset)
+    {
+        node=node->parent;
+        frameIndex = parent(frameIndex);
+    }
+
+    if(!node)
+        return QModelIndex();
+
     if(node->type!=NFrameNode::FrameName)
         return QModelIndex();
 

@@ -126,10 +126,15 @@ void KBEditorWindow::on_btnAddSlot_clicked()
 {
     QModelIndex index = ui->treeView->selectionModel()->currentIndex();
     NFramenetModel *model = qobject_cast<NFramenetModel*>(ui->treeView->model());
-    if(! (model->addSlot(index).isValid()))
+    QModelIndex newSlotIndex = model->addSlot(index);
+    if(! (newSlotIndex.isValid()))
     {
         QMessageBox::information(this,"","Не удалось добавить слот. Фрейм не выбран",QMessageBox::Ok);
+        return;
     }
+    SlotEditorWnd *wnd = new SlotEditorWnd(newSlotIndex,m_kbManager,this);
+    wnd->setModal(true);
+    wnd->show();
 }
 
 void KBEditorWindow::on_btnEditSlot_clicked()

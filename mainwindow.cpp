@@ -60,6 +60,7 @@ void MainWindow::on_actOpen_triggered()
         QString kbFile = QFileDialog::getOpenFileName(this,"Открыть БЗ..",QDir::currentPath(),tr("Knowle Database (*.nya)"),0);
         if( !kbFile.isEmpty())
         {
+            m_kbManager->Clear();
             if(!m_kbManager->Open(kbFile))
             {
                 QMessageBox msgBox;

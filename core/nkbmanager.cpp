@@ -550,7 +550,7 @@ NKBManager::Open(QString filePath)
         return false;
     }
     this->m_file = newFile;
-    m_file->open(QIODevice::ReadOnly);
+    //m_file->open(QIODevice::ReadOnly);
     readFromXml(*newFile);
     m_file->close();
     m_dirty=false;
