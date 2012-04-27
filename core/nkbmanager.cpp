@@ -882,38 +882,80 @@ NSlot * NKBManager::getSlotByString( QString frameName, QString str  )
 // Для МЛВ
 NFrame* NKBManager::GetFrameByName(QString name)
 {
+    NFrame *frame;
+    foreach(frame,m_frames)
+    {
+        if(frame->frameName()==name)
+        {
+            return frame;
+        }
+    }
     return NULL;
 }
 
 NFrame* NKBManager::GetFrameParent(NFrame* frame)
 {
-    return NULL;
+    QString parFrName = frame->parentFrame();
+    return GetFrameByName(parFrName);
 }
 
 QList<NFrame*> NKBManager::GetFrameChildren(NFrame* frame)
 {
     QList<NFrame*> list;
+    NFrame *f;
+    foreach(f,m_frames)
+    {
+        QString fParName = f->getSlotByName("is_a")->defValue().toString();
+        if(!fParName.isEmpty())
+        {
+            if(fParName == frame->frameName())
+                list<<f;
+        }
+    }
     return list;
 }
 
-NFrame* NKBManager::GetFrameInstanse(NFrame* frame)
+NFrame* NKBManager::GetFrameInstance(NFrame* frame)
 {
-    return NULL;
+    return frame->createInstance();
 }
 
 QList<NSlot*> NKBManager::GetFrameSlots(NFrame* frame)
 {
     QList<NSlot*> list;
+    for(int i=0;i<frame->slotCount();i++)
+    {
+        NSlot *slot=frame->getSlotByIndex(i);
+        list<<slot;
+    }
     return list;
 }
 
 Domain* NKBManager::GetSlotDomain(NSlot* slot)
 {
-    return NULL;
+    QString domainName = slot->getFasetByName("slot_type")->value().toString();
+    Domain *domain = m_domainModel.getDomainByName(domainName);
+    return domain;
 }
 
 QList<NFaset*> NKBManager::GetSlotFasets(NSlot* slot)
 {
     QList<NFaset*> list;
+    for(int i=0;i<slot->fasetCount();i++)
+    {
+        NFaset *faset = slot->getFasetByIndex(i);
+        list<<faset;
+    }
     return list;
+}
+
+NProc* NKBManager::getProc(QString name)
+{
+    NProc* p;
+    foreach(p,m_procs)
+    {
+        if(p->name()==name)
+            return p;
+    }
+    return NULL;
 }

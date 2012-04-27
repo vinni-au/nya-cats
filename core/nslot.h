@@ -44,6 +44,14 @@ public:
 
     int fasetCount();
     int getFasetIndexByName(QString name);
+
+    void setHasFasetValue(bool b);
+    void initFromSlot(NSlot *slot);
+
+    QString getSlotType();
+    QString getSlotMarkerType();
+    QString getSlotMarker();
+    QString getSlotInheritanceType();
 signals:
 
 public slots:

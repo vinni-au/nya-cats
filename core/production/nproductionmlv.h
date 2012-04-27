@@ -6,6 +6,7 @@
 #include <QDebug>
 #include "core/nkbmanager.h"
 #include "nproduction.h"
+#include "mlv/mlv.h"
 
 //sigVarUse - сигнал о том, какая переменная(слот) получила значение
 
@@ -13,7 +14,7 @@ class NProductionMLV : public QObject
 {
     Q_OBJECT
 public:
-    explicit NProductionMLV(NProduction *production, QObject *parent = 0);
+    explicit NProductionMLV(MLV* mlv,int frameId,NProduction *production, QObject *parent = 0);
     enum RuleResult{Accepted,Rejected,None};//сработало, откатилось, не использоваось
 
     QString StartConsultation(QString aim);
@@ -33,6 +34,8 @@ private:
     QString calcVal(QString value);
 private:
     NProduction *m_production;
+    MLV* m_mlv;
+    int m_frameId;              //id фрйма-экземпляра, в котором находится слот с продукционным маркером.
 
     bool continueWork;
     QMap<QString,QString>       ConsVars;     //означенные переменные

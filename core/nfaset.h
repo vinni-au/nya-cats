@@ -43,6 +43,7 @@ public:
     QDomElement toXml(QDomDocument& doc);
     void fromXml(QDomElement &faset);
 
+    void initFromFaset(NFaset *faset);
 signals:
     void nameChanged();
     void valueChanged();

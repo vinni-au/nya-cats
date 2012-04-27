@@ -77,3 +77,8 @@ void NFaset::fromXml(QDomElement &faset)
 }
 
 
+void NFaset::initFromFaset(NFaset *faset)
+{
+    setName( faset->name() );
+    setValue(  faset->value() );
+}

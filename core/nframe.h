@@ -21,7 +21,7 @@ class NFrame : public QObject
 {
     Q_OBJECT
 public:
-    explicit NFrame(unsigned id,QObject *parent = 0);
+    explicit NFrame(unsigned id,FrameType::FRAME_TYPE frameType = FrameType::prototype,QObject *parent = 0);
 
     NSlot* getSlotByName(QString name);     //получить слот по имени
     NSlot* getSlotByIndex(int inx);
@@ -37,7 +37,7 @@ public:
     QDomElement toXml(QDomDocument& doc);
     void fromXml(QDomElement &frame);
 
-    int slotCount();
+    int  slotCount();
     void addSlot(NSlot *slot);
     void insertSlot(int row,NSlot *slot);
     void removeSlot(int row);
@@ -47,6 +47,8 @@ public:
 
     QStringList getSimpleSlotNames();
     QStringList getSubframesSlotNames();
+
+    NFrame* createInstance();
 signals:
 
 public slots:

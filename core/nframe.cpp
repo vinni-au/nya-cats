@@ -1,9 +1,12 @@
 #include "nframe.h"
 #include <QDebug>
 
-NFrame::NFrame(unsigned id,QObject *parent) :
+NFrame::NFrame(unsigned id,FrameType::FRAME_TYPE frameType,QObject *parent) :
     QObject(parent)
 {
+    name.setHasFasetValue( frameType == FrameType::exemplar);
+    is_a.setHasFasetValue( frameType == FrameType::exemplar);
+
     name.setName("name");
     is_a.setName("is_a");
 
@@ -188,4 +191,22 @@ QStringList NFrame::getSubframesSlotNames()
         }
     }
     return slotNames;
+}
+
+NFrame* NFrame::createInstance()
+{
+    NFrame *instFrame = new NFrame(id(),FrameType::exemplar);
+    //копируем слоты
+    //сначала системные
+    instFrame->name.initFromSlot(&this->name );
+    instFrame->is_a.initFromSlot(&this->is_a );
+    //остальные
+    for(int i=2;i<this->slotCount();i++)
+    {
+        NSlot *slot = new NSlot();//this->getSlotByIndex(i)->clone();
+        slot->setHasFasetValue(true);
+        slot->initFromSlot(this->getSlotByIndex(i));
+        instFrame->addSlot(slot);
+    }
+    return instFrame;
 }

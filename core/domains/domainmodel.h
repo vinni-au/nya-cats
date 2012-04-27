@@ -57,6 +57,8 @@ public:
 
     bool isValid();
     void setItemsIsEditable(bool isEditable);
+
+    Domain* getDomainByName(QString name);
 signals:
     void sigValueExists(QModelIndex index,QVariant value);
     void sigDataChanged();

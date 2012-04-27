@@ -22,6 +22,12 @@ public:
     bool BindFrame(NFrame* frame);
     bool BindSlot(NSlot* slot);
 
+    //Для продукционного вывода
+    //Функция для получения значения слота фрейма экземпляра при продукционном выводе.
+    //frameId - id фрейма-экземпляра
+    //aimVar переменная вида slotname или slotName.SlotName.SlotName -если субфреймы
+    //return Значение целевого слота
+    QVariant getVal(int frameId,QString aimVar);
 protected:
 
 };

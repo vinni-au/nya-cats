@@ -52,6 +52,8 @@ public:
     bool productionExists(QString name);
     NProduction *getProduction(QString name);
 
+    NProc* getProc(QString name);
+
     void reloadProduction(NProduction *production);
     void addProduction(NProduction *prod);
     QStringList getProductionNames();
@@ -66,7 +68,7 @@ public:
     // Для МЛВ
     NFrame*         GetFrameByName      (QString name);
     NFrame*         GetFrameParent      (NFrame* frame);
-    NFrame*         GetFrameInstanse    (NFrame* frame);
+    NFrame*         GetFrameInstance    (NFrame* frame);
     QList<NFrame*>  GetFrameChildren    (NFrame* frame);
     QList<NSlot*>   GetFrameSlots       (NFrame* frame);
 
@@ -75,8 +77,8 @@ public:
 
 private:
     NFrame  *getFrameById(int id);
-    NFrame *getFrameByName(QString name);
-    int     getFreeId();
+    NFrame  *getFrameByName(QString name);
+    int      getFreeId();
 
     void deleteLinks(int id);
 

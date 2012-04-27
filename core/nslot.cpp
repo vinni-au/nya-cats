@@ -157,3 +157,56 @@ void NSlot::setDefValue(QVariant value)
 {
     slotDefaultValue.setValue(value);
 }
+
+void NSlot::setHasFasetValue(bool b)
+{
+    NFaset *faset = this->getFasetByName("value");
+    if(b)
+    {
+        if(!faset)
+        {
+            faset = new NFaset("value");
+            faset->setValue("");
+            m_fasets.append(faset);
+        }
+    }
+    else
+    {
+        if(faset)
+        {
+            m_fasets.removeOne(faset);
+        }
+    }
+}
+
+void NSlot::initFromSlot(NSlot *slot)
+{
+    m_system = slot->isSystem();
+
+    slotName.initFromFaset( slot->getFasetByIndex(0) );
+    slotType.initFromFaset( slot->getFasetByIndex(1) );
+    slotDefaultValue.initFromFaset( slot->getFasetByIndex(2) );
+    slotMarkerType.initFromFaset( slot->getFasetByIndex(3) );
+    slotMarker.initFromFaset( slot->getFasetByIndex(4) );
+    slotInheritanceType.initFromFaset( slot->getFasetByIndex(5) );
+}
+
+QString NSlot::getSlotType()
+{
+    return slotType.value().toString();
+}
+
+QString NSlot::getSlotMarkerType()
+{
+    return slotMarkerType.value().toString();
+}
+
+QString NSlot::getSlotMarker()
+{
+    return slotMarker.value().toString();
+}
+
+QString NSlot::getSlotInheritanceType()
+{
+    return slotInheritanceType.value().toString();
+}

@@ -1,10 +1,12 @@
 #include "nproductionmlv.h"
 
-NProductionMLV::NProductionMLV(NProduction *production,QObject *parent) :
+NProductionMLV::NProductionMLV(MLV* mlv,int frameId,NProduction *production,QObject *parent) :
     QObject(parent)
 {
     continueWork = true;
     m_production = production;
+    m_mlv = mlv;
+    m_frameId = frameId;
 }
 
 QString
@@ -26,6 +28,13 @@ NProductionMLV::ProveAim(QString aimVar)
         qDebug()<<"Cancelled by User";
         return "";
     }
+
+
+    //целью или подцелью может быть слот фрейма экземпляра. Получаем значение от МЛВ.
+    QString slotVal = m_mlv->getVal(m_frameId,aimVar).toString();
+    if(!slotVal.isEmpty())
+        return slotVal;
+
     //Пока цель не вывелась
     while(true)
     {

@@ -36,3 +36,11 @@ bool MLV::BindSlot(NSlot *slot)
     //
     return true;
 }
+
+
+QVariant MLV::getVal(int frameId,QString aimVar)
+{
+    //TODO
+    // Для примера можно посмотреть NKBManager:  NSlot * getSlotByString( QString frameName, QString str  );
+    return QVariant();
+}

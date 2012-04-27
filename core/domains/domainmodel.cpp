@@ -690,3 +690,15 @@ DomainModel::generateNewUniqueDomainValue(Domain *domain)
     }
     return "";
 }
+
+Domain* DomainModel::getDomainByName(QString name)
+{
+    for(int i=0;i<domains->count();++i)
+    {
+        if(domains->at(i)->name == name)
+        {
+            return domains->at(i);
+        }
+    }
+    return NULL;
+}
