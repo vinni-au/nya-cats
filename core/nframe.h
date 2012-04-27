@@ -25,6 +25,7 @@ public:
 
     NSlot* getSlotByName(QString name);     //получить слот по имени
     NSlot* getSlotByIndex(int inx);
+    NFaset* GetSlotFaset(QString slotName, QString fasetName);
 
     int getSlotIndexByName(QString name);
 

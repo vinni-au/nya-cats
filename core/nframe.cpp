@@ -33,6 +33,14 @@ NSlot* NFrame::getSlotByName(QString name)
     return NULL;
 }
 
+NFaset* NFrame::GetSlotFaset(QString slotName, QString fasetName)
+{
+    if(NSlot* slot = getSlotByName(slotName))
+    {
+        return slot->getFasetByName(fasetName);
+    }
+    return NULL;
+}
 
 QString NFrame::parentFrame()
 {

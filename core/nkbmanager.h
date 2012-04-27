@@ -69,8 +69,10 @@ public:
     NFrame*         GetFrameByName      (QString name);
     NFrame*         GetFrameParent      (NFrame* frame);
     NFrame*         GetFrameInstance    (NFrame* frame);
+    NFrame*         GetFrameInstance    (QString name);
     QList<NFrame*>  GetFrameChildren    (NFrame* frame);
     QList<NSlot*>   GetFrameSlots       (NFrame* frame);
+    NSlot*          GetFrameSlot        (NFrame* frame, QString slotName);
 
     Domain*         GetSlotDomain       (NSlot* slot);
     QList<NFaset*>  GetSlotFasets       (NSlot* slot);

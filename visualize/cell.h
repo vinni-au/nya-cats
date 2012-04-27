@@ -19,6 +19,10 @@ public:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *item, QWidget *widget);
     void SetGameItem(GameItem* item);
 
+    int GetX();
+    int GetY();
+    GameItem* GetGameItem();
+
 protected:
     void hoverEnterEvent(QGraphicsSceneHoverEvent *event);
     void hoverLeaveEvent(QGraphicsSceneHoverEvent *event);

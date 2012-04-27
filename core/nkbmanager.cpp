@@ -920,6 +920,12 @@ NFrame* NKBManager::GetFrameInstance(NFrame* frame)
     return frame->createInstance();
 }
 
+NFrame* NKBManager::GetFrameInstance(QString name)
+{
+    NFrame* frame = GetFrameByName(name);
+    return frame->createInstance();
+}
+
 QList<NSlot*> NKBManager::GetFrameSlots(NFrame* frame)
 {
     QList<NSlot*> list;
@@ -929,6 +935,14 @@ QList<NSlot*> NKBManager::GetFrameSlots(NFrame* frame)
         list<<slot;
     }
     return list;
+}
+
+NSlot* NKBManager::GetFrameSlot(NFrame* frame, QString slotName)
+{
+    if (!frame)
+        return NULL;
+
+    return frame->getSlotByName(slotName);
 }
 
 Domain* NKBManager::GetSlotDomain(NSlot* slot)

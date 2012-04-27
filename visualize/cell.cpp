@@ -143,3 +143,18 @@ void Cell::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     if (m_Item)
         setCursor(Qt::OpenHandCursor);
 }
+
+int Cell::GetY()
+{
+    return m_yIndex;
+}
+
+int Cell::GetX()
+{
+    return m_xIndex;
+}
+
+GameItem* Cell::GetGameItem()
+{
+    return m_Item;
+}

@@ -16,6 +16,15 @@ protected:
 
 public:
     Grid(int count, QRectF &rect, QColor &color, QGraphicsScene *scene);
+
+    QList<Cell*> GetCells();
+    Cell* GetCell(int x, int y);
+    Cell* GetCell(int index);
+    int GetSideCount();
+    int GetCount();
+
+    GameItem* GetGameItem(int x, int y);
+    GameItem* GetGameItem(int index);
 };
 
 #endif // GAMEGRID_H
