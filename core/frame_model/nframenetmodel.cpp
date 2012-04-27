@@ -124,6 +124,8 @@ NFramenetModel::data(const QModelIndex &index, int role) const
         frame = node->frame;
         slot = frame->getSlotByIndex(index.row());
         faset = slot->getFasetByIndex(column);
+        if(!faset)
+            return QVariant();
 //!!!???
         if(faset->name()=="name" && slot->isSystem())
             return QString("#").append(faset->value().toString());

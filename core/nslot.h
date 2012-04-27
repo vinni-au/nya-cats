@@ -48,10 +48,10 @@ public:
     void setHasFasetValue(bool b);
     void initFromSlot(NSlot *slot);
 
-    QString getSlotType();
-    QString getSlotMarkerType();
+    QString getSlotType();//конкретный домен,frame,string,int
+    QString getSlotMarkerType();//domain, procedure, production
     QString getSlotMarker();
-    QString getSlotInheritanceType();
+    QString getSlotInheritanceType();//same, override
 signals:
 
 public slots:
