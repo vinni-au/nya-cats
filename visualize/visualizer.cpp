@@ -42,9 +42,9 @@ void Visualizer::populateScene()
     QRectF rect5(-70, 280, 60, 60);
     QRectF rect6(-70, 350, 60, 60);
 
-    QPixmap pic1("..\\nya-cats\\visualize\\war.gif");
-    QPixmap pic2("..\\nya-cats\\visualize\\doc.gif");
-    QPixmap pic3("..\\nya-cats\\visualize\\hant.gif");
+    QPixmap pic1(":images/visualize/war.gif");
+    QPixmap pic2(":images/visualize/doc.gif");
+    QPixmap pic3(":images/visualize/hant.gif");
 
     scene->CreateFactory(new GameItem(gitWarior, pic1, gtRed, -1), rect1);
     scene->CreateFactory(new GameItem(gitHealer, pic2, gtRed, -1), rect2);

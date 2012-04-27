@@ -26,6 +26,7 @@ void LGen2DiagramEditor::addNode(unsigned id, QString title)
     static QMenu* menu = new QMenu;
     static QAction* act = menu->addAction("Удалить фрейм", this, SLOT(deleteSelectedItem()));
     DiagramItem* node = new DiagramItem(id, DiagramItem::Node, title, menu);
+    node->setPos(mapToScene(QPoint(width() / 2, height() / 2)));
     m_items.insert(id, node);
     m_scene->addItem(node);
 }
@@ -149,12 +150,12 @@ void LGen2DiagramEditor::selectLink(unsigned sid, unsigned did)
 
 void LGen2DiagramEditor::zoomIn()
 {
-    scale(1.3, 1.3);
+    scale(1.15, 1.15);
 }
 
 void LGen2DiagramEditor::zoonOut()
 {
-    scale(1 / 1.3, 1 / 1.3);
+    scale(1 / 1.15, 1 / 1.15);
 }
 
 QDomElement LGen2DiagramEditor::toXML(QDomDocument &doc)

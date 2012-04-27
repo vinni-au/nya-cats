@@ -5,4 +5,9 @@
     <qresource prefix="/translations">
         <file>qt_ru.qm</file>
     </qresource>
+    <qresource prefix="/images">
+        <file>visualize/doc.gif</file>
+        <file>visualize/hant.gif</file>
+        <file>visualize/war.gif</file>
+    </qresource>
 </RCC>
