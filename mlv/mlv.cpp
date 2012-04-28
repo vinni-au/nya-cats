@@ -33,8 +33,21 @@ void MLV::SetFasetValue(NFrame* frame, QString fasetName, QString value)
         faset->setStringValue(value);
 }
 
+QVariant MLV::GetFasetValue(NFrame* frame, QString fasetName)
+{
+    if (!frame)
+        return QVariant();
+
+    if (NFaset* faset = frame->GetSlotFaset(fasetName, "value"))
+        return faset->value();
+    else
+        return QVariant();
+}
+
 bool MLV::Init()
 {
+    m_CellFrameInsts.clear();
+
     // Экземпляр игрового поля
     m_GameFieldInst = CreateFrameInstance("Игровое поле");
     if (!m_GameFieldInst)
@@ -55,7 +68,7 @@ bool MLV::Init()
             SetFasetValue(CellInst, "y", j);
 
             // Устанавливаем игровой объект
-            GameItem* item = m_Grid->GetGameItem(i);
+            GameItem* item = m_Grid->GetGameItem(i, j);
             NFrame* ItemInst = NULL;
             if (!item) // Если ячейка пустая
             {
@@ -90,7 +103,7 @@ void MLV::Start()
         return;
 
     // Пока один шаг. В будущем тут можно будет замутить цикл со слипами
-    //Step();
+    Step();
 }
 
 void MLV::Step()
@@ -101,7 +114,20 @@ void MLV::Step()
     // Для каждого персонажа привязываем ситуацию
     for (int i = 0; i < m_CellFrameInsts.count(); i++)
     {
-        BindFrame(m_KBManager->GetFrameByName("Ситуация"));
+        // Определяем что находится в ячейке
+        QVariant value = GetFasetValue(m_CellFrameInsts[i], "Игровой объект");
+        NFrame* frame = (NFrame*)value.toInt();
+        if (!frame)
+            continue;
+
+        if (frame->frameName() != "Пусто")
+        {
+            NFrame* frameSituation = CreateFrameInstance("Ситуация");
+            SetFasetValue(frameSituation, "Место выполнения действия", (int)m_CellFrameInsts[i]);
+            SetFasetValue(frameSituation, "Игрок", (int)frame);
+
+            BindFrame(frameSituation);
+        }
     }
 
     UpdateGrid();
@@ -112,10 +138,16 @@ bool MLV::BindFrame(NFrame *frame)
 {
     bool retn = true;
 
-    // Создаем экземпляр
-    NFrame* frameInst = frame->createInstance();
-    if (!frameInst)
-        return false;
+    NFrame* frameInst = NULL;
+    if (frame->frameType() == FrameType::prototype)
+    {
+        // Создаем экземпляр
+        NFrame* frameInst = frame->createInstance();
+        if (!frameInst)
+            return false;
+    }
+    else
+        frameInst = frame;
 
     // Пытаемся привязать слоты
     QList<NSlot*> nslots = m_KBManager->GetFrameSlots(frameInst);

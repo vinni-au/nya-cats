@@ -47,6 +47,9 @@ protected:
     void SetFasetValue(NFrame* frame, QString fasetName, int value);
     void SetFasetValue(NFrame* frame, QString fasetName, QString value);
 
+    QVariant GetFasetValue(NFrame* frame, QString fasetName);
+
+
 };
 
 #endif // MLV_H

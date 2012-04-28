@@ -168,6 +168,11 @@ QString NFrame::frameName()
     return name.defValue().toString();
 }
 
+FrameType::FRAME_TYPE NFrame::frameType()
+{
+    return m_type;
+}
+
 void NFrame::setParentName(QString name)
 {
     getSlotByName("is_a")->setDefValue(name);

@@ -45,6 +45,7 @@ public:
     void removeSlot(NSlot *slot);
 
     QString frameName();
+    FrameType::FRAME_TYPE frameType();
 
     QStringList getSimpleSlotNames();
     QStringList getSubframesSlotNames(QStringList& frames);
