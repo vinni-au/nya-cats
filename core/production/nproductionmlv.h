@@ -31,7 +31,7 @@ private:
     void AddVarUsed(QString varName,QString varValue);
     void AddRuleUsed(QString ruleName,RuleResult result);
 
-    QString calcVal(QString value);
+    QString calcVal(Expr* e);
 private:
     NProduction *m_production;
     MLV* m_mlv;

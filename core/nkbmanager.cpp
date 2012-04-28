@@ -980,3 +980,18 @@ NProc* NKBManager::getProc(QString name)
     }
     return NULL;
 }
+
+NFrame* NKBManager::GetFrameInstanceWithParents(NFrame* frame)
+{
+    NFrame *frameInst = GetFrameInstance(frame);
+
+    NFrame *parFrame=NULL;
+    parFrame=this->GetFrameParent(frame);
+    while(parFrame)
+    {
+        NFrame* parframeInst = GetFrameInstance(frame);
+        frameInst->merge(parframeInst);
+        parFrame=this->GetFrameParent(frame);
+    }
+    return frameInst;
+}

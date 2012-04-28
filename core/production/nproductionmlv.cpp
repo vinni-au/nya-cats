@@ -111,7 +111,7 @@ NProductionMLV::ruleAccepted(Rule *rule)
         {
             qDebug()<<"Var exists:  "<<e->var<<" value: "<<ConsVars[e->var];
             //////Блок сопоставления
-            QString varValue = calcVal(e->val);//в значении может быть выражение
+            QString varValue = calcVal(e);//в значении может быть выражение
             if(e->sign == "=")
             {
                 if(! (varValue == ConsVars[e->var]))//не то значение
@@ -160,7 +160,7 @@ NProductionMLV::ruleAccepted(Rule *rule)
     {
         //означиваем переменные
 
-        QString varValue = calcVal(e->val);//в значении может быть выражение
+        QString varValue = calcVal(e);//в значении может быть выражение
         AddVarUsed(e->var,varValue);
         qDebug()<<"Then: set: "<<e->toString();
     }
@@ -192,8 +192,14 @@ NProductionMLV::AddRuleUsed(QString ruleName, RuleResult result)
     }
 }
 
-QString NProductionMLV::calcVal(QString value)
+QString NProductionMLV::calcVal(Expr* e)
 {
-    //заглушка
-    return value;
+    if(e->arSign=="+")
+    {
+        return e->val+e->summer;
+    }
+    else
+    {
+        return e->val;
+    }
 }

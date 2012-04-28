@@ -14,6 +14,7 @@
 #include "core/production/expr.h"
 #include "saver.h"
 #include "core/nkbmanager.h"
+#include <QSpinBox>
 
 class ExprEditor : public QDialog
 {
@@ -67,6 +68,14 @@ public:
       QVBoxLayout    *layVal;
        QLabel          *lbVal;
        MyComboBox       *cmbVal;
+
+      QVBoxLayout    *layArSign;
+       QLabel          *lbArSign;
+       QComboBox     *cmbArSign;
+      QVBoxLayout    *laySummer;
+       QLabel          *lbSummer;
+       QSpinBox      *spbSummer;
+
      QHBoxLayout    *layDown;
       QPushButton   *btnAddNewExpr;
       QPushButton   *btnOK;

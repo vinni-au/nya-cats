@@ -225,3 +225,25 @@ NFrame* NFrame::createInstance()
     }
     return instFrame;
 }
+
+void NFrame::merge(NFrame *frame)
+{
+    for(int i=0;i<frame->slotCount();i++)
+    {
+        NSlot* slot = frame->getSlotByIndex(i);
+        if(!hasSlot(slot->name()))
+        {
+            this->addSlot(slot);
+        }
+    }
+}
+
+bool NFrame::hasSlot(QString slotName)
+{
+    NSlot *slot = getSlotByName(slotName);
+//    if(slot)
+//        return true;
+//    else
+//        return false;
+    return slot!=NULL;
+}

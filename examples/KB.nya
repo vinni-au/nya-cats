@@ -1048,6 +1048,16 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="qwerty" name="name"/>
+                        <faset value="" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="s" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
             </slots>
         </frame>
         <frame type="0" id="33">
@@ -1340,6 +1350,16 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="" name="name"/>
+                        <faset value="" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
             </slots>
         </frame>
         <frame type="0" id="39">
@@ -1410,7 +1430,23 @@
         </frame>
     </frames>
     <procs/>
-    <productions/>
+    <productions>
+        <production name="s">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игрок.Команда</var>
+                            <sign>=</sign>
+                            <val>Красный</val>
+                        </if>
+                    </ifs>
+                    <thens/>
+                </rule>
+            </rules>
+        </production>
+    </productions>
     <diagram>
         <item x="-252.9" title="Игровое поле" y="-251.9" id="0"/>
         <item x="-100.9" title="Ячейка игрового поля" y="-255.9" id="1"/>

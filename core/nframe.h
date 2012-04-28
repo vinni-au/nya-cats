@@ -51,6 +51,8 @@ public:
     QStringList getSubframesSlotNames(QStringList& frames);
 
     NFrame* createInstance();
+    void    merge(NFrame *frame);
+    bool    hasSlot(QString slotName);
 signals:
 
 public slots:

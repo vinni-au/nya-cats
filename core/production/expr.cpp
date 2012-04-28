@@ -10,5 +10,8 @@ Expr::Expr(QObject *parent) :
 QString
 Expr::toString()
 {
-    return var+" "+sign+" "+"'"+val+"'";
+    if(arSign=="+")
+        return var+" "+sign+" "+"'"+val+arSign+QString::number(summer)+"'";
+    else
+        return var+" "+sign+" "+"'"+val+"'";
 }

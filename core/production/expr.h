@@ -18,6 +18,9 @@ public:
     QString var;
     QString sign;
     QString val;
+
+    QString arSign;
+    int summer;
 };
 
 #endif // EXPR_H

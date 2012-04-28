@@ -107,7 +107,6 @@ void SlotEditorWnd::on_cmbSlotType_currentIndexChanged(int index)
     ui->lineEdit->setEnabled(true);
     ui->cmbSlotType->setEnabled(true);
     ui->cmbSlotDomain->setEnabled(true);
-    //ui->cmbSlotValue->setEnabled(true);
     ui->cmbDefaultValue->setEnabled(true);
     ui->cmbInheritance->setEnabled(true);
     ui->cmbMarkerType->setEnabled(true);
@@ -117,25 +116,28 @@ void SlotEditorWnd::on_cmbSlotType_currentIndexChanged(int index)
     if(slotType == "string")
     {
         ui->cmbSlotDomain->setEnabled(false);
+        ui->cmbSlotDomain->setModel(new QStringListModel());//опустошаем комбик доменов
+        ui->cmbDefaultValue->setModel(new QStringListModel());
     }
     else if(slotType == "int")
     {
         ui->cmbSlotDomain->setEnabled(false);
-        //ui->cmbSlotValue->setEnabled(false);
         ui->cmbSlotDomain->setModel(new QStringListModel());//опустошаем комбик доменов
-        //ui->cmbSlotValue->setModel(new QStringListModel());
+        ui->cmbDefaultValue->setModel(new QStringListModel());
 
 
         ui->cmbDefaultValue->addItem("0");
+        ui->cmbDefaultValue->setCurrentIndex(0);
 
         ui->cmbMarkerType->clear();
+        ui->cmbMarkerType->addItem("domain");
         ui->cmbMarkerType->addItem("production");
         ui->cmbMarkerType->addItem("procedure");
     }
     else if(slotType == "frame")
     {
         ui->cmbSlotDomain->setEnabled(false);
-        //ui->cmbSlotValue->setEnabled(true);
+        ui->cmbSlotDomain->setModel(new QStringListModel());//опустошаем комбик доменов
         ui->cmbDefaultValue->setModel(new QStringListModel());
 
         QMap<unsigned,QString> frames =  m_kbManager->frameNames();

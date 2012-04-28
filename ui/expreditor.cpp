@@ -32,6 +32,22 @@ ExprEditor::ExprEditor(NKBManager* manager,QModelIndex slotIndex,QString domain,
                 layVal->addSpacerItem(new QSpacerItem(0,0,QSizePolicy::Expanding,QSizePolicy::Expanding));
 
             }
+            //////
+            /*QVBoxLayout    **/layArSign=new QVBoxLayout();           layUp->addLayout(layArSign);
+            {
+                /*QLabel          **/lbArSign=new QLabel();            layArSign->addWidget(lbArSign);
+                /*QComboBox       **/cmbArSign=new MyComboBox();        layArSign->addWidget(cmbArSign);
+                layArSign->addSpacerItem(new QSpacerItem(0,0,QSizePolicy::Expanding,QSizePolicy::Expanding));
+
+            }
+            /*QVBoxLayout    **/laySummer=new QVBoxLayout();           layUp->addLayout(laySummer);
+            {
+                /*QLabel          **/lbSummer=new QLabel();            laySummer->addWidget(lbSummer);
+                /*QComboBox       **/spbSummer=new QSpinBox();        laySummer->addWidget(spbSummer);
+                laySummer->addSpacerItem(new QSpacerItem(0,0,QSizePolicy::Expanding,QSizePolicy::Expanding));
+
+            }
+
         }
 
         /*QHBoxLayout    **/layDown=new QHBoxLayout();              layMain->addLayout(layDown);
@@ -43,6 +59,9 @@ ExprEditor::ExprEditor(NKBManager* manager,QModelIndex slotIndex,QString domain,
         }
     }
     retranslate();
+
+    cmbArSign->addItem("");
+    cmbArSign->addItem("+");
 
 //!    this->cmbVar->setModel(DataModels::instance()->varModel);
     QString frameName = m_kbManager->getFrameNetModel()->getFrameNameByIndex(m_slotIndex);
@@ -119,6 +138,11 @@ ExprEditor::onCurrentVarChanged(int inx)
         domain = m_kbManager->getDomainByString( frameName, cmbVar->currentText()  );
     }
 
+
+    cmbArSign->setVisible(domain == "int");
+    spbSummer->setVisible(domain == "int");
+
+
     if(domain.isEmpty() || domain == "string" || domain == "int" ||domain == "frame" )
     {
         cmbVal->setModel(new QStringListModel());
@@ -138,6 +162,9 @@ ExprEditor::getExpr()
     expr->var = this->cmbVar->currentText();
     expr->sign = this->cmbSign->currentText();
     expr->val = this->cmbVal->currentText();
+
+    expr->arSign = this->cmbArSign->currentText();
+    expr->summer = spbSummer->value();
     return expr;
 }
 
