@@ -15,6 +15,13 @@ NFrame* MLV::CreateFrameInstance(QString name)
     return m_KBManager->GetFrameInstance(name);
 }
 
+NFrame* MLV::CreateFrameInstanceFull(QString name)
+{
+    if (!m_KBManager)
+        return NULL;
+    return m_KBManager->GetFrameInstance(name);
+}
+
 void MLV::SetFasetValue(NFrame* frame, QString fasetName, int value)
 {
     if (!frame)
@@ -22,6 +29,15 @@ void MLV::SetFasetValue(NFrame* frame, QString fasetName, int value)
 
     if (NFaset* faset = frame->GetSlotFaset(fasetName, "value"))
         faset->setIntValue(value);
+}
+
+void MLV::SetFasetValueVariant(NFrame* frame, QString fasetName, QVariant value)
+{
+    if (!frame)
+        return;
+
+    if (NFaset* faset = frame->GetSlotFaset(fasetName, "value"))
+        faset->setValue(value);
 }
 
 void MLV::SetFasetValue(NFrame* frame, QString fasetName, QString value)
@@ -49,7 +65,7 @@ bool MLV::Init()
     m_CellFrameInsts.clear();
 
     // Экземпляр игрового поля
-    m_GameFieldInst = CreateFrameInstance("Игровое поле");
+    m_GameFieldInst = CreateFrameInstanceFull("Игровое поле");
     if (!m_GameFieldInst)
         return false;
 
@@ -59,7 +75,7 @@ bool MLV::Init()
         for (int j = 0; j < m_Grid->GetSideCount(); j++)
         {
             // Создаем экземпляр фрейма ячейки
-            NFrame* CellInst = CreateFrameInstance("Ячейка игрового поля");
+            NFrame* CellInst = CreateFrameInstanceFull("Ячейка игрового поля");
             if (!CellInst)
                 return false;
 
@@ -72,24 +88,24 @@ bool MLV::Init()
             NFrame* ItemInst = NULL;
             if (!item) // Если ячейка пустая
             {
-                ItemInst = CreateFrameInstance("Пусто");
+                ItemInst = CreateFrameInstanceFull("Пусто");
             }
             else
             {
                 // Создаем персонажа
                 if (item->GetType() == gitWarior)
-                    ItemInst = CreateFrameInstance("Мечник");
+                    ItemInst = CreateFrameInstanceFull("Мечник");
 
                 else if (item->GetType() == gitArcher)
-                    ItemInst = CreateFrameInstance("Лучник");
+                    ItemInst = CreateFrameInstanceFull("Лучник");
 
                 else if (item->GetType() == gitHealer)
-                    ItemInst = CreateFrameInstance("Лекарь");
+                    ItemInst = CreateFrameInstanceFull("Лекарь");
 
                 // Задаем цвет
                 SetFasetValue(ItemInst, "Команда", item->GetTeam() == gtRed ? "Красный" : "Синий");
             }
-            SetFasetValue(CellInst, "Игровой объект", (int)ItemInst);
+            SetFasetValueVariant(CellInst, "Игровой объект", QVariant(reinterpret_cast<long long>(ItemInst)));
             m_CellFrameInsts.append(CellInst);
         }
     }
@@ -116,15 +132,16 @@ void MLV::Step()
     {
         // Определяем что находится в ячейке
         QVariant value = GetFasetValue(m_CellFrameInsts[i], "Игровой объект");
-        NFrame* frame = (NFrame*)value.toInt();
+        NFrame* frame = (NFrame*)value.toLongLong();
         if (!frame)
             continue;
 
         if (frame->frameName() != "Пусто")
         {
             NFrame* frameSituation = CreateFrameInstance("Ситуация");
-            SetFasetValue(frameSituation, "Место выполнения действия", (int)m_CellFrameInsts[i]);
-            SetFasetValue(frameSituation, "Игрок", (int)frame);
+            SetFasetValueVariant(frameSituation, "Место выполнения действия",
+                                 QVariant(reinterpret_cast<long long>(m_CellFrameInsts[i])));
+            SetFasetValueVariant(frameSituation, "Игрок", QVariant(reinterpret_cast<long long>(frame)));
 
             BindFrame(frameSituation);
         }
@@ -183,7 +200,23 @@ QVariant MLV::getVal(int frameId,QString aimVar)
 {
     //TODO
     // Для примера можно посмотреть NKBManager:  NSlot * getSlotByString( QString frameName, QString str  );
-    return QVariant();
+
+    NFrame* frame = NULL;
+    for (int i = 0; i < m_WorkMemory.count(); i++)
+    {
+        frame = m_WorkMemory[i];
+        if (!frame)
+            continue;
+        if (frame->id() == frameId)
+            break;
+    }
+
+    if (!frame)
+        return QVariant();
+
+    // Тут как то надо парсить строку aimVar и соотв. бегать по субфреймам
+
+    return GetFasetValue(frame, aimVar);
 }
 
 void MLV::UpdateGrid()

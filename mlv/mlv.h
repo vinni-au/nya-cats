@@ -19,6 +19,8 @@ protected:
     NFrame* m_GameFieldInst;        // Экземпляр фрейма игрового поля
     QList<NFrame*> m_CellFrameInsts;   // Экземпляры фреймов ячеек
 
+    QList<NFrame*> m_WorkMemory;        // Рабочая память
+
     bool m_Initialized;
 
 public:
@@ -44,8 +46,10 @@ protected:
     void UpdateGrid();
 
     NFrame* CreateFrameInstance(QString name);
+    NFrame* CreateFrameInstanceFull(QString name);
     void SetFasetValue(NFrame* frame, QString fasetName, int value);
     void SetFasetValue(NFrame* frame, QString fasetName, QString value);
+    void SetFasetValueVariant(NFrame* frame, QString fasetName, QVariant value);
 
     QVariant GetFasetValue(NFrame* frame, QString fasetName);
 
