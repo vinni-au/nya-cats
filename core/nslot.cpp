@@ -51,7 +51,7 @@ void NSlot::setSystem(bool isSystem)
 //для оптимизации в дальнейшем можно заюзать мапу фасетов по имени
 NFaset* NSlot::getFasetByName(QString name)
 {
-    NFaset* faset=NULL;
+    NFaset* faset;
     foreach(faset,this->m_fasets)
     {
         if(faset->name()==name)
@@ -59,7 +59,7 @@ NFaset* NSlot::getFasetByName(QString name)
             return faset;
         }
     }
-    return faset;
+    return NULL;
 }
 
 NFaset* NSlot::getFasetByIndex(int inx)

@@ -928,6 +928,8 @@ NFrame* NKBManager::GetFrameInstance(NFrame* frame)
 NFrame* NKBManager::GetFrameInstance(QString name)
 {
     NFrame* frame = GetFrameByName(name);
+    if(!frame)
+        return NULL;
     return frame->createInstance();
 }
 
