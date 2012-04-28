@@ -49,15 +49,28 @@ void MLV::SetFasetValue(NFrame* frame, QString fasetName, QString value)
         faset->setStringValue(value);
 }
 
-QVariant MLV::GetFasetValue(NFrame* frame, QString fasetName)
+QVariant MLV::GetFasetValue(NFrame* frame, QString slotName, bool findInParents)
 {
     if (!frame)
         return QVariant();
 
-    if (NFaset* faset = frame->GetSlotFaset(fasetName, "value"))
-        return faset->value();
+    NSlot* slot = frame->getSlotByName(slotName);
+    if(!slot)
+    {
+        if (!findInParents)
+            return QVariant();
+
+        //ищем в родительских
+        NFrame* parentFrame = m_KBManager->GetFrameParent(frame);
+        return GetFasetValue(parentFrame, slotName);
+    }
     else
-        return QVariant();
+    {
+        if (NFaset* faset = frame->GetSlotFaset(slotName, "value"))
+            return faset->value();
+    }
+
+    return QVariant();
 }
 
 bool MLV::Init()
@@ -196,7 +209,7 @@ bool MLV::BindSlot(NSlot *slot)
 }
 
 
-QVariant MLV::getVal(int frameId,QString aimVar)
+QVariant MLV::getVal(int frameId, QString aimVar)
 {
     //TODO
     // Для примера можно посмотреть NKBManager:  NSlot * getSlotByString( QString frameName, QString str  );
@@ -211,12 +224,29 @@ QVariant MLV::getVal(int frameId,QString aimVar)
             break;
     }
 
+    return getVal(frame, aimVar);
+}
+
+QVariant MLV::getVal(NFrame* frame, QString aimVar)
+{
     if (!frame)
         return QVariant();
 
-    // Тут как то надо парсить строку aimVar и соотв. бегать по субфреймам
+    //тут надо еще наследование учесть
+    if(!aimVar.contains("."))
+    {//просто слот
+        return GetFasetValue(frame, aimVar, true);
+    }
+    else
+    {//субфреймы
+        int pointInx = aimVar.indexOf(".");
+        QString newStr = aimVar.right(aimVar.length()-pointInx-1);
+        QString subfName = aimVar.left(pointInx);
 
-    return GetFasetValue(frame, aimVar);
+        QVariant slotVal = GetFasetValue(frame, subfName, true);
+        NFrame* subframe = (NFrame*)slotVal.toLongLong();
+        return getVal(subframe, newStr);
+    }
 }
 
 void MLV::UpdateGrid()

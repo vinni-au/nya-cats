@@ -36,7 +36,8 @@ public:
     //frameId - id фрейма-экземпляра
     //aimVar переменная вида slotname или slotName.SlotName.SlotName - если субфреймы
     //return Значение целевого слота
-    QVariant getVal(int frameId,QString aimVar);
+    QVariant getVal(int frameId, QString aimVar);
+    QVariant getVal(NFrame* frame, QString aimVar);
 
 protected:
 
@@ -51,7 +52,7 @@ protected:
     void SetFasetValue(NFrame* frame, QString fasetName, QString value);
     void SetFasetValueVariant(NFrame* frame, QString fasetName, QVariant value);
 
-    QVariant GetFasetValue(NFrame* frame, QString fasetName);
+    QVariant GetFasetValue(NFrame* frame, QString slotName, bool findInParents = false);
 
 
 };
