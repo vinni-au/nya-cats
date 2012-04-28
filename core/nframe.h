@@ -47,7 +47,7 @@ public:
     QString frameName();
 
     QStringList getSimpleSlotNames();
-    QStringList getSubframesSlotNames();
+    QStringList getSubframesSlotNames(QStringList& frames);
 
     NFrame* createInstance();
 signals:

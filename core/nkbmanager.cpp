@@ -793,20 +793,22 @@ QStringList NKBManager::getVars(QString frameName)
 
     QStringList ownSlots = frame->getSimpleSlotNames();//собственные слоты
 
-    QStringList subFs = frame->getSubframesSlotNames();
+    QStringList subFsTypes;
+    QStringList subFs = frame->getSubframesSlotNames(subFsTypes);
     QStringList subframeSlots;
-    foreach(QString subF,subFs)
+    for(int i=0;i<subFs.count();i++)
     {
-        QString prefix=subF+QString(".");
-        subframeSlots = getVars(subF);
+        QString prefix=subFs[i]+QString(".");
+        subframeSlots = getVars(subFsTypes[i]);
 
-        for(int i=0;i<subframeSlots.count();++i)
+        for(int j=0;j<subframeSlots.count();++j)
         {
-            subframeSlots.replace(i,prefix+subframeSlots.at(i) );
+            subframeSlots.replace(j,prefix+subframeSlots.at(j) );
         }
+        ownSlots.append(subframeSlots);
     }
 
-    ownSlots.append(subframeSlots);
+
     return ownSlots;
 }
 
@@ -874,7 +876,8 @@ NSlot * NKBManager::getSlotByString( QString frameName, QString str  )
         }
         else
         {
-            return getSlotByString(subfName,newStr);
+            //return getSlotByString(subfName,newStr);
+            return getSlotByString(slot->defValue().toString(),newStr);
         }
 
     }

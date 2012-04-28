@@ -187,15 +187,17 @@ QStringList NFrame::getSimpleSlotNames()
     return slotNames;
 }
 
-QStringList NFrame::getSubframesSlotNames()
+QStringList NFrame::getSubframesSlotNames(QStringList& frames)
 {
     QStringList slotNames;
+
     NSlot* slot;
     foreach(slot,m_slots)
     {
         if(slot->getFasetByName("slot_type")->value()=="frame")
         {
             slotNames<<slot->name();
+            frames<<slot->defValue().toString();
         }
     }
     return slotNames;
