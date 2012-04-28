@@ -46,6 +46,8 @@ private slots:
 
     void on_actDomainEditor_triggered();
 
+    void on_actStartGame_triggered();
+
 private:
     Ui::MainWindow *ui;
 

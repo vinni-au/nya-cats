@@ -8,48 +8,77 @@ MLV::MLV(NKBManager* manager, Grid* grid) :
 {
 }
 
+NFrame* MLV::CreateFrameInstance(QString name)
+{
+    if (!m_KBManager)
+        return NULL;
+    return m_KBManager->GetFrameInstance(name);
+}
+
+void MLV::SetFasetValue(NFrame* frame, QString fasetName, int value)
+{
+    if (!frame)
+        return;
+
+    if (NFaset* faset = frame->GetSlotFaset(fasetName, "value"))
+        faset->setIntValue(value);
+}
+
+void MLV::SetFasetValue(NFrame* frame, QString fasetName, QString value)
+{
+    if (!frame)
+        return;
+
+    if (NFaset* faset = frame->GetSlotFaset(fasetName, "value"))
+        faset->setStringValue(value);
+}
+
 bool MLV::Init()
 {
     // Экземпляр игрового поля
-    m_GameFieldInst = m_KBManager->GetFrameInstance("Игровое поле");
+    m_GameFieldInst = CreateFrameInstance("Игровое поле");
     if (!m_GameFieldInst)
         return false;
 
-    // А надо ли создавать фреймы экземпляры для всех ячеек???
-
-    // Создаем экземпляры фреймов для персонажей, раскиданых по игровому полю
-    for (int i = 0; i < m_Grid->GetCount(); i++)
+    // Создаем ячейки игрового поля
+    for (int i = 0; i < m_Grid->GetSideCount(); i++)
     {
-        GameItem* item = m_Grid->GetGameItem(i);
-        if (!item)
-            continue;
+        for (int j = 0; j < m_Grid->GetSideCount(); j++)
+        {
+            // Создаем экземпляр фрейма ячейки
+            NFrame* CellInst = CreateFrameInstance("Ячейка игрового поля");
+            if (!CellInst)
+                return false;
 
-        NFrame* PersonInst = NULL;
+            // Устанавливаем координаты ячейки
+            SetFasetValue(CellInst, "x", i);
+            SetFasetValue(CellInst, "y", j);
 
-        if (item->GetType() == gitWarior)
-            PersonInst = m_KBManager->GetFrameInstance("Мечник");
+            // Устанавливаем игровой объект
+            GameItem* item = m_Grid->GetGameItem(i);
+            NFrame* ItemInst = NULL;
+            if (!item) // Если ячейка пустая
+            {
+                ItemInst = CreateFrameInstance("Пусто");
+            }
+            else
+            {
+                // Создаем персонажа
+                if (item->GetType() == gitWarior)
+                    ItemInst = CreateFrameInstance("Мечник");
 
-        else if (item->GetType() == gitArcher)
-            PersonInst = m_KBManager->GetFrameInstance("Лучник");
+                else if (item->GetType() == gitArcher)
+                    ItemInst = CreateFrameInstance("Лучник");
 
-        else if (item->GetType() == gitHealer)
-            PersonInst = m_KBManager->GetFrameInstance("Лекарь");
+                else if (item->GetType() == gitHealer)
+                    ItemInst = CreateFrameInstance("Лекарь");
 
-        if (!PersonInst)
-            continue;
-
-        // Заполняем координаты персонажа
-        if (NFaset* faset = PersonInst->GetSlotFaset("x", "value"))
-            faset->setIntValue(m_Grid->GetCell(i)->GetX());
-
-        if (NFaset* faset = PersonInst->GetSlotFaset("y", "value"))
-            faset->setIntValue(m_Grid->GetCell(i)->GetY());
-
-        // Задаем цвет
-        if (NFaset* faset = PersonInst->GetSlotFaset("Команда", "value"))
-            faset->setStringValue(item->GetTeam() == gtRed ? "Красный" : "Синий");
-
-        m_PersonInsts.append(PersonInst);
+                // Задаем цвет
+                SetFasetValue(ItemInst, "Команда", item->GetTeam() == gtRed ? "Красный" : "Синий");
+            }
+            SetFasetValue(CellInst, "Игровой объект", (int)ItemInst);
+            m_CellFrameInsts.append(CellInst);
+        }
     }
     m_Initialized = true;
     return true;
@@ -61,7 +90,7 @@ void MLV::Start()
         return;
 
     // Пока один шаг. В будущем тут можно будет замутить цикл со слипами
-    Step();
+    //Step();
 }
 
 void MLV::Step()
@@ -70,7 +99,7 @@ void MLV::Step()
         return;
 
     // Для каждого персонажа привязываем ситуацию
-    for (int i = 0; i < m_PersonInsts.count(); i++)
+    for (int i = 0; i < m_CellFrameInsts.count(); i++)
     {
         BindFrame(m_KBManager->GetFrameByName("Ситуация"));
     }

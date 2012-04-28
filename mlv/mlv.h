@@ -17,7 +17,7 @@ protected:
     Grid* m_Grid;
 
     NFrame* m_GameFieldInst;        // Экземпляр фрейма игрового поля
-    QList<NFrame*> m_PersonInsts;   // Экземпляры фреймов персонажей
+    QList<NFrame*> m_CellFrameInsts;   // Экземпляры фреймов ячеек
 
     bool m_Initialized;
 
@@ -42,6 +42,10 @@ protected:
     // В код вшиты названия! что есть очень плохо - быдло быдло
     bool Init();
     void UpdateGrid();
+
+    NFrame* CreateFrameInstance(QString name);
+    void SetFasetValue(NFrame* frame, QString fasetName, int value);
+    void SetFasetValue(NFrame* frame, QString fasetName, QString value);
 
 };
 

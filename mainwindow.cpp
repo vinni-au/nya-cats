@@ -155,3 +155,11 @@ void MainWindow::on_actDomainEditor_triggered()
     wnd->setWindowModality(Qt::WindowModal);
     wnd->show();
 }
+
+void MainWindow::on_actStartGame_triggered()
+{
+    if (!m_mlv)
+        return;
+
+    m_mlv->Start();
+}
