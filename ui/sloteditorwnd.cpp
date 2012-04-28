@@ -136,6 +136,7 @@ void SlotEditorWnd::on_cmbSlotType_currentIndexChanged(int index)
     {
         ui->cmbSlotDomain->setEnabled(false);
         //ui->cmbSlotValue->setEnabled(true);
+        ui->cmbDefaultValue->setModel(new QStringListModel());
 
         QMap<unsigned,QString> frames =  m_kbManager->frameNames();
 
@@ -250,5 +251,23 @@ void SlotEditorWnd::on_cmbMarkerType_currentIndexChanged(const QString &arg1)
         QStringList names = m_kbManager->getProceduresNames();
         ui->cmbMarkerValue->addItems(names);
         ui->cmbMarkerValue->addItem("");
+    }
+}
+
+void SlotEditorWnd::on_cmbSlotDomain_currentIndexChanged(const QString &arg1)
+{
+    if(!ui->cmbSlotDomain->isEnabled())
+        return;
+    QString domain = arg1;
+    QModelIndex domainIndex = m_kbManager->getDomainModel()->indexByName(domain);
+    if(domainIndex.isValid())
+    {
+        ui->cmbDefaultValue->setModel(m_kbManager->getDomainModel());
+        ui->cmbDefaultValue->setRootModelIndex(domainIndex);
+        ui->cmbDefaultValue->setCurrentIndex(0);
+    }
+    else
+    {
+        ui->cmbDefaultValue->setModel(new QStringListModel());
     }
 }

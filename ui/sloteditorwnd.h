@@ -36,6 +36,8 @@ private slots:
     void onProductionAdded(NProduction *production,bool newProd);
     void on_cmbMarkerType_currentIndexChanged(const QString &arg1);
 
+    void on_cmbSlotDomain_currentIndexChanged(const QString &arg1);
+
 private:
     Ui::SlotEditorWnd *ui;
     QModelIndex m_slotIndex;
