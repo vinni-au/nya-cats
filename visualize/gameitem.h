@@ -7,7 +7,8 @@ enum GameItemType
 {
     gitWarior,
     gitHealer,
-    gitArcher
+    gitArcher,
+    gitMeat
 };
 
 enum GameTeam

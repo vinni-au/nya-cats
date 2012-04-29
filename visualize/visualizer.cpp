@@ -41,10 +41,12 @@ void Visualizer::populateScene()
     QRectF rect4(-70, 210, 60, 60);
     QRectF rect5(-70, 280, 60, 60);
     QRectF rect6(-70, 350, 60, 60);
+    QRectF rect7(-70, 450, 60, 60);
 
     QPixmap pic1(":images/visualize/war.gif");
     QPixmap pic2(":images/visualize/doc.gif");
     QPixmap pic3(":images/visualize/hant.gif");
+    QPixmap pic4(":images/visualize/meat.gif");
 
     scene->CreateFactory(new GameItem(gitWarior, pic1, gtRed, -1), rect1);
     scene->CreateFactory(new GameItem(gitHealer, pic2, gtRed, -1), rect2);
@@ -53,6 +55,7 @@ void Visualizer::populateScene()
     scene->CreateFactory(new GameItem(gitWarior, pic1, gtBlue, -1), rect4);
     scene->CreateFactory(new GameItem(gitHealer, pic2, gtBlue, -1), rect5);
     scene->CreateFactory(new GameItem(gitArcher, pic3, gtBlue, -1), rect6);
+    scene->CreateFactory(new GameItem(gitMeat,   pic4, gtRed, -1), rect7);
 }
 
 void Visualizer::Update()
