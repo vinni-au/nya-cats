@@ -7,6 +7,9 @@ MLVControl::MLVControl(MLV* mlv, QWidget *parent) :
   ,m_Mlv(mlv)
 {
     ui->setupUi(this);
+
+    connect(mlv, SIGNAL(AddMsgToLog(QString)), SLOT(AddMsg(QString)));
+    connect(mlv, SIGNAL(ClearLog()), SLOT(ClearLog()));
 }
 
 MLVControl::~MLVControl()

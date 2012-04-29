@@ -31,7 +31,7 @@ void Cell::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
     {
         painter->drawImage(m_Rect, m_Item->GetPic().toImage());
 
-        if (m_Item->GetTeam() != gtBlue || m_Item->GetTeam() != gtRed)
+        if (m_Item->GetTeam() != gtBlue && m_Item->GetTeam() != gtRed)
             return;
 
         QColor red(150, 0, 0, 100);

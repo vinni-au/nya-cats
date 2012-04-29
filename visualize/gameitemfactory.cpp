@@ -45,6 +45,9 @@ void GameItemFactory::paint(QPainter *painter, const QStyleOptionGraphicsItem *o
 {
     QGraphicsPixmapItem::paint(painter, option, widget);
 
+    if (m_Item->GetTeam() != gtBlue && m_Item->GetTeam() != gtRed)
+        return;
+
     QColor red(150, 0, 0, 100);
     QColor blue(0, 0, 150, 100);
 

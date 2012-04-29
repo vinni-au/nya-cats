@@ -15,7 +15,14 @@ NFrame* MLV::CreateFrameInstance(QString name)
         return NULL;
 
     NFrame* frame = m_KBManager->GetFrameInstance(name);
-    m_WorkMemory.append(frame);
+    if (frame)
+    {
+        m_WorkMemory.append(frame);
+        AddMsgToLog("Создали экземпляр '" + frame->frameName() + "'");
+    }
+    else
+       AddMsgToLog("Не удалось создать экземпляр '" + frame->frameName() + "'");
+
     return frame;
 }
 
@@ -25,7 +32,15 @@ NFrame* MLV::CreateFrameInstanceFull(QString name)
         return NULL;
 
     NFrame* frame = m_KBManager->GetFrameInstanceWithParents(name);
-    m_WorkMemory.append(frame);
+
+    if (frame)
+    {
+        m_WorkMemory.append(frame);
+        AddMsgToLog("Создали экземпляр '" + frame->frameName() + "'");
+    }
+    else
+       AddMsgToLog("Не удалось создать экземпляр '" + frame->frameName() + "'");
+
     return frame;
 }
 
@@ -56,6 +71,7 @@ bool MLV::SetSlotValueVariant(NFrame* frame, QString slotName, QVariant value, b
     {
         if (NFaset* faset = frame->GetSlotFaset(slotName, "value"))
         {
+            AddMsgToLog("Присвоили слоту '" + slotName + "' значение '" + value.toString() + "'");
             faset->setValue(value);
             return true;
         }
@@ -200,15 +216,19 @@ bool MLV::BindFrame(NFrame *frame)
         NFrame* frameInst = frame->createInstance();
         if (!frameInst)
             return false;
+        AddMsgToLog("Создали экземпляр '" + frame->frameName() + "'");
+
     }
     else
         frameInst = frame;
+
+    AddMsgToLog("Пытаемся привязать фрейм '" + frame->frameName() + "'");
 
     // Пытаемся привязать слоты
     QList<NSlot*> nslots = m_KBManager->GetFrameSlots(frameInst);
     for (int i = 0; i < nslots.count(); i++)
     {
-        retn &= BindSlot(nslots[i]);
+        retn &= BindSlot(frame, nslots[i]);
         if (!retn)
             break; // если хоть один слот не привязался, завершаем перебор
     }
@@ -224,16 +244,21 @@ bool MLV::BindFrame(NFrame *frame)
         }
     }
 
+    QString str = retn? "' привязался" : "' НЕ привязался";
+    AddMsgToLog("Фрейм '" + frame->frameName() + str);
+
     return retn;
 }
 
-bool MLV::BindSlot(NSlot *slot)
+bool MLV::BindSlot(NFrame* frame, NSlot *slot)
 {
-    if (!slot)
+    if (!slot || !frame)
         return false;
 
     if (slot->getSlotType() == "")
         return false;
+
+    AddMsgToLog("Пытаемся привязать слот '" + slot->name() + "'");
 
     // Если субфрейм
     if (slot->getSlotType() == "frame")
@@ -263,9 +288,14 @@ bool MLV::BindSlot(NSlot *slot)
 
     if (markerType == "production")
     {
+        NProduction* production;
+        NProductionMLV* productionMLV = new NProductionMLV(this, frame->id(), production);
 
+        AddMsgToLog("Cлот '" + slot->name() + "' привязался");
+        return true;
     }
 
+    AddMsgToLog("Cлот '" + slot->name() + "' НЕ привязался");
     return false;
 }
 

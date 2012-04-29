@@ -14,7 +14,8 @@ enum GameItemType
 enum GameTeam
 {
     gtRed,
-    gtBlue
+    gtBlue,
+    gtNull
 };
 
 class GameItem;

@@ -8,6 +8,7 @@
 #include "core/nproc.h"
 #include "visualize/visualizer.h"
 #include "visualize/grid.h"
+#include "core/production/nproductionmlv.h"
 
 class MLV : public QObject
 {
@@ -30,7 +31,7 @@ public:
     void Start();
     void Step();
     bool BindFrame(NFrame* frame);
-    bool BindSlot(NSlot* slot);
+    bool BindSlot(NFrame* frame, NSlot* slot);
 
     //Для продукционного вывода
     //Функция для получения значения слота фрейма экземпляра при продукционном выводе.

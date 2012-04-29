@@ -10,6 +10,8 @@
 
 //sigVarUse - сигнал о том, какая переменная(слот) получила значение
 
+class MLV;
+
 class NProductionMLV : public QObject
 {
     Q_OBJECT
