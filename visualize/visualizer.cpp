@@ -53,7 +53,6 @@ void Visualizer::populateScene()
     scene->CreateFactory(new GameItem(gitWarior, pic1, gtBlue, -1), rect4);
     scene->CreateFactory(new GameItem(gitHealer, pic2, gtBlue, -1), rect5);
     scene->CreateFactory(new GameItem(gitArcher, pic3, gtBlue, -1), rect6);
-
 }
 
 void Visualizer::Update()
