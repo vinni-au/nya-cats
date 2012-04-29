@@ -416,7 +416,7 @@ NKBManager::areUsure(QString quest)
 void
 NKBManager::saveToXml(QTextStream &stream)
 {
-
+    doc = QDomDocument();
     QDomElement kbEl = doc.createElement("kb");   doc.appendChild(kbEl);
     QDomElement domainsEl = m_domainModel.toXml(doc);   kbEl.appendChild(domainsEl);
     QDomElement framesEl = doc.createElement("frames"); kbEl.appendChild(framesEl);
@@ -454,7 +454,7 @@ NKBManager::saveToXml(QTextStream &stream)
 void
 NKBManager::readFromXml(QFile &file)
 {
-    QDomDocument doc;
+    doc.clear();
     if(!doc.setContent(&file))
     {
         qDebug()<<"NKBManager::readFromXml: Не удалось считать файл: "<<file.fileName();

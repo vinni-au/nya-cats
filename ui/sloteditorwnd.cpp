@@ -48,7 +48,7 @@ SlotEditorWnd::SlotEditorWnd(QModelIndex slotIndex,NKBManager *kbManager,QWidget
     int slotInheritanceIndex = ui->cmbInheritance->findText(slotInheritance);
     ui->cmbInheritance->setCurrentIndex(slotInheritanceIndex);
     //тип маркера
-    ui->cmbMarkerType->addItem("domain");
+    //ui->cmbMarkerType->addItem("domain");
     ui->cmbMarkerType->addItem("production");
     ui->cmbMarkerType->addItem("procedure");
 
