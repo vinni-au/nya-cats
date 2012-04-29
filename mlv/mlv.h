@@ -65,6 +65,8 @@ public slots:
     bool setValSlot(int frameId, QString aimVar, QVariant value);
 
 signals:
+    void AddMsgToLog(QString msg);
+    void ClearLog();
 };
 
 #endif // MLV_H

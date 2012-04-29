@@ -8,6 +8,7 @@
 
 #include "core/nkbmanager.h"
 #include "mlv/mlv.h"
+#include "ui/mlvcontrol.h"
 
 namespace Ui {
     class MainWindow;
@@ -53,6 +54,7 @@ private:
 
     NKBManager* m_kbManager;
     MLV* m_mlv;
+    MLVControl* m_mlvControl;
 
 
 };

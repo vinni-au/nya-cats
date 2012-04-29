@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     m_kbManager = new NKBManager();
     m_mlv = new MLV(m_kbManager, viz->GetGrid());
+    m_mlvControl = new MLVControl(m_mlv);
 }
 
 MainWindow::~MainWindow()
@@ -160,6 +161,7 @@ void MainWindow::on_actStartGame_triggered()
 {
     if (!m_mlv)
         return;
-
+    m_mlvControl->ClearLog();
+    m_mlvControl->show();
     m_mlv->Start();
 }
