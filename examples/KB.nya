@@ -1462,6 +1462,16 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Снизу враг" name="name"/>
+                        <faset value="ДаНет" name="slot_type"/>
+                        <faset value="Да" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="снизувраг" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
             </slots>
         </frame>
         <frame type="0" id="40">
@@ -1483,6 +1493,16 @@
                         <faset value="Есть враги" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Справа враг" name="name"/>
+                        <faset value="ДаНет" name="slot_type"/>
+                        <faset value="Да" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="справавраг" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -1510,6 +1530,16 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Сверху враг" name="name"/>
+                        <faset value="ДаНет" name="slot_type"/>
+                        <faset value="Да" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="сверхувраг" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
             </slots>
         </frame>
     </frames>
@@ -1533,7 +1563,173 @@
                     </ifs>
                     <thens>
                         <then>
-                            <var>Есть враги</var>
+                            <var>Слева враг</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule2">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игрок.Команда</var>
+                            <sign>=</sign>
+                            <val>Синий</val>
+                        </if>
+                        <if>
+                            <var>враг.Команда</var>
+                            <sign>=</sign>
+                            <val>Красный</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Слева враг</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+            </rules>
+        </production>
+        <production name="снизувраг">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игрок.Команда</var>
+                            <sign>=</sign>
+                            <val>Красный</val>
+                        </if>
+                        <if>
+                            <var>враг.Команда</var>
+                            <sign>=</sign>
+                            <val>Синий</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Снизу враг</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule2">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игрок.Команда</var>
+                            <sign>=</sign>
+                            <val>Синий</val>
+                        </if>
+                        <if>
+                            <var>враг.Команда</var>
+                            <sign>=</sign>
+                            <val>Красный</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Снизу враг</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+            </rules>
+        </production>
+        <production name="справавраг">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игрок.Команда</var>
+                            <sign>=</sign>
+                            <val>Красный</val>
+                        </if>
+                        <if>
+                            <var>враг.Команда</var>
+                            <sign>=</sign>
+                            <val>Синий</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Справа враг</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule2">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игрок.Команда</var>
+                            <sign>=</sign>
+                            <val>Синий</val>
+                        </if>
+                        <if>
+                            <var>враг.Команда</var>
+                            <sign>=</sign>
+                            <val>Красный</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Справа враг</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+            </rules>
+        </production>
+        <production name="сверхувраг">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игрок.Команда</var>
+                            <sign>=</sign>
+                            <val>Красный</val>
+                        </if>
+                        <if>
+                            <var>враг.Команда</var>
+                            <sign>=</sign>
+                            <val>Синий</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Сверху враг</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule2">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игрок.Команда</var>
+                            <sign>=</sign>
+                            <val>Синий</val>
+                        </if>
+                        <if>
+                            <var>враг.Команда</var>
+                            <sign>=</sign>
+                            <val>Красный</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Сверху враг</var>
                             <sign>=</sign>
                             <val>Да</val>
                         </then>
