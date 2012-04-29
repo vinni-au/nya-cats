@@ -2,7 +2,8 @@
 #include <QList>
 
 MLV::MLV(NKBManager* manager, Grid* grid) :
-   m_KBManager(manager)
+    QObject(0)
+  ,m_KBManager(manager)
   ,m_Grid(grid)
   ,m_Initialized(false)
 {
@@ -12,44 +13,66 @@ NFrame* MLV::CreateFrameInstance(QString name)
 {
     if (!m_KBManager)
         return NULL;
-    return m_KBManager->GetFrameInstance(name);
+
+    NFrame* frame = m_KBManager->GetFrameInstance(name);
+    m_WorkMemory.append(frame);
+    return frame;
 }
 
 NFrame* MLV::CreateFrameInstanceFull(QString name)
 {
     if (!m_KBManager)
         return NULL;
-    return m_KBManager->GetFrameInstance(name);
+
+    NFrame* frame = m_KBManager->GetFrameInstanceWithParents(name);
+    m_WorkMemory.append(frame);
+    return frame;
 }
 
-void MLV::SetFasetValue(NFrame* frame, QString fasetName, int value)
+bool MLV::SetSlotValue(NFrame* frame, QString slotName, int value)
 {
     if (!frame)
-        return;
+        return false;
 
-    if (NFaset* faset = frame->GetSlotFaset(fasetName, "value"))
-        faset->setIntValue(value);
+    return SetSlotValueVariant(frame, slotName, value);
 }
 
-void MLV::SetFasetValueVariant(NFrame* frame, QString fasetName, QVariant value)
+bool MLV::SetSlotValueVariant(NFrame* frame, QString slotName, QVariant value, bool findInParents)
 {
     if (!frame)
-        return;
+        return false;
 
-    if (NFaset* faset = frame->GetSlotFaset(fasetName, "value"))
-        faset->setValue(value);
+    NSlot* slot = frame->getSlotByName(slotName);
+    if(!slot)
+    {
+        if (!findInParents)
+            return false;
+
+        //ищем в родительских
+        NFrame* parentFrame = m_KBManager->GetFrameParent(frame);
+        return SetSlotValueVariant(parentFrame, slotName, true);
+    }
+    else
+    {
+        if (NFaset* faset = frame->GetSlotFaset(slotName, "value"))
+        {
+            faset->setValue(value);
+            return true;
+        }
+    }
+
+    return false;
 }
 
-void MLV::SetFasetValue(NFrame* frame, QString fasetName, QString value)
+bool MLV::SetSlotValue(NFrame* frame, QString slotName, QString value)
 {
     if (!frame)
-        return;
+        return false;
 
-    if (NFaset* faset = frame->GetSlotFaset(fasetName, "value"))
-        faset->setStringValue(value);
+    return SetSlotValueVariant(frame, slotName, value);
 }
 
-QVariant MLV::GetFasetValue(NFrame* frame, QString slotName, bool findInParents)
+QVariant MLV::GetSlotValue(NFrame* frame, QString slotName, bool findInParents)
 {
     if (!frame)
         return QVariant();
@@ -62,7 +85,7 @@ QVariant MLV::GetFasetValue(NFrame* frame, QString slotName, bool findInParents)
 
         //ищем в родительских
         NFrame* parentFrame = m_KBManager->GetFrameParent(frame);
-        return GetFasetValue(parentFrame, slotName);
+        return GetSlotValue(parentFrame, slotName);
     }
     else
     {
@@ -76,6 +99,7 @@ QVariant MLV::GetFasetValue(NFrame* frame, QString slotName, bool findInParents)
 bool MLV::Init()
 {
     m_CellFrameInsts.clear();
+    m_WorkMemory.clear();
 
     // Экземпляр игрового поля
     m_GameFieldInst = CreateFrameInstanceFull("Игровое поле");
@@ -93,8 +117,8 @@ bool MLV::Init()
                 return false;
 
             // Устанавливаем координаты ячейки
-            SetFasetValue(CellInst, "x", i);
-            SetFasetValue(CellInst, "y", j);
+            SetSlotValue(CellInst, "x", i);
+            SetSlotValue(CellInst, "y", j);
 
             // Устанавливаем игровой объект
             GameItem* item = m_Grid->GetGameItem(i, j);
@@ -116,9 +140,9 @@ bool MLV::Init()
                     ItemInst = CreateFrameInstanceFull("Лекарь");
 
                 // Задаем цвет
-                SetFasetValue(ItemInst, "Команда", item->GetTeam() == gtRed ? "Красный" : "Синий");
+                SetSlotValue(ItemInst, "Команда", item->GetTeam() == gtRed ? "Красный" : "Синий");
             }
-            SetFasetValueVariant(CellInst, "Игровой объект", QVariant(reinterpret_cast<long long>(ItemInst)));
+            SetSlotValueVariant(CellInst, "Игровой объект", QVariant(reinterpret_cast<long long>(ItemInst)));
             m_CellFrameInsts.append(CellInst);
         }
     }
@@ -144,17 +168,18 @@ void MLV::Step()
     for (int i = 0; i < m_CellFrameInsts.count(); i++)
     {
         // Определяем что находится в ячейке
-        QVariant value = GetFasetValue(m_CellFrameInsts[i], "Игровой объект");
+        QVariant value = GetSlotValue(m_CellFrameInsts[i], "Игровой объект");
         NFrame* frame = (NFrame*)value.toLongLong();
         if (!frame)
             continue;
 
+        // Если не пусто
         if (frame->frameName() != "Пусто")
         {
             NFrame* frameSituation = CreateFrameInstance("Ситуация");
-            SetFasetValueVariant(frameSituation, "Место выполнения действия",
+            SetSlotValueVariant(frameSituation, "Место выполнения действия",
                                  QVariant(reinterpret_cast<long long>(m_CellFrameInsts[i])));
-            SetFasetValueVariant(frameSituation, "Игрок", QVariant(reinterpret_cast<long long>(frame)));
+            SetSlotValueVariant(frameSituation, "Игрок", QVariant(reinterpret_cast<long long>(frame)));
 
             BindFrame(frameSituation);
         }
@@ -204,16 +229,48 @@ bool MLV::BindFrame(NFrame *frame)
 
 bool MLV::BindSlot(NSlot *slot)
 {
-    // TODO
-    return true;
+    if (!slot)
+        return false;
+
+    if (slot->getSlotType() == "")
+        return false;
+
+    // Если субфрейм
+    if (slot->getSlotType() == "frame")
+    {
+        // Создаем экземпляр
+        QString subframeName = slot->defValue().toString();
+        NFrame* subframe = CreateFrameInstance(subframeName);
+        if (!subframe)
+            return false;
+
+        // Вызваем привязку экземпляра
+        return BindFrame(subframe);
+    }
+
+    //Сюда попадаем, если тип слота - какой-то домен, строка или число
+    QString markerType = slot->getSlotMarkerType();
+
+    if (markerType == "domain")
+    {
+
+    }
+
+    if (markerType == "procedure")
+    {
+
+    }
+
+    if (markerType == "production")
+    {
+
+    }
+
+    return false;
 }
 
-
-QVariant MLV::getVal(int frameId, QString aimVar)
+NFrame* MLV::getFrameFromWorkMem(int frameId)
 {
-    //TODO
-    // Для примера можно посмотреть NKBManager:  NSlot * getSlotByString( QString frameName, QString str  );
-
     NFrame* frame = NULL;
     for (int i = 0; i < m_WorkMemory.count(); i++)
     {
@@ -223,8 +280,15 @@ QVariant MLV::getVal(int frameId, QString aimVar)
         if (frame->id() == frameId)
             break;
     }
+    return frame;
+}
 
-    return getVal(frame, aimVar);
+QVariant MLV::getVal(int frameId, QString aimVar)
+{
+    //TODO
+    // Для примера можно посмотреть NKBManager:  NSlot * getSlotByString( QString frameName, QString str  );
+
+    return getVal(getFrameFromWorkMem(frameId), aimVar);
 }
 
 QVariant MLV::getVal(NFrame* frame, QString aimVar)
@@ -235,7 +299,7 @@ QVariant MLV::getVal(NFrame* frame, QString aimVar)
     //тут надо еще наследование учесть
     if(!aimVar.contains("."))
     {//просто слот
-        return GetFasetValue(frame, aimVar, true);
+        return GetSlotValue(frame, aimVar, true);
     }
     else
     {//субфреймы
@@ -243,13 +307,52 @@ QVariant MLV::getVal(NFrame* frame, QString aimVar)
         QString newStr = aimVar.right(aimVar.length()-pointInx-1);
         QString subfName = aimVar.left(pointInx);
 
-        QVariant slotVal = GetFasetValue(frame, subfName, true);
+        QVariant slotVal = GetSlotValue(frame, subfName, true);
         NFrame* subframe = (NFrame*)slotVal.toLongLong();
         return getVal(subframe, newStr);
     }
 }
 
+bool MLV::setVal(int frameId, QString aimVar, QVariant value)
+{
+    return setVal(getFrameFromWorkMem(frameId), aimVar, value);
+}
+
+bool MLV::setVal(NFrame* frame, QString aimVar, QVariant value)
+{
+    if (!frame)
+        return false;
+
+    //тут надо еще наследование учесть
+    if(!aimVar.contains("."))
+    {//просто слот
+        return true;//GetFasetValue(frame, aimVar, true);
+    }
+    else
+    {//субфреймы
+        int pointInx = aimVar.indexOf(".");
+        QString newStr = aimVar.right(aimVar.length()-pointInx-1);
+        QString subfName = aimVar.left(pointInx);
+
+        QVariant slotVal = GetSlotValue(frame, subfName, true);
+        NFrame* subframe = (NFrame*)slotVal.toLongLong();
+        return setVal(subframe, newStr, value);
+    }
+}
+
+
 void MLV::UpdateGrid()
 {
 
+}
+
+
+QVariant MLV::getValSlot(int frameId, QString aimVar)
+{
+    return getVal(frameId, aimVar);
+}
+
+bool MLV::setValSlot(int frameId, QString aimVar, QVariant value)
+{
+    return setVal(frameId, aimVar, value);
 }

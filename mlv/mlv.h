@@ -9,8 +9,9 @@
 #include "visualize/visualizer.h"
 #include "visualize/grid.h"
 
-class MLV
+class MLV : public QObject
 {
+    Q_OBJECT
 protected:
     NKBManager* m_KBManager;
     NFrame* m_CurrFrame;
@@ -39,6 +40,9 @@ public:
     QVariant getVal(int frameId, QString aimVar);
     QVariant getVal(NFrame* frame, QString aimVar);
 
+    bool setVal(int frameId, QString aimVar, QVariant value);
+    bool setVal(NFrame* frame, QString aimVar, QVariant value);
+
 protected:
 
     // Тут создаются фреймы экземпляры игрового поля и персонаже.
@@ -48,13 +52,19 @@ protected:
 
     NFrame* CreateFrameInstance(QString name);
     NFrame* CreateFrameInstanceFull(QString name);
-    void SetFasetValue(NFrame* frame, QString fasetName, int value);
-    void SetFasetValue(NFrame* frame, QString fasetName, QString value);
-    void SetFasetValueVariant(NFrame* frame, QString fasetName, QVariant value);
+    bool SetSlotValue(NFrame* frame, QString fasetName, int value);
+    bool SetSlotValue(NFrame* frame, QString fasetName, QString value);
+    bool SetSlotValueVariant(NFrame* frame, QString fasetName, QVariant value, bool findInParents = false);
 
-    QVariant GetFasetValue(NFrame* frame, QString slotName, bool findInParents = false);
+    QVariant GetSlotValue(NFrame* frame, QString slotName, bool findInParents = false);
 
+    NFrame* getFrameFromWorkMem(int frameId);
 
+public slots:
+    QVariant getValSlot(int frameId, QString aimVar);
+    bool setValSlot(int frameId, QString aimVar, QVariant value);
+
+signals:
 };
 
 #endif // MLV_H

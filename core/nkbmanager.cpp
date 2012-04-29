@@ -995,3 +995,12 @@ NFrame* NKBManager::GetFrameInstanceWithParents(NFrame* frame)
     }
     return frameInst;
 }
+
+NFrame* NKBManager::GetFrameInstanceWithParents(QString frameName)
+{
+    NFrame* frame = GetFrameByName(frameName);
+    if (!frame)
+        return NULL;
+
+    return GetFrameInstanceWithParents(frame);
+}
