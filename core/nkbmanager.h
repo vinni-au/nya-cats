@@ -86,7 +86,6 @@ private:
 
     void deleteLinks(int id);
 
-
 signals:
     //Для диаграмм
     void frameAdded(unsigned id, QString name);

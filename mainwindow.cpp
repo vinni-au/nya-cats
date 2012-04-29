@@ -161,6 +161,7 @@ void MainWindow::on_actStartGame_triggered()
 {
     if (!m_mlv)
         return;
+
     m_mlvControl->ClearLog();
     m_mlvControl->show();
     m_mlv->Start();

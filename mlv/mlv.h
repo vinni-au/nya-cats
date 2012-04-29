@@ -53,9 +53,9 @@ protected:
 
     NFrame* CreateFrameInstance(QString name);
     NFrame* CreateFrameInstanceFull(QString name);
-    bool SetSlotValue(NFrame* frame, QString fasetName, int value);
-    bool SetSlotValue(NFrame* frame, QString fasetName, QString value);
-    bool SetSlotValueVariant(NFrame* frame, QString fasetName, QVariant value, bool findInParents = false);
+    bool SetSlotValue(NFrame* frame, QString slotName, int value);
+    bool SetSlotValue(NFrame* frame, QString slotName, QString value);
+    bool SetSlotValueVariant(NFrame* frame, QString slotName, QVariant value, bool findInParents = false);
 
     QVariant GetSlotValue(NFrame* frame, QString slotName, bool findInParents = false);
 

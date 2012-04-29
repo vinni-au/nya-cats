@@ -17,11 +17,13 @@ NFrame* MLV::CreateFrameInstance(QString name)
     NFrame* frame = m_KBManager->GetFrameInstance(name);
     if (frame)
     {
-        m_WorkMemory.append(frame);
-        AddMsgToLog("Создали экземпляр '" + frame->frameName() + "'");
+        //m_WorkMemory.append(frame);
+        //AddMsgToLog("Создали экземпляр '" + frame->frameName() + "'");
     }
     else
-       AddMsgToLog("Не удалось создать экземпляр '" + frame->frameName() + "'");
+    {
+       //AddMsgToLog("Не удалось создать экземпляр '" + frame->frameName() + "'");
+    }
 
     return frame;
 }
@@ -35,11 +37,13 @@ NFrame* MLV::CreateFrameInstanceFull(QString name)
 
     if (frame)
     {
-        m_WorkMemory.append(frame);
-        AddMsgToLog("Создали экземпляр '" + frame->frameName() + "'");
+        //m_WorkMemory.append(frame);
+        //AddMsgToLog("Создали экземпляр '" + frame->frameName() + "'");
     }
     else
-       AddMsgToLog("Не удалось создать экземпляр '" + frame->frameName() + "'");
+    {
+       //AddMsgToLog("Не удалось создать экземпляр '" + frame->frameName() + "'");
+    }
 
     return frame;
 }
@@ -71,7 +75,7 @@ bool MLV::SetSlotValueVariant(NFrame* frame, QString slotName, QVariant value, b
     {
         if (NFaset* faset = frame->GetSlotFaset(slotName, "value"))
         {
-            AddMsgToLog("Присвоили слоту '" + slotName + "' значение '" + value.toString() + "'");
+            //AddMsgToLog("Присвоили слоту '" + slotName + "' значение '" + value.toString() + "'");
             faset->setValue(value);
             return true;
         }
@@ -122,6 +126,8 @@ bool MLV::Init()
     if (!m_GameFieldInst)
         return false;
 
+    m_WorkMemory.append(m_GameFieldInst);
+
     // Создаем ячейки игрового поля
     for (int i = 0; i < m_Grid->GetSideCount(); i++)
     {
@@ -131,6 +137,8 @@ bool MLV::Init()
             NFrame* CellInst = CreateFrameInstanceFull("Ячейка игрового поля");
             if (!CellInst)
                 return false;
+
+
 
             // Устанавливаем координаты ячейки
             SetSlotValue(CellInst, "x", i);
@@ -160,6 +168,7 @@ bool MLV::Init()
             }
             SetSlotValueVariant(CellInst, "Игровой объект", QVariant(reinterpret_cast<long long>(ItemInst)));
             m_CellFrameInsts.append(CellInst);
+            m_WorkMemory.append(CellInst);
         }
     }
     m_Initialized = true;
@@ -190,8 +199,9 @@ void MLV::Step()
             continue;
 
         // Если не пусто
-        if (frame->frameName() != "Пусто")
+        if (frame->frameName() == "Мечник" || frame->frameName() == "Лучник" || frame->frameName() == "Лекарь")
         {
+            AddMsgToLog("Определяем ситуацию для '" + frame->frameName() + "'");
             NFrame* frameSituation = CreateFrameInstance("Ситуация");
             SetSlotValueVariant(frameSituation, "Место выполнения действия",
                                  QVariant(reinterpret_cast<long long>(m_CellFrameInsts[i])));
@@ -209,26 +219,34 @@ bool MLV::BindFrame(NFrame *frame)
 {
     bool retn = true;
 
+    if (!frame)
+        return false;
+
     NFrame* frameInst = NULL;
     if (frame->frameType() == FrameType::prototype)
     {
         // Создаем экземпляр
-        NFrame* frameInst = frame->createInstance();
+        frameInst = frame->createInstance();
         if (!frameInst)
             return false;
-        AddMsgToLog("Создали экземпляр '" + frame->frameName() + "'");
-
+        AddMsgToLog("Создали экземпляр '" + frameInst->frameName() + "'");
     }
     else
         frameInst = frame;
 
-    AddMsgToLog("Пытаемся привязать фрейм '" + frame->frameName() + "'");
+    // Если фрейм есть в рабочей памяти, то считаем, что он уже приаязан
+    if (m_WorkMemory.contains(frameInst))
+        return true;
+
+    AddMsgToLog("Пытаемся привязать фрейм '" + frameInst->frameName() + "'");
 
     // Пытаемся привязать слоты
     QList<NSlot*> nslots = m_KBManager->GetFrameSlots(frameInst);
     for (int i = 0; i < nslots.count(); i++)
     {
-        retn &= BindSlot(frame, nslots[i]);
+        if (nslots[i]->isSystem())
+            continue;
+        retn &= BindSlot(frameInst, nslots[i]);
         if (!retn)
             break; // если хоть один слот не привязался, завершаем перебор
     }
@@ -236,16 +254,19 @@ bool MLV::BindFrame(NFrame *frame)
     // Если фрейм привязался, пытаемся привязать потомков
     if (retn)
     {
-        QList<NFrame*> children = m_KBManager->GetFrameChildren(frame);
+        m_WorkMemory.append(frame);
+        QList<NFrame*> children = m_KBManager->GetFrameChildren(frameInst);
         for (int i = 0; i < children.count(); i++)
         {
+            if (!children[i])
+                continue; // Это не должно быть!!
             if (BindFrame(children[i]))
                 break;
         }
     }
 
     QString str = retn? "' привязался" : "' НЕ привязался";
-    AddMsgToLog("Фрейм '" + frame->frameName() + str);
+    AddMsgToLog("Фрейм '" + frameInst->frameName() + str);
 
     return retn;
 }
@@ -253,9 +274,6 @@ bool MLV::BindFrame(NFrame *frame)
 bool MLV::BindSlot(NFrame* frame, NSlot *slot)
 {
     if (!slot || !frame)
-        return false;
-
-    if (slot->getSlotType() == "")
         return false;
 
     AddMsgToLog("Пытаемся привязать слот '" + slot->name() + "'");
@@ -276,27 +294,38 @@ bool MLV::BindSlot(NFrame* frame, NSlot *slot)
     //Сюда попадаем, если тип слота - какой-то домен, строка или число
     QString markerType = slot->getSlotMarkerType();
 
+    bool retn = false;
     if (markerType == "domain")
     {
-
+        retn = true;
     }
 
     if (markerType == "procedure")
     {
-
+        retn = true;
     }
 
     if (markerType == "production")
     {
-        NProduction* production;
-        NProductionMLV* productionMLV = new NProductionMLV(this, frame->id(), production);
 
-        AddMsgToLog("Cлот '" + slot->name() + "' привязался");
-        return true;
+        NProduction* production = m_KBManager->getProduction(slot->getSlotMarker());
+        if (!production)
+            return false;
+        NProductionMLV* productionMLV = new NProductionMLV(this, frame->id(), production);
+        QString val = productionMLV->StartConsultation(slot->name());
+        SetSlotValue(frame, slot->name(), val);
+
+        retn = val == "";
     }
 
-    AddMsgToLog("Cлот '" + slot->name() + "' НЕ привязался");
-    return false;
+    if (markerType == "")
+    {
+        retn = true;
+    }
+
+    QString str = retn? "' привязался" :"' НЕ привязался";
+    AddMsgToLog("Cлот '" + slot->name() + str);
+    return retn;
 }
 
 NFrame* MLV::getFrameFromWorkMem(int frameId)
