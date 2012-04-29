@@ -326,7 +326,7 @@ bool MLV::setVal(NFrame* frame, QString aimVar, QVariant value)
     //тут надо еще наследование учесть
     if(!aimVar.contains("."))
     {//просто слот
-        return true;//GetFasetValue(frame, aimVar, true);
+        return SetSlotValueVariant(frame, aimVar, value);
     }
     else
     {//субфреймы
