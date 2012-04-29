@@ -153,7 +153,7 @@ MainWindow::closeEvent(QCloseEvent *event)
 void MainWindow::on_actDomainEditor_triggered()
 {
     DomainWnd *wnd = new DomainWnd(m_kbManager,this);
-    wnd->setWindowModality(Qt::WindowModal);
+    //wnd->setWindowModality(Qt::WindowModal);
     wnd->show();
 }
 

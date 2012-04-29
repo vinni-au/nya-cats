@@ -98,7 +98,6 @@ void SlotEditorWnd::on_buttonBox_rejected()
 
 void SlotEditorWnd::on_cmbSlotType_currentIndexChanged(int index)
 {
-    QComboBox *cmb = ui->cmbDefaultValue;
     QString slotType = ui->cmbSlotType->currentText();
     qDebug()<<"SlotEditorWnd::on_cmbSlotType_currentIndexChanged "<<slotType;
 

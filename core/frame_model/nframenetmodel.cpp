@@ -158,6 +158,7 @@ NFramenetModel::setData(const QModelIndex &index, const QVariant &value, int rol
         NFaset *faset;
         NSlot *slot;
         int column;
+        QVariant oldValue;
 
         switch(node->type)
         {
@@ -186,10 +187,34 @@ NFramenetModel::setData(const QModelIndex &index, const QVariant &value, int rol
             slot = frame->getSlotByIndex(index.row());
 
             faset = slot->getFasetByIndex(column);
+            oldValue = faset->value();
             faset->setValue(value);
 
             emit dataChanged(index,index);
             emit sigDataChanged();
+
+            //isa
+            if(slot->getSlotType()=="frame")
+            {
+                if(slot->name()=="is_a")
+                {
+                    if(oldValue.toString().isEmpty())
+                    {//добавлена связь
+                        emit sigIsaAdded(frame->frameName(),value.toString());
+                    }
+                    else
+                    {//изменена
+                        if(value.toString().isEmpty())
+                        {//очищена
+                            emit sigIsaDeleted(frame->frameName(),oldValue.toString());
+                        }
+                        else
+                        {//просто изменена на другой фрейм
+                            emit sigIsaChanged(frame->frameName(),oldValue.toString(),value.toString());
+                        }
+                    }
+                }
+            }
             return true;
             break;
 

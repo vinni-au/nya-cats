@@ -20,6 +20,7 @@ class SlotEditorWnd : public QDialog
 public:
     explicit SlotEditorWnd(QModelIndex slotIndex,NKBManager *kbManager,QWidget *parent = 0);
     ~SlotEditorWnd();
+signals:
 
 public slots:
 
