@@ -989,9 +989,9 @@ NFrame* NKBManager::GetFrameInstanceWithParents(NFrame* frame)
     parFrame=this->GetFrameParent(frame);
     while(parFrame)
     {
-        NFrame* parframeInst = GetFrameInstance(frame);
+        NFrame* parframeInst = GetFrameInstance(parFrame);
         frameInst->merge(parframeInst);
-        parFrame=this->GetFrameParent(frame);
+        parFrame=this->GetFrameParent(parFrame);
     }
     return frameInst;
 }
