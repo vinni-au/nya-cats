@@ -98,6 +98,7 @@ void SlotEditorWnd::on_buttonBox_rejected()
 
 void SlotEditorWnd::on_cmbSlotType_currentIndexChanged(int index)
 {
+    QComboBox *cmb = ui->cmbDefaultValue;
     QString slotType = ui->cmbSlotType->currentText();
     qDebug()<<"SlotEditorWnd::on_cmbSlotType_currentIndexChanged "<<slotType;
 
@@ -130,23 +131,32 @@ void SlotEditorWnd::on_cmbSlotType_currentIndexChanged(int index)
         ui->cmbDefaultValue->setCurrentIndex(0);
 
         ui->cmbMarkerType->clear();
-        ui->cmbMarkerType->addItem("domain");
+
         ui->cmbMarkerType->addItem("production");
         ui->cmbMarkerType->addItem("procedure");
     }
     else if(slotType == "frame")
     {
         ui->cmbSlotDomain->setEnabled(false);
-        ui->cmbSlotDomain->setModel(new QStringListModel());//опустошаем комбик доменов
-        ui->cmbDefaultValue->setModel(new QStringListModel());
+        //ui->cmbSlotDomain->setModel(new QStringListModel());//опустошаем комбик доменов
 
+        QStringList framesList;
         QMap<unsigned,QString> frames =  m_kbManager->frameNames();
 
         QMapIterator<unsigned,QString> i(frames);
-        while (i.hasNext()) {
+        while (i.hasNext())
+        {
              i.next();
-             ui->cmbDefaultValue->addItem(i.value());
+             framesList<<i.value();
+             qDebug()<<"ui->cmbDefaultValue->addItem(i.value());";
          }
+
+        QStringListModel* model = new QStringListModel(framesList);
+
+        ui->cmbDefaultValue->setModel(model);
+        ui->cmbDefaultValue->setRootModelIndex(QModelIndex());
+
+
     }
     else if(slotType == "domain")
     {
@@ -271,5 +281,6 @@ void SlotEditorWnd::on_cmbSlotDomain_currentIndexChanged(const QString &arg1)
     else
     {
         ui->cmbDefaultValue->setModel(new QStringListModel());
+        qDebug()<<"ui->cmbDefaultValue->setModel(new QStringListModel());";
     }
 }
