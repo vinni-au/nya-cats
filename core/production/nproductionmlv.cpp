@@ -177,7 +177,7 @@ NProductionMLV::AddVarUsed(QString varName, QString varValue)
         ConsVars.insert(varName,varValue);
         ConsVarsVec.append(varName);
         emit sigVarUse(varName,varValue);
-
+        m_mlv->setVal(m_frameId,varName,varValue);
     }
 }
 
