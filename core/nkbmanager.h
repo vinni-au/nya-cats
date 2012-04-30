@@ -92,6 +92,10 @@ signals:
     //Для диаграмм
     void frameAdded(unsigned id, QString name);
     void frameDeleted(unsigned id);
+    void isaAdded(unsigned sid, unsigned did);
+    void isaDeleted(unsigned sid, unsigned did);
+    void apoAdded(unsigned sid, unsigned did);
+    void apoDeleted(unsigned sid, unsigned did);
 
     void sigDataLoaded();
     void sigErrorWhileValidating(QString errorText);
@@ -115,6 +119,16 @@ public slots:
 
     QFile* file();
     void setFile(QFile *file);
+
+private slots:
+    void addIsa(QString source, QString dest);
+    void changeIsa(QString source, QString olddest, QString newDest);
+    void deleteIsa(QString source, QString dest);
+
+    void addApo(QString source, QString dest);
+    void changeApo(QString oldSource, QString newSource, QString dest);
+    void deleteApo(QString source,QString dest);
+
 private:
     QList<NFrame*>      m_frames;               //список фреймов
     NFramenetModel      *m_framenetModel;

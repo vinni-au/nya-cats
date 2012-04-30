@@ -39,6 +39,7 @@ public:
     void setItemType(DiagramItem::DiagramType type)
     {   m_itemType = type;  }
 
+
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent);
     void mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent);

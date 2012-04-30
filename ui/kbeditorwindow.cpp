@@ -54,11 +54,30 @@ KBEditorWindow::KBEditorWindow(NKBManager *kbManager,QWidget *parent) :
     QObject::connect(m_kbManager, SIGNAL(frameDeleted(uint)),
                      ui->graphicsView, SLOT(deleteNode(uint)));
 
+    QObject::connect(m_kbManager, SIGNAL(isaAdded(uint,uint)),
+                     SLOT(addIsa(uint,uint)));
+    QObject::connect(m_kbManager, SIGNAL(isaDeleted(uint,uint)),
+                     ui->graphicsView, SLOT(deleteLink(uint,uint)));
+    QObject::connect(m_kbManager, SIGNAL(apoAdded(uint,uint)),
+                     SLOT(addApo(uint,uint)));
+    QObject::connect(m_kbManager, SIGNAL(apoDeleted(uint,uint)),
+                     ui->graphicsView, SLOT(deleteLink(uint,uint)));
+
 }
 
 KBEditorWindow::~KBEditorWindow()
 {
     delete ui;
+}
+
+void KBEditorWindow::addIsa(unsigned sid, unsigned did)
+{
+    ui->graphicsView->addLink(sid, did, "is-a");
+}
+
+void KBEditorWindow::addApo(unsigned sid, unsigned did)
+{
+    ui->graphicsView->addLink(sid, did, "sub");
 }
 
 void KBEditorWindow::frameDeletedOnDiagram(unsigned id)

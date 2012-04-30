@@ -27,6 +27,20 @@ NKBManager::NKBManager(QObject *parent) :
     connect(&m_domainModel,SIGNAL(sigErrorWhileValidating(QString)),SIGNAL(sigErrorWhileValidating(QString)));
     //connect(varModel,SIGNAL(sigErrorWhileValidating(QString)),SIGNAL(sigErrorWhileValidating(QString)));
     //connect(ruleModel,SIGNAL(sigErrorWhileValidating(QString)),SIGNAL(sigErrorWhileValidating(QString)));
+
+    QObject::connect(getFrameNetModel(), SIGNAL(sigIsaAdded(QString,QString)),
+                     SLOT(addIsa(QString,QString)));
+    QObject::connect(getFrameNetModel(), SIGNAL(sigIsaChanged(QString,QString,QString)),
+                     SLOT(changeIsa(QString,QString,QString)));
+    QObject::connect(getFrameNetModel(), SIGNAL(sigIsaDeleted(QString,QString)),
+                     SLOT(deleteIsa(QString,QString)));
+
+    QObject::connect(getFrameNetModel(), SIGNAL(sigApoAdded(QString,QString)),
+                     SLOT(addApo(QString,QString)));
+    QObject::connect(getFrameNetModel(), SIGNAL(sigApoChanged(QString,QString,QString)),
+                     SLOT(changeApo(QString,QString,QString)));
+    QObject::connect(getFrameNetModel(), SIGNAL(sigApoDeleted(QString,QString)),
+                     SLOT(deleteApo(QString,QString)));
 }
 
 //интерфейсные методы
@@ -1062,4 +1076,64 @@ QStringList NKBManager::getFilteredFrameList(QString frameName,QString slotName)
         return childrenNames;
     }
     return QStringList();
+}
+
+void NKBManager::addIsa(QString source, QString dest)
+{
+    NFrame* sourcef = GetFrameByName(source);
+    NFrame* destf = GetFrameByName(dest);
+
+    if (sourcef && destf)
+        emit isaAdded(sourcef->id(), destf->id());
+}
+
+void NKBManager::changeIsa(QString source, QString olddest, QString newDest)
+{
+    NFrame* sourcef = GetFrameByName(source);
+    NFrame* olddestf = GetFrameByName(olddest);
+    NFrame* newDestf = GetFrameByName(newDest);
+
+    if (sourcef && olddestf && newDestf) {
+        emit isaDeleted(sourcef->id(), olddestf->id());
+        emit isaAdded(sourcef->id(), newDestf->id());
+    }
+}
+
+void NKBManager::deleteIsa(QString source, QString dest)
+{
+    NFrame* sourcef = GetFrameByName(source);
+    NFrame* destf = GetFrameByName(dest);
+
+    if (sourcef && destf)
+        emit isaDeleted(sourcef->id(), destf->id());
+}
+
+void NKBManager::addApo(QString source, QString dest)
+{
+    NFrame* sourcef = GetFrameByName(source);
+    NFrame* destf = GetFrameByName(dest);
+
+    if (sourcef && destf)
+        emit apoAdded(sourcef->id(), destf->id());
+}
+
+void NKBManager::changeApo(QString oldSource, QString newSource, QString dest)
+{
+    NFrame* oldSourcef = GetFrameByName(oldSource);
+    NFrame* newSourcef = GetFrameByName(newSource);
+    NFrame* destf = GetFrameByName(dest);
+
+    if (oldSourcef && newSourcef && destf) {
+        emit apoDeleted(oldSourcef->id(), destf->id());
+        emit apoAdded(newSourcef->id(), destf->id());
+    }
+}
+
+void NKBManager::deleteApo(QString source, QString dest)
+{
+    NFrame* sourcef = GetFrameByName(source);
+    NFrame* destf = GetFrameByName(dest);
+
+    if (sourcef && destf)
+        emit apoDeleted(sourcef->id(), destf->id());
 }

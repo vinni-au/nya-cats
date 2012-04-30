@@ -62,15 +62,19 @@ void LGen2DiagramEditor::addLink(unsigned sid, unsigned did, QString title)
     i1->addArrow(a);
     i2->addArrow(a);
     m_scene->addItem(a);
+    if (title == "is-a")
+        a->setColor(Qt::darkGreen);
+    else if (title == "sub")
+        a->setColor(Qt::darkYellow);
 }
 
 void LGen2DiagramEditor::deleteLink(unsigned sid, unsigned did)
 {
     Arrow* a = 0;
-    foreach (Arrow* arrow, m_links) {
-        if (arrow->startItem()->id() == sid &&
-                arrow->endItem()->id() == did)
-            a = arrow;
+    for (int i = 0; i < m_links.count(); ++i) {
+        if (m_links.at(i)->startItem()->id() == sid &&
+                m_links.at(i)->endItem()->id() == did)
+            a = m_links[i];
     }
     m_links.removeAll(a);
     DiagramItem* si = m_items[sid];

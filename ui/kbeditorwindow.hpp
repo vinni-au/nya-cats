@@ -41,6 +41,9 @@ private slots:
     void isaDeletedOnDiagram(unsigned sid, unsigned did);
     void apoDeletedOnDiagram(unsigned sid, unsigned did);
 
+    void addIsa(unsigned, unsigned);
+    void addApo(unsigned, unsigned);
+
     void on_treeView_doubleClicked(const QModelIndex &index);
 
 protected:
