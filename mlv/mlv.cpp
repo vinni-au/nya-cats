@@ -15,6 +15,16 @@ NFrame* MLV::CreateFrameInstance(QString name)
         return NULL;
 
     NFrame* frame = m_KBManager->GetFrameInstance(name);
+
+    NSlot* slot;
+    foreach (slot, m_KBManager->GetFrameSlots(frame))
+    {
+        if (GetSlotValue(frame, slot->name()).isNull())
+        {
+            SetSlotValueVariant(frame, slot->name(), slot->defValue());
+        }
+    }
+
     if (frame)
     {
         //m_WorkMemory.append(frame);
@@ -34,6 +44,15 @@ NFrame* MLV::CreateFrameInstanceFull(QString name)
         return NULL;
 
     NFrame* frame = m_KBManager->GetFrameInstanceWithParents(name);
+
+    NSlot* slot;
+    foreach (slot, m_KBManager->GetFrameSlots(frame))
+    {
+        if (GetSlotValue(frame, slot->name()).isNull())
+        {
+            SetSlotValueVariant(frame, slot->name(), slot->defValue());
+        }
+    }
 
     if (frame)
     {
@@ -163,7 +182,7 @@ bool MLV::Init()
                 else if (item->GetType() == gitHealer)
                     ItemInst = CreateFrameInstanceFull("Лекарь");
 
-                // Задаем цвет
+                // Заполняем значения
                 SetSlotValue(ItemInst, "Команда", item->GetTeam() == gtRed ? "Красный" : "Синий");
             }
             SetSlotValueVariant(CellInst, "Игровой объект", QVariant(reinterpret_cast<long long>(ItemInst)));
@@ -293,35 +312,38 @@ bool MLV::BindSlot(NFrame* frame, NSlot *slot)
 
     //Сюда попадаем, если тип слота - какой-то домен, строка или число
     QString markerType = slot->getSlotMarkerType();
+    QString markerVal = slot->getSlotMarker();
 
     bool retn = false;
-    if (markerType == "domain")
-    {
-        retn = true;
-    }
 
-    if (markerType == "procedure")
-    {
-        retn = true;
-    }
-
-    if (markerType == "production")
+    if (!markerVal.isEmpty())
     {
 
-        NProduction* production = m_KBManager->getProduction(slot->getSlotMarker());
-        if (!production)
-            return false;
-        NProductionMLV* productionMLV = new NProductionMLV(this, frame->id(), production);
-        QString val = productionMLV->StartConsultation(slot->name());
-        SetSlotValue(frame, slot->name(), val);
+    //    if (markerType == "domain")
+    //    {
+    //        retn = true;
+    //    }
 
-        retn = val == "";
+    //    if (markerType == "procedure")
+    //    {
+    //        retn = true;
+    //    }
+
+        if (markerType == "production")
+        {
+
+            NProduction* production = m_KBManager->getProduction(slot->getSlotMarker());
+            if (!production)
+                return false;
+            NProductionMLV* productionMLV = new NProductionMLV(this, frame->id(), production);
+            QString val = productionMLV->StartConsultation(slot->name());
+            SetSlotValue(frame, slot->name(), val);
+
+            retn = !val.isEmpty();
+        }
     }
 
-    if (markerType == "")
-    {
-        retn = true;
-    }
+    retn = slot->defValue() == GetSlotValue(frame, slot->name());
 
     QString str = retn? "' привязался" :"' НЕ привязался";
     AddMsgToLog("Cлот '" + slot->name() + str);
