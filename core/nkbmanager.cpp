@@ -1004,3 +1004,46 @@ NFrame* NKBManager::GetFrameInstanceWithParents(QString frameName)
 
     return GetFrameInstanceWithParents(frame);
 }
+
+QList<NFrame*> NKBManager::getAllChildren(NFrame* frame)//получает потомков и потомков потомков ...
+{
+    QList<NFrame*> children;
+    QList<NFrame*> myChildren = GetFrameChildren(frame);
+    children.append(myChildren);
+    NFrame* child;
+    foreach(child,myChildren)
+    {
+        children.append(getAllChildren(child));
+    }
+    return children;
+}
+
+QStringList NKBManager::getFilteredFrameList(QString frameName,QString slotName)
+{
+    NFrame* frame = GetFrameByName(frameName);
+    if(!frame)
+        return QStringList();
+    if(slotName=="is_a")
+    {//выдавать только фреймы, которые не являются текуцим фреймом и детьми его (в перспективе - дети детей детей)
+        QStringList childrenNames;
+
+        QList<NFrame*> children = getAllChildren(frame);
+
+        QList<NFrame*> allFrames;
+        foreach(NFrame* f,m_frames)//добавляем все фреймы
+        {
+            allFrames<<f;
+        }
+        foreach(NFrame* f,children)
+        {
+            allFrames.removeAll(f);
+        }
+        foreach(NFrame* f,allFrames)
+        {
+            childrenNames<<f->frameName();
+        }
+        childrenNames.removeDuplicates();
+        return childrenNames;
+    }
+    return QStringList();
+}

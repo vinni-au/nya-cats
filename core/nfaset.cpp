@@ -7,7 +7,8 @@ NFaset::NFaset(QObject *parent/*=0*/) :
 
 }
 
-NFaset::NFaset(QString name,QObject *parent/*=0*/)
+NFaset::NFaset(QString name,QObject *parent/*=0*/):
+    QObject(parent)
 {
     m_name=name;
     this->m_value.clear();

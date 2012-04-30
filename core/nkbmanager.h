@@ -79,6 +79,7 @@ public:
     Domain*         GetSlotDomain       (NSlot* slot);
     QList<NFaset*>  GetSlotFasets       (NSlot* slot);
 
+    QStringList getFilteredFrameList(QString frameName,QString slotName);
 private:
     NFrame  *getFrameById(int id);
     NFrame  *getFrameByName(QString name);
@@ -86,6 +87,7 @@ private:
 
     void deleteLinks(int id);
 
+    QList<NFrame*> getAllChildren(NFrame* frame);//получает потомков и потомков потомков ...
 signals:
     //Для диаграмм
     void frameAdded(unsigned id, QString name);

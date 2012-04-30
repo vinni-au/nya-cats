@@ -80,10 +80,11 @@ signals:
 
     void sigIsaAdded(QString source,QString dest);
     void sigIsaChanged(QString source,QString oldDest,QString newDest);
+    void sigIsaDeleted(QString source,QString dest);
 
     void sigApoAdded(QString source,QString dest);
-
-    void sigIsaDeleted(QString source,QString dest);
+    void sigApoChanged(QString oldSource,QString newSource,QString dest);
+    void sigApoDeleted(QString source,QString dest);
     //Сигналы для сохранения целостности
     void sigFrameDeleted(QString domainName);                                          //удаление домена
 public:

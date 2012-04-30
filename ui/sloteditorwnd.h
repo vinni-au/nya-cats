@@ -20,15 +20,15 @@ class SlotEditorWnd : public QDialog
 public:
     explicit SlotEditorWnd(QModelIndex slotIndex,NKBManager *kbManager,QWidget *parent = 0);
     ~SlotEditorWnd();
+
+private:
+    bool dataIsValid();
 signals:
 
 public slots:
 
 
 private slots:
-    void on_buttonBox_accepted();
-
-    void on_buttonBox_rejected();
 
     void on_cmbSlotType_currentIndexChanged(int index);
 
@@ -38,6 +38,10 @@ private slots:
     void on_cmbMarkerType_currentIndexChanged(const QString &arg1);
 
     void on_cmbSlotDomain_currentIndexChanged(const QString &arg1);
+
+    void on_btnOK_clicked();
+
+    void on_btnCancel_clicked();
 
 private:
     Ui::SlotEditorWnd *ui;

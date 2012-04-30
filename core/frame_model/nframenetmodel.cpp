@@ -193,24 +193,46 @@ NFramenetModel::setData(const QModelIndex &index, const QVariant &value, int rol
             emit dataChanged(index,index);
             emit sigDataChanged();
 
-            //isa
+
             if(slot->getSlotType()=="frame")
             {
-                if(slot->name()=="is_a")
+                //isa
+                if(faset->name()=="default_value")
                 {
-                    if(oldValue.toString().isEmpty())
-                    {//добавлена связь
-                        emit sigIsaAdded(frame->frameName(),value.toString());
-                    }
-                    else
-                    {//изменена
-                        if(value.toString().isEmpty())
-                        {//очищена
-                            emit sigIsaDeleted(frame->frameName(),oldValue.toString());
+                    if(slot->name()=="is_a")
+                    {
+                        if(oldValue.toString().isEmpty())
+                        {//добавлена связь
+                            emit sigIsaAdded(frame->frameName(),value.toString());
                         }
                         else
-                        {//просто изменена на другой фрейм
-                            emit sigIsaChanged(frame->frameName(),oldValue.toString(),value.toString());
+                        {//изменена
+                            if(value.toString().isEmpty())
+                            {//очищена
+                                emit sigIsaDeleted(frame->frameName(),oldValue.toString());
+                            }
+                            else
+                            {//просто изменена на другой фрейм
+                                emit sigIsaChanged(frame->frameName(),oldValue.toString(),value.toString());
+                            }
+                        }
+                    }
+                    else
+                    {//субфрейм
+                        if(oldValue.toString().isEmpty())
+                        {//добавлена связь
+                            emit sigApoAdded(value.toString(),frame->frameName());
+                        }
+                        else
+                        {//изменена
+                            if(value.toString().isEmpty())
+                            {//очищена
+                                emit sigApoDeleted(oldValue.toString(),frame->frameName());
+                            }
+                            else
+                            {//просто изменена на другой фрейм
+                                emit sigIsaChanged(oldValue.toString(),value.toString(),frame->frameName());
+                            }
                         }
                     }
                 }
@@ -270,7 +292,7 @@ NFramenetModel::removeRow(int row, const QModelIndex &parent)
         {
         case NFrameNode::Root:          //удаляем фреймы
             frame=node->frame;
-            //emit sigDomainDeleted(domain->name);                    //оповещение об удалении домена(пока не удален)
+            //emit sigDomainDeleted(domain->name);                    //оповещение об удалении (пока не удален)
             inx = frames->indexOf(frame);
            // domains->remove(inx);
             frames->removeAt(inx);
@@ -287,6 +309,11 @@ NFramenetModel::removeRow(int row, const QModelIndex &parent)
 
             if(slot->isSystem())
                 break;
+
+            if(slot->getSlotType()=="frame")
+            {
+                emit sigApoDeleted(slot->defValue().toString(),frame->frameName());
+            }
 
             parentNode->children.removeAt(row);
             //emit sigDomainValueDeleted(domain->name, domain->values.at(row));    //сигнал об удалении значения
@@ -791,7 +818,11 @@ bool NFramenetModel::setSlotFasetValue(QModelIndex slotIndex,QString fasetName,Q
     NFaset *faset = slot->getFasetByName(fasetName);
     if(!faset)
         return false;
-    faset->setValue(value);
+
+    QModelIndex fasetIndex = getSlotFasetIndex(slotIndex,fasetName);
+    setData(fasetIndex,value,Qt::EditRole);
+
+    ///faset->setValue(value);
     emit sigDataChanged();
     return true;
 }

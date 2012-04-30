@@ -70,32 +70,6 @@ SlotEditorWnd::~SlotEditorWnd()
 
 
 
-void SlotEditorWnd::on_buttonBox_accepted()
-{
-    //проверка??
-    NFramenetModel* model = m_kbManager->getFrameNetModel();
-    model->setSlotFasetValue(m_slotIndex,"name",ui->lineEdit->text().trimmed());//имя
-    if(ui->cmbSlotType->currentText() == "domain")
-    {
-        model->setSlotFasetValue(m_slotIndex,"slot_type",ui->cmbSlotDomain->currentText());
-    }
-    else
-    {
-        model->setSlotFasetValue(m_slotIndex,"slot_type",ui->cmbSlotType->currentText());
-    }
-
-    //model->setSlotFasetValue(m_slotIndex,"value",ui->cmbSlotValue->currentText());//имя
-    model->setSlotFasetValue(m_slotIndex,"default_value",ui->cmbDefaultValue->currentText());//имя
-    model->setSlotFasetValue(m_slotIndex,"inheritance",ui->cmbInheritance->currentText());//имя
-    model->setSlotFasetValue(m_slotIndex,"marker_type",ui->cmbMarkerType->currentText());//имя
-    model->setSlotFasetValue(m_slotIndex,"marker",ui->cmbMarkerValue->currentText());//имя
-}
-
-void SlotEditorWnd::on_buttonBox_rejected()
-{
-
-}
-
 void SlotEditorWnd::on_cmbSlotType_currentIndexChanged(int index)
 {
     QString slotType = ui->cmbSlotType->currentText();
@@ -137,18 +111,11 @@ void SlotEditorWnd::on_cmbSlotType_currentIndexChanged(int index)
     else if(slotType == "frame")
     {
         ui->cmbSlotDomain->setEnabled(false);
-        //ui->cmbSlotDomain->setModel(new QStringListModel());//опустошаем комбик доменов
+        ui->cmbSlotDomain->setModel(new QStringListModel());//опустошаем комбик доменов
 
-        QStringList framesList;
-        QMap<unsigned,QString> frames =  m_kbManager->frameNames();
-
-        QMapIterator<unsigned,QString> i(frames);
-        while (i.hasNext())
-        {
-             i.next();
-             framesList<<i.value();
-             qDebug()<<"ui->cmbDefaultValue->addItem(i.value());";
-         }
+        QString frameName = m_kbManager->getFrameNetModel()->getFrameNameByIndex(m_slotIndex);
+        QString slotName = m_kbManager->getFrameNetModel()->getSlotFasetValue(m_slotIndex,"name").toString();
+        QStringList framesList=m_kbManager->getFilteredFrameList(frameName,slotName);
 
         QStringListModel* model = new QStringListModel(framesList);
 
@@ -238,7 +205,7 @@ void SlotEditorWnd::onProductionAdded(NProduction *production, bool newProd)
     }
     ui->cmbMarkerValue->addItem(production->name());
     ui->cmbMarkerValue->setCurrentIndex( ui->cmbMarkerValue->findText(production->name()) );
-    m_kbManager->mayBeSave();
+    m_kbManager->mayBeSave();//????????????????????????????????????????????????????????????????????????????????????
 }
 
 void SlotEditorWnd::on_cmbMarkerType_currentIndexChanged(const QString &arg1)
@@ -282,4 +249,52 @@ void SlotEditorWnd::on_cmbSlotDomain_currentIndexChanged(const QString &arg1)
         ui->cmbDefaultValue->setModel(new QStringListModel());
         qDebug()<<"ui->cmbDefaultValue->setModel(new QStringListModel());";
     }
+}
+
+bool SlotEditorWnd::dataIsValid()
+{
+    if(ui->lineEdit->text().trimmed().isEmpty())
+    {
+        return false;
+    }
+    if(ui->cmbSlotType->currentText()=="int")
+    {
+        QVariant defVal(ui->cmbDefaultValue->currentText());
+        bool ok;
+        defVal.toInt(&ok);
+        if(defVal.toString().isEmpty() || !ok )
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+void SlotEditorWnd::on_btnOK_clicked()
+{
+    if(!dataIsValid())
+    {
+        QMessageBox::information(this,"Ошибка","Ошибка в данных",QMessageBox::Ok);
+        return;
+    }
+    NFramenetModel* model = m_kbManager->getFrameNetModel();
+    model->setSlotFasetValue(m_slotIndex,"name",ui->lineEdit->text().trimmed());//имя
+    if(ui->cmbSlotType->currentText() == "domain")
+    {
+        model->setSlotFasetValue(m_slotIndex,"slot_type",ui->cmbSlotDomain->currentText());//тип
+    }
+    else
+    {
+        model->setSlotFasetValue(m_slotIndex,"slot_type",ui->cmbSlotType->currentText());
+    }
+    model->setSlotFasetValue(m_slotIndex,"default_value",ui->cmbDefaultValue->currentText());//задание отсутствия
+    model->setSlotFasetValue(m_slotIndex,"inheritance",ui->cmbInheritance->currentText());//наследование
+    model->setSlotFasetValue(m_slotIndex,"marker_type",ui->cmbMarkerType->currentText());//тип маркера
+    model->setSlotFasetValue(m_slotIndex,"marker",ui->cmbMarkerValue->currentText());//маркер
+    accept();
+}
+
+void SlotEditorWnd::on_btnCancel_clicked()
+{
+    reject();
 }

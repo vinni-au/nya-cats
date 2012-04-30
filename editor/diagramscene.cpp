@@ -15,7 +15,7 @@ void DiagramScene::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent)
     if (mouseEvent->button() != Qt::LeftButton)
         return;
 
-    DiagramItem* item;
+    //DiagramItem* item;
     switch (m_mode) {
          case InsertLine:
              m_line = new QGraphicsLineItem(QLineF(mouseEvent->scenePos(),
