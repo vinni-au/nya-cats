@@ -247,3 +247,15 @@ bool NFrame::hasSlot(QString slotName)
 //        return false;
     return slot!=NULL;
 }
+
+QList<NSlot*> NFrame::getSlotsByDefValue(QString defVal)
+{
+    QList<NSlot*> list;
+    NSlot* s;
+    foreach(s,m_slots)
+    {
+        if(s->defValue().toString()==defVal)
+            list<<s;
+    }
+    return list;
+}

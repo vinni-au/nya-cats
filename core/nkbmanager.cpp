@@ -265,22 +265,34 @@ bool NKBManager::deleteApo(unsigned sid, unsigned did)
 
     QString sFrameName = sFrame->name.defValue().toString();
 
-    NSlot *slot = dFrame->getSlotByName(sFrameName);
-    if(!slot)
-    {
-        qDebug()<<"NKBManager::deleteApo  Связь не удалена. Нет связи.";
-        return false;
-    }
+    QList<NSlot*> slotList = dFrame->getSlotsByDefValue(sFrameName);
+
+    //NSlot *slot = dFrame->getSlotByName(sFrameName);
+//    if(!slot)
+//    {
+//        qDebug()<<"NKBManager::deleteApo  Связь не удалена. Нет связи.";
+//        return false;
+//    }
 
 //    dFrame->removeSlot(slot);
 //    return true;
 
     //
     QModelIndex frameIndex = m_framenetModel->getFrameIndexById(did);
-    QModelIndex slotIndex = m_framenetModel->getSlotFasetIndex(frameIndex,sFrameName,"name");
+    bool retn=true;
+    NSlot* slot;
+    foreach(slot,slotList)
+    {
 
-    return m_framenetModel->deleteSlot(slotIndex);
+        QModelIndex slotIndex = m_framenetModel->getSlotFasetIndex(frameIndex,slot->name(),"name");
+        retn = m_framenetModel->deleteSlot(slotIndex);
+    }
 
+//    QModelIndex frameIndex = m_framenetModel->getFrameIndexById(did);
+//    QModelIndex slotIndex = m_framenetModel->getSlotFasetIndex(frameIndex,sFrameName,"name");
+
+//    return m_framenetModel->deleteSlot(slotIndex);
+    return retn;
 
 }
 

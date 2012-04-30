@@ -53,6 +53,8 @@ public:
     NFrame* createInstance();
     void    merge(NFrame *frame);
     bool    hasSlot(QString slotName);
+
+    QList<NSlot*> getSlotsByDefValue(QString defVal);
 signals:
 
 public slots:
