@@ -1045,5 +1045,21 @@ QStringList NKBManager::getFilteredFrameList(QString frameName,QString slotName)
         childrenNames.removeDuplicates();
         return childrenNames;
     }
+    else
+    {//субфреймы
+        QStringList childrenNames;
+        QList<NFrame*> allFrames;
+        foreach(NFrame* f,m_frames)//добавляем все фреймы
+        {
+            allFrames<<f;
+        }
+        allFrames.removeAll(frame);
+        foreach(NFrame* f,allFrames)
+        {
+            childrenNames<<f->frameName();
+        }
+        childrenNames.removeDuplicates();
+        return childrenNames;
+    }
     return QStringList();
 }
