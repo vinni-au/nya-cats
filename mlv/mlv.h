@@ -24,6 +24,7 @@ protected:
     QList<NFrame*> m_WorkMemory;        // Рабочая память
 
     bool m_Initialized;
+    int m_InstCount;
 
 public:
     MLV(NKBManager* manager, Grid* grid);
@@ -60,6 +61,16 @@ protected:
     QVariant GetSlotValue(NFrame* frame, QString slotName, bool findInParents = false);
 
     NFrame* getFrameFromWorkMem(int frameId);
+
+    // Поиск в рабочей памяти
+    NFrame* FindByProtName(QString name);   // Поиск по имени прототипа
+    NFrame* FindByInstName(QString name);   // Поиск по уникальному имени экземпляра
+
+    NFrame* FindByCell(int x, int y);
+
+    bool IsPerson(NFrame* frame);
+    bool IsFood(NFrame* frame);
+    void InitNeighborSituation(NFrame* frameSituation, NFrame* item, QString slotName);
 
 public slots:
     QVariant getValSlot(int frameId, QString aimVar);

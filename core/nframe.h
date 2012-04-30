@@ -43,6 +43,7 @@ public:
     void insertSlot(int row,NSlot *slot);
     void removeSlot(int row);
     void removeSlot(NSlot *slot);
+    void removeSlot(QString name);
 
     QString frameName();
     FrameType::FRAME_TYPE frameType();
