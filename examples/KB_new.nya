@@ -1016,16 +1016,6 @@
                 </slot>
                 <slot system="0">
                     <fasets>
-                        <faset value="враг" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Персонаж" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
                         <faset value="Есть враги" name="name"/>
                         <faset value="ДаНет" name="slot_type"/>
                         <faset value="Да" name="default_value"/>
@@ -1508,16 +1498,6 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="" name="name"/>
-                        <faset value="" name="slot_type"/>
-                        <faset value="" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
             </slots>
         </frame>
         <frame type="0" id="39">
@@ -1636,7 +1616,7 @@
                             <val>Красный</val>
                         </if>
                         <if>
-                            <var>враг.Команда</var>
+                            <var>Сосед слева.Команда</var>
                             <sign>=</sign>
                             <val>Синий</val>
                         </if>
@@ -1658,7 +1638,7 @@
                             <val>Синий</val>
                         </if>
                         <if>
-                            <var>враг.Команда</var>
+                            <var>Сосед слева.Команда</var>
                             <sign>=</sign>
                             <val>Красный</val>
                         </if>
@@ -1684,7 +1664,7 @@
                             <val>Красный</val>
                         </if>
                         <if>
-                            <var>враг.Команда</var>
+                            <var>Сосед снизу.Команда</var>
                             <sign>=</sign>
                             <val>Синий</val>
                         </if>
@@ -1706,7 +1686,7 @@
                             <val>Синий</val>
                         </if>
                         <if>
-                            <var>враг.Команда</var>
+                            <var>Сосед снизу.Команда</var>
                             <sign>=</sign>
                             <val>Красный</val>
                         </if>
@@ -1732,7 +1712,7 @@
                             <val>Красный</val>
                         </if>
                         <if>
-                            <var>враг.Команда</var>
+                            <var>Сосед справа.Команда</var>
                             <sign>=</sign>
                             <val>Синий</val>
                         </if>
@@ -1754,7 +1734,7 @@
                             <val>Синий</val>
                         </if>
                         <if>
-                            <var>враг.Команда</var>
+                            <var>Сосед справа.Команда</var>
                             <sign>=</sign>
                             <val>Красный</val>
                         </if>
@@ -1780,7 +1760,7 @@
                             <val>Красный</val>
                         </if>
                         <if>
-                            <var>враг.Команда</var>
+                            <var>Сосед сверху.Команда</var>
                             <sign>=</sign>
                             <val>Синий</val>
                         </if>
@@ -1802,7 +1782,7 @@
                             <val>Синий</val>
                         </if>
                         <if>
-                            <var>враг.Команда</var>
+                            <var>Сосед сверху.Команда</var>
                             <sign>=</sign>
                             <val>Красный</val>
                         </if>
@@ -1823,7 +1803,7 @@
         <item x="-100.9" title="Ячейка игрового поля" y="-255.9" id="1"/>
         <item x="43.1" title="Игровой объект" y="-260.7000000000001" id="2"/>
         <item x="-248" title="Пусто" y="-2" id="3"/>
-        <item x="-82" title="Персонаж" y="7" id="4"/>
+        <item x="-81" title="Персонаж" y="6" id="4"/>
         <item x="-136" title="Военный" y="98" id="5"/>
         <item x="-8" title="Гражданский" y="100" id="6"/>
         <item x="-217" title="Мечник" y="179" id="7"/>
@@ -1845,8 +1825,8 @@
         <item x="14.27825000000013" title="Ситуация" y="377.940375" id="23"/>
         <item x="-111.4821237080801" title="Простая ситуация" y="523.7323917949589" id="24"/>
         <item x="115" title="Сложная ситуация" y="527.8499999999999" id="25"/>
-        <item x="87.40000000000005" title="Есть еда" y="668.1500000000001" id="26"/>
-        <item x="-543.8" title="Есть враги" y="524.2500000000002" id="27"/>
+        <item x="359.4" title="Есть еда" y="563.1500000000001" id="26"/>
+        <item x="-542.8" title="Есть враги" y="524.2500000000002" id="27"/>
         <item x="-580.75" title="Мало жизни" y="749.7999999999997" id="28"/>
         <item x="-422.0500000000003" title="Много жизни" y="739.4499999999998" id="29"/>
         <item x="-126.4999999999999" title="Нет еды" y="665.8500000000001" id="30"/>

@@ -323,6 +323,9 @@ void MLV::Start()
 // Костыль
 bool MLV::IsPerson(NFrame* frame)
 {
+    if (frame == 0)
+        return false;
+
     bool pers =  frame->frameName() == "Лучник" ||
                  frame->frameName() == "Воин" ||
                  frame->frameName() == "Лекарь" ||
@@ -333,29 +336,25 @@ bool MLV::IsPerson(NFrame* frame)
 
 bool MLV::IsFood(NFrame* frame)
 {
+    if (frame == 0)
+        return false;
+
     bool food = frame->frameName() == "Еда";
+
     return food;
 }
 
 void MLV::InitNeighborSituation(NFrame* frameSituation, NFrame* item, QString Orientation)
 {
     if (IsPerson(item))
-    {
         SetSlotValueVariant(frameSituation, "Сосед " + Orientation, QVariant(reinterpret_cast<long long>(item)));
-    }
     else
-    {
         frameSituation->removeSlot("Сосед " + Orientation);
-    }
 
     if (IsFood(item))
-    {
         SetSlotValueVariant(frameSituation, "Еда " + Orientation, QVariant(reinterpret_cast<long long>(item)));
-    }
     else
-    {
         frameSituation->removeSlot("Еда " + Orientation);
-    }
 }
 
 void MLV::Step()
@@ -392,10 +391,15 @@ void MLV::Step()
                 // Пробегаем по всем соседним ячейкам, и смотрим, есть ли там еда или враг
                 // если есть - добавляем в ситуацию
 
-                InitNeighborSituation(frameSituation, FindByCell(x, y - 1), "сверху");
-                InitNeighborSituation(frameSituation, FindByCell(x, y + 1), "снизу");
-                InitNeighborSituation(frameSituation, FindByCell(x + 1, y), "справа");
-                InitNeighborSituation(frameSituation, FindByCell(x - 1, y), "слева");
+                NFrame *cframe = 0;
+                cframe = FindByCell(x, y - 1);
+                InitNeighborSituation(frameSituation, cframe, "сверху");
+                cframe = FindByCell(x, y + 1);
+                InitNeighborSituation(frameSituation, cframe, "снизу");
+                cframe = FindByCell(x + 1, y);
+                InitNeighborSituation(frameSituation, cframe, "справа");
+                cframe = FindByCell(x - 1, y);
+                InitNeighborSituation(frameSituation, cframe, "слева");
             }
 
             BindFrame(frameSituation);
