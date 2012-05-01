@@ -151,9 +151,16 @@ void KBEditorWindow::on_btnAddSlot_clicked()
         QMessageBox::information(this,"","Не удалось добавить слот. Фрейм не выбран",QMessageBox::Ok);
         return;
     }
-    SlotEditorWnd *wnd = new SlotEditorWnd(newSlotIndex,m_kbManager,this);
-    wnd->setModal(true);
-    wnd->show();
+    bool ok;
+    QString name = QInputDialog::getText(this, "Создать слот",
+        "Введите имя слота", QLineEdit::Normal, QString(), &ok);
+
+    if (ok && !name.isEmpty()) {
+        model->setData(newSlotIndex, QVariant(name), Qt::EditRole);
+        SlotEditorWnd *wnd = new SlotEditorWnd(newSlotIndex,m_kbManager,this);
+        wnd->setModal(true);
+        wnd->show();
+    }
 }
 
 void KBEditorWindow::on_btnEditSlot_clicked()

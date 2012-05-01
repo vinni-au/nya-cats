@@ -1602,6 +1602,142 @@
                 </slot>
             </slots>
         </frame>
+        <frame type="0" id="42">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="" name="slot_type"/>
+                        <faset value="Еда слева" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="" name="slot_type"/>
+                        <faset value="Есть еда" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Слева еда" name="name"/>
+                        <faset value="ДаНет" name="slot_type"/>
+                        <faset value="Да" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="слеваеда" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="43">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="" name="slot_type"/>
+                        <faset value="Еда справа" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="" name="slot_type"/>
+                        <faset value="Есть еда" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Справа еда" name="name"/>
+                        <faset value="ДаНет" name="slot_type"/>
+                        <faset value="Да" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="справаеда" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="44">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="" name="slot_type"/>
+                        <faset value="Еда сверху" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="" name="slot_type"/>
+                        <faset value="Есть еда" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Сверху еда" name="name"/>
+                        <faset value="ДаНет" name="slot_type"/>
+                        <faset value="Да" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="сверхуеда" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="45">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="" name="slot_type"/>
+                        <faset value="Еда снизу" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="" name="slot_type"/>
+                        <faset value="Есть еда" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Снизу еда" name="name"/>
+                        <faset value="ДаНет" name="slot_type"/>
+                        <faset value="Да" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="снизуеда" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
     </frames>
     <procs/>
     <productions>
@@ -1797,6 +1933,90 @@
                 </rule>
             </rules>
         </production>
+        <production name="слеваеда">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Еда слева.name</var>
+                            <sign>=</sign>
+                            <val>Еда</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Слева еда</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+            </rules>
+        </production>
+        <production name="справаеда">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Еда справа.name</var>
+                            <sign>=</sign>
+                            <val>Еда</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Справа еда</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+            </rules>
+        </production>
+        <production name="сверхуеда">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Еда сверху.name</var>
+                            <sign>=</sign>
+                            <val>Еда</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Сверху еда</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+            </rules>
+        </production>
+        <production name="снизуеда">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Еда снизу.name</var>
+                            <sign>=</sign>
+                            <val>Еда</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Снизу еда</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+            </rules>
+        </production>
     </productions>
     <diagram>
         <item x="-252.9" title="Игровое поле" y="-251.9" id="0"/>
@@ -1825,7 +2045,7 @@
         <item x="14.27825000000013" title="Ситуация" y="377.940375" id="23"/>
         <item x="-111.4821237080801" title="Простая ситуация" y="523.7323917949589" id="24"/>
         <item x="115" title="Сложная ситуация" y="527.8499999999999" id="25"/>
-        <item x="359.4" title="Есть еда" y="563.1500000000001" id="26"/>
+        <item x="503.4" title="Есть еда" y="636.1500000000001" id="26"/>
         <item x="-542.8" title="Есть враги" y="524.2500000000002" id="27"/>
         <item x="-580.75" title="Мало жизни" y="749.7999999999997" id="28"/>
         <item x="-422.0500000000003" title="Много жизни" y="739.4499999999998" id="29"/>
@@ -1841,6 +2061,10 @@
         <item x="-561.05" title="Враг снизу" y="612.9999999999999" id="39"/>
         <item x="-372.4500000000001" title="Враг справа" y="483.0499999999999" id="40"/>
         <item x="-540.35" title="Враг сверху" y="437.0500000000003" id="41"/>
+        <item x="330" title="Еда слева" y="644" id="42"/>
+        <item x="648" title="Еда справа" y="639" id="43"/>
+        <item x="497" title="Еда сверху" y="523" id="44"/>
+        <item x="519" title="Еда снизу" y="738" id="45"/>
         <link sid="1" did="0" text="sub"/>
         <link sid="4" did="2" text="is-a"/>
         <link sid="3" did="2" text="is-a"/>
@@ -1898,5 +2122,9 @@
         <link sid="38" did="27" text="is-a"/>
         <link sid="41" did="27" text="is-a"/>
         <link sid="40" did="27" text="is-a"/>
+        <link sid="45" did="26" text="is-a"/>
+        <link sid="43" did="26" text="is-a"/>
+        <link sid="44" did="26" text="is-a"/>
+        <link sid="42" did="26" text="is-a"/>
     </diagram>
 </kb>

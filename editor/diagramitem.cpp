@@ -30,11 +30,15 @@ void DiagramItem::removeArrow(Arrow *arrow)
 
 void DiagramItem::removeArrows()
 {
-    foreach (Arrow *arrow, m_arrows) {
-        arrow->startItem()->removeArrow(arrow);
-        arrow->endItem()->removeArrow(arrow);
-        scene()->removeItem(arrow);
-        delete arrow;
+    Arrow *arrow = 0;
+    for (int i = 0; i < m_arrows.count(); ++i) {
+        if (arrow) {
+            arrow->startItem()->removeArrow(arrow);
+            arrow->endItem()->removeArrow(arrow);
+            scene()->removeItem(arrow);
+            delete arrow;
+        }
+        arrow = 0;
     }
 }
 
