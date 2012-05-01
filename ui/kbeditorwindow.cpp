@@ -95,7 +95,7 @@ void KBEditorWindow::isaDeletedOnDiagram(unsigned sid, unsigned did)
 void KBEditorWindow::apoDeletedOnDiagram(unsigned sid, unsigned did)
 {
     if (m_kbManager->deleteApo(sid, did))
-        ui->graphicsView->deleteLink(sid, did);
+        ;//ui->graphicsView->deleteLink(sid, did);
 }
 
 void KBEditorWindow::on_btnAddFrame_clicked()
