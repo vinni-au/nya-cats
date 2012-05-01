@@ -141,7 +141,7 @@ void NFrame::insertSlot(int row,NSlot *slot)
 void NFrame::removeSlot(int row)
 {
 
-    if(row>-1 && row <m_slots.count()-1)
+    if(row>-1 && row <m_slots.count())
         m_slots.removeAt(row);
     else
         qDebug()<<"Не могу удалить слота во фрейм";
@@ -261,7 +261,8 @@ QList<NSlot*> NFrame::getSlotsByDefValue(QString defVal)
     NSlot* s;
     foreach(s,m_slots)
     {
-        if(s->defValue().toString()==defVal)
+        QString val = s->defValue().toString();
+        if(val==defVal)
             list<<s;
     }
     return list;

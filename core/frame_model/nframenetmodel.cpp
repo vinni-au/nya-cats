@@ -221,17 +221,52 @@ NFramenetModel::setData(const QModelIndex &index, const QVariant &value, int rol
                     {//субфрейм
                         if(oldValue.toString().isEmpty())
                         {//добавлена связь
-                            emit sigApoAdded(value.toString(),frame->frameName());
+                            //нужно добавлять только если такой связи уже нет
+                            if(frame->getSlotsByDefValue(value.toString()).count() == 1)
+                            {
+                                emit sigApoAdded(value.toString(),frame->frameName());
+                            }
                         }
                         else
                         {//изменена
                             if(value.toString().isEmpty())
                             {//очищена
-                                emit sigApoDeleted(oldValue.toString(),frame->frameName());
+                                //очищать только если не осталось больше связей с этим субфреймом
+                                if(frame->getSlotsByDefValue(oldValue.toString()).count() == 0)
+                                {
+                                    emit sigApoDeleted(oldValue.toString(),frame->frameName());
+                                }
                             }
                             else
                             {//просто изменена на другой фрейм
-                                emit sigIsaChanged(oldValue.toString(),value.toString(),frame->frameName());
+                                //тут тоже все хитро
+                                //если много связей, то на удаление не кидать сигнал
+
+                                if(frame->getSlotsByDefValue(oldValue.toString()).count() >0)//входит много стрелок
+                                {
+                                     if(frame->getSlotsByDefValue(value.toString()).count() >0)//целевой
+                                     {
+                                         //ничего не делаем и так все стрелки есть ыыы
+                                     }
+                                     else
+                                     {
+                                         emit sigApoAdded(value.toString(),frame->frameName());
+                                     }
+
+                                }
+                                else
+                                {
+                                    if(frame->getSlotsByDefValue(oldValue.toString()).count() >0)//целевой
+                                    {
+                                        //удаление источника
+                                        emit sigApoDeleted(oldValue.toString(),frame->frameName());
+                                    }
+                                    else
+                                    {
+                                        emit sigApoChanged(oldValue.toString(),value.toString(),frame->frameName());
+                                    }
+                                }
+
                             }
                         }
                     }
@@ -312,7 +347,10 @@ NFramenetModel::removeRow(int row, const QModelIndex &parent)
 
             if(slot->getSlotType()=="frame")
             {
-                emit sigApoDeleted(slot->defValue().toString(),frame->frameName());
+                if(frame->getSlotsByDefValue( slot->defValue().toString() ).count() == 1)
+                {
+                    emit sigApoDeleted(slot->defValue().toString(),frame->frameName());
+                }
             }
 
             parentNode->children.removeAt(row);

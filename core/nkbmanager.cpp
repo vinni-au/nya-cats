@@ -1064,6 +1064,7 @@ QStringList NKBManager::getFilteredFrameList(QString frameName,QString slotName)
         {
             allFrames.removeAll(f);
         }
+        allFrames.removeAll(frame);//удаляем себя еще
         foreach(NFrame* f,allFrames)
         {
             childrenNames<<f->frameName();
