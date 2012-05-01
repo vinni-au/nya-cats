@@ -48,6 +48,9 @@ public:
     bool setVal(int frameId, QString aimVar, QVariant value);
     bool setVal(NFrame* frame, QString aimVar, QVariant value);
 
+    QList<NFrame*> workMemory() const
+    {   return m_WorkMemory;    }
+
 protected:
 
     // Тут создаются фреймы экземпляры игрового поля и персонаже.

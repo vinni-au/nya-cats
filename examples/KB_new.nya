@@ -267,7 +267,7 @@
                         <faset value="Ресурс" name="name"/>
                         <faset value="frame" name="slot_type"/>
                         <faset value="Ресурс" name="default_value"/>
-                        <faset value="domain" name="marker_type"/>
+                        <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
@@ -820,16 +820,6 @@
                 </slot>
                 <slot system="0">
                     <fasets>
-                        <faset value="Место выполнения действия" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Ячейка игрового поля" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
                         <faset value="Сосед слева" name="name"/>
                         <faset value="frame" name="slot_type"/>
                         <faset value="Персонаж" name="default_value"/>
@@ -913,6 +903,16 @@
                         <faset value="Игрок" name="name"/>
                         <faset value="frame" name="slot_type"/>
                         <faset value="Персонаж" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Место выполнения действия" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Ячейка игрового поля" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -2387,35 +2387,35 @@
         <item x="-252.9" title="Игровое поле" y="-251.9" id="0"/>
         <item x="-100.9" title="Ячейка игрового поля" y="-255.9" id="1"/>
         <item x="43.1" title="Игровой объект" y="-260.7000000000001" id="2"/>
-        <item x="-248" title="Пусто" y="-2" id="3"/>
-        <item x="-81" title="Персонаж" y="6" id="4"/>
-        <item x="-136" title="Военный" y="98" id="5"/>
-        <item x="-8" title="Гражданский" y="100" id="6"/>
-        <item x="-217" title="Мечник" y="179" id="7"/>
-        <item x="-99" title="Лучник" y="180" id="8"/>
-        <item x="52" title="Лекарь" y="178" id="9"/>
-        <item x="154" title="Препятствие" y="-20" id="10"/>
-        <item x="197" title="Фабрика" y="85" id="11"/>
-        <item x="313" title="Еда" y="-18" id="12"/>
-        <item x="641" title="Ресурс" y="-331" id="13"/>
-        <item x="402" title="Пустой" y="-235" id="14"/>
-        <item x="565" title="Оружие" y="-230" id="15"/>
-        <item x="465" title="Холодное оружие" y="-119" id="16"/>
-        <item x="465" title="Меч" y="-20" id="17"/>
-        <item x="611" title="Метательное оружие" y="-127" id="18"/>
-        <item x="615" title="Лук" y="-21" id="19"/>
-        <item x="705" title="Боеприпас" y="-226" id="20"/>
-        <item x="770" title="Стрелы" y="-128" id="21"/>
-        <item x="854" title="Аптечка" y="-224" id="22"/>
+        <item x="-414.5403751249999" title="Пусто" y="-89.89630909374995" id="3"/>
+        <item x="198.8803526406248" title="Персонаж" y="-19.44366842187498" id="4"/>
+        <item x="192.4546287187499" title="Военный" y="174.331005265625" id="5"/>
+        <item x="336.6460540781249" title="Гражданский" y="90.74775693749999" id="6"/>
+        <item x="173.9072693906248" title="Мечник" y="322.4097674687499" id="7"/>
+        <item x="305.7856339843747" title="Лучник" y="332.66201053125" id="8"/>
+        <item x="352.6978995312499" title="Лекарь" y="217.322033015625" id="9"/>
+        <item x="-7.914253593749891" title="Препятствие" y="-140.2791598124999" id="10"/>
+        <item x="5.015956453125099" title="Фабрика" y="-56.0967067031249" id="11"/>
+        <item x="389.3310052656251" title="Еда" y="-249.3060765624999" id="12"/>
+        <item x="770.5314028749999" title="Ресурс" y="62.22033015624976" id="13"/>
+        <item x="531.5314028749999" title="Пустой" y="158.2203301562498" id="14"/>
+        <item x="694.5314028749999" title="Оружие" y="163.2203301562498" id="15"/>
+        <item x="594.5314028749999" title="Холодное оружие" y="274.2203301562498" id="16"/>
+        <item x="594.5314028749999" title="Меч" y="373.2203301562498" id="17"/>
+        <item x="740.5314028749999" title="Метательное оружие" y="266.2203301562498" id="18"/>
+        <item x="744.5314028749999" title="Лук" y="372.2203301562498" id="19"/>
+        <item x="834.5314028749999" title="Боеприпас" y="167.2203301562498" id="20"/>
+        <item x="899.5314028749999" title="Стрелы" y="265.2203301562498" id="21"/>
+        <item x="983.5314028749999" title="Аптечка" y="169.2203301562498" id="22"/>
         <item x="14.27825000000013" title="Ситуация" y="377.940375" id="23"/>
         <item x="-111.4821237080801" title="Простая ситуация" y="523.7323917949589" id="24"/>
-        <item x="115" title="Сложная ситуация" y="527.8499999999999" id="25"/>
-        <item x="503.4" title="Есть еда" y="636.1500000000001" id="26"/>
-        <item x="-542.8" title="Есть враги" y="524.2500000000002" id="27"/>
-        <item x="-580.75" title="Мало жизни" y="749.7999999999997" id="28"/>
-        <item x="-422.0500000000003" title="Много жизни" y="739.4499999999998" id="29"/>
-        <item x="-126.4999999999999" title="Нет еды" y="665.8500000000001" id="30"/>
-        <item x="-19.55" title="Нет врагов" y="667" id="31"/>
+        <item x="163.574276078125" title="Сложная ситуация" y="631.9377344531249" id="25"/>
+        <item x="503.4" title="Есть еда" y="629.2108177031253" id="26"/>
+        <item x="-436.3992047812501" title="Есть враги" y="549.6936684218752" id="27"/>
+        <item x="-668.64630909375" title="Мало жизни" y="740.5477569374997" id="28"/>
+        <item x="-465.9981545468753" title="Много жизни" y="730.1977569374999" id="29"/>
+        <item x="-124.1869392343749" title="Нет еды" y="626.5279669843752" id="30"/>
+        <item x="19.77203301562497" title="Нет врагов" y="625.3649062187501" id="31"/>
         <item x="-57.49999999999997" title="Есть еда и враги, мало жизни" y="993.5999999999999" id="32"/>
         <item x="87.40000000000002" title="Есть еда и враги, много жизни" y="982.1" id="33"/>
         <item x="273.7000000000001" title="Есть враги, нет еды, много жизни" y="970.5999999999999" id="34"/>
@@ -2424,12 +2424,12 @@
         <item x="-205.6774999999998" title="Ничего нет, много жизни" y="1001.88" id="37"/>
         <item x="-712.7000000000001" title="Враг слева" y="513.15" id="38"/>
         <item x="-561.05" title="Враг снизу" y="612.9999999999999" id="39"/>
-        <item x="-372.4500000000001" title="Враг справа" y="483.0499999999999" id="40"/>
+        <item x="-365.5108177031251" title="Враг справа" y="427.5365416249999" id="40"/>
         <item x="-540.35" title="Враг сверху" y="437.0500000000003" id="41"/>
         <item x="330" title="Еда слева" y="644" id="42"/>
-        <item x="648" title="Еда справа" y="639" id="43"/>
-        <item x="497" title="Еда сверху" y="523" id="44"/>
-        <item x="519" title="Еда снизу" y="738" id="45"/>
+        <item x="648" title="Еда справа" y="632.0608177031252" id="43"/>
+        <item x="640.40976746875" title="Еда сверху" y="516.0608177031252" id="44"/>
+        <item x="519" title="Еда снизу" y="731.0608177031252" id="45"/>
         <link sid="1" did="0" text="sub"/>
         <link sid="4" did="2" text="is-a"/>
         <link sid="3" did="2" text="is-a"/>
@@ -2492,5 +2492,6 @@
         <link sid="44" did="26" text="is-a"/>
         <link sid="42" did="26" text="is-a"/>
         <link sid="4" did="23" text="sub"/>
+        <link sid="13" did="4" text="sub"/>
     </diagram>
 </kb>
