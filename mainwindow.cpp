@@ -33,7 +33,7 @@ void MainWindow::on_actExit_triggered()
 
 void MainWindow::on_actAbout_triggered()
 {
-    QMessageBox::about(this,"О программе...","<h1>NYA CATS (Not Yet Another Cognitive Bla-bla-bla)</h1>\n"
+    QMessageBox::about(this,"О программе...","<h1>NYA CATS (Not Yet Another Cognitive Actors Team Survival)</h1>\n"
                        "<p>Авторы: Бобров А.А., Киселев А.Ю., Стороженко А.А.</p>  \n"
                        "<p>Копирайт &copy; 2012 ДаЁжСофт Software Inc.</p>");
 }

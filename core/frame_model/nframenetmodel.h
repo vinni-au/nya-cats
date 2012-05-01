@@ -70,6 +70,8 @@ public:
     //void setItemsIsEditable(bool isEditable);
 
     QString getFrameNameByIndex(QModelIndex index);
+
+    int getFasetCount() const;
 private:
     int getFreeId();
 signals:
@@ -108,6 +110,7 @@ private:
 
     int m_freeId;
 
+    int m_fasetCount;
 };
 
 #endif // NFRAMENETMODE_H

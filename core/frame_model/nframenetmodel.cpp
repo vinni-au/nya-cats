@@ -8,6 +8,8 @@ NFramenetModel::NFramenetModel(QObject *parent) :
     itemsIsEditable = true;
 
     m_freeId = -1;
+    frames=NULL;
+    m_fasetCount = 6;
 }
 
 NFramenetModel::~NFramenetModel()
@@ -64,8 +66,7 @@ NFramenetModel::columnCount(const QModelIndex &parent) const
     if(!parentNode)
         return 0;
 
-    NSlot slot;
-    return slot.fasetCount();
+    return getFasetCount();
 }
 
 QModelIndex
@@ -389,6 +390,7 @@ NFramenetModel::insertRow(int row, const QModelIndex &parent)
         {
         case NFrameNode::Root://добавляем новый фрейм
             newFrame = new NFrame(getFreeId());//сгенерировать уникальлное имя???
+            //m_fasetCount = newFrame->getSlotByName("name")->fasetCount();
             node=new NFrameNode(NFrameNode::FrameName,newFrame,true,rootNode);
             //this->domains->append(newDomain);
             frames->insert(row,newFrame);
@@ -422,6 +424,11 @@ NFramenetModel::setFrames( QList<NFrame *> *frames )
     //строим на основе списка дерево DomainNode
 
     //this->frames->clear();
+
+    if(frames->count()>0)
+    {
+        m_fasetCount = frames->at(0)->getSlotByName("name")->fasetCount();
+    }
 
     this->frames = frames;
     rootNode->children.clear();
@@ -820,7 +827,9 @@ QVariant NFramenetModel::headerData(int section, Qt::Orientation orientation, in
         return QVariant();
 
     NSlot slot;
-    if(section > slot.fasetCount())
+    slot.setHasFasetValue(true);
+
+    if(section >= getFasetCount())
         return QVariant();
 
     QString str = slot.getFasetByIndex(section)->name();
@@ -947,4 +956,9 @@ QString NFramenetModel::getFrameNameByIndex(QModelIndex index)
     NFrameNode *node = nodeFromIndex(index);
     NFrame *frame = node->frame;
     return frame->frameName();
+}
+
+int NFramenetModel::getFasetCount() const
+{
+    return m_fasetCount;
 }
