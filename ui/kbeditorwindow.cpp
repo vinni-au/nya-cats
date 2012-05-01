@@ -83,7 +83,7 @@ void KBEditorWindow::addApo(unsigned sid, unsigned did)
 void KBEditorWindow::frameDeletedOnDiagram(unsigned id)
 {
     if (m_kbManager->deleteFrame(id))
-        ui->graphicsView->deleteNode(id);
+        ;//ui->graphicsView->deleteNode(id);
 }
 
 void KBEditorWindow::isaDeletedOnDiagram(unsigned sid, unsigned did)
