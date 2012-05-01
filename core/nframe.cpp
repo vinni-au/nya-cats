@@ -267,3 +267,8 @@ QList<NSlot*> NFrame::getSlotsByDefValue(QString defVal)
     }
     return list;
 }
+
+void NFrame::setId(int id)
+{
+    this->m_id =id;
+}

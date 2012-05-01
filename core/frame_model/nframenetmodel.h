@@ -106,6 +106,8 @@ private:
 
     bool m_simpleView;
 
+    int m_freeId;
+
 };
 
 #endif // NFRAMENETMODE_H

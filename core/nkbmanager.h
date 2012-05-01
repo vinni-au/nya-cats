@@ -88,6 +88,8 @@ private:
     void deleteLinks(int id);
 
     QList<NFrame*> getAllChildren(NFrame* frame);//получает потомков и потомков потомков ...
+
+    int getFreeExemplarId();
 signals:
     //Для диаграмм
     void frameAdded(unsigned id, QString name);
@@ -141,6 +143,7 @@ private:
     bool        m_dirty;                        //Признак того, что есть несохраненные изменения. true - если произведены изменения
     QFile       *m_file;                        //ссылка на файл БЗ
 
+    int m_frameExemplarMaxId;
 public:
     QDomDocument doc;
 };

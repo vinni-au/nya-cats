@@ -33,6 +33,7 @@ public:
     void        setParentName(QString name);       //установить родителя
 
     int id();
+    void setId(int id);
 
     //сериализация
     QDomElement toXml(QDomDocument& doc);

@@ -143,19 +143,19 @@ void KBEditorWindow::on_btnDeleteFrame_clicked()
 
 void KBEditorWindow::on_btnAddSlot_clicked()
 {
-    QModelIndex index = ui->treeView->selectionModel()->currentIndex();
-    NFramenetModel *model = qobject_cast<NFramenetModel*>(ui->treeView->model());
-    QModelIndex newSlotIndex = model->addSlot(index);
-    if(! (newSlotIndex.isValid()))
-    {
-        QMessageBox::information(this,"","Не удалось добавить слот. Фрейм не выбран",QMessageBox::Ok);
-        return;
-    }
     bool ok;
     QString name = QInputDialog::getText(this, "Создать слот",
         "Введите имя слота", QLineEdit::Normal, QString(), &ok);
-
-    if (ok && !name.isEmpty()) {
+    if (ok && !name.isEmpty())
+    {
+        QModelIndex index = ui->treeView->selectionModel()->currentIndex();
+        NFramenetModel *model = qobject_cast<NFramenetModel*>(ui->treeView->model());
+        QModelIndex newSlotIndex = model->addSlot(index);
+        if(! (newSlotIndex.isValid()))
+        {
+            QMessageBox::information(this,"","Не удалось добавить слот. Фрейм не выбран",QMessageBox::Ok);
+            return;
+        }
         model->setData(newSlotIndex, QVariant(name), Qt::EditRole);
         SlotEditorWnd *wnd = new SlotEditorWnd(newSlotIndex,m_kbManager,this);
         wnd->setModal(true);

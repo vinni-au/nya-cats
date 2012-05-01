@@ -7,7 +7,7 @@ NFramenetModel::NFramenetModel(QObject *parent) :
     rootNode=new NFrameNode(NFrameNode::Root,NULL,NULL);
     itemsIsEditable = true;
 
-
+    m_freeId = -1;
 }
 
 NFramenetModel::~NFramenetModel()
@@ -244,9 +244,11 @@ NFramenetModel::setData(const QModelIndex &index, const QVariant &value, int rol
 
                                 if(frame->getSlotsByDefValue(oldValue.toString()).count() >0)//входит много стрелок
                                 {
-                                     if(frame->getSlotsByDefValue(value.toString()).count() >0)//целевой
+                                     if(frame->getSlotsByDefValue(value.toString()).count() >1)//целевой
                                      {
                                          //ничего не делаем и так все стрелки есть ыыы
+                                         int sd=2+4;
+                                         sd+=1;
                                      }
                                      else
                                      {
@@ -255,9 +257,9 @@ NFramenetModel::setData(const QModelIndex &index, const QVariant &value, int rol
 
                                 }
                                 else
-                                {
-                                    if(frame->getSlotsByDefValue(oldValue.toString()).count() >0)//целевой
-                                    {
+                                {//входит одна стрелка из старых значений
+                                    if(frame->getSlotsByDefValue(value.toString()).count() !=0 )//целевой
+                                    {//у новых значений есть стрелки уже
                                         //удаление источника
                                         emit sigApoDeleted(oldValue.toString(),frame->frameName());
                                     }
@@ -752,17 +754,8 @@ NFramenetModel::setFrames( QList<NFrame *> *frames )
 
 int NFramenetModel::getFreeId()
 {
-    NFrame *frame;
-    int maxId=-1;
-    foreach(frame,*frames)
-    {
-        if(frame->id()>maxId)
-        {
-            maxId=frame->id();
-        }
-    }
-
-    return (maxId+1);
+    m_freeId++;
+    return m_freeId;
 }
 
 int NFramenetModel::getIdByIndex(QModelIndex index)

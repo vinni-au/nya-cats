@@ -3,6 +3,7 @@
 NKBManager::NKBManager(QObject *parent) :
     QObject(parent)
 {
+    m_frameExemplarMaxId = -1;
     m_dirty = false;
     m_file = NULL;
     m_framenetModel = NULL;
@@ -1019,6 +1020,7 @@ NFrame* NKBManager::GetFrameInstanceWithParents(NFrame* frame)
         frameInst->merge(parframeInst);
         parFrame=this->GetFrameParent(parFrame);
     }
+    frameInst->setId( getFreeId() );
     return frameInst;
 }
 
@@ -1149,4 +1151,10 @@ void NKBManager::deleteApo(QString source, QString dest)
 
     if (sourcef && destf)
         emit apoDeleted(sourcef->id(), destf->id());
+}
+
+int NKBManager::getFreeExemplarId()
+{
+    m_frameExemplarMaxId++;
+    return m_frameExemplarMaxId;
 }
