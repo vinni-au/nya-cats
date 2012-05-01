@@ -37,8 +37,24 @@ SlotEditorWnd::SlotEditorWnd(QModelIndex slotIndex,NKBManager *kbManager,QWidget
 
 
     //значение по умолчанию
-
-    //if(ui->cmbSlotType->currentText())
+    QString slotDefValue = model->getSlotFasetValue(slotIndex,"default_value").toString() ;
+    if(ui->cmbSlotType->currentText()=="string")
+    {
+        ui->cmbDefaultValue->addItem( slotDefValue  );
+        int inx=ui->cmbDefaultValue->findText(slotDefValue);
+        ui->cmbDefaultValue->setCurrentIndex(inx);
+    }
+    else if(ui->cmbSlotType->currentText()=="frame" || ui->cmbSlotType->currentText()=="domain")
+    {
+        int inx=ui->cmbDefaultValue->findText(slotDefValue);
+        ui->cmbDefaultValue->setCurrentIndex(inx);
+    }
+    else if(ui->cmbSlotType->currentText()=="int")
+    {
+        ui->cmbDefaultValue->addItem( slotDefValue  );
+        int inx=ui->cmbDefaultValue->findText(slotDefValue);
+        ui->cmbDefaultValue->setCurrentIndex(inx);
+    }
     //наследование
 
     ui->cmbInheritance->addItem("same");
