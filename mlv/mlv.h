@@ -22,7 +22,9 @@ protected:
     NFrame* m_GameFieldInst;        // Экземпляр фрейма игрового поля
     QList<NFrame*> m_CellFrameInsts;   // Экземпляры фреймов ячеек
 
-    QList<NFrame*> m_WorkMemory;        // Рабочая память
+    QList<NFrame*> m_WorkMemory;        // Рабочая память, тут хранятся фреймы, которые привязались
+    QList<NFrame*> m_Cache;             // Тут хранятся ВСЕ фреймы экхемпляры
+
 
     bool m_Initialized;
     int m_InstCount;
@@ -53,23 +55,27 @@ protected:
     bool Init();
     void UpdateGrid();
 
-    NFrame* CreateFrameInstance(QString name);
-    NFrame* CreateFrameInstanceFull(QString name);
+    NFrame* CreateFrameInstance(QString name, bool fillDefault = true);
+    NFrame* CreateFrameInstanceFull(QString name, bool fillDefault = true);
     bool SetSlotValue(NFrame* frame, QString slotName, int value);
     bool SetSlotValue(NFrame* frame, QString slotName, QString value);
     bool SetSlotValueVariant(NFrame* frame, QString slotName, QVariant value, bool findInParents = false);
 
     QVariant GetSlotValue(NFrame* frame, QString slotName, bool findInParents = false);
 
-    NFrame* getFrameFromWorkMem(int frameId);
 
     // Поиск в рабочей памяти
     NFrame* FindByProtName(QString name);   // Поиск по имени прототипа
     NFrame* FindByInstName(QString name);   // Поиск по уникальному имени экземпляра
     NFrame* FindByPtr(NFrame* framePtr);
+    NFrame* FindById(int frameId);
 
     // Поиск в списке ячеек
     NFrame* FindByCell(int x, int y);
+
+    // Поиск в кеше
+    NFrame* FindInCache(QString name);
+    NFrame* FindInCache(int frameId);
 
 
     bool IsPerson(NFrame* frame);

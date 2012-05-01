@@ -22,10 +22,10 @@ NFrame* MLV::FindByProtName(QString name)
         if (m_WorkMemory[i]->frameName() == name)
         {
             frame = m_WorkMemory[i];
-            break;
+            return frame;
         }
     }
-    return frame;
+    return NULL;
 }
 
 NFrame* MLV::FindByInstName(QString name)
@@ -36,10 +36,10 @@ NFrame* MLV::FindByInstName(QString name)
         if (GetSlotValue(m_WorkMemory[i], "name") == name)
         {
             frame = m_WorkMemory[i];
-            break;
+            return frame;
         }
     }
-    return frame;
+    return NULL;
 }
 
 NFrame* MLV::FindByPtr(NFrame* framePtr)
@@ -50,10 +50,24 @@ NFrame* MLV::FindByPtr(NFrame* framePtr)
         if (m_WorkMemory[i] == framePtr)
         {
             frame = m_WorkMemory[i];
-            break;
+            return frame;
         }
     }
-    return frame;
+    return NULL;
+}
+
+NFrame* MLV::FindById(int frameId)
+{
+    NFrame* frame = NULL;
+    for (int i = 0; i < m_WorkMemory.count(); i++)
+    {
+        frame = m_WorkMemory[i];
+        if (!frame)
+            continue;
+        if (frame->id() == frameId)
+            return frame;
+    }
+    return NULL;
 }
 
 NFrame* MLV::FindByCell(int x, int y)
@@ -64,47 +78,89 @@ NFrame* MLV::FindByCell(int x, int y)
         if (GetSlotValue(m_CellFrameInsts[i], "x") == x && GetSlotValue(m_CellFrameInsts[i], "y") == y)
         {
             frame = (NFrame*)GetSlotValue(m_CellFrameInsts[i], "Игровой объект").toLongLong();
-            break;
+            return frame;
         }
     }
-    return frame;
+    return NULL;
 }
 
-NFrame* MLV::CreateFrameInstance(QString name)
+NFrame* MLV::FindInCache(QString name)
+{
+    NFrame* frame = NULL;
+    for (int i = 0; i < m_Cache.count(); i++)
+    {
+        if (GetSlotValue(m_Cache[i], "name") == name)
+        {
+            frame = m_Cache[i];
+            return frame;
+        }
+    }
+    return NULL;
+}
+
+NFrame* MLV::FindInCache(int frameId)
+{
+    NFrame* frame = NULL;
+    for (int i = 0; i < m_Cache.count(); i++)
+    {
+        if (m_Cache[i]->id() == frameId)
+        {
+            frame = m_Cache[i];
+            return frame;
+        }
+    }
+    return NULL;
+}
+
+NFrame* MLV::CreateFrameInstance(QString name, bool fillDefault)
 {
     if (!m_KBManager)
         return NULL;
 
     NFrame* frame = m_KBManager->GetFrameInstance(name);
-    QList<NSlot*> slotsList = m_KBManager->GetFrameSlots(frame);
-    for (int i = 0; i < slotsList.count(); i++)
+
+    if (fillDefault)
     {
-        QVariant val = GetSlotValue(frame, slotsList[i]->name());
-        if (val.toString().isEmpty())
+        QList<NSlot*> slotsList = m_KBManager->GetFrameSlots(frame);
+        for (int i = 0; i < slotsList.count(); i++)
         {
-            SetSlotValueVariant(frame, slotsList[i]->name(), slotsList[i]->defValue());
+            QVariant val = GetSlotValue(frame, slotsList[i]->name());
+            if (val.toString().isEmpty())
+            {
+                SetSlotValueVariant(frame, slotsList[i]->name(), slotsList[i]->defValue());
+            }
         }
     }
+
+    if (frame)
+        m_Cache.append(frame);
 
     return frame;
 }
 
-NFrame* MLV::CreateFrameInstanceFull(QString name)
+NFrame* MLV::CreateFrameInstanceFull(QString name, bool fillDefault)
 {
     if (!m_KBManager)
         return NULL;
 
     NFrame* frame = m_KBManager->GetFrameInstanceWithParents(name);
-    QList<NSlot*> slotsList = m_KBManager->GetFrameSlots(frame);
-    for (int i = 0; i < slotsList.count(); i++)
+
+    if (fillDefault)
     {
-        QVariant val = GetSlotValue(frame, slotsList[i]->name());
-        if (val.toString().isEmpty())
+        QList<NSlot*> slotsList = m_KBManager->GetFrameSlots(frame);
+        for (int i = 0; i < slotsList.count(); i++)
         {
-            if (slotsList[i]->getSlotType() != "frame")
-                SetSlotValueVariant(frame, slotsList[i]->name(), slotsList[i]->defValue());
+            QVariant val = GetSlotValue(frame, slotsList[i]->name());
+            if (val.toString().isEmpty())
+            {
+                if (slotsList[i]->getSlotType() != "frame")
+                    SetSlotValueVariant(frame, slotsList[i]->name(), slotsList[i]->defValue());
+            }
         }
     }
+
+    if (frame)
+        m_Cache.append(frame);
 
     return frame;
 }
@@ -164,8 +220,8 @@ QVariant MLV::GetSlotValue(NFrame* frame, QString slotName, bool findInParents)
             return QVariant();
 
         //ищем в родительских
-        NFrame* parentFrame = m_KBManager->GetFrameParent(frame);
-        return GetSlotValue(parentFrame, slotName);
+        NFrame* parentFrame = (NFrame*)GetSlotValue(frame, "is_a").toLongLong();
+        return GetSlotValue(parentFrame, slotName, findInParents);
     }
     else
     {
@@ -178,7 +234,7 @@ QVariant MLV::GetSlotValue(NFrame* frame, QString slotName, bool findInParents)
 
 QVariant MLV::getVal(int frameId, QString aimVar)
 {
-    return getVal(getFrameFromWorkMem(frameId), aimVar);
+    return getVal(FindInCache(frameId), aimVar);
 }
 
 QVariant MLV::getVal(NFrame* frame, QString aimVar)
@@ -205,7 +261,7 @@ QVariant MLV::getVal(NFrame* frame, QString aimVar)
 
 bool MLV::setVal(int frameId, QString aimVar, QVariant value)
 {
-    return setVal(getFrameFromWorkMem(frameId), aimVar, value);
+    return setVal(FindInCache(frameId), aimVar, value);
 }
 
 bool MLV::setVal(NFrame* frame, QString aimVar, QVariant value)
@@ -245,21 +301,6 @@ bool MLV::setValSlot(int frameId, QString aimVar, QVariant value)
 {
     return setVal(frameId, aimVar, value);
 }
-
-NFrame* MLV::getFrameFromWorkMem(int frameId)
-{
-    NFrame* frame = NULL;
-    for (int i = 0; i < m_WorkMemory.count(); i++)
-    {
-        frame = m_WorkMemory[i];
-        if (!frame)
-            continue;
-        if (frame->id() == frameId)
-            break;
-    }
-    return frame;
-}
-
 
 
 ////////////////////////////////////////////////////////////////////////
@@ -433,7 +474,7 @@ bool MLV::BindFrame(NFrame *frame)
         qDebug() << "BindFrame: creating instance " + frame->frameName();
 
         // Создаем экземпляр
-        frameInst = frame->createInstance();
+        frameInst = CreateFrameInstance(frame->frameName(), false);
         if (!frameInst)
         {
             qDebug() << "BindFrame: instance " + frame->frameName() + " was NOT created";
@@ -477,8 +518,13 @@ bool MLV::BindFrame(NFrame *frame)
         QList<NFrame*> children = m_KBManager->GetFrameChildren(frameInst);
         for (int i = 0; i < children.count(); i++)
         {
-            if (BindFrame(children[i]))
-                break;
+            frameInst = CreateFrameInstance(children[i]->frameName(), false);
+            if (frameInst)
+            {
+                SetSlotValueVariant(frameInst, "is_a", QVariant(reinterpret_cast<long long>(frame)));
+                if (BindFrame(frameInst))
+                    break;
+            }
         }
     }
 
