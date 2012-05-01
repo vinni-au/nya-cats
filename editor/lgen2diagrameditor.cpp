@@ -1,5 +1,6 @@
 #include "lgen2diagrameditor.hpp"
 #include <QContextMenuEvent>
+#include <QDebug>
 
 LGen2DiagramEditor::LGen2DiagramEditor(QWidget *parent, QMenu *contextMenu):
     QGraphicsView(parent), m_contextMenu(contextMenu)
@@ -72,9 +73,11 @@ void LGen2DiagramEditor::deleteLink(unsigned sid, unsigned did)
 {
     Arrow* a = 0;
     for (int i = 0; i < m_links.count(); ++i) {
-        if (m_links.at(i)->startItem()->id() == sid &&
-                m_links.at(i)->endItem()->id() == did)
-            a = m_links[i];
+        a = m_links[i];
+        if (a && (uint)a->endItem() != 0xfeeefeee  && (uint)a->startItem() != 3722304989)
+            if (m_links.at(i)->startItem()->id() == sid &&
+                    m_links.at(i)->endItem()->id() == did)
+                a = m_links[i];
     }
     m_links.removeAll(a);
     DiagramItem* si = m_items[sid];
