@@ -213,8 +213,8 @@ void KBEditorWindow::setSimpleView(bool isSimple)
     ui->treeView->setColumnHidden(1,isSimple);
     ui->treeView->setColumnHidden(3,isSimple);
     ui->treeView->setColumnHidden(4,isSimple);
-    ui->treeView->setColumnHidden(5,isSimple);
-    ui->treeView->setColumnHidden(6,isSimple);
+    ui->treeView->setColumnHidden(5,true);
+    ui->treeView->setColumnHidden(6,true);//вариант наследования всегда скрыт
 }
 
 void KBEditorWindow::on_btn_addIsa_toggled(bool checked)

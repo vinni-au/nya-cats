@@ -61,6 +61,10 @@ SlotEditorWnd::SlotEditorWnd(QModelIndex slotIndex,NKBManager *kbManager,QWidget
 
     //начальная позиция курсока
     ui->lineEdit->setFocus();
+
+    //пока убрали наследование
+    ui->lblInheritance->setVisible(false);
+    ui->cmbInheritance->setVisible(false);
 }
 
 SlotEditorWnd::~SlotEditorWnd()

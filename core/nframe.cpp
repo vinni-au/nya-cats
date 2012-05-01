@@ -10,6 +10,9 @@ NFrame::NFrame(unsigned id,FrameType::FRAME_TYPE frameType,QObject *parent) :
     name.setName("name");
     is_a.setName("is_a");
 
+    name.getFasetByName("slot_type")->setValue("string");
+    is_a.getFasetByName("slot_type")->setValue("frame");
+
     name.setSystem(true);
     is_a.setSystem(true);
 

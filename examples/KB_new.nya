@@ -19,7 +19,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Игровое поле" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -29,7 +29,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -73,7 +73,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Ячейка игрового поля" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -83,7 +83,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -127,7 +127,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Игровой объект" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -137,7 +137,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -151,7 +151,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Пусто" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -161,7 +161,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Игровой объект" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -175,7 +175,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Персонаж" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -185,7 +185,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Игровой объект" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -279,7 +279,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Военный" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -289,7 +289,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Персонаж" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -303,7 +303,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Гражданский" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -313,7 +313,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Персонаж" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -327,7 +327,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Мечник" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -337,7 +337,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Военный" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -361,7 +361,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Лучник" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -371,7 +371,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Военный" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -405,7 +405,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Лекарь" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -415,7 +415,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Гражданский" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -439,7 +439,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Препятствие" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -449,7 +449,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Игровой объект" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -483,7 +483,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Фабрика" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -493,7 +493,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Препятствие" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -507,7 +507,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Еда" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -517,7 +517,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Игровой объект" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -531,7 +531,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Ресурс" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -541,7 +541,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -565,7 +565,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Пустой" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -575,7 +575,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Ресурс" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -589,7 +589,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Оружие" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -599,7 +599,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Ресурс" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -623,7 +623,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Холодное оружие" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -633,7 +633,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Оружие" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -647,7 +647,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Меч" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -657,7 +657,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Холодное оружие" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -671,7 +671,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Метательное оружие" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -681,7 +681,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Оружие" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -705,7 +705,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Лук" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -715,7 +715,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Метательное оружие" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -729,7 +729,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Боеприпас" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -739,7 +739,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Ресурс" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -753,7 +753,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Стрелы" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -763,7 +763,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Боеприпас" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -777,7 +777,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Аптечка" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -787,7 +787,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Ресурс" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -801,7 +801,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Ситуация" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -811,7 +811,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -925,7 +925,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Простая ситуация" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -935,7 +935,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Ситуация" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -949,7 +949,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Сложная ситуация" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -959,7 +959,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Ситуация" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -973,7 +973,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Есть еда" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -983,7 +983,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Простая ситуация" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1007,7 +1007,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Есть враги" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1017,7 +1017,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Простая ситуация" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1041,7 +1041,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Мало жизни" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1051,7 +1051,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Простая ситуация" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1075,7 +1075,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Много жизни" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1085,7 +1085,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Простая ситуация" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1109,7 +1109,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Нет еды" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1119,7 +1119,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Простая ситуация" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1133,7 +1133,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Нет врагов" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1143,7 +1143,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Простая ситуация" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1157,7 +1157,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Есть еда и враги, мало жизни" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1167,7 +1167,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Сложная ситуация" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1221,7 +1221,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Есть еда и враги, много жизни" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1231,7 +1231,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Сложная ситуация" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1275,7 +1275,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Есть враги, нет еды, много жизни" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1285,7 +1285,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Сложная ситуация" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1329,7 +1329,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Есть враги, нет еды, мало жизни" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1339,7 +1339,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Сложная ситуация" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1383,7 +1383,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Ничего нет, мало жизни" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1393,7 +1393,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Сложная ситуация" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1437,7 +1437,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Ничего нет, много жизни" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1447,7 +1447,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Сложная ситуация" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1491,7 +1491,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Враг слева" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1501,7 +1501,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Есть враги" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1525,7 +1525,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Враг снизу" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1535,7 +1535,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Есть враги" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1559,7 +1559,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Враг справа" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1569,7 +1569,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Есть враги" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1593,7 +1593,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Враг сверху" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1603,7 +1603,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Есть враги" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1627,7 +1627,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Еда слева" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1637,7 +1637,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Есть еда" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1661,7 +1661,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Еда справа" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1671,7 +1671,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Есть еда" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1695,7 +1695,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Еда сверху" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1705,7 +1705,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Есть еда" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1729,7 +1729,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="name" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="string" name="slot_type"/>
                         <faset value="Еда снизу" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
@@ -1739,7 +1739,7 @@
                 <slot system="1">
                     <fasets>
                         <faset value="is_a" name="name"/>
-                        <faset value="" name="slot_type"/>
+                        <faset value="frame" name="slot_type"/>
                         <faset value="Есть еда" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
