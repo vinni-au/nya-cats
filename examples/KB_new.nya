@@ -1034,16 +1034,6 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="враги" name="name"/>
-                        <faset value="ДаНет" name="slot_type"/>
-                        <faset value="Да" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
             </slots>
         </frame>
         <frame type="0" id="28">
@@ -2501,6 +2491,6 @@
         <link sid="43" did="26" text="is-a"/>
         <link sid="44" did="26" text="is-a"/>
         <link sid="42" did="26" text="is-a"/>
-		<link sid="4" did="23" text="sub"/>
+        <link sid="4" did="23" text="sub"/>
     </diagram>
 </kb>
