@@ -42,6 +42,20 @@ NFrame* MLV::FindByInstName(QString name)
     return frame;
 }
 
+NFrame* MLV::FindByPtr(NFrame* framePtr)
+{
+    NFrame* frame = NULL;
+    for (int i = 0; i < m_WorkMemory.count(); i++)
+    {
+        if (m_WorkMemory[i] == framePtr)
+        {
+            frame = m_WorkMemory[i];
+            break;
+        }
+    }
+    return frame;
+}
+
 NFrame* MLV::FindByCell(int x, int y)
 {
     NFrame* frame = NULL;
@@ -71,7 +85,6 @@ NFrame* MLV::CreateFrameInstance(QString name)
             SetSlotValueVariant(frame, slotsList[i]->name(), slotsList[i]->defValue());
         }
     }
-    //SetSlotValue(frame, name, frame->frameName() + QString("%1").arg(m_InstCount++));
 
     return frame;
 }
@@ -92,7 +105,6 @@ NFrame* MLV::CreateFrameInstanceFull(QString name)
                 SetSlotValueVariant(frame, slotsList[i]->name(), slotsList[i]->defValue());
         }
     }
-    //SetSlotValue(frame, name, frame->frameName() + QString("%1").arg(m_InstCount++));
 
     return frame;
 }
@@ -372,13 +384,12 @@ void MLV::Step()
             continue;
 
         // Если не пусто
-        if (frame->frameName() == "Мечник" || frame->frameName() == "Лучник" || frame->frameName() == "Лекарь")
+        if (IsPerson(frame))
         {
             AddMsgToLog("Определяем ситуацию для '" + frame->frameName() + "'");
 
             NFrame* frameSituation = CreateFrameInstance("Ситуация");
-            SetSlotValueVariant(frameSituation, "Место выполнения действия",
-                                QVariant(reinterpret_cast<long long>(m_CellFrameInsts[i])));
+            SetSlotValueVariant(frameSituation, "Место выполнения действия", QVariant(reinterpret_cast<long long>(m_CellFrameInsts[i])));
             SetSlotValueVariant(frameSituation, "Игрок", QVariant(reinterpret_cast<long long>(frame)));
 
 
@@ -419,17 +430,31 @@ bool MLV::BindFrame(NFrame *frame)
     NFrame* frameInst = NULL;
     if (frame->frameType() == FrameType::prototype)
     {
+        qDebug() << "BindFrame: creating instance " + frame->frameName();
+
         // Создаем экземпляр
         frameInst = frame->createInstance();
         if (!frameInst)
+        {
+            qDebug() << "BindFrame: instance " + frame->frameName() + " was NOT created";
             return false;
+        }
     }
     else
+    {
         frameInst = frame;
 
-    // Если фрейм есть в рабочей памяти, то считаем, что он уже привязан
-    if (m_WorkMemory.contains(frameInst))
-        return true;
+        qDebug() << "BindFrame: find " + frame->frameName() + " in WM";
+
+        // Если фрейм есть в рабочей памяти, то считаем, что он уже привязан
+        if (FindByPtr(frame) != NULL)
+        {
+            qDebug() << "BindFrame: " + frame->frameName() + " was found in WM";
+            return true;
+        }
+
+        qDebug() << "BindFrame: " + frame->frameName() + " was NOT found in WM";
+    }
 
     AddMsgToLog("Пытаемся привязать фрейм '" + frameInst->frameName() + "'");
 

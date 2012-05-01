@@ -1,6 +1,7 @@
 #ifndef MLV_H
 #define MLV_H
 
+#include <QDebug>
 #include "core/nkbmanager.h"
 #include "core/nframe.h"
 #include "core/nslot.h"
@@ -65,8 +66,11 @@ protected:
     // Поиск в рабочей памяти
     NFrame* FindByProtName(QString name);   // Поиск по имени прототипа
     NFrame* FindByInstName(QString name);   // Поиск по уникальному имени экземпляра
+    NFrame* FindByPtr(NFrame* framePtr);
 
+    // Поиск в списке ячеек
     NFrame* FindByCell(int x, int y);
+
 
     bool IsPerson(NFrame* frame);
     bool IsFood(NFrame* frame);
