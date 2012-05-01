@@ -820,16 +820,6 @@
                 </slot>
                 <slot system="0">
                     <fasets>
-                        <faset value="Игрок" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Персонаж" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
                         <faset value="Место выполнения действия" name="name"/>
                         <faset value="frame" name="slot_type"/>
                         <faset value="Ячейка игрового поля" name="default_value"/>
@@ -913,6 +903,16 @@
                         <faset value="Еда сверху" name="name"/>
                         <faset value="frame" name="slot_type"/>
                         <faset value="Еда" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Игрок" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Персонаж" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -2501,5 +2501,6 @@
         <link sid="43" did="26" text="is-a"/>
         <link sid="44" did="26" text="is-a"/>
         <link sid="42" did="26" text="is-a"/>
+		<link sid="4" did="23" text="sub"/>
     </diagram>
 </kb>
