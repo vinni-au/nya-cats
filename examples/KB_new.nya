@@ -1210,7 +1210,7 @@
                         <faset value="" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="production" name="marker_type"/>
-                        <faset value="s" name="marker"/>
+                        <faset value="врагслева" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -1514,7 +1514,7 @@
                         <faset value="ДаНет" name="slot_type"/>
                         <faset value="Да" name="default_value"/>
                         <faset value="production" name="marker_type"/>
-                        <faset value="s" name="marker"/>
+                        <faset value="врагслева" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -1761,7 +1761,7 @@
     </frames>
     <procs/>
     <productions>
-        <production name="s">
+        <production name="врагслева">
             <rules>
                 <rule Name="Rule1">
                     <reason></reason>
