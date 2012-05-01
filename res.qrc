@@ -1,6 +1,8 @@
 <RCC>
     <qresource prefix="/icons">
         <file>icon.ico</file>
+        <file>ui/minus.png</file>
+        <file>ui/plus.png</file>
     </qresource>
     <qresource prefix="/translations">
         <file>qt_ru.qm</file>
