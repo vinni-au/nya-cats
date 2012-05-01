@@ -49,7 +49,7 @@ NFrame* MLV::FindByCell(int x, int y)
     {
         if (GetSlotValue(m_CellFrameInsts[i], "x") == x && GetSlotValue(m_CellFrameInsts[i], "y") == y)
         {
-            frame = (NFrame*)GetSlotValue(m_WorkMemory[i], "Игровой объект").toLongLong();
+            frame = (NFrame*)GetSlotValue(m_CellFrameInsts[i], "Игровой объект").toLongLong();
             break;
         }
     }
@@ -327,7 +327,7 @@ bool MLV::IsPerson(NFrame* frame)
         return false;
 
     bool pers =  frame->frameName() == "Лучник" ||
-                 frame->frameName() == "Воин" ||
+                 frame->frameName() == "Мечник" ||
                  frame->frameName() == "Лекарь" ||
                  frame->frameName() == "Персонаж";
 
