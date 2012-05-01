@@ -48,8 +48,8 @@ public:
     bool setVal(int frameId, QString aimVar, QVariant value);
     bool setVal(NFrame* frame, QString aimVar, QVariant value);
 
-    QList<NFrame*> workMemory() const
-    {   return m_WorkMemory;    }
+    QList<NFrame*>* workMemory()
+    {   return &m_WorkMemory;    }
 
 protected:
 

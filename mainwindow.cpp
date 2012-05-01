@@ -165,4 +165,5 @@ void MainWindow::on_actStartGame_triggered()
     m_mlvControl->ClearLog();
     m_mlvControl->show();
     m_mlv->Start();
+    m_mlvControl->setWorkMemory(m_mlv->workMemory());
 }
