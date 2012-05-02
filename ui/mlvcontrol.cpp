@@ -77,4 +77,7 @@ void MLVControl::setWorkMemory(QList<NFrame *> *list)
 
     m_frameModel->setFrames(list);
     ui->treeView->update();
+    ui->treeView->setColumnHidden(3,true);
+    ui->treeView->setColumnHidden(4,true);
+    ui->treeView->setColumnHidden(5,true);
 }

@@ -19,6 +19,8 @@ MainWindow::MainWindow(QWidget *parent) :
     m_kbManager = new NKBManager();
     m_mlv = new MLV(m_kbManager, viz->GetGrid());
     m_mlvControl = new MLVControl(m_mlv);
+
+    this->setWindowState(Qt::WindowMaximized);
 }
 
 MainWindow::~MainWindow()
