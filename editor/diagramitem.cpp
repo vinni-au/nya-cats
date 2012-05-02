@@ -108,8 +108,11 @@ void DiagramItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 QVariant DiagramItem::itemChange(GraphicsItemChange change, const QVariant &value)
 {
     if (change == QGraphicsItem::ItemPositionChange) {
-        foreach (Arrow *arrow, m_arrows) {
-            arrow->updatePosition();
+        for (int i = 0; i < m_arrows.count(); ++i) {
+            Arrow* arrow = m_arrows[i];
+            if (arrow && arrow->startItem() && arrow->endItem())
+                arrow->updatePosition();
+            arrow = 0;
         }
     }
 

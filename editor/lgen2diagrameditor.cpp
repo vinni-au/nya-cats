@@ -90,15 +90,39 @@ void LGen2DiagramEditor::deleteLink(unsigned sid, unsigned did)
     for (int i = 0; i < m_links.count(); ++i) {
         a = m_links[i];
         if (a && (uint)a->endItem() != 0xfeeefeee  && (uint)a->startItem() != 3722304989)
-            if (m_links.at(i)->startItem()->id() == sid &&
-                    m_links.at(i)->endItem()->id() == did)
+            if (a->startItem()->id() == sid &&
+                    a->endItem()->id() == did) {
                 a = m_links[i];
+                break;
+            }
     }
     m_links.removeAll(a);
+    //m_scene->removeItem(a);
+
+    Arrow* arrow = 0;
     DiagramItem* si = m_items[sid];
+    for (int i = 0; i < si->arrows().count(); ++i) {
+        arrow = si->arrows().at(i);
+        if (arrow->endItem()->id() == did)
+            break;
+        arrow = 0;
+    }
+    if (arrow)
+        si->removeArrow(arrow);
+
     DiagramItem* di = m_items[did];
-    si->removeArrowTo(di);
-    di->removeArrowFrom(si);
+    for (int i = 0; i < di->arrows().count(); ++i) {
+        arrow = di->arrows().at(i);
+        if (arrow->startItem()->id() == sid)
+            break;
+        arrow = 0;
+    }
+    if (arrow)
+        di->removeArrow(arrow);
+
+    m_scene->removeItem(arrow);
+    //si->removeArrowTo(di);
+    //di->removeArrowFrom(si);
 }
 
 void LGen2DiagramEditor::sceneSelectionChanged()
@@ -157,10 +181,12 @@ void LGen2DiagramEditor::deleteSelectedLink()
     if (items.count() == 1) {
         Arrow* a = qgraphicsitem_cast<Arrow*>(items[0]);
         if (a) {
-            if (a->text() == "is-a")
-                emit isaDeleted(a->startItem()->id(), a->endItem()->id());
-            else if (a->text() == "sub")
+            if (a->text() == "is-a") {
+                emit isaDeleted(a->startItem()->id(), a->endItem()->id());                
+            } else if (a->text() == "sub") {
                 emit apoDeleted(a->startItem()->id(), a->endItem()->id());
+            }
+            //deleteLink(a->startItem()->id(), a->endItem()->id());
         }
     }
 }
