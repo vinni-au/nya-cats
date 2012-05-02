@@ -67,6 +67,7 @@ void MainWindow::on_actCreate_triggered()
     if(m_kbManager->mayBeSave())
     {
         m_kbManager->Clear();
+        this->setWindowTitle(QString(MAINWINDOWTITLE));
     }
 }
 
@@ -88,7 +89,7 @@ void MainWindow::on_actOpen_triggered()
             }
             else
             {
-
+                this->setWindowTitle(QString(MAINWINDOWTITLE)+" "+ kbFile);
                 m_kbManager->setDirty(false);//иначе все дело портит вопрос
                 //statusBar()->showMessage(QString("Открыт файл: %1").arg(esFile),2000);
                 QMessageBox::information(this,"Информация","База знаний загружена",QMessageBox::Ok);

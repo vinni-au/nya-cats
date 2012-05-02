@@ -10,6 +10,8 @@
 #include "mlv/mlv.h"
 #include "ui/mlvcontrol.h"
 
+#define MAINWINDOWTITLE "NYA CATS"
+
 namespace Ui {
     class MainWindow;
 }
