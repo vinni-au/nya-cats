@@ -501,10 +501,9 @@ void MLV::Step()
                 InitNeighborSituation(frameSituation, cframe, "слева");
             }
 
-            m_Padding += 1;
             BindFrame(frameSituation);
-            m_Padding -= 1;
             AddMsgToLog(GetSpaces(m_Padding) + "'" + frame->frameName().toUpper() + "' - конец вывода");
+            AddMsgToLog("");
         }
     }
 
@@ -539,6 +538,7 @@ bool MLV::BindFrame(NFrame *frame)
         }
     }
 
+    m_Padding += 1;
     AddMsgToLog(GetSpaces(m_Padding) + "Пытаемся привязать фрейм '" + frameInst->frameName().toUpper() + "'");
 
     // Пытаемся привязать слоты
@@ -547,12 +547,15 @@ bool MLV::BindFrame(NFrame *frame)
     {
         if (nslots[i]->isSystem())
             continue;
-        m_Padding += 1;
+
         retn &= BindSlot(frameInst, nslots[i]);
-        m_Padding -= 1;
         if (!retn)
             break; // если хоть один слот не привязался, завершаем перебор
     }
+
+    QString str = retn? "' привязался" : "' НЕ привязался";
+    AddMsgToLog(GetSpaces(m_Padding) + "Фрейм '" + frameInst->frameName().toUpper() + str);
+
 
     if (retn)
     {
@@ -566,17 +569,15 @@ bool MLV::BindFrame(NFrame *frame)
             if (frameInst)
             {
                 SetSlotValueVariant(frameInst, "is_a", QVariant(reinterpret_cast<long long>(frame)));
-                m_Padding += 1;
                 bool end = BindFrame(frameInst);
-                m_Padding -= 1;
                 if (end)
                     break;
             }
         }
     }
 
-    QString str = retn? "' привязался" : "' НЕ привязался";
-    AddMsgToLog(GetSpaces(m_Padding) + "Фрейм '" + frameInst->frameName().toUpper() + str);
+    m_Padding -= 1;
+
     return retn;
 }
 
@@ -604,6 +605,7 @@ bool MLV::BindSlot(NFrame* frame, NSlot *slot)
         return BindFrame(subframe);
     }
 
+    m_Padding += 1;
     AddMsgToLog(GetSpaces(m_Padding) + "Пытаемся привязать слот '" + slot->name().toUpper() + "'");
 
     // Если тип слота - домен, строка или число
@@ -628,5 +630,6 @@ bool MLV::BindSlot(NFrame* frame, NSlot *slot)
 
     QString str = retn? "' привязался" :"' НЕ привязался";
     AddMsgToLog(GetSpaces(m_Padding) + "Cлот '" + slot->name().toUpper() + str);
+    m_Padding -= 1;
     return retn;
 }
