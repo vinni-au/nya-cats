@@ -958,7 +958,9 @@ QList<NFrame*> NKBManager::GetFrameChildren(NFrame* frame)
 
 NFrame* NKBManager::GetFrameInstance(NFrame* frame)
 {
-    return frame->createInstance();
+    NFrame* frameInst=frame->createInstance();
+    frameInst->setId(getFreeExemplarId());
+    return frameInst;
 }
 
 NFrame* NKBManager::GetFrameInstance(QString name)
@@ -1029,7 +1031,6 @@ NFrame* NKBManager::GetFrameInstanceWithParents(NFrame* frame)
         frameInst->merge(parframeInst);
         parFrame=this->GetFrameParent(parFrame);
     }
-    frameInst->setId( getFreeId() );
     return frameInst;
 }
 
