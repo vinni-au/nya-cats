@@ -120,10 +120,17 @@ void NKBManager::deleteLinks(int id)
     //удаление слотов фреймов, в которые фрейм входит как субфрейм
     foreach(frame,m_frames)
     {
-        NSlot *slot = frame->getSlotByName(frameName);
-        if(slot)
+        QList<NSlot*> slotss= frame->getSlotsByDefValue(frameName);
+        NSlot* slot;
+        foreach(slot,slotss)
         {
-            frame->removeSlot(slot);
+            if(slot)
+            {
+                if(slot->getFasetByName("slot_type")->value()=="frame")
+                {
+                    frame->removeSlot(slot);
+                }
+            }
         }
     }
 
