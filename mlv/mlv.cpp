@@ -476,7 +476,7 @@ void MLV::Step()
             m_Padding = 0;
             AddMsgToLog(GetSpaces(m_Padding) + "Определяем ситуацию для '" + frame->frameName().toUpper() + "'");
 
-            NFrame* frameSituation = CreateFrameInstance("Ситуация");
+            NFrame* frameSituation = CreateFrameInstance("Ситуация", false);
             SetSlotValueVariant(frameSituation, "Место выполнения действия", QVariant(reinterpret_cast<long long>(m_CellFrameInsts[i])));
             SetSlotValueVariant(frameSituation, "Игрок", QVariant(reinterpret_cast<long long>(frame)));
 
@@ -559,17 +559,17 @@ bool MLV::BindFrame(NFrame *frame)
 
     if (retn)
     {
-        m_WorkMemory.append(frame);
+        m_WorkMemory.append(frameInst);
 
         // Пытаемся привязать потомков
         QList<NFrame*> children = m_KBManager->GetFrameChildren(frameInst);
         for (int i = 0; i < children.count(); i++)
         {
-            frameInst = CreateFrameInstance(children[i]->frameName(), false);
-            if (frameInst)
+            NFrame* frameInst1 = CreateFrameInstance(children[i]->frameName(), false);
+            if (frameInst1)
             {
-                SetSlotValueVariant(frameInst, "is_a", QVariant(reinterpret_cast<long long>(frame)));
-                bool end = BindFrame(frameInst);
+                SetSlotValueVariant(frameInst1, "is_a", QVariant(reinterpret_cast<long long>(frameInst)));
+                bool end = BindFrame(frameInst1);
                 if (end)
                     break;
             }
