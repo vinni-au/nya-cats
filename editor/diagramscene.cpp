@@ -1,4 +1,5 @@
 #include "diagramscene.hpp"
+#include <QDebug>
 
 DiagramScene::DiagramScene(QMenu *itemMenu, QObject *parent) :
     QGraphicsScene(parent), m_itemMenu(itemMenu), m_line(0)
@@ -59,16 +60,46 @@ void DiagramScene::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)
                 qgraphicsitem_cast<DiagramItem *>(startItems.first());
             DiagramItem *endItem =
                 qgraphicsitem_cast<DiagramItem *>(endItems.first());
-            Arrow *arrow = new Arrow(startItem, endItem);
+            Arrow *arrow = new Arrow(startItem, endItem, "", 0, 0);
             arrow->setColor(m_lineColor);
-            startItem->addArrow(arrow);
-            endItem->addArrow(arrow);
+            //startItem->addArrow(arrow);
+            //endItem->addArrow(arrow);
             arrow->setZValue(-1000.0);
-            addItem(arrow);
+            //addItem(arrow);
             arrow->updatePosition();
             emit arrowAdded(arrow);
         }
     }
     m_line = 0;
     QGraphicsScene::mouseReleaseEvent(mouseEvent);
+}
+
+void DiagramScene::addItem(QGraphicsItem *item)
+{
+    QGraphicsScene::addItem(item);
+    DiagramItem* ditem = qgraphicsitem_cast<DiagramItem*>(item);
+    if (ditem)
+        qDebug() << "Добавлен итем '" + ditem->title() + "'";
+    else {
+        Arrow* arrow = qgraphicsitem_cast<Arrow*>(item);
+        if (arrow)
+            qDebug() << "Добавлен итем '" + arrow->text() + "'";
+        else qDebug() << "Добавлен итем";
+    }
+    qDebug() << "Стало итемов: " + QString::number(items().count());
+}
+
+void DiagramScene::removeItem(QGraphicsItem *item)
+{
+    QGraphicsScene::removeItem(item);
+    DiagramItem* ditem = qgraphicsitem_cast<DiagramItem*>(item);
+    if (ditem)
+        qDebug() << "Удалён итем '" + ditem->title() + "'";
+    else {
+        Arrow* arrow = qgraphicsitem_cast<Arrow*>(item);
+        if (arrow)
+            qDebug() << "Удалён итем '" + arrow->text() + "'";
+        else qDebug() << "Удалён итем";
+    }
+    qDebug() << "Осталось итемов: " + QString::number(items().count());
 }

@@ -4,6 +4,8 @@
 #include <QMenu>
 #include <QGraphicsScene>
 #include "diagramitem.hpp"
+#include "arrow.hpp"
+#include <QGraphicsObject>
 
 class DiagramScene : public QGraphicsScene
 {
@@ -39,6 +41,9 @@ public:
     void setItemType(DiagramItem::DiagramType type)
     {   m_itemType = type;  }
 
+
+    void addItem(QGraphicsItem *item);
+    void removeItem(QGraphicsItem *item);
 
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent);

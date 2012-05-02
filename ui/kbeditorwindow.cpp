@@ -267,7 +267,7 @@ void KBEditorWindow::arrowAdded(Arrow *arrow)
         if (!m_kbManager->addIsa(arrow->startItem()->id(), arrow->endItem()->id()))
             ui->graphicsView->scene()->removeItem(arrow);
         else {
-            ui->graphicsView->addArrow(arrow);
+            //ui->graphicsView->addArrow(arrow);
             arrow->setText("is-a");
             arrow->setColor(Qt::darkGreen);
         }
@@ -275,7 +275,7 @@ void KBEditorWindow::arrowAdded(Arrow *arrow)
         if (!m_kbManager->addApo(arrow->startItem()->id(), arrow->endItem()->id()))
             ui->graphicsView->scene()->removeItem(arrow);
         else {
-            ui->graphicsView->addArrow(arrow);
+            //ui->graphicsView->addArrow(arrow);
             arrow->setText("sub");
             arrow->setColor(Qt::darkYellow);
         }

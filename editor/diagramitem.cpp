@@ -31,15 +31,27 @@ void DiagramItem::removeArrow(Arrow *arrow)
 void DiagramItem::removeArrows()
 {
     Arrow *arrow = 0;
+    QList<Arrow*> arrows2del;
     for (int i = 0; i < m_arrows.count(); ++i) {
+        arrow = m_arrows[i];
         if (arrow) {
-            arrow->startItem()->removeArrow(arrow);
-            arrow->endItem()->removeArrow(arrow);
-            scene()->removeItem(arrow);
-            delete arrow;
+//            arrow->startItem()->removeArrow(arrow);
+//            arrow->endItem()->removeArrow(arrow);
+            arrows2del << arrow;
+//            scene()->removeItem(arrow);
+//            delete arrow;
         }
         arrow = 0;
     }
+    for (int i = 0; i < arrows2del.count(); ++i) {
+        DiagramScene* dscene = static_cast<DiagramScene*>(scene());
+        dscene->removeItem(arrows2del[i]);
+        arrows2del[i]->startItem()->removeArrow(arrows2del[i]);
+        arrows2del[i]->endItem()->removeArrow(arrows2del[i]);
+        m_arrows.removeAll(arrows2del[i]);
+        delete arrows2del[i];
+    }
+    arrows2del.clear();
 }
 
 void DiagramItem::removeArrowTo(DiagramItem *item)
