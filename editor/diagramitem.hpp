@@ -32,6 +32,9 @@ public:
 
     void addArrow(Arrow *arrow);
 
+    QList<Arrow*> arrows()
+    {   return m_arrows;    }
+
     QPixmap image() const;
 
     int type() const

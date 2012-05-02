@@ -262,6 +262,16 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Ресурс" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Ресурс" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
             </slots>
         </frame>
         <frame type="327684" id="5">
@@ -509,6 +519,276 @@
                         <faset value="is_a" name="name"/>
                         <faset value="frame" name="slot_type"/>
                         <faset value="Игровой объект" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="105" id="13">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Ресурс" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Вес" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="1" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="105" id="14">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Пустой" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Ресурс" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="105" id="15">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Оружие" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Ресурс" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Урон" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="327684" id="16">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Холодное оружие" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Оружие" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="17">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Меч" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Холодное оружие" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="327684" id="18">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Метательное оружие" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Оружие" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Дальность стрельбы" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="19">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Лук" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Метательное оружие" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="327684" id="20">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Боеприпас" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Ресурс" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="327684" id="21">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Стрелы" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Боеприпас" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="327684" id="22">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Аптечка" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Ресурс" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -2117,6 +2397,16 @@
         <item x="-7.914253593749891" title="Препятствие" y="-140.2791598124999" id="10"/>
         <item x="5.015956453125099" title="Фабрика" y="-56.0967067031249" id="11"/>
         <item x="389.3310052656251" title="Еда" y="-249.3060765624999" id="12"/>
+        <item x="770.5314028749999" title="Ресурс" y="62.22033015624976" id="13"/>
+        <item x="531.5314028749999" title="Пустой" y="158.2203301562498" id="14"/>
+        <item x="694.5314028749999" title="Оружие" y="163.2203301562498" id="15"/>
+        <item x="594.5314028749999" title="Холодное оружие" y="274.2203301562498" id="16"/>
+        <item x="594.5314028749999" title="Меч" y="373.2203301562498" id="17"/>
+        <item x="740.5314028749999" title="Метательное оружие" y="266.2203301562498" id="18"/>
+        <item x="744.5314028749999" title="Лук" y="372.2203301562498" id="19"/>
+        <item x="834.5314028749999" title="Боеприпас" y="167.2203301562498" id="20"/>
+        <item x="899.5314028749999" title="Стрелы" y="265.2203301562498" id="21"/>
+        <item x="983.5314028749999" title="Аптечка" y="169.2203301562498" id="22"/>
         <item x="14.27825000000013" title="Ситуация" y="377.940375" id="23"/>
         <item x="-111.4821237080801" title="Простая ситуация" y="523.7323917949589" id="24"/>
         <item x="163.574276078125" title="Сложная ситуация" y="631.9377344531249" id="25"/>
@@ -2152,6 +2442,15 @@
         <link sid="10" did="2" text="is-a"/>
         <link sid="11" did="10" text="is-a"/>
         <link sid="12" did="2" text="is-a"/>
+        <link sid="21" did="20" text="is-a"/>
+        <link sid="19" did="18" text="is-a"/>
+        <link sid="17" did="16" text="is-a"/>
+        <link sid="16" did="15" text="is-a"/>
+        <link sid="18" did="15" text="is-a"/>
+        <link sid="14" did="13" text="is-a"/>
+        <link sid="15" did="13" text="is-a"/>
+        <link sid="20" did="13" text="is-a"/>
+        <link sid="22" did="13" text="is-a"/>
         <link sid="24" did="23" text="is-a"/>
         <link sid="25" did="23" text="is-a"/>
         <link sid="28" did="24" text="is-a"/>
@@ -2193,5 +2492,6 @@
         <link sid="44" did="26" text="is-a"/>
         <link sid="42" did="26" text="is-a"/>
         <link sid="4" did="23" text="sub"/>
+        <link sid="13" did="4" text="sub"/>
     </diagram>
 </kb>

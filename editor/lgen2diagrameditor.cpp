@@ -53,6 +53,9 @@ void LGen2DiagramEditor::deleteNode(unsigned id)
     m_scene->blockSignals(true);
     DiagramItem* item = m_items[id];
     if (item) {
+        QList<Arrow*> arrows = item->arrows();
+        for (int i = 0; i < arrows.count(); ++i)
+            m_links.removeAll(arrows[i]);
         item->removeArrows();
         m_items.remove(id);
         m_scene->removeItem(item);
