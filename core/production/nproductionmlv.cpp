@@ -162,6 +162,7 @@ NProductionMLV::ruleAccepted(Rule *rule)
 
         QString varValue = calcVal(e);//в значении может быть выражение
         AddVarUsed(e->var,varValue);
+        m_mlv->setVal(m_frameId,e->var,varValue);
         qDebug()<<"Then: set: "<<e->toString();
     }
 
@@ -177,7 +178,7 @@ NProductionMLV::AddVarUsed(QString varName, QString varValue)
         ConsVars.insert(varName,varValue);
         ConsVarsVec.append(varName);
         emit sigVarUse(varName,varValue);
-        m_mlv->setVal(m_frameId,varName,varValue);
+
     }
 }
 

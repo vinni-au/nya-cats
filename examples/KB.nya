@@ -1428,16 +1428,6 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="" name="name"/>
-                        <faset value="" name="slot_type"/>
-                        <faset value="" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
             </slots>
         </frame>
         <frame type="0" id="39">
@@ -1469,6 +1459,16 @@
                         <faset value="Да" name="default_value"/>
                         <faset value="production" name="marker_type"/>
                         <faset value="снизувраг" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="" name="name"/>
+                        <faset value="" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -1777,7 +1777,7 @@
         <item x="458.85" title="Есть враги, нет еды, мало жизни" y="939.5500000000002" id="35"/>
         <item x="-372.4274999999999" title="Ничего нет, мало жизни" y="1008.78" id="36"/>
         <item x="-205.6774999999998" title="Ничего нет, много жизни" y="1001.88" id="37"/>
-        <item x="-712.7" title="Враг слева" y="513.15" id="38"/>
+        <item x="-712.7000000000001" title="Враг слева" y="513.15" id="38"/>
         <item x="-561.05" title="Враг снизу" y="612.9999999999999" id="39"/>
         <item x="-372.4500000000001" title="Враг справа" y="483.0499999999999" id="40"/>
         <item x="-540.35" title="Враг сверху" y="437.0500000000003" id="41"/>

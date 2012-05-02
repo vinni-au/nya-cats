@@ -40,10 +40,34 @@ void MLVControl::setWorkMemory(QList<NFrame *> *list)
         if (name == "Ячейка игрового поля" ||
             name == "Пусто" ||
             name == "Игровое поле")
+        {
             toRemove << frame;
+        }
     }
     for (int i = 0; i < toRemove.count(); ++i)
         list->removeAll(toRemove.at(i));
+
+    for (int i = 0; i < list->count(); ++i)
+    {
+        NFrame* frame=list->at(i);
+        QStringList asdsd;
+        QStringList subframeNames = frame->getSubframesSlotNames(asdsd);
+        QString subFrameName;
+        foreach(subFrameName,subframeNames)
+        {
+            NSlot* slot = frame->getSlotByName(subFrameName);
+            if(!slot)
+                continue;
+            NFaset* faset = slot->getFasetByName("value");
+            if(!faset)
+                continue;
+            if(faset->value().toString().isEmpty())
+                continue;
+            NFrame* f = ((NFrame*)(faset->value().toLongLong()));
+            faset->setValue( f->frameName() );
+        }
+    }
+
     m_frameModel->setFrames(list);
     ui->treeView->update();
 }
