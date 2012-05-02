@@ -1184,4 +1184,31 @@ void NKBManager::onFrameNetModelFrameNameChanged(QString oldName,QString newName
         return;
 
     emit sigFrameNameChanged(frame->id(),newName);
+
+    //надо изменить все субфреймы
+    NFrame* f;
+    foreach(f,m_frames)
+    {
+        QList<NSlot*> slotsSubs = f->getSlotsByDefValue(oldName);
+        NSlot* slot;
+        foreach(slot,slotsSubs)
+        {
+            if(slot->name()=="is_a")
+            {
+                slot->setDefValue(newName);
+            }
+            else
+            {
+                if(slot->name()==slot->defValue())//это типичный субфрейм
+                {
+                    slot->setDefValue(newName);
+                    slot->setName(newName);
+                }
+                else
+                {//субфрейм со своим собственным именем
+                    slot->setDefValue(newName);
+                }
+            }
+        }
+    }
 }
