@@ -31,13 +31,15 @@ protected:
 
     int m_Padding;
 
+    bool m_FullSearch;
+
 public:
     MLV(NKBManager* manager, Grid* grid);
 
     void Start();
     void Step();
-    bool BindFrame(NFrame* frame);
-    bool BindSlot(NFrame* frame, NSlot* slot);
+    void Step(int x, int y);
+
 
     //Для продукционного вывода
     //Функция для получения значения слота фрейма экземпляра при продукционном выводе.
@@ -53,12 +55,22 @@ public:
     QList<NFrame*>* workMemory()
     {   return &m_WorkMemory;    }
 
+    bool GetFullSearch() { return m_FullSearch; }
+    void SetFullSearch(bool b) { m_FullSearch = b; }
+
+
+
 protected:
 
     // Тут создаются фреймы экземпляры игрового поля и персонаже.
     // В код вшиты названия! что есть очень плохо - быдло быдло
     bool Init();
     void UpdateGrid();
+
+    bool BindFrame(NFrame* frame);
+    bool BindSlot(NFrame* frame, NSlot* slot);
+    bool BindPerson(NFrame* frame);
+    bool BindPerson(int x, int y);
 
     NFrame* CreateFrameInstance(QString name, bool fillDefault = true);
     NFrame* CreateFrameInstanceFull(QString name, bool fillDefault = true);
@@ -81,6 +93,8 @@ protected:
     // Поиск в кеше
     NFrame* FindInCache(QString name);
     NFrame* FindInCache(int frameId);
+
+    NFrame* FindCell(int x, int y);
 
 
     bool IsPerson(NFrame* frame);

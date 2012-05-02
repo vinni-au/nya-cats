@@ -8,6 +8,7 @@ MLV::MLV(NKBManager* manager, Grid* grid) :
   ,m_Initialized(false)
   ,m_InstCount(0)
   ,m_Padding(0)
+  ,m_FullSearch(false   )
 {
 }
 
@@ -73,13 +74,22 @@ NFrame* MLV::FindById(int frameId)
 
 NFrame* MLV::FindByCell(int x, int y)
 {
-    NFrame* frame = NULL;
+    NFrame* cell = FindCell(x, y);
+    if (!cell)
+        return NULL;
+
+    NFrame* frame = (NFrame*)GetSlotValue(cell, "Игровой объект").toLongLong();
+    return frame;
+}
+
+NFrame* MLV::FindCell(int x, int y)
+{
     for (int i = 0; i < m_CellFrameInsts.count(); i++)
     {
-        if (GetSlotValue(m_CellFrameInsts[i], "x") == x && GetSlotValue(m_CellFrameInsts[i], "y") == y)
+        if (GetSlotValue(m_CellFrameInsts[i], "x") == x &&
+                GetSlotValue(m_CellFrameInsts[i], "y") == y)
         {
-            frame = (NFrame*)GetSlotValue(m_CellFrameInsts[i], "Игровой объект").toLongLong();
-            return frame;
+            return m_CellFrameInsts[i];
         }
     }
     return NULL;
@@ -312,6 +322,7 @@ bool MLV::Init()
     m_CellFrameInsts.clear();
     m_WorkMemory.clear();
     m_Cache.clear();
+    m_KBManager->clearExemplarIds();
 
     // Экземпляр игрового поля
     m_GameFieldInst = CreateFrameInstanceFull("Игровое поле");
@@ -464,50 +475,76 @@ void MLV::Step()
     // Для каждого персонажа привязываем ситуацию
     for (int i = 0; i < m_CellFrameInsts.count(); i++)
     {
-        // Определяем что находится в ячейке
-        QVariant value = GetSlotValue(m_CellFrameInsts[i], "Игровой объект");
-        NFrame* frame = (NFrame*)value.toLongLong();
-        if (!frame)
-            continue;
-
-        // Если не пусто
-        if (IsPerson(frame))
-        {
-            m_Padding = 0;
-            AddMsgToLog(GetSpaces(m_Padding) + "Определяем ситуацию для '" + frame->frameName().toUpper() + "'");
-
-            NFrame* frameSituation = CreateFrameInstance("Ситуация", false);
-            SetSlotValueVariant(frameSituation, "Место выполнения действия", QVariant(reinterpret_cast<long long>(m_CellFrameInsts[i])));
-            SetSlotValueVariant(frameSituation, "Игрок", QVariant(reinterpret_cast<long long>(frame)));
-
-
-            //////////////////////////
-            // Заполнение верха, низа, права, лева
-            {
-                int x = GetSlotValue(m_CellFrameInsts[i], "x").toInt();
-                int y = GetSlotValue(m_CellFrameInsts[i], "y").toInt();
-
-                // Пробегаем по всем соседним ячейкам, и смотрим, есть ли там еда или враг
-                // если есть - добавляем в ситуацию
-
-                NFrame *cframe = 0;
-                cframe = FindByCell(x, y - 1);
-                InitNeighborSituation(frameSituation, cframe, "сверху");
-                cframe = FindByCell(x, y + 1);
-                InitNeighborSituation(frameSituation, cframe, "снизу");
-                cframe = FindByCell(x + 1, y);
-                InitNeighborSituation(frameSituation, cframe, "справа");
-                cframe = FindByCell(x - 1, y);
-                InitNeighborSituation(frameSituation, cframe, "слева");
-            }
-
-            BindFrame(frameSituation);
-            AddMsgToLog(GetSpaces(m_Padding) + "'" + frame->frameName().toUpper() + "' - конец вывода");
-            AddMsgToLog("");
-        }
+        BindPerson(m_CellFrameInsts[i]);
     }
 
     UpdateGrid();
+}
+
+void MLV::Step(int x, int y)
+{
+    if (!m_Initialized)
+        return;
+
+    BindPerson(x, y);
+}
+
+bool MLV::BindPerson(int x, int y)
+{
+    if (!Init())
+        return false;
+
+    NFrame* frame = FindCell(x ,y);
+    return BindPerson(frame);
+}
+
+bool MLV::BindPerson(NFrame* cell)
+{
+    bool retn = false;
+    if (!cell)
+        return retn;
+
+    QVariant value = GetSlotValue(cell, "Игровой объект");
+    NFrame* frame = (NFrame*)value.toLongLong();
+    if (!frame)
+        return retn;
+
+    // Если не пусто
+    if (IsPerson(frame))
+    {
+        m_Padding = 0;
+        AddMsgToLog(GetSpaces(m_Padding) + "Определяем ситуацию для '" + frame->frameName().toUpper() + "'");
+
+        NFrame* frameSituation = CreateFrameInstance("Ситуация", false);
+        SetSlotValueVariant(frameSituation, "Место выполнения действия", QVariant(reinterpret_cast<long long>(cell)));
+        SetSlotValueVariant(frameSituation, "Игрок", QVariant(reinterpret_cast<long long>(frame)));
+
+
+        //////////////////////////
+        // Заполнение верха, низа, права, лева
+        {
+            int x = GetSlotValue(cell, "x").toInt();
+            int y = GetSlotValue(cell, "y").toInt();
+
+            // Пробегаем по всем соседним ячейкам, и смотрим, есть ли там еда или враг
+            // если есть - добавляем в ситуацию
+
+            NFrame *cframe = 0;
+            cframe = FindByCell(x, y - 1);
+            InitNeighborSituation(frameSituation, cframe, "сверху");
+            cframe = FindByCell(x, y + 1);
+            InitNeighborSituation(frameSituation, cframe, "снизу");
+            cframe = FindByCell(x + 1, y);
+            InitNeighborSituation(frameSituation, cframe, "справа");
+            cframe = FindByCell(x - 1, y);
+            InitNeighborSituation(frameSituation, cframe, "слева");
+        }
+
+        retn = BindFrame(frameSituation);
+        AddMsgToLog(GetSpaces(m_Padding) + "'" + frame->frameName().toUpper() + "' - конец вывода");
+        AddMsgToLog("");
+    }
+    return retn;
 }
 
 // Жесткая рекурсия, надо тестить
@@ -570,7 +607,7 @@ bool MLV::BindFrame(NFrame *frame)
             {
                 SetSlotValueVariant(frameInst1, "is_a", QVariant(reinterpret_cast<long long>(frameInst)));
                 bool end = BindFrame(frameInst1);
-                if (end)
+                if (end && !m_FullSearch)
                     break;
             }
         }
