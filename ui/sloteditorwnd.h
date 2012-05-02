@@ -23,6 +23,7 @@ public:
 
 private:
     bool dataIsValid();
+    bool slotExists();
 signals:
 
 public slots:

@@ -189,6 +189,33 @@ NFramenetModel::setData(const QModelIndex &index, const QVariant &value, int rol
 
             faset = slot->getFasetByIndex(column);
             oldValue = faset->value();
+
+            if(slot->isSystem())
+            {
+                if(faset->name()=="name" || faset->name()=="slot_type")//имена системных слотов менять нельзя
+                {
+                    return false;
+                }
+                if(slot->name()=="name")
+                {
+                    if(faset->name()=="default_value")
+                    {
+                        if(value.toString()!=faset->value())//значение изменилось
+                        {
+                                if(frameExists(value.toString()))//нельзя
+                                {
+                                    return false;
+                                }
+                                else
+                                {
+                                    emit sigFrameNameChanged(frame->frameName(),value.toString());
+                                }
+                        }
+
+                    }
+                }
+            }
+
             faset->setValue(value);
 
             emit dataChanged(index,index);
@@ -961,4 +988,14 @@ QString NFramenetModel::getFrameNameByIndex(QModelIndex index)
 int NFramenetModel::getFasetCount() const
 {
     return m_fasetCount;
+}
+
+bool NFramenetModel::frameExists(QString frameName)
+{
+    for(int i =0;i<frames->count();i++)
+    {
+        if(frames->at(i)->frameName()==frameName)
+            return true;
+    }
+    return false;
 }

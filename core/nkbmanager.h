@@ -80,6 +80,7 @@ public:
     QList<NFaset*>  GetSlotFasets       (NSlot* slot);
 
     QStringList getFilteredFrameList(QString frameName,QString slotName);
+    bool slotExists(QString framename,QString slotName);
 private:
     NFrame  *getFrameById(int id);
     NFrame  *getFrameByName(QString name);
@@ -102,6 +103,7 @@ signals:
     void sigDataLoaded();
     void sigErrorWhileValidating(QString errorText);
 
+    void sigFrameNameChanged(unsigned id,QString newName);
 public slots:
     ///От диаграмм
     void selectFrame(unsigned id);
@@ -131,6 +133,7 @@ private slots:
     void changeApo(QString oldSource, QString newSource, QString dest);
     void deleteApo(QString source,QString dest);
 
+    void onFrameNetModelFrameNameChanged(QString oldName,QString newName);
 private:
     QList<NFrame*>      m_frames;               //список фреймов
     NFramenetModel      *m_framenetModel;

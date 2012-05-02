@@ -42,6 +42,8 @@ NKBManager::NKBManager(QObject *parent) :
                      SLOT(changeApo(QString,QString,QString)));
     QObject::connect(getFrameNetModel(), SIGNAL(sigApoDeleted(QString,QString)),
                      SLOT(deleteApo(QString,QString)));
+    QObject::connect(getFrameNetModel(),SIGNAL(sigFrameNameChanged(QString,QString)),
+                     SLOT(onFrameNetModelFrameNameChanged(QString,QString)));
 }
 
 //интерфейсные методы
@@ -1157,4 +1159,22 @@ int NKBManager::getFreeExemplarId()
 {
     m_frameExemplarMaxId++;
     return m_frameExemplarMaxId;
+}
+
+bool NKBManager::slotExists(QString framename,QString slotName)
+{
+    NFrame* f= GetFrameByName(framename);
+    if(!f)
+        return false;
+    NSlot* slot = f->getSlotByName(slotName);
+    return slot!=NULL;
+}
+
+void NKBManager::onFrameNetModelFrameNameChanged(QString oldName,QString newName)
+{
+    NFrame* frame = GetFrameByName(oldName);
+    if(!frame)
+        return;
+
+    emit sigFrameNameChanged(frame->id(),newName);
 }

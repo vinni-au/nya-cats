@@ -72,6 +72,8 @@ public:
     QString getFrameNameByIndex(QModelIndex index);
 
     int getFasetCount() const;
+
+    bool frameExists(QString frameName);
 private:
     int getFreeId();
 signals:
@@ -88,7 +90,9 @@ signals:
     void sigApoChanged(QString oldSource,QString newSource,QString dest);
     void sigApoDeleted(QString source,QString dest);
     //Сигналы для сохранения целостности
-    void sigFrameDeleted(QString domainName);                                          //удаление домена
+    void sigFrameDeleted(QString domainName);
+
+    void sigFrameNameChanged(QString oldName,QString newName);
 public:
     //void moveBefore(QModelIndex sourceInx,QModelIndex destInx);
     //QStringList mimeTypes() const;

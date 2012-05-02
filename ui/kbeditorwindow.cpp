@@ -148,7 +148,16 @@ void KBEditorWindow::on_btnAddSlot_clicked()
         "Введите имя слота", QLineEdit::Normal, QString(), &ok);
     if (ok && !name.isEmpty())
     {
+        //нужно проверить, а есть ли во фрейме такой слот
+
         QModelIndex index = ui->treeView->selectionModel()->currentIndex();
+        QString frameName = m_kbManager->getFrameNetModel()->getFrameNameByIndex(index);
+        if(m_kbManager->slotExists(frameName,name))
+        {
+            QMessageBox::information(this,"","Не удалось добавить слот. Такой слот уже есть.",QMessageBox::Ok);
+            return;
+        }
+
         NFramenetModel *model = qobject_cast<NFramenetModel*>(ui->treeView->model());
         QModelIndex newSlotIndex = model->addSlot(index);
         if(! (newSlotIndex.isValid()))

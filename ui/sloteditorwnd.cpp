@@ -297,6 +297,11 @@ void SlotEditorWnd::on_btnOK_clicked()
         QMessageBox::information(this,"Ошибка","Ошибка в данных",QMessageBox::Ok);
         return;
     }
+    if(slotExists())
+    {
+        QMessageBox::information(this,"Ошибка","Слот с таким именем уже существует.",QMessageBox::Ok);
+        return;
+    }
     NFramenetModel* model = m_kbManager->getFrameNetModel();
     model->setSlotFasetValue(m_slotIndex,"name",ui->lineEdit->text().trimmed());//имя
     if(ui->cmbSlotType->currentText() == "domain")
@@ -317,4 +322,27 @@ void SlotEditorWnd::on_btnOK_clicked()
 void SlotEditorWnd::on_btnCancel_clicked()
 {
     reject();
+}
+
+bool SlotEditorWnd::slotExists()
+{
+    QString oldName = m_kbManager->getFrameNetModel()->getSlotFasetValue(m_slotIndex,"name").toString();
+    QString newName = ui->lineEdit->text().trimmed();
+
+    QString frameName = m_kbManager->getFrameNetModel()->getFrameNameByIndex(m_slotIndex);
+    if(oldName!=newName)//если изменили имя
+    {
+        if(m_kbManager->slotExists(frameName,newName))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    else
+    {
+        return false;
+    }
 }
