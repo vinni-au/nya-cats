@@ -51,6 +51,8 @@ KBEditorWindow::KBEditorWindow(NKBManager *kbManager,QWidget *parent) :
     //Соединяем сигналы/слоты менеджера БЗ и диаграмминга
     QObject::connect(m_kbManager, SIGNAL(frameAdded(uint,QString)),
                      ui->graphicsView, SLOT(addNode(uint,QString)));
+    QObject::connect(m_kbManager, SIGNAL(sigFrameNameChanged(uint,QString)),
+                     ui->graphicsView, SLOT(changeNodeTitle(uint,QString)));
     QObject::connect(m_kbManager, SIGNAL(frameDeleted(uint)),
                      ui->graphicsView, SLOT(deleteNode(uint)));
 

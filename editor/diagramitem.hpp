@@ -42,6 +42,8 @@ public:
 
     QString title() const
     {   return m_title; }
+    void setTitle(QString title)
+    {   m_title = title;    }
 
 protected:
     void contextMenuEvent(QGraphicsSceneContextMenuEvent *event);

@@ -52,6 +52,7 @@ public slots:
     void zoonOut();
     //Добавить вершину с внутренним идентификатором id, надписью title, и типом type
     void addNode(unsigned id, QString title);
+    void changeNodeTitle(unsigned id, QString newtitle);
     //Удалить вершин с внутренним идентификатором id
     void deleteNode(unsigned id);
     //Добавить связь между от вершины с идентификатором sid до вершины с идентификатором did

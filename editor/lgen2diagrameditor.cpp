@@ -32,6 +32,13 @@ void LGen2DiagramEditor::addNode(unsigned id, QString title)
     m_scene->addItem(node);
 }
 
+void LGen2DiagramEditor::changeNodeTitle(unsigned id, QString newtitle)
+{
+    DiagramItem* node = m_items[id];
+    node->setTitle(newtitle);
+    node->update();
+}
+
 void LGen2DiagramEditor::addArrow(Arrow *arrow)
 {
     static QMenu* menu = new QMenu;
