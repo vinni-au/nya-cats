@@ -7,8 +7,11 @@ Grid::Grid(int count, QRectF &rect, QColor &color, QGraphicsScene *scene) :
     ,m_Rect  (rect)
     ,m_Color (color)
     ,m_Scene (scene)
-
+    ,m_contextMenuCell(0)
 {
+    QMenu* menu = new QMenu;
+    menu->addAction("Вывести ситуацию", this, SLOT(findOutSituation()));
+
     float xSize = m_Rect.width() / m_Count;
     float ySize = m_Rect.height() / m_Count;
 
@@ -17,7 +20,10 @@ Grid::Grid(int count, QRectF &rect, QColor &color, QGraphicsScene *scene) :
         for (int j = 0; j < m_Count; j++)
         {
             QRectF rect(i * xSize, j * ySize, xSize, ySize);
-            Cell *cell = new Cell(i, j, rect, m_Color);
+            Cell *cell = new Cell(i, j, rect, m_Color, menu);
+
+            QObject::connect(cell, SIGNAL(contextMenuExecutedOn(Cell*)),
+                             SLOT(setContextMenuCell(Cell*)));
 
             m_Cells.append(cell);
             m_Scene->addItem(cell);
@@ -73,4 +79,14 @@ GameItem* Grid::GetGameItem(int index)
     else
         return NULL;
 
+}
+
+void Grid::setContextMenuCell(Cell *cell)
+{
+    m_contextMenuCell = cell;
+}
+
+void Grid::findOutSituation()
+{
+    emit sigFindOutSituation(m_contextMenuCell->GetX(), m_contextMenuCell->GetY());
 }

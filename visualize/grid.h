@@ -5,14 +5,17 @@
 #include "cell.h"
 
 // Grid
-class Grid
+class Grid : public QObject
 {
+    Q_OBJECT
 protected:
     int                 m_Count;
     QRectF              m_Rect;
     QColor              m_Color;
     QList<Cell*>        m_Cells;
     QGraphicsScene*     m_Scene;
+
+    Cell* m_contextMenuCell;
 
 public:
     Grid(int count, QRectF &rect, QColor &color, QGraphicsScene *scene);
@@ -25,6 +28,13 @@ public:
 
     GameItem* GetGameItem(int x, int y);
     GameItem* GetGameItem(int index);
+
+signals:
+    void sigFindOutSituation(int x, int y);
+
+private slots:
+    void setContextMenuCell(Cell* cell);
+    void findOutSituation();
 };
 
 #endif // GAMEGRID_H

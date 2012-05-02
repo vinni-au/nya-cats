@@ -1,11 +1,12 @@
 #include "cell.h"
 
-Cell::Cell(int xIndex, int yIndex, QRectF &rect, QColor &color) :
+Cell::Cell(int xIndex, int yIndex, QRectF &rect, QColor &color, QMenu *contextMenu) :
      m_xIndex(xIndex)
     ,m_yIndex(yIndex)
     ,m_Rect(rect)
     ,m_Color(color)
     ,m_Item(NULL)
+    ,m_contextMenu(contextMenu)
 {
     setAcceptsHoverEvents(true);
     setAcceptDrops(true);
@@ -160,4 +161,12 @@ int Cell::GetX()
 GameItem* Cell::GetGameItem()
 {
     return m_Item;
+}
+
+void Cell::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
+{
+    if (m_contextMenu && m_Item) {
+        emit contextMenuExecutedOn(this);
+        m_contextMenu->exec(event->screenPos());
+    } else QGraphicsItem::contextMenuEvent(event);
 }
