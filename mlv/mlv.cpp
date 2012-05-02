@@ -489,6 +489,13 @@ void MLV::Step(int x, int y)
     BindPerson(x, y);
 }
 
+void MLV::Start(int x, int y)
+{
+    Init();
+
+    Step(x, y);
+}
+
 bool MLV::BindPerson(int x, int y)
 {
     if (!Init())

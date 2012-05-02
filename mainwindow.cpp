@@ -20,12 +20,28 @@ MainWindow::MainWindow(QWidget *parent) :
     m_mlv = new MLV(m_kbManager, viz->GetGrid());
     m_mlvControl = new MLVControl(m_mlv);
 
+
+    QObject::connect(viz->GetGrid(), SIGNAL(sigFindOutSituation(int,int)),
+                     SLOT(runMLV(int,int)));
+
     this->setWindowState(Qt::WindowMaximized);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::runMLV(int x, int y)
+{
+    qDebug() << "RunMLV in (" + QString::number(x) + "," + QString::number(y) + ")";
+    if (!m_mlv)
+        return;
+
+    m_mlvControl->ClearLog();
+    m_mlvControl->show();
+    m_mlv->Start(x, y);
+    m_mlvControl->setWorkMemory(m_mlv->workMemory());
 }
 
 void MainWindow::on_actExit_triggered()

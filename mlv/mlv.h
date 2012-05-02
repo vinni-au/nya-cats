@@ -37,6 +37,7 @@ public:
     MLV(NKBManager* manager, Grid* grid);
 
     void Start();
+    void Start(int x, int y);
     void Step();
     void Step(int x, int y);
 
