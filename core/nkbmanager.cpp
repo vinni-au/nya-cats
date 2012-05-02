@@ -968,7 +968,7 @@ NFrame* NKBManager::GetFrameInstance(QString name)
     NFrame* frame = GetFrameByName(name);
     if(!frame)
         return NULL;
-    return frame->createInstance();
+    return GetFrameInstance(frame);
 }
 
 QList<NSlot*> NKBManager::GetFrameSlots(NFrame* frame)

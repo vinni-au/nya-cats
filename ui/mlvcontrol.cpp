@@ -52,7 +52,8 @@ void MLVControl::setWorkMemory(QList<NFrame *> *list)
         NFrame* frame=list->at(i);
         //отладочная инфа для имени
         NSlot* slotName = frame->getSlotByName("name");
-        slotName->getFasetByName("default_value")->setValue( slotName->getFasetByName("default_value")->value().toString()+ " (" +QString::number((long long)frame)+")" );
+        slotName->getFasetByName("default_value")->setValue( slotName->getFasetByName("default_value")->value().toString()+
+                                                             " (" +QString::number((long long)frame->id())+")" );
 
         QStringList asdsd;
         QStringList subframeNames = frame->getSubframesSlotNames(asdsd);
