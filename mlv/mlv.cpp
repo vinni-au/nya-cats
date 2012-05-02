@@ -7,6 +7,7 @@ MLV::MLV(NKBManager* manager, Grid* grid) :
   ,m_Grid(grid)
   ,m_Initialized(false)
   ,m_InstCount(0)
+  ,m_Padding(0)
 {
 }
 
@@ -310,6 +311,7 @@ bool MLV::Init()
 {
     m_CellFrameInsts.clear();
     m_WorkMemory.clear();
+    m_Cache.clear();
 
     // Экземпляр игрового поля
     m_GameFieldInst = CreateFrameInstanceFull("Игровое поле");
@@ -341,21 +343,33 @@ bool MLV::Init()
             }
             else
             {
-                // Создаем персонажа
-                if (item->GetType() == gitWarior)
-                    ItemInst = CreateFrameInstanceFull("Мечник");
+                // Если мужик
+                if (IsPerson(item))
+                {
+                    // Создаем персонажа
+                    if (item->GetType() == gitWarior)
+                        ItemInst = CreateFrameInstanceFull("Мечник");
 
-                else if (item->GetType() == gitArcher)
-                    ItemInst = CreateFrameInstanceFull("Лучник");
+                    else if (item->GetType() == gitArcher)
+                        ItemInst = CreateFrameInstanceFull("Лучник");
 
-                else if (item->GetType() == gitHealer)
-                    ItemInst = CreateFrameInstanceFull("Лекарь");
+                    else if (item->GetType() == gitHealer)
+                        ItemInst = CreateFrameInstanceFull("Лекарь");
 
-                // Заполняем значения
-                SetSlotValue(ItemInst, "Команда", item->GetTeam() == gtRed ? "Красный" : "Синий");
+                    // Заполняем значения
+                    SetSlotValue(ItemInst, "Команда", item->GetTeam() == gtRed ? "Красный" : "Синий");
+                }
+
+                // Если еда
+                else if (IsFood(item))
+                {
+                    ItemInst = CreateFrameInstanceFull("Еда");
+                }
             }
+
             SetSlotValueVariant(CellInst, "Игровой объект", QVariant(reinterpret_cast<long long>(ItemInst)));
             m_CellFrameInsts.append(CellInst);
+
             m_WorkMemory.append(CellInst);
             m_WorkMemory.append(ItemInst);
         }
@@ -398,6 +412,27 @@ bool MLV::IsFood(NFrame* frame)
     return food;
 }
 
+bool MLV::IsPerson(GameItem* item)
+{
+    if (item == 0)
+        return false;
+
+    bool pers =     item->GetType() == gitWarior ||
+                    item->GetType() == gitHealer ||
+                    item->GetType() == gitArcher;
+    return pers;
+}
+
+bool MLV::IsFood(GameItem* item)
+{
+    if (item == 0)
+        return false;
+
+    bool food = item->GetType() == gitMeat;
+
+    return food;
+}
+
 void MLV::InitNeighborSituation(NFrame* frameSituation, NFrame* item, QString Orientation)
 {
     if (IsPerson(item))
@@ -409,6 +444,16 @@ void MLV::InitNeighborSituation(NFrame* frameSituation, NFrame* item, QString Or
         SetSlotValueVariant(frameSituation, "Еда " + Orientation, QVariant(reinterpret_cast<long long>(item)));
     else
         frameSituation->removeSlot("Еда " + Orientation);
+}
+
+QString MLV::GetSpaces(int count)
+{
+    QString str = "";
+    for (int i = 0; i < count; i++)
+    {
+        str += "|      ";
+    }
+    return str;
 }
 
 void MLV::Step()
@@ -428,7 +473,8 @@ void MLV::Step()
         // Если не пусто
         if (IsPerson(frame))
         {
-            AddMsgToLog("Определяем ситуацию для '" + frame->frameName() + "'");
+            m_Padding = 0;
+            AddMsgToLog(GetSpaces(m_Padding) + "Определяем ситуацию для '" + frame->frameName().toUpper() + "'");
 
             NFrame* frameSituation = CreateFrameInstance("Ситуация");
             SetSlotValueVariant(frameSituation, "Место выполнения действия", QVariant(reinterpret_cast<long long>(m_CellFrameInsts[i])));
@@ -455,7 +501,10 @@ void MLV::Step()
                 InitNeighborSituation(frameSituation, cframe, "слева");
             }
 
+            m_Padding += 1;
             BindFrame(frameSituation);
+            m_Padding -= 1;
+            AddMsgToLog(GetSpaces(m_Padding) + "'" + frame->frameName().toUpper() + "' - конец вывода");
         }
     }
 
@@ -472,13 +521,10 @@ bool MLV::BindFrame(NFrame *frame)
     NFrame* frameInst = NULL;
     if (frame->frameType() == FrameType::prototype)
     {
-        qDebug() << "BindFrame: creating instance " + frame->frameName();
-
         // Создаем экземпляр
         frameInst = CreateFrameInstance(frame->frameName(), false);
         if (!frameInst)
         {
-            qDebug() << "BindFrame: instance " + frame->frameName() + " was NOT created";
             return false;
         }
     }
@@ -486,19 +532,14 @@ bool MLV::BindFrame(NFrame *frame)
     {
         frameInst = frame;
 
-        qDebug() << "BindFrame: find " + frame->frameName() + " in WM";
-
         // Если фрейм есть в рабочей памяти, то считаем, что он уже привязан
         if (FindByPtr(frame) != NULL)
         {
-            qDebug() << "BindFrame: " + frame->frameName() + " was found in WM";
             return true;
         }
-
-        qDebug() << "BindFrame: " + frame->frameName() + " was NOT found in WM";
     }
 
-    AddMsgToLog("Пытаемся привязать фрейм '" + frameInst->frameName() + "'");
+    AddMsgToLog(GetSpaces(m_Padding) + "Пытаемся привязать фрейм '" + frameInst->frameName().toUpper() + "'");
 
     // Пытаемся привязать слоты
     QList<NSlot*> nslots = m_KBManager->GetFrameSlots(frameInst);
@@ -506,7 +547,9 @@ bool MLV::BindFrame(NFrame *frame)
     {
         if (nslots[i]->isSystem())
             continue;
+        m_Padding += 1;
         retn &= BindSlot(frameInst, nslots[i]);
+        m_Padding -= 1;
         if (!retn)
             break; // если хоть один слот не привязался, завершаем перебор
     }
@@ -523,15 +566,17 @@ bool MLV::BindFrame(NFrame *frame)
             if (frameInst)
             {
                 SetSlotValueVariant(frameInst, "is_a", QVariant(reinterpret_cast<long long>(frame)));
-                if (BindFrame(frameInst))
+                m_Padding += 1;
+                bool end = BindFrame(frameInst);
+                m_Padding -= 1;
+                if (end)
                     break;
             }
         }
     }
 
     QString str = retn? "' привязался" : "' НЕ привязался";
-    AddMsgToLog("Фрейм '" + frameInst->frameName() + str);
-
+    AddMsgToLog(GetSpaces(m_Padding) + "Фрейм '" + frameInst->frameName().toUpper() + str);
     return retn;
 }
 
@@ -540,8 +585,6 @@ bool MLV::BindSlot(NFrame* frame, NSlot *slot)
     bool retn = false;
     if (!slot || !frame)
         return false;
-
-    AddMsgToLog("Пытаемся привязать слот '" + slot->name() + "'");
 
     // Если субфрейм
     if (slot->getSlotType() == "frame")
@@ -561,6 +604,8 @@ bool MLV::BindSlot(NFrame* frame, NSlot *slot)
         return BindFrame(subframe);
     }
 
+    AddMsgToLog(GetSpaces(m_Padding) + "Пытаемся привязать слот '" + slot->name().toUpper() + "'");
+
     // Если тип слота - домен, строка или число
     QString markerType  = slot->getSlotMarkerType();
     QString markerVal   = slot->getSlotMarker();
@@ -570,9 +615,6 @@ bool MLV::BindSlot(NFrame* frame, NSlot *slot)
         if (markerType == "production")
         {
             NProduction* production = m_KBManager->getProduction(slot->getSlotMarker());
-            if (!production)
-                return false;
-
             NProductionMLV* productionMLV = new NProductionMLV(this, frame->id(), production);
             QString val = productionMLV->StartConsultation(slot->name());
             SetSlotValue(frame, slot->name(), val);
@@ -585,6 +627,6 @@ bool MLV::BindSlot(NFrame* frame, NSlot *slot)
     retn = slot->defValue() == GetSlotValue(frame, slot->name());
 
     QString str = retn? "' привязался" :"' НЕ привязался";
-    AddMsgToLog("Cлот '" + slot->name() + str);
+    AddMsgToLog(GetSpaces(m_Padding) + "Cлот '" + slot->name().toUpper() + str);
     return retn;
 }

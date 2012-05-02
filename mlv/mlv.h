@@ -29,6 +29,8 @@ protected:
     bool m_Initialized;
     int m_InstCount;
 
+    int m_Padding;
+
 public:
     MLV(NKBManager* manager, Grid* grid);
 
@@ -83,7 +85,12 @@ protected:
 
     bool IsPerson(NFrame* frame);
     bool IsFood(NFrame* frame);
+    bool IsPerson(GameItem* item);
+    bool IsFood(GameItem* item);
+
     void InitNeighborSituation(NFrame* frameSituation, NFrame* item, QString slotName);
+
+    QString GetSpaces(int count);
 
 public slots:
     QVariant getValSlot(int frameId, QString aimVar);
