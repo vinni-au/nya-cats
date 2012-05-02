@@ -3,7 +3,7 @@
 NKBManager::NKBManager(QObject *parent) :
     QObject(parent)
 {
-    m_frameExemplarMaxId = -1;
+    clearExemplarIds();
     m_dirty = false;
     m_file = NULL;
     m_framenetModel = NULL;
@@ -1212,4 +1212,9 @@ void NKBManager::onFrameNetModelFrameNameChanged(QString oldName,QString newName
             }
         }
     }
+}
+
+void NKBManager::clearExemplarIds()
+{
+    m_frameExemplarMaxId=-1;
 }

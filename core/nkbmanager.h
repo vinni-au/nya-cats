@@ -81,6 +81,8 @@ public:
 
     QStringList getFilteredFrameList(QString frameName,QString slotName);
     bool slotExists(QString framename,QString slotName);
+
+    void clearExemplarIds();
 private:
     NFrame  *getFrameById(int id);
     NFrame  *getFrameByName(QString name);
