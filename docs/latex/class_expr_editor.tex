@@ -1,0 +1,718 @@
+\hypertarget{class_expr_editor}{
+\section{ExprEditor Class Reference}
+\label{class_expr_editor}\index{ExprEditor@{ExprEditor}}
+}
+
+
+{\ttfamily \#include $<$expreditor.h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ad}{TypeExpr} \{ \hyperlink{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808}{IfExpr}, 
+\hyperlink{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95}{ThenExpr}, 
+\hyperlink{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808}{IfExpr}, 
+\hyperlink{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95}{ThenExpr}
+ \}
+\item 
+enum \hyperlink{class_expr_editor_a1705d866529cb7d8867be3964d778ae8}{TypeAction} \{ \hyperlink{class_expr_editor_a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d}{AddAction}, 
+\hyperlink{class_expr_editor_a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f}{EditAction}, 
+\hyperlink{class_expr_editor_a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d}{AddAction}, 
+\hyperlink{class_expr_editor_a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f}{EditAction}
+ \}
+\item 
+enum \hyperlink{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ad}{TypeExpr} \{ \hyperlink{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808}{IfExpr}, 
+\hyperlink{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95}{ThenExpr}, 
+\hyperlink{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808}{IfExpr}, 
+\hyperlink{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95}{ThenExpr}
+ \}
+\item 
+enum \hyperlink{class_expr_editor_a1705d866529cb7d8867be3964d778ae8}{TypeAction} \{ \hyperlink{class_expr_editor_a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d}{AddAction}, 
+\hyperlink{class_expr_editor_a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f}{EditAction}, 
+\hyperlink{class_expr_editor_a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d}{AddAction}, 
+\hyperlink{class_expr_editor_a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f}{EditAction}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_expr_editor_ace6097f735f6f3828cfcfa4ab976dcb2}{onCurrentVarChanged} (int inx)
+\item 
+void \hyperlink{class_expr_editor_add1683227b73a387df7f92242e6f9e49}{onOkClick} ()
+\item 
+void \hyperlink{class_expr_editor_a83f4c96905d5f7df42f1cbfe0b0d5458}{onCancelClick} ()
+\item 
+void \hyperlink{class_expr_editor_a5ae8cf51b1d65c14c6581bcdb9c85027}{onOkAndReturnClick} ()
+\item 
+virtual void \hyperlink{class_expr_editor_a78d912cdfc95b50e4dfda9620df7e14e}{reject} ()
+\item 
+void \hyperlink{class_expr_editor_a095b233f3425980f76fa2cc0a4d02ee0}{onVarContextAdded} (QString newVar)
+\item 
+void \hyperlink{class_expr_editor_a948252a9f0716401b89fbfff4b19ac49}{onValueContextAdded} (QString newVal)
+\item 
+void \hyperlink{class_expr_editor_ace6097f735f6f3828cfcfa4ab976dcb2}{onCurrentVarChanged} (int inx)
+\item 
+void \hyperlink{class_expr_editor_add1683227b73a387df7f92242e6f9e49}{onOkClick} ()
+\item 
+void \hyperlink{class_expr_editor_a83f4c96905d5f7df42f1cbfe0b0d5458}{onCancelClick} ()
+\item 
+void \hyperlink{class_expr_editor_a5ae8cf51b1d65c14c6581bcdb9c85027}{onOkAndReturnClick} ()
+\item 
+virtual void \hyperlink{class_expr_editor_a52172f067cd9296e95d3ced2fc6af1a5}{reject} ()
+\item 
+void \hyperlink{class_expr_editor_a095b233f3425980f76fa2cc0a4d02ee0}{onVarContextAdded} (QString newVar)
+\item 
+void \hyperlink{class_expr_editor_a948252a9f0716401b89fbfff4b19ac49}{onValueContextAdded} (QString newVal)
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_expr_editor_a9287f32e4b659ea721cc64bc18431dee}{varAdded} (QString varName)
+\item 
+void \hyperlink{class_expr_editor_a26b2f380340bf8f0a3f78ea645f9fc9d}{valAdded} (QString varName, QString value)
+\item 
+void \hyperlink{class_expr_editor_a9287f32e4b659ea721cc64bc18431dee}{varAdded} (QString varName)
+\item 
+void \hyperlink{class_expr_editor_a26b2f380340bf8f0a3f78ea645f9fc9d}{valAdded} (QString varName, QString value)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_expr_editor_a0419ad05b21b60dc52a7773a66772b99}{ExprEditor} (\hyperlink{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ad}{TypeExpr} \hyperlink{class_expr_editor_a1c7b9320a532938c395d2397a09169f3}{typeExpr}, \hyperlink{class_expr_editor_a1705d866529cb7d8867be3964d778ae8}{TypeAction} \hyperlink{class_expr_editor_a21311ad2ed99205ae664fcc9e975aae3}{typeAction}, QWidget $\ast$parent=0)
+\item 
+void \hyperlink{class_expr_editor_a3915291eb02e7eb5204a2f07626c5b69}{retranslate} ()
+\item 
+\hyperlink{class_expr}{Expr} $\ast$ \hyperlink{class_expr_editor_a2ddaedfa02379f15cebaca685b35c5cc}{getExpr} ()
+\item 
+void \hyperlink{class_expr_editor_ab032a7dc4fae43ab58efde49668213ab}{selectVar} (QModelIndex index)
+\item 
+void \hyperlink{class_expr_editor_a1958f9085ed67eb8a810c5a5e29fafcc}{selectSign} (QString sign)
+\item 
+void \hyperlink{class_expr_editor_af0eea4ef9f1cc6979c6ddbcd12b8a23d}{selectVal} (QString val)
+\item 
+\hyperlink{class_expr_editor_a3757fe631cab871c36ee40f028bc8f21}{ExprEditor} (\hyperlink{class_n_k_b_manager}{NKBManager} $\ast$manager, QModelIndex slotIndex, QString domain, \hyperlink{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ad}{TypeExpr} \hyperlink{class_expr_editor_a1c7b9320a532938c395d2397a09169f3}{typeExpr}, \hyperlink{class_expr_editor_a1705d866529cb7d8867be3964d778ae8}{TypeAction} \hyperlink{class_expr_editor_a21311ad2ed99205ae664fcc9e975aae3}{typeAction}, QWidget $\ast$parent=0)
+\item 
+void \hyperlink{class_expr_editor_a3915291eb02e7eb5204a2f07626c5b69}{retranslate} ()
+\item 
+\hyperlink{class_expr}{Expr} $\ast$ \hyperlink{class_expr_editor_a868afd2650e2162833ccc0d517e03c31}{getExpr} ()
+\item 
+void \hyperlink{class_expr_editor_ab032a7dc4fae43ab58efde49668213ab}{selectVar} (QModelIndex index)
+\item 
+void \hyperlink{class_expr_editor_a50aac6d62bb0d5bea6ee6913de5b7304}{selectVar} (QString var)
+\item 
+void \hyperlink{class_expr_editor_a1958f9085ed67eb8a810c5a5e29fafcc}{selectSign} (QString sign)
+\item 
+void \hyperlink{class_expr_editor_af0eea4ef9f1cc6979c6ddbcd12b8a23d}{selectVal} (QString val)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ad}{TypeExpr} \hyperlink{class_expr_editor_a1c7b9320a532938c395d2397a09169f3}{typeExpr}
+\item 
+\hyperlink{class_expr_editor_a1705d866529cb7d8867be3964d778ae8}{TypeAction} \hyperlink{class_expr_editor_a21311ad2ed99205ae664fcc9e975aae3}{typeAction}
+\item 
+bool \hyperlink{class_expr_editor_a6315823c9d42e1ae65aebc327724e489}{startAgain}
+\item 
+QVBoxLayout $\ast$ \hyperlink{class_expr_editor_a217e87862256514b6168f007508a2b9c}{layMain}
+\item 
+QHBoxLayout $\ast$ \hyperlink{class_expr_editor_a43c9a963c6e9983ee91ed192c5c3543e}{layUp}
+\item 
+QVBoxLayout $\ast$ \hyperlink{class_expr_editor_aaa0ac9cac3be15113f3197a5be126517}{layVar}
+\item 
+QLabel $\ast$ \hyperlink{class_expr_editor_aabb83efdb2d69adedc9622a8e165c77c}{lbVar}
+\item 
+\hyperlink{class_my_combo_box}{MyComboBox} $\ast$ \hyperlink{class_expr_editor_aeba4b8d69aaeffad27becab449f597bd}{cmbVar}
+\item 
+QVBoxLayout $\ast$ \hyperlink{class_expr_editor_af49fb92e329600de79707e3a8e10935e}{laySign}
+\item 
+QLabel $\ast$ \hyperlink{class_expr_editor_ac07bdb08a648b9b304d4630e1533227a}{lbSign}
+\item 
+QComboBox $\ast$ \hyperlink{class_expr_editor_a18bdcf551100de6ea18ca691c84a53c8}{cmbSign}
+\item 
+QVBoxLayout $\ast$ \hyperlink{class_expr_editor_a1a466cf67dec13e1055f8182c190896d}{layVal}
+\item 
+QLabel $\ast$ \hyperlink{class_expr_editor_ae9598d6fc354e4550a814cbb4df4cd25}{lbVal}
+\item 
+\hyperlink{class_my_combo_box}{MyComboBox} $\ast$ \hyperlink{class_expr_editor_a9e1030ee464d33d43444ceaacd4173f0}{cmbVal}
+\item 
+QHBoxLayout $\ast$ \hyperlink{class_expr_editor_a4839aedd2329ea677bf1fc9d794fb7fb}{layDown}
+\item 
+QPushButton $\ast$ \hyperlink{class_expr_editor_ad5fabd441b537dd0f7a6d224651e779e}{btnAddNewExpr}
+\item 
+QPushButton $\ast$ \hyperlink{class_expr_editor_a8604bf3ec0dc18c57d659ab5e30cd6a3}{btnOK}
+\item 
+QPushButton $\ast$ \hyperlink{class_expr_editor_ab5d219b7e1f2e638cff52daca84fc51d}{btnCancel}
+\item 
+\hyperlink{class_n_k_b_manager}{NKBManager} $\ast$ \hyperlink{class_expr_editor_a32a743cb86f6f7ed51b1b4e6ababee5f}{m\_\-kbManager}
+\item 
+QModelIndex \hyperlink{class_expr_editor_ad7865d3c9c0424a319cf937265c95a68}{m\_\-slotIndex}
+\item 
+QString \hyperlink{class_expr_editor_ab0f7f0b4608739854185f260bf481034}{m\_\-domain}
+\item 
+QVBoxLayout $\ast$ \hyperlink{class_expr_editor_a8c2f70f6030f45e96443bf75afb614ef}{layArSign}
+\item 
+QLabel $\ast$ \hyperlink{class_expr_editor_ae07c34b9202d8b1594874e1da7bf641e}{lbArSign}
+\item 
+QComboBox $\ast$ \hyperlink{class_expr_editor_a67b34d1b437ea1850eb4d347b143230c}{cmbArSign}
+\item 
+QVBoxLayout $\ast$ \hyperlink{class_expr_editor_a5d0bdf568726e16a97fc2ce38c9cedc1}{laySummer}
+\item 
+QLabel $\ast$ \hyperlink{class_expr_editor_a9e6cb92539ffa042c322bfb4c07086c9}{lbSummer}
+\item 
+QSpinBox $\ast$ \hyperlink{class_expr_editor_a672fb9b691a10117939b93927cb56cef}{spbSummer}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_expr_editor_a1705d866529cb7d8867be3964d778ae8}{
+\index{ExprEditor@{ExprEditor}!TypeAction@{TypeAction}}
+\index{TypeAction@{TypeAction}!ExprEditor@{ExprEditor}}
+\subsubsection[{TypeAction}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ExprEditor::TypeAction}}}
+\label{class_expr_editor_a1705d866529cb7d8867be3964d778ae8}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{AddAction@{AddAction}!ExprEditor@{ExprEditor}}\index{ExprEditor@{ExprEditor}!AddAction@{AddAction}}\item[{\em 
+\hypertarget{class_expr_editor_a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d}{
+AddAction}
+\label{class_expr_editor_a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d}
+}]\index{EditAction@{EditAction}!ExprEditor@{ExprEditor}}\index{ExprEditor@{ExprEditor}!EditAction@{EditAction}}\item[{\em 
+\hypertarget{class_expr_editor_a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f}{
+EditAction}
+\label{class_expr_editor_a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f}
+}]\index{AddAction@{AddAction}!ExprEditor@{ExprEditor}}\index{ExprEditor@{ExprEditor}!AddAction@{AddAction}}\item[{\em 
+\hypertarget{class_expr_editor_a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d}{
+AddAction}
+\label{class_expr_editor_a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d}
+}]\index{EditAction@{EditAction}!ExprEditor@{ExprEditor}}\index{ExprEditor@{ExprEditor}!EditAction@{EditAction}}\item[{\em 
+\hypertarget{class_expr_editor_a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f}{
+EditAction}
+\label{class_expr_editor_a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{class_expr_editor_a1705d866529cb7d8867be3964d778ae8}{
+\index{ExprEditor@{ExprEditor}!TypeAction@{TypeAction}}
+\index{TypeAction@{TypeAction}!ExprEditor@{ExprEditor}}
+\subsubsection[{TypeAction}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ExprEditor::TypeAction}}}
+\label{class_expr_editor_a1705d866529cb7d8867be3964d778ae8}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{AddAction@{AddAction}!ExprEditor@{ExprEditor}}\index{ExprEditor@{ExprEditor}!AddAction@{AddAction}}\item[{\em 
+\hypertarget{class_expr_editor_a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d}{
+AddAction}
+\label{class_expr_editor_a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d}
+}]\index{EditAction@{EditAction}!ExprEditor@{ExprEditor}}\index{ExprEditor@{ExprEditor}!EditAction@{EditAction}}\item[{\em 
+\hypertarget{class_expr_editor_a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f}{
+EditAction}
+\label{class_expr_editor_a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f}
+}]\index{AddAction@{AddAction}!ExprEditor@{ExprEditor}}\index{ExprEditor@{ExprEditor}!AddAction@{AddAction}}\item[{\em 
+\hypertarget{class_expr_editor_a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d}{
+AddAction}
+\label{class_expr_editor_a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d}
+}]\index{EditAction@{EditAction}!ExprEditor@{ExprEditor}}\index{ExprEditor@{ExprEditor}!EditAction@{EditAction}}\item[{\em 
+\hypertarget{class_expr_editor_a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f}{
+EditAction}
+\label{class_expr_editor_a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ad}{
+\index{ExprEditor@{ExprEditor}!TypeExpr@{TypeExpr}}
+\index{TypeExpr@{TypeExpr}!ExprEditor@{ExprEditor}}
+\subsubsection[{TypeExpr}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ExprEditor::TypeExpr}}}
+\label{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ad}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{IfExpr@{IfExpr}!ExprEditor@{ExprEditor}}\index{ExprEditor@{ExprEditor}!IfExpr@{IfExpr}}\item[{\em 
+\hypertarget{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808}{
+IfExpr}
+\label{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808}
+}]\index{ThenExpr@{ThenExpr}!ExprEditor@{ExprEditor}}\index{ExprEditor@{ExprEditor}!ThenExpr@{ThenExpr}}\item[{\em 
+\hypertarget{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95}{
+ThenExpr}
+\label{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95}
+}]\index{IfExpr@{IfExpr}!ExprEditor@{ExprEditor}}\index{ExprEditor@{ExprEditor}!IfExpr@{IfExpr}}\item[{\em 
+\hypertarget{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808}{
+IfExpr}
+\label{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808}
+}]\index{ThenExpr@{ThenExpr}!ExprEditor@{ExprEditor}}\index{ExprEditor@{ExprEditor}!ThenExpr@{ThenExpr}}\item[{\em 
+\hypertarget{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95}{
+ThenExpr}
+\label{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ad}{
+\index{ExprEditor@{ExprEditor}!TypeExpr@{TypeExpr}}
+\index{TypeExpr@{TypeExpr}!ExprEditor@{ExprEditor}}
+\subsubsection[{TypeExpr}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ExprEditor::TypeExpr}}}
+\label{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ad}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{IfExpr@{IfExpr}!ExprEditor@{ExprEditor}}\index{ExprEditor@{ExprEditor}!IfExpr@{IfExpr}}\item[{\em 
+\hypertarget{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808}{
+IfExpr}
+\label{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808}
+}]\index{ThenExpr@{ThenExpr}!ExprEditor@{ExprEditor}}\index{ExprEditor@{ExprEditor}!ThenExpr@{ThenExpr}}\item[{\em 
+\hypertarget{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95}{
+ThenExpr}
+\label{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95}
+}]\index{IfExpr@{IfExpr}!ExprEditor@{ExprEditor}}\index{ExprEditor@{ExprEditor}!IfExpr@{IfExpr}}\item[{\em 
+\hypertarget{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808}{
+IfExpr}
+\label{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808}
+}]\index{ThenExpr@{ThenExpr}!ExprEditor@{ExprEditor}}\index{ExprEditor@{ExprEditor}!ThenExpr@{ThenExpr}}\item[{\em 
+\hypertarget{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95}{
+ThenExpr}
+\label{class_expr_editor_a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_expr_editor_a0419ad05b21b60dc52a7773a66772b99}{
+\index{ExprEditor@{ExprEditor}!ExprEditor@{ExprEditor}}
+\index{ExprEditor@{ExprEditor}!ExprEditor@{ExprEditor}}
+\subsubsection[{ExprEditor}]{\setlength{\rightskip}{0pt plus 5cm}ExprEditor::ExprEditor (
+\begin{DoxyParamCaption}
+\item[{{\bf TypeExpr}}]{typeExpr, }
+\item[{{\bf TypeAction}}]{typeAction, }
+\item[{QWidget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}explicit\mbox{]}}}}
+\label{class_expr_editor_a0419ad05b21b60dc52a7773a66772b99}
+\hypertarget{class_expr_editor_a3757fe631cab871c36ee40f028bc8f21}{
+\index{ExprEditor@{ExprEditor}!ExprEditor@{ExprEditor}}
+\index{ExprEditor@{ExprEditor}!ExprEditor@{ExprEditor}}
+\subsubsection[{ExprEditor}]{\setlength{\rightskip}{0pt plus 5cm}ExprEditor::ExprEditor (
+\begin{DoxyParamCaption}
+\item[{{\bf NKBManager} $\ast$}]{manager, }
+\item[{QModelIndex}]{slotIndex, }
+\item[{QString}]{domain, }
+\item[{{\bf TypeExpr}}]{typeExpr, }
+\item[{{\bf TypeAction}}]{typeAction, }
+\item[{QWidget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}explicit\mbox{]}}}}
+\label{class_expr_editor_a3757fe631cab871c36ee40f028bc8f21}
+
+
+this-\/$>$cmbVar-\/$>$setModel(\hyperlink{class_data_models_a74f2fd552ed97d41d543fe8ad5c2b88e}{DataModels::instance()}-\/$>$varModel); 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_expr_editor_a2ddaedfa02379f15cebaca685b35c5cc}{
+\index{ExprEditor@{ExprEditor}!getExpr@{getExpr}}
+\index{getExpr@{getExpr}!ExprEditor@{ExprEditor}}
+\subsubsection[{getExpr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expr} $\ast$ ExprEditor::getExpr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_expr_editor_a2ddaedfa02379f15cebaca685b35c5cc}
+\hypertarget{class_expr_editor_a868afd2650e2162833ccc0d517e03c31}{
+\index{ExprEditor@{ExprEditor}!getExpr@{getExpr}}
+\index{getExpr@{getExpr}!ExprEditor@{ExprEditor}}
+\subsubsection[{getExpr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Expr}$\ast$ ExprEditor::getExpr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_expr_editor_a868afd2650e2162833ccc0d517e03c31}
+\hypertarget{class_expr_editor_a83f4c96905d5f7df42f1cbfe0b0d5458}{
+\index{ExprEditor@{ExprEditor}!onCancelClick@{onCancelClick}}
+\index{onCancelClick@{onCancelClick}!ExprEditor@{ExprEditor}}
+\subsubsection[{onCancelClick}]{\setlength{\rightskip}{0pt plus 5cm}void ExprEditor::onCancelClick (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_expr_editor_a83f4c96905d5f7df42f1cbfe0b0d5458}
+\hypertarget{class_expr_editor_a83f4c96905d5f7df42f1cbfe0b0d5458}{
+\index{ExprEditor@{ExprEditor}!onCancelClick@{onCancelClick}}
+\index{onCancelClick@{onCancelClick}!ExprEditor@{ExprEditor}}
+\subsubsection[{onCancelClick}]{\setlength{\rightskip}{0pt plus 5cm}void ExprEditor::onCancelClick (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_expr_editor_a83f4c96905d5f7df42f1cbfe0b0d5458}
+\hypertarget{class_expr_editor_ace6097f735f6f3828cfcfa4ab976dcb2}{
+\index{ExprEditor@{ExprEditor}!onCurrentVarChanged@{onCurrentVarChanged}}
+\index{onCurrentVarChanged@{onCurrentVarChanged}!ExprEditor@{ExprEditor}}
+\subsubsection[{onCurrentVarChanged}]{\setlength{\rightskip}{0pt plus 5cm}void ExprEditor::onCurrentVarChanged (
+\begin{DoxyParamCaption}
+\item[{int}]{inx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_expr_editor_ace6097f735f6f3828cfcfa4ab976dcb2}
+\hypertarget{class_expr_editor_ace6097f735f6f3828cfcfa4ab976dcb2}{
+\index{ExprEditor@{ExprEditor}!onCurrentVarChanged@{onCurrentVarChanged}}
+\index{onCurrentVarChanged@{onCurrentVarChanged}!ExprEditor@{ExprEditor}}
+\subsubsection[{onCurrentVarChanged}]{\setlength{\rightskip}{0pt plus 5cm}void ExprEditor::onCurrentVarChanged (
+\begin{DoxyParamCaption}
+\item[{int}]{inx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_expr_editor_ace6097f735f6f3828cfcfa4ab976dcb2}
+\hypertarget{class_expr_editor_a5ae8cf51b1d65c14c6581bcdb9c85027}{
+\index{ExprEditor@{ExprEditor}!onOkAndReturnClick@{onOkAndReturnClick}}
+\index{onOkAndReturnClick@{onOkAndReturnClick}!ExprEditor@{ExprEditor}}
+\subsubsection[{onOkAndReturnClick}]{\setlength{\rightskip}{0pt plus 5cm}void ExprEditor::onOkAndReturnClick (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_expr_editor_a5ae8cf51b1d65c14c6581bcdb9c85027}
+\hypertarget{class_expr_editor_a5ae8cf51b1d65c14c6581bcdb9c85027}{
+\index{ExprEditor@{ExprEditor}!onOkAndReturnClick@{onOkAndReturnClick}}
+\index{onOkAndReturnClick@{onOkAndReturnClick}!ExprEditor@{ExprEditor}}
+\subsubsection[{onOkAndReturnClick}]{\setlength{\rightskip}{0pt plus 5cm}void ExprEditor::onOkAndReturnClick (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_expr_editor_a5ae8cf51b1d65c14c6581bcdb9c85027}
+\hypertarget{class_expr_editor_add1683227b73a387df7f92242e6f9e49}{
+\index{ExprEditor@{ExprEditor}!onOkClick@{onOkClick}}
+\index{onOkClick@{onOkClick}!ExprEditor@{ExprEditor}}
+\subsubsection[{onOkClick}]{\setlength{\rightskip}{0pt plus 5cm}void ExprEditor::onOkClick (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_expr_editor_add1683227b73a387df7f92242e6f9e49}
+\hypertarget{class_expr_editor_add1683227b73a387df7f92242e6f9e49}{
+\index{ExprEditor@{ExprEditor}!onOkClick@{onOkClick}}
+\index{onOkClick@{onOkClick}!ExprEditor@{ExprEditor}}
+\subsubsection[{onOkClick}]{\setlength{\rightskip}{0pt plus 5cm}void ExprEditor::onOkClick (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_expr_editor_add1683227b73a387df7f92242e6f9e49}
+\hypertarget{class_expr_editor_a948252a9f0716401b89fbfff4b19ac49}{
+\index{ExprEditor@{ExprEditor}!onValueContextAdded@{onValueContextAdded}}
+\index{onValueContextAdded@{onValueContextAdded}!ExprEditor@{ExprEditor}}
+\subsubsection[{onValueContextAdded}]{\setlength{\rightskip}{0pt plus 5cm}void ExprEditor::onValueContextAdded (
+\begin{DoxyParamCaption}
+\item[{QString}]{newVal}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_expr_editor_a948252a9f0716401b89fbfff4b19ac49}
+\hypertarget{class_expr_editor_a948252a9f0716401b89fbfff4b19ac49}{
+\index{ExprEditor@{ExprEditor}!onValueContextAdded@{onValueContextAdded}}
+\index{onValueContextAdded@{onValueContextAdded}!ExprEditor@{ExprEditor}}
+\subsubsection[{onValueContextAdded}]{\setlength{\rightskip}{0pt plus 5cm}void ExprEditor::onValueContextAdded (
+\begin{DoxyParamCaption}
+\item[{QString}]{newVal}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_expr_editor_a948252a9f0716401b89fbfff4b19ac49}
+\hypertarget{class_expr_editor_a095b233f3425980f76fa2cc0a4d02ee0}{
+\index{ExprEditor@{ExprEditor}!onVarContextAdded@{onVarContextAdded}}
+\index{onVarContextAdded@{onVarContextAdded}!ExprEditor@{ExprEditor}}
+\subsubsection[{onVarContextAdded}]{\setlength{\rightskip}{0pt plus 5cm}void ExprEditor::onVarContextAdded (
+\begin{DoxyParamCaption}
+\item[{QString}]{newVar}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_expr_editor_a095b233f3425980f76fa2cc0a4d02ee0}
+\hypertarget{class_expr_editor_a095b233f3425980f76fa2cc0a4d02ee0}{
+\index{ExprEditor@{ExprEditor}!onVarContextAdded@{onVarContextAdded}}
+\index{onVarContextAdded@{onVarContextAdded}!ExprEditor@{ExprEditor}}
+\subsubsection[{onVarContextAdded}]{\setlength{\rightskip}{0pt plus 5cm}void ExprEditor::onVarContextAdded (
+\begin{DoxyParamCaption}
+\item[{QString}]{newVar}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_expr_editor_a095b233f3425980f76fa2cc0a4d02ee0}
+\hypertarget{class_expr_editor_a78d912cdfc95b50e4dfda9620df7e14e}{
+\index{ExprEditor@{ExprEditor}!reject@{reject}}
+\index{reject@{reject}!ExprEditor@{ExprEditor}}
+\subsubsection[{reject}]{\setlength{\rightskip}{0pt plus 5cm}void ExprEditor::reject (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual, slot\mbox{]}}}}
+\label{class_expr_editor_a78d912cdfc95b50e4dfda9620df7e14e}
+\hypertarget{class_expr_editor_a52172f067cd9296e95d3ced2fc6af1a5}{
+\index{ExprEditor@{ExprEditor}!reject@{reject}}
+\index{reject@{reject}!ExprEditor@{ExprEditor}}
+\subsubsection[{reject}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ExprEditor::reject (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual, slot\mbox{]}}}}
+\label{class_expr_editor_a52172f067cd9296e95d3ced2fc6af1a5}
+\hypertarget{class_expr_editor_a3915291eb02e7eb5204a2f07626c5b69}{
+\index{ExprEditor@{ExprEditor}!retranslate@{retranslate}}
+\index{retranslate@{retranslate}!ExprEditor@{ExprEditor}}
+\subsubsection[{retranslate}]{\setlength{\rightskip}{0pt plus 5cm}void ExprEditor::retranslate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_expr_editor_a3915291eb02e7eb5204a2f07626c5b69}
+\hypertarget{class_expr_editor_a3915291eb02e7eb5204a2f07626c5b69}{
+\index{ExprEditor@{ExprEditor}!retranslate@{retranslate}}
+\index{retranslate@{retranslate}!ExprEditor@{ExprEditor}}
+\subsubsection[{retranslate}]{\setlength{\rightskip}{0pt plus 5cm}void ExprEditor::retranslate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_expr_editor_a3915291eb02e7eb5204a2f07626c5b69}
+\hypertarget{class_expr_editor_a1958f9085ed67eb8a810c5a5e29fafcc}{
+\index{ExprEditor@{ExprEditor}!selectSign@{selectSign}}
+\index{selectSign@{selectSign}!ExprEditor@{ExprEditor}}
+\subsubsection[{selectSign}]{\setlength{\rightskip}{0pt plus 5cm}void ExprEditor::selectSign (
+\begin{DoxyParamCaption}
+\item[{QString}]{sign}
+\end{DoxyParamCaption}
+)}}
+\label{class_expr_editor_a1958f9085ed67eb8a810c5a5e29fafcc}
+\hypertarget{class_expr_editor_a1958f9085ed67eb8a810c5a5e29fafcc}{
+\index{ExprEditor@{ExprEditor}!selectSign@{selectSign}}
+\index{selectSign@{selectSign}!ExprEditor@{ExprEditor}}
+\subsubsection[{selectSign}]{\setlength{\rightskip}{0pt plus 5cm}void ExprEditor::selectSign (
+\begin{DoxyParamCaption}
+\item[{QString}]{sign}
+\end{DoxyParamCaption}
+)}}
+\label{class_expr_editor_a1958f9085ed67eb8a810c5a5e29fafcc}
+\hypertarget{class_expr_editor_af0eea4ef9f1cc6979c6ddbcd12b8a23d}{
+\index{ExprEditor@{ExprEditor}!selectVal@{selectVal}}
+\index{selectVal@{selectVal}!ExprEditor@{ExprEditor}}
+\subsubsection[{selectVal}]{\setlength{\rightskip}{0pt plus 5cm}void ExprEditor::selectVal (
+\begin{DoxyParamCaption}
+\item[{QString}]{val}
+\end{DoxyParamCaption}
+)}}
+\label{class_expr_editor_af0eea4ef9f1cc6979c6ddbcd12b8a23d}
+\hypertarget{class_expr_editor_af0eea4ef9f1cc6979c6ddbcd12b8a23d}{
+\index{ExprEditor@{ExprEditor}!selectVal@{selectVal}}
+\index{selectVal@{selectVal}!ExprEditor@{ExprEditor}}
+\subsubsection[{selectVal}]{\setlength{\rightskip}{0pt plus 5cm}void ExprEditor::selectVal (
+\begin{DoxyParamCaption}
+\item[{QString}]{val}
+\end{DoxyParamCaption}
+)}}
+\label{class_expr_editor_af0eea4ef9f1cc6979c6ddbcd12b8a23d}
+\hypertarget{class_expr_editor_a50aac6d62bb0d5bea6ee6913de5b7304}{
+\index{ExprEditor@{ExprEditor}!selectVar@{selectVar}}
+\index{selectVar@{selectVar}!ExprEditor@{ExprEditor}}
+\subsubsection[{selectVar}]{\setlength{\rightskip}{0pt plus 5cm}void ExprEditor::selectVar (
+\begin{DoxyParamCaption}
+\item[{QString}]{var}
+\end{DoxyParamCaption}
+)}}
+\label{class_expr_editor_a50aac6d62bb0d5bea6ee6913de5b7304}
+\hypertarget{class_expr_editor_ab032a7dc4fae43ab58efde49668213ab}{
+\index{ExprEditor@{ExprEditor}!selectVar@{selectVar}}
+\index{selectVar@{selectVar}!ExprEditor@{ExprEditor}}
+\subsubsection[{selectVar}]{\setlength{\rightskip}{0pt plus 5cm}void ExprEditor::selectVar (
+\begin{DoxyParamCaption}
+\item[{QModelIndex}]{index}
+\end{DoxyParamCaption}
+)}}
+\label{class_expr_editor_ab032a7dc4fae43ab58efde49668213ab}
+\hypertarget{class_expr_editor_ab032a7dc4fae43ab58efde49668213ab}{
+\index{ExprEditor@{ExprEditor}!selectVar@{selectVar}}
+\index{selectVar@{selectVar}!ExprEditor@{ExprEditor}}
+\subsubsection[{selectVar}]{\setlength{\rightskip}{0pt plus 5cm}void ExprEditor::selectVar (
+\begin{DoxyParamCaption}
+\item[{QModelIndex}]{index}
+\end{DoxyParamCaption}
+)}}
+\label{class_expr_editor_ab032a7dc4fae43ab58efde49668213ab}
+\hypertarget{class_expr_editor_a26b2f380340bf8f0a3f78ea645f9fc9d}{
+\index{ExprEditor@{ExprEditor}!valAdded@{valAdded}}
+\index{valAdded@{valAdded}!ExprEditor@{ExprEditor}}
+\subsubsection[{valAdded}]{\setlength{\rightskip}{0pt plus 5cm}void ExprEditor::valAdded (
+\begin{DoxyParamCaption}
+\item[{QString}]{varName, }
+\item[{QString}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}
+\label{class_expr_editor_a26b2f380340bf8f0a3f78ea645f9fc9d}
+\hypertarget{class_expr_editor_a26b2f380340bf8f0a3f78ea645f9fc9d}{
+\index{ExprEditor@{ExprEditor}!valAdded@{valAdded}}
+\index{valAdded@{valAdded}!ExprEditor@{ExprEditor}}
+\subsubsection[{valAdded}]{\setlength{\rightskip}{0pt plus 5cm}void ExprEditor::valAdded (
+\begin{DoxyParamCaption}
+\item[{QString}]{varName, }
+\item[{QString}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}
+\label{class_expr_editor_a26b2f380340bf8f0a3f78ea645f9fc9d}
+\hypertarget{class_expr_editor_a9287f32e4b659ea721cc64bc18431dee}{
+\index{ExprEditor@{ExprEditor}!varAdded@{varAdded}}
+\index{varAdded@{varAdded}!ExprEditor@{ExprEditor}}
+\subsubsection[{varAdded}]{\setlength{\rightskip}{0pt plus 5cm}void ExprEditor::varAdded (
+\begin{DoxyParamCaption}
+\item[{QString}]{varName}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}
+\label{class_expr_editor_a9287f32e4b659ea721cc64bc18431dee}
+\hypertarget{class_expr_editor_a9287f32e4b659ea721cc64bc18431dee}{
+\index{ExprEditor@{ExprEditor}!varAdded@{varAdded}}
+\index{varAdded@{varAdded}!ExprEditor@{ExprEditor}}
+\subsubsection[{varAdded}]{\setlength{\rightskip}{0pt plus 5cm}void ExprEditor::varAdded (
+\begin{DoxyParamCaption}
+\item[{QString}]{varName}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}
+\label{class_expr_editor_a9287f32e4b659ea721cc64bc18431dee}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_expr_editor_ad5fabd441b537dd0f7a6d224651e779e}{
+\index{ExprEditor@{ExprEditor}!btnAddNewExpr@{btnAddNewExpr}}
+\index{btnAddNewExpr@{btnAddNewExpr}!ExprEditor@{ExprEditor}}
+\subsubsection[{btnAddNewExpr}]{\setlength{\rightskip}{0pt plus 5cm}QPushButton $\ast$ {\bf ExprEditor::btnAddNewExpr}}}
+\label{class_expr_editor_ad5fabd441b537dd0f7a6d224651e779e}
+\hypertarget{class_expr_editor_ab5d219b7e1f2e638cff52daca84fc51d}{
+\index{ExprEditor@{ExprEditor}!btnCancel@{btnCancel}}
+\index{btnCancel@{btnCancel}!ExprEditor@{ExprEditor}}
+\subsubsection[{btnCancel}]{\setlength{\rightskip}{0pt plus 5cm}QPushButton $\ast$ {\bf ExprEditor::btnCancel}}}
+\label{class_expr_editor_ab5d219b7e1f2e638cff52daca84fc51d}
+\hypertarget{class_expr_editor_a8604bf3ec0dc18c57d659ab5e30cd6a3}{
+\index{ExprEditor@{ExprEditor}!btnOK@{btnOK}}
+\index{btnOK@{btnOK}!ExprEditor@{ExprEditor}}
+\subsubsection[{btnOK}]{\setlength{\rightskip}{0pt plus 5cm}QPushButton $\ast$ {\bf ExprEditor::btnOK}}}
+\label{class_expr_editor_a8604bf3ec0dc18c57d659ab5e30cd6a3}
+\hypertarget{class_expr_editor_a67b34d1b437ea1850eb4d347b143230c}{
+\index{ExprEditor@{ExprEditor}!cmbArSign@{cmbArSign}}
+\index{cmbArSign@{cmbArSign}!ExprEditor@{ExprEditor}}
+\subsubsection[{cmbArSign}]{\setlength{\rightskip}{0pt plus 5cm}QComboBox$\ast$ {\bf ExprEditor::cmbArSign}}}
+\label{class_expr_editor_a67b34d1b437ea1850eb4d347b143230c}
+\hypertarget{class_expr_editor_a18bdcf551100de6ea18ca691c84a53c8}{
+\index{ExprEditor@{ExprEditor}!cmbSign@{cmbSign}}
+\index{cmbSign@{cmbSign}!ExprEditor@{ExprEditor}}
+\subsubsection[{cmbSign}]{\setlength{\rightskip}{0pt plus 5cm}QComboBox $\ast$ {\bf ExprEditor::cmbSign}}}
+\label{class_expr_editor_a18bdcf551100de6ea18ca691c84a53c8}
+\hypertarget{class_expr_editor_a9e1030ee464d33d43444ceaacd4173f0}{
+\index{ExprEditor@{ExprEditor}!cmbVal@{cmbVal}}
+\index{cmbVal@{cmbVal}!ExprEditor@{ExprEditor}}
+\subsubsection[{cmbVal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf MyComboBox} $\ast$ {\bf ExprEditor::cmbVal}}}
+\label{class_expr_editor_a9e1030ee464d33d43444ceaacd4173f0}
+\hypertarget{class_expr_editor_aeba4b8d69aaeffad27becab449f597bd}{
+\index{ExprEditor@{ExprEditor}!cmbVar@{cmbVar}}
+\index{cmbVar@{cmbVar}!ExprEditor@{ExprEditor}}
+\subsubsection[{cmbVar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf MyComboBox} $\ast$ {\bf ExprEditor::cmbVar}}}
+\label{class_expr_editor_aeba4b8d69aaeffad27becab449f597bd}
+\hypertarget{class_expr_editor_a8c2f70f6030f45e96443bf75afb614ef}{
+\index{ExprEditor@{ExprEditor}!layArSign@{layArSign}}
+\index{layArSign@{layArSign}!ExprEditor@{ExprEditor}}
+\subsubsection[{layArSign}]{\setlength{\rightskip}{0pt plus 5cm}QVBoxLayout$\ast$ {\bf ExprEditor::layArSign}}}
+\label{class_expr_editor_a8c2f70f6030f45e96443bf75afb614ef}
+\hypertarget{class_expr_editor_a4839aedd2329ea677bf1fc9d794fb7fb}{
+\index{ExprEditor@{ExprEditor}!layDown@{layDown}}
+\index{layDown@{layDown}!ExprEditor@{ExprEditor}}
+\subsubsection[{layDown}]{\setlength{\rightskip}{0pt plus 5cm}QHBoxLayout $\ast$ {\bf ExprEditor::layDown}}}
+\label{class_expr_editor_a4839aedd2329ea677bf1fc9d794fb7fb}
+\hypertarget{class_expr_editor_a217e87862256514b6168f007508a2b9c}{
+\index{ExprEditor@{ExprEditor}!layMain@{layMain}}
+\index{layMain@{layMain}!ExprEditor@{ExprEditor}}
+\subsubsection[{layMain}]{\setlength{\rightskip}{0pt plus 5cm}QVBoxLayout $\ast$ {\bf ExprEditor::layMain}}}
+\label{class_expr_editor_a217e87862256514b6168f007508a2b9c}
+\hypertarget{class_expr_editor_af49fb92e329600de79707e3a8e10935e}{
+\index{ExprEditor@{ExprEditor}!laySign@{laySign}}
+\index{laySign@{laySign}!ExprEditor@{ExprEditor}}
+\subsubsection[{laySign}]{\setlength{\rightskip}{0pt plus 5cm}QVBoxLayout $\ast$ {\bf ExprEditor::laySign}}}
+\label{class_expr_editor_af49fb92e329600de79707e3a8e10935e}
+\hypertarget{class_expr_editor_a5d0bdf568726e16a97fc2ce38c9cedc1}{
+\index{ExprEditor@{ExprEditor}!laySummer@{laySummer}}
+\index{laySummer@{laySummer}!ExprEditor@{ExprEditor}}
+\subsubsection[{laySummer}]{\setlength{\rightskip}{0pt plus 5cm}QVBoxLayout$\ast$ {\bf ExprEditor::laySummer}}}
+\label{class_expr_editor_a5d0bdf568726e16a97fc2ce38c9cedc1}
+\hypertarget{class_expr_editor_a43c9a963c6e9983ee91ed192c5c3543e}{
+\index{ExprEditor@{ExprEditor}!layUp@{layUp}}
+\index{layUp@{layUp}!ExprEditor@{ExprEditor}}
+\subsubsection[{layUp}]{\setlength{\rightskip}{0pt plus 5cm}QHBoxLayout $\ast$ {\bf ExprEditor::layUp}}}
+\label{class_expr_editor_a43c9a963c6e9983ee91ed192c5c3543e}
+\hypertarget{class_expr_editor_a1a466cf67dec13e1055f8182c190896d}{
+\index{ExprEditor@{ExprEditor}!layVal@{layVal}}
+\index{layVal@{layVal}!ExprEditor@{ExprEditor}}
+\subsubsection[{layVal}]{\setlength{\rightskip}{0pt plus 5cm}QVBoxLayout $\ast$ {\bf ExprEditor::layVal}}}
+\label{class_expr_editor_a1a466cf67dec13e1055f8182c190896d}
+\hypertarget{class_expr_editor_aaa0ac9cac3be15113f3197a5be126517}{
+\index{ExprEditor@{ExprEditor}!layVar@{layVar}}
+\index{layVar@{layVar}!ExprEditor@{ExprEditor}}
+\subsubsection[{layVar}]{\setlength{\rightskip}{0pt plus 5cm}QVBoxLayout $\ast$ {\bf ExprEditor::layVar}}}
+\label{class_expr_editor_aaa0ac9cac3be15113f3197a5be126517}
+\hypertarget{class_expr_editor_ae07c34b9202d8b1594874e1da7bf641e}{
+\index{ExprEditor@{ExprEditor}!lbArSign@{lbArSign}}
+\index{lbArSign@{lbArSign}!ExprEditor@{ExprEditor}}
+\subsubsection[{lbArSign}]{\setlength{\rightskip}{0pt plus 5cm}QLabel$\ast$ {\bf ExprEditor::lbArSign}}}
+\label{class_expr_editor_ae07c34b9202d8b1594874e1da7bf641e}
+\hypertarget{class_expr_editor_ac07bdb08a648b9b304d4630e1533227a}{
+\index{ExprEditor@{ExprEditor}!lbSign@{lbSign}}
+\index{lbSign@{lbSign}!ExprEditor@{ExprEditor}}
+\subsubsection[{lbSign}]{\setlength{\rightskip}{0pt plus 5cm}QLabel $\ast$ {\bf ExprEditor::lbSign}}}
+\label{class_expr_editor_ac07bdb08a648b9b304d4630e1533227a}
+\hypertarget{class_expr_editor_a9e6cb92539ffa042c322bfb4c07086c9}{
+\index{ExprEditor@{ExprEditor}!lbSummer@{lbSummer}}
+\index{lbSummer@{lbSummer}!ExprEditor@{ExprEditor}}
+\subsubsection[{lbSummer}]{\setlength{\rightskip}{0pt plus 5cm}QLabel$\ast$ {\bf ExprEditor::lbSummer}}}
+\label{class_expr_editor_a9e6cb92539ffa042c322bfb4c07086c9}
+\hypertarget{class_expr_editor_ae9598d6fc354e4550a814cbb4df4cd25}{
+\index{ExprEditor@{ExprEditor}!lbVal@{lbVal}}
+\index{lbVal@{lbVal}!ExprEditor@{ExprEditor}}
+\subsubsection[{lbVal}]{\setlength{\rightskip}{0pt plus 5cm}QLabel $\ast$ {\bf ExprEditor::lbVal}}}
+\label{class_expr_editor_ae9598d6fc354e4550a814cbb4df4cd25}
+\hypertarget{class_expr_editor_aabb83efdb2d69adedc9622a8e165c77c}{
+\index{ExprEditor@{ExprEditor}!lbVar@{lbVar}}
+\index{lbVar@{lbVar}!ExprEditor@{ExprEditor}}
+\subsubsection[{lbVar}]{\setlength{\rightskip}{0pt plus 5cm}QLabel $\ast$ {\bf ExprEditor::lbVar}}}
+\label{class_expr_editor_aabb83efdb2d69adedc9622a8e165c77c}
+\hypertarget{class_expr_editor_ab0f7f0b4608739854185f260bf481034}{
+\index{ExprEditor@{ExprEditor}!m\_\-domain@{m\_\-domain}}
+\index{m\_\-domain@{m\_\-domain}!ExprEditor@{ExprEditor}}
+\subsubsection[{m\_\-domain}]{\setlength{\rightskip}{0pt plus 5cm}QString {\bf ExprEditor::m\_\-domain}}}
+\label{class_expr_editor_ab0f7f0b4608739854185f260bf481034}
+\hypertarget{class_expr_editor_a32a743cb86f6f7ed51b1b4e6ababee5f}{
+\index{ExprEditor@{ExprEditor}!m\_\-kbManager@{m\_\-kbManager}}
+\index{m\_\-kbManager@{m\_\-kbManager}!ExprEditor@{ExprEditor}}
+\subsubsection[{m\_\-kbManager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NKBManager}$\ast$ {\bf ExprEditor::m\_\-kbManager}}}
+\label{class_expr_editor_a32a743cb86f6f7ed51b1b4e6ababee5f}
+\hypertarget{class_expr_editor_ad7865d3c9c0424a319cf937265c95a68}{
+\index{ExprEditor@{ExprEditor}!m\_\-slotIndex@{m\_\-slotIndex}}
+\index{m\_\-slotIndex@{m\_\-slotIndex}!ExprEditor@{ExprEditor}}
+\subsubsection[{m\_\-slotIndex}]{\setlength{\rightskip}{0pt plus 5cm}QModelIndex {\bf ExprEditor::m\_\-slotIndex}}}
+\label{class_expr_editor_ad7865d3c9c0424a319cf937265c95a68}
+\hypertarget{class_expr_editor_a672fb9b691a10117939b93927cb56cef}{
+\index{ExprEditor@{ExprEditor}!spbSummer@{spbSummer}}
+\index{spbSummer@{spbSummer}!ExprEditor@{ExprEditor}}
+\subsubsection[{spbSummer}]{\setlength{\rightskip}{0pt plus 5cm}QSpinBox$\ast$ {\bf ExprEditor::spbSummer}}}
+\label{class_expr_editor_a672fb9b691a10117939b93927cb56cef}
+\hypertarget{class_expr_editor_a6315823c9d42e1ae65aebc327724e489}{
+\index{ExprEditor@{ExprEditor}!startAgain@{startAgain}}
+\index{startAgain@{startAgain}!ExprEditor@{ExprEditor}}
+\subsubsection[{startAgain}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ExprEditor::startAgain}}}
+\label{class_expr_editor_a6315823c9d42e1ae65aebc327724e489}
+\hypertarget{class_expr_editor_a21311ad2ed99205ae664fcc9e975aae3}{
+\index{ExprEditor@{ExprEditor}!typeAction@{typeAction}}
+\index{typeAction@{typeAction}!ExprEditor@{ExprEditor}}
+\subsubsection[{typeAction}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TypeAction} {\bf ExprEditor::typeAction}}}
+\label{class_expr_editor_a21311ad2ed99205ae664fcc9e975aae3}
+\hypertarget{class_expr_editor_a1c7b9320a532938c395d2397a09169f3}{
+\index{ExprEditor@{ExprEditor}!typeExpr@{typeExpr}}
+\index{typeExpr@{typeExpr}!ExprEditor@{ExprEditor}}
+\subsubsection[{typeExpr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TypeExpr} {\bf ExprEditor::typeExpr}}}
+\label{class_expr_editor_a1c7b9320a532938c395d2397a09169f3}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+ES/ui/\hyperlink{_e_s_2ui_2expreditor_8h}{expreditor.h}\item 
+ui/\hyperlink{ui_2expreditor_8h}{expreditor.h}\item 
+ES/ui/\hyperlink{_e_s_2ui_2expreditor_8cpp}{expreditor.cpp}\item 
+ui/\hyperlink{ui_2expreditor_8cpp}{expreditor.cpp}\end{DoxyCompactItemize}

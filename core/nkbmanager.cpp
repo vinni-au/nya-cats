@@ -60,7 +60,7 @@ QMap<unsigned, QString> NKBManager::frameNames()
     return map;
 }
 
-void NKBManager::selectFrame(unsigned id)
+void NKBManager::selectFrame(unsigned)
 {
 
 }

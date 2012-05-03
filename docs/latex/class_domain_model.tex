@@ -1,0 +1,919 @@
+\hypertarget{class_domain_model}{
+\section{DomainModel Class Reference}
+\label{class_domain_model}\index{DomainModel@{DomainModel}}
+}
+
+
+{\ttfamily \#include $<$domainmodel.h$>$}
+
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_domain_model_ab4ae8aa3336c8308a172c97d9e288e60}{sigValueExists} (QModelIndex index, QVariant value)
+\item 
+void \hyperlink{class_domain_model_a52695bb18591824f8a4bd675ea1a869e}{sigDataChanged} ()
+\item 
+void \hyperlink{class_domain_model_a5931cd54a1b74bc94b4dfe3b37b71275}{sigErrorWhileValidating} (QString errorText)
+\item 
+void \hyperlink{class_domain_model_ab5ef42f1a6eefc546531f24f5afa3604}{sigDomainDeleted} (QString domainName)
+\item 
+void \hyperlink{class_domain_model_af87a447e5be936b000d27959d4a03f62}{sigDomainNameChanged} (QString oldName, QString newName)
+\item 
+void \hyperlink{class_domain_model_a53602074e4054879e00a484b7c349375}{sigDomainValueChanged} (QString domainName, QString oldValue, QString newValue)
+\item 
+void \hyperlink{class_domain_model_ad937dfd63b21f1ab66dccbb9eeda5028}{sigDomainValueDeleted} (QString domainName, QString value)
+\item 
+void \hyperlink{class_domain_model_ab4ae8aa3336c8308a172c97d9e288e60}{sigValueExists} (QModelIndex index, QVariant value)
+\item 
+void \hyperlink{class_domain_model_a52695bb18591824f8a4bd675ea1a869e}{sigDataChanged} ()
+\item 
+void \hyperlink{class_domain_model_a5931cd54a1b74bc94b4dfe3b37b71275}{sigErrorWhileValidating} (QString errorText)
+\item 
+void \hyperlink{class_domain_model_ab5ef42f1a6eefc546531f24f5afa3604}{sigDomainDeleted} (QString domainName)
+\item 
+void \hyperlink{class_domain_model_af87a447e5be936b000d27959d4a03f62}{sigDomainNameChanged} (QString oldName, QString newName)
+\item 
+void \hyperlink{class_domain_model_a53602074e4054879e00a484b7c349375}{sigDomainValueChanged} (QString domainName, QString oldValue, QString newValue)
+\item 
+void \hyperlink{class_domain_model_ad937dfd63b21f1ab66dccbb9eeda5028}{sigDomainValueDeleted} (QString domainName, QString value)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_domain_model_a7cdc9785bda6c89d0b87b46bfe38eb3d}{DomainModel} (QObject $\ast$parent=0)
+\item 
+virtual \hyperlink{class_domain_model_a74b790954bc7d7c0cb8cb86cdc60cd26}{$\sim$DomainModel} ()
+\item 
+void \hyperlink{class_domain_model_aa39aa4b344dce747e660a1bba95099a4}{setRootNode} (\hyperlink{class_domain_node}{DomainNode} $\ast$node)
+\item 
+virtual QModelIndex \hyperlink{class_domain_model_a5a39bde573e8a23cb2dcb94f16699b81}{index} (int row, int column, const QModelIndex \&parent) const 
+\item 
+virtual QModelIndex \hyperlink{class_domain_model_a1a57deb8cd241f680ecade666ebbe20c}{parent} (const QModelIndex \&child) const 
+\item 
+virtual int \hyperlink{class_domain_model_a53676872f60898f328f17d14c5fd72e2}{rowCount} (const QModelIndex \&parent) const 
+\item 
+virtual int \hyperlink{class_domain_model_a857745f2da0e7224824fa24df98abbd8}{columnCount} (const QModelIndex \&parent) const 
+\item 
+virtual QVariant \hyperlink{class_domain_model_a0532aa6f89fadb924ed0263ee919282a}{data} (const QModelIndex \&index, int role) const 
+\item 
+virtual bool \hyperlink{class_domain_model_ae4b94474d3778775b1373e2774a602f4}{setData} (const QModelIndex \&index, const QVariant \&value, int role)
+\item 
+virtual Qt::ItemFlags \hyperlink{class_domain_model_a382e0c2e1e2d606f9569448c37a129f1}{flags} (const QModelIndex \&index) const 
+\item 
+virtual bool \hyperlink{class_domain_model_ab2bff6186333360d66aaf9f959deb663}{removeRow} (int row, const QModelIndex \&parent)
+\item 
+virtual bool \hyperlink{class_domain_model_a31776f23bc9e6d430ab4655caedf7ad6}{insertRow} (int row, const QModelIndex \&parent)
+\item 
+virtual Qt::DropActions \hyperlink{class_domain_model_a8fbc70443f3a4452e5d4abb045d79517}{supportedDropActions} () const 
+\item 
+void \hyperlink{class_domain_model_a777f957e272990846fe488a3761ed436}{setDomains} (QList$<$ \hyperlink{class_domain}{Domain} $\ast$ $>$ $\ast$domains)
+\item 
+QModelIndex \hyperlink{class_domain_model_a75b45483c795dddd91568e7844e9ee83}{addDomain} ()
+\item 
+void \hyperlink{class_domain_model_ae1f04fa1cc292b5534075f3e301664aa}{editDomain} (QModelIndex domain, QString newName)
+\item 
+void \hyperlink{class_domain_model_aa592b6841ac4a946f9e65c622b324efd}{deleteDomain} (QModelIndex domain)
+\item 
+bool \hyperlink{class_domain_model_a96b1a8f93cfb4ced4dc280eab3940f27}{domainExists} (QString domainName)
+\item 
+QModelIndex \hyperlink{class_domain_model_ab4547cf7ef7f375671d9ca37b6c0720b}{addValue} (QModelIndex domainIndex)
+\item 
+void \hyperlink{class_domain_model_af1433c75de73ddb81e556793d11f9e1d}{deleteValue} (QModelIndex valueIndex)
+\item 
+bool \hyperlink{class_domain_model_a84cd3e480bce10f08ebc0d41826a98d9}{valueExists} (QString domainName, QString value)
+\item 
+bool \hyperlink{class_domain_model_a3b68019a9add9363920012c15fa8e5b9}{valueExists} (\hyperlink{class_domain}{Domain} $\ast$domain, QString value)
+\item 
+QModelIndex \hyperlink{class_domain_model_ab6e0399356a6c9046b91fe37bdb90a9f}{indexByName} (QString domain)
+\item 
+QDomElement \hyperlink{class_domain_model_a31a98493ea55e4cc430b6623c3ebfcdf}{toXml} (QDomDocument \&doc)
+\item 
+void \hyperlink{class_domain_model_a1d23cde23fc08a0c7ad095c3fda6ac7d}{fromXml} (QDomElement \&domains)
+\item 
+bool \hyperlink{class_domain_model_a941c1e4edffffb3e4441bde9aa91a560}{isValid} ()
+\item 
+void \hyperlink{class_domain_model_a77a06ec53eaf555cef2741cee969b591}{setItemsIsEditable} (bool isEditable)
+\item 
+\hyperlink{class_domain}{Domain} $\ast$ \hyperlink{class_domain_model_a4cab7c29dea9786533f6378328999d88}{getDomainByName} (QString name)
+\item 
+void \hyperlink{class_domain_model_af152b5c038dc4ac3c564e0238e4eb62d}{moveBefore} (QModelIndex sourceInx, QModelIndex destInx)
+\item 
+QStringList \hyperlink{class_domain_model_ab9218e6d390c8617efb7b7b507fa1631}{mimeTypes} () const 
+\item 
+QMimeData $\ast$ \hyperlink{class_domain_model_a9686294f858aa9bf0cd2b09657867d42}{mimeData} (const QModelIndexList \&indexes) const 
+\item 
+bool \hyperlink{class_domain_model_a21665633939b2d605aa0749f33957b4d}{dropMimeData} (const QMimeData $\ast$data, Qt::DropAction action, int row, int column, const QModelIndex \&parent)
+\item 
+\hyperlink{class_domain_model_a7cdc9785bda6c89d0b87b46bfe38eb3d}{DomainModel} (QObject $\ast$parent=0)
+\item 
+virtual \hyperlink{class_domain_model_afd979016390d3df15a859c3342ef7127}{$\sim$DomainModel} ()
+\item 
+void \hyperlink{class_domain_model_aa39aa4b344dce747e660a1bba95099a4}{setRootNode} (\hyperlink{class_domain_node}{DomainNode} $\ast$node)
+\item 
+virtual QModelIndex \hyperlink{class_domain_model_a49ff448341c2c244f348157cb69ac13a}{index} (int row, int column, const QModelIndex \&parent) const 
+\item 
+virtual QModelIndex \hyperlink{class_domain_model_a1eb72b95578c4da97ed957dd1a44c230}{parent} (const QModelIndex \&child) const 
+\item 
+virtual int \hyperlink{class_domain_model_a5723a990a0ee842c0b8910bfa83812b3}{rowCount} (const QModelIndex \&parent) const 
+\item 
+virtual int \hyperlink{class_domain_model_a8ab8ec63857e51ef057d0160a74e3451}{columnCount} (const QModelIndex \&parent) const 
+\item 
+virtual QVariant \hyperlink{class_domain_model_a132fbb7abd4f2534894ad1676f86b9d0}{data} (const QModelIndex \&index, int role) const 
+\item 
+virtual bool \hyperlink{class_domain_model_a21a193d100c483df3ad313fa1d3d9ad1}{setData} (const QModelIndex \&index, const QVariant \&value, int role)
+\item 
+virtual Qt::ItemFlags \hyperlink{class_domain_model_a5c4995aa28819210f48a592f4209ecde}{flags} (const QModelIndex \&index) const 
+\item 
+virtual bool \hyperlink{class_domain_model_a3b52a74e9944aa510b6ab45ab304809e}{removeRow} (int row, const QModelIndex \&parent)
+\item 
+virtual bool \hyperlink{class_domain_model_ad545ab686850974ce49436f18e47c041}{insertRow} (int row, const QModelIndex \&parent)
+\item 
+virtual Qt::DropActions \hyperlink{class_domain_model_a15f3ae980ad9922dfcde90e0d3934338}{supportedDropActions} () const 
+\item 
+void \hyperlink{class_domain_model_a777f957e272990846fe488a3761ed436}{setDomains} (QList$<$ \hyperlink{class_domain}{Domain} $\ast$ $>$ $\ast$domains)
+\item 
+QModelIndex \hyperlink{class_domain_model_a75b45483c795dddd91568e7844e9ee83}{addDomain} ()
+\item 
+void \hyperlink{class_domain_model_ae1f04fa1cc292b5534075f3e301664aa}{editDomain} (QModelIndex domain, QString newName)
+\item 
+void \hyperlink{class_domain_model_aa592b6841ac4a946f9e65c622b324efd}{deleteDomain} (QModelIndex domain)
+\item 
+bool \hyperlink{class_domain_model_a96b1a8f93cfb4ced4dc280eab3940f27}{domainExists} (QString domainName)
+\item 
+QModelIndex \hyperlink{class_domain_model_ab4547cf7ef7f375671d9ca37b6c0720b}{addValue} (QModelIndex domainIndex)
+\item 
+void \hyperlink{class_domain_model_af1433c75de73ddb81e556793d11f9e1d}{deleteValue} (QModelIndex valueIndex)
+\item 
+bool \hyperlink{class_domain_model_a84cd3e480bce10f08ebc0d41826a98d9}{valueExists} (QString domainName, QString value)
+\item 
+bool \hyperlink{class_domain_model_a3b68019a9add9363920012c15fa8e5b9}{valueExists} (\hyperlink{class_domain}{Domain} $\ast$domain, QString value)
+\item 
+QModelIndex \hyperlink{class_domain_model_ab6e0399356a6c9046b91fe37bdb90a9f}{indexByName} (QString domain)
+\item 
+QDomElement \hyperlink{class_domain_model_a31a98493ea55e4cc430b6623c3ebfcdf}{toXml} (QDomDocument \&doc)
+\item 
+void \hyperlink{class_domain_model_a1d23cde23fc08a0c7ad095c3fda6ac7d}{fromXml} (QDomElement \&domains)
+\item 
+bool \hyperlink{class_domain_model_a941c1e4edffffb3e4441bde9aa91a560}{isValid} ()
+\item 
+void \hyperlink{class_domain_model_a77a06ec53eaf555cef2741cee969b591}{setItemsIsEditable} (bool isEditable)
+\item 
+void \hyperlink{class_domain_model_af152b5c038dc4ac3c564e0238e4eb62d}{moveBefore} (QModelIndex sourceInx, QModelIndex destInx)
+\item 
+QStringList \hyperlink{class_domain_model_ab9218e6d390c8617efb7b7b507fa1631}{mimeTypes} () const 
+\item 
+QMimeData $\ast$ \hyperlink{class_domain_model_a387519bb071d4a1f3dcead2cde20bc07}{mimeData} (const QModelIndexList \&indexes) const 
+\item 
+bool \hyperlink{class_domain_model_a21665633939b2d605aa0749f33957b4d}{dropMimeData} (const QMimeData $\ast$data, Qt::DropAction action, int row, int column, const QModelIndex \&parent)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_domain_model_a7cdc9785bda6c89d0b87b46bfe38eb3d}{
+\index{DomainModel@{DomainModel}!DomainModel@{DomainModel}}
+\index{DomainModel@{DomainModel}!DomainModel@{DomainModel}}
+\subsubsection[{DomainModel}]{\setlength{\rightskip}{0pt plus 5cm}DomainModel::DomainModel (
+\begin{DoxyParamCaption}
+\item[{QObject $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}explicit\mbox{]}}}}
+\label{class_domain_model_a7cdc9785bda6c89d0b87b46bfe38eb3d}
+\hypertarget{class_domain_model_a74b790954bc7d7c0cb8cb86cdc60cd26}{
+\index{DomainModel@{DomainModel}!$\sim$DomainModel@{$\sim$DomainModel}}
+\index{$\sim$DomainModel@{$\sim$DomainModel}!DomainModel@{DomainModel}}
+\subsubsection[{$\sim$DomainModel}]{\setlength{\rightskip}{0pt plus 5cm}DomainModel::$\sim$DomainModel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_domain_model_a74b790954bc7d7c0cb8cb86cdc60cd26}
+\hypertarget{class_domain_model_a7cdc9785bda6c89d0b87b46bfe38eb3d}{
+\index{DomainModel@{DomainModel}!DomainModel@{DomainModel}}
+\index{DomainModel@{DomainModel}!DomainModel@{DomainModel}}
+\subsubsection[{DomainModel}]{\setlength{\rightskip}{0pt plus 5cm}DomainModel::DomainModel (
+\begin{DoxyParamCaption}
+\item[{QObject $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}explicit\mbox{]}}}}
+\label{class_domain_model_a7cdc9785bda6c89d0b87b46bfe38eb3d}
+\hypertarget{class_domain_model_afd979016390d3df15a859c3342ef7127}{
+\index{DomainModel@{DomainModel}!$\sim$DomainModel@{$\sim$DomainModel}}
+\index{$\sim$DomainModel@{$\sim$DomainModel}!DomainModel@{DomainModel}}
+\subsubsection[{$\sim$DomainModel}]{\setlength{\rightskip}{0pt plus 5cm}virtual DomainModel::$\sim$DomainModel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_domain_model_afd979016390d3df15a859c3342ef7127}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_domain_model_a75b45483c795dddd91568e7844e9ee83}{
+\index{DomainModel@{DomainModel}!addDomain@{addDomain}}
+\index{addDomain@{addDomain}!DomainModel@{DomainModel}}
+\subsubsection[{addDomain}]{\setlength{\rightskip}{0pt plus 5cm}QModelIndex DomainModel::addDomain (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_a75b45483c795dddd91568e7844e9ee83}
+\hypertarget{class_domain_model_a75b45483c795dddd91568e7844e9ee83}{
+\index{DomainModel@{DomainModel}!addDomain@{addDomain}}
+\index{addDomain@{addDomain}!DomainModel@{DomainModel}}
+\subsubsection[{addDomain}]{\setlength{\rightskip}{0pt plus 5cm}QModelIndex DomainModel::addDomain (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_a75b45483c795dddd91568e7844e9ee83}
+\hypertarget{class_domain_model_ab4547cf7ef7f375671d9ca37b6c0720b}{
+\index{DomainModel@{DomainModel}!addValue@{addValue}}
+\index{addValue@{addValue}!DomainModel@{DomainModel}}
+\subsubsection[{addValue}]{\setlength{\rightskip}{0pt plus 5cm}QModelIndex DomainModel::addValue (
+\begin{DoxyParamCaption}
+\item[{QModelIndex}]{domainIndex}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_ab4547cf7ef7f375671d9ca37b6c0720b}
+
+
+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ 
+
+\hypertarget{class_domain_model_ab4547cf7ef7f375671d9ca37b6c0720b}{
+\index{DomainModel@{DomainModel}!addValue@{addValue}}
+\index{addValue@{addValue}!DomainModel@{DomainModel}}
+\subsubsection[{addValue}]{\setlength{\rightskip}{0pt plus 5cm}QModelIndex DomainModel::addValue (
+\begin{DoxyParamCaption}
+\item[{QModelIndex}]{domainIndex}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_ab4547cf7ef7f375671d9ca37b6c0720b}
+\hypertarget{class_domain_model_a8ab8ec63857e51ef057d0160a74e3451}{
+\index{DomainModel@{DomainModel}!columnCount@{columnCount}}
+\index{columnCount@{columnCount}!DomainModel@{DomainModel}}
+\subsubsection[{columnCount}]{\setlength{\rightskip}{0pt plus 5cm}virtual int DomainModel::columnCount (
+\begin{DoxyParamCaption}
+\item[{const QModelIndex \&}]{parent}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_domain_model_a8ab8ec63857e51ef057d0160a74e3451}
+\hypertarget{class_domain_model_a857745f2da0e7224824fa24df98abbd8}{
+\index{DomainModel@{DomainModel}!columnCount@{columnCount}}
+\index{columnCount@{columnCount}!DomainModel@{DomainModel}}
+\subsubsection[{columnCount}]{\setlength{\rightskip}{0pt plus 5cm}int DomainModel::columnCount (
+\begin{DoxyParamCaption}
+\item[{const QModelIndex \&}]{parent}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_domain_model_a857745f2da0e7224824fa24df98abbd8}
+\hypertarget{class_domain_model_a132fbb7abd4f2534894ad1676f86b9d0}{
+\index{DomainModel@{DomainModel}!data@{data}}
+\index{data@{data}!DomainModel@{DomainModel}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}virtual QVariant DomainModel::data (
+\begin{DoxyParamCaption}
+\item[{const QModelIndex \&}]{index, }
+\item[{int}]{role}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_domain_model_a132fbb7abd4f2534894ad1676f86b9d0}
+\hypertarget{class_domain_model_a0532aa6f89fadb924ed0263ee919282a}{
+\index{DomainModel@{DomainModel}!data@{data}}
+\index{data@{data}!DomainModel@{DomainModel}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}QVariant DomainModel::data (
+\begin{DoxyParamCaption}
+\item[{const QModelIndex \&}]{index, }
+\item[{int}]{role}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_domain_model_a0532aa6f89fadb924ed0263ee919282a}
+\hypertarget{class_domain_model_aa592b6841ac4a946f9e65c622b324efd}{
+\index{DomainModel@{DomainModel}!deleteDomain@{deleteDomain}}
+\index{deleteDomain@{deleteDomain}!DomainModel@{DomainModel}}
+\subsubsection[{deleteDomain}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::deleteDomain (
+\begin{DoxyParamCaption}
+\item[{QModelIndex}]{domain}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_aa592b6841ac4a946f9e65c622b324efd}
+\hypertarget{class_domain_model_aa592b6841ac4a946f9e65c622b324efd}{
+\index{DomainModel@{DomainModel}!deleteDomain@{deleteDomain}}
+\index{deleteDomain@{deleteDomain}!DomainModel@{DomainModel}}
+\subsubsection[{deleteDomain}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::deleteDomain (
+\begin{DoxyParamCaption}
+\item[{QModelIndex}]{domain}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_aa592b6841ac4a946f9e65c622b324efd}
+\hypertarget{class_domain_model_af1433c75de73ddb81e556793d11f9e1d}{
+\index{DomainModel@{DomainModel}!deleteValue@{deleteValue}}
+\index{deleteValue@{deleteValue}!DomainModel@{DomainModel}}
+\subsubsection[{deleteValue}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::deleteValue (
+\begin{DoxyParamCaption}
+\item[{QModelIndex}]{valueIndex}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_af1433c75de73ddb81e556793d11f9e1d}
+\hypertarget{class_domain_model_af1433c75de73ddb81e556793d11f9e1d}{
+\index{DomainModel@{DomainModel}!deleteValue@{deleteValue}}
+\index{deleteValue@{deleteValue}!DomainModel@{DomainModel}}
+\subsubsection[{deleteValue}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::deleteValue (
+\begin{DoxyParamCaption}
+\item[{QModelIndex}]{valueIndex}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_af1433c75de73ddb81e556793d11f9e1d}
+\hypertarget{class_domain_model_a96b1a8f93cfb4ced4dc280eab3940f27}{
+\index{DomainModel@{DomainModel}!domainExists@{domainExists}}
+\index{domainExists@{domainExists}!DomainModel@{DomainModel}}
+\subsubsection[{domainExists}]{\setlength{\rightskip}{0pt plus 5cm}bool DomainModel::domainExists (
+\begin{DoxyParamCaption}
+\item[{QString}]{domainName}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_a96b1a8f93cfb4ced4dc280eab3940f27}
+\hypertarget{class_domain_model_a96b1a8f93cfb4ced4dc280eab3940f27}{
+\index{DomainModel@{DomainModel}!domainExists@{domainExists}}
+\index{domainExists@{domainExists}!DomainModel@{DomainModel}}
+\subsubsection[{domainExists}]{\setlength{\rightskip}{0pt plus 5cm}bool DomainModel::domainExists (
+\begin{DoxyParamCaption}
+\item[{QString}]{domainName}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_a96b1a8f93cfb4ced4dc280eab3940f27}
+\hypertarget{class_domain_model_a21665633939b2d605aa0749f33957b4d}{
+\index{DomainModel@{DomainModel}!dropMimeData@{dropMimeData}}
+\index{dropMimeData@{dropMimeData}!DomainModel@{DomainModel}}
+\subsubsection[{dropMimeData}]{\setlength{\rightskip}{0pt plus 5cm}bool DomainModel::dropMimeData (
+\begin{DoxyParamCaption}
+\item[{const QMimeData $\ast$}]{data, }
+\item[{Qt::DropAction}]{action, }
+\item[{int}]{row, }
+\item[{int}]{column, }
+\item[{const QModelIndex \&}]{parent}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_a21665633939b2d605aa0749f33957b4d}
+\hypertarget{class_domain_model_a21665633939b2d605aa0749f33957b4d}{
+\index{DomainModel@{DomainModel}!dropMimeData@{dropMimeData}}
+\index{dropMimeData@{dropMimeData}!DomainModel@{DomainModel}}
+\subsubsection[{dropMimeData}]{\setlength{\rightskip}{0pt plus 5cm}bool DomainModel::dropMimeData (
+\begin{DoxyParamCaption}
+\item[{const QMimeData $\ast$}]{data, }
+\item[{Qt::DropAction}]{action, }
+\item[{int}]{row, }
+\item[{int}]{column, }
+\item[{const QModelIndex \&}]{parent}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_a21665633939b2d605aa0749f33957b4d}
+\hypertarget{class_domain_model_ae1f04fa1cc292b5534075f3e301664aa}{
+\index{DomainModel@{DomainModel}!editDomain@{editDomain}}
+\index{editDomain@{editDomain}!DomainModel@{DomainModel}}
+\subsubsection[{editDomain}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::editDomain (
+\begin{DoxyParamCaption}
+\item[{QModelIndex}]{domain, }
+\item[{QString}]{newName}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_ae1f04fa1cc292b5534075f3e301664aa}
+\hypertarget{class_domain_model_ae1f04fa1cc292b5534075f3e301664aa}{
+\index{DomainModel@{DomainModel}!editDomain@{editDomain}}
+\index{editDomain@{editDomain}!DomainModel@{DomainModel}}
+\subsubsection[{editDomain}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::editDomain (
+\begin{DoxyParamCaption}
+\item[{QModelIndex}]{domain, }
+\item[{QString}]{newName}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_ae1f04fa1cc292b5534075f3e301664aa}
+\hypertarget{class_domain_model_a382e0c2e1e2d606f9569448c37a129f1}{
+\index{DomainModel@{DomainModel}!flags@{flags}}
+\index{flags@{flags}!DomainModel@{DomainModel}}
+\subsubsection[{flags}]{\setlength{\rightskip}{0pt plus 5cm}Qt::ItemFlags DomainModel::flags (
+\begin{DoxyParamCaption}
+\item[{const QModelIndex \&}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_domain_model_a382e0c2e1e2d606f9569448c37a129f1}
+\hypertarget{class_domain_model_a5c4995aa28819210f48a592f4209ecde}{
+\index{DomainModel@{DomainModel}!flags@{flags}}
+\index{flags@{flags}!DomainModel@{DomainModel}}
+\subsubsection[{flags}]{\setlength{\rightskip}{0pt plus 5cm}virtual Qt::ItemFlags DomainModel::flags (
+\begin{DoxyParamCaption}
+\item[{const QModelIndex \&}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_domain_model_a5c4995aa28819210f48a592f4209ecde}
+\hypertarget{class_domain_model_a1d23cde23fc08a0c7ad095c3fda6ac7d}{
+\index{DomainModel@{DomainModel}!fromXml@{fromXml}}
+\index{fromXml@{fromXml}!DomainModel@{DomainModel}}
+\subsubsection[{fromXml}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::fromXml (
+\begin{DoxyParamCaption}
+\item[{QDomElement \&}]{domains}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_a1d23cde23fc08a0c7ad095c3fda6ac7d}
+\hypertarget{class_domain_model_a1d23cde23fc08a0c7ad095c3fda6ac7d}{
+\index{DomainModel@{DomainModel}!fromXml@{fromXml}}
+\index{fromXml@{fromXml}!DomainModel@{DomainModel}}
+\subsubsection[{fromXml}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::fromXml (
+\begin{DoxyParamCaption}
+\item[{QDomElement \&}]{domains}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_a1d23cde23fc08a0c7ad095c3fda6ac7d}
+\hypertarget{class_domain_model_a4cab7c29dea9786533f6378328999d88}{
+\index{DomainModel@{DomainModel}!getDomainByName@{getDomainByName}}
+\index{getDomainByName@{getDomainByName}!DomainModel@{DomainModel}}
+\subsubsection[{getDomainByName}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Domain} $\ast$ DomainModel::getDomainByName (
+\begin{DoxyParamCaption}
+\item[{QString}]{name}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_a4cab7c29dea9786533f6378328999d88}
+\hypertarget{class_domain_model_a5a39bde573e8a23cb2dcb94f16699b81}{
+\index{DomainModel@{DomainModel}!index@{index}}
+\index{index@{index}!DomainModel@{DomainModel}}
+\subsubsection[{index}]{\setlength{\rightskip}{0pt plus 5cm}QModelIndex DomainModel::index (
+\begin{DoxyParamCaption}
+\item[{int}]{row, }
+\item[{int}]{column, }
+\item[{const QModelIndex \&}]{parent}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_domain_model_a5a39bde573e8a23cb2dcb94f16699b81}
+\hypertarget{class_domain_model_a49ff448341c2c244f348157cb69ac13a}{
+\index{DomainModel@{DomainModel}!index@{index}}
+\index{index@{index}!DomainModel@{DomainModel}}
+\subsubsection[{index}]{\setlength{\rightskip}{0pt plus 5cm}virtual QModelIndex DomainModel::index (
+\begin{DoxyParamCaption}
+\item[{int}]{row, }
+\item[{int}]{column, }
+\item[{const QModelIndex \&}]{parent}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_domain_model_a49ff448341c2c244f348157cb69ac13a}
+\hypertarget{class_domain_model_ab6e0399356a6c9046b91fe37bdb90a9f}{
+\index{DomainModel@{DomainModel}!indexByName@{indexByName}}
+\index{indexByName@{indexByName}!DomainModel@{DomainModel}}
+\subsubsection[{indexByName}]{\setlength{\rightskip}{0pt plus 5cm}QModelIndex DomainModel::indexByName (
+\begin{DoxyParamCaption}
+\item[{QString}]{domain}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_ab6e0399356a6c9046b91fe37bdb90a9f}
+\hypertarget{class_domain_model_ab6e0399356a6c9046b91fe37bdb90a9f}{
+\index{DomainModel@{DomainModel}!indexByName@{indexByName}}
+\index{indexByName@{indexByName}!DomainModel@{DomainModel}}
+\subsubsection[{indexByName}]{\setlength{\rightskip}{0pt plus 5cm}QModelIndex DomainModel::indexByName (
+\begin{DoxyParamCaption}
+\item[{QString}]{domain}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_ab6e0399356a6c9046b91fe37bdb90a9f}
+\hypertarget{class_domain_model_a31776f23bc9e6d430ab4655caedf7ad6}{
+\index{DomainModel@{DomainModel}!insertRow@{insertRow}}
+\index{insertRow@{insertRow}!DomainModel@{DomainModel}}
+\subsubsection[{insertRow}]{\setlength{\rightskip}{0pt plus 5cm}bool DomainModel::insertRow (
+\begin{DoxyParamCaption}
+\item[{int}]{row, }
+\item[{const QModelIndex \&}]{parent}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_domain_model_a31776f23bc9e6d430ab4655caedf7ad6}
+\hypertarget{class_domain_model_ad545ab686850974ce49436f18e47c041}{
+\index{DomainModel@{DomainModel}!insertRow@{insertRow}}
+\index{insertRow@{insertRow}!DomainModel@{DomainModel}}
+\subsubsection[{insertRow}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool DomainModel::insertRow (
+\begin{DoxyParamCaption}
+\item[{int}]{row, }
+\item[{const QModelIndex \&}]{parent}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_domain_model_ad545ab686850974ce49436f18e47c041}
+\hypertarget{class_domain_model_a941c1e4edffffb3e4441bde9aa91a560}{
+\index{DomainModel@{DomainModel}!isValid@{isValid}}
+\index{isValid@{isValid}!DomainModel@{DomainModel}}
+\subsubsection[{isValid}]{\setlength{\rightskip}{0pt plus 5cm}bool DomainModel::isValid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_a941c1e4edffffb3e4441bde9aa91a560}
+\hypertarget{class_domain_model_a941c1e4edffffb3e4441bde9aa91a560}{
+\index{DomainModel@{DomainModel}!isValid@{isValid}}
+\index{isValid@{isValid}!DomainModel@{DomainModel}}
+\subsubsection[{isValid}]{\setlength{\rightskip}{0pt plus 5cm}bool DomainModel::isValid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_a941c1e4edffffb3e4441bde9aa91a560}
+\hypertarget{class_domain_model_a9686294f858aa9bf0cd2b09657867d42}{
+\index{DomainModel@{DomainModel}!mimeData@{mimeData}}
+\index{mimeData@{mimeData}!DomainModel@{DomainModel}}
+\subsubsection[{mimeData}]{\setlength{\rightskip}{0pt plus 5cm}QMimeData $\ast$ DomainModel::mimeData (
+\begin{DoxyParamCaption}
+\item[{const QModelIndexList \&}]{indexes}
+\end{DoxyParamCaption}
+) const}}
+\label{class_domain_model_a9686294f858aa9bf0cd2b09657867d42}
+\hypertarget{class_domain_model_a387519bb071d4a1f3dcead2cde20bc07}{
+\index{DomainModel@{DomainModel}!mimeData@{mimeData}}
+\index{mimeData@{mimeData}!DomainModel@{DomainModel}}
+\subsubsection[{mimeData}]{\setlength{\rightskip}{0pt plus 5cm}QMimeData$\ast$ DomainModel::mimeData (
+\begin{DoxyParamCaption}
+\item[{const QModelIndexList \&}]{indexes}
+\end{DoxyParamCaption}
+) const}}
+\label{class_domain_model_a387519bb071d4a1f3dcead2cde20bc07}
+\hypertarget{class_domain_model_ab9218e6d390c8617efb7b7b507fa1631}{
+\index{DomainModel@{DomainModel}!mimeTypes@{mimeTypes}}
+\index{mimeTypes@{mimeTypes}!DomainModel@{DomainModel}}
+\subsubsection[{mimeTypes}]{\setlength{\rightskip}{0pt plus 5cm}QStringList DomainModel::mimeTypes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_domain_model_ab9218e6d390c8617efb7b7b507fa1631}
+\hypertarget{class_domain_model_ab9218e6d390c8617efb7b7b507fa1631}{
+\index{DomainModel@{DomainModel}!mimeTypes@{mimeTypes}}
+\index{mimeTypes@{mimeTypes}!DomainModel@{DomainModel}}
+\subsubsection[{mimeTypes}]{\setlength{\rightskip}{0pt plus 5cm}QStringList DomainModel::mimeTypes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_domain_model_ab9218e6d390c8617efb7b7b507fa1631}
+\hypertarget{class_domain_model_af152b5c038dc4ac3c564e0238e4eb62d}{
+\index{DomainModel@{DomainModel}!moveBefore@{moveBefore}}
+\index{moveBefore@{moveBefore}!DomainModel@{DomainModel}}
+\subsubsection[{moveBefore}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::moveBefore (
+\begin{DoxyParamCaption}
+\item[{QModelIndex}]{sourceInx, }
+\item[{QModelIndex}]{destInx}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_af152b5c038dc4ac3c564e0238e4eb62d}
+\hypertarget{class_domain_model_af152b5c038dc4ac3c564e0238e4eb62d}{
+\index{DomainModel@{DomainModel}!moveBefore@{moveBefore}}
+\index{moveBefore@{moveBefore}!DomainModel@{DomainModel}}
+\subsubsection[{moveBefore}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::moveBefore (
+\begin{DoxyParamCaption}
+\item[{QModelIndex}]{sourceInx, }
+\item[{QModelIndex}]{destInx}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_af152b5c038dc4ac3c564e0238e4eb62d}
+\hypertarget{class_domain_model_a1eb72b95578c4da97ed957dd1a44c230}{
+\index{DomainModel@{DomainModel}!parent@{parent}}
+\index{parent@{parent}!DomainModel@{DomainModel}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}virtual QModelIndex DomainModel::parent (
+\begin{DoxyParamCaption}
+\item[{const QModelIndex \&}]{child}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_domain_model_a1eb72b95578c4da97ed957dd1a44c230}
+\hypertarget{class_domain_model_a1a57deb8cd241f680ecade666ebbe20c}{
+\index{DomainModel@{DomainModel}!parent@{parent}}
+\index{parent@{parent}!DomainModel@{DomainModel}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}QModelIndex DomainModel::parent (
+\begin{DoxyParamCaption}
+\item[{const QModelIndex \&}]{child}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_domain_model_a1a57deb8cd241f680ecade666ebbe20c}
+\hypertarget{class_domain_model_ab2bff6186333360d66aaf9f959deb663}{
+\index{DomainModel@{DomainModel}!removeRow@{removeRow}}
+\index{removeRow@{removeRow}!DomainModel@{DomainModel}}
+\subsubsection[{removeRow}]{\setlength{\rightskip}{0pt plus 5cm}bool DomainModel::removeRow (
+\begin{DoxyParamCaption}
+\item[{int}]{row, }
+\item[{const QModelIndex \&}]{parent}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_domain_model_ab2bff6186333360d66aaf9f959deb663}
+\hypertarget{class_domain_model_a3b52a74e9944aa510b6ab45ab304809e}{
+\index{DomainModel@{DomainModel}!removeRow@{removeRow}}
+\index{removeRow@{removeRow}!DomainModel@{DomainModel}}
+\subsubsection[{removeRow}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool DomainModel::removeRow (
+\begin{DoxyParamCaption}
+\item[{int}]{row, }
+\item[{const QModelIndex \&}]{parent}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_domain_model_a3b52a74e9944aa510b6ab45ab304809e}
+\hypertarget{class_domain_model_a5723a990a0ee842c0b8910bfa83812b3}{
+\index{DomainModel@{DomainModel}!rowCount@{rowCount}}
+\index{rowCount@{rowCount}!DomainModel@{DomainModel}}
+\subsubsection[{rowCount}]{\setlength{\rightskip}{0pt plus 5cm}virtual int DomainModel::rowCount (
+\begin{DoxyParamCaption}
+\item[{const QModelIndex \&}]{parent}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_domain_model_a5723a990a0ee842c0b8910bfa83812b3}
+\hypertarget{class_domain_model_a53676872f60898f328f17d14c5fd72e2}{
+\index{DomainModel@{DomainModel}!rowCount@{rowCount}}
+\index{rowCount@{rowCount}!DomainModel@{DomainModel}}
+\subsubsection[{rowCount}]{\setlength{\rightskip}{0pt plus 5cm}int DomainModel::rowCount (
+\begin{DoxyParamCaption}
+\item[{const QModelIndex \&}]{parent}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_domain_model_a53676872f60898f328f17d14c5fd72e2}
+\hypertarget{class_domain_model_a21a193d100c483df3ad313fa1d3d9ad1}{
+\index{DomainModel@{DomainModel}!setData@{setData}}
+\index{setData@{setData}!DomainModel@{DomainModel}}
+\subsubsection[{setData}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool DomainModel::setData (
+\begin{DoxyParamCaption}
+\item[{const QModelIndex \&}]{index, }
+\item[{const QVariant \&}]{value, }
+\item[{int}]{role}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_domain_model_a21a193d100c483df3ad313fa1d3d9ad1}
+\hypertarget{class_domain_model_ae4b94474d3778775b1373e2774a602f4}{
+\index{DomainModel@{DomainModel}!setData@{setData}}
+\index{setData@{setData}!DomainModel@{DomainModel}}
+\subsubsection[{setData}]{\setlength{\rightskip}{0pt plus 5cm}bool DomainModel::setData (
+\begin{DoxyParamCaption}
+\item[{const QModelIndex \&}]{index, }
+\item[{const QVariant \&}]{value, }
+\item[{int}]{role}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_domain_model_ae4b94474d3778775b1373e2774a602f4}
+\hypertarget{class_domain_model_a777f957e272990846fe488a3761ed436}{
+\index{DomainModel@{DomainModel}!setDomains@{setDomains}}
+\index{setDomains@{setDomains}!DomainModel@{DomainModel}}
+\subsubsection[{setDomains}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::setDomains (
+\begin{DoxyParamCaption}
+\item[{QList$<$ {\bf Domain} $\ast$ $>$ $\ast$}]{domains}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_a777f957e272990846fe488a3761ed436}
+\hypertarget{class_domain_model_a777f957e272990846fe488a3761ed436}{
+\index{DomainModel@{DomainModel}!setDomains@{setDomains}}
+\index{setDomains@{setDomains}!DomainModel@{DomainModel}}
+\subsubsection[{setDomains}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::setDomains (
+\begin{DoxyParamCaption}
+\item[{QList$<$ {\bf Domain} $\ast$ $>$ $\ast$}]{domains}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_a777f957e272990846fe488a3761ed436}
+\hypertarget{class_domain_model_a77a06ec53eaf555cef2741cee969b591}{
+\index{DomainModel@{DomainModel}!setItemsIsEditable@{setItemsIsEditable}}
+\index{setItemsIsEditable@{setItemsIsEditable}!DomainModel@{DomainModel}}
+\subsubsection[{setItemsIsEditable}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::setItemsIsEditable (
+\begin{DoxyParamCaption}
+\item[{bool}]{isEditable}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_a77a06ec53eaf555cef2741cee969b591}
+\hypertarget{class_domain_model_a77a06ec53eaf555cef2741cee969b591}{
+\index{DomainModel@{DomainModel}!setItemsIsEditable@{setItemsIsEditable}}
+\index{setItemsIsEditable@{setItemsIsEditable}!DomainModel@{DomainModel}}
+\subsubsection[{setItemsIsEditable}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::setItemsIsEditable (
+\begin{DoxyParamCaption}
+\item[{bool}]{isEditable}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_a77a06ec53eaf555cef2741cee969b591}
+\hypertarget{class_domain_model_aa39aa4b344dce747e660a1bba95099a4}{
+\index{DomainModel@{DomainModel}!setRootNode@{setRootNode}}
+\index{setRootNode@{setRootNode}!DomainModel@{DomainModel}}
+\subsubsection[{setRootNode}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::setRootNode (
+\begin{DoxyParamCaption}
+\item[{{\bf DomainNode} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_aa39aa4b344dce747e660a1bba95099a4}
+\hypertarget{class_domain_model_aa39aa4b344dce747e660a1bba95099a4}{
+\index{DomainModel@{DomainModel}!setRootNode@{setRootNode}}
+\index{setRootNode@{setRootNode}!DomainModel@{DomainModel}}
+\subsubsection[{setRootNode}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::setRootNode (
+\begin{DoxyParamCaption}
+\item[{{\bf DomainNode} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_aa39aa4b344dce747e660a1bba95099a4}
+\hypertarget{class_domain_model_a52695bb18591824f8a4bd675ea1a869e}{
+\index{DomainModel@{DomainModel}!sigDataChanged@{sigDataChanged}}
+\index{sigDataChanged@{sigDataChanged}!DomainModel@{DomainModel}}
+\subsubsection[{sigDataChanged}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::sigDataChanged (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}
+\label{class_domain_model_a52695bb18591824f8a4bd675ea1a869e}
+\hypertarget{class_domain_model_a52695bb18591824f8a4bd675ea1a869e}{
+\index{DomainModel@{DomainModel}!sigDataChanged@{sigDataChanged}}
+\index{sigDataChanged@{sigDataChanged}!DomainModel@{DomainModel}}
+\subsubsection[{sigDataChanged}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::sigDataChanged (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}
+\label{class_domain_model_a52695bb18591824f8a4bd675ea1a869e}
+\hypertarget{class_domain_model_ab5ef42f1a6eefc546531f24f5afa3604}{
+\index{DomainModel@{DomainModel}!sigDomainDeleted@{sigDomainDeleted}}
+\index{sigDomainDeleted@{sigDomainDeleted}!DomainModel@{DomainModel}}
+\subsubsection[{sigDomainDeleted}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::sigDomainDeleted (
+\begin{DoxyParamCaption}
+\item[{QString}]{domainName}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}
+\label{class_domain_model_ab5ef42f1a6eefc546531f24f5afa3604}
+\hypertarget{class_domain_model_ab5ef42f1a6eefc546531f24f5afa3604}{
+\index{DomainModel@{DomainModel}!sigDomainDeleted@{sigDomainDeleted}}
+\index{sigDomainDeleted@{sigDomainDeleted}!DomainModel@{DomainModel}}
+\subsubsection[{sigDomainDeleted}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::sigDomainDeleted (
+\begin{DoxyParamCaption}
+\item[{QString}]{domainName}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}
+\label{class_domain_model_ab5ef42f1a6eefc546531f24f5afa3604}
+\hypertarget{class_domain_model_af87a447e5be936b000d27959d4a03f62}{
+\index{DomainModel@{DomainModel}!sigDomainNameChanged@{sigDomainNameChanged}}
+\index{sigDomainNameChanged@{sigDomainNameChanged}!DomainModel@{DomainModel}}
+\subsubsection[{sigDomainNameChanged}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::sigDomainNameChanged (
+\begin{DoxyParamCaption}
+\item[{QString}]{oldName, }
+\item[{QString}]{newName}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}
+\label{class_domain_model_af87a447e5be936b000d27959d4a03f62}
+\hypertarget{class_domain_model_af87a447e5be936b000d27959d4a03f62}{
+\index{DomainModel@{DomainModel}!sigDomainNameChanged@{sigDomainNameChanged}}
+\index{sigDomainNameChanged@{sigDomainNameChanged}!DomainModel@{DomainModel}}
+\subsubsection[{sigDomainNameChanged}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::sigDomainNameChanged (
+\begin{DoxyParamCaption}
+\item[{QString}]{oldName, }
+\item[{QString}]{newName}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}
+\label{class_domain_model_af87a447e5be936b000d27959d4a03f62}
+\hypertarget{class_domain_model_a53602074e4054879e00a484b7c349375}{
+\index{DomainModel@{DomainModel}!sigDomainValueChanged@{sigDomainValueChanged}}
+\index{sigDomainValueChanged@{sigDomainValueChanged}!DomainModel@{DomainModel}}
+\subsubsection[{sigDomainValueChanged}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::sigDomainValueChanged (
+\begin{DoxyParamCaption}
+\item[{QString}]{domainName, }
+\item[{QString}]{oldValue, }
+\item[{QString}]{newValue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}
+\label{class_domain_model_a53602074e4054879e00a484b7c349375}
+\hypertarget{class_domain_model_a53602074e4054879e00a484b7c349375}{
+\index{DomainModel@{DomainModel}!sigDomainValueChanged@{sigDomainValueChanged}}
+\index{sigDomainValueChanged@{sigDomainValueChanged}!DomainModel@{DomainModel}}
+\subsubsection[{sigDomainValueChanged}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::sigDomainValueChanged (
+\begin{DoxyParamCaption}
+\item[{QString}]{domainName, }
+\item[{QString}]{oldValue, }
+\item[{QString}]{newValue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}
+\label{class_domain_model_a53602074e4054879e00a484b7c349375}
+\hypertarget{class_domain_model_ad937dfd63b21f1ab66dccbb9eeda5028}{
+\index{DomainModel@{DomainModel}!sigDomainValueDeleted@{sigDomainValueDeleted}}
+\index{sigDomainValueDeleted@{sigDomainValueDeleted}!DomainModel@{DomainModel}}
+\subsubsection[{sigDomainValueDeleted}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::sigDomainValueDeleted (
+\begin{DoxyParamCaption}
+\item[{QString}]{domainName, }
+\item[{QString}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}
+\label{class_domain_model_ad937dfd63b21f1ab66dccbb9eeda5028}
+\hypertarget{class_domain_model_ad937dfd63b21f1ab66dccbb9eeda5028}{
+\index{DomainModel@{DomainModel}!sigDomainValueDeleted@{sigDomainValueDeleted}}
+\index{sigDomainValueDeleted@{sigDomainValueDeleted}!DomainModel@{DomainModel}}
+\subsubsection[{sigDomainValueDeleted}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::sigDomainValueDeleted (
+\begin{DoxyParamCaption}
+\item[{QString}]{domainName, }
+\item[{QString}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}
+\label{class_domain_model_ad937dfd63b21f1ab66dccbb9eeda5028}
+\hypertarget{class_domain_model_a5931cd54a1b74bc94b4dfe3b37b71275}{
+\index{DomainModel@{DomainModel}!sigErrorWhileValidating@{sigErrorWhileValidating}}
+\index{sigErrorWhileValidating@{sigErrorWhileValidating}!DomainModel@{DomainModel}}
+\subsubsection[{sigErrorWhileValidating}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::sigErrorWhileValidating (
+\begin{DoxyParamCaption}
+\item[{QString}]{errorText}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}
+\label{class_domain_model_a5931cd54a1b74bc94b4dfe3b37b71275}
+\hypertarget{class_domain_model_a5931cd54a1b74bc94b4dfe3b37b71275}{
+\index{DomainModel@{DomainModel}!sigErrorWhileValidating@{sigErrorWhileValidating}}
+\index{sigErrorWhileValidating@{sigErrorWhileValidating}!DomainModel@{DomainModel}}
+\subsubsection[{sigErrorWhileValidating}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::sigErrorWhileValidating (
+\begin{DoxyParamCaption}
+\item[{QString}]{errorText}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}
+\label{class_domain_model_a5931cd54a1b74bc94b4dfe3b37b71275}
+\hypertarget{class_domain_model_ab4ae8aa3336c8308a172c97d9e288e60}{
+\index{DomainModel@{DomainModel}!sigValueExists@{sigValueExists}}
+\index{sigValueExists@{sigValueExists}!DomainModel@{DomainModel}}
+\subsubsection[{sigValueExists}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::sigValueExists (
+\begin{DoxyParamCaption}
+\item[{QModelIndex}]{index, }
+\item[{QVariant}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}
+\label{class_domain_model_ab4ae8aa3336c8308a172c97d9e288e60}
+\hypertarget{class_domain_model_ab4ae8aa3336c8308a172c97d9e288e60}{
+\index{DomainModel@{DomainModel}!sigValueExists@{sigValueExists}}
+\index{sigValueExists@{sigValueExists}!DomainModel@{DomainModel}}
+\subsubsection[{sigValueExists}]{\setlength{\rightskip}{0pt plus 5cm}void DomainModel::sigValueExists (
+\begin{DoxyParamCaption}
+\item[{QModelIndex}]{index, }
+\item[{QVariant}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}
+\label{class_domain_model_ab4ae8aa3336c8308a172c97d9e288e60}
+\hypertarget{class_domain_model_a8fbc70443f3a4452e5d4abb045d79517}{
+\index{DomainModel@{DomainModel}!supportedDropActions@{supportedDropActions}}
+\index{supportedDropActions@{supportedDropActions}!DomainModel@{DomainModel}}
+\subsubsection[{supportedDropActions}]{\setlength{\rightskip}{0pt plus 5cm}Qt::DropActions DomainModel::supportedDropActions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_domain_model_a8fbc70443f3a4452e5d4abb045d79517}
+\hypertarget{class_domain_model_a15f3ae980ad9922dfcde90e0d3934338}{
+\index{DomainModel@{DomainModel}!supportedDropActions@{supportedDropActions}}
+\index{supportedDropActions@{supportedDropActions}!DomainModel@{DomainModel}}
+\subsubsection[{supportedDropActions}]{\setlength{\rightskip}{0pt plus 5cm}virtual Qt::DropActions DomainModel::supportedDropActions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_domain_model_a15f3ae980ad9922dfcde90e0d3934338}
+\hypertarget{class_domain_model_a31a98493ea55e4cc430b6623c3ebfcdf}{
+\index{DomainModel@{DomainModel}!toXml@{toXml}}
+\index{toXml@{toXml}!DomainModel@{DomainModel}}
+\subsubsection[{toXml}]{\setlength{\rightskip}{0pt plus 5cm}QDomElement DomainModel::toXml (
+\begin{DoxyParamCaption}
+\item[{QDomDocument \&}]{doc}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_a31a98493ea55e4cc430b6623c3ebfcdf}
+\hypertarget{class_domain_model_a31a98493ea55e4cc430b6623c3ebfcdf}{
+\index{DomainModel@{DomainModel}!toXml@{toXml}}
+\index{toXml@{toXml}!DomainModel@{DomainModel}}
+\subsubsection[{toXml}]{\setlength{\rightskip}{0pt plus 5cm}QDomElement DomainModel::toXml (
+\begin{DoxyParamCaption}
+\item[{QDomDocument \&}]{doc}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_a31a98493ea55e4cc430b6623c3ebfcdf}
+\hypertarget{class_domain_model_a3b68019a9add9363920012c15fa8e5b9}{
+\index{DomainModel@{DomainModel}!valueExists@{valueExists}}
+\index{valueExists@{valueExists}!DomainModel@{DomainModel}}
+\subsubsection[{valueExists}]{\setlength{\rightskip}{0pt plus 5cm}bool DomainModel::valueExists (
+\begin{DoxyParamCaption}
+\item[{{\bf Domain} $\ast$}]{domain, }
+\item[{QString}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_a3b68019a9add9363920012c15fa8e5b9}
+\hypertarget{class_domain_model_a84cd3e480bce10f08ebc0d41826a98d9}{
+\index{DomainModel@{DomainModel}!valueExists@{valueExists}}
+\index{valueExists@{valueExists}!DomainModel@{DomainModel}}
+\subsubsection[{valueExists}]{\setlength{\rightskip}{0pt plus 5cm}bool DomainModel::valueExists (
+\begin{DoxyParamCaption}
+\item[{QString}]{domainName, }
+\item[{QString}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_a84cd3e480bce10f08ebc0d41826a98d9}
+\hypertarget{class_domain_model_a3b68019a9add9363920012c15fa8e5b9}{
+\index{DomainModel@{DomainModel}!valueExists@{valueExists}}
+\index{valueExists@{valueExists}!DomainModel@{DomainModel}}
+\subsubsection[{valueExists}]{\setlength{\rightskip}{0pt plus 5cm}bool DomainModel::valueExists (
+\begin{DoxyParamCaption}
+\item[{{\bf Domain} $\ast$}]{domain, }
+\item[{QString}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_a3b68019a9add9363920012c15fa8e5b9}
+\hypertarget{class_domain_model_a84cd3e480bce10f08ebc0d41826a98d9}{
+\index{DomainModel@{DomainModel}!valueExists@{valueExists}}
+\index{valueExists@{valueExists}!DomainModel@{DomainModel}}
+\subsubsection[{valueExists}]{\setlength{\rightskip}{0pt plus 5cm}bool DomainModel::valueExists (
+\begin{DoxyParamCaption}
+\item[{QString}]{domainName, }
+\item[{QString}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{class_domain_model_a84cd3e480bce10f08ebc0d41826a98d9}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+core/domains/\hyperlink{core_2domains_2domainmodel_8h}{domainmodel.h}\item 
+ES/core/\hyperlink{_e_s_2core_2domainmodel_8h}{domainmodel.h}\item 
+core/domains/\hyperlink{core_2domains_2domainmodel_8cpp}{domainmodel.cpp}\item 
+ES/core/\hyperlink{_e_s_2core_2domainmodel_8cpp}{domainmodel.cpp}\end{DoxyCompactItemize}

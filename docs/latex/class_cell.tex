@@ -1,0 +1,281 @@
+\hypertarget{class_cell}{
+\section{Cell Class Reference}
+\label{class_cell}\index{Cell@{Cell}}
+}
+
+
+{\ttfamily \#include $<$cell.h$>$}
+
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_cell_a2d4b967aabd621d694ddbed0b90eed00}{contextMenuExecutedOn} (\hyperlink{class_cell}{Cell} $\ast$cell)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_cell_a508dbd3fd5b3b988ae2405063f787f98}{Cell} (int xIndex, int yIndex, QRectF \&rect, QColor \&color, QMenu $\ast$contextMenu=0)
+\item 
+QRectF \hyperlink{class_cell_ae5b2ec915956734b2ebcccb73c3f98e8}{boundingRect} () const 
+\item 
+void \hyperlink{class_cell_afcbe495223f91b760fb93fa17aac991a}{paint} (QPainter $\ast$painter, const QStyleOptionGraphicsItem $\ast$item, QWidget $\ast$widget)
+\item 
+void \hyperlink{class_cell_a2229f507e3ce9265ddbb724caecebbb8}{SetGameItem} (\hyperlink{class_game_item}{GameItem} $\ast$item)
+\item 
+int \hyperlink{class_cell_a91e44d6a6b1b4ac59babaec3cb99ea66}{GetX} ()
+\item 
+int \hyperlink{class_cell_a67badd925fbe193a1a29557c1917e00f}{GetY} ()
+\item 
+\hyperlink{class_game_item}{GameItem} $\ast$ \hyperlink{class_cell_a089646fb36ac094bb1d0b91bc01e3f7f}{GetGameItem} ()
+\item 
+void \hyperlink{class_cell_a1b75b6f17d7fa5ed7557207e85bdd3f6}{setContextMenu} (QMenu $\ast$contextMenu)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_cell_ab36897c962a4425eebb00172eb7f7430}{contextMenuEvent} (QGraphicsSceneContextMenuEvent $\ast$event)
+\item 
+void \hyperlink{class_cell_a522f8850a2c033f29e6a5e58ea62839c}{hoverEnterEvent} (QGraphicsSceneHoverEvent $\ast$event)
+\item 
+void \hyperlink{class_cell_a08aae7dc656554efc9ad59f611b384a5}{hoverLeaveEvent} (QGraphicsSceneHoverEvent $\ast$event)
+\item 
+void \hyperlink{class_cell_ac9cbc2f07f61fe3a0d68af7bd30e3cdf}{mousePressEvent} (QGraphicsSceneMouseEvent $\ast$event)
+\item 
+void \hyperlink{class_cell_ad24871a1e6c5245f4bd874dceb8f29de}{mouseMoveEvent} (QGraphicsSceneMouseEvent $\ast$event)
+\item 
+void \hyperlink{class_cell_a40656cc92895bfbff1a04e41d9918e51}{mouseReleaseEvent} (QGraphicsSceneMouseEvent $\ast$event)
+\item 
+void \hyperlink{class_cell_a5a6f351facad6a78f38fa95faa194f96}{dragEnterEvent} (QGraphicsSceneDragDropEvent $\ast$event)
+\item 
+void \hyperlink{class_cell_a6405bea25a6ac9731219f11878be7a29}{dragLeaveEvent} (QGraphicsSceneDragDropEvent $\ast$event)
+\item 
+void \hyperlink{class_cell_a4988920897ae88a79fa8192fdd55f0b5}{dropEvent} (QGraphicsSceneDragDropEvent $\ast$event)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_cell_a6979d1a8ade7f0a6419fcfe4cd2be8b2}{m\_\-xIndex}
+\item 
+int \hyperlink{class_cell_a2307ec9f6194515d2e399a6e16dfc416}{m\_\-yIndex}
+\item 
+QRectF \hyperlink{class_cell_a870b275658020dc6d2cdc48beadf0b35}{m\_\-Rect}
+\item 
+QColor \hyperlink{class_cell_af039f663a38dac420bbe62c2f90c3bb5}{m\_\-Color}
+\item 
+\hyperlink{class_game_item}{GameItem} $\ast$ \hyperlink{class_cell_a493878cf970747f1596773aae325fc87}{m\_\-Item}
+\item 
+QMenu $\ast$ \hyperlink{class_cell_ab475b89241a718080a4511fcc91b9f2c}{m\_\-contextMenu}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_cell_a508dbd3fd5b3b988ae2405063f787f98}{
+\index{Cell@{Cell}!Cell@{Cell}}
+\index{Cell@{Cell}!Cell@{Cell}}
+\subsubsection[{Cell}]{\setlength{\rightskip}{0pt plus 5cm}Cell::Cell (
+\begin{DoxyParamCaption}
+\item[{int}]{xIndex, }
+\item[{int}]{yIndex, }
+\item[{QRectF \&}]{rect, }
+\item[{QColor \&}]{color, }
+\item[{QMenu $\ast$}]{contextMenu = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{class_cell_a508dbd3fd5b3b988ae2405063f787f98}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_cell_ae5b2ec915956734b2ebcccb73c3f98e8}{
+\index{Cell@{Cell}!boundingRect@{boundingRect}}
+\index{boundingRect@{boundingRect}!Cell@{Cell}}
+\subsubsection[{boundingRect}]{\setlength{\rightskip}{0pt plus 5cm}QRectF Cell::boundingRect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_cell_ae5b2ec915956734b2ebcccb73c3f98e8}
+\hypertarget{class_cell_ab36897c962a4425eebb00172eb7f7430}{
+\index{Cell@{Cell}!contextMenuEvent@{contextMenuEvent}}
+\index{contextMenuEvent@{contextMenuEvent}!Cell@{Cell}}
+\subsubsection[{contextMenuEvent}]{\setlength{\rightskip}{0pt plus 5cm}void Cell::contextMenuEvent (
+\begin{DoxyParamCaption}
+\item[{QGraphicsSceneContextMenuEvent $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_cell_ab36897c962a4425eebb00172eb7f7430}
+\hypertarget{class_cell_a2d4b967aabd621d694ddbed0b90eed00}{
+\index{Cell@{Cell}!contextMenuExecutedOn@{contextMenuExecutedOn}}
+\index{contextMenuExecutedOn@{contextMenuExecutedOn}!Cell@{Cell}}
+\subsubsection[{contextMenuExecutedOn}]{\setlength{\rightskip}{0pt plus 5cm}void Cell::contextMenuExecutedOn (
+\begin{DoxyParamCaption}
+\item[{{\bf Cell} $\ast$}]{cell}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}
+\label{class_cell_a2d4b967aabd621d694ddbed0b90eed00}
+\hypertarget{class_cell_a5a6f351facad6a78f38fa95faa194f96}{
+\index{Cell@{Cell}!dragEnterEvent@{dragEnterEvent}}
+\index{dragEnterEvent@{dragEnterEvent}!Cell@{Cell}}
+\subsubsection[{dragEnterEvent}]{\setlength{\rightskip}{0pt plus 5cm}void Cell::dragEnterEvent (
+\begin{DoxyParamCaption}
+\item[{QGraphicsSceneDragDropEvent $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_cell_a5a6f351facad6a78f38fa95faa194f96}
+\hypertarget{class_cell_a6405bea25a6ac9731219f11878be7a29}{
+\index{Cell@{Cell}!dragLeaveEvent@{dragLeaveEvent}}
+\index{dragLeaveEvent@{dragLeaveEvent}!Cell@{Cell}}
+\subsubsection[{dragLeaveEvent}]{\setlength{\rightskip}{0pt plus 5cm}void Cell::dragLeaveEvent (
+\begin{DoxyParamCaption}
+\item[{QGraphicsSceneDragDropEvent $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_cell_a6405bea25a6ac9731219f11878be7a29}
+\hypertarget{class_cell_a4988920897ae88a79fa8192fdd55f0b5}{
+\index{Cell@{Cell}!dropEvent@{dropEvent}}
+\index{dropEvent@{dropEvent}!Cell@{Cell}}
+\subsubsection[{dropEvent}]{\setlength{\rightskip}{0pt plus 5cm}void Cell::dropEvent (
+\begin{DoxyParamCaption}
+\item[{QGraphicsSceneDragDropEvent $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_cell_a4988920897ae88a79fa8192fdd55f0b5}
+\hypertarget{class_cell_a089646fb36ac094bb1d0b91bc01e3f7f}{
+\index{Cell@{Cell}!GetGameItem@{GetGameItem}}
+\index{GetGameItem@{GetGameItem}!Cell@{Cell}}
+\subsubsection[{GetGameItem}]{\setlength{\rightskip}{0pt plus 5cm}{\bf GameItem} $\ast$ Cell::GetGameItem (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_cell_a089646fb36ac094bb1d0b91bc01e3f7f}
+\hypertarget{class_cell_a91e44d6a6b1b4ac59babaec3cb99ea66}{
+\index{Cell@{Cell}!GetX@{GetX}}
+\index{GetX@{GetX}!Cell@{Cell}}
+\subsubsection[{GetX}]{\setlength{\rightskip}{0pt plus 5cm}int Cell::GetX (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_cell_a91e44d6a6b1b4ac59babaec3cb99ea66}
+\hypertarget{class_cell_a67badd925fbe193a1a29557c1917e00f}{
+\index{Cell@{Cell}!GetY@{GetY}}
+\index{GetY@{GetY}!Cell@{Cell}}
+\subsubsection[{GetY}]{\setlength{\rightskip}{0pt plus 5cm}int Cell::GetY (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_cell_a67badd925fbe193a1a29557c1917e00f}
+\hypertarget{class_cell_a522f8850a2c033f29e6a5e58ea62839c}{
+\index{Cell@{Cell}!hoverEnterEvent@{hoverEnterEvent}}
+\index{hoverEnterEvent@{hoverEnterEvent}!Cell@{Cell}}
+\subsubsection[{hoverEnterEvent}]{\setlength{\rightskip}{0pt plus 5cm}void Cell::hoverEnterEvent (
+\begin{DoxyParamCaption}
+\item[{QGraphicsSceneHoverEvent $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_cell_a522f8850a2c033f29e6a5e58ea62839c}
+\hypertarget{class_cell_a08aae7dc656554efc9ad59f611b384a5}{
+\index{Cell@{Cell}!hoverLeaveEvent@{hoverLeaveEvent}}
+\index{hoverLeaveEvent@{hoverLeaveEvent}!Cell@{Cell}}
+\subsubsection[{hoverLeaveEvent}]{\setlength{\rightskip}{0pt plus 5cm}void Cell::hoverLeaveEvent (
+\begin{DoxyParamCaption}
+\item[{QGraphicsSceneHoverEvent $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_cell_a08aae7dc656554efc9ad59f611b384a5}
+\hypertarget{class_cell_ad24871a1e6c5245f4bd874dceb8f29de}{
+\index{Cell@{Cell}!mouseMoveEvent@{mouseMoveEvent}}
+\index{mouseMoveEvent@{mouseMoveEvent}!Cell@{Cell}}
+\subsubsection[{mouseMoveEvent}]{\setlength{\rightskip}{0pt plus 5cm}void Cell::mouseMoveEvent (
+\begin{DoxyParamCaption}
+\item[{QGraphicsSceneMouseEvent $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_cell_ad24871a1e6c5245f4bd874dceb8f29de}
+\hypertarget{class_cell_ac9cbc2f07f61fe3a0d68af7bd30e3cdf}{
+\index{Cell@{Cell}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!Cell@{Cell}}
+\subsubsection[{mousePressEvent}]{\setlength{\rightskip}{0pt plus 5cm}void Cell::mousePressEvent (
+\begin{DoxyParamCaption}
+\item[{QGraphicsSceneMouseEvent $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_cell_ac9cbc2f07f61fe3a0d68af7bd30e3cdf}
+\hypertarget{class_cell_a40656cc92895bfbff1a04e41d9918e51}{
+\index{Cell@{Cell}!mouseReleaseEvent@{mouseReleaseEvent}}
+\index{mouseReleaseEvent@{mouseReleaseEvent}!Cell@{Cell}}
+\subsubsection[{mouseReleaseEvent}]{\setlength{\rightskip}{0pt plus 5cm}void Cell::mouseReleaseEvent (
+\begin{DoxyParamCaption}
+\item[{QGraphicsSceneMouseEvent $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_cell_a40656cc92895bfbff1a04e41d9918e51}
+\hypertarget{class_cell_afcbe495223f91b760fb93fa17aac991a}{
+\index{Cell@{Cell}!paint@{paint}}
+\index{paint@{paint}!Cell@{Cell}}
+\subsubsection[{paint}]{\setlength{\rightskip}{0pt plus 5cm}void Cell::paint (
+\begin{DoxyParamCaption}
+\item[{QPainter $\ast$}]{painter, }
+\item[{const QStyleOptionGraphicsItem $\ast$}]{item, }
+\item[{QWidget $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}}
+\label{class_cell_afcbe495223f91b760fb93fa17aac991a}
+\hypertarget{class_cell_a1b75b6f17d7fa5ed7557207e85bdd3f6}{
+\index{Cell@{Cell}!setContextMenu@{setContextMenu}}
+\index{setContextMenu@{setContextMenu}!Cell@{Cell}}
+\subsubsection[{setContextMenu}]{\setlength{\rightskip}{0pt plus 5cm}void Cell::setContextMenu (
+\begin{DoxyParamCaption}
+\item[{QMenu $\ast$}]{contextMenu}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_cell_a1b75b6f17d7fa5ed7557207e85bdd3f6}
+\hypertarget{class_cell_a2229f507e3ce9265ddbb724caecebbb8}{
+\index{Cell@{Cell}!SetGameItem@{SetGameItem}}
+\index{SetGameItem@{SetGameItem}!Cell@{Cell}}
+\subsubsection[{SetGameItem}]{\setlength{\rightskip}{0pt plus 5cm}void Cell::SetGameItem (
+\begin{DoxyParamCaption}
+\item[{{\bf GameItem} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}
+\label{class_cell_a2229f507e3ce9265ddbb724caecebbb8}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_cell_af039f663a38dac420bbe62c2f90c3bb5}{
+\index{Cell@{Cell}!m\_\-Color@{m\_\-Color}}
+\index{m\_\-Color@{m\_\-Color}!Cell@{Cell}}
+\subsubsection[{m\_\-Color}]{\setlength{\rightskip}{0pt plus 5cm}QColor {\bf Cell::m\_\-Color}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_cell_af039f663a38dac420bbe62c2f90c3bb5}
+\hypertarget{class_cell_ab475b89241a718080a4511fcc91b9f2c}{
+\index{Cell@{Cell}!m\_\-contextMenu@{m\_\-contextMenu}}
+\index{m\_\-contextMenu@{m\_\-contextMenu}!Cell@{Cell}}
+\subsubsection[{m\_\-contextMenu}]{\setlength{\rightskip}{0pt plus 5cm}QMenu$\ast$ {\bf Cell::m\_\-contextMenu}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_cell_ab475b89241a718080a4511fcc91b9f2c}
+\hypertarget{class_cell_a493878cf970747f1596773aae325fc87}{
+\index{Cell@{Cell}!m\_\-Item@{m\_\-Item}}
+\index{m\_\-Item@{m\_\-Item}!Cell@{Cell}}
+\subsubsection[{m\_\-Item}]{\setlength{\rightskip}{0pt plus 5cm}{\bf GameItem}$\ast$ {\bf Cell::m\_\-Item}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_cell_a493878cf970747f1596773aae325fc87}
+\hypertarget{class_cell_a870b275658020dc6d2cdc48beadf0b35}{
+\index{Cell@{Cell}!m\_\-Rect@{m\_\-Rect}}
+\index{m\_\-Rect@{m\_\-Rect}!Cell@{Cell}}
+\subsubsection[{m\_\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}QRectF {\bf Cell::m\_\-Rect}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_cell_a870b275658020dc6d2cdc48beadf0b35}
+\hypertarget{class_cell_a6979d1a8ade7f0a6419fcfe4cd2be8b2}{
+\index{Cell@{Cell}!m\_\-xIndex@{m\_\-xIndex}}
+\index{m\_\-xIndex@{m\_\-xIndex}!Cell@{Cell}}
+\subsubsection[{m\_\-xIndex}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf Cell::m\_\-xIndex}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_cell_a6979d1a8ade7f0a6419fcfe4cd2be8b2}
+\hypertarget{class_cell_a2307ec9f6194515d2e399a6e16dfc416}{
+\index{Cell@{Cell}!m\_\-yIndex@{m\_\-yIndex}}
+\index{m\_\-yIndex@{m\_\-yIndex}!Cell@{Cell}}
+\subsubsection[{m\_\-yIndex}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf Cell::m\_\-yIndex}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_cell_a2307ec9f6194515d2e399a6e16dfc416}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+visualize/\hyperlink{cell_8h}{cell.h}\item 
+visualize/\hyperlink{cell_8cpp}{cell.cpp}\end{DoxyCompactItemize}

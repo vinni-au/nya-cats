@@ -1,0 +1,606 @@
+\hypertarget{class_m_l_v}{
+\section{MLV Class Reference}
+\label{class_m_l_v}\index{MLV@{MLV}}
+}
+
+
+{\ttfamily \#include $<$mlv.h$>$}
+
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+QVariant \hyperlink{class_m_l_v_ad6333f43519659f4442a133df5a0e4b4}{getValSlot} (int frameId, QString aimVar)
+\item 
+bool \hyperlink{class_m_l_v_aecbe0684744927216a8beacd9a804fdc}{setValSlot} (int frameId, QString aimVar, QVariant value)
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_m_l_v_a7e302abc856535449f9d6feb16b88078}{AddMsgToLog} (QString msg)
+\item 
+void \hyperlink{class_m_l_v_ac4ae3db23dd2ae2ba6817ed268e76c4c}{ClearLog} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_m_l_v_a00e537a60a93ef2df30db4632f5b0fc1}{MLV} (\hyperlink{class_n_k_b_manager}{NKBManager} $\ast$manager, \hyperlink{class_grid}{Grid} $\ast$grid)
+\item 
+void \hyperlink{class_m_l_v_ac6ae024c5256ee5be3721108ecb13b59}{Start} ()
+\item 
+void \hyperlink{class_m_l_v_abd6c51ddb9c23a1419aee7f68db5fbb2}{Start} (int x, int y)
+\item 
+void \hyperlink{class_m_l_v_afde1bf4d974d5aeb86f0d70fac9757fa}{Step} ()
+\item 
+void \hyperlink{class_m_l_v_a9bf03c54d62c00104993d26b0922cf5a}{Step} (int x, int y)
+\item 
+QVariant \hyperlink{class_m_l_v_aff1d66bd065183aee229698081e03524}{getVal} (int frameId, QString aimVar)
+\item 
+QVariant \hyperlink{class_m_l_v_abd54e1ef65e77c83a551e0aa619e07b9}{getVal} (\hyperlink{class_n_frame}{NFrame} $\ast$frame, QString aimVar)
+\item 
+bool \hyperlink{class_m_l_v_a696b73cf6e6aa87e48d1d556fa1ada10}{setVal} (int frameId, QString aimVar, QVariant value)
+\item 
+bool \hyperlink{class_m_l_v_a89e4da36393f346d0d4f1c21d56856d6}{setVal} (\hyperlink{class_n_frame}{NFrame} $\ast$frame, QString aimVar, QVariant value)
+\item 
+QList$<$ \hyperlink{class_n_frame}{NFrame} $\ast$ $>$ $\ast$ \hyperlink{class_m_l_v_aaefc0b7c6db1be8906a8304edb824aa3}{workMemory} ()
+\item 
+bool \hyperlink{class_m_l_v_a14d57e9d10b63b915eabdcc86d2223ff}{GetFullSearch} ()
+\item 
+void \hyperlink{class_m_l_v_ae7a3cc47774da9ccd7e8793e0fc78d8e}{SetFullSearch} (bool b)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_m_l_v_a9fadb85f4ade4580eaadbc4cb8902465}{Init} ()
+\item 
+void \hyperlink{class_m_l_v_a73969b6eb50ddf4da02bb4979564f6a5}{UpdateGrid} ()
+\item 
+bool \hyperlink{class_m_l_v_a16675f65763b1336acf4461c683a7f1b}{BindFrame} (\hyperlink{class_n_frame}{NFrame} $\ast$frame)
+\item 
+bool \hyperlink{class_m_l_v_a50007619b61d1d2efa64efa30d847d44}{BindSlot} (\hyperlink{class_n_frame}{NFrame} $\ast$frame, \hyperlink{class_n_slot}{NSlot} $\ast$slot)
+\item 
+bool \hyperlink{class_m_l_v_a78bde540ad8738bf28e00f0bd38a40e2}{BindPerson} (\hyperlink{class_n_frame}{NFrame} $\ast$frame)
+\item 
+bool \hyperlink{class_m_l_v_a00d61b95b6b4f6e91a74c7e936290712}{BindPerson} (int x, int y)
+\item 
+\hyperlink{class_n_frame}{NFrame} $\ast$ \hyperlink{class_m_l_v_a794cc9986b605755df84d7b3b3f70a34}{CreateFrameInstance} (QString name, bool fillDefault=true)
+\item 
+\hyperlink{class_n_frame}{NFrame} $\ast$ \hyperlink{class_m_l_v_a692fcc6afec6b41f8e5032a09959bfb6}{CreateFrameInstanceFull} (QString name, bool fillDefault=true)
+\item 
+bool \hyperlink{class_m_l_v_a80ef6b7ce96400b732ce3b9c0999f210}{SetSlotValue} (\hyperlink{class_n_frame}{NFrame} $\ast$frame, QString slotName, int value)
+\item 
+bool \hyperlink{class_m_l_v_ae6dfc4607e6d9006969e97b43c85c86b}{SetSlotValue} (\hyperlink{class_n_frame}{NFrame} $\ast$frame, QString slotName, QString value)
+\item 
+bool \hyperlink{class_m_l_v_a34f7bc0a28e4d1d83a11a7ed88889c00}{SetSlotValueVariant} (\hyperlink{class_n_frame}{NFrame} $\ast$frame, QString slotName, QVariant value, bool findInParents=false)
+\item 
+QVariant \hyperlink{class_m_l_v_afc7df83402f2aad79c3341ecf7bf3d9b}{GetSlotValue} (\hyperlink{class_n_frame}{NFrame} $\ast$frame, QString slotName, bool findInParents=false)
+\item 
+\hyperlink{class_n_frame}{NFrame} $\ast$ \hyperlink{class_m_l_v_ac7ef01922f36447c237495dca3e8dc98}{FindByProtName} (QString name)
+\item 
+\hyperlink{class_n_frame}{NFrame} $\ast$ \hyperlink{class_m_l_v_af9fa0dd9e5e251e59f2b8a6f530f8b13}{FindByInstName} (QString name)
+\item 
+\hyperlink{class_n_frame}{NFrame} $\ast$ \hyperlink{class_m_l_v_a030776febc4494da71b892fc2ade5041}{FindByPtr} (\hyperlink{class_n_frame}{NFrame} $\ast$framePtr)
+\item 
+\hyperlink{class_n_frame}{NFrame} $\ast$ \hyperlink{class_m_l_v_a2c57367ca70fda0976a6e1812cfdc2fe}{FindById} (int frameId)
+\item 
+\hyperlink{class_n_frame}{NFrame} $\ast$ \hyperlink{class_m_l_v_a4882cb69ab5b9cb7287e4697346996a5}{FindByCell} (int x, int y)
+\item 
+\hyperlink{class_n_frame}{NFrame} $\ast$ \hyperlink{class_m_l_v_ade7d4990f035acf0c0b81db8efbb0a67}{FindInCache} (QString name)
+\item 
+\hyperlink{class_n_frame}{NFrame} $\ast$ \hyperlink{class_m_l_v_aae69772e57e654ffa950b41bd2a3672c}{FindInCache} (int frameId)
+\item 
+\hyperlink{class_n_frame}{NFrame} $\ast$ \hyperlink{class_m_l_v_aa9ee3f2bdcb46f4b7def3c46cbc1e42d}{FindCell} (int x, int y)
+\item 
+bool \hyperlink{class_m_l_v_aa75ccc4a61c39d3e085f6d15d87fac13}{IsPerson} (\hyperlink{class_n_frame}{NFrame} $\ast$frame)
+\item 
+bool \hyperlink{class_m_l_v_a971316633bbc7474f17e0a700e836a05}{IsFood} (\hyperlink{class_n_frame}{NFrame} $\ast$frame)
+\item 
+bool \hyperlink{class_m_l_v_a35189985225a7d5afe5d43b4a87d3400}{IsPerson} (\hyperlink{class_game_item}{GameItem} $\ast$item)
+\item 
+bool \hyperlink{class_m_l_v_abbb19c02997a9e163eb54eaedd66f353}{IsFood} (\hyperlink{class_game_item}{GameItem} $\ast$item)
+\item 
+void \hyperlink{class_m_l_v_ab296c8cfa532b38a9f9166a2882943b4}{InitNeighborSituation} (\hyperlink{class_n_frame}{NFrame} $\ast$frameSituation, \hyperlink{class_n_frame}{NFrame} $\ast$item, QString slotName)
+\item 
+QString \hyperlink{class_m_l_v_a3311dabe98732bc56e57aea9a0b25ba2}{GetSpaces} (int count)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_n_k_b_manager}{NKBManager} $\ast$ \hyperlink{class_m_l_v_a658f6c57497493ea3002372ec8c1e87e}{m\_\-KBManager}
+\item 
+\hyperlink{class_n_frame}{NFrame} $\ast$ \hyperlink{class_m_l_v_a30f9ca60a2c5a3685c2d8874cdb4239b}{m\_\-CurrFrame}
+\item 
+\hyperlink{class_grid}{Grid} $\ast$ \hyperlink{class_m_l_v_abc083845a173fffe4ecffa53eff4ce7b}{m\_\-Grid}
+\item 
+\hyperlink{class_n_frame}{NFrame} $\ast$ \hyperlink{class_m_l_v_abde9393e8cee4f4651aed2995f78e2b6}{m\_\-GameFieldInst}
+\item 
+QList$<$ \hyperlink{class_n_frame}{NFrame} $\ast$ $>$ \hyperlink{class_m_l_v_a388c6f5bd93a0d529279307081fdaef0}{m\_\-CellFrameInsts}
+\item 
+QList$<$ \hyperlink{class_n_frame}{NFrame} $\ast$ $>$ \hyperlink{class_m_l_v_a5ca2a3b69881b3627099e0b22434b42f}{m\_\-WorkMemory}
+\item 
+QList$<$ \hyperlink{class_n_frame}{NFrame} $\ast$ $>$ \hyperlink{class_m_l_v_afa0ed05c965e317dfc78ac933f322809}{m\_\-Cache}
+\item 
+bool \hyperlink{class_m_l_v_aacd01024aafcb9def53c4f26d8005479}{m\_\-Initialized}
+\item 
+int \hyperlink{class_m_l_v_a735f5f98d1dcf3b835bfce6bb095334f}{m\_\-InstCount}
+\item 
+int \hyperlink{class_m_l_v_a5a16ccfba23723ec1006b15e8b2340ea}{m\_\-Padding}
+\item 
+bool \hyperlink{class_m_l_v_aeb084a554bdc5dba7261c36d62e56066}{m\_\-FullSearch}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_m_l_v_a00e537a60a93ef2df30db4632f5b0fc1}{
+\index{MLV@{MLV}!MLV@{MLV}}
+\index{MLV@{MLV}!MLV@{MLV}}
+\subsubsection[{MLV}]{\setlength{\rightskip}{0pt plus 5cm}MLV::MLV (
+\begin{DoxyParamCaption}
+\item[{{\bf NKBManager} $\ast$}]{manager, }
+\item[{{\bf Grid} $\ast$}]{grid}
+\end{DoxyParamCaption}
+)}}
+\label{class_m_l_v_a00e537a60a93ef2df30db4632f5b0fc1}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_m_l_v_a7e302abc856535449f9d6feb16b88078}{
+\index{MLV@{MLV}!AddMsgToLog@{AddMsgToLog}}
+\index{AddMsgToLog@{AddMsgToLog}!MLV@{MLV}}
+\subsubsection[{AddMsgToLog}]{\setlength{\rightskip}{0pt plus 5cm}void MLV::AddMsgToLog (
+\begin{DoxyParamCaption}
+\item[{QString}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}
+\label{class_m_l_v_a7e302abc856535449f9d6feb16b88078}
+\hypertarget{class_m_l_v_a16675f65763b1336acf4461c683a7f1b}{
+\index{MLV@{MLV}!BindFrame@{BindFrame}}
+\index{BindFrame@{BindFrame}!MLV@{MLV}}
+\subsubsection[{BindFrame}]{\setlength{\rightskip}{0pt plus 5cm}bool MLV::BindFrame (
+\begin{DoxyParamCaption}
+\item[{{\bf NFrame} $\ast$}]{frame}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_a16675f65763b1336acf4461c683a7f1b}
+\hypertarget{class_m_l_v_a00d61b95b6b4f6e91a74c7e936290712}{
+\index{MLV@{MLV}!BindPerson@{BindPerson}}
+\index{BindPerson@{BindPerson}!MLV@{MLV}}
+\subsubsection[{BindPerson}]{\setlength{\rightskip}{0pt plus 5cm}bool MLV::BindPerson (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_a00d61b95b6b4f6e91a74c7e936290712}
+\hypertarget{class_m_l_v_a78bde540ad8738bf28e00f0bd38a40e2}{
+\index{MLV@{MLV}!BindPerson@{BindPerson}}
+\index{BindPerson@{BindPerson}!MLV@{MLV}}
+\subsubsection[{BindPerson}]{\setlength{\rightskip}{0pt plus 5cm}bool MLV::BindPerson (
+\begin{DoxyParamCaption}
+\item[{{\bf NFrame} $\ast$}]{frame}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_a78bde540ad8738bf28e00f0bd38a40e2}
+\hypertarget{class_m_l_v_a50007619b61d1d2efa64efa30d847d44}{
+\index{MLV@{MLV}!BindSlot@{BindSlot}}
+\index{BindSlot@{BindSlot}!MLV@{MLV}}
+\subsubsection[{BindSlot}]{\setlength{\rightskip}{0pt plus 5cm}bool MLV::BindSlot (
+\begin{DoxyParamCaption}
+\item[{{\bf NFrame} $\ast$}]{frame, }
+\item[{{\bf NSlot} $\ast$}]{slot}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_a50007619b61d1d2efa64efa30d847d44}
+\hypertarget{class_m_l_v_ac4ae3db23dd2ae2ba6817ed268e76c4c}{
+\index{MLV@{MLV}!ClearLog@{ClearLog}}
+\index{ClearLog@{ClearLog}!MLV@{MLV}}
+\subsubsection[{ClearLog}]{\setlength{\rightskip}{0pt plus 5cm}void MLV::ClearLog (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}
+\label{class_m_l_v_ac4ae3db23dd2ae2ba6817ed268e76c4c}
+\hypertarget{class_m_l_v_a794cc9986b605755df84d7b3b3f70a34}{
+\index{MLV@{MLV}!CreateFrameInstance@{CreateFrameInstance}}
+\index{CreateFrameInstance@{CreateFrameInstance}!MLV@{MLV}}
+\subsubsection[{CreateFrameInstance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NFrame} $\ast$ MLV::CreateFrameInstance (
+\begin{DoxyParamCaption}
+\item[{QString}]{name, }
+\item[{bool}]{fillDefault = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_a794cc9986b605755df84d7b3b3f70a34}
+\hypertarget{class_m_l_v_a692fcc6afec6b41f8e5032a09959bfb6}{
+\index{MLV@{MLV}!CreateFrameInstanceFull@{CreateFrameInstanceFull}}
+\index{CreateFrameInstanceFull@{CreateFrameInstanceFull}!MLV@{MLV}}
+\subsubsection[{CreateFrameInstanceFull}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NFrame} $\ast$ MLV::CreateFrameInstanceFull (
+\begin{DoxyParamCaption}
+\item[{QString}]{name, }
+\item[{bool}]{fillDefault = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_a692fcc6afec6b41f8e5032a09959bfb6}
+\hypertarget{class_m_l_v_a4882cb69ab5b9cb7287e4697346996a5}{
+\index{MLV@{MLV}!FindByCell@{FindByCell}}
+\index{FindByCell@{FindByCell}!MLV@{MLV}}
+\subsubsection[{FindByCell}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NFrame} $\ast$ MLV::FindByCell (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_a4882cb69ab5b9cb7287e4697346996a5}
+\hypertarget{class_m_l_v_a2c57367ca70fda0976a6e1812cfdc2fe}{
+\index{MLV@{MLV}!FindById@{FindById}}
+\index{FindById@{FindById}!MLV@{MLV}}
+\subsubsection[{FindById}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NFrame} $\ast$ MLV::FindById (
+\begin{DoxyParamCaption}
+\item[{int}]{frameId}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_a2c57367ca70fda0976a6e1812cfdc2fe}
+\hypertarget{class_m_l_v_af9fa0dd9e5e251e59f2b8a6f530f8b13}{
+\index{MLV@{MLV}!FindByInstName@{FindByInstName}}
+\index{FindByInstName@{FindByInstName}!MLV@{MLV}}
+\subsubsection[{FindByInstName}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NFrame} $\ast$ MLV::FindByInstName (
+\begin{DoxyParamCaption}
+\item[{QString}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_af9fa0dd9e5e251e59f2b8a6f530f8b13}
+\hypertarget{class_m_l_v_ac7ef01922f36447c237495dca3e8dc98}{
+\index{MLV@{MLV}!FindByProtName@{FindByProtName}}
+\index{FindByProtName@{FindByProtName}!MLV@{MLV}}
+\subsubsection[{FindByProtName}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NFrame} $\ast$ MLV::FindByProtName (
+\begin{DoxyParamCaption}
+\item[{QString}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_ac7ef01922f36447c237495dca3e8dc98}
+\hypertarget{class_m_l_v_a030776febc4494da71b892fc2ade5041}{
+\index{MLV@{MLV}!FindByPtr@{FindByPtr}}
+\index{FindByPtr@{FindByPtr}!MLV@{MLV}}
+\subsubsection[{FindByPtr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NFrame} $\ast$ MLV::FindByPtr (
+\begin{DoxyParamCaption}
+\item[{{\bf NFrame} $\ast$}]{framePtr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_a030776febc4494da71b892fc2ade5041}
+\hypertarget{class_m_l_v_aa9ee3f2bdcb46f4b7def3c46cbc1e42d}{
+\index{MLV@{MLV}!FindCell@{FindCell}}
+\index{FindCell@{FindCell}!MLV@{MLV}}
+\subsubsection[{FindCell}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NFrame} $\ast$ MLV::FindCell (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_aa9ee3f2bdcb46f4b7def3c46cbc1e42d}
+\hypertarget{class_m_l_v_ade7d4990f035acf0c0b81db8efbb0a67}{
+\index{MLV@{MLV}!FindInCache@{FindInCache}}
+\index{FindInCache@{FindInCache}!MLV@{MLV}}
+\subsubsection[{FindInCache}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NFrame} $\ast$ MLV::FindInCache (
+\begin{DoxyParamCaption}
+\item[{QString}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_ade7d4990f035acf0c0b81db8efbb0a67}
+\hypertarget{class_m_l_v_aae69772e57e654ffa950b41bd2a3672c}{
+\index{MLV@{MLV}!FindInCache@{FindInCache}}
+\index{FindInCache@{FindInCache}!MLV@{MLV}}
+\subsubsection[{FindInCache}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NFrame} $\ast$ MLV::FindInCache (
+\begin{DoxyParamCaption}
+\item[{int}]{frameId}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_aae69772e57e654ffa950b41bd2a3672c}
+\hypertarget{class_m_l_v_a14d57e9d10b63b915eabdcc86d2223ff}{
+\index{MLV@{MLV}!GetFullSearch@{GetFullSearch}}
+\index{GetFullSearch@{GetFullSearch}!MLV@{MLV}}
+\subsubsection[{GetFullSearch}]{\setlength{\rightskip}{0pt plus 5cm}bool MLV::GetFullSearch (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_m_l_v_a14d57e9d10b63b915eabdcc86d2223ff}
+\hypertarget{class_m_l_v_afc7df83402f2aad79c3341ecf7bf3d9b}{
+\index{MLV@{MLV}!GetSlotValue@{GetSlotValue}}
+\index{GetSlotValue@{GetSlotValue}!MLV@{MLV}}
+\subsubsection[{GetSlotValue}]{\setlength{\rightskip}{0pt plus 5cm}QVariant MLV::GetSlotValue (
+\begin{DoxyParamCaption}
+\item[{{\bf NFrame} $\ast$}]{frame, }
+\item[{QString}]{slotName, }
+\item[{bool}]{findInParents = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_afc7df83402f2aad79c3341ecf7bf3d9b}
+\hypertarget{class_m_l_v_a3311dabe98732bc56e57aea9a0b25ba2}{
+\index{MLV@{MLV}!GetSpaces@{GetSpaces}}
+\index{GetSpaces@{GetSpaces}!MLV@{MLV}}
+\subsubsection[{GetSpaces}]{\setlength{\rightskip}{0pt plus 5cm}QString MLV::GetSpaces (
+\begin{DoxyParamCaption}
+\item[{int}]{count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_a3311dabe98732bc56e57aea9a0b25ba2}
+\hypertarget{class_m_l_v_aff1d66bd065183aee229698081e03524}{
+\index{MLV@{MLV}!getVal@{getVal}}
+\index{getVal@{getVal}!MLV@{MLV}}
+\subsubsection[{getVal}]{\setlength{\rightskip}{0pt plus 5cm}QVariant MLV::getVal (
+\begin{DoxyParamCaption}
+\item[{int}]{frameId, }
+\item[{QString}]{aimVar}
+\end{DoxyParamCaption}
+)}}
+\label{class_m_l_v_aff1d66bd065183aee229698081e03524}
+\hypertarget{class_m_l_v_abd54e1ef65e77c83a551e0aa619e07b9}{
+\index{MLV@{MLV}!getVal@{getVal}}
+\index{getVal@{getVal}!MLV@{MLV}}
+\subsubsection[{getVal}]{\setlength{\rightskip}{0pt plus 5cm}QVariant MLV::getVal (
+\begin{DoxyParamCaption}
+\item[{{\bf NFrame} $\ast$}]{frame, }
+\item[{QString}]{aimVar}
+\end{DoxyParamCaption}
+)}}
+\label{class_m_l_v_abd54e1ef65e77c83a551e0aa619e07b9}
+\hypertarget{class_m_l_v_ad6333f43519659f4442a133df5a0e4b4}{
+\index{MLV@{MLV}!getValSlot@{getValSlot}}
+\index{getValSlot@{getValSlot}!MLV@{MLV}}
+\subsubsection[{getValSlot}]{\setlength{\rightskip}{0pt plus 5cm}QVariant MLV::getValSlot (
+\begin{DoxyParamCaption}
+\item[{int}]{frameId, }
+\item[{QString}]{aimVar}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_m_l_v_ad6333f43519659f4442a133df5a0e4b4}
+\hypertarget{class_m_l_v_a9fadb85f4ade4580eaadbc4cb8902465}{
+\index{MLV@{MLV}!Init@{Init}}
+\index{Init@{Init}!MLV@{MLV}}
+\subsubsection[{Init}]{\setlength{\rightskip}{0pt plus 5cm}bool MLV::Init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_a9fadb85f4ade4580eaadbc4cb8902465}
+\hypertarget{class_m_l_v_ab296c8cfa532b38a9f9166a2882943b4}{
+\index{MLV@{MLV}!InitNeighborSituation@{InitNeighborSituation}}
+\index{InitNeighborSituation@{InitNeighborSituation}!MLV@{MLV}}
+\subsubsection[{InitNeighborSituation}]{\setlength{\rightskip}{0pt plus 5cm}void MLV::InitNeighborSituation (
+\begin{DoxyParamCaption}
+\item[{{\bf NFrame} $\ast$}]{frameSituation, }
+\item[{{\bf NFrame} $\ast$}]{item, }
+\item[{QString}]{slotName}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_ab296c8cfa532b38a9f9166a2882943b4}
+\hypertarget{class_m_l_v_a971316633bbc7474f17e0a700e836a05}{
+\index{MLV@{MLV}!IsFood@{IsFood}}
+\index{IsFood@{IsFood}!MLV@{MLV}}
+\subsubsection[{IsFood}]{\setlength{\rightskip}{0pt plus 5cm}bool MLV::IsFood (
+\begin{DoxyParamCaption}
+\item[{{\bf NFrame} $\ast$}]{frame}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_a971316633bbc7474f17e0a700e836a05}
+\hypertarget{class_m_l_v_abbb19c02997a9e163eb54eaedd66f353}{
+\index{MLV@{MLV}!IsFood@{IsFood}}
+\index{IsFood@{IsFood}!MLV@{MLV}}
+\subsubsection[{IsFood}]{\setlength{\rightskip}{0pt plus 5cm}bool MLV::IsFood (
+\begin{DoxyParamCaption}
+\item[{{\bf GameItem} $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_abbb19c02997a9e163eb54eaedd66f353}
+\hypertarget{class_m_l_v_a35189985225a7d5afe5d43b4a87d3400}{
+\index{MLV@{MLV}!IsPerson@{IsPerson}}
+\index{IsPerson@{IsPerson}!MLV@{MLV}}
+\subsubsection[{IsPerson}]{\setlength{\rightskip}{0pt plus 5cm}bool MLV::IsPerson (
+\begin{DoxyParamCaption}
+\item[{{\bf GameItem} $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_a35189985225a7d5afe5d43b4a87d3400}
+\hypertarget{class_m_l_v_aa75ccc4a61c39d3e085f6d15d87fac13}{
+\index{MLV@{MLV}!IsPerson@{IsPerson}}
+\index{IsPerson@{IsPerson}!MLV@{MLV}}
+\subsubsection[{IsPerson}]{\setlength{\rightskip}{0pt plus 5cm}bool MLV::IsPerson (
+\begin{DoxyParamCaption}
+\item[{{\bf NFrame} $\ast$}]{frame}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_aa75ccc4a61c39d3e085f6d15d87fac13}
+\hypertarget{class_m_l_v_ae7a3cc47774da9ccd7e8793e0fc78d8e}{
+\index{MLV@{MLV}!SetFullSearch@{SetFullSearch}}
+\index{SetFullSearch@{SetFullSearch}!MLV@{MLV}}
+\subsubsection[{SetFullSearch}]{\setlength{\rightskip}{0pt plus 5cm}void MLV::SetFullSearch (
+\begin{DoxyParamCaption}
+\item[{bool}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_m_l_v_ae7a3cc47774da9ccd7e8793e0fc78d8e}
+\hypertarget{class_m_l_v_a80ef6b7ce96400b732ce3b9c0999f210}{
+\index{MLV@{MLV}!SetSlotValue@{SetSlotValue}}
+\index{SetSlotValue@{SetSlotValue}!MLV@{MLV}}
+\subsubsection[{SetSlotValue}]{\setlength{\rightskip}{0pt plus 5cm}bool MLV::SetSlotValue (
+\begin{DoxyParamCaption}
+\item[{{\bf NFrame} $\ast$}]{frame, }
+\item[{QString}]{slotName, }
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_a80ef6b7ce96400b732ce3b9c0999f210}
+\hypertarget{class_m_l_v_ae6dfc4607e6d9006969e97b43c85c86b}{
+\index{MLV@{MLV}!SetSlotValue@{SetSlotValue}}
+\index{SetSlotValue@{SetSlotValue}!MLV@{MLV}}
+\subsubsection[{SetSlotValue}]{\setlength{\rightskip}{0pt plus 5cm}bool MLV::SetSlotValue (
+\begin{DoxyParamCaption}
+\item[{{\bf NFrame} $\ast$}]{frame, }
+\item[{QString}]{slotName, }
+\item[{QString}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_ae6dfc4607e6d9006969e97b43c85c86b}
+\hypertarget{class_m_l_v_a34f7bc0a28e4d1d83a11a7ed88889c00}{
+\index{MLV@{MLV}!SetSlotValueVariant@{SetSlotValueVariant}}
+\index{SetSlotValueVariant@{SetSlotValueVariant}!MLV@{MLV}}
+\subsubsection[{SetSlotValueVariant}]{\setlength{\rightskip}{0pt plus 5cm}bool MLV::SetSlotValueVariant (
+\begin{DoxyParamCaption}
+\item[{{\bf NFrame} $\ast$}]{frame, }
+\item[{QString}]{slotName, }
+\item[{QVariant}]{value, }
+\item[{bool}]{findInParents = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_a34f7bc0a28e4d1d83a11a7ed88889c00}
+\hypertarget{class_m_l_v_a89e4da36393f346d0d4f1c21d56856d6}{
+\index{MLV@{MLV}!setVal@{setVal}}
+\index{setVal@{setVal}!MLV@{MLV}}
+\subsubsection[{setVal}]{\setlength{\rightskip}{0pt plus 5cm}bool MLV::setVal (
+\begin{DoxyParamCaption}
+\item[{{\bf NFrame} $\ast$}]{frame, }
+\item[{QString}]{aimVar, }
+\item[{QVariant}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{class_m_l_v_a89e4da36393f346d0d4f1c21d56856d6}
+\hypertarget{class_m_l_v_a696b73cf6e6aa87e48d1d556fa1ada10}{
+\index{MLV@{MLV}!setVal@{setVal}}
+\index{setVal@{setVal}!MLV@{MLV}}
+\subsubsection[{setVal}]{\setlength{\rightskip}{0pt plus 5cm}bool MLV::setVal (
+\begin{DoxyParamCaption}
+\item[{int}]{frameId, }
+\item[{QString}]{aimVar, }
+\item[{QVariant}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{class_m_l_v_a696b73cf6e6aa87e48d1d556fa1ada10}
+\hypertarget{class_m_l_v_aecbe0684744927216a8beacd9a804fdc}{
+\index{MLV@{MLV}!setValSlot@{setValSlot}}
+\index{setValSlot@{setValSlot}!MLV@{MLV}}
+\subsubsection[{setValSlot}]{\setlength{\rightskip}{0pt plus 5cm}bool MLV::setValSlot (
+\begin{DoxyParamCaption}
+\item[{int}]{frameId, }
+\item[{QString}]{aimVar, }
+\item[{QVariant}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_m_l_v_aecbe0684744927216a8beacd9a804fdc}
+\hypertarget{class_m_l_v_ac6ae024c5256ee5be3721108ecb13b59}{
+\index{MLV@{MLV}!Start@{Start}}
+\index{Start@{Start}!MLV@{MLV}}
+\subsubsection[{Start}]{\setlength{\rightskip}{0pt plus 5cm}void MLV::Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_m_l_v_ac6ae024c5256ee5be3721108ecb13b59}
+\hypertarget{class_m_l_v_abd6c51ddb9c23a1419aee7f68db5fbb2}{
+\index{MLV@{MLV}!Start@{Start}}
+\index{Start@{Start}!MLV@{MLV}}
+\subsubsection[{Start}]{\setlength{\rightskip}{0pt plus 5cm}void MLV::Start (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}
+\label{class_m_l_v_abd6c51ddb9c23a1419aee7f68db5fbb2}
+\hypertarget{class_m_l_v_a9bf03c54d62c00104993d26b0922cf5a}{
+\index{MLV@{MLV}!Step@{Step}}
+\index{Step@{Step}!MLV@{MLV}}
+\subsubsection[{Step}]{\setlength{\rightskip}{0pt plus 5cm}void MLV::Step (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}
+\label{class_m_l_v_a9bf03c54d62c00104993d26b0922cf5a}
+\hypertarget{class_m_l_v_afde1bf4d974d5aeb86f0d70fac9757fa}{
+\index{MLV@{MLV}!Step@{Step}}
+\index{Step@{Step}!MLV@{MLV}}
+\subsubsection[{Step}]{\setlength{\rightskip}{0pt plus 5cm}void MLV::Step (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_m_l_v_afde1bf4d974d5aeb86f0d70fac9757fa}
+\hypertarget{class_m_l_v_a73969b6eb50ddf4da02bb4979564f6a5}{
+\index{MLV@{MLV}!UpdateGrid@{UpdateGrid}}
+\index{UpdateGrid@{UpdateGrid}!MLV@{MLV}}
+\subsubsection[{UpdateGrid}]{\setlength{\rightskip}{0pt plus 5cm}void MLV::UpdateGrid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_a73969b6eb50ddf4da02bb4979564f6a5}
+\hypertarget{class_m_l_v_aaefc0b7c6db1be8906a8304edb824aa3}{
+\index{MLV@{MLV}!workMemory@{workMemory}}
+\index{workMemory@{workMemory}!MLV@{MLV}}
+\subsubsection[{workMemory}]{\setlength{\rightskip}{0pt plus 5cm}QList$<${\bf NFrame}$\ast$$>$$\ast$ MLV::workMemory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_m_l_v_aaefc0b7c6db1be8906a8304edb824aa3}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_m_l_v_afa0ed05c965e317dfc78ac933f322809}{
+\index{MLV@{MLV}!m\_\-Cache@{m\_\-Cache}}
+\index{m\_\-Cache@{m\_\-Cache}!MLV@{MLV}}
+\subsubsection[{m\_\-Cache}]{\setlength{\rightskip}{0pt plus 5cm}QList$<${\bf NFrame}$\ast$$>$ {\bf MLV::m\_\-Cache}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_afa0ed05c965e317dfc78ac933f322809}
+\hypertarget{class_m_l_v_a388c6f5bd93a0d529279307081fdaef0}{
+\index{MLV@{MLV}!m\_\-CellFrameInsts@{m\_\-CellFrameInsts}}
+\index{m\_\-CellFrameInsts@{m\_\-CellFrameInsts}!MLV@{MLV}}
+\subsubsection[{m\_\-CellFrameInsts}]{\setlength{\rightskip}{0pt plus 5cm}QList$<${\bf NFrame}$\ast$$>$ {\bf MLV::m\_\-CellFrameInsts}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_a388c6f5bd93a0d529279307081fdaef0}
+\hypertarget{class_m_l_v_a30f9ca60a2c5a3685c2d8874cdb4239b}{
+\index{MLV@{MLV}!m\_\-CurrFrame@{m\_\-CurrFrame}}
+\index{m\_\-CurrFrame@{m\_\-CurrFrame}!MLV@{MLV}}
+\subsubsection[{m\_\-CurrFrame}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NFrame}$\ast$ {\bf MLV::m\_\-CurrFrame}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_a30f9ca60a2c5a3685c2d8874cdb4239b}
+\hypertarget{class_m_l_v_aeb084a554bdc5dba7261c36d62e56066}{
+\index{MLV@{MLV}!m\_\-FullSearch@{m\_\-FullSearch}}
+\index{m\_\-FullSearch@{m\_\-FullSearch}!MLV@{MLV}}
+\subsubsection[{m\_\-FullSearch}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf MLV::m\_\-FullSearch}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_aeb084a554bdc5dba7261c36d62e56066}
+\hypertarget{class_m_l_v_abde9393e8cee4f4651aed2995f78e2b6}{
+\index{MLV@{MLV}!m\_\-GameFieldInst@{m\_\-GameFieldInst}}
+\index{m\_\-GameFieldInst@{m\_\-GameFieldInst}!MLV@{MLV}}
+\subsubsection[{m\_\-GameFieldInst}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NFrame}$\ast$ {\bf MLV::m\_\-GameFieldInst}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_abde9393e8cee4f4651aed2995f78e2b6}
+\hypertarget{class_m_l_v_abc083845a173fffe4ecffa53eff4ce7b}{
+\index{MLV@{MLV}!m\_\-Grid@{m\_\-Grid}}
+\index{m\_\-Grid@{m\_\-Grid}!MLV@{MLV}}
+\subsubsection[{m\_\-Grid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Grid}$\ast$ {\bf MLV::m\_\-Grid}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_abc083845a173fffe4ecffa53eff4ce7b}
+\hypertarget{class_m_l_v_aacd01024aafcb9def53c4f26d8005479}{
+\index{MLV@{MLV}!m\_\-Initialized@{m\_\-Initialized}}
+\index{m\_\-Initialized@{m\_\-Initialized}!MLV@{MLV}}
+\subsubsection[{m\_\-Initialized}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf MLV::m\_\-Initialized}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_aacd01024aafcb9def53c4f26d8005479}
+\hypertarget{class_m_l_v_a735f5f98d1dcf3b835bfce6bb095334f}{
+\index{MLV@{MLV}!m\_\-InstCount@{m\_\-InstCount}}
+\index{m\_\-InstCount@{m\_\-InstCount}!MLV@{MLV}}
+\subsubsection[{m\_\-InstCount}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf MLV::m\_\-InstCount}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_a735f5f98d1dcf3b835bfce6bb095334f}
+\hypertarget{class_m_l_v_a658f6c57497493ea3002372ec8c1e87e}{
+\index{MLV@{MLV}!m\_\-KBManager@{m\_\-KBManager}}
+\index{m\_\-KBManager@{m\_\-KBManager}!MLV@{MLV}}
+\subsubsection[{m\_\-KBManager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NKBManager}$\ast$ {\bf MLV::m\_\-KBManager}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_a658f6c57497493ea3002372ec8c1e87e}
+\hypertarget{class_m_l_v_a5a16ccfba23723ec1006b15e8b2340ea}{
+\index{MLV@{MLV}!m\_\-Padding@{m\_\-Padding}}
+\index{m\_\-Padding@{m\_\-Padding}!MLV@{MLV}}
+\subsubsection[{m\_\-Padding}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf MLV::m\_\-Padding}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_a5a16ccfba23723ec1006b15e8b2340ea}
+\hypertarget{class_m_l_v_a5ca2a3b69881b3627099e0b22434b42f}{
+\index{MLV@{MLV}!m\_\-WorkMemory@{m\_\-WorkMemory}}
+\index{m\_\-WorkMemory@{m\_\-WorkMemory}!MLV@{MLV}}
+\subsubsection[{m\_\-WorkMemory}]{\setlength{\rightskip}{0pt plus 5cm}QList$<${\bf NFrame}$\ast$$>$ {\bf MLV::m\_\-WorkMemory}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_m_l_v_a5ca2a3b69881b3627099e0b22434b42f}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+mlv/\hyperlink{mlv_8h}{mlv.h}\item 
+mlv/\hyperlink{mlv_8cpp}{mlv.cpp}\end{DoxyCompactItemize}

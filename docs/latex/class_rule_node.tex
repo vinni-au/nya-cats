@@ -1,0 +1,286 @@
+\hypertarget{class_rule_node}{
+\section{RuleNode Class Reference}
+\label{class_rule_node}\index{RuleNode@{RuleNode}}
+}
+
+
+{\ttfamily \#include $<$rulenode.h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636}{Type} \{ \par
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636a981d39e1f15bd7216248bf76b0eb2f87}{Root}, 
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636a9bc7cb7031c6ac294235769e0512703b}{RuleName}, 
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636a4de1d3c98b39dcbc705e55fc1eb2f9ce}{RuleReason}, 
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636ab563e2519924fc6f3b3353caf5a97faa}{RulePredicateHead}, 
+\par
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636a1638fb696f3c7bab9abe49750889a72c}{RulePredicate}, 
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636ade4f1a8272f5be0b2eba78bbac6a7c32}{RuleConclusionHead}, 
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636a8a6a915c2d84feec8d0b0ff805c3b50a}{RuleConclusion}, 
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636a981d39e1f15bd7216248bf76b0eb2f87}{Root}, 
+\par
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636a9bc7cb7031c6ac294235769e0512703b}{RuleName}, 
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636a4de1d3c98b39dcbc705e55fc1eb2f9ce}{RuleReason}, 
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636ab563e2519924fc6f3b3353caf5a97faa}{RulePredicateHead}, 
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636a1638fb696f3c7bab9abe49750889a72c}{RulePredicate}, 
+\par
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636ade4f1a8272f5be0b2eba78bbac6a7c32}{RuleConclusionHead}, 
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636a8a6a915c2d84feec8d0b0ff805c3b50a}{RuleConclusion}
+ \}
+\item 
+enum \hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636}{Type} \{ \par
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636a981d39e1f15bd7216248bf76b0eb2f87}{Root}, 
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636a9bc7cb7031c6ac294235769e0512703b}{RuleName}, 
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636a4de1d3c98b39dcbc705e55fc1eb2f9ce}{RuleReason}, 
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636ab563e2519924fc6f3b3353caf5a97faa}{RulePredicateHead}, 
+\par
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636a1638fb696f3c7bab9abe49750889a72c}{RulePredicate}, 
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636ade4f1a8272f5be0b2eba78bbac6a7c32}{RuleConclusionHead}, 
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636a8a6a915c2d84feec8d0b0ff805c3b50a}{RuleConclusion}, 
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636a981d39e1f15bd7216248bf76b0eb2f87}{Root}, 
+\par
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636a9bc7cb7031c6ac294235769e0512703b}{RuleName}, 
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636a4de1d3c98b39dcbc705e55fc1eb2f9ce}{RuleReason}, 
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636ab563e2519924fc6f3b3353caf5a97faa}{RulePredicateHead}, 
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636a1638fb696f3c7bab9abe49750889a72c}{RulePredicate}, 
+\par
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636ade4f1a8272f5be0b2eba78bbac6a7c32}{RuleConclusionHead}, 
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636a8a6a915c2d84feec8d0b0ff805c3b50a}{RuleConclusion}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_rule_node_a7bf5ae341d70b90dc244ef797f822452}{RuleNode} (\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636}{Type} \hyperlink{class_rule_node_ae87a23283ab864a45dad3b6716751d5f}{type}, \hyperlink{class_rule}{Rule} $\ast$\hyperlink{class_rule_node_a5102587db43bf3aede68ec0c24b60a7b}{rule}, bool createBackLink, \hyperlink{class_rule_node}{RuleNode} $\ast$\hyperlink{class_rule_node_a125fb9f6655d872b9f0e7e1991023974}{parent}=0)
+\item 
+\hyperlink{class_rule_node_a9966a318685dd21fa5e1dba6f605932c}{$\sim$RuleNode} ()
+\item 
+\hyperlink{class_rule_node_a7bf5ae341d70b90dc244ef797f822452}{RuleNode} (\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636}{Type} \hyperlink{class_rule_node_ae87a23283ab864a45dad3b6716751d5f}{type}, \hyperlink{class_rule}{Rule} $\ast$\hyperlink{class_rule_node_a5102587db43bf3aede68ec0c24b60a7b}{rule}, bool createBackLink, \hyperlink{class_rule_node}{RuleNode} $\ast$\hyperlink{class_rule_node_a125fb9f6655d872b9f0e7e1991023974}{parent}=0)
+\item 
+\hyperlink{class_rule_node_a9966a318685dd21fa5e1dba6f605932c}{$\sim$RuleNode} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_rule_node_af5559008a21eeb33044686b245f8e636}{Type} \hyperlink{class_rule_node_ae87a23283ab864a45dad3b6716751d5f}{type}
+\item 
+\hyperlink{class_rule}{Rule} $\ast$ \hyperlink{class_rule_node_a5102587db43bf3aede68ec0c24b60a7b}{rule}
+\item 
+\hyperlink{class_rule_node}{RuleNode} $\ast$ \hyperlink{class_rule_node_a125fb9f6655d872b9f0e7e1991023974}{parent}
+\item 
+QList$<$ \hyperlink{class_rule_node}{RuleNode} $\ast$ $>$ \hyperlink{class_rule_node_a94b912d0c01fa1cd77c2083c289356fc}{children}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636}{
+\index{RuleNode@{RuleNode}!Type@{Type}}
+\index{Type@{Type}!RuleNode@{RuleNode}}
+\subsubsection[{Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf RuleNode::Type}}}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{Root@{Root}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!Root@{Root}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636a981d39e1f15bd7216248bf76b0eb2f87}{
+Root}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636a981d39e1f15bd7216248bf76b0eb2f87}
+}]\index{RuleName@{RuleName}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!RuleName@{RuleName}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636a9bc7cb7031c6ac294235769e0512703b}{
+RuleName}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636a9bc7cb7031c6ac294235769e0512703b}
+}]\index{RuleReason@{RuleReason}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!RuleReason@{RuleReason}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636a4de1d3c98b39dcbc705e55fc1eb2f9ce}{
+RuleReason}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636a4de1d3c98b39dcbc705e55fc1eb2f9ce}
+}]\index{RulePredicateHead@{RulePredicateHead}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!RulePredicateHead@{RulePredicateHead}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636ab563e2519924fc6f3b3353caf5a97faa}{
+RulePredicateHead}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636ab563e2519924fc6f3b3353caf5a97faa}
+}]\index{RulePredicate@{RulePredicate}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!RulePredicate@{RulePredicate}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636a1638fb696f3c7bab9abe49750889a72c}{
+RulePredicate}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636a1638fb696f3c7bab9abe49750889a72c}
+}]\index{RuleConclusionHead@{RuleConclusionHead}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!RuleConclusionHead@{RuleConclusionHead}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636ade4f1a8272f5be0b2eba78bbac6a7c32}{
+RuleConclusionHead}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636ade4f1a8272f5be0b2eba78bbac6a7c32}
+}]\index{RuleConclusion@{RuleConclusion}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!RuleConclusion@{RuleConclusion}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636a8a6a915c2d84feec8d0b0ff805c3b50a}{
+RuleConclusion}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636a8a6a915c2d84feec8d0b0ff805c3b50a}
+}]\index{Root@{Root}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!Root@{Root}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636a981d39e1f15bd7216248bf76b0eb2f87}{
+Root}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636a981d39e1f15bd7216248bf76b0eb2f87}
+}]\index{RuleName@{RuleName}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!RuleName@{RuleName}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636a9bc7cb7031c6ac294235769e0512703b}{
+RuleName}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636a9bc7cb7031c6ac294235769e0512703b}
+}]\index{RuleReason@{RuleReason}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!RuleReason@{RuleReason}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636a4de1d3c98b39dcbc705e55fc1eb2f9ce}{
+RuleReason}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636a4de1d3c98b39dcbc705e55fc1eb2f9ce}
+}]\index{RulePredicateHead@{RulePredicateHead}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!RulePredicateHead@{RulePredicateHead}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636ab563e2519924fc6f3b3353caf5a97faa}{
+RulePredicateHead}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636ab563e2519924fc6f3b3353caf5a97faa}
+}]\index{RulePredicate@{RulePredicate}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!RulePredicate@{RulePredicate}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636a1638fb696f3c7bab9abe49750889a72c}{
+RulePredicate}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636a1638fb696f3c7bab9abe49750889a72c}
+}]\index{RuleConclusionHead@{RuleConclusionHead}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!RuleConclusionHead@{RuleConclusionHead}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636ade4f1a8272f5be0b2eba78bbac6a7c32}{
+RuleConclusionHead}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636ade4f1a8272f5be0b2eba78bbac6a7c32}
+}]\index{RuleConclusion@{RuleConclusion}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!RuleConclusion@{RuleConclusion}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636a8a6a915c2d84feec8d0b0ff805c3b50a}{
+RuleConclusion}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636a8a6a915c2d84feec8d0b0ff805c3b50a}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636}{
+\index{RuleNode@{RuleNode}!Type@{Type}}
+\index{Type@{Type}!RuleNode@{RuleNode}}
+\subsubsection[{Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf RuleNode::Type}}}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{Root@{Root}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!Root@{Root}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636a981d39e1f15bd7216248bf76b0eb2f87}{
+Root}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636a981d39e1f15bd7216248bf76b0eb2f87}
+}]\index{RuleName@{RuleName}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!RuleName@{RuleName}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636a9bc7cb7031c6ac294235769e0512703b}{
+RuleName}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636a9bc7cb7031c6ac294235769e0512703b}
+}]\index{RuleReason@{RuleReason}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!RuleReason@{RuleReason}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636a4de1d3c98b39dcbc705e55fc1eb2f9ce}{
+RuleReason}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636a4de1d3c98b39dcbc705e55fc1eb2f9ce}
+}]\index{RulePredicateHead@{RulePredicateHead}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!RulePredicateHead@{RulePredicateHead}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636ab563e2519924fc6f3b3353caf5a97faa}{
+RulePredicateHead}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636ab563e2519924fc6f3b3353caf5a97faa}
+}]\index{RulePredicate@{RulePredicate}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!RulePredicate@{RulePredicate}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636a1638fb696f3c7bab9abe49750889a72c}{
+RulePredicate}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636a1638fb696f3c7bab9abe49750889a72c}
+}]\index{RuleConclusionHead@{RuleConclusionHead}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!RuleConclusionHead@{RuleConclusionHead}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636ade4f1a8272f5be0b2eba78bbac6a7c32}{
+RuleConclusionHead}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636ade4f1a8272f5be0b2eba78bbac6a7c32}
+}]\index{RuleConclusion@{RuleConclusion}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!RuleConclusion@{RuleConclusion}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636a8a6a915c2d84feec8d0b0ff805c3b50a}{
+RuleConclusion}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636a8a6a915c2d84feec8d0b0ff805c3b50a}
+}]\index{Root@{Root}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!Root@{Root}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636a981d39e1f15bd7216248bf76b0eb2f87}{
+Root}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636a981d39e1f15bd7216248bf76b0eb2f87}
+}]\index{RuleName@{RuleName}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!RuleName@{RuleName}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636a9bc7cb7031c6ac294235769e0512703b}{
+RuleName}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636a9bc7cb7031c6ac294235769e0512703b}
+}]\index{RuleReason@{RuleReason}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!RuleReason@{RuleReason}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636a4de1d3c98b39dcbc705e55fc1eb2f9ce}{
+RuleReason}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636a4de1d3c98b39dcbc705e55fc1eb2f9ce}
+}]\index{RulePredicateHead@{RulePredicateHead}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!RulePredicateHead@{RulePredicateHead}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636ab563e2519924fc6f3b3353caf5a97faa}{
+RulePredicateHead}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636ab563e2519924fc6f3b3353caf5a97faa}
+}]\index{RulePredicate@{RulePredicate}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!RulePredicate@{RulePredicate}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636a1638fb696f3c7bab9abe49750889a72c}{
+RulePredicate}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636a1638fb696f3c7bab9abe49750889a72c}
+}]\index{RuleConclusionHead@{RuleConclusionHead}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!RuleConclusionHead@{RuleConclusionHead}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636ade4f1a8272f5be0b2eba78bbac6a7c32}{
+RuleConclusionHead}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636ade4f1a8272f5be0b2eba78bbac6a7c32}
+}]\index{RuleConclusion@{RuleConclusion}!RuleNode@{RuleNode}}\index{RuleNode@{RuleNode}!RuleConclusion@{RuleConclusion}}\item[{\em 
+\hypertarget{class_rule_node_af5559008a21eeb33044686b245f8e636a8a6a915c2d84feec8d0b0ff805c3b50a}{
+RuleConclusion}
+\label{class_rule_node_af5559008a21eeb33044686b245f8e636a8a6a915c2d84feec8d0b0ff805c3b50a}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_rule_node_a7bf5ae341d70b90dc244ef797f822452}{
+\index{RuleNode@{RuleNode}!RuleNode@{RuleNode}}
+\index{RuleNode@{RuleNode}!RuleNode@{RuleNode}}
+\subsubsection[{RuleNode}]{\setlength{\rightskip}{0pt plus 5cm}RuleNode::RuleNode (
+\begin{DoxyParamCaption}
+\item[{{\bf Type}}]{type, }
+\item[{{\bf Rule} $\ast$}]{rule, }
+\item[{bool}]{createBackLink, }
+\item[{{\bf RuleNode} $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}explicit\mbox{]}}}}
+\label{class_rule_node_a7bf5ae341d70b90dc244ef797f822452}
+\hypertarget{class_rule_node_a9966a318685dd21fa5e1dba6f605932c}{
+\index{RuleNode@{RuleNode}!$\sim$RuleNode@{$\sim$RuleNode}}
+\index{$\sim$RuleNode@{$\sim$RuleNode}!RuleNode@{RuleNode}}
+\subsubsection[{$\sim$RuleNode}]{\setlength{\rightskip}{0pt plus 5cm}RuleNode::$\sim$RuleNode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_rule_node_a9966a318685dd21fa5e1dba6f605932c}
+\hypertarget{class_rule_node_a7bf5ae341d70b90dc244ef797f822452}{
+\index{RuleNode@{RuleNode}!RuleNode@{RuleNode}}
+\index{RuleNode@{RuleNode}!RuleNode@{RuleNode}}
+\subsubsection[{RuleNode}]{\setlength{\rightskip}{0pt plus 5cm}RuleNode::RuleNode (
+\begin{DoxyParamCaption}
+\item[{{\bf Type}}]{type, }
+\item[{{\bf Rule} $\ast$}]{rule, }
+\item[{bool}]{createBackLink, }
+\item[{{\bf RuleNode} $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}explicit\mbox{]}}}}
+\label{class_rule_node_a7bf5ae341d70b90dc244ef797f822452}
+\hypertarget{class_rule_node_a9966a318685dd21fa5e1dba6f605932c}{
+\index{RuleNode@{RuleNode}!$\sim$RuleNode@{$\sim$RuleNode}}
+\index{$\sim$RuleNode@{$\sim$RuleNode}!RuleNode@{RuleNode}}
+\subsubsection[{$\sim$RuleNode}]{\setlength{\rightskip}{0pt plus 5cm}RuleNode::$\sim$RuleNode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_rule_node_a9966a318685dd21fa5e1dba6f605932c}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_rule_node_a94b912d0c01fa1cd77c2083c289356fc}{
+\index{RuleNode@{RuleNode}!children@{children}}
+\index{children@{children}!RuleNode@{RuleNode}}
+\subsubsection[{children}]{\setlength{\rightskip}{0pt plus 5cm}QList$<$ {\bf RuleNode} $\ast$ $>$ {\bf RuleNode::children}}}
+\label{class_rule_node_a94b912d0c01fa1cd77c2083c289356fc}
+\hypertarget{class_rule_node_a125fb9f6655d872b9f0e7e1991023974}{
+\index{RuleNode@{RuleNode}!parent@{parent}}
+\index{parent@{parent}!RuleNode@{RuleNode}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RuleNode} $\ast$ {\bf RuleNode::parent}}}
+\label{class_rule_node_a125fb9f6655d872b9f0e7e1991023974}
+\hypertarget{class_rule_node_a5102587db43bf3aede68ec0c24b60a7b}{
+\index{RuleNode@{RuleNode}!rule@{rule}}
+\index{rule@{rule}!RuleNode@{RuleNode}}
+\subsubsection[{rule}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rule} $\ast$ {\bf RuleNode::rule}}}
+\label{class_rule_node_a5102587db43bf3aede68ec0c24b60a7b}
+\hypertarget{class_rule_node_ae87a23283ab864a45dad3b6716751d5f}{
+\index{RuleNode@{RuleNode}!type@{type}}
+\index{type@{type}!RuleNode@{RuleNode}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Type} {\bf RuleNode::type}}}
+\label{class_rule_node_ae87a23283ab864a45dad3b6716751d5f}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+core/production/\hyperlink{core_2production_2rulenode_8h}{rulenode.h}\item 
+ES/core/\hyperlink{_e_s_2core_2rulenode_8h}{rulenode.h}\item 
+core/production/\hyperlink{core_2production_2rulenode_8cpp}{rulenode.cpp}\item 
+ES/core/\hyperlink{_e_s_2core_2rulenode_8cpp}{rulenode.cpp}\end{DoxyCompactItemize}
