@@ -20,6 +20,8 @@ NFrame::NFrame(unsigned id,FrameType::FRAME_TYPE frameType,QObject *parent) :
     m_slots.append(&is_a);
 
     this->m_id = id;
+
+    this->m_type = frameType;
 }
 
 

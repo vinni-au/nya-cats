@@ -391,6 +391,7 @@ bool MLV::Init()
 
 void MLV::Start()
 {
+
     if (!Init())
         return;
 
@@ -471,6 +472,7 @@ void MLV::Step()
 {
     if (!m_Initialized)
         return;
+    qDebug()<<"void MLV::Step()";
 
     // Для каждого персонажа привязываем ситуацию
     for (int i = 0; i < m_CellFrameInsts.count(); i++)
@@ -507,6 +509,7 @@ bool MLV::BindPerson(int x, int y)
 
 bool MLV::BindPerson(NFrame* cell)
 {
+    qDebug()<<"bool MLV::BindPerson(NFrame* cell)";
     bool retn = false;
     if (!cell)
         return retn;
@@ -557,9 +560,12 @@ bool MLV::BindPerson(NFrame* cell)
 // Жесткая рекурсия, надо тестить
 bool MLV::BindFrame(NFrame *frame)
 {
+    qDebug()<<"bool MLV::BindFrame(NFrame *frame)";
     bool retn = true;
     if (!frame)
         return false;
+
+    qDebug()<<frame->frameName();
 
     NFrame* frameInst = NULL;
     if (frame->frameType() == FrameType::prototype)
@@ -578,6 +584,7 @@ bool MLV::BindFrame(NFrame *frame)
         // Если фрейм есть в рабочей памяти, то считаем, что он уже привязан
         if (FindByPtr(frame) != NULL)
         {
+            qDebug()<<"Frame in a work memory";
             return true;
         }
     }
@@ -587,6 +594,9 @@ bool MLV::BindFrame(NFrame *frame)
 
     // Пытаемся привязать слоты
     QList<NSlot*> nslots = m_KBManager->GetFrameSlots(frameInst);
+
+    qDebug()<<"Slots count: "<<nslots.count();
+
     for (int i = 0; i < nslots.count(); i++)
     {
         if (nslots[i]->isSystem())
@@ -627,10 +637,12 @@ bool MLV::BindFrame(NFrame *frame)
 
 bool MLV::BindSlot(NFrame* frame, NSlot *slot)
 {
+    qDebug()<<"bool MLV::BindSlot(NFrame* frame, NSlot *slot)";
     bool retn = false;
     if (!slot || !frame)
         return false;
 
+    qDebug()<<slot->name();
     // Если субфрейм
     if (slot->getSlotType() == "frame")
     {
@@ -670,7 +682,10 @@ bool MLV::BindSlot(NFrame* frame, NSlot *slot)
     }
 
     // Сравниваем с заданием отсутствия
-    retn = slot->defValue() == GetSlotValue(frame, slot->name());
+    QVariant slotValue = GetSlotValue(frame, slot->name());
+    retn = slot->defValue() == slotValue;
+
+    qDebug()<<slot->defValue()<<" == "<<slotValue << "    " << retn;
 
     QString str = retn? "' привязался" :"' НЕ привязался";
     AddMsgToLog(GetSpaces(m_Padding) + "Cлот '" + slot->name().toUpper() + str);
