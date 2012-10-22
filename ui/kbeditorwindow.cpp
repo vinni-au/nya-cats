@@ -300,6 +300,7 @@ void KBEditorWindow::frameSelectedOnDiagram(unsigned id)
     smodel->clear();
     smodel->setCurrentIndex(index, QItemSelectionModel::Select);
     ui->treeView->setSelectionModel(smodel);
+    ui->treeView->collapseAll();
     ui->treeView->expand(index);
 }
 
