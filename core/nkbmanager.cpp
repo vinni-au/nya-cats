@@ -1218,3 +1218,15 @@ void NKBManager::clearExemplarIds()
 {
     m_frameExemplarMaxId=-1;
 }
+
+
+bool NKBManager::frameIsSystem(int id)
+{
+    NFrame *frame = getFrameById(id);
+    if(!frame)
+    {
+        qDebug()<<"warning!!! NKBManager::frameIsSystem(int id) frame is not found!!!";
+        return false;
+    }
+    return frame->isSystem();
+}

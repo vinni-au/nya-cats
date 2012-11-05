@@ -22,6 +22,9 @@ NFrame::NFrame(unsigned id,FrameType::FRAME_TYPE frameType,QObject *parent) :
     this->m_id = id;
 
     this->m_type = frameType;
+
+    m_system = false;
+
 }
 
 
@@ -63,6 +66,7 @@ QDomElement NFrame::toXml(QDomDocument& doc)
     QDomElement frameEl = doc.createElement("frame");
     frameEl.setAttribute("id",m_id);
     frameEl.setAttribute("type",m_type);
+    frameEl.setAttribute("system",m_system);
 
     QDomElement slotsEl = doc.createElement("slots");
     frameEl.appendChild(slotsEl);
@@ -80,6 +84,7 @@ void NFrame::fromXml(QDomElement &frame)
 {
     m_id = frame.attribute("id").toInt();
     m_type = (FrameType::FRAME_TYPE)frame.attribute("type").toInt();
+    m_system = frame.attribute("system").toInt();
 
     QDomElement slotsEl = frame.firstChild().toElement();
     if(!slotsEl.hasChildNodes())
@@ -276,4 +281,9 @@ QList<NSlot*> NFrame::getSlotsByDefValue(QString defVal)
 void NFrame::setId(int id)
 {
     this->m_id =id;
+}
+
+bool NFrame::isSystem()
+{
+    return m_system;
 }

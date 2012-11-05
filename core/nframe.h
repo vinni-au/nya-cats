@@ -35,6 +35,8 @@ public:
     int id();
     void setId(int id);
 
+    bool isSystem();
+
     //сериализация
     QDomElement toXml(QDomDocument& doc);
     void fromXml(QDomElement &frame);
@@ -65,6 +67,8 @@ private:
     QList<NSlot*> m_slots;
     int m_id;
     FrameType::FRAME_TYPE m_type;
+
+    bool m_system;
 public:
     NSlot name;
     NSlot is_a;

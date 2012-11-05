@@ -22,6 +22,7 @@ class NKBManager : public QObject
 public:
     explicit NKBManager(QObject *parent = 0);
 
+    bool frameIsSystem(int id);
     QMap<unsigned, QString> frameNames();
 
     bool SaveAs();

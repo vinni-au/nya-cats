@@ -84,6 +84,13 @@ void KBEditorWindow::addApo(unsigned sid, unsigned did)
 
 void KBEditorWindow::frameDeletedOnDiagram(unsigned id)
 {
+
+    if(m_kbManager->frameIsSystem(id))
+    {
+        QMessageBox::information(this,"","Не удалось удалить фрейм, т.к. он является системным.",QMessageBox::Ok);
+        return;
+    }
+
     if (m_kbManager->deleteFrame(id))
         ;//ui->graphicsView->deleteNode(id);
 }
@@ -139,6 +146,11 @@ void KBEditorWindow::on_btnDeleteFrame_clicked()
         QMessageBox::information(this,"","Не удалось удалить фрейм",QMessageBox::Ok);
         return;
     }
+    if(m_kbManager->frameIsSystem(frameId))
+    {
+        QMessageBox::information(this,"","Не удалось удалить фрейм, т.к. он является системным.",QMessageBox::Ok);
+        return;
+    }
 
     m_kbManager->deleteFrame(frameId);
 }
@@ -146,13 +158,24 @@ void KBEditorWindow::on_btnDeleteFrame_clicked()
 void KBEditorWindow::on_btnAddSlot_clicked()
 {
     bool ok;
+
+    QModelIndex index = ui->treeView->selectionModel()->currentIndex();
+    int frame_id = m_kbManager->getFrameNetModel()->getIdByIndex(index);
+
+    if(m_kbManager->frameIsSystem(frame_id))
+    {
+        QMessageBox::information(this,"","Не удалось добавить слот, т.к. фрейм является системным.",QMessageBox::Ok);
+        return;
+    }
+
+
     QString name = QInputDialog::getText(this, "Создать слот",
         "Введите имя слота", QLineEdit::Normal, QString(), &ok);
     if (ok && !name.isEmpty())
     {
         //нужно проверить, а есть ли во фрейме такой слот
 
-        QModelIndex index = ui->treeView->selectionModel()->currentIndex();
+
         QString frameName = m_kbManager->getFrameNetModel()->getFrameNameByIndex(index);
         if(m_kbManager->slotExists(frameName,name))
         {
@@ -180,6 +203,16 @@ void KBEditorWindow::on_btnEditSlot_clicked()
     NFramenetModel *model = qobject_cast<NFramenetModel*>(ui->treeView->model());
     if(model->isSlot(index))
     {
+        //получить айдишник фрейма, в котором этот слот
+        QModelIndex frameIndex = model->parent(index);
+        int frameId = model->getIdByIndex(frameIndex);
+        if(m_kbManager->frameIsSystem(frameId))
+        {
+            QMessageBox::information(this,"","Не удалось редактировать слот, т.к. фрейм является системным.",QMessageBox::Ok);
+            return;
+        }
+
+
         SlotEditorWnd *wnd = new SlotEditorWnd(index,m_kbManager,this);
         wnd->setModal(true);
         wnd->show();
@@ -194,6 +227,21 @@ void KBEditorWindow::on_btnDeleteSlot_clicked()
 {
     QModelIndex index = ui->treeView->selectionModel()->currentIndex();
     NFramenetModel *model = qobject_cast<NFramenetModel*>(ui->treeView->model());
+
+    if(!model->isSlot(index))
+    {
+        QMessageBox::information(this,"","Не выбран слот",QMessageBox::Ok);
+        return;
+    }
+
+    QModelIndex frameIndex = model->parent(index);
+    int frameId = model->getIdByIndex(frameIndex);
+    if(m_kbManager->frameIsSystem(frameId))
+    {
+        QMessageBox::information(this,"","Не удалось удалить слот, т.к. фрейм является системным.",QMessageBox::Ok);
+        return;
+    }
+
     if(!model->deleteSlot(index))
     {
         QMessageBox::information(this,"","Не выбран слот",QMessageBox::Ok);
