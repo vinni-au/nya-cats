@@ -18,20 +18,16 @@ protected:
     NKBManager* m_KBManager;
     NFrame* m_CurrFrame;
     Grid* m_Grid;
-
-    NFrame* m_GameFieldInst;        // Экземпляр фрейма игрового поля
-    QList<NFrame*> m_CellFrameInsts;   // Экземпляры фреймов ячеек
-
+    NFrame* m_GameFieldInst;            // Экземпляр фрейма игрового поля
+    QList<NFrame*> m_CellFrameInsts;    // Экземпляры фреймов ячеек
     QList<NFrame*> m_WorkMemory;        // Рабочая память, тут хранятся фреймы, которые привязались
     QList<NFrame*> m_Cache;             // Тут хранятся ВСЕ фреймы экхемпляры
 
-
     bool m_Initialized;
     int m_InstCount;
-
     int m_Padding;
-
     bool m_FullSearch;
+    bool m_GameContinues;
 
 public:
     MLV(NKBManager* manager, Grid* grid);
@@ -40,7 +36,7 @@ public:
     void Start(int x, int y);
     void Step();
     void Step(int x, int y);
-
+    void Stop();
 
     //Для продукционного вывода
     //Функция для получения значения слота фрейма экземпляра при продукционном выводе.
@@ -49,17 +45,11 @@ public:
     //return Значение целевого слота
     QVariant getVal(int frameId, QString aimVar);
     QVariant getVal(NFrame* frame, QString aimVar);
-
     bool setVal(int frameId, QString aimVar, QVariant value);
     bool setVal(NFrame* frame, QString aimVar, QVariant value);
-
-    QList<NFrame*>* workMemory()
-    {   return &m_WorkMemory;    }
-
-    bool GetFullSearch() { return m_FullSearch; }
-    void SetFullSearch(bool b) { m_FullSearch = b; }
-
-
+    QList<NFrame*>* workMemory() {return &m_WorkMemory;}
+    bool GetFullSearch() {return m_FullSearch;}
+    void SetFullSearch(bool b) {m_FullSearch = b;}
 
 protected:
 
@@ -81,7 +71,6 @@ protected:
 
     QVariant GetSlotValue(NFrame* frame, QString slotName, bool findInParents = false);
 
-
     // Поиск в рабочей памяти
     NFrame* FindByProtName(QString name);   // Поиск по имени прототипа
     NFrame* FindByInstName(QString name);   // Поиск по уникальному имени экземпляра
@@ -97,7 +86,6 @@ protected:
 
     NFrame* FindCell(int x, int y);
 
-
     bool IsPerson(NFrame* frame);
     bool IsFood(NFrame* frame);
     bool IsPerson(GameItem* item);
@@ -110,6 +98,7 @@ protected:
 public slots:
     QVariant getValSlot(int frameId, QString aimVar);
     bool setValSlot(int frameId, QString aimVar, QVariant value);
+    bool getGameContinues() {return m_GameContinues;}
 
 signals:
     void AddMsgToLog(QString msg);

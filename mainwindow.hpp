@@ -53,6 +53,10 @@ private slots:
 
     void runMLV(int,int);
 
+    void on_actStopGame_triggered();
+
+    void on_actDoStep_triggered();
+
 private:
     Ui::MainWindow *ui;
 

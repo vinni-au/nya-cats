@@ -58,6 +58,8 @@
      <string>Игра</string>
     </property>
     <addaction name="actStartGame"/>
+    <addaction name="actDoStep"/>
+    <addaction name="actStopGame"/>
     <addaction name="actShowOutput"/>
    </widget>
    <addaction name="menuFile"/>
@@ -139,6 +141,16 @@
   <action name="actShowOutput">
    <property name="text">
     <string>Показать вывод</string>
+   </property>
+  </action>
+  <action name="actStopGame">
+   <property name="text">
+    <string>Закончить игру</string>
+   </property>
+  </action>
+  <action name="actDoStep">
+   <property name="text">
+    <string>Сделать шаг</string>
    </property>
   </action>
  </widget>

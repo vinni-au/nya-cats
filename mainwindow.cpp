@@ -178,11 +178,21 @@ void MainWindow::on_actDomainEditor_triggered()
 
 void MainWindow::on_actStartGame_triggered()
 {
-    if (!m_mlv)
-        return;
-
+    if (!m_mlv) return;
     m_mlvControl->ClearLog();
     m_mlvControl->show();
     m_mlv->Start();
     m_mlvControl->setWorkMemory(m_mlv->workMemory());
+}
+
+void MainWindow::on_actStopGame_triggered()
+{
+    if (!m_mlv) return;
+    m_mlv->Stop();
+}
+
+void MainWindow::on_actDoStep_triggered()
+{
+    if (!m_mlv) return;
+    m_mlv->Step();
 }

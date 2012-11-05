@@ -389,17 +389,6 @@ bool MLV::Init()
     return true;
 }
 
-void MLV::Start()
-{
-
-    if (!Init())
-        return;
-
-    // Пока один шаг. В будущем тут можно будет замутить цикл со слипами
-    Step();
-
-}
-
 // Костыль
 bool MLV::IsPerson(NFrame* frame)
 {
@@ -470,8 +459,7 @@ QString MLV::GetSpaces(int count)
 
 void MLV::Step()
 {
-    if (!m_Initialized)
-        return;
+    if (!m_Initialized || !m_GameContinues) return;
     qDebug()<<"void MLV::Step()";
 
     // Для каждого персонажа привязываем ситуацию
@@ -479,23 +467,28 @@ void MLV::Step()
     {
         BindPerson(m_CellFrameInsts[i]);
     }
-
     UpdateGrid();
 }
 
 void MLV::Step(int x, int y)
 {
-    if (!m_Initialized)
-        return;
-
+    if (!m_Initialized || !m_GameContinues) return;
     BindPerson(x, y);
+    UpdateGrid();
 }
 
 void MLV::Start(int x, int y)
 {
-    Init();
-
+    if (!Init()) return;
+    m_GameContinues = true;
     Step(x, y);
+}
+
+void MLV::Start()
+{
+    if (!Init()) return;
+    m_GameContinues = true;
+    Step();
 }
 
 bool MLV::BindPerson(int x, int y)
