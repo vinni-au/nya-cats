@@ -8,7 +8,8 @@ MLV::MLV(NKBManager* manager, Grid* grid) :
   ,m_Initialized(false)
   ,m_InstCount(0)
   ,m_Padding(0)
-  ,m_FullSearch(false   )
+  ,m_FullSearch(false)
+  ,m_GameContinues(false)
 {
 }
 
@@ -489,6 +490,11 @@ void MLV::Start()
     if (!Init()) return;
     m_GameContinues = true;
     Step();
+}
+
+void MLV::Stop()
+{
+    m_GameFieldInst = false;
 }
 
 bool MLV::BindPerson(int x, int y)
