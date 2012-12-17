@@ -2,8 +2,10 @@
 #include "ui_kbeditorwindow.h"
 #include <QInputDialog>
 
-KBEditorWindow::KBEditorWindow(NKBManager *kbManager,QWidget *parent) :
-    QMainWindow(parent), m_kbManager(kbManager),
+KBEditorWindow::KBEditorWindow(NKBManager *kbManager,MLV *mlv,QWidget *parent) :
+    QMainWindow(parent),
+    m_kbManager(kbManager),
+    m_mlv(mlv),
     ui(new Ui::KBEditorWindow)
 {
     ui->setupUi(this);
@@ -74,16 +76,25 @@ KBEditorWindow::~KBEditorWindow()
 
 void KBEditorWindow::addIsa(unsigned sid, unsigned did)
 {
+    if(gameIsStarted())
+        return;
+
     ui->graphicsView->addLink(sid, did, "is-a");
 }
 
 void KBEditorWindow::addApo(unsigned sid, unsigned did)
 {
+    if(gameIsStarted())
+        return;
+
     ui->graphicsView->addLink(sid, did, "sub");
 }
 
 void KBEditorWindow::frameDeletedOnDiagram(unsigned id)
 {
+
+    if(gameIsStarted())
+        return;
 
     if(m_kbManager->frameIsSystem(id))
     {
@@ -97,12 +108,18 @@ void KBEditorWindow::frameDeletedOnDiagram(unsigned id)
 
 void KBEditorWindow::isaDeletedOnDiagram(unsigned sid, unsigned did)
 {
+    if(gameIsStarted())
+        return;
+
     if (m_kbManager->deleteIsa(sid, did))
         ui->graphicsView->deleteLink(sid, did);
 }
 
 void KBEditorWindow::apoDeletedOnDiagram(unsigned sid, unsigned did)
 {
+    if(gameIsStarted())
+        return;
+
     if (m_kbManager->deleteApo(sid, did))
         ;//ui->graphicsView->deleteLink(sid, did);
 }
@@ -110,6 +127,9 @@ void KBEditorWindow::apoDeletedOnDiagram(unsigned sid, unsigned did)
 void KBEditorWindow::on_btnAddFrame_clicked()
 {
     bool ok;
+    if(gameIsStarted())
+        return;
+
     QString name = QInputDialog::getText(this, "Создать фрейм", "Введите имя фрейма:", QLineEdit::Normal, QString(), &ok);
 
     if (ok && !name.isEmpty()) {
@@ -128,6 +148,9 @@ void KBEditorWindow::on_btnAddFrame_clicked()
 void KBEditorWindow::on_btnDeleteFrame_clicked()
 {
     int frameId=-1;
+
+    if(gameIsStarted())
+        return;
 
     //TODO Получить ид выделенного фрейма
     QModelIndex index = ui->treeView->selectionModel()->currentIndex();
@@ -158,6 +181,9 @@ void KBEditorWindow::on_btnDeleteFrame_clicked()
 void KBEditorWindow::on_btnAddSlot_clicked()
 {
     bool ok;
+
+    if(gameIsStarted())
+        return;
 
     QModelIndex index = ui->treeView->selectionModel()->currentIndex();
     int frame_id = m_kbManager->getFrameNetModel()->getIdByIndex(index);
@@ -199,6 +225,9 @@ void KBEditorWindow::on_btnAddSlot_clicked()
 
 void KBEditorWindow::on_btnEditSlot_clicked()
 {
+    if(gameIsStarted())
+        return;
+
     QModelIndex index = ui->treeView->selectionModel()->currentIndex();
     NFramenetModel *model = qobject_cast<NFramenetModel*>(ui->treeView->model());
     if(model->isSlot(index))
@@ -225,6 +254,9 @@ void KBEditorWindow::on_btnEditSlot_clicked()
 
 void KBEditorWindow::on_btnDeleteSlot_clicked()
 {
+    if(gameIsStarted())
+        return;
+
     QModelIndex index = ui->treeView->selectionModel()->currentIndex();
     NFramenetModel *model = qobject_cast<NFramenetModel*>(ui->treeView->model());
 
@@ -365,4 +397,18 @@ void KBEditorWindow::treeviewSelectionChanged(QItemSelection selected, QItemSele
 void KBEditorWindow::on_treeView_doubleClicked(const QModelIndex &index)
 {
     this->on_btnEditSlot_clicked();
+}
+
+bool KBEditorWindow::gameIsStarted()
+{
+    if(!m_mlv)
+        return false;
+
+    if(m_mlv->isGameContinues())
+    {
+        QMessageBox::information(this,"","Редактирование невозможно. Игра начата.",QMessageBox::Ok);
+        return true;
+    }
+    else
+        return false;
 }

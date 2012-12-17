@@ -7,6 +7,7 @@
 #include "./../editor/arrow.hpp"
 #include <QAction>
 #include <QCloseEvent>
+#include "mlv/mlv.h"
 
 namespace Ui {
     class KBEditorWindow;
@@ -17,7 +18,7 @@ class KBEditorWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit KBEditorWindow(NKBManager *kbManager,QWidget *parent = 0);
+    explicit KBEditorWindow(NKBManager *kbManager,MLV *mlv,QWidget *parent = 0);
     ~KBEditorWindow();
 
 
@@ -46,6 +47,8 @@ private slots:
 
     void on_treeView_doubleClicked(const QModelIndex &index);
 
+private:
+    bool gameIsStarted();
 protected:
     void closeEvent(QCloseEvent *event);
 
@@ -56,6 +59,7 @@ private:
     Ui::KBEditorWindow *ui;
 
     NKBManager *m_kbManager;
+    MLV        *m_mlv;
 
     bool m_simpleView;
 };

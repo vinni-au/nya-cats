@@ -53,12 +53,18 @@ public:
     bool productionExists(QString name);
     NProduction *getProduction(QString name);
 
-    NProc* getProc(QString name);
 
     void reloadProduction(NProduction *production);
     void addProduction(NProduction *prod);
     QStringList getProductionNames();
+
+
+    //процедуры
+    void        addProc(NProc* procedure);
+    NProc*      getProc(QString name);
+    bool        procExists(QString name);
     QStringList getProceduresNames();
+
 
     QStringList getVars(QString frameName);
     QStringList getVarsWithParents(QString frameName);

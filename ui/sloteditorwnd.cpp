@@ -206,7 +206,54 @@ void SlotEditorWnd::on_btnEditMarker_clicked()
     }
     else if(ui->cmbMarkerType->currentText() == "procedure")
     {
+        qDebug()<<"Добавление процедуры";
+        QString procName;
+        bool newProc = true;
+        NProc *proc = NULL;
 
+        if(ui->cmbMarkerValue->currentText().trimmed().isEmpty())
+        {//добавить
+            bool ok;
+            QString name = QInputDialog::getText(this, "Создать процедуру", "Введите имя процедуры:", QLineEdit::Normal, QString(), &ok);
+            if (ok && !name.isEmpty())
+            {
+                if(!(m_kbManager->procExists(name)))
+                {
+                    proc = new NProc();
+                    proc->setName(name);
+                    newProc = true;
+                }
+                else
+                {
+                    QMessageBox::information(this,"","Процедура с таким именем уже существует",QMessageBox::Ok);
+                    return;
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
+        else
+        {//изменить
+            procName = ui->cmbMarkerValue->currentText().trimmed();
+            proc = m_kbManager->getProc(procName);
+            if(!proc)
+            {
+                QMessageBox::information(this,"","Не удалось найти процедуру",QMessageBox::Ok);
+                return;
+            }
+            newProc = false;
+        }
+
+        CodeEditor *ce = new CodeEditor(this);
+        ce->setWindowModality(Qt::WindowModal);
+        ce->show();
+
+//        RulesWnd *rWnd = new RulesWnd(m_kbManager,production,newProd,m_slotIndex,ui->cmbSlotDomain->currentText(),this);
+//        rWnd->setWindowModality(Qt::WindowModal);
+//        QObject::connect(rWnd,SIGNAL(sigProductionAdded(NProduction*,bool)),this,SLOT(onProductionAdded(NProduction*,bool)));
+//        rWnd->show();
     }
 }
 

@@ -51,6 +51,7 @@ public:
     bool GetFullSearch() {return m_FullSearch;}
     void SetFullSearch(bool b) {m_FullSearch = b;}
 
+    bool isGameContinues();                                 //запущена ли в данный момент игра
 protected:
 
     // Тут создаются фреймы экземпляры игрового поля и персонаже.

@@ -1230,3 +1230,15 @@ bool NKBManager::frameIsSystem(int id)
     }
     return frame->isSystem();
 }
+
+void NKBManager::addProc(NProc* procedure)
+{
+    m_procs.append(procedure);
+}
+
+bool NKBManager::procExists(QString name)
+{
+    NProc* proc=NULL;
+    proc = getProc(name);
+    return proc!=NULL ? true : false;
+}

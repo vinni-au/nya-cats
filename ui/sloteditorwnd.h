@@ -8,6 +8,7 @@
 #include "core/frame_model/nframenetmodel.h"
 #include "core/nkbmanager.h"
 #include "ruleswnd.h"
+#include "codeeditor.hpp"
 
 namespace Ui {
     class SlotEditorWnd;

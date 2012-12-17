@@ -58,7 +58,7 @@ void MainWindow::on_actAbout_triggered()
 
 void MainWindow::on_actFrameEditor_triggered()
 {
-    KBEditorWindow* wnd = new KBEditorWindow(m_kbManager,this);
+    KBEditorWindow* wnd = new KBEditorWindow(m_kbManager,m_mlv,this);
     wnd->show();
 }
 

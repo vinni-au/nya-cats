@@ -495,6 +495,7 @@ void MLV::Start()
 void MLV::Stop()
 {
     m_GameFieldInst = false;
+    m_GameContinues = false;
 }
 
 bool MLV::BindPerson(int x, int y)
@@ -690,4 +691,10 @@ bool MLV::BindSlot(NFrame* frame, NSlot *slot)
     AddMsgToLog(GetSpaces(m_Padding) + "Cлот '" + slot->name().toUpper() + str);
     m_Padding -= 1;
     return retn;
+}
+
+
+bool  MLV::isGameContinues()
+{
+    return m_GameContinues;
 }
