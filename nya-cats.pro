@@ -53,7 +53,8 @@ SOURCES += main.cpp\
     core/production/nproductionmlv.cpp \
     mlv/mlv.cpp \
     ui/codeeditor.cpp \
-    ui/mlvcontrol.cpp
+    ui/mlvcontrol.cpp \
+    ui/proceditor.cpp
 
 HEADERS  += mainwindow.hpp \
     core/nslot.h \
@@ -97,19 +98,18 @@ HEADERS  += mainwindow.hpp \
     core/production/nproductionmlv.h \
     mlv/mlv.h \
     ui/codeeditor.hpp \
-    ui/mlvcontrol.h
+    ui/mlvcontrol.h \
+    ui/proceditor.h
 
 FORMS    += mainwindow.ui \
     ui/frameeditorwnd.ui \
     ui/sloteditorwnd.ui \
     ui/kbeditorwindow.ui \
-    ui/mlvcontrol.ui
+    ui/mlvcontrol.ui \
+    ui/proceditor.ui
 
 RESOURCES += \
     res.qrc
 
 
 RC_FILE = resIcon.rc
-
-
-

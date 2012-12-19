@@ -9,6 +9,8 @@
 #include "core/nkbmanager.h"
 #include "ruleswnd.h"
 #include "codeeditor.hpp"
+#include "proceditor.h"
+
 
 namespace Ui {
     class SlotEditorWnd;
@@ -37,6 +39,7 @@ private slots:
     void on_btnEditMarker_clicked();
 
     void onProductionAdded(NProduction *production,bool newProd);
+    void onProcAdded(NProc *proc,bool newProc);
     void on_cmbMarkerType_currentIndexChanged(const QString &arg1);
 
     void on_cmbSlotDomain_currentIndexChanged(const QString &arg1);

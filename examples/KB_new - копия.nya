@@ -1476,26 +1476,10 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="123" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="123" name="default_value"/>
-                        <faset value="procedure" name="marker_type"/>
-                        <faset value="234" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
             </slots>
         </frame>
     </frames>
-    <procs>
-        <proc name="234">fhgudhg
-df
-g
-dfg
-123f</proc>
-    </procs>
+    <procs/>
     <productions>
         <production name="врагслева">
             <rules>

@@ -246,11 +246,13 @@ void SlotEditorWnd::on_btnEditMarker_clicked()
             newProc = false;
         }
 
-        CodeEditor *ce = new CodeEditor(this);
-        ce->setWindowModality(Qt::WindowModal);
-        ce->show();
+        //ProcEditor
+        ProcEditor *pe = new ProcEditor(proc,newProc);
+        pe->setWindowModality(Qt::ApplicationModal);
+        QObject::connect(pe,SIGNAL(sigProcAdded(NProc*,bool)),this,SLOT(onProcAdded(NProc*,bool)));
+        pe->show();
 
-//        RulesWnd *rWnd = new RulesWnd(m_kbManager,production,newProd,m_slotIndex,ui->cmbSlotDomain->currentText(),this);
+        //RulesWnd *rWnd = new RulesWnd(m_kbManager,production,newProd,m_slotIndex,ui->cmbSlotDomain->currentText(),this);
 //        rWnd->setWindowModality(Qt::WindowModal);
 //        QObject::connect(rWnd,SIGNAL(sigProductionAdded(NProduction*,bool)),this,SLOT(onProductionAdded(NProduction*,bool)));
 //        rWnd->show();
@@ -392,4 +394,21 @@ bool SlotEditorWnd::slotExists()
     {
         return false;
     }
+}
+
+void SlotEditorWnd::onProcAdded(NProc *proc,bool newProc)
+{
+
+    if(m_kbManager->procExists(proc->name()))
+    {
+        //изменение
+    }
+    else
+    {
+        //добавление
+        m_kbManager->addProc(proc);
+    }
+    ui->cmbMarkerValue->addItem(proc->name());
+    ui->cmbMarkerValue->setCurrentIndex( ui->cmbMarkerValue->findText(proc->name()) );
+    m_kbManager->mayBeSave();//????????????????????????????????????????????????????????????????????????????????????
 }

@@ -42,7 +42,5 @@ QDomElement NProc::toXml(QDomDocument &doc)
 void NProc::fromXml(QDomElement &proc)
 {
     setName( proc.attribute("name") );
-    QDomElement textEl = proc.firstChild().toElement();
-
-    m_proc = textEl.toText().data();
+    m_proc = proc.text();
 }
