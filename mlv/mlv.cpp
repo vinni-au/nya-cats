@@ -746,7 +746,7 @@ bool  MLV::isGameContinues()
 void  MLV::DoAction(NFrame* frameSituation)
 {
     // в man должен быть экземпляр чувака, который попал в ситуацию
-    NFrame *man = new NFrame(0);// frameSituation->getSlotByName("Игрок"); костыль
+    NFrame *man = (NFrame*)GetSlotValue(frameSituation, "Игрок", true).toLongLong();
 
     NSlot *actionSlot = frameSituation->getSlotByName("action");
     if(!actionSlot)
