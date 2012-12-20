@@ -10,6 +10,8 @@
 #include "visualize/visualizer.h"
 #include "visualize/grid.h"
 #include "core/production/nproductionmlv.h"
+#include <QScriptValue>
+#include <QScriptEngine>
 
 class MLV : public QObject
 {
@@ -71,6 +73,8 @@ protected:
     bool SetSlotValueVariant(NFrame* frame, QString slotName, QVariant value, bool findInParents = false);
 
     QVariant GetSlotValue(NFrame* frame, QString slotName, bool findInParents = false);
+
+    void DoAction(NFrame* frameSituation);
 
     // Поиск в рабочей памяти
     NFrame* FindByProtName(QString name);   // Поиск по имени прототипа

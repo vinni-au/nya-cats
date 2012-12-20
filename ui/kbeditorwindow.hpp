@@ -47,6 +47,8 @@ private slots:
 
     void on_treeView_doubleClicked(const QModelIndex &index);
 
+    void on_btnAddFrameSituation_clicked();
+
 private:
     bool gameIsStarted();
 protected:

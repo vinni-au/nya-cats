@@ -16,6 +16,8 @@ KBEditorWindow::KBEditorWindow(NKBManager *kbManager,MLV *mlv,QWidget *parent) :
 
     QMenu* contextMenu = new QMenu;
     contextMenu->addAction("Добавить фрейм", ui->btnAddFrame, SLOT(click()));
+    contextMenu->addAction("Добавить фрейм ситуации", ui->btnAddFrameSituation, SLOT(click()));
+
 
     ui->graphicsView->setContextMenu(contextMenu);
 
@@ -411,4 +413,28 @@ bool KBEditorWindow::gameIsStarted()
     }
     else
         return false;
+}
+
+void KBEditorWindow::on_btnAddFrameSituation_clicked()
+{
+    bool ok;
+    if(gameIsStarted())
+        return;
+
+    QString name = QInputDialog::getText(this, "Создать фрейм ситуации", "Введите имя фрейма ситуации:", QLineEdit::Normal, QString(), &ok);
+
+    if (ok && !name.isEmpty()) {
+        //Выполнить запрос к менеджеру БЗ на добавление фрейма
+        if(m_kbManager->addFrameSituation(name))
+        {
+            //ok
+        }
+        else
+        {
+            QMessageBox::information(this,"","Не удалось добавить фрейм",QMessageBox::Ok);
+        }
+
+
+
+    }
 }

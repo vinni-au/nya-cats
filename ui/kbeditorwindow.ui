@@ -28,6 +28,13 @@
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="btnAddFrameSituation">
+        <property name="text">
+         <string>Добавить Ситуацию</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QPushButton" name="btnDeleteFrame">
         <property name="text">
          <string>Удалить фрейм</string>

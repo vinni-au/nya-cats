@@ -468,6 +468,20 @@ void MLV::Step()
     {
         BindPerson(m_CellFrameInsts[i]);
     }
+
+    //для каждой привязанной ситуации исполняем действие
+
+    //надо где то запомнить привязанные к персонажам ситуации
+    QList<NFrame*>* situations = new QList<NFrame*>();//пока костыль
+
+    for (int i = 0; i < situations->count(); i++)
+    {
+        DoAction(situations->at(i));
+    }
+    //разрешаем конфликты
+    //TODO
+
+    //обновляем игровое поле
     UpdateGrid();
 }
 
@@ -697,4 +711,37 @@ bool MLV::BindSlot(NFrame* frame, NSlot *slot)
 bool  MLV::isGameContinues()
 {
     return m_GameContinues;
+}
+
+void  MLV::DoAction(NFrame* frameSituation)
+{
+    // в man должен быть экземпляр чувака, который попал в ситуацию
+    NFrame *man = new NFrame(0);// frameSituation->getSlotByName("Игрок"); костыль
+
+    NSlot *actionSlot = frameSituation->getSlotByName("action");
+    if(!actionSlot)
+        return;
+
+    QString procName=actionSlot->getSlotMarker();
+    NProc *proc = m_KBManager->getProc(procName);
+
+    if(!proc)
+        return;
+
+    QString script = proc->proc();
+
+    if(script=="")
+        return;
+
+    QScriptEngine *engine = new QScriptEngine();
+
+    //окружение скрипта
+    QScriptValue objectMan = engine->newQObject(man);
+    engine->globalObject().setProperty("Me", objectMan);
+
+    //запускаем скрипт
+    QScriptValue result = engine->evaluate(script);
+    if (result.isError());
+       // qDebug() << “Script error:” << result.toString();
+
 }
