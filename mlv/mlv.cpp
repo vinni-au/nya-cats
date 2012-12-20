@@ -156,6 +156,8 @@ NFrame* MLV::CreateFrameInstanceFull(QString name, bool fillDefault)
         return NULL;
 
     NFrame* frame = m_KBManager->GetFrameInstanceWithParents(name);
+	if (frame == NULL)
+		return NULL;
 
     if (fillDefault)
     {

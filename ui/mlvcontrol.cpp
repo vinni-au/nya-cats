@@ -69,9 +69,8 @@ void MLVControl::setWorkMemory(QList<NFrame *> *list)
             if(faset->value().toString().isEmpty())
                 continue;
             NFrame* f = ((NFrame*)(faset->value().toLongLong()));
-            faset->setValue( f->frameName()/* + " (" +QString::number((long long)f)+")"*/ );
-
-
+			if (f != NULL)
+				faset->setValue( f->frameName()/* + " (" +QString::number((long long)f)+")"*/ );
         }
     }
 
