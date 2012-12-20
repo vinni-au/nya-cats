@@ -12,6 +12,7 @@
 #include "core/production/nproductionmlv.h"
 #include <QScriptValue>
 #include <QScriptEngine>
+#include "QScriptProxy/qsproxyman.h"
 
 class MLV : public QObject
 {

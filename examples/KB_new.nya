@@ -638,7 +638,7 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-				<slot system="1">
+                <slot system="1">
                     <fasets>
                         <faset value="action" name="name"/>
                         <faset value="string" name="slot_type"/>
@@ -672,7 +672,7 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-				<slot system="1">
+                <slot system="1">
                     <fasets>
                         <faset value="action" name="name"/>
                         <faset value="string" name="slot_type"/>
@@ -706,7 +706,7 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-				<slot system="1">
+                <slot system="1">
                     <fasets>
                         <faset value="action" name="name"/>
                         <faset value="string" name="slot_type"/>
@@ -750,7 +750,7 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-				<slot system="1">
+                <slot system="1">
                     <fasets>
                         <faset value="action" name="name"/>
                         <faset value="string" name="slot_type"/>
@@ -794,7 +794,7 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-				<slot system="1">
+                <slot system="1">
                     <fasets>
                         <faset value="action" name="name"/>
                         <faset value="string" name="slot_type"/>
@@ -838,7 +838,7 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-				<slot system="1">
+                <slot system="1">
                     <fasets>
                         <faset value="action" name="name"/>
                         <faset value="string" name="slot_type"/>
@@ -882,7 +882,7 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-				<slot system="1">
+                <slot system="1">
                     <fasets>
                         <faset value="action" name="name"/>
                         <faset value="string" name="slot_type"/>
@@ -916,7 +916,7 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-				<slot system="1">
+                <slot system="1">
                     <fasets>
                         <faset value="action" name="name"/>
                         <faset value="string" name="slot_type"/>
@@ -950,7 +950,7 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-				<slot system="1">
+                <slot system="1">
                     <fasets>
                         <faset value="action" name="name"/>
                         <faset value="string" name="slot_type"/>
@@ -1024,7 +1024,7 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-				<slot system="1">
+                <slot system="1">
                     <fasets>
                         <faset value="action" name="name"/>
                         <faset value="string" name="slot_type"/>
@@ -1088,7 +1088,7 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-				<slot system="1">
+                <slot system="1">
                     <fasets>
                         <faset value="action" name="name"/>
                         <faset value="string" name="slot_type"/>
@@ -1152,7 +1152,7 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-				<slot system="1">
+                <slot system="1">
                     <fasets>
                         <faset value="action" name="name"/>
                         <faset value="string" name="slot_type"/>
@@ -1216,7 +1216,7 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-				<slot system="1">
+                <slot system="1">
                     <fasets>
                         <faset value="action" name="name"/>
                         <faset value="string" name="slot_type"/>
@@ -1280,7 +1280,7 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-				<slot system="1">
+                <slot system="1">
                     <fasets>
                         <faset value="action" name="name"/>
                         <faset value="string" name="slot_type"/>
@@ -1344,7 +1344,7 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-				<slot system="1">
+                <slot system="1">
                     <fasets>
                         <faset value="action" name="name"/>
                         <faset value="string" name="slot_type"/>
@@ -1388,13 +1388,13 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-				<slot system="1">
+                <slot system="1">
                     <fasets>
                         <faset value="action" name="name"/>
                         <faset value="string" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
+                        <faset value="proc_Враг_слева" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -1432,7 +1432,7 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-				<slot system="1">
+                <slot system="1">
                     <fasets>
                         <faset value="action" name="name"/>
                         <faset value="string" name="slot_type"/>
@@ -1476,7 +1476,7 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-				<slot system="1">
+                <slot system="1">
                     <fasets>
                         <faset value="action" name="name"/>
                         <faset value="string" name="slot_type"/>
@@ -1520,7 +1520,7 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-				<slot system="1">
+                <slot system="1">
                     <fasets>
                         <faset value="action" name="name"/>
                         <faset value="string" name="slot_type"/>
@@ -1564,7 +1564,7 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-				<slot system="1">
+                <slot system="1">
                     <fasets>
                         <faset value="action" name="name"/>
                         <faset value="string" name="slot_type"/>
@@ -1608,7 +1608,7 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-				<slot system="1">
+                <slot system="1">
                     <fasets>
                         <faset value="action" name="name"/>
                         <faset value="string" name="slot_type"/>
@@ -1652,7 +1652,7 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-				<slot system="1">
+                <slot system="1">
                     <fasets>
                         <faset value="action" name="name"/>
                         <faset value="string" name="slot_type"/>
@@ -1663,7 +1663,6 @@
                     </fasets>
                 </slot>
             </slots>
-			
         </frame>
         <frame type="0" id="45" system="0">
             <slots>
@@ -1707,7 +1706,7 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-				<slot system="1">
+                <slot system="1">
                     <fasets>
                         <faset value="action" name="name"/>
                         <faset value="string" name="slot_type"/>
@@ -1760,6 +1759,7 @@ df
 g
 dfg
 123f</proc>
+        <proc name="proc_Враг_слева">Me.X()</proc>
     </procs>
     <productions>
         <production name="врагслева">

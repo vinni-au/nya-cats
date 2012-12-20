@@ -32,7 +32,7 @@ public:
     QString     parentFrame();                  //получить имя родительского фрейма
     void        setParentName(QString name);       //установить родителя
 
-    int id();
+    Q_INVOKABLE int id();
     void setId(int id);
 
     bool isSystem();

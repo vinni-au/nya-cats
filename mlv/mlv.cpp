@@ -492,6 +492,7 @@ void MLV::Step()
 	m_WorkMemory.append(m_GameFieldInst);
 	for (int i = 0; i < m_CellFrameInsts.count(); i++)
 		m_WorkMemory.append(m_CellFrameInsts[i]);
+
     for (int i = 0; i < m_ItemFrameInsts.count(); i++)
 		m_WorkMemory.append(m_ItemFrameInsts[i]);
 
@@ -768,12 +769,15 @@ void  MLV::DoAction(NFrame* frameSituation)
     QScriptEngine *engine = new QScriptEngine();
 
     //окружение скрипта
-    QScriptValue objectMan = engine->newQObject(man);
+    QSProxyMan *proxyMan = new QSProxyMan(man);
+
+    QScriptValue objectMan = engine->newQObject(proxyMan);
     engine->globalObject().setProperty("Me", objectMan);
 
     //запускаем скрипт
     QScriptValue result = engine->evaluate(script);
+    int res = result.toInt32();
     if (result.isError());
-       // qDebug() << “Script error:” << result.toString();
+        qDebug() << "Script error:" << result.toString();
 
 }
