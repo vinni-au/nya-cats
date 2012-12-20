@@ -85,20 +85,22 @@ public:
 
     Domain*         GetSlotDomain       (NSlot* slot);
     QList<NFaset*>  GetSlotFasets       (NSlot* slot);
+	bool			HasParentWithName	(NFrame* frame, QString parentName);
 
     QStringList getFilteredFrameList(QString frameName,QString slotName);
     bool slotExists(QString framename,QString slotName);
 
     void clearExemplarIds();
+
+	QList<NFrame*> getAllChildren(NFrame* frame);//получает потомков и потомков потомков ... 
+	bool hasChildren(NFrame* frame);
+
 private:
     NFrame  *getFrameById(int id);
     NFrame  *getFrameByName(QString name);
     int      getFreeId();
 
     void deleteLinks(int id);
-
-    QList<NFrame*> getAllChildren(NFrame* frame);//получает потомков и потомков потомков ...
-
     int getFreeExemplarId();
 signals:
     //Для диаграмм

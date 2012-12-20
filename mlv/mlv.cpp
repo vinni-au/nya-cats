@@ -314,6 +314,30 @@ bool MLV::setValSlot(int frameId, QString aimVar, QVariant value)
     return setVal(frameId, aimVar, value);
 }
 
+QList<NFrame*> MLV::getFrameLeaf(NFrame* root)
+{
+	QList<NFrame*> reslist;
+	QList<NFrame*> allchildren = m_KBManager->getAllChildren(root);
+	for (int i = 0; i < allchildren.count(); i++)
+	{
+		if (!m_KBManager->hasChildren(allchildren[i]))
+			reslist.append(allchildren[i]);
+	}
+	return reslist;
+}
+
+QList<NFrame*> MLV::getSituationInstanceList()
+{
+	QList<NFrame*> list;
+	for (int i = 0; i < m_WorkMemory.count(); i++)
+	{
+		NFrame* frame = m_WorkMemory[i];
+		if (m_KBManager->HasParentWithName(frame, "Ситуация") && !m_KBManager->hasChildren(frame))
+			list.append(frame);
+	}
+	return list;
+}
+
 
 ////////////////////////////////////////////////////////////////////////
 // Вывод
@@ -329,8 +353,6 @@ bool MLV::Init()
     m_GameFieldInst = CreateFrameInstanceFull("Игровое поле");
     if (!m_GameFieldInst)
         return false;
-
-    m_WorkMemory.append(m_GameFieldInst);
 
     // Создаем ячейки игрового поля
     for (int i = 0; i < m_Grid->GetSideCount(); i++)
@@ -381,9 +403,7 @@ bool MLV::Init()
 
             SetSlotValueVariant(CellInst, "Игровой объект", QVariant(reinterpret_cast<long long>(ItemInst)));
             m_CellFrameInsts.append(CellInst);
-
-            m_WorkMemory.append(CellInst);
-            m_WorkMemory.append(ItemInst);
+			m_ItemFrameInsts.append(ItemInst);
         }
     }
     m_Initialized = true;
@@ -463,6 +483,16 @@ void MLV::Step()
     if (!m_Initialized || !m_GameContinues) return;
     qDebug()<<"void MLV::Step()";
 
+	// Для каждого нового шага чистим рабочую память.
+	m_WorkMemory.clear();
+
+	// Загоняем в рабочую память экземпляр игрового поля, экземпляры ячеек и игровых объектов
+	m_WorkMemory.append(m_GameFieldInst);
+	for (int i = 0; i < m_CellFrameInsts.count(); i++)
+		m_WorkMemory.append(m_CellFrameInsts[i]);
+    for (int i = 0; i < m_ItemFrameInsts.count(); i++)
+		m_WorkMemory.append(m_ItemFrameInsts[i]);
+
     // Для каждого персонажа привязываем ситуацию
     for (int i = 0; i < m_CellFrameInsts.count(); i++)
     {
@@ -472,11 +502,11 @@ void MLV::Step()
     //для каждой привязанной ситуации исполняем действие
 
     //надо где то запомнить привязанные к персонажам ситуации
-    QList<NFrame*>* situations = new QList<NFrame*>();//пока костыль
+    QList<NFrame*> situations = getSituationInstanceList();
 
-    for (int i = 0; i < situations->count(); i++)
+    for (int i = 0; i < situations.count(); i++)
     {
-        DoAction(situations->at(i));
+        DoAction(situations.at(i));
     }
     //разрешаем конфликты
     //TODO

@@ -1036,6 +1036,25 @@ QList<NFaset*> NKBManager::GetSlotFasets(NSlot* slot)
     return list;
 }
 
+bool NKBManager::HasParentWithName(NFrame* frame, QString parentName)
+{
+	if (frame == NULL)
+		return false;
+
+	if (frame->frameName() == parentName)
+		return true;
+
+	NFrame* parent = GetFrameParent(frame);
+	while (parent != NULL)
+	{
+		if (parent->frameName() == parentName)
+			return true;
+		parent = GetFrameParent(parent);
+	}
+
+	return false;
+}
+
 NProc* NKBManager::getProc(QString name)
 {
     NProc* p;
@@ -1082,6 +1101,12 @@ QList<NFrame*> NKBManager::getAllChildren(NFrame* frame)//получает по�
         children.append(getAllChildren(child));
     }
     return children;
+}
+
+bool NKBManager::hasChildren(NFrame* frame)
+{
+	QList<NFrame*> children = getAllChildren(frame);
+	return children.count() > 0;
 }
 
 QStringList NKBManager::getFilteredFrameList(QString frameName,QString slotName)

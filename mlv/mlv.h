@@ -22,6 +22,7 @@ protected:
     Grid* m_Grid;
     NFrame* m_GameFieldInst;            // Экземпляр фрейма игрового поля
     QList<NFrame*> m_CellFrameInsts;    // Экземпляры фреймов ячеек
+	QList<NFrame*> m_ItemFrameInsts;    // Экземпляры фреймов персонажей
     QList<NFrame*> m_WorkMemory;        // Рабочая память, тут хранятся фреймы, которые привязались
     QList<NFrame*> m_Cache;             // Тут хранятся ВСЕ фреймы экхемпляры
 
@@ -54,6 +55,9 @@ public:
     void SetFullSearch(bool b) {m_FullSearch = b;}
 
     bool isGameContinues();                                 //запущена ли в данный момент игра
+	QList<NFrame*> getSituationInstanceList();
+	QList<NFrame*> getFrameLeaf(NFrame* root);
+
 protected:
 
     // Тут создаются фреймы экземпляры игрового поля и персонаже.
