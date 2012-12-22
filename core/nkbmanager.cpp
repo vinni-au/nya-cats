@@ -855,10 +855,12 @@ QStringList NKBManager::getVars(QString frameName)
     if(!frame)
         return QStringList();
 
+    //собственные слоты
     QStringList ownSlots = frame->getSimpleSlotNames();//собственные слоты
 
-    QStringList subFsTypes;
-    QStringList subFs = frame->getSubframesSlotNames(subFsTypes);
+    QStringList subFsTypes;//имена фреймов-субфреймов
+    QStringList subFs = frame->getSubframesSlotNames(subFsTypes);//параметр передается по ссылке
+    //subFs - имена слотов
     QStringList subframeSlots;
     for(int i=0;i<subFs.count();i++)
     {
