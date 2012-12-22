@@ -101,6 +101,8 @@ protected:
     bool IsPerson(GameItem* item);
     bool IsFood(GameItem* item);
 
+	bool IsContainGameItem(NFrame* cell);
+
     void InitNeighborSituation(NFrame* frameSituation, NFrame* item, QString slotName);
 
     QString GetSpaces(int count);

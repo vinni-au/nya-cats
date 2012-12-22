@@ -457,17 +457,21 @@ bool MLV::IsFood(GameItem* item)
     return food;
 }
 
-void MLV::InitNeighborSituation(NFrame* frameSituation, NFrame* item, QString Orientation)
+bool MLV::IsContainGameItem(NFrame* cell)
 {
-    if (IsPerson(item))
-        SetSlotValueVariant(frameSituation, "Сосед " + Orientation, QVariant(reinterpret_cast<long long>(item)));
-    else
-        frameSituation->removeSlot("Сосед " + Orientation);
+	NFrame* item = (NFrame*)GetSlotValue(cell, "Игровой объект").toLongLong();
+	if (item = NULL)
+		return false;
 
-    if (IsFood(item))
-        SetSlotValueVariant(frameSituation, "Еда " + Orientation, QVariant(reinterpret_cast<long long>(item)));
+	return m_KBManager->HasParentWithName(item, "Игровой объект");
+}
+
+void MLV::InitNeighborSituation(NFrame* frameSituation, NFrame* cell, QString Orientation)
+{
+    if (IsContainGameItem(cell))
+        SetSlotValueVariant(frameSituation, "Ячейка " + Orientation, QVariant(reinterpret_cast<long long>(cell)));
     else
-        frameSituation->removeSlot("Еда " + Orientation);
+        frameSituation->removeSlot("Ячейка " + Orientation);
 }
 
 QString MLV::GetSpaces(int count)
@@ -573,8 +577,8 @@ bool MLV::BindPerson(NFrame* cell)
         AddMsgToLog(GetSpaces(m_Padding) + "Определяем ситуацию для '" + frame->frameName().toUpper() + "'");
 
         NFrame* frameSituation = CreateFrameInstance("Ситуация", false);
-        SetSlotValueVariant(frameSituation, "Место выполнения действия", QVariant(reinterpret_cast<long long>(cell)));
-        SetSlotValueVariant(frameSituation, "Игрок", QVariant(reinterpret_cast<long long>(frame)));
+        SetSlotValueVariant(frameSituation, "Ячейка игрока", QVariant(reinterpret_cast<long long>(cell)));
+        //SetSlotValueVariant(frameSituation, "Игрок", QVariant(reinterpret_cast<long long>(frame)));
 
 
         //////////////////////////
@@ -587,13 +591,13 @@ bool MLV::BindPerson(NFrame* cell)
             // если есть - добавляем в ситуацию
 
             NFrame *cframe = 0;
-            cframe = FindByCell(x, y - 1);
+            cframe = FindCell(x, y - 1);
             InitNeighborSituation(frameSituation, cframe, "сверху");
-            cframe = FindByCell(x, y + 1);
+            cframe = FindCell(x, y + 1);
             InitNeighborSituation(frameSituation, cframe, "снизу");
-            cframe = FindByCell(x + 1, y);
+            cframe = FindCell(x + 1, y);
             InitNeighborSituation(frameSituation, cframe, "справа");
-            cframe = FindByCell(x - 1, y);
+            cframe = FindCell(x - 1, y);
             InitNeighborSituation(frameSituation, cframe, "слева");
         }
 
