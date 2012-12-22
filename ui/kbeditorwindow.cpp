@@ -69,6 +69,10 @@ KBEditorWindow::KBEditorWindow(NKBManager *kbManager,MLV *mlv,QWidget *parent) :
     QObject::connect(m_kbManager, SIGNAL(apoDeleted(uint,uint)),
                      ui->graphicsView, SLOT(deleteLink(uint,uint)));
 
+    this->ui->chbAdmin->setVisible(true);
+    this->ui->chbAdmin->setChecked(false);
+    this->m_godMode = this->ui->chbAdmin->isChecked();//режим бога
+
 }
 
 KBEditorWindow::~KBEditorWindow()
@@ -98,10 +102,13 @@ void KBEditorWindow::frameDeletedOnDiagram(unsigned id)
     if(gameIsStarted())
         return;
 
-    if(m_kbManager->frameIsSystem(id))
+    if(!m_godMode)
     {
-        QMessageBox::information(this,"","Не удалось удалить фрейм, т.к. он является системным.",QMessageBox::Ok);
-        return;
+        if(m_kbManager->frameIsSystem(id))
+        {
+            QMessageBox::information(this,"","Не удалось удалить фрейм, т.к. он является системным.",QMessageBox::Ok);
+            return;
+        }
     }
 
     if (m_kbManager->deleteFrame(id))
@@ -171,10 +178,13 @@ void KBEditorWindow::on_btnDeleteFrame_clicked()
         QMessageBox::information(this,"","Не удалось удалить фрейм",QMessageBox::Ok);
         return;
     }
-    if(m_kbManager->frameIsSystem(frameId))
+    if(!m_godMode)
     {
-        QMessageBox::information(this,"","Не удалось удалить фрейм, т.к. он является системным.",QMessageBox::Ok);
-        return;
+        if(m_kbManager->frameIsSystem(frameId))
+        {
+            QMessageBox::information(this,"","Не удалось удалить фрейм, т.к. он является системным.",QMessageBox::Ok);
+            return;
+        }
     }
 
     m_kbManager->deleteFrame(frameId);
@@ -190,10 +200,13 @@ void KBEditorWindow::on_btnAddSlot_clicked()
     QModelIndex index = ui->treeView->selectionModel()->currentIndex();
     int frame_id = m_kbManager->getFrameNetModel()->getIdByIndex(index);
 
-    if(m_kbManager->frameIsSystem(frame_id))
+    if(!m_godMode)
     {
-        QMessageBox::information(this,"","Не удалось добавить слот, т.к. фрейм является системным.",QMessageBox::Ok);
-        return;
+        if(m_kbManager->frameIsSystem(frame_id))
+        {
+            QMessageBox::information(this,"","Не удалось добавить слот, т.к. фрейм является системным.",QMessageBox::Ok);
+            return;
+        }
     }
 
 
@@ -237,10 +250,14 @@ void KBEditorWindow::on_btnEditSlot_clicked()
         //получить айдишник фрейма, в котором этот слот
         QModelIndex frameIndex = model->parent(index);
         int frameId = model->getIdByIndex(frameIndex);
-        if(m_kbManager->frameIsSystem(frameId))
+
+        if(!m_godMode)
         {
-            QMessageBox::information(this,"","Не удалось редактировать слот, т.к. фрейм является системным.",QMessageBox::Ok);
-            return;
+            if(m_kbManager->frameIsSystem(frameId))
+            {
+                QMessageBox::information(this,"","Не удалось редактировать слот, т.к. фрейм является системным.",QMessageBox::Ok);
+                return;
+            }
         }
 
 
@@ -270,10 +287,14 @@ void KBEditorWindow::on_btnDeleteSlot_clicked()
 
     QModelIndex frameIndex = model->parent(index);
     int frameId = model->getIdByIndex(frameIndex);
-    if(m_kbManager->frameIsSystem(frameId))
+
+    if(!m_godMode)
     {
-        QMessageBox::information(this,"","Не удалось удалить слот, т.к. фрейм является системным.",QMessageBox::Ok);
-        return;
+        if(m_kbManager->frameIsSystem(frameId))
+        {
+            QMessageBox::information(this,"","Не удалось удалить слот, т.к. фрейм является системным.",QMessageBox::Ok);
+            return;
+        }
     }
 
     if(!model->deleteSlot(index))
@@ -403,6 +424,9 @@ void KBEditorWindow::on_treeView_doubleClicked(const QModelIndex &index)
 
 bool KBEditorWindow::gameIsStarted()
 {
+    if(m_godMode)           //в режиме бога нет запретов
+        return false;
+
     if(!m_mlv)
         return false;
 
@@ -437,4 +461,9 @@ void KBEditorWindow::on_btnAddFrameSituation_clicked()
 
 
     }
+}
+
+void KBEditorWindow::on_chbAdmin_toggled(bool checked)
+{
+    m_godMode = checked;
 }

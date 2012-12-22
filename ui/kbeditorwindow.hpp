@@ -49,6 +49,8 @@ private slots:
 
     void on_btnAddFrameSituation_clicked();
 
+    void on_chbAdmin_toggled(bool checked);
+
 private:
     bool gameIsStarted();
 protected:
@@ -64,6 +66,8 @@ private:
     MLV        *m_mlv;
 
     bool m_simpleView;
+
+    bool m_godMode;         //режим бога, в котором можно редактировать системные фреймы
 };
 
 #endif // KBEDITORWINDOW_HPP
