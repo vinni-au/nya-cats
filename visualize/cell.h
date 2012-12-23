@@ -19,14 +19,14 @@ public:
     Cell(int xIndex, int yIndex, QRectF &rect, QColor &color, QMenu* contextMenu = 0);
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *item, QWidget *widget);
-    void SetGameItem(GameItem* item);
 
     int GetX();
     int GetY();
-    GameItem* GetGameItem();
 
-    void setContextMenu(QMenu* contextMenu)
-    {   m_contextMenu = contextMenu;    }
+    GameItem* GetGameItem();
+	void SetGameItem(GameItem* item);
+
+    void setContextMenu(QMenu* contextMenu) { m_contextMenu = contextMenu; }
 
 protected:
     void contextMenuEvent(QGraphicsSceneContextMenuEvent *event);

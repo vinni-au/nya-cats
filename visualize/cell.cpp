@@ -13,12 +13,6 @@ Cell::Cell(int xIndex, int yIndex, QRectF &rect, QColor &color, QMenu *contextMe
     setAcceptedMouseButtons(Qt::LeftButton);
 }
 
-void Cell::SetGameItem(GameItem* item)
-{
-    m_Item = item;
-    update();
-}
-
 QRectF Cell::boundingRect() const
 {
     return m_Rect;
@@ -28,7 +22,7 @@ void Cell::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
 {
     QColor fillColor;
 
-    if (m_Item)
+    if (m_Item != NULL)
     {
         painter->drawImage(m_Rect, m_Item->GetPic().toImage());
 
@@ -42,8 +36,7 @@ void Cell::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
         if (m_Item->GetTeam() == gtBlue)
             fillColor = blue;
 
-        fillColor =
-                (option->state & QStyle::State_MouseOver) ? fillColor.dark(255) : fillColor;
+        fillColor = (option->state & QStyle::State_MouseOver) ? fillColor.dark(255) : fillColor;
 
         QBrush b = painter->brush();
         QPen p = painter->pen();
@@ -56,8 +49,7 @@ void Cell::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
     }
     else
     {
-        fillColor =
-                (option->state & QStyle::State_MouseOver) ? m_Color.dark(255) : m_Color;
+        fillColor = (option->state & QStyle::State_MouseOver) ? m_Color.dark(255) : m_Color;
         QBrush b = painter->brush();
         QPen p = painter->pen();
 
@@ -161,6 +153,12 @@ int Cell::GetX()
 GameItem* Cell::GetGameItem()
 {
     return m_Item;
+}
+
+void Cell::SetGameItem(GameItem* item)
+{
+	m_Item = item;
+	update();
 }
 
 void Cell::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)

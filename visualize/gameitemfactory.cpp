@@ -85,7 +85,7 @@ void GameItemFactory::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
     GameMimeData *mime = new GameMimeData;
     drag->setMimeData(mime);
 
-    mime->SetItem(new GameItem(m_Item->GetType(), m_Item->GetPic(), m_Item->GetTeam(), 1));
+    mime->SetItem(new GameItem(m_Item->GetType(), m_Item->GetPic(), m_Item->GetTeam()));
 
     QPixmap pic = m_Item->GetPic();
     drag->setPixmap(pic.scaled(m_Rect.height(), m_Rect.width()));

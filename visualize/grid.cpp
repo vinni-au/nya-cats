@@ -81,6 +81,37 @@ GameItem* Grid::GetGameItem(int index)
 
 }
 
+void Grid::MoveGameItemTo(int fromX, int fromY, int toX, int toY)
+{
+	Cell* fromCell = GetCell(fromX, fromY);
+	GameItem* fromItem = fromCell->GetGameItem();
+	if (fromItem == NULL) 
+		return;
+
+	Cell* toCell = GetCell(toX, toY);
+	GameItem* toItem = toCell->GetGameItem();
+	if (toItem != NULL) // Не можем перемещать итем в уже занятую клетку
+		return;
+
+	fromCell->SetGameItem(NULL);
+	toCell->SetGameItem(fromItem);
+}
+
+Cell* Grid::FindCellByItemFrameId(int id)
+{
+	for (int i = 0; i < m_Cells.count(); i++)
+	{
+		Cell* cell =  m_Cells[i];
+		GameItem* item = cell->GetGameItem();
+		if (item == NULL)
+			continue;
+
+		if (item->GetFrameId() == id)
+			return  cell;
+	}
+	return NULL;
+}
+
 void Grid::setContextMenuCell(Cell *cell)
 {
     m_contextMenuCell = cell;

@@ -28,13 +28,6 @@ void Visualizer::populateScene()
     scene = new GameScene(this);
     scene->CreateGrid(10, rect, col);
 
-//    AddGameItem(gitWarior, gtRed);
-//    AddGameItem(gitWarior, gtBlue);
-//    AddGameItem(gitHealer, gtRed);
-//    AddGameItem(gitHealer, gtBlue);
-//    AddGameItem(gitArcher, gtRed);
-//    AddGameItem(gitArcher, gtBlue);
-
     QRectF rect1(-70, 0, 60, 60);
     QRectF rect2(-70, 70, 60, 60);
     QRectF rect3(-70, 140, 60, 60);
@@ -48,15 +41,15 @@ void Visualizer::populateScene()
     QPixmap pic3(":images/visualize/hant.gif");
     QPixmap pic4(":images/visualize/meat.gif");
 
-    scene->CreateFactory(new GameItem(gitWarior, pic1, gtRed, -1), rect1);
-    scene->CreateFactory(new GameItem(gitHealer, pic2, gtRed, -1), rect2);
-    scene->CreateFactory(new GameItem(gitArcher, pic3, gtRed, -1), rect3);
+    scene->CreateFactory(new GameItem(gitWarior, pic1, gtRed), rect1);
+    scene->CreateFactory(new GameItem(gitHealer, pic2, gtRed), rect2);
+    scene->CreateFactory(new GameItem(gitArcher, pic3, gtRed), rect3);
 
-    scene->CreateFactory(new GameItem(gitWarior, pic1, gtBlue, -1), rect4);
-    scene->CreateFactory(new GameItem(gitHealer, pic2, gtBlue, -1), rect5);
-    scene->CreateFactory(new GameItem(gitArcher, pic3, gtBlue, -1), rect6);
+    scene->CreateFactory(new GameItem(gitWarior, pic1, gtBlue), rect4);
+    scene->CreateFactory(new GameItem(gitHealer, pic2, gtBlue), rect5);
+    scene->CreateFactory(new GameItem(gitArcher, pic3, gtBlue), rect6);
 
-    scene->CreateFactory(new GameItem(gitMeat,   pic4, gtNull, -1), rect7);
+    scene->CreateFactory(new GameItem(gitMeat,   pic4, gtNull), rect7);
 }
 
 void Visualizer::Update()

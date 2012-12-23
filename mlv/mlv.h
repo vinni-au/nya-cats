@@ -78,6 +78,8 @@ protected:
     bool SetSlotValueVariant(NFrame* frame, QString slotName, QVariant value, bool findInParents = false);
 
     QVariant GetSlotValue(NFrame* frame, QString slotName, bool findInParents = false);
+	NFrame* GetSubframe(NFrame* frame, QString slotName, bool findInParents = false);
+	void SetSubframe(NFrame* frame, QString slotName, NFrame* subframe);
 
     void DoAction(NFrame* frameSituation);
 
@@ -89,6 +91,8 @@ protected:
 
     // Поиск в списке ячеек
     NFrame* FindByCell(int x, int y);
+
+	NFrame* GetItemInst(NFrame* cell);
 
     // Поиск в кеше
     NFrame* FindInCache(QString name);

@@ -79,7 +79,7 @@ NFrame* MLV::FindByCell(int x, int y)
     if (!cell)
         return NULL;
 
-    NFrame* frame = (NFrame*)GetSlotValue(cell, "Игровой объект").toLongLong();
+    NFrame* frame = GetSubframe(cell, "Игровой объект");
     return frame;
 }
 
@@ -94,6 +94,19 @@ NFrame* MLV::FindCell(int x, int y)
         }
     }
     return NULL;
+}
+
+/* 
+	Получаем из экземпляра ячейки экземпляр игрового объекта,
+	который в ней содержится
+*/
+NFrame* MLV::GetItemInst(NFrame* cell)
+{
+	// Действительно ли это ячейка игрового поля
+	if (m_KBManager->HasParentWithName(cell, "Ячейка игрового поля"))
+		return NULL;
+	
+	return GetSubframe(cell, "Игровой объект");
 }
 
 NFrame* MLV::FindInCache(QString name)
@@ -234,7 +247,7 @@ QVariant MLV::GetSlotValue(NFrame* frame, QString slotName, bool findInParents)
             return QVariant();
 
         //ищем в родительских
-        NFrame* parentFrame = (NFrame*)GetSlotValue(frame, "is_a").toLongLong();
+        NFrame* parentFrame = GetSubframe(frame, "is_a");
         return GetSlotValue(parentFrame, slotName, findInParents);
     }
     else
@@ -244,6 +257,16 @@ QVariant MLV::GetSlotValue(NFrame* frame, QString slotName, bool findInParents)
     }
 
     return QVariant();
+}
+
+NFrame* MLV::GetSubframe(NFrame* frame, QString slotName, bool findInParents)
+{
+	return (NFrame*)GetSlotValue(frame, slotName, findInParents).toLongLong();
+}
+
+void MLV::SetSubframe(NFrame* frame, QString slotName, NFrame* subframe)
+{
+	 SetSlotValueVariant(frame, slotName, QVariant(reinterpret_cast<long long>(subframe)));
 }
 
 QVariant MLV::getVal(int frameId, QString aimVar)
@@ -303,8 +326,33 @@ bool MLV::setVal(NFrame* frame, QString aimVar, QVariant value)
 
 void MLV::UpdateGrid()
 {
+	if (m_Grid == NULL) return;
+	
+	for(int i = 0; i < m_CellFrameInsts.count(); i++)
+	{
+		NFrame* cellInst = m_CellFrameInsts[i];
+		NFrame* itemInst = GetItemInst(cellInst);
+		if (itemInst == NULL)
+			continue;
 
+		int newX = GetSlotValue(cellInst, "X", true).toInt();
+		int newY = GetSlotValue(cellInst, "Y", true).toInt();
+
+		Cell* cell = m_Grid->FindCellByItemFrameId(itemInst->id());
+		if (cell == NULL) // Такого по идее быть не должно тут
+			continue;
+
+		int oldX = cell->GetX();
+		int oldY = cell->GetY();
+
+		// Если координаты не совпадают, перемещаем игровой объект
+		if (oldX != newX || oldY != newY)
+		{
+			m_Grid->MoveGameItemTo(oldX, oldY, newX, newY);
+		}
+	}
 }
+
 
 QVariant MLV::getValSlot(int frameId, QString aimVar)
 {
@@ -401,9 +449,11 @@ bool MLV::Init()
                 {
                     ItemInst = CreateFrameInstanceFull("Еда");
                 }
+				// Сохраняем в итем игрового объекта ид экземпляра соотв. ему фрейма
+				item->SetFrameId(ItemInst->id());
             }
 
-            SetSlotValueVariant(CellInst, "Игровой объект", QVariant(reinterpret_cast<long long>(ItemInst)));
+            SetSubframe(CellInst, "Игровой объект", ItemInst);
             m_CellFrameInsts.append(CellInst);
 			m_ItemFrameInsts.append(ItemInst);
         }
@@ -415,25 +465,14 @@ bool MLV::Init()
 // Костыль
 bool MLV::IsPerson(NFrame* frame)
 {
-    if (frame == 0)
-        return false;
-
-    bool pers =  frame->frameName() == "Лучник" ||
-                 frame->frameName() == "Мечник" ||
-                 frame->frameName() == "Лекарь" ||
-                 frame->frameName() == "Персонаж";
-
-    return pers;
+    if (frame == 0) return false;
+    return m_KBManager->HasParentWithName(frame, "Персонаж");
 }
 
 bool MLV::IsFood(NFrame* frame)
 {
-    if (frame == 0)
-        return false;
-
-    bool food = frame->frameName() == "Еда";
-
-    return food;
+    if (frame == 0) return false;
+    return frame->frameName() == "Еда";;
 }
 
 bool MLV::IsPerson(GameItem* item)
@@ -459,9 +498,8 @@ bool MLV::IsFood(GameItem* item)
 
 bool MLV::IsContainGameItem(NFrame* cell)
 {
-	NFrame* item = (NFrame*)GetSlotValue(cell, "Игровой объект").toLongLong();
-        if (item == NULL)
-		return false;
+	NFrame* item = GetSubframe(cell, "Игровой объект");
+	if (item == NULL)
 
 	return m_KBManager->HasParentWithName(item, "Игровой объект");
 }
@@ -469,7 +507,7 @@ bool MLV::IsContainGameItem(NFrame* cell)
 void MLV::InitNeighborSituation(NFrame* frameSituation, NFrame* cell, QString Orientation)
 {
     if (IsContainGameItem(cell))
-        SetSlotValueVariant(frameSituation, "Ячейка " + Orientation, QVariant(reinterpret_cast<long long>(cell)));
+        SetSubframe(frameSituation, "Ячейка " + Orientation, cell);
     else
         frameSituation->removeSlot("Ячейка " + Orientation);
 }
@@ -577,8 +615,7 @@ bool MLV::BindPerson(NFrame* cell)
         AddMsgToLog(GetSpaces(m_Padding) + "Определяем ситуацию для '" + frame->frameName().toUpper() + "'");
 
         NFrame* frameSituation = CreateFrameInstance("Ситуация", false);
-        SetSlotValueVariant(frameSituation, "Ячейка игрока", QVariant(reinterpret_cast<long long>(cell)));
-        //SetSlotValueVariant(frameSituation, "Игрок", QVariant(reinterpret_cast<long long>(frame)));
+        SetSubframe(frameSituation, "Ячейка игрока", cell);
 
 
         //////////////////////////
@@ -673,7 +710,7 @@ bool MLV::BindFrame(NFrame *frame)
             NFrame* frameInst1 = CreateFrameInstance(children[i]->frameName(), false);
             if (frameInst1)
             {
-                SetSlotValueVariant(frameInst1, "is_a", QVariant(reinterpret_cast<long long>(frameInst)));
+                SetSubframe(frameInst1, "is_a", frameInst);
                 bool end = BindFrame(frameInst1);
                 if (end && !m_FullSearch)
                     break;
@@ -697,7 +734,7 @@ bool MLV::BindSlot(NFrame* frame, NSlot *slot)
     // Если субфрейм
     if (slot->getSlotType() == "frame")
     {
-        NFrame* subframe = (NFrame*)GetSlotValue(frame, slot->name()).toLongLong();
+        NFrame* subframe = GetSubframe(frame, slot->name());
         if (!subframe)
         {
             // Создаем экземпляр
@@ -705,7 +742,7 @@ bool MLV::BindSlot(NFrame* frame, NSlot *slot)
             subframe = CreateFrameInstance(subframeName);
             if (!subframe)
                 return false;
-            SetSlotValueVariant(frame, slot->name(), QVariant(reinterpret_cast<long long>(subframe)));
+            SetSubframe(frame, slot->name(), subframe);
         }
 
         // Вызваем привязку экземпляра
@@ -753,7 +790,7 @@ bool  MLV::isGameContinues()
 void  MLV::DoAction(NFrame* frameSituation)
 {
     // в man должен быть экземпляр чувака, который попал в ситуацию
-    NFrame *man = (NFrame*)GetSlotValue(frameSituation, "Игрок", true).toLongLong();
+    NFrame *man = GetSubframe(frameSituation, "Игрок", true);
 
     NSlot *actionSlot = frameSituation->getSlotByName("action");
     if(!actionSlot)
@@ -773,7 +810,7 @@ void  MLV::DoAction(NFrame* frameSituation)
     QScriptEngine *engine = new QScriptEngine();
 
     //окружение скрипта
-    QSProxyMan *proxyMan = new QSProxyMan(man);
+    QSProxyMan *proxyMan = new QSProxyMan(man, 0);
 
     QScriptValue objectMan = engine->newQObject(proxyMan);
     engine->globalObject().setProperty("Me", objectMan);

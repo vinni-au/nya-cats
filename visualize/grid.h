@@ -29,6 +29,9 @@ public:
     GameItem* GetGameItem(int x, int y);
     GameItem* GetGameItem(int index);
 
+	void MoveGameItemTo(int fromX, int fromY, int toX, int toY);
+	Cell* FindCellByItemFrameId(int id);
+
 signals:
     void sigFindOutSituation(int x, int y);
 

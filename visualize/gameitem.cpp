@@ -15,11 +15,11 @@ void GameMimeData::SetItem(GameItem* item)
     m_Item = item;
 }
 
-GameItem::GameItem(GameItemType type, QPixmap& pic, GameTeam team, int index) :
+GameItem::GameItem(GameItemType type, QPixmap& pic, GameTeam team, int id) :
    m_Type(type)
   ,m_Pic(pic)
   ,m_Team(team)
-  ,m_Index(index)
+  ,m_FrameId(id)
 {
 }
 
