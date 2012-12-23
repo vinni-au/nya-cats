@@ -1709,7 +1709,8 @@ df
 g
 dfg
 123f</proc>
-        <proc name="proc_Враг_слева">Me.X()</proc>
+        <proc name="proc_Враг_слева">var x=Cell.X();
+Cell.seX(x-1);</proc>
     </procs>
     <productions>
         <production name="врагслева">

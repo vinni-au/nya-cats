@@ -3,25 +3,23 @@
 
 #include <QObject>
 #include "core/nframe.h"
+#include "qsproxy.h"
+#include <QScriptEngine>
 
-class QSProxyMan : public QObject
+class QSProxyMan : public QSProxy
 {
     Q_OBJECT
-    Q_PROPERTY(int X READ X WRITE setX SCRIPTABLE true)
-    //Q_PROPERTY(int y READ y WRITE setY SCRIPTABLE true)
+
 
 public:
-    explicit QSProxyMan(NFrame *man,QObject *parent = 0);
+    explicit QSProxyMan(NFrame *man,QScriptEngine *engine,QObject *parent = 0);
 
-    int     X();
-    void    setX(int X);
+
 
 signals:
 
 public slots:
 
-protected:
-    NFrame  *m_frame;
 
 };
 

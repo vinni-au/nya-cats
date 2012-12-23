@@ -527,13 +527,13 @@ void MLV::Step()
     if (!m_Initialized || !m_GameContinues) return;
     qDebug()<<"void MLV::Step()";
 
-	// Для каждого нового шага чистим рабочую память.
-	m_WorkMemory.clear();
+    // Для каждого нового шага чистим рабочую память.
+    m_WorkMemory.clear();
 
-	// Загоняем в рабочую память экземпляр игрового поля, экземпляры ячеек и игровых объектов
-	m_WorkMemory.append(m_GameFieldInst);
-	for (int i = 0; i < m_CellFrameInsts.count(); i++)
-		m_WorkMemory.append(m_CellFrameInsts[i]);
+    // Загоняем в рабочую память экземпляр игрового поля, экземпляры ячеек и игровых объектов
+    m_WorkMemory.append(m_GameFieldInst);
+    for (int i = 0; i < m_CellFrameInsts.count(); i++)
+        m_WorkMemory.append(m_CellFrameInsts[i]);
 
     for (int i = 0; i < m_ItemFrameInsts.count(); i++)
 		m_WorkMemory.append(m_ItemFrameInsts[i]);
@@ -789,9 +789,6 @@ bool  MLV::isGameContinues()
 
 void  MLV::DoAction(NFrame* frameSituation)
 {
-    // в man должен быть экземпляр чувака, который попал в ситуацию
-    NFrame *man = GetSubframe(frameSituation, SYSSTR_SLOTNAME_CELL_GAMER, true);
-
     NSlot *actionSlot = frameSituation->getSlotByName(SYSSTR_SLOTNAME_ACTION);
     if(!actionSlot)
         return;
@@ -810,10 +807,11 @@ void  MLV::DoAction(NFrame* frameSituation)
     QScriptEngine *engine = new QScriptEngine();
 
     //окружение скрипта
-    QSProxyMan *proxyMan = new QSProxyMan(man, 0);
+    NFrame *cell = GetSubframe(frameSituation, SYSSTR_SLOTNAME_CELL_GAMER, true);
+    QSProxyCell *proxyCell = new QSProxyCell(cell,engine);
 
-    QScriptValue objectMan = engine->newQObject(proxyMan);
-    engine->globalObject().setProperty("Me", objectMan);
+    QScriptValue objectCell = engine->newQObject(proxyCell);
+    engine->globalObject().setProperty("Cell", objectCell);
 
     //запускаем скрипт
     QScriptValue result = engine->evaluate(script);

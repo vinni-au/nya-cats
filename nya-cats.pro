@@ -55,7 +55,9 @@ SOURCES += main.cpp\
     ui/codeeditor.cpp \
     ui/mlvcontrol.cpp \
     ui/proceditor.cpp \
-    mlv/QScriptProxy/qsproxyman.cpp
+    mlv/QScriptProxy/qsproxyman.cpp \
+    mlv/QScriptProxy/qsproxycell.cpp \
+    mlv/QScriptProxy/qsproxy.cpp
 
 HEADERS  += mainwindow.hpp \
     core/nslot.h \
@@ -101,7 +103,9 @@ HEADERS  += mainwindow.hpp \
     ui/codeeditor.hpp \
     ui/mlvcontrol.h \
     ui/proceditor.h \
-    mlv/QScriptProxy/qsproxyman.h
+    mlv/QScriptProxy/qsproxyman.h \
+    mlv/QScriptProxy/qsproxycell.h \
+    mlv/QScriptProxy/qsproxy.h
 
 FORMS    += mainwindow.ui \
     ui/frameeditorwnd.ui \

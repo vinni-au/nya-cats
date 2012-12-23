@@ -12,7 +12,7 @@
 #include "core/production/nproductionmlv.h"
 #include <QScriptValue>
 #include <QScriptEngine>
-#include "QScriptProxy/qsproxyman.h"
+#include "QScriptProxy/qsproxycell.h"
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
