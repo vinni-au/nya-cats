@@ -28,7 +28,9 @@ QScriptValue QSProxyCell::getMan()
 
 int QSProxyCell::X()
 {
-    return m_frame->GetSlotFaset("x","value")->value().toInt();
+    QVariant xv = m_frame->GetSlotFaset("x","value")->value();
+    int x = xv.toInt();
+    return x;//m_frame->GetSlotFaset("x","value")->value().toInt();
 }
 
 void QSProxyCell::setX(int X)
