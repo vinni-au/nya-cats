@@ -103,7 +103,7 @@ NFrame* MLV::FindCell(int x, int y)
 NFrame* MLV::GetItemInst(NFrame* cell)
 {
 	// Действительно ли это ячейка игрового поля
-	if (m_KBManager->HasParentWithName(cell, SYSSTR_FRAMENAME_GAMECELL))
+	if (!m_KBManager->HasParentWithName(cell, SYSSTR_FRAMENAME_GAMECELL))
 		return NULL;
 	
 	return GetSubframe(cell, SYSSTR_FRAMENAME_GAMEITEM);
