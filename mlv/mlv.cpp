@@ -460,7 +460,7 @@ bool MLV::IsFood(GameItem* item)
 bool MLV::IsContainGameItem(NFrame* cell)
 {
 	NFrame* item = (NFrame*)GetSlotValue(cell, "Игровой объект").toLongLong();
-	if (item = NULL)
+        if (item == NULL)
 		return false;
 
 	return m_KBManager->HasParentWithName(item, "Игровой объект");

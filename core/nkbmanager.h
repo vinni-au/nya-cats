@@ -66,11 +66,13 @@ public:
     QStringList getProceduresNames();
 
 
-    QStringList getVars(QString frameName);
-    QStringList getVarsWithParents(QString frameName);
+    QStringList getVars(QString frameName);                                 //для конкретного фрейма
+    QStringList getVarsWithParents(QString frameName);                      //главная функция получения слотов.
+    QStringList getVarsOfSubframeWithParentsAndChildren(QString frameName,bool lookForParents); //для субфреймов
 
     QString getDomainByString( QString frameName, QString str  );
     NSlot * getSlotByString( QString frameName, QString str  );
+    NSlot * getSlotByStringWithoutParentsAndChildren( QString frameName, QString str  );
 
     // Для МЛВ
     NFrame*         GetFrameByName      (QString name);
@@ -92,8 +94,12 @@ public:
 
     void clearExemplarIds();
 
-	QList<NFrame*> getAllChildren(NFrame* frame);//получает потомков и потомков потомков ... 
-	bool hasChildren(NFrame* frame);
+    QList<NFrame*> getAllChildren(NFrame* frame);//получает потомков и потомков потомков ...
+    QStringList    getAllChildrenNames(NFrame* frame);
+    bool hasChildren(NFrame* frame);
+
+    QList<NFrame*>  getAllParents(NFrame* frame);
+    QStringList     getAllParentsNames(NFrame* frame);
 
 private:
     NFrame  *getFrameById(int id);

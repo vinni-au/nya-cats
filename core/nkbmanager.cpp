@@ -865,7 +865,7 @@ QStringList NKBManager::getVars(QString frameName)
     for(int i=0;i<subFs.count();i++)
     {
         QString prefix=subFs[i]+QString(".");
-        subframeSlots = getVars(subFsTypes[i]);
+        subframeSlots = getVarsOfSubframeWithParentsAndChildren(subFsTypes[i],true);
 
         for(int j=0;j<subframeSlots.count();++j)
         {
@@ -877,7 +877,41 @@ QStringList NKBManager::getVars(QString frameName)
 
     return ownSlots;
 }
+QStringList NKBManager::getVarsOfSubframeWithParentsAndChildren(QString frameName,bool lookForParents)
+{
+    //собственные слоты субфрейма
+    QStringList allSlots = getVars(frameName);
 
+    NFrame *frame = getFrameByName(frameName);
+
+    //слоты родителей
+    NFrame *curFrame = frame;
+    if(lookForParents)
+    {
+        while(curFrame)
+        {
+            QString parent = curFrame->parentFrame();
+            if(!parent.isEmpty())
+            {
+                QStringList parentSlots = getVars(parent);
+                allSlots.append(parentSlots);
+            }
+            curFrame = getFrameByName(parent);
+        }
+    }
+    //слоты потомков
+
+    QList<NFrame*> children = this->GetFrameChildren(frame);
+    for(int i=0;i<children.count();++i)
+    {
+        QString child = children.at(i)->frameName();
+        QStringList childSlots = getVarsOfSubframeWithParentsAndChildren(child,false);
+        allSlots.append(childSlots);
+    }
+
+    allSlots.removeDuplicates();
+    return allSlots;
+}
 
 QStringList NKBManager::getVarsWithParents(QString frameName)
 {
@@ -909,7 +943,8 @@ QString NKBManager::getDomainByString( QString frameName, QString str  )
     return faset->value().toString();
 }
 
-NSlot * NKBManager::getSlotByString( QString frameName, QString str  )
+
+NSlot* NKBManager::getSlotByString( QString frameName, QString str  )
 {
     NFrame* frame = getFrameByName(frameName);
     if(!frame)
@@ -921,7 +956,18 @@ NSlot * NKBManager::getSlotByString( QString frameName, QString str  )
         NSlot* slot = frame->getSlotByName(str);
         if(!slot)
         {//ищем в родительском
-            return getSlotByString(frame->parentFrame(),str);
+
+            QStringList framesToSearch;
+            framesToSearch<<getAllChildrenNames(frame);
+            framesToSearch<<getAllParentsNames(frame);
+            foreach(QString frameName,framesToSearch)
+            {
+                NSlot* slot1=getSlotByStringWithoutParentsAndChildren(frameName,str);
+                if(slot1)
+                    return slot1;
+            }
+
+            return NULL;// getSlotByString(frame->parentFrame(),str);
         }
         else
         {
@@ -938,7 +984,16 @@ NSlot * NKBManager::getSlotByString( QString frameName, QString str  )
         NSlot* slot = frame->getSlotByName(subfName);
         if(!slot)
         {//ищем в родительском
-            return getSlotByString(frame->parentFrame(),str);
+            QStringList framesToSearch;
+            framesToSearch<<getAllChildrenNames(frame);
+            framesToSearch<<getAllParentsNames(frame);
+            foreach(QString frameName,framesToSearch)
+            {
+                NSlot* slot1=getSlotByStringWithoutParentsAndChildren(frameName,str);
+                if(slot1)
+                    return slot1;
+            }
+            return NULL;//getSlotByString(frame->parentFrame(),str);//?? NULL
         }
         else
         {
@@ -949,6 +1004,87 @@ NSlot * NKBManager::getSlotByString( QString frameName, QString str  )
     }
     return NULL;
 }
+NSlot * NKBManager::getSlotByStringWithoutParentsAndChildren( QString frameName, QString str  )
+{
+    NFrame* frame = getFrameByName(frameName);
+    if(!frame)
+        return NULL;
+
+
+
+    //тут надо еще наследование учесть
+    if(!str.contains("."))
+    {//просто слот
+        NSlot* slot = frame->getSlotByName(str);
+        return slot;
+    }
+    else
+    {//субфреймы
+        int pointInx = str.indexOf(".");
+        QString newStr = str.right(str.length()-pointInx-1);
+        QString subfName = str.left(pointInx);
+
+        //проверяем наличие слота субфрейма
+        NSlot* slot = frame->getSlotByName(subfName);
+        if(slot)
+            return getSlotByString(slot->defValue().toString(),newStr);
+
+
+    }
+    return NULL;
+}
+
+//NSlot * NKBManager::getSlotByString11( QString frameName, QString str  )
+//{
+//    NFrame* frame = getFrameByName(frameName);
+//    if(!frame)
+//        return NULL;
+
+//    //тут надо еще наследование учесть
+//    if(!str.contains("."))
+//    {//просто слот
+//        NSlot* slot = frame->getSlotByName(str);
+//        if(!slot)
+//        {//ищем в родительском
+
+//            QStringList framesToSearch;
+//            framesToSearch<<frame->parentFrame();
+//            framesToSearch<<getAllChildrenNames();
+//            foreach(QString frameName,framesToSearch)
+//            {
+//                NSlot* slot1=getSlotByString(frame->parentFrame(),str);
+//                if(slot1)
+//                    return slot1;
+//            }
+
+//            return NULL;//getSlotByString(frame->parentFrame(),str);
+//        }
+//        else
+//        {
+//            return slot;
+//        }
+//    }
+//    else
+//    {//субфреймы
+//        int pointInx = str.indexOf(".");
+//        QString newStr = str.right(str.length()-pointInx-1);
+//        QString subfName = str.left(pointInx);
+
+//        //проверяем наличие слота субфрейма
+//        NSlot* slot = frame->getSlotByName(subfName);
+//        if(!slot)
+//        {//ищем в родительском
+//            return getSlotByString(frame->parentFrame(),str);
+//        }
+//        else
+//        {
+//            //return getSlotByString(subfName,newStr);
+//            return getSlotByString(slot->defValue().toString(),newStr);
+//        }
+
+//    }
+//    return NULL;
+//}
 
 // Для МЛВ
 NFrame* NKBManager::GetFrameByName(QString name)
@@ -1104,11 +1240,45 @@ QList<NFrame*> NKBManager::getAllChildren(NFrame* frame)//получает по�
     }
     return children;
 }
+QStringList NKBManager::getAllChildrenNames(NFrame* frame)
+{
+    QStringList allChildrenNames;
+    QList<NFrame*> allChildren = getAllChildren(frame);
+    foreach(NFrame* child,allChildren)
+    {
+        allChildrenNames<<child->frameName();
+    }
+    return allChildrenNames;
+}
 
 bool NKBManager::hasChildren(NFrame* frame)
 {
-	QList<NFrame*> children = getAllChildren(frame);
-	return children.count() > 0;
+    QList<NFrame*> children = getAllChildren(frame);
+    return children.count() > 0;
+}
+
+QList<NFrame*> NKBManager::getAllParents(NFrame* frame)//получает всех родителей и родителей родителей
+{
+    QList<NFrame*> parents;
+    NFrame* parent=NULL;
+    parent =  GetFrameParent(frame);
+    while(parent)
+    {
+        if(parent)
+            parents<<parent;
+        parent = GetFrameParent(parent);
+    }
+    return parents;
+}
+QStringList NKBManager::getAllParentsNames(NFrame* frame)
+{
+    QStringList allParentsNames;
+    QList<NFrame*> allParents = getAllParents(frame);
+    foreach(NFrame* parent,allParents)
+    {
+        allParentsNames<<parent->frameName();
+    }
+    return allParentsNames;
 }
 
 QStringList NKBManager::getFilteredFrameList(QString frameName,QString slotName)
