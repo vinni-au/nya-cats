@@ -14,6 +14,38 @@
 #include <QScriptEngine>
 #include "QScriptProxy/qsproxyman.h"
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#define SYSSTR_FRAMENAME_GAMEFIELD	"Игровое поле"
+#define SYSSTR_FRAMENAME_GAMEITEM	"Игровой объект"
+#define SYSSTR_FRAMENAME_GAMECELL	"Ячейка игрового поля"
+#define SYSSTR_FRAMENAME_SITUATION	"Ситуация"
+#define SYSSTR_FRAMENAME_PERSON		"Персонаж"
+#define SYSSTR_FRAMENAME_EMPTY		"Пусто"
+#define SYSSTR_FRAMENAME_FOOD		"Еда"
+
+#define SYSSTR_SLOTNAME_CELL_LEFT	"Ячейка слева"
+#define SYSSTR_SLOTNAME_CELL_RIGTH	"Ячейка справа"
+#define SYSSTR_SLOTNAME_CELL_TOP	"Ячейка сверху"
+#define SYSSTR_SLOTNAME_CELL_BOTTOM	"Ячейка снизу"
+#define SYSSTR_SLOTNAME_GAMER		"Игрок"
+#define SYSSTR_SLOTNAME_ISA			"is_a"
+#define SYSSTR_SLOTNAME_NAME		"name"
+#define SYSSTR_SLOTNAME_ACTION		"action"
+#define SYSSTR_SLOTNAME_X			"x"
+#define SYSSTR_SLOTNAME_Y			"y"
+#define SYSSTR_SLOTNAME_TEAM		"Команда"
+
+#define SYSSTR_SLOTTYPE_FRAME		"frame"
+#define SYSSTR_SLOTTYPE_PRODUCTION	"production"
+
+#define SYSSTR_FASETNAME_VALUE			"value"
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 class MLV : public QObject
 {
     Q_OBJECT
@@ -107,7 +139,7 @@ protected:
 
 	bool IsContainGameItem(NFrame* cell);
 
-    void InitNeighborSituation(NFrame* frameSituation, NFrame* item, QString slotName);
+    void InitNeighborSituation(NFrame* frameSituation, NFrame* item, QString Name);
 
     QString GetSpaces(int count);
 
