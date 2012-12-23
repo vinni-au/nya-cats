@@ -29,7 +29,7 @@
 #define SYSSTR_SLOTNAME_CELL_RIGTH	"Ячейка справа"
 #define SYSSTR_SLOTNAME_CELL_TOP	"Ячейка сверху"
 #define SYSSTR_SLOTNAME_CELL_BOTTOM	"Ячейка снизу"
-#define SYSSTR_SLOTNAME_GAMER		"Игрок"
+#define SYSSTR_SLOTNAME_CELL_GAMER	"Ячейка Игрока"
 #define SYSSTR_SLOTNAME_ISA			"is_a"
 #define SYSSTR_SLOTNAME_NAME		"name"
 #define SYSSTR_SLOTNAME_ACTION		"action"

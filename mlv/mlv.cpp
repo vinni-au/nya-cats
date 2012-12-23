@@ -441,7 +441,7 @@ bool MLV::Init()
                         ItemInst = CreateFrameInstanceFull("Лекарь");
 
                     // Заполняем значения
-                    SetSlotValue(ItemInst, SYSSTR_SLOTNAME_TEAM, item->GetTeam() == gtRed ? "Красный" : "Синий");
+                    SetSlotValue(ItemInst, SYSSTR_SLOTNAME_TEAM, item->GetTeam() == gtRed ? "Команда 1" : "Команда 2");
                 }
 
                 // Если еда
@@ -615,7 +615,7 @@ bool MLV::BindPerson(NFrame* cell)
         AddMsgToLog(GetSpaces(m_Padding) + "Определяем ситуацию для '" + frame->frameName().toUpper() + "'");
 
         NFrame* frameSituation = CreateFrameInstance(SYSSTR_FRAMENAME_SITUATION, false);
-        SetSubframe(frameSituation, SYSSTR_FRAMENAME_GAMECELL, cell);
+        SetSubframe(frameSituation, SYSSTR_SLOTNAME_CELL_GAMER, cell);
 
 
         //////////////////////////
@@ -790,7 +790,7 @@ bool  MLV::isGameContinues()
 void  MLV::DoAction(NFrame* frameSituation)
 {
     // в man должен быть экземпляр чувака, который попал в ситуацию
-    NFrame *man = GetSubframe(frameSituation, SYSSTR_SLOTNAME_GAMER, true);
+    NFrame *man = GetSubframe(frameSituation, SYSSTR_SLOTNAME_CELL_GAMER, true);
 
     NSlot *actionSlot = frameSituation->getSlotByName(SYSSTR_SLOTNAME_ACTION);
     if(!actionSlot)
