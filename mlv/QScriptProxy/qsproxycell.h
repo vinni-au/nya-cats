@@ -16,7 +16,14 @@ class QSProxyCell : public QSProxy
 public:
     explicit QSProxyCell(NFrame *cell,QScriptEngine *engine,QObject *parent = 0);
 
+    Q_INVOKABLE bool hasMan();
+    Q_INVOKABLE bool hasFood();
+
     Q_INVOKABLE QScriptValue getMan();
+    Q_INVOKABLE QScriptValue getFood();
+
+    Q_INVOKABLE void Clear();
+
 
     int     X();
     void    setX(int X);

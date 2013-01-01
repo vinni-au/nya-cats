@@ -25,6 +25,25 @@ QScriptValue QSProxyCell::getMan()
 //        qDebug() << "Script error:" << result.toString();
 }
 
+bool QSProxyCell::hasMan()
+{
+    return false;
+}
+
+bool QSProxyCell::hasFood()
+{
+    return false;
+}
+
+QScriptValue QSProxyCell::getFood()
+{
+    return QScriptValue();
+}
+
+void QSProxyCell::Clear()
+{
+
+}
 
 int QSProxyCell::X()
 {
