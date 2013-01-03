@@ -1,0 +1,2810 @@
+<kb>
+    <domains>
+        <domain Name="Команды">
+            <domain_value>Команда 1</domain_value>
+            <domain_value>Команда 2</domain_value>
+        </domain>
+        <domain Name="Логический">
+            <domain_value>TRUE</domain_value>
+            <domain_value>FALSE</domain_value>
+        </domain>
+        <domain Name="ДаНет">
+            <domain_value>Да</domain_value>
+            <domain_value>Нет</domain_value>
+        </domain>
+    </domains>
+    <frames>
+        <frame type="105" id="0" system="1">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Игровое поле" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Ширина" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="100" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Высота" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="100" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Ячейка игрового поля" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Ячейка игрового поля" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="105" id="1" system="1">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Ячейка игрового поля" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="x" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="0" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="y" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="0" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Игровой объект" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Игровой объект" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="105" id="2" system="1">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Игровой объект" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="105" id="3" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Пусто" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Игровой объект" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="327684" id="4" system="1">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Персонаж" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Игровой объект" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Уровень жизни" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="5" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Порог уровня активности" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="10" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Подъемная сила" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="50" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Скорость передвижения" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="1" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Уровень защиты" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="2" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Радиус обзора" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="1" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Команда" name="name"/>
+                        <faset value="Команды" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="domain" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Изображение" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Изображение" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="327684" id="5" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Военный" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Персонаж" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="196611" id="6" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Гражданский" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Персонаж" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="196713" id="7" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Мечник" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Военный" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Сила удара" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="5" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="196713" id="8" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Лучник" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Военный" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Дальность стрельбы" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="1" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Время перезарядки" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="5" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="196713" id="9" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Лекарь" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Гражданский" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Скорость лечения" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="3" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="196611" id="10" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Препятствие" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Игровой объект" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Высота" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="1" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Вскарабкиваемость" name="name"/>
+                        <faset value="Логический" name="slot_type"/>
+                        <faset value="TRUE" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="-12813191" id="11" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Фабрика" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Препятствие" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="196713" id="12" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Еда" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Игровой объект" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="23" system="1">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Ситуация" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Ячейка слева" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Ячейка игрового поля" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Ячейка снизу" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Ячейка игрового поля" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Ячейка справа" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Ячейка игрового поля" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Ячейка сверху" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Ячейка игрового поля" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Ячейка Игрока" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Ячейка игрового поля" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="24" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Простая ситуация" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Ситуация" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="25" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Сложная ситуация" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Ситуация" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="26" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Есть еда" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Простая ситуация" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Еда есть" name="name"/>
+                        <faset value="ДаНет" name="slot_type"/>
+                        <faset value="Да" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="естьеда" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="27" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Есть враги" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Простая ситуация" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Есть враги" name="name"/>
+                        <faset value="ДаНет" name="slot_type"/>
+                        <faset value="Да" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="естьвраги" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="28" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Мало жизни" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Простая ситуация" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Мало жизни" name="name"/>
+                        <faset value="ДаНет" name="slot_type"/>
+                        <faset value="Да" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="маложизни" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="29" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Много жизни" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Простая ситуация" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Много жизни" name="name"/>
+                        <faset value="ДаНет" name="slot_type"/>
+                        <faset value="Да" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="многожизни" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="30" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Нет еды" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Простая ситуация" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="31" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Нет врагов" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Простая ситуация" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="32" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Есть еда и враги, мало жизни" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Сложная ситуация" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Есть еда" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Есть еда" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Есть враги" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Есть враги" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Мало жизни" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Мало жизни" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="qwerty" name="name"/>
+                        <faset value="" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="врагслева" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="33" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Есть еда и враги, много жизни" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Сложная ситуация" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Есть еда" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Есть еда" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Есть враги" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Есть враги" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Много жизни" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Много жизни" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="34" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Есть враги, нет еды, много жизни" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Сложная ситуация" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Есть враги" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Есть враги" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Нет еды" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Нет еды" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Много жизни" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Много жизни" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="35" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Есть враги, нет еды, мало жизни" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Сложная ситуация" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Есть враги" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Есть враги" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Нет еды" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Нет еды" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Мало жизни" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Мало жизни" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="327684" id="36" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Ничего нет, мало жизни" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Сложная ситуация" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Нет еды" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Нет еды" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Нет врагов" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Нет врагов" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Мало жизни" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Мало жизни" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="327684" id="37" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Ничего нет, много жизни" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Сложная ситуация" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Нет врагов" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Нет врагов" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Нет еды" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Нет еды" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Много жизни" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Много жизни" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="38" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Враг слева" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Есть враги" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Слева враг" name="name"/>
+                        <faset value="ДаНет" name="slot_type"/>
+                        <faset value="Да" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="врагслева" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="proc_Враг_слева" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="39" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Враг снизу" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Есть враги" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Снизу враг" name="name"/>
+                        <faset value="ДаНет" name="slot_type"/>
+                        <faset value="Да" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="снизувраг" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="40" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Враг справа" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Есть враги" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Справа враг" name="name"/>
+                        <faset value="ДаНет" name="slot_type"/>
+                        <faset value="Да" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="справавраг" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="proc_врагСправа" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="196610" id="41" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Враг сверху" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Есть враги" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Сверху враг" name="name"/>
+                        <faset value="ДаНет" name="slot_type"/>
+                        <faset value="Да" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="сверхувраг" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="proc_врагСверху" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="42" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Еда слева" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Есть еда" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Слева еда" name="name"/>
+                        <faset value="ДаНет" name="slot_type"/>
+                        <faset value="Да" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="слеваеда" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="proc_Враг_слева" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="43" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Еда справа" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Есть еда" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Справа еда" name="name"/>
+                        <faset value="ДаНет" name="slot_type"/>
+                        <faset value="Да" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="справаеда" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="44" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Еда сверху" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Есть еда" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Сверху еда" name="name"/>
+                        <faset value="ДаНет" name="slot_type"/>
+                        <faset value="Да" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="сверхуеда" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="45" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Еда снизу" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Есть еда" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Снизу еда" name="name"/>
+                        <faset value="ДаНет" name="slot_type"/>
+                        <faset value="Да" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="снизуеда" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="123" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="123" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="234" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="46" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="situation" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="47" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Изображение" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="49" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Изображение лучника" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Изображение персонажа" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Картинка" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value=":images/visualize/hant.gif" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Тип" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Лучник" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="ялучник" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="50" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Изображение лекаря" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Изображение персонажа" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Картинка" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value=":images/visualize/doc.gif" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Тип" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Лекарь" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="ялекарь" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="53" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Фон лучника" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Изображение лучника" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Яркость" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="100" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="яркостьлучника" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="54" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Фон лекаря" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Изображение лекаря" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Яркость" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="100" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="яркостьлекаря" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="55" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Изображение мечника" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Изображение персонажа" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Картинка" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value=":images/visualize/war.gif" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Тип" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Мечник" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="ямечник" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="56" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Фон мечника" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Изображение мечника" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Яркость" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="100" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="яркостьвоина" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="57" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Изображение персонажа" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Изображение" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="58" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Изображение еды" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Изображение" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Тип" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Еда" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="ямясо" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Картинка" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value=":images/visualize/meat.gif" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+    </frames>
+    <procs>
+        <proc name="234">fhgudhg
+df
+g
+dfg
+123f</proc>
+        <proc name="proc_Враг_слева">Cell.X=Cell.X-1;
+LeftCell.X=LeftCell.X+1;
+RightCell.X=RightCell.X+1;
+TopCell.Y=TopCell.Y-1;
+BottomCell.Y=BottomCell.Y+1;</proc>
+        <proc name="proc_врагСправа">var x=Cell.X;
+//Cell.X=x-1;</proc>
+        <proc name="proc_врагСверху">var y=Cell.Y;
+Cell.Y=y-1;</proc>
+    </procs>
+    <productions>
+        <production name="врагслева">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка Игрока.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 1</val>
+                        </if>
+                        <if>
+                            <var>Ячейка слева.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 2</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Слева враг</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule2">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка Игрока.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 2</val>
+                        </if>
+                        <if>
+                            <var>Ячейка слева.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 1</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Слева враг</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+            </rules>
+        </production>
+        <production name="снизувраг">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка Игрока.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 1</val>
+                        </if>
+                        <if>
+                            <var>Ячейка снизу.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 2</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Снизу враг</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule2">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка Игрока.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 2</val>
+                        </if>
+                        <if>
+                            <var>Ячейка снизу.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 1</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Снизу враг</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+            </rules>
+        </production>
+        <production name="справавраг">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка Игрока.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 1</val>
+                        </if>
+                        <if>
+                            <var>Ячейка справа.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 2</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Справа враг</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule2">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка Игрока.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 2</val>
+                        </if>
+                        <if>
+                            <var>Ячейка справа.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 1</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Справа враг</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+            </rules>
+        </production>
+        <production name="сверхувраг">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка Игрока.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 1</val>
+                        </if>
+                        <if>
+                            <var>Ячейка сверху.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 2</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Сверху враг</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule2">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка Игрока.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 2</val>
+                        </if>
+                        <if>
+                            <var>Ячейка сверху.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 1</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Сверху враг</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+            </rules>
+        </production>
+        <production name="слеваеда">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка слева.Игровой объект.name</var>
+                            <sign>=</sign>
+                            <val>Еда</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Слева еда</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+            </rules>
+        </production>
+        <production name="справаеда">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Еда справа.name</var>
+                            <sign>=</sign>
+                            <val>Еда</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Справа еда</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+            </rules>
+        </production>
+        <production name="сверхуеда">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Еда сверху.name</var>
+                            <sign>=</sign>
+                            <val>Еда</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Сверху еда</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+            </rules>
+        </production>
+        <production name="снизуеда">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Еда снизу.name</var>
+                            <sign>=</sign>
+                            <val>Еда</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Снизу еда</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+            </rules>
+        </production>
+        <production name="естьвраги">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка Игрока.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 1</val>
+                        </if>
+                        <if>
+                            <var>Ячейка слева.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 2</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Есть враги</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule2">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка Игрока.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 2</val>
+                        </if>
+                        <if>
+                            <var>Ячейка слева.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 1</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Есть враги</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule3">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка Игрока.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 1</val>
+                        </if>
+                        <if>
+                            <var>Ячейка снизу.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 2</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Есть враги</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule4">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка Игрока.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 2</val>
+                        </if>
+                        <if>
+                            <var>Ячейка снизу.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 1</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Есть враги</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule5">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка Игрока.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 1</val>
+                        </if>
+                        <if>
+                            <var>Ячейка справа.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 2</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Есть враги</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule6">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка Игрока.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 2</val>
+                        </if>
+                        <if>
+                            <var>Ячейка справа.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 1</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Есть враги</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule7">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка Игрока.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 1</val>
+                        </if>
+                        <if>
+                            <var>Ячейка сверху.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 2</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Есть враги</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule8">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка Игрока.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 2</val>
+                        </if>
+                        <if>
+                            <var>Ячейка сверху.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 1</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Есть враги</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+            </rules>
+        </production>
+        <production name="естьеда">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка слева.Игровой объект.name</var>
+                            <sign>=</sign>
+                            <val>Еда</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Еда есть</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+            </rules>
+        </production>
+        <production name="маложизни">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игрок.Уровень жизни</var>
+                            <sign>=</sign>
+                            <val>1</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Мало жизни</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule2">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игрок.Уровень жизни</var>
+                            <sign>=</sign>
+                            <val>2</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Мало жизни</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+            </rules>
+        </production>
+        <production name="многожизни">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игрок.Уровень жизни</var>
+                            <sign>=</sign>
+                            <val>5</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Много жизни</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule2">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игрок.Уровень жизни</var>
+                            <sign>=</sign>
+                            <val>4</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Много жизни</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule3">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игрок.Уровень жизни</var>
+                            <sign>=</sign>
+                            <val>3</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Много жизни</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+            </rules>
+        </production>
+        <production name="явоин">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs/>
+                    <thens/>
+                </rule>
+            </rules>
+        </production>
+        <production name="ялучник">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs/>
+                    <thens/>
+                </rule>
+            </rules>
+        </production>
+        <production name="ялекарь">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs/>
+                    <thens/>
+                </rule>
+            </rules>
+        </production>
+        <production name="ямясо">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs/>
+                    <thens/>
+                </rule>
+            </rules>
+        </production>
+        <production name="яркостьвоина">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs/>
+                    <thens/>
+                </rule>
+            </rules>
+        </production>
+        <production name="яркостьлучника">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs/>
+                    <thens/>
+                </rule>
+            </rules>
+        </production>
+        <production name="яркостьлекаря">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs/>
+                    <thens/>
+                </rule>
+            </rules>
+        </production>
+        <production name="ямечник">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs/>
+                    <thens/>
+                </rule>
+            </rules>
+        </production>
+    </productions>
+    <diagram>
+        <item x="-252.9" title="Игровое поле" y="-251.9" id="0"/>
+        <item x="-100.9" title="Ячейка игрового поля" y="-255.9" id="1"/>
+        <item x="43.1" title="Игровой объект" y="-260.7000000000001" id="2"/>
+        <item x="-414.5403751249999" title="Пусто" y="-89.89630909374995" id="3"/>
+        <item x="114.8803526406248" title="Персонаж" y="9.556331578125022" id="4"/>
+        <item x="24.45462871874986" title="Военный" y="188.331005265625" id="5"/>
+        <item x="155.6460540781249" title="Гражданский" y="161.7477569375" id="6"/>
+        <item x="5.907269390624833" title="Мечник" y="336.4097674687499" id="7"/>
+        <item x="137.7856339843747" title="Лучник" y="346.66201053125" id="8"/>
+        <item x="213.69789953125" title="Лекарь" y="262.322033015625" id="9"/>
+        <item x="-7.914253593749891" title="Препятствие" y="-140.2791598124999" id="10"/>
+        <item x="5.015956453125099" title="Фабрика" y="-56.0967067031249" id="11"/>
+        <item x="389.3310052656251" title="Еда" y="-249.3060765624999" id="12"/>
+        <item x="-146.7217499999999" title="Ситуация" y="279.940375" id="23"/>
+        <item x="-111.4821237080801" title="Простая ситуация" y="523.7323917949589" id="24"/>
+        <item x="163.574276078125" title="Сложная ситуация" y="631.9377344531249" id="25"/>
+        <item x="503.4" title="Есть еда" y="629.2108177031253" id="26"/>
+        <item x="-436.3992047812501" title="Есть враги" y="549.6936684218752" id="27"/>
+        <item x="-668.64630909375" title="Мало жизни" y="740.5477569374997" id="28"/>
+        <item x="-465.9981545468753" title="Много жизни" y="730.1977569374999" id="29"/>
+        <item x="-124.1869392343749" title="Нет еды" y="626.5279669843752" id="30"/>
+        <item x="19.77203301562497" title="Нет врагов" y="625.3649062187501" id="31"/>
+        <item x="-57.49999999999997" title="Есть еда и враги, мало жизни" y="993.5999999999999" id="32"/>
+        <item x="87.40000000000002" title="Есть еда и враги, много жизни" y="982.1" id="33"/>
+        <item x="273.7000000000001" title="Есть враги, нет еды, много жизни" y="970.5999999999999" id="34"/>
+        <item x="458.85" title="Есть враги, нет еды, мало жизни" y="939.5500000000002" id="35"/>
+        <item x="-372.4274999999999" title="Ничего нет, мало жизни" y="1008.78" id="36"/>
+        <item x="-205.6774999999998" title="Ничего нет, много жизни" y="1001.88" id="37"/>
+        <item x="-712.7000000000001" title="Враг слева" y="513.15" id="38"/>
+        <item x="-561.05" title="Враг снизу" y="612.9999999999999" id="39"/>
+        <item x="-365.5108177031251" title="Враг справа" y="427.5365416249999" id="40"/>
+        <item x="-540.35" title="Враг сверху" y="437.0500000000003" id="41"/>
+        <item x="330" title="Еда слева" y="644" id="42"/>
+        <item x="648" title="Еда справа" y="632.0608177031252" id="43"/>
+        <item x="640.40976746875" title="Еда сверху" y="516.0608177031252" id="44"/>
+        <item x="519" title="Еда снизу" y="731.0608177031252" id="45"/>
+        <item x="502" title="Изображение" y="23" id="47"/>
+        <item x="512" title="Изображение лучника" y="293" id="49"/>
+        <item x="633" title="Изображение лекаря" y="292" id="50"/>
+        <item x="512" title="Фон лучника" y="407" id="53"/>
+        <item x="632" title="Фон лекаря" y="406" id="54"/>
+        <item x="385" title="Изображение мечника" y="293" id="55"/>
+        <item x="386" title="Фон мечника" y="406" id="56"/>
+        <item x="497" title="Изображение персонажа" y="172" id="57"/>
+        <item x="752" title="Изображение еды" y="171" id="58"/>
+        <link sid="1" did="0" text="sub"/>
+        <link sid="4" did="2" text="is-a"/>
+        <link sid="3" did="2" text="is-a"/>
+        <link sid="5" did="4" text="is-a"/>
+        <link sid="2" did="1" text="sub"/>
+        <link sid="7" did="5" text="is-a"/>
+        <link sid="8" did="5" text="is-a"/>
+        <link sid="9" did="6" text="is-a"/>
+        <link sid="6" did="4" text="is-a"/>
+        <link sid="10" did="2" text="is-a"/>
+        <link sid="11" did="10" text="is-a"/>
+        <link sid="12" did="2" text="is-a"/>
+        <link sid="24" did="23" text="is-a"/>
+        <link sid="25" did="23" text="is-a"/>
+        <link sid="28" did="24" text="is-a"/>
+        <link sid="27" did="24" text="is-a"/>
+        <link sid="29" did="24" text="is-a"/>
+        <link sid="30" did="24" text="is-a"/>
+        <link sid="31" did="24" text="is-a"/>
+        <link sid="26" did="24" text="is-a"/>
+        <link sid="32" did="25" text="is-a"/>
+        <link sid="33" did="25" text="is-a"/>
+        <link sid="34" did="25" text="is-a"/>
+        <link sid="35" did="25" text="is-a"/>
+        <link sid="36" did="25" text="is-a"/>
+        <link sid="37" did="25" text="is-a"/>
+        <link sid="26" did="32" text="sub"/>
+        <link sid="27" did="32" text="sub"/>
+        <link sid="28" did="32" text="sub"/>
+        <link sid="26" did="33" text="sub"/>
+        <link sid="27" did="33" text="sub"/>
+        <link sid="29" did="33" text="sub"/>
+        <link sid="27" did="34" text="sub"/>
+        <link sid="30" did="34" text="sub"/>
+        <link sid="29" did="34" text="sub"/>
+        <link sid="27" did="35" text="sub"/>
+        <link sid="30" did="35" text="sub"/>
+        <link sid="28" did="35" text="sub"/>
+        <link sid="30" did="36" text="sub"/>
+        <link sid="31" did="36" text="sub"/>
+        <link sid="28" did="36" text="sub"/>
+        <link sid="31" did="37" text="sub"/>
+        <link sid="30" did="37" text="sub"/>
+        <link sid="29" did="37" text="sub"/>
+        <link sid="39" did="27" text="is-a"/>
+        <link sid="38" did="27" text="is-a"/>
+        <link sid="41" did="27" text="is-a"/>
+        <link sid="40" did="27" text="is-a"/>
+        <link sid="45" did="26" text="is-a"/>
+        <link sid="43" did="26" text="is-a"/>
+        <link sid="44" did="26" text="is-a"/>
+        <link sid="1" did="23" text="sub"/>
+        <link sid="47" did="4" text="sub"/>
+        <link sid="53" did="49" text="is-a"/>
+        <link sid="54" did="50" text="is-a"/>
+        <link sid="56" did="55" text="is-a"/>
+        <link sid="55" did="57" text="is-a"/>
+        <link sid="49" did="57" text="is-a"/>
+        <link sid="50" did="57" text="is-a"/>
+        <link sid="57" did="47" text="is-a"/>
+        <link sid="58" did="47" text="is-a"/>
+    </diagram>
+</kb>
