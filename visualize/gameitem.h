@@ -34,16 +34,19 @@ public:
 class GameItem
 {
 protected:
-    GameItemType    m_Type;
     QPixmap         m_Pic;
-    GameTeam        m_Team;
+	QColor			m_Color;
+    QString         m_Team;
+	QString			m_Type;
     int				m_FrameId;
 
 public:
-    GameItem(GameItemType type, QPixmap& pic, GameTeam team, int id = 0);
-    QPixmap& GetPic();
-    GameTeam GetTeam();
-    GameItemType GetType();
+    GameItem(QString type, QPixmap& pic, QString team, QColor color, int id = 0);
+	QString GetType() {return m_Type;}
+	QPixmap& GetPic() {return m_Pic;}
+	QString GetTeam() {return m_Team;}
+	QColor& GetColor() {return m_Color;}
+
 	int GetFrameId() {return m_FrameId;}
 	void SetFrameId(int id) {m_FrameId = id;}
 };

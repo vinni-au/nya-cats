@@ -11,12 +11,13 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    viz = new Visualizer(this);
+	m_kbManager = new NKBManager();
+
+    viz = new Visualizer(m_kbManager, this);
     QHBoxLayout *layout = new QHBoxLayout;
     layout->addWidget(viz);
     ui->centralWidget->setLayout(layout);
 
-    m_kbManager = new NKBManager();
     m_mlv = new MLV(m_kbManager, viz->GetGrid());
 	//m_mlv->SetFullSearch(true);
     m_mlvControl = new MLVControl(m_mlv);
@@ -94,6 +95,7 @@ void MainWindow::on_actOpen_triggered()
                 m_kbManager->setDirty(false);//иначе все дело портит вопрос
                 //statusBar()->showMessage(QString("Открыт файл: %1").arg(esFile),2000);
                 QMessageBox::information(this,"Информация","База знаний загружена",QMessageBox::Ok);
+				viz->RedrawItems();
             }
         }
     }

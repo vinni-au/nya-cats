@@ -26,16 +26,11 @@ void Cell::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
     {
         painter->drawImage(m_Rect, m_Item->GetPic().toImage());
 
-        if (m_Item->GetTeam() != gtBlue && m_Item->GetTeam() != gtRed)
+        if (m_Item->GetTeam() == "")
             return;
 
-        QColor red(150, 0, 0, 100);
-        QColor blue(0, 0, 150, 100);
 
-        fillColor = red;
-        if (m_Item->GetTeam() == gtBlue)
-            fillColor = blue;
-
+        fillColor = m_Item->GetColor();
         fillColor = (option->state & QStyle::State_MouseOver) ? fillColor.dark(255) : fillColor;
 
         QBrush b = painter->brush();

@@ -15,25 +15,11 @@ void GameMimeData::SetItem(GameItem* item)
     m_Item = item;
 }
 
-GameItem::GameItem(GameItemType type, QPixmap& pic, GameTeam team, int id) :
-   m_Type(type)
-  ,m_Pic(pic)
-  ,m_Team(team)
-  ,m_FrameId(id)
+GameItem::GameItem(QString type, QPixmap& pic, QString team, QColor color, int id) :
+	m_Type(type)
+	,m_Pic(pic)
+	,m_Color(color)
+	,m_Team(team)
+	,m_FrameId(id)
 {
-}
-
-QPixmap& GameItem::GetPic()
-{
-    return m_Pic;
-}
-
-GameTeam GameItem::GetTeam()
-{
-    return m_Team;
-}
-
-GameItemType GameItem::GetType()
-{
-    return m_Type;
 }

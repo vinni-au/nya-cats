@@ -89,6 +89,9 @@ public:
     QList<NFaset*>  GetSlotFasets       (NSlot* slot);
 	bool			HasParentWithName	(NFrame* frame, QString parentName);
 
+	QVector<QString> GetDomainValsByString(QString name);
+	QList<NFrame*> getFrameLeaf(NFrame* root);
+
     QStringList getFilteredFrameList(QString frameName,QString slotName);
     bool slotExists(QString framename,QString slotName);
 

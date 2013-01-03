@@ -4,52 +4,84 @@
 #include "visualizer.h"
 #include "gameitem.h"
 
-Visualizer::Visualizer(QWidget *parent) :
+Visualizer::Visualizer(NKBManager* kbManager, QWidget *parent) :
     QWidget(parent)
-  ,m_ItemsCount(0)
+  ,m_PosCount(0)
+  ,m_ColCount(0)
+  ,m_KBManager(kbManager)
 {
-    populateScene();
+	m_FactoryRect.setRect(-70, 0, 60, 60);
 
-    View *view = new View("GameFieldView");
-    view->view()->setScene(scene);
+	QColor col(100, 100, 100, 50);
+	QRectF rect(0, 0, 600, 600);
+	m_Scene = new GameScene(this);
+	m_Scene->CreateGrid(10, rect, col);
 
-    QHBoxLayout *layout = new QHBoxLayout;
-    layout->addWidget(view);
-    setLayout(layout);
+	View *view = new View("GameFieldView");
+	view->view()->setScene(m_Scene);
+	QHBoxLayout *layout = new QHBoxLayout;
+	layout->addWidget(view);
+	setLayout(layout);
 }
 
 void Visualizer::populateScene()
 {
-    // быдлобыдлокод
-
-    QColor col(100, 100, 100, 50);
-    QRectF rect(0, 0, 600, 600);
-
-    scene = new GameScene(this);
-    scene->CreateGrid(10, rect, col);
-
-    QRectF rect1(-70, 0, 60, 60);
-    QRectF rect2(-70, 70, 60, 60);
-    QRectF rect3(-70, 140, 60, 60);
-    QRectF rect4(-70, 210, 60, 60);
-    QRectF rect5(-70, 280, 60, 60);
-    QRectF rect6(-70, 350, 60, 60);
-    QRectF rect7(-70, 450, 60, 60);
-
-    QPixmap pic1(":images/visualize/war.gif");
+    /*QPixmap pic1(":images/visualize/war.gif");
     QPixmap pic2(":images/visualize/doc.gif");
     QPixmap pic3(":images/visualize/hant.gif");
     QPixmap pic4(":images/visualize/meat.gif");
 
-    scene->CreateFactory(new GameItem(gitWarior, pic1, gtRed), rect1);
-    scene->CreateFactory(new GameItem(gitHealer, pic2, gtRed), rect2);
-    scene->CreateFactory(new GameItem(gitArcher, pic3, gtRed), rect3);
+    m_Scene->CreateFactory(new GameItem(gitWarior, pic1, gtRed), GetNextPos());
+    m_Scene->CreateFactory(new GameItem(gitHealer, pic2, gtRed), GetNextPos());
+    m_Scene->CreateFactory(new GameItem(gitArcher, pic3, gtRed), GetNextPos());
 
-    scene->CreateFactory(new GameItem(gitWarior, pic1, gtBlue), rect4);
-    scene->CreateFactory(new GameItem(gitHealer, pic2, gtBlue), rect5);
-    scene->CreateFactory(new GameItem(gitArcher, pic3, gtBlue), rect6);
+    m_Scene->CreateFactory(new GameItem(gitWarior, pic1, gtBlue), GetNextPos());
+    m_Scene->CreateFactory(new GameItem(gitHealer, pic2, gtBlue), GetNextPos());
+    m_Scene->CreateFactory(new GameItem(gitArcher, pic3, gtBlue), GetNextPos());
 
-    scene->CreateFactory(new GameItem(gitMeat,   pic4, gtNull), rect7);
+    m_Scene->CreateFactory(new GameItem(gitMeat,   pic4, gtNull), GetNextPos());*/
+
+	// Получаем домен "Команда"
+	QVector<QString> teams = m_KBManager->GetDomainValsByString("Команды");
+
+	// Получаем фреймы изображений всех типов персонажей
+	NFrame* imgFrame = m_KBManager->GetFrameByName("Изображение персонажа");
+	QList<NFrame*> imgChildren = m_KBManager->GetFrameChildren(imgFrame);
+	
+	for (int i = 0; i < teams.count(); i++)
+	{
+		QColor& color = GetNextColor();
+		for (int j = 0; j < imgChildren.count(); j++)
+		{
+			NFrame* frame = imgChildren.at(j);
+			NSlot* picSlot = m_KBManager->GetFrameSlot(frame, "Картинка");
+			NSlot* typeSlot = m_KBManager->GetFrameSlot(frame, "Тип");
+			if (picSlot != NULL && typeSlot != NULL)
+			{
+				QPixmap pic(picSlot->defValue().toString());
+				QString type = typeSlot->defValue().toString();
+				m_Scene->CreateFactory(new GameItem(type, pic, teams.at(i), color), GetNextPos());
+			}
+		}
+	}
+
+	imgFrame = m_KBManager->GetFrameByName("Изображение");
+	imgChildren = m_KBManager->GetFrameChildren(imgFrame);
+
+	for (int j = 0; j < imgChildren.count(); j++)
+	{
+		NFrame* frame = imgChildren.at(j);
+		if (frame->name.defValue() != "Изображение персонажа");
+
+		NSlot* picSlot = m_KBManager->GetFrameSlot(frame, "Картинка");
+		NSlot* typeSlot = m_KBManager->GetFrameSlot(frame, "Тип");
+		if (picSlot != NULL && typeSlot != NULL)
+		{
+			QPixmap pic(picSlot->defValue().toString());
+			QString type = typeSlot->defValue().toString();
+			m_Scene->CreateFactory(new GameItem(type, pic, "", QColor()), GetNextPos());
+		}
+	}
 }
 
 void Visualizer::Update()
@@ -59,33 +91,41 @@ void Visualizer::Update()
 
 Grid* Visualizer::GetGrid()
 {
-    return scene->GetGrid();
+    return m_Scene->GetGrid();
 }
 
-void Visualizer::AddGameItem(GameItemType type, GameTeam team)
+QRectF& Visualizer::GetNextPos()
 {
-    // быдлобыдлокод
+	QRectF* rect = new QRectF();
+	rect->setRect
+		(
+			m_FactoryRect.x(), 
+			m_FactoryRect.y() + 70 * m_PosCount, 
+			m_FactoryRect.width(), 
+			m_FactoryRect.height()
+		);
+	m_PosCount++;
+	return *rect;
+}
 
-    QString path = "..\\nya-cats\\visualize\\";
-    QRectF rect;
+QColor& Visualizer::GetNextColor()
+{
+	QColor* color = new QColor();
+	color->setRgb
+		(
+			255 - m_ColCount * 100,
+			m_ColCount * 10,
+			m_ColCount * 100,
+			100
+		);
+	m_ColCount++;
+	return *color;
+}
 
-    if (type == gitWarior)
-    {
-        path += "war.gif";
-        rect.setRect(-70, 0, 60, 60);
-    }
-    else if (type == gitHealer)
-    {
-        path += "doc.gif";
-        rect.setRect(-70, 70, 60, 60);
-    }
-    else
-    {
-        path += "hant.gif";
-        rect.setRect(-70, 140, 60, 60);
-    }
-
-    QPixmap pic(path);
-    GameItem* item = new GameItem(type, pic, team, m_ItemsCount++);
-    scene->CreateFactory(item, rect);
+void Visualizer::RedrawItems()
+{
+	m_PosCount = 0;
+	m_ColCount = 0;
+	m_Scene->Clear();
+	populateScene();
 }

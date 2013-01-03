@@ -1193,6 +1193,27 @@ bool NKBManager::HasParentWithName(NFrame* frame, QString parentName)
 	return false;
 }
 
+QVector<QString>  NKBManager::GetDomainValsByString(QString name)
+{
+	QVector<QString> vec;
+	Domain* domain = m_domainModel.getDomainByName(name);
+	if (domain == NULL)
+		return vec;
+	return domain->values;
+}
+
+QList<NFrame*> NKBManager::getFrameLeaf(NFrame* root)
+{
+	QList<NFrame*> reslist;
+	QList<NFrame*> allchildren = getAllChildren(root);
+	for (int i = 0; i < allchildren.count(); i++)
+	{
+		if (!hasChildren(allchildren[i]))
+			reslist.append(allchildren[i]);
+	}
+	return reslist;
+}
+
 NProc* NKBManager::getProc(QString name)
 {
     NProc* p;

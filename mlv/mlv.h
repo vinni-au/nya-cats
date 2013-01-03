@@ -40,7 +40,7 @@
 #define SYSSTR_SLOTTYPE_FRAME		"frame"
 #define SYSSTR_SLOTTYPE_PRODUCTION	"production"
 
-#define SYSSTR_FASETNAME_VALUE			"value"
+#define SYSSTR_FASETNAME_VALUE		"value"
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -131,11 +131,6 @@ protected:
     NFrame* FindInCache(int frameId);
 
     NFrame* FindCell(int x, int y);
-
-    bool IsPerson(NFrame* frame);
-    bool IsFood(NFrame* frame);
-    bool IsPerson(GameItem* item);
-    bool IsFood(GameItem* item);
 
 	bool IsContainGameItem(NFrame* cell);
 

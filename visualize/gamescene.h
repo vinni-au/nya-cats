@@ -19,6 +19,7 @@ public:
     void CreateFactory(GameItem* item, QRectF& rect);
 
     Grid* GetGrid();
+	void Clear();
 };
 
 #endif // GAMESCENE_H

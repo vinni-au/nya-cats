@@ -15,7 +15,7 @@ protected:
 public:
     FactoryFrame(QGraphicsScene* scene);
     void AddItem(GameItem* item, QRectF& rect);
-
+	void Clear();
 };
 
 class GameItemFactory : public QGraphicsPixmapItem

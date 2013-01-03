@@ -112,6 +112,18 @@ Cell* Grid::FindCellByItemFrameId(int id)
 	return NULL;
 }
 
+void Grid::Clear()
+{
+	if (m_Cells.isEmpty())
+		return;
+
+	for (int i = 0; i < m_Cells.count(); i++)
+	{
+		Cell* cell = m_Cells[i];
+		cell->SetGameItem(NULL);
+	}
+}
+
 void Grid::setContextMenuCell(Cell *cell)
 {
     m_contextMenuCell = cell;

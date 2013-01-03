@@ -8,21 +8,38 @@
 #include "gamescene.h"
 #include "gameitem.h"
 #include "grid.h"
+#include "core/nkbmanager.h"
+#include "core/nframe.h"
+#include "core/nslot.h"
+#include "core/nfaset.h"
+#include "core/nproc.h"
+
+#define SYSSTR_FRAMENAME_IMAGE		"Изображение"
+#define SYSSTR_SLOTNAME_PIC			"Картинка"
+#define SYSSTR_SLOTNAME_ITEMTYPE	"Тип"
+#define SYSSTR_DOMAINNAME_TEAMS		"Команды"
 
 class Visualizer : public QWidget
 {
     Q_OBJECT
 private:
-    void populateScene();
-    GameScene *scene;
-    int m_ItemsCount;
+    GameScene*	m_Scene;
+    int			m_PosCount;
+	int			m_ColCount;
+	QRectF		m_FactoryRect;
+	NKBManager* m_KBManager;
+
+private:
+	void populateScene();
+	QRectF& GetNextPos();
+	QColor& GetNextColor();
 
 public:
-    Visualizer(QWidget *parent = 0);
-    void AddGameItem(GameItemType type, GameTeam team);
+    Visualizer(NKBManager* kbManager, QWidget *parent = 0);
 
     void Update();
     Grid* GetGrid();
+	void RedrawItems();
 
 signals:
 

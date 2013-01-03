@@ -32,6 +32,8 @@ public:
 	void MoveGameItemTo(int fromX, int fromY, int toX, int toY);
 	Cell* FindCellByItemFrameId(int id);
 
+	void Clear();
+
 signals:
     void sigFindOutSituation(int x, int y);
 

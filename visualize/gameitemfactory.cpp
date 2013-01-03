@@ -4,6 +4,7 @@
 FactoryFrame::FactoryFrame(QGraphicsScene* scene) :
     m_Scene(scene)
 {
+	m_FactoryList.append(NULL);
 }
 
 void FactoryFrame::AddItem(GameItem* item, QRectF& rect)
@@ -11,6 +12,14 @@ void FactoryFrame::AddItem(GameItem* item, QRectF& rect)
     GameItemFactory* factory = new GameItemFactory(item, rect);
     m_FactoryList.append(factory);
     m_Scene->addItem(factory);
+}
+
+void FactoryFrame::Clear()
+{
+	for (int i = 0; i < m_FactoryList.size(); i++)
+		m_Scene->removeItem(m_FactoryList.at(i));
+	m_FactoryList.clear();
+	m_FactoryList.append(NULL);
 }
 
 // GameItemFactory
@@ -45,15 +54,10 @@ void GameItemFactory::paint(QPainter *painter, const QStyleOptionGraphicsItem *o
 {
     QGraphicsPixmapItem::paint(painter, option, widget);
 
-    if (m_Item->GetTeam() != gtBlue && m_Item->GetTeam() != gtRed)
+    if (m_Item->GetTeam().isEmpty())
         return;
 
-    QColor red(150, 0, 0, 100);
-    QColor blue(0, 0, 150, 100);
-
-    QColor fillColor = red;
-    if (m_Item->GetTeam() == gtBlue)
-        fillColor = blue;
+    QColor fillColor = m_Item->GetColor();
 
     fillColor = (option->state & QStyle::State_MouseOver) ? fillColor.dark(255) : fillColor;
     QBrush b = painter->brush();
@@ -85,7 +89,14 @@ void GameItemFactory::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
     GameMimeData *mime = new GameMimeData;
     drag->setMimeData(mime);
 
-    mime->SetItem(new GameItem(m_Item->GetType(), m_Item->GetPic(), m_Item->GetTeam()));
+    mime->SetItem(new GameItem
+		(
+			m_Item->GetType(), 
+			m_Item->GetPic(), 
+			m_Item->GetTeam(), 
+			m_Item->GetColor(), 
+			m_Item->GetFrameId()
+		));
 
     QPixmap pic = m_Item->GetPic();
     drag->setPixmap(pic.scaled(m_Rect.height(), m_Rect.width()));

@@ -366,14 +366,7 @@ bool MLV::setValSlot(int frameId, QString aimVar, QVariant value)
 
 QList<NFrame*> MLV::getFrameLeaf(NFrame* root)
 {
-	QList<NFrame*> reslist;
-	QList<NFrame*> allchildren = m_KBManager->getAllChildren(root);
-	for (int i = 0; i < allchildren.count(); i++)
-	{
-		if (!m_KBManager->hasChildren(allchildren[i]))
-			reslist.append(allchildren[i]);
-	}
-	return reslist;
+	return m_KBManager->getFrameLeaf(root);
 }
 
 QList<NFrame*> MLV::getSituationInstanceList()
@@ -427,28 +420,12 @@ bool MLV::Init()
             }
             else
             {
-                // Если мужик
-                if (IsPerson(item))
-                {
-                    // Создаем персонажа
-                    if (item->GetType() == gitWarior)
-                        ItemInst = CreateFrameInstanceFull("Мечник");
+                // Создаем персонажа
+                ItemInst = CreateFrameInstanceFull(item->GetType());
 
-                    else if (item->GetType() == gitArcher)
-                        ItemInst = CreateFrameInstanceFull("Лучник");
+                // Заполняем значения
+                SetSlotValue(ItemInst, SYSSTR_SLOTNAME_TEAM, item->GetTeam());
 
-                    else if (item->GetType() == gitHealer)
-                        ItemInst = CreateFrameInstanceFull("Лекарь");
-
-                    // Заполняем значения
-                    SetSlotValue(ItemInst, SYSSTR_SLOTNAME_TEAM, item->GetTeam() == gtRed ? "Команда 1" : "Команда 2");
-                }
-
-                // Если еда
-                else if (IsFood(item))
-                {
-                    ItemInst = CreateFrameInstanceFull(SYSSTR_FRAMENAME_FOOD);
-                }
 				// Сохраняем в итем игрового объекта ид экземпляра соотв. ему фрейма
 				item->SetFrameId(ItemInst->id());
             }
@@ -460,40 +437,6 @@ bool MLV::Init()
     }
     m_Initialized = true;
     return true;
-}
-
-// Костыль
-bool MLV::IsPerson(NFrame* frame)
-{
-    if (frame == 0) return false;
-    return m_KBManager->HasParentWithName(frame, SYSSTR_FRAMENAME_PERSON);
-}
-
-bool MLV::IsFood(NFrame* frame)
-{
-    if (frame == 0) return false;
-    return frame->frameName() == SYSSTR_FRAMENAME_FOOD;
-}
-
-bool MLV::IsPerson(GameItem* item)
-{
-    if (item == 0)
-        return false;
-
-    bool pers =     item->GetType() == gitWarior ||
-                    item->GetType() == gitHealer ||
-                    item->GetType() == gitArcher;
-    return pers;
-}
-
-bool MLV::IsFood(GameItem* item)
-{
-    if (item == 0)
-        return false;
-
-    bool food = item->GetType() == gitMeat;
-
-    return food;
 }
 
 bool MLV::IsContainGameItem(NFrame* cell)
@@ -608,40 +551,37 @@ bool MLV::BindPerson(NFrame* cell)
     if (!frame)
         return retn;
 
-    // Если не пусто
-    if (IsPerson(frame))
+    m_Padding = 0;
+    AddMsgToLog(GetSpaces(m_Padding) + "Определяем ситуацию для '" + frame->frameName().toUpper() + "'");
+
+    NFrame* frameSituation = CreateFrameInstance(SYSSTR_FRAMENAME_SITUATION, false);
+    SetSubframe(frameSituation, SYSSTR_SLOTNAME_CELL_GAMER, cell);
+
+
+    //////////////////////////
+    // Заполнение верха, низа, права, лева
     {
-        m_Padding = 0;
-        AddMsgToLog(GetSpaces(m_Padding) + "Определяем ситуацию для '" + frame->frameName().toUpper() + "'");
+        int x = GetSlotValue(cell, SYSSTR_SLOTNAME_X).toInt();
+        int y = GetSlotValue(cell, SYSSTR_SLOTNAME_Y).toInt();
 
-        NFrame* frameSituation = CreateFrameInstance(SYSSTR_FRAMENAME_SITUATION, false);
-        SetSubframe(frameSituation, SYSSTR_SLOTNAME_CELL_GAMER, cell);
+        // Пробегаем по всем соседним ячейкам, и смотрим, есть ли там еда или враг
+        // если есть - добавляем в ситуацию
 
-
-        //////////////////////////
-        // Заполнение верха, низа, права, лева
-        {
-            int x = GetSlotValue(cell, SYSSTR_SLOTNAME_X).toInt();
-            int y = GetSlotValue(cell, SYSSTR_SLOTNAME_Y).toInt();
-
-            // Пробегаем по всем соседним ячейкам, и смотрим, есть ли там еда или враг
-            // если есть - добавляем в ситуацию
-
-            NFrame *cframe = 0;
-            cframe = FindCell(x, y - 1);
-            InitNeighborSituation(frameSituation, cframe, SYSSTR_SLOTNAME_CELL_TOP);
-            cframe = FindCell(x, y + 1);
-            InitNeighborSituation(frameSituation, cframe, SYSSTR_SLOTNAME_CELL_BOTTOM);
-            cframe = FindCell(x + 1, y);
-            InitNeighborSituation(frameSituation, cframe, SYSSTR_SLOTNAME_CELL_RIGTH);
-            cframe = FindCell(x - 1, y);
-            InitNeighborSituation(frameSituation, cframe, SYSSTR_SLOTNAME_CELL_LEFT);
-        }
-
-        retn = BindFrame(frameSituation);
-        AddMsgToLog(GetSpaces(m_Padding) + "'" + frame->frameName().toUpper() + "' - конец вывода");
-        AddMsgToLog("");
+        NFrame *cframe = 0;
+        cframe = FindCell(x, y - 1);
+        InitNeighborSituation(frameSituation, cframe, SYSSTR_SLOTNAME_CELL_TOP);
+        cframe = FindCell(x, y + 1);
+        InitNeighborSituation(frameSituation, cframe, SYSSTR_SLOTNAME_CELL_BOTTOM);
+        cframe = FindCell(x + 1, y);
+        InitNeighborSituation(frameSituation, cframe, SYSSTR_SLOTNAME_CELL_RIGTH);
+        cframe = FindCell(x - 1, y);
+        InitNeighborSituation(frameSituation, cframe, SYSSTR_SLOTNAME_CELL_LEFT);
     }
+
+    retn = BindFrame(frameSituation);
+    AddMsgToLog(GetSpaces(m_Padding) + "'" + frame->frameName().toUpper() + "' - конец вывода");
+    AddMsgToLog("");
+
     return retn;
 }
 
