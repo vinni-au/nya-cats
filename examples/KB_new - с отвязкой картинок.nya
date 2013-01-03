@@ -2045,13 +2045,10 @@ df
 g
 dfg
 123f</proc>
-        <proc name="proc_Враг_слева">Cell.X=Cell.X-1;
-LeftCell.X=LeftCell.X+1;
-RightCell.X=RightCell.X+1;
-TopCell.Y=TopCell.Y-1;
-BottomCell.Y=BottomCell.Y+1;</proc>
-        <proc name="proc_врагСправа">var x=Cell.X;
-//Cell.X=x-1;</proc>
+        <proc name="proc_Враг_слева">Cell.X=Cell.X+1;
+RightCell.X=RightCell.X-1;</proc>
+        <proc name="proc_врагСправа">Cell.X=Cell.X-1;
+LeftCell.X=LeftCell.X+1;</proc>
         <proc name="proc_врагСверху">var y=Cell.Y;
 Cell.Y=y-1;</proc>
     </procs>

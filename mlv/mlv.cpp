@@ -428,11 +428,11 @@ bool MLV::Init()
 
 				// Сохраняем в итем игрового объекта ид экземпляра соотв. ему фрейма
 				item->SetFrameId(ItemInst->id());
+				m_ItemFrameInsts.append(ItemInst);
             }
 
             SetSubframe(CellInst, SYSSTR_FRAMENAME_GAMEITEM, ItemInst);
             m_CellFrameInsts.append(CellInst);
-			m_ItemFrameInsts.append(ItemInst);
         }
     }
     m_Initialized = true;
@@ -548,7 +548,8 @@ bool MLV::BindPerson(NFrame* cell)
 
     QVariant value = GetSlotValue(cell, SYSSTR_FRAMENAME_GAMEITEM);
     NFrame* frame = (NFrame*)value.toLongLong();
-    if (!frame)
+	// Если в ячейке нет ничего или пусто - не привязываем
+    if (!frame || frame->name.defValue() == SYSSTR_FRAMENAME_EMPTY)
         return retn;
 
     m_Padding = 0;
