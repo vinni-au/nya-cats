@@ -32,7 +32,7 @@ public:
 
     //virtual Qt::DropActions supportedDropActions() const;
     //мои
-    void setFrames( QList<NFrame*> *frames);
+    virtual void setFrames( QList<NFrame*> *frames);
 
     int getIdByIndex(QModelIndex index);
 
@@ -74,7 +74,7 @@ public:
     int getFasetCount() const;
 
     bool frameExists(QString frameName);
-private:
+protected:
     int getFreeId();
 signals:
     void sigValueExists(QModelIndex index,QVariant value);
@@ -100,11 +100,13 @@ public:
     //bool dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent);
 public slots:
 
-private:
+protected:
     NFrameNode* nodeFromIndex(const QModelIndex& index) const;
     //QString generateNewUniqueDomainName();
     //QString generateNewUniqueDomainValue(Domain* domain);
-private:
+
+    NFrame* getFrameByName(QString name);
+protected:
     QList<NFrame*> *frames;
     NFrameNode *rootNode;
 

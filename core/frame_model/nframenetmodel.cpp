@@ -99,6 +99,7 @@ NFramenetModel::data(const QModelIndex &index, int role) const
     NFaset *faset;
     NSlot *slot;
     int column;
+    int row;
 
     switch(node->type)
     {
@@ -121,9 +122,12 @@ NFramenetModel::data(const QModelIndex &index, int role) const
         break;
     case NFrameNode::Faset:
         column = index.column();
+        row = index.row();
 
         frame = node->frame;
         slot = frame->getSlotByIndex(index.row());
+        if(!slot)
+            return QVariant();
         faset = slot->getFasetByIndex(column);
         if(!faset)
             return QVariant();
@@ -998,4 +1002,14 @@ bool NFramenetModel::frameExists(QString frameName)
             return true;
     }
     return false;
+}
+
+NFrame* NFramenetModel::getFrameByName(QString name)
+{
+    for(int i =0;i<frames->count();i++)
+    {
+        if(frames->at(i)->frameName()==name)
+            return frames->at(i);
+    }
+    return NULL;
 }

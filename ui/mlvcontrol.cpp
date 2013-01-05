@@ -8,7 +8,8 @@ MLVControl::MLVControl(MLV* mlv, QWidget *parent) :
 {
     ui->setupUi(this);
 
-    m_frameModel = new NFramenetModel;
+    //m_frameModel = new NFramenetModel;
+    m_frameModel = new NFramenetModelHierarchical;
 
     ui->treeView->setModel(m_frameModel);
 
@@ -34,45 +35,45 @@ void MLVControl::ClearLog()
 void MLVControl::setWorkMemory(QList<NFrame *> *list)
 {
     QList<NFrame*> toRemove;
-    for (int i = 0; i < list->count(); ++i) {
-        NFrame* frame = (*list)[i];
-        QString name = frame->name.defValue().toString();
-        if (name == "Ячейка игрового поля" ||
-            name == "Пусто" ||
-            name == "Игровое поле")
-        {
-            toRemove << frame;
-        }
-    }
-    for (int i = 0; i < toRemove.count(); ++i)
-        list->removeAll(toRemove.at(i));
+//    for (int i = 0; i < list->count(); ++i) {
+//        NFrame* frame = (*list)[i];
+//        QString name = frame->name.defValue().toString();
+//        if (name == "Ячейка игрового поля" ||
+//            name == "Пусто" ||
+//            name == "Игровое поле")
+//        {
+//            toRemove << frame;
+//        }
+//    }
+//    for (int i = 0; i < toRemove.count(); ++i)
+//        list->removeAll(toRemove.at(i));
 
-    for (int i = 0; i < list->count(); ++i)
-    {
-        NFrame* frame=list->at(i);
-        //отладочная инфа для имени
-        NSlot* slotName = frame->getSlotByName("name");
-        slotName->getFasetByName("default_value")->setValue( slotName->getFasetByName("default_value")->value().toString()+
-                                                             " (" +QString::number((long long)frame->id())+")" );
+//    for (int i = 0; i < list->count(); ++i)
+//    {
+//        NFrame* frame=list->at(i);
+//        //отладочная инфа для имени
+//        NSlot* slotName = frame->getSlotByName("name");
+//        slotName->getFasetByName("default_value")->setValue( slotName->getFasetByName("default_value")->value().toString()+
+//                                                             " (" +QString::number((long long)frame->id())+")" );
 
-        QStringList asdsd;
-        QStringList subframeNames = frame->getSubframesSlotNames(asdsd);
-        QString subFrameName;
-        foreach(subFrameName,subframeNames)
-        {
-            NSlot* slot = frame->getSlotByName(subFrameName);
-            if(!slot)
-                continue;
-            NFaset* faset = slot->getFasetByName("value");
-            if(!faset)
-                continue;
-            if(faset->value().toString().isEmpty())
-                continue;
-            NFrame* f = ((NFrame*)(faset->value().toLongLong()));
-			if (f != NULL)
-				faset->setValue( f->frameName()/* + " (" +QString::number((long long)f)+")"*/ );
-        }
-    }
+//        QStringList asdsd;
+//        QStringList subframeNames = frame->getSubframesSlotNames(asdsd);
+//        QString subFrameName;
+//        foreach(subFrameName,subframeNames)
+//        {
+//            NSlot* slot = frame->getSlotByName(subFrameName);
+//            if(!slot)
+//                continue;
+//            NFaset* faset = slot->getFasetByName("value");
+//            if(!faset)
+//                continue;
+//            if(faset->value().toString().isEmpty())
+//                continue;
+//            NFrame* f = ((NFrame*)(faset->value().toLongLong()));
+//                        if (f != NULL)
+//                                faset->setValue( f->frameName()/* + " (" +QString::number((long long)f)+")"*/ );
+//        }
+//    }
 
     m_frameModel->setFrames(list);
     ui->treeView->update();

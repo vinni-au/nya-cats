@@ -5,6 +5,7 @@
 #include "mlv/mlv.h"
 #include "core/nframe.h"
 #include "core/frame_model/nframenetmodel.h"
+#include "core/frame_model/nframenetmodelhierarchical.h"
 
 namespace Ui {
     class MLVControl;
