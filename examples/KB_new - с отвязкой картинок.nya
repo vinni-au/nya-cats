@@ -262,16 +262,6 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Изображение" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Изображение" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
             </slots>
         </frame>
         <frame type="327684" id="5" system="0">
@@ -1734,6 +1724,16 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Игровой объект" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Игровой объект" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
             </slots>
         </frame>
         <frame type="0" id="49" system="0">
@@ -1758,7 +1758,7 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-                <slot system="0">
+                <slot system="1">
                     <fasets>
                         <faset value="Картинка" name="name"/>
                         <faset value="string" name="slot_type"/>
@@ -1774,7 +1774,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="Лучник" name="default_value"/>
                         <faset value="production" name="marker_type"/>
-                        <faset value="ялучник" name="marker"/>
+                        <faset value="определитьТипПерсонажа" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -1802,7 +1802,7 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-                <slot system="0">
+                <slot system="1">
                     <fasets>
                         <faset value="Картинка" name="name"/>
                         <faset value="string" name="slot_type"/>
@@ -1818,75 +1818,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="Лекарь" name="default_value"/>
                         <faset value="production" name="marker_type"/>
-                        <faset value="ялекарь" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-            </slots>
-        </frame>
-        <frame type="0" id="53" system="0">
-            <slots>
-                <slot system="1">
-                    <fasets>
-                        <faset value="name" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="Фон лучника" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="is_a" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Изображение лучника" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Яркость" name="name"/>
-                        <faset value="int" name="slot_type"/>
-                        <faset value="100" name="default_value"/>
-                        <faset value="production" name="marker_type"/>
-                        <faset value="яркостьлучника" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-            </slots>
-        </frame>
-        <frame type="0" id="54" system="0">
-            <slots>
-                <slot system="1">
-                    <fasets>
-                        <faset value="name" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="Фон лекаря" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="is_a" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Изображение лекаря" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Яркость" name="name"/>
-                        <faset value="int" name="slot_type"/>
-                        <faset value="100" name="default_value"/>
-                        <faset value="production" name="marker_type"/>
-                        <faset value="яркостьлекаря" name="marker"/>
+                        <faset value="определитьТипПерсонажа" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -1914,11 +1846,11 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-                <slot system="0">
+                <slot system="1">
                     <fasets>
                         <faset value="Картинка" name="name"/>
                         <faset value="string" name="slot_type"/>
-                        <faset value=":images/visualize/war.gif" name="default_value"/>
+                        <faset value=":images/visualize/war1.gif" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -1930,41 +1862,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="Мечник" name="default_value"/>
                         <faset value="production" name="marker_type"/>
-                        <faset value="ямечник" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-            </slots>
-        </frame>
-        <frame type="0" id="56" system="0">
-            <slots>
-                <slot system="1">
-                    <fasets>
-                        <faset value="name" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="Фон мечника" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="is_a" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Изображение мечника" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Яркость" name="name"/>
-                        <faset value="int" name="slot_type"/>
-                        <faset value="100" name="default_value"/>
-                        <faset value="production" name="marker_type"/>
-                        <faset value="яркостьвоина" name="marker"/>
+                        <faset value="определитьТипПерсонажа" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -2022,17 +1920,323 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="Еда" name="default_value"/>
                         <faset value="production" name="marker_type"/>
-                        <faset value="ямясо" name="marker"/>
+                        <faset value="определитьТипПерсонажа" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-                <slot system="0">
+                <slot system="1">
                     <fasets>
                         <faset value="Картинка" name="name"/>
                         <faset value="string" name="slot_type"/>
                         <faset value=":images/visualize/meat.gif" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="59" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Изо мечник много жизни" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Изображение мечника" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Яркость" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="100" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="яркостьвоина" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="60" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Изо мечник средне жизни" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Изображение мечника" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Яркость" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="70" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="яркостьвоина" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="61" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Изо мечник мало жизни" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Изображение мечника" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Яркость" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="40" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="яркостьвоина" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="62" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Изо лучник много жизни" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Изображение лучника" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Яркость" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="100" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="яркостьвоина" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="63" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Изо лучник средне жизни" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Изображение лучника" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Яркость" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="70" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="яркостьвоина" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="64" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Изо лучник мало жизни" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Изображение лучника" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Яркость" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="40" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="яркостьвоина" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="65" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Изо лекарь много жизни" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Изображение лекаря" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Яркость" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="100" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="яркостьвоина" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="66" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Изо лекарь средне жизни" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Изображение лекаря" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Яркость" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="70" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="яркостьвоина" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="67" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Изо лекарь мало жизни" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Изображение лекаря" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Яркость" name="name"/>
+                        <faset value="int" name="slot_type"/>
+                        <faset value="40" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="яркостьвоина" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -2663,8 +2867,88 @@ Cell.Y=y-1;</proc>
             <rules>
                 <rule Name="Rule1">
                     <reason></reason>
-                    <ifs/>
-                    <thens/>
+                    <ifs>
+                        <if>
+                            <var>Игровой объект.Уровень жизни</var>
+                            <sign>=</sign>
+                            <val>1</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Яркость</var>
+                            <sign>=</sign>
+                            <val>40</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule2">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игровой объект.Уровень жизни</var>
+                            <sign>=</sign>
+                            <val>2</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Яркость</var>
+                            <sign>=</sign>
+                            <val>40</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule3">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игровой объект.Уровень жизни</var>
+                            <sign>=</sign>
+                            <val>3</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Яркость</var>
+                            <sign>=</sign>
+                            <val>70</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule4">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игровой объект.Уровень жизни</var>
+                            <sign>=</sign>
+                            <val>4</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Яркость</var>
+                            <sign>=</sign>
+                            <val>70</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule5">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игровой объект.Уровень жизни</var>
+                            <sign>=</sign>
+                            <val>5</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Яркость</var>
+                            <sign>=</sign>
+                            <val>100</val>
+                        </then>
+                    </thens>
                 </rule>
             </rules>
         </production>
@@ -2695,6 +2979,78 @@ Cell.Y=y-1;</proc>
                 </rule>
             </rules>
         </production>
+        <production name="определитьТипПерсонажа">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игровой объект.name</var>
+                            <sign>=</sign>
+                            <val>Мечник</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Тип</var>
+                            <sign>=</sign>
+                            <val>Мечник</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule2">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игровой объект.name</var>
+                            <sign>=</sign>
+                            <val>Лучник</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Тип</var>
+                            <sign>=</sign>
+                            <val>Лучник</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule3">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игровой объект.name</var>
+                            <sign>=</sign>
+                            <val>Лекарь</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Тип</var>
+                            <sign>=</sign>
+                            <val>Лекарь</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule4">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игровой объект.name</var>
+                            <sign>=</sign>
+                            <val>Еда</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Тип</var>
+                            <sign>=</sign>
+                            <val>Еда</val>
+                        </then>
+                    </thens>
+                </rule>
+            </rules>
+        </production>
     </productions>
     <diagram>
         <item x="-252.9" title="Игровое поле" y="-251.9" id="0"/>
@@ -2713,7 +3069,7 @@ Cell.Y=y-1;</proc>
         <item x="-146.7217499999999" title="Ситуация" y="279.940375" id="23"/>
         <item x="-111.4821237080801" title="Простая ситуация" y="523.7323917949589" id="24"/>
         <item x="163.574276078125" title="Сложная ситуация" y="631.9377344531249" id="25"/>
-        <item x="503.4" title="Есть еда" y="629.2108177031253" id="26"/>
+        <item x="465.4" title="Есть еда" y="747.2108177031253" id="26"/>
         <item x="-436.3992047812501" title="Есть враги" y="549.6936684218752" id="27"/>
         <item x="-668.64630909375" title="Мало жизни" y="740.5477569374997" id="28"/>
         <item x="-465.9981545468753" title="Много жизни" y="730.1977569374999" id="29"/>
@@ -2729,19 +3085,25 @@ Cell.Y=y-1;</proc>
         <item x="-561.05" title="Враг снизу" y="612.9999999999999" id="39"/>
         <item x="-365.5108177031251" title="Враг справа" y="427.5365416249999" id="40"/>
         <item x="-540.35" title="Враг сверху" y="437.0500000000003" id="41"/>
-        <item x="330" title="Еда слева" y="644" id="42"/>
-        <item x="648" title="Еда справа" y="632.0608177031252" id="43"/>
-        <item x="640.40976746875" title="Еда сверху" y="516.0608177031252" id="44"/>
-        <item x="519" title="Еда снизу" y="731.0608177031252" id="45"/>
-        <item x="502" title="Изображение" y="23" id="47"/>
-        <item x="512" title="Изображение лучника" y="293" id="49"/>
+        <item x="394" title="Еда слева" y="642" id="42"/>
+        <item x="610" title="Еда справа" y="750.0608177031252" id="43"/>
+        <item x="602.40976746875" title="Еда сверху" y="634.0608177031252" id="44"/>
+        <item x="481" title="Еда снизу" y="849.0608177031252" id="45"/>
+        <item x="496" title="Изображение" y="58" id="47"/>
+        <item x="516" title="Изображение лучника" y="292" id="49"/>
         <item x="633" title="Изображение лекаря" y="292" id="50"/>
-        <item x="512" title="Фон лучника" y="407" id="53"/>
-        <item x="632" title="Фон лекаря" y="406" id="54"/>
         <item x="385" title="Изображение мечника" y="293" id="55"/>
-        <item x="386" title="Фон мечника" y="406" id="56"/>
         <item x="497" title="Изображение персонажа" y="172" id="57"/>
-        <item x="752" title="Изображение еды" y="171" id="58"/>
+        <item x="702" title="Изображение еды" y="172" id="58"/>
+        <item x="274" title="Изо мечник много жизни" y="404" id="59"/>
+        <item x="314" title="Изо мечник средне жизни" y="461" id="60"/>
+        <item x="371" title="Изо мечник мало жизни" y="519" id="61"/>
+        <item x="461" title="Изо лучник много жизни" y="391" id="62"/>
+        <item x="490" title="Изо лучник средне жизни" y="448" id="63"/>
+        <item x="532" title="Изо лучник мало жизни" y="510" id="64"/>
+        <item x="723" title="Изо лекарь много жизни" y="388" id="65"/>
+        <item x="689" title="Изо лекарь средне жизни" y="449" id="66"/>
+        <item x="666" title="Изо лекарь мало жизни" y="509" id="67"/>
         <link sid="1" did="0" text="sub"/>
         <link sid="4" did="2" text="is-a"/>
         <link sid="3" did="2" text="is-a"/>
@@ -2794,14 +3156,20 @@ Cell.Y=y-1;</proc>
         <link sid="43" did="26" text="is-a"/>
         <link sid="44" did="26" text="is-a"/>
         <link sid="1" did="23" text="sub"/>
-        <link sid="47" did="4" text="sub"/>
-        <link sid="53" did="49" text="is-a"/>
-        <link sid="54" did="50" text="is-a"/>
-        <link sid="56" did="55" text="is-a"/>
         <link sid="55" did="57" text="is-a"/>
         <link sid="49" did="57" text="is-a"/>
         <link sid="50" did="57" text="is-a"/>
         <link sid="57" did="47" text="is-a"/>
         <link sid="58" did="47" text="is-a"/>
+        <link sid="2" did="47" text="sub"/>
+        <link sid="59" did="55" text="is-a"/>
+        <link sid="60" did="55" text="is-a"/>
+        <link sid="61" did="55" text="is-a"/>
+        <link sid="62" did="49" text="is-a"/>
+        <link sid="63" did="49" text="is-a"/>
+        <link sid="64" did="49" text="is-a"/>
+        <link sid="65" did="50" text="is-a"/>
+        <link sid="66" did="50" text="is-a"/>
+        <link sid="67" did="50" text="is-a"/>
     </diagram>
 </kb>

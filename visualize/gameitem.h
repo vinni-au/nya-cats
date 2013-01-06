@@ -39,6 +39,7 @@ protected:
     QString         m_Team;
 	QString			m_Type;
     int				m_FrameId;
+	int				m_Bright;
 
 public:
     GameItem(QString type, QPixmap& pic, QString team, QColor color, int id = 0);
@@ -46,9 +47,13 @@ public:
 	QPixmap& GetPic() {return m_Pic;}
 	QString GetTeam() {return m_Team;}
 	QColor& GetColor() {return m_Color;}
+	int GetBright() {return m_Bright;}
 
 	int GetFrameId() {return m_FrameId;}
 	void SetFrameId(int id) {m_FrameId = id;}
+
+	void UpdatePic(QString path);
+	void UpdateBrigth(int bright);
 };
 
 #endif // GAMEITEM_H

@@ -26,22 +26,7 @@ Visualizer::Visualizer(NKBManager* kbManager, QWidget *parent) :
 
 void Visualizer::populateScene()
 {
-    /*QPixmap pic1(":images/visualize/war.gif");
-    QPixmap pic2(":images/visualize/doc.gif");
-    QPixmap pic3(":images/visualize/hant.gif");
-    QPixmap pic4(":images/visualize/meat.gif");
-
-    m_Scene->CreateFactory(new GameItem(gitWarior, pic1, gtRed), GetNextPos());
-    m_Scene->CreateFactory(new GameItem(gitHealer, pic2, gtRed), GetNextPos());
-    m_Scene->CreateFactory(new GameItem(gitArcher, pic3, gtRed), GetNextPos());
-
-    m_Scene->CreateFactory(new GameItem(gitWarior, pic1, gtBlue), GetNextPos());
-    m_Scene->CreateFactory(new GameItem(gitHealer, pic2, gtBlue), GetNextPos());
-    m_Scene->CreateFactory(new GameItem(gitArcher, pic3, gtBlue), GetNextPos());
-
-    m_Scene->CreateFactory(new GameItem(gitMeat,   pic4, gtNull), GetNextPos());*/
-
-	// Получаем домен "Команда"
+ 	// Получаем домен "Команда"
 	QVector<QString> teams = m_KBManager->GetDomainValsByString("Команды");
 
 	// Получаем фреймы изображений всех типов персонажей
@@ -116,7 +101,7 @@ QColor& Visualizer::GetNextColor()
 			255 - m_ColCount * 100,
 			m_ColCount * 10,
 			m_ColCount * 100,
-			100
+			200
 		);
 	m_ColCount++;
 	return *color;

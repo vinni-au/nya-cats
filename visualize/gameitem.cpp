@@ -21,5 +21,20 @@ GameItem::GameItem(QString type, QPixmap& pic, QString team, QColor color, int i
 	,m_Color(color)
 	,m_Team(team)
 	,m_FrameId(id)
+	,m_Bright(100)
 {
+}
+
+void GameItem::UpdatePic(QString path)
+{
+	QPixmap *pic = new QPixmap(path);
+	m_Pic = *pic;
+}
+
+void GameItem::UpdateBrigth(int bright)
+{
+	if (bright <= 0 || bright >= 300)
+		return;
+
+	m_Bright = bright;
 }

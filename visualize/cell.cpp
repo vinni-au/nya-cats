@@ -31,7 +31,7 @@ void Cell::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
 
 
         fillColor = m_Item->GetColor();
-        fillColor = (option->state & QStyle::State_MouseOver) ? fillColor.dark(255) : fillColor;
+        fillColor = (option->state & QStyle::State_MouseOver) ? fillColor.dark(255) : fillColor.dark(m_Item->GetBright());
 
         QBrush b = painter->brush();
         QPen p = painter->pen();

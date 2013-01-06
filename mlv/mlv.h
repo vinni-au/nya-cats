@@ -24,6 +24,9 @@
 #define SYSSTR_FRAMENAME_PERSON		"Персонаж"
 #define SYSSTR_FRAMENAME_EMPTY		"Пусто"
 #define SYSSTR_FRAMENAME_FOOD		"Еда"
+#define SYSSTR_FRAMENAME_IMAGE		"Изображение"
+
+#define SYSSTR_DOMAINNAME_TEAMS		"Команды"
 
 #define SYSSTR_SLOTNAME_CELL_LEFT	"Ячейка слева"
 #define SYSSTR_SLOTNAME_CELL_RIGTH	"Ячейка справа"
@@ -36,11 +39,15 @@
 #define SYSSTR_SLOTNAME_X			"x"
 #define SYSSTR_SLOTNAME_Y			"y"
 #define SYSSTR_SLOTNAME_TEAM		"Команда"
+#define SYSSTR_SLOTNAME_PIC			"Картинка"
+#define SYSSTR_SLOTNAME_BRIGTNESS	"Яркость"
+#define SYSSTR_SLOTNAME_ITEMTYPE	"Тип"
 
 #define SYSSTR_SLOTTYPE_FRAME		"frame"
 #define SYSSTR_SLOTTYPE_PRODUCTION	"production"
 
 #define SYSSTR_FASETNAME_VALUE		"value"
+#define SYSSTR_FASETNAME_DEF_VALUE	"default_value"
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -89,6 +96,8 @@ public:
 
     bool isGameContinues();                                 //запущена ли в данный момент игра
 	QList<NFrame*> getSituationInstanceList();
+	QList<NFrame*> getSituationInstanceList(NFrame* cell);
+	QList<NFrame*> getImageInstanceList(NFrame* item);
 	QList<NFrame*> getFrameLeaf(NFrame* root);
 
 protected:
@@ -97,11 +106,17 @@ protected:
     // В код вшиты названия! что есть очень плохо - быдло быдло
     bool Init();
     void UpdateGrid();
+	void UpdateCell(NFrame* cellInst, NFrame* imageFrame);
 
-    bool BindFrame(NFrame* frame);
+    bool BindFrame(NFrame* frame, bool fillDefault = false);
     bool BindSlot(NFrame* frame, NSlot* slot);
-    bool BindPerson(NFrame* frame);
-    bool BindPerson(int x, int y);
+    NFrame* BindPerson(NFrame* frame);
+    NFrame* BindPerson(int x, int y);
+
+
+	bool DoCell(NFrame* cell);
+	bool DoCell(int x, int y);
+	NFrame* BindImage(NFrame* cell);
 
     NFrame* CreateFrameInstance(QString name, bool fillDefault = true);
     NFrame* CreateFrameInstanceFull(QString name, bool fillDefault = true);
@@ -124,8 +139,6 @@ protected:
     // Поиск в списке ячеек
     NFrame* FindByCell(int x, int y);
 
-	NFrame* GetItemInst(NFrame* cell);
-
     // Поиск в кеше
     NFrame* FindInCache(QString name);
     NFrame* FindInCache(int frameId);
@@ -133,6 +146,7 @@ protected:
     NFrame* FindCell(int x, int y);
 
 	bool IsContainGameItem(NFrame* cell);
+	NFrame* GetGameInst(NFrame* cell);
 
     void InitNeighborSituation(NFrame* frameSituation, NFrame* item, QString Name);
 

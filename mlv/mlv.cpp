@@ -96,19 +96,6 @@ NFrame* MLV::FindCell(int x, int y)
     return NULL;
 }
 
-/* 
-	Получаем из экземпляра ячейки экземпляр игрового объекта,
-	который в ней содержится
-*/
-NFrame* MLV::GetItemInst(NFrame* cell)
-{
-	// Действительно ли это ячейка игрового поля
-	if (!m_KBManager->HasParentWithName(cell, SYSSTR_FRAMENAME_GAMECELL))
-		return NULL;
-	
-	return GetSubframe(cell, SYSSTR_FRAMENAME_GAMEITEM);
-}
-
 NFrame* MLV::FindInCache(QString name)
 {
     NFrame* frame = NULL;
@@ -144,16 +131,13 @@ NFrame* MLV::CreateFrameInstance(QString name, bool fillDefault)
 
     NFrame* frame = m_KBManager->GetFrameInstance(name);
 
-    if (fillDefault)
+    QList<NSlot*> slotsList = m_KBManager->GetFrameSlots(frame);
+    for (int i = 0; i < slotsList.count(); i++)
     {
-        QList<NSlot*> slotsList = m_KBManager->GetFrameSlots(frame);
-        for (int i = 0; i < slotsList.count(); i++)
+        QVariant val = GetSlotValue(frame, slotsList[i]->name());
+        if (val.toString().isEmpty() && (fillDefault || slotsList[i]->isSystem()))
         {
-            QVariant val = GetSlotValue(frame, slotsList[i]->name());
-            if (val.toString().isEmpty())
-            {
-                SetSlotValueVariant(frame, slotsList[i]->name(), slotsList[i]->defValue());
-            }
+            SetSlotValueVariant(frame, slotsList[i]->name(), slotsList[i]->defValue());
         }
     }
 
@@ -178,7 +162,7 @@ NFrame* MLV::CreateFrameInstanceFull(QString name, bool fillDefault)
         for (int i = 0; i < slotsList.count(); i++)
         {
             QVariant val = GetSlotValue(frame, slotsList[i]->name());
-            if (val.toString().isEmpty())
+            if (val.toString().isEmpty() && (fillDefault || slotsList[i]->isSystem()))
             {
                 if (slotsList[i]->getSlotType() != SYSSTR_SLOTTYPE_FRAME)
                     SetSlotValueVariant(frame, slotsList[i]->name(), slotsList[i]->defValue());
@@ -269,6 +253,112 @@ void MLV::SetSubframe(NFrame* frame, QString slotName, NFrame* subframe)
 	 SetSlotValueVariant(frame, slotName, QVariant(reinterpret_cast<long long>(subframe)));
 }
 
+QList<NFrame*> MLV::getFrameLeaf(NFrame* root)
+{
+	return m_KBManager->getFrameLeaf(root);
+}
+
+// Возвращает список всех экземпляров фреймов ситуаций
+QList<NFrame*> MLV::getSituationInstanceList()
+{
+	QList<NFrame*> list;
+	for (int i = 0; i < m_WorkMemory.count(); i++)
+	{
+		NFrame* frame = m_WorkMemory[i];
+		if (m_KBManager->HasParentWithName(frame, SYSSTR_FRAMENAME_SITUATION) && !m_KBManager->hasChildren(frame))
+			list.append(frame);
+	}
+	return list;
+}
+
+// Возвращает список всех экземпляров фреймов ситуаций для данной ячейки
+QList<NFrame*> MLV::getSituationInstanceList(NFrame* cell)
+{
+	QList<NFrame*> list;
+	for (int i = 0; i < m_WorkMemory.count(); i++)
+	{
+		NFrame* frame = m_WorkMemory[i];
+		if (m_KBManager->HasParentWithName(frame, SYSSTR_FRAMENAME_SITUATION) && !m_KBManager->hasChildren(frame))
+		{
+			NFrame* gamerCell = GetSubframe(frame, SYSSTR_SLOTNAME_CELL_GAMER, true);
+			if (gamerCell != NULL && gamerCell->id() == cell->id())
+				list.append(frame);
+		}
+	}
+	return list;
+}
+
+// Возвращает список всех экземпляров фреймов изображений для данного игрового объекта
+QList<NFrame*> MLV::getImageInstanceList(NFrame* item)
+{
+	QList<NFrame*> list;
+	for (int i = 0; i < m_WorkMemory.count(); i++)
+	{
+		NFrame* frame = m_WorkMemory[i];
+		if (m_KBManager->HasParentWithName(frame, SYSSTR_FRAMENAME_IMAGE) && !m_KBManager->hasChildren(frame))
+		{
+			NFrame* itemFrame = GetSubframe(frame, SYSSTR_FRAMENAME_GAMEITEM, true);
+			if (itemFrame != NULL && itemFrame->id() == item->id())
+				list.append(frame);
+		}
+	}
+	return list;
+}
+
+bool MLV::IsContainGameItem(NFrame* cell)
+{
+	if (!cell) return false;
+	NFrame* item = GetSubframe(cell, SYSSTR_FRAMENAME_GAMEITEM);
+	if (item == NULL) return false;
+	return m_KBManager->HasParentWithName(item, SYSSTR_FRAMENAME_GAMEITEM);
+}
+
+NFrame* MLV::GetGameInst(NFrame* cell)
+{
+	if (!cell) return NULL;
+	// Действительно ли это ячейка игрового поля
+	if (!m_KBManager->HasParentWithName(cell, SYSSTR_FRAMENAME_GAMECELL)) return NULL;
+	NFrame* item = GetSubframe(cell, SYSSTR_FRAMENAME_GAMEITEM);
+	if (item == NULL) return NULL;
+	if (!m_KBManager->HasParentWithName(item, SYSSTR_FRAMENAME_GAMEITEM)) return NULL;
+	return item;
+}
+
+void MLV::InitNeighborSituation(NFrame* frameSituation, NFrame* cell, QString Name)
+{
+	if (IsContainGameItem(cell))
+		SetSubframe(frameSituation, Name, cell);
+	else
+		frameSituation->removeSlot(Name);
+}
+
+QString MLV::GetSpaces(int count)
+{
+	QString str = "";
+	for (int i = 0; i < count; i++)
+	{
+		str += "|      ";
+	}
+	return str;
+}
+
+bool  MLV::isGameContinues()
+{
+	return m_GameContinues;
+}
+
+//////////////////////////////////////////////////////////////////////////
+// РАБОТА С ПРОДУКЦИЯМИ
+QVariant MLV::getValSlot(int frameId, QString aimVar)
+{
+	return getVal(frameId, aimVar);
+}
+
+bool MLV::setValSlot(int frameId, QString aimVar, QVariant value)
+{
+	return setVal(frameId, aimVar, value);
+}
+
 QVariant MLV::getVal(int frameId, QString aimVar)
 {
     return getVal(FindInCache(frameId), aimVar);
@@ -323,7 +413,8 @@ bool MLV::setVal(NFrame* frame, QString aimVar, QVariant value)
     }
 }
 
-
+//////////////////////////////////////////////////////////////////////////
+// РАБОТА С ВИЗАУЛИЗАТОРОМ
 void MLV::UpdateGrid()
 {
 	if (m_Grid == NULL) return;
@@ -331,9 +422,8 @@ void MLV::UpdateGrid()
 	for(int i = 0; i < m_CellFrameInsts.count(); i++)
 	{
 		NFrame* cellInst = m_CellFrameInsts[i];
-		NFrame* itemInst = GetItemInst(cellInst);
-		if (itemInst == NULL)
-			continue;
+		NFrame* itemInst = GetGameInst(cellInst);
+		if (itemInst == NULL) continue;
 
 		int newX = GetSlotValue(cellInst, SYSSTR_SLOTNAME_X, true).toInt();
 		int newY = GetSlotValue(cellInst, SYSSTR_SLOTNAME_Y, true).toInt();
@@ -353,38 +443,46 @@ void MLV::UpdateGrid()
 	}
 }
 
-
-QVariant MLV::getValSlot(int frameId, QString aimVar)
+void MLV::UpdateCell(NFrame* cellInst, NFrame* imageFrame)
 {
-    return getVal(frameId, aimVar);
-}
+	if (cellInst == NULL) return;
+	if (!m_KBManager->HasParentWithName(imageFrame, SYSSTR_FRAMENAME_IMAGE)) return;
+	if (m_Grid == NULL) return;
 
-bool MLV::setValSlot(int frameId, QString aimVar, QVariant value)
-{
-    return setVal(frameId, aimVar, value);
-}
+	NFrame* itemInst = GetGameInst(cellInst);
+	if (itemInst == NULL) return;
 
-QList<NFrame*> MLV::getFrameLeaf(NFrame* root)
-{
-	return m_KBManager->getFrameLeaf(root);
-}
+	Cell* cell = m_Grid->FindCellByItemFrameId(itemInst->id());
+	if (cell == NULL) // Такого по идее быть не должно тут
+		return;
 
-QList<NFrame*> MLV::getSituationInstanceList()
-{
-	QList<NFrame*> list;
-	for (int i = 0; i < m_WorkMemory.count(); i++)
+	// Обновляем картинку, фон
+	GameItem* gameItem = cell->GetGameItem();
+	if (gameItem == NULL) return;
+
+	QVariant bright = GetSlotValue(imageFrame, SYSSTR_SLOTNAME_BRIGTNESS, true);
+	if (!bright.isNull())
+		gameItem->UpdateBrigth(bright.toInt());
+
+	QVariant pic = GetSlotValue(imageFrame, SYSSTR_SLOTNAME_PIC, true);
+	if (!pic.isNull())
+		gameItem->UpdatePic(pic.toString());
+
+	// Обновляем положение игрового объекта на игровом поле
+	int newX = GetSlotValue(cellInst, SYSSTR_SLOTNAME_X, true).toInt();
+	int newY = GetSlotValue(cellInst, SYSSTR_SLOTNAME_Y, true).toInt();
+
+	int oldX = cell->GetX();
+	int oldY = cell->GetY();
+
+	if (oldX != newX || oldY != newY)
 	{
-		NFrame* frame = m_WorkMemory[i];
-		if (m_KBManager->HasParentWithName(frame, SYSSTR_FRAMENAME_SITUATION) && !m_KBManager->hasChildren(frame))
-			list.append(frame);
+		m_Grid->MoveGameItemTo(oldX, oldY, newX, newY);
 	}
-	return list;
 }
-
 
 ////////////////////////////////////////////////////////////////////////
-// Вывод
-
+// ВЫВОД
 bool MLV::Init()
 {
     m_CellFrameInsts.clear();
@@ -422,12 +520,11 @@ bool MLV::Init()
             {
                 // Создаем персонажа
                 ItemInst = CreateFrameInstanceFull(item->GetType());
-
-                // Заполняем значения
-                SetSlotValue(ItemInst, SYSSTR_SLOTNAME_TEAM, item->GetTeam());
-
 				// Сохраняем в итем игрового объекта ид экземпляра соотв. ему фрейма
 				item->SetFrameId(ItemInst->id());
+
+                // Заполняем значения команды
+                SetSlotValue(ItemInst, SYSSTR_SLOTNAME_TEAM, item->GetTeam());
 				m_ItemFrameInsts.append(ItemInst);
             }
 
@@ -437,32 +534,6 @@ bool MLV::Init()
     }
     m_Initialized = true;
     return true;
-}
-
-bool MLV::IsContainGameItem(NFrame* cell)
-{
-	NFrame* item = GetSubframe(cell, SYSSTR_FRAMENAME_GAMEITEM);
-	if (item == NULL)
-		return false;
-	return m_KBManager->HasParentWithName(item, SYSSTR_FRAMENAME_GAMEITEM);
-}
-
-void MLV::InitNeighborSituation(NFrame* frameSituation, NFrame* cell, QString Name)
-{
-    if (IsContainGameItem(cell))
-        SetSubframe(frameSituation, Name, cell);
-    else
-        frameSituation->removeSlot(Name);
-}
-
-QString MLV::GetSpaces(int count)
-{
-    QString str = "";
-    for (int i = 0; i < count; i++)
-    {
-        str += "|      ";
-    }
-    return str;
 }
 
 void MLV::Step()
@@ -481,26 +552,11 @@ void MLV::Step()
     for (int i = 0; i < m_ItemFrameInsts.count(); i++)
 		m_WorkMemory.append(m_ItemFrameInsts[i]);
 
-    // Для каждого персонажа привязываем ситуацию
+    // Пробегаем по всем ячейкам и обрабатывем игровые объекты в них
     for (int i = 0; i < m_CellFrameInsts.count(); i++)
     {
-        BindPerson(m_CellFrameInsts[i]);
+        DoCell(m_CellFrameInsts[i]);
     }
-
-    //для каждой привязанной ситуации исполняем действие
-
-    //надо где то запомнить привязанные к персонажам ситуации
-    QList<NFrame*> situations = getSituationInstanceList();
-
-    for (int i = 0; i < situations.count(); i++)
-    {
-        DoAction(situations.at(i));
-    }
-    //разрешаем конфликты
-    //TODO
-
-    //обновляем игровое поле
-    UpdateGrid();
 }
 
 void MLV::Step(int x, int y)
@@ -530,7 +586,60 @@ void MLV::Stop()
     m_GameContinues = false;
 }
 
-bool MLV::BindPerson(int x, int y)
+// Обрабатываем ячейку игрового поля
+bool MLV::DoCell(int x, int y)
+{
+	NFrame* cell = FindCell(x ,y);
+	return DoCell(cell);
+}
+
+bool MLV::DoCell(NFrame* cell)
+{
+	NFrame* frame = GetGameInst(cell);
+	if (!frame) return false;
+
+	// Если в ячейке не игровой объект или пусто - ничего не делаем
+	if (!m_KBManager->HasParentWithName(frame, SYSSTR_FRAMENAME_GAMEITEM) ||
+		frame->name.defValue() == SYSSTR_FRAMENAME_EMPTY)
+		return false;
+
+	// Привязываем ситуацию и выполняем действие только для персонажа
+	if (m_KBManager->HasParentWithName(frame, SYSSTR_FRAMENAME_PERSON))
+	{
+		// Привязываем ситуацию
+		BindPerson(cell);
+		QList<NFrame*> situations = getSituationInstanceList(cell);
+		// Выполняем действие для персонажа в зависимости от привязанной ситуации
+		if (situations.size() > 0)
+			DoAction(situations[0]);
+	}
+
+	// Привязываем изображение для всех игровых объектов
+	NFrame* imageFrame = BindImage(cell);
+
+	// Если изображение привязалось, обновляем поле визуализатора
+	if (imageFrame != NULL)
+	{
+		UpdateCell(cell, imageFrame);
+	}
+}
+
+// Привязывем изображение игрового объекта, содержащегося в ячейке
+NFrame* MLV::BindImage(NFrame* cell)
+{
+	NFrame* item = GetGameInst(cell);
+	if (!item) return NULL;
+
+	NFrame* frameImage = CreateFrameInstance(SYSSTR_FRAMENAME_IMAGE, false);
+	SetSubframe(frameImage, SYSSTR_FRAMENAME_GAMEITEM, item);
+
+	BindFrame(frameImage);
+	QList<NFrame*> images = getImageInstanceList(item);
+	return images.size() > 0 ? images[0] : NULL;
+}
+
+// Привязываем ситуацию для персонажа
+NFrame* MLV::BindPerson(int x, int y)
 {
     if (!Init())
         return false;
@@ -539,18 +648,13 @@ bool MLV::BindPerson(int x, int y)
     return BindPerson(frame);
 }
 
-bool MLV::BindPerson(NFrame* cell)
+NFrame* MLV::BindPerson(NFrame* cell)
 {
     qDebug()<<"bool MLV::BindPerson(NFrame* cell)";
-    bool retn = false;
-    if (!cell)
-        return retn;
+    if (!cell) return NULL;
 
-    QVariant value = GetSlotValue(cell, SYSSTR_FRAMENAME_GAMEITEM);
-    NFrame* frame = (NFrame*)value.toLongLong();
-	// Если в ячейке нет ничего или пусто - не привязываем
-    if (!frame || frame->name.defValue() == SYSSTR_FRAMENAME_EMPTY)
-        return retn;
+    NFrame* frame = GetGameInst(cell);
+    if (!frame) return NULL;
 
     m_Padding = 0;
     AddMsgToLog(GetSpaces(m_Padding) + "Определяем ситуацию для '" + frame->frameName().toUpper() + "'");
@@ -565,9 +669,6 @@ bool MLV::BindPerson(NFrame* cell)
         int x = GetSlotValue(cell, SYSSTR_SLOTNAME_X).toInt();
         int y = GetSlotValue(cell, SYSSTR_SLOTNAME_Y).toInt();
 
-        // Пробегаем по всем соседним ячейкам, и смотрим, есть ли там еда или враг
-        // если есть - добавляем в ситуацию
-
         NFrame *cframe = 0;
         cframe = FindCell(x, y - 1);
         InitNeighborSituation(frameSituation, cframe, SYSSTR_SLOTNAME_CELL_TOP);
@@ -579,15 +680,18 @@ bool MLV::BindPerson(NFrame* cell)
         InitNeighborSituation(frameSituation, cframe, SYSSTR_SLOTNAME_CELL_LEFT);
     }
 
-    retn = BindFrame(frameSituation);
+    bool retn = BindFrame(frameSituation);
     AddMsgToLog(GetSpaces(m_Padding) + "'" + frame->frameName().toUpper() + "' - конец вывода");
     AddMsgToLog("");
 
-    return retn;
+	if (retn) 
+		return frameSituation;
+    return NULL;
 }
 
-// Жесткая рекурсия, надо тестить
-bool MLV::BindFrame(NFrame *frame)
+//////////////////////////////////////////////////////////////////////////
+// ЯДРО МВЛ: ПРИВЯЗКА ФРЕЙМА, СЛОТА
+bool MLV::BindFrame(NFrame *frame, bool fillDefault)
 {
     qDebug()<<"bool MLV::BindFrame(NFrame *frame)";
     bool retn = true;
@@ -600,7 +704,7 @@ bool MLV::BindFrame(NFrame *frame)
     if (frame->frameType() == FrameType::prototype)
     {
         // Создаем экземпляр
-        frameInst = CreateFrameInstance(frame->frameName(), false);
+        frameInst = CreateFrameInstance(frame->frameName(), fillDefault);
         if (!frameInst)
         {
             return false;
@@ -642,17 +746,18 @@ bool MLV::BindFrame(NFrame *frame)
 
     if (retn)
     {
-        m_WorkMemory.append(frameInst);
+		if (!m_WorkMemory.contains(frameInst))
+			m_WorkMemory.append(frameInst);
 
         // Пытаемся привязать потомков
         QList<NFrame*> children = m_KBManager->GetFrameChildren(frameInst);
         for (int i = 0; i < children.count(); i++)
         {
-            NFrame* frameInst1 = CreateFrameInstance(children[i]->frameName(), false);
+            NFrame* frameInst1 = CreateFrameInstance(children[i]->frameName(), fillDefault);
             if (frameInst1)
             {
                 SetSubframe(frameInst1, SYSSTR_SLOTNAME_ISA, frameInst);
-                bool end = BindFrame(frameInst1);
+                bool end = BindFrame(frameInst1, fillDefault);
                 if (end && !m_FullSearch)
                     break;
             }
@@ -721,13 +826,8 @@ bool MLV::BindSlot(NFrame* frame, NSlot *slot)
     m_Padding -= 1;
     return retn;
 }
-
-
-bool  MLV::isGameContinues()
-{
-    return m_GameContinues;
-}
-
+//////////////////////////////////////////////////////////////////////////
+// РАБОТА С ПРОЦЕДУРАМИ
 void  MLV::DoAction(NFrame* frameSituation)
 {
     NSlot *actionSlot = frameSituation->getSlotByName(SYSSTR_SLOTNAME_ACTION);
