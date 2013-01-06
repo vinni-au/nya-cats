@@ -876,6 +876,16 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Нет еды" name="name"/>
+                        <faset value="ДаНет" name="slot_type"/>
+                        <faset value="Нет" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="естьеда" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
             </slots>
         </frame>
         <frame type="0" id="31" system="0">
@@ -907,6 +917,16 @@
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
                         <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Нет врагов" name="name"/>
+                        <faset value="ДаНет" name="slot_type"/>
+                        <faset value="Нет" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="естьвраги" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -1646,16 +1666,6 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="123" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="123" name="default_value"/>
-                        <faset value="procedure" name="marker_type"/>
-                        <faset value="234" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
                 <slot system="1">
                     <fasets>
                         <faset value="action" name="name"/>
@@ -1850,7 +1860,7 @@
                     <fasets>
                         <faset value="Картинка" name="name"/>
                         <faset value="string" name="slot_type"/>
-                        <faset value=":images/visualize/war1.gif" name="default_value"/>
+                        <faset value=":images/visualize/war.gif" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -2476,7 +2486,7 @@ Cell.Y=y-1;</proc>
                     <reason></reason>
                     <ifs>
                         <if>
-                            <var>Еда справа.name</var>
+                            <var>Ячейка справа.Игровой объект.name</var>
                             <sign>=</sign>
                             <val>Еда</val>
                         </if>
@@ -2497,7 +2507,7 @@ Cell.Y=y-1;</proc>
                     <reason></reason>
                     <ifs>
                         <if>
-                            <var>Еда сверху.name</var>
+                            <var>Ячейка сверху.Игровой объект.name</var>
                             <sign>=</sign>
                             <val>Еда</val>
                         </if>
@@ -2518,7 +2528,7 @@ Cell.Y=y-1;</proc>
                     <reason></reason>
                     <ifs>
                         <if>
-                            <var>Еда снизу.name</var>
+                            <var>Ячейка снизу.Игровой объект.name</var>
                             <sign>=</sign>
                             <val>Еда</val>
                         </if>
@@ -2732,6 +2742,57 @@ Cell.Y=y-1;</proc>
                         </then>
                     </thens>
                 </rule>
+                <rule Name="Rule2">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка справа.Игровой объект.name</var>
+                            <sign>=</sign>
+                            <val>Еда</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Еда есть</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule3">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка сверху.Игровой объект.name</var>
+                            <sign>=</sign>
+                            <val>Еда</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Еда есть</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule4">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка снизу.Игровой объект.name</var>
+                            <sign>=</sign>
+                            <val>Еда</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Еда есть</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
             </rules>
         </production>
         <production name="маложизни">
@@ -2740,7 +2801,7 @@ Cell.Y=y-1;</proc>
                     <reason></reason>
                     <ifs>
                         <if>
-                            <var>Игрок.Уровень жизни</var>
+                            <var>Ячейка Игрока.Игровой объект.Уровень жизни</var>
                             <sign>=</sign>
                             <val>1</val>
                         </if>
@@ -2757,7 +2818,7 @@ Cell.Y=y-1;</proc>
                     <reason></reason>
                     <ifs>
                         <if>
-                            <var>Игрок.Уровень жизни</var>
+                            <var>Ячейка Игрока.Игровой объект.Уровень жизни</var>
                             <sign>=</sign>
                             <val>2</val>
                         </if>
@@ -2778,7 +2839,7 @@ Cell.Y=y-1;</proc>
                     <reason></reason>
                     <ifs>
                         <if>
-                            <var>Игрок.Уровень жизни</var>
+                            <var>Ячейка Игрока.Игровой объект.Уровень жизни</var>
                             <sign>=</sign>
                             <val>5</val>
                         </if>
@@ -2795,7 +2856,7 @@ Cell.Y=y-1;</proc>
                     <reason></reason>
                     <ifs>
                         <if>
-                            <var>Игрок.Уровень жизни</var>
+                            <var>Ячейка Игрока.Игровой объект.Уровень жизни</var>
                             <sign>=</sign>
                             <val>4</val>
                         </if>
@@ -2812,7 +2873,7 @@ Cell.Y=y-1;</proc>
                     <reason></reason>
                     <ifs>
                         <if>
-                            <var>Игрок.Уровень жизни</var>
+                            <var>Ячейка Игрока.Игровой объект.Уровень жизни</var>
                             <sign>=</sign>
                             <val>3</val>
                         </if>
@@ -3085,7 +3146,7 @@ Cell.Y=y-1;</proc>
         <item x="-561.05" title="Враг снизу" y="612.9999999999999" id="39"/>
         <item x="-365.5108177031251" title="Враг справа" y="427.5365416249999" id="40"/>
         <item x="-540.35" title="Враг сверху" y="437.0500000000003" id="41"/>
-        <item x="394" title="Еда слева" y="642" id="42"/>
+        <item x="382" title="Еда слева" y="614" id="42"/>
         <item x="610" title="Еда справа" y="750.0608177031252" id="43"/>
         <item x="602.40976746875" title="Еда сверху" y="634.0608177031252" id="44"/>
         <item x="481" title="Еда снизу" y="849.0608177031252" id="45"/>

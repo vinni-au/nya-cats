@@ -71,6 +71,7 @@ protected:
     int m_Padding;
     bool m_FullSearch;
     bool m_GameContinues;
+	bool m_RandomBind;
 
 public:
     MLV(NKBManager* manager, Grid* grid);
@@ -93,6 +94,8 @@ public:
     QList<NFrame*>* workMemory() {return &m_WorkMemory;}
     bool GetFullSearch() {return m_FullSearch;}
     void SetFullSearch(bool b) {m_FullSearch = b;}
+	bool GetRandomBind() {return m_RandomBind;}
+	void SetRandomBind(bool b) {m_RandomBind = b;}
 
     bool isGameContinues();                                 //запущена ли в данный момент игра
 	QList<NFrame*> getSituationInstanceList();
@@ -109,9 +112,10 @@ protected:
 	void UpdateCell(NFrame* cellInst, NFrame* imageFrame);
 
     bool BindFrame(NFrame* frame, bool fillDefault = false);
-    bool BindSlot(NFrame* frame, NSlot* slot);
+    bool BindSlot(NFrame* frame, NSlot* slot, bool fillDefault = false);
     NFrame* BindPerson(NFrame* frame);
     NFrame* BindPerson(int x, int y);
+	void FillSubSituation(NFrame* mainSit, NFrame* subSit);
 
 
 	bool DoCell(NFrame* cell);
@@ -126,7 +130,7 @@ protected:
 
     QVariant GetSlotValue(NFrame* frame, QString slotName, bool findInParents = false);
 	NFrame* GetSubframe(NFrame* frame, QString slotName, bool findInParents = false);
-	void SetSubframe(NFrame* frame, QString slotName, NFrame* subframe);
+	void SetSubframe(NFrame* frame, QString slotName, NFrame* subframe, bool findInParents = false);
 
     void DoAction(NFrame* frameSituation);
 

@@ -10,6 +10,7 @@ MLV::MLV(NKBManager* manager, Grid* grid) :
   ,m_Padding(0)
   ,m_FullSearch(false)
   ,m_GameContinues(false)
+  ,m_RandomBind(true)
 {
 }
 
@@ -248,9 +249,9 @@ NFrame* MLV::GetSubframe(NFrame* frame, QString slotName, bool findInParents)
 	return (NFrame*)GetSlotValue(frame, slotName, findInParents).toLongLong();
 }
 
-void MLV::SetSubframe(NFrame* frame, QString slotName, NFrame* subframe)
+void MLV::SetSubframe(NFrame* frame, QString slotName, NFrame* subframe, bool findInParents)
 {
-	 SetSlotValueVariant(frame, slotName, QVariant(reinterpret_cast<long long>(subframe)));
+	 SetSlotValueVariant(frame, slotName, QVariant(reinterpret_cast<long long>(subframe)), findInParents);
 }
 
 QList<NFrame*> MLV::getFrameLeaf(NFrame* root)
@@ -327,7 +328,7 @@ NFrame* MLV::GetGameInst(NFrame* cell)
 void MLV::InitNeighborSituation(NFrame* frameSituation, NFrame* cell, QString Name)
 {
 	if (IsContainGameItem(cell))
-		SetSubframe(frameSituation, Name, cell);
+		SetSubframe(frameSituation, Name, cell, true);
 	else
 		frameSituation->removeSlot(Name);
 }
@@ -689,6 +690,32 @@ NFrame* MLV::BindPerson(NFrame* cell)
     return NULL;
 }
 
+void MLV::FillSubSituation(NFrame* mainSit, NFrame* subSit)
+{
+	if (mainSit == NULL || subSit == NULL)
+		return;
+
+	if (!m_KBManager->HasParentWithName(mainSit, SYSSTR_FRAMENAME_SITUATION) ||
+		!m_KBManager->HasParentWithName(subSit, SYSSTR_FRAMENAME_SITUATION))
+		return;
+
+	NFrame* gamerCell = GetSubframe(mainSit, SYSSTR_SLOTNAME_CELL_GAMER, true);
+	SetSubframe(subSit, SYSSTR_SLOTNAME_CELL_GAMER, gamerCell, true);
+
+	int x = GetSlotValue(gamerCell, SYSSTR_SLOTNAME_X).toInt();
+	int y = GetSlotValue(gamerCell, SYSSTR_SLOTNAME_Y).toInt();
+
+	NFrame *cframe = 0;
+	cframe = FindCell(x, y - 1);
+	InitNeighborSituation(subSit, cframe, SYSSTR_SLOTNAME_CELL_TOP);
+	cframe = FindCell(x, y + 1);
+	InitNeighborSituation(subSit, cframe, SYSSTR_SLOTNAME_CELL_BOTTOM);
+	cframe = FindCell(x + 1, y);
+	InitNeighborSituation(subSit, cframe, SYSSTR_SLOTNAME_CELL_RIGTH);
+	cframe = FindCell(x - 1, y);
+	InitNeighborSituation(subSit, cframe, SYSSTR_SLOTNAME_CELL_LEFT);
+}
+
 //////////////////////////////////////////////////////////////////////////
 // ЯДРО МВЛ: ПРИВЯЗКА ФРЕЙМА, СЛОТА
 bool MLV::BindFrame(NFrame *frame, bool fillDefault)
@@ -751,17 +778,39 @@ bool MLV::BindFrame(NFrame *frame, bool fillDefault)
 
         // Пытаемся привязать потомков
         QList<NFrame*> children = m_KBManager->GetFrameChildren(frameInst);
-        for (int i = 0; i < children.count(); i++)
-        {
-            NFrame* frameInst1 = CreateFrameInstance(children[i]->frameName(), fillDefault);
-            if (frameInst1)
-            {
-                SetSubframe(frameInst1, SYSSTR_SLOTNAME_ISA, frameInst);
-                bool end = BindFrame(frameInst1, fillDefault);
-                if (end && !m_FullSearch)
-                    break;
-            }
-        }
+
+		if (!m_RandomBind)
+		{
+			for (int i = 0; i < children.count(); i++)
+			{
+				NFrame* frameInst1 = CreateFrameInstance(children[i]->frameName(), fillDefault);
+				if (frameInst1)
+				{
+					SetSubframe(frameInst1, SYSSTR_SLOTNAME_ISA, frameInst);
+					bool end = BindFrame(frameInst1, fillDefault);
+					if (end && !m_FullSearch)
+						break;
+				}
+			}
+		}
+		else
+		{
+			while (children.size() > 0)
+			{
+				int count = children.size();
+				int randIndex = qrand() % count;
+				NFrame* child = children[randIndex];
+				NFrame* frameInst1 = CreateFrameInstance(child->frameName(), fillDefault);
+				if (frameInst1)
+				{
+					SetSubframe(frameInst1, SYSSTR_SLOTNAME_ISA, frameInst);
+					bool end = BindFrame(frameInst1, fillDefault);
+					if (end && !m_FullSearch)
+						break;
+				}
+				children.removeAt(randIndex);
+			}
+		}
     }
 
     m_Padding -= 1;
@@ -769,7 +818,7 @@ bool MLV::BindFrame(NFrame *frame, bool fillDefault)
     return retn;
 }
 
-bool MLV::BindSlot(NFrame* frame, NSlot *slot)
+bool MLV::BindSlot(NFrame* frame, NSlot *slot, bool fillDefault)
 {
     qDebug()<<"bool MLV::BindSlot(NFrame* frame, NSlot *slot)";
     bool retn = false;
@@ -785,9 +834,10 @@ bool MLV::BindSlot(NFrame* frame, NSlot *slot)
         {
             // Создаем экземпляр
             QString subframeName = slot->defValue().toString();
-            subframe = CreateFrameInstance(subframeName);
+            subframe = CreateFrameInstanceFull(subframeName, fillDefault);
             if (!subframe)
                 return false;
+			FillSubSituation(frame, subframe);
             SetSubframe(frame, slot->name(), subframe);
         }
 

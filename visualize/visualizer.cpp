@@ -101,7 +101,7 @@ QColor& Visualizer::GetNextColor()
 			255 - m_ColCount * 100,
 			m_ColCount * 10,
 			m_ColCount * 100,
-			200
+			150
 		);
 	m_ColCount++;
 	return *color;
