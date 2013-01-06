@@ -681,7 +681,7 @@ NFrame* MLV::BindPerson(NFrame* cell)
         InitNeighborSituation(frameSituation, cframe, SYSSTR_SLOTNAME_CELL_LEFT);
     }
 
-    bool retn = BindFrame(frameSituation);
+    bool retn = BindFrame(frameSituation, true);
     AddMsgToLog(GetSpaces(m_Padding) + "'" + frame->frameName().toUpper() + "' - конец вывода");
     AddMsgToLog("");
 
@@ -718,7 +718,7 @@ void MLV::FillSubSituation(NFrame* mainSit, NFrame* subSit)
 
 //////////////////////////////////////////////////////////////////////////
 // ЯДРО МВЛ: ПРИВЯЗКА ФРЕЙМА, СЛОТА
-bool MLV::BindFrame(NFrame *frame, bool fillDefault)
+bool MLV::BindFrame(NFrame *frame, bool fillDefault, bool bindChildren)
 {
     qDebug()<<"bool MLV::BindFrame(NFrame *frame)";
     bool retn = true;
@@ -771,7 +771,7 @@ bool MLV::BindFrame(NFrame *frame, bool fillDefault)
     AddMsgToLog(GetSpaces(m_Padding) + "Фрейм '" + frameInst->frameName().toUpper() + str);
 
 
-    if (retn)
+    if (retn && bindChildren)
     {
 		if (!m_WorkMemory.contains(frameInst))
 			m_WorkMemory.append(frameInst);
@@ -842,7 +842,7 @@ bool MLV::BindSlot(NFrame* frame, NSlot *slot, bool fillDefault)
         }
 
         // Вызваем привязку экземпляра
-        return BindFrame(subframe);
+        return BindFrame(subframe, false, false);
     }
 
     m_Padding += 1;

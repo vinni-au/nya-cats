@@ -111,7 +111,7 @@ protected:
     void UpdateGrid();
 	void UpdateCell(NFrame* cellInst, NFrame* imageFrame);
 
-    bool BindFrame(NFrame* frame, bool fillDefault = false);
+    bool BindFrame(NFrame* frame, bool fillDefault = false, bool bindChildren = true);
     bool BindSlot(NFrame* frame, NSlot* slot, bool fillDefault = false);
     NFrame* BindPerson(NFrame* frame);
     NFrame* BindPerson(int x, int y);
