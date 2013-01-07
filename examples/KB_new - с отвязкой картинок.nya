@@ -1064,7 +1064,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
+                        <faset value="test" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -1128,7 +1128,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
+                        <faset value="test" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -2265,6 +2265,7 @@ RightCell.X=RightCell.X-1;</proc>
 LeftCell.X=LeftCell.X+1;</proc>
         <proc name="proc_врагСверху">var y=Cell.Y;
 Cell.Y=y-1;</proc>
+        <proc name="test">Cell.getMan();</proc>
     </procs>
     <productions>
         <production name="врагслева">
