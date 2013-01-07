@@ -11,6 +11,9 @@ class QSProxy : public QObject
 public:
     explicit QSProxy(NFrame *frame,QScriptEngine *engine,QObject *parent = 0);
 
+
+    Q_INVOKABLE QVariant getSlotValue(QString slotName);
+    Q_INVOKABLE void setSlotValue(QString slotName,QVariant value);
 signals:
 
 public slots:

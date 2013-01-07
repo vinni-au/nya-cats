@@ -6,6 +6,7 @@
 #include "qsproxy.h"
 #include <QScriptEngine>
 #include "qsproxyman.h"
+#include "qsproxygameobject.h"
 #include "mlv/mlv.h"
 #include "mlv/mlv_define.h"
 
@@ -22,6 +23,7 @@ public:
 
     Q_INVOKABLE QScriptValue getMan();
     Q_INVOKABLE QScriptValue getFood();
+    Q_INVOKABLE QScriptValue getGameObject();
 
     Q_INVOKABLE void Clear();
 

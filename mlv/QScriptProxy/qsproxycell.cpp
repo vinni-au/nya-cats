@@ -16,6 +16,17 @@ QScriptValue QSProxyCell::getMan()
     return objectMan;
 }
 
+QScriptValue QSProxyCell::getGameObject()
+{
+    NSlot* slot = m_frame->getSlotByName(SYSSTR_SLOTNAME_GAMEITEM);
+    NFrame* go = (NFrame*)slot->getFasetByName("value")->value().toLongLong();
+    //окружение скрипта
+    QSProxyGameObject *proxyGO = new QSProxyGameObject(go, 0);
+
+    QScriptValue objectGO = m_engine->newQObject(proxyGO);
+    return objectGO;
+}
+
 bool QSProxyCell::hasGameObject(QString objName)
 {
     NSlot* slot = m_frame->getSlotByName(SYSSTR_SLOTNAME_GAMEITEM);

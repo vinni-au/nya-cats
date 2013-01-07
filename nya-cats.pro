@@ -59,7 +59,8 @@ SOURCES += main.cpp\
     mlv/QScriptProxy/qsproxycell.cpp \
     mlv/QScriptProxy/qsproxy.cpp \
     mlv/QScriptProxy/qsproxyfood.cpp \
-    core/frame_model/nframenetmodelhierarchical.cpp
+    core/frame_model/nframenetmodelhierarchical.cpp \
+    mlv/QScriptProxy/qsproxygameobject.cpp
 
 HEADERS  += mainwindow.hpp \
     core/nslot.h \
@@ -109,7 +110,8 @@ HEADERS  += mainwindow.hpp \
     mlv/QScriptProxy/qsproxycell.h \
     mlv/QScriptProxy/qsproxy.h \
     mlv/QScriptProxy/qsproxyfood.h \
-    core/frame_model/nframenetmodelhierarchical.h
+    core/frame_model/nframenetmodelhierarchical.h \
+    mlv/QScriptProxy/qsproxygameobject.h
 
 FORMS    += mainwindow.ui \
     ui/frameeditorwnd.ui \

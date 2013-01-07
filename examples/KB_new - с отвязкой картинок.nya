@@ -2433,14 +2433,23 @@ RightCell.X=RightCell.X-1;</proc>
 LeftCell.X=LeftCell.X+1;</proc>
         <proc name="proc_врагСверху">var y=Cell.Y;
 Cell.Y=y-1;</proc>
-        <proc name="test">var man = Cell.getMan();
-if(RightCell.hasGameObject("Лучник"))
-{
-      Cell.Y++;
-}
-sys.ShowMsg( man.Life);
-man.Life = 3;
-sys.ShowMsg( man.Life);</proc>
+        <proc name="test">//var man = Cell.getMan();
+//if(RightCell.hasGameObject("Лучник"))
+//{
+  //    Cell.Y++;
+//}
+//sys.ShowMsg( man.Life);
+//man.Life = 3;
+//sys.ShowMsg( man.Life);
+
+var go = Cell.getGameObject();
+
+var val = go.getSlotValue("Уровень жизни");
+//sys.ShowMsg("Уровень жизни"+val);
+go.setSlotValue("Уровень жизни",1);
+//val = go.getSlotValue("Уровень жизни");
+//sys.ShowMsg("Уровень жизни"+val);
+</proc>
     </procs>
     <productions>
         <production name="врагслева">
