@@ -2252,6 +2252,174 @@
                 </slot>
             </slots>
         </frame>
+        <frame type="0" id="68" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Нечего делать" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Ячейка справа" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Ячейка игрового поля" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Ячейка слева" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Ячейка игрового поля" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Ячейка сверху" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Ячейка игрового поля" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Ячейка снизу" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Ячейка игрового поля" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Ячейка Игрока" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Ячейка игрового поля" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="69" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Некуда идти" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Ячейка слева" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Ячейка игрового поля" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Ячейка справа" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Ячейка игрового поля" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Ячейка снизу" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Ячейка игрового поля" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Ячейка сверху" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Ячейка игрового поля" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Ячейка Игрока" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Ячейка игрового поля" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
     </frames>
     <procs>
         <proc name="234">fhgudhg
@@ -3163,7 +3331,7 @@ Cell.Y=y-1;</proc>
         <item x="-252.9" title="Игровое поле" y="-251.9" id="0"/>
         <item x="-100.9" title="Ячейка игрового поля" y="-255.9" id="1"/>
         <item x="43.1" title="Игровой объект" y="-260.7000000000001" id="2"/>
-        <item x="-414.5403751249999" title="Пусто" y="-89.89630909374995" id="3"/>
+        <item x="-343.5403751249999" title="Пусто" y="-2.896309093749949" id="3"/>
         <item x="114.8803526406248" title="Персонаж" y="9.556331578125022" id="4"/>
         <item x="24.45462871874986" title="Военный" y="188.331005265625" id="5"/>
         <item x="155.6460540781249" title="Гражданский" y="161.7477569375" id="6"/>
@@ -3211,6 +3379,8 @@ Cell.Y=y-1;</proc>
         <item x="723" title="Изо лекарь много жизни" y="388" id="65"/>
         <item x="689" title="Изо лекарь средне жизни" y="449" id="66"/>
         <item x="666" title="Изо лекарь мало жизни" y="509" id="67"/>
+        <item x="-577" title="Нечего делать" y="-178" id="68"/>
+        <item x="-576" title="Некуда идти" y="-107" id="69"/>
         <link sid="1" did="0" text="sub"/>
         <link sid="4" did="2" text="is-a"/>
         <link sid="3" did="2" text="is-a"/>
@@ -3278,5 +3448,7 @@ Cell.Y=y-1;</proc>
         <link sid="65" did="50" text="is-a"/>
         <link sid="66" did="50" text="is-a"/>
         <link sid="67" did="50" text="is-a"/>
+        <link sid="1" did="68" text="sub"/>
+        <link sid="1" did="69" text="sub"/>
     </diagram>
 </kb>

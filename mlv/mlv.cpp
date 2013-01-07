@@ -563,8 +563,7 @@ void MLV::Step()
 void MLV::Step(int x, int y)
 {
     if (!m_Initialized || !m_GameContinues) return;
-    BindPerson(x, y);
-    UpdateGrid();
+    DoCell(x, y);
 }
 
 void MLV::Start(int x, int y)
@@ -613,6 +612,13 @@ bool MLV::DoCell(NFrame* cell)
 		// Выполняем действие для персонажа в зависимости от привязанной ситуации
 		if (situations.size() > 0)
 			DoAction(situations[0]);
+		else
+		{
+			// Если ни одна ситуация не привязалась - нечего делать
+			NFrame* nothingToDo = CreateFrameInstance(SYSSTR_FRAMENAME_NOTHING_TODO);
+			FillSituationByCell(cell, nothingToDo);
+			DoAction(nothingToDo);
+		}
 	}
 
 	// Привязываем изображение для всех игровых объектов
@@ -661,25 +667,8 @@ NFrame* MLV::BindPerson(NFrame* cell)
     AddMsgToLog(GetSpaces(m_Padding) + "Определяем ситуацию для '" + frame->frameName().toUpper() + "'");
 
     NFrame* frameSituation = CreateFrameInstance(SYSSTR_FRAMENAME_SITUATION, false);
-    SetSubframe(frameSituation, SYSSTR_SLOTNAME_CELL_GAMER, cell);
 
-
-    //////////////////////////
-    // Заполнение верха, низа, права, лева
-    {
-        int x = GetSlotValue(cell, SYSSTR_SLOTNAME_X).toInt();
-        int y = GetSlotValue(cell, SYSSTR_SLOTNAME_Y).toInt();
-
-        NFrame *cframe = 0;
-        cframe = FindCell(x, y - 1);
-        InitNeighborSituation(frameSituation, cframe, SYSSTR_SLOTNAME_CELL_TOP);
-        cframe = FindCell(x, y + 1);
-        InitNeighborSituation(frameSituation, cframe, SYSSTR_SLOTNAME_CELL_BOTTOM);
-        cframe = FindCell(x + 1, y);
-        InitNeighborSituation(frameSituation, cframe, SYSSTR_SLOTNAME_CELL_RIGTH);
-        cframe = FindCell(x - 1, y);
-        InitNeighborSituation(frameSituation, cframe, SYSSTR_SLOTNAME_CELL_LEFT);
-    }
+	FillSituationByCell(cell, frameSituation);
 
     bool retn = BindFrame(frameSituation, true);
     AddMsgToLog(GetSpaces(m_Padding) + "'" + frame->frameName().toUpper() + "' - конец вывода");
@@ -688,6 +677,27 @@ NFrame* MLV::BindPerson(NFrame* cell)
 	if (retn) 
 		return frameSituation;
     return NULL;
+}
+
+void MLV::FillSituationByCell(NFrame* cell, NFrame* situation)
+{
+	if (cell == NULL || situation == NULL)
+		return;
+
+	SetSubframe(situation, SYSSTR_SLOTNAME_CELL_GAMER, cell);
+
+	int x = GetSlotValue(cell, SYSSTR_SLOTNAME_X).toInt();
+	int y = GetSlotValue(cell, SYSSTR_SLOTNAME_Y).toInt();
+
+	NFrame *cframe = 0;
+	cframe = FindCell(x, y - 1);
+	InitNeighborSituation(situation, cframe, SYSSTR_SLOTNAME_CELL_TOP);
+	cframe = FindCell(x, y + 1);
+	InitNeighborSituation(situation, cframe, SYSSTR_SLOTNAME_CELL_BOTTOM);
+	cframe = FindCell(x + 1, y);
+	InitNeighborSituation(situation, cframe, SYSSTR_SLOTNAME_CELL_RIGTH);
+	cframe = FindCell(x - 1, y);
+	InitNeighborSituation(situation, cframe, SYSSTR_SLOTNAME_CELL_LEFT);
 }
 
 void MLV::FillSubSituation(NFrame* mainSit, NFrame* subSit)
@@ -700,20 +710,7 @@ void MLV::FillSubSituation(NFrame* mainSit, NFrame* subSit)
 		return;
 
 	NFrame* gamerCell = GetSubframe(mainSit, SYSSTR_SLOTNAME_CELL_GAMER, true);
-	SetSubframe(subSit, SYSSTR_SLOTNAME_CELL_GAMER, gamerCell, true);
-
-	int x = GetSlotValue(gamerCell, SYSSTR_SLOTNAME_X).toInt();
-	int y = GetSlotValue(gamerCell, SYSSTR_SLOTNAME_Y).toInt();
-
-	NFrame *cframe = 0;
-	cframe = FindCell(x, y - 1);
-	InitNeighborSituation(subSit, cframe, SYSSTR_SLOTNAME_CELL_TOP);
-	cframe = FindCell(x, y + 1);
-	InitNeighborSituation(subSit, cframe, SYSSTR_SLOTNAME_CELL_BOTTOM);
-	cframe = FindCell(x + 1, y);
-	InitNeighborSituation(subSit, cframe, SYSSTR_SLOTNAME_CELL_RIGTH);
-	cframe = FindCell(x - 1, y);
-	InitNeighborSituation(subSit, cframe, SYSSTR_SLOTNAME_CELL_LEFT);
+	FillSituationByCell(gamerCell, subSit);
 }
 
 //////////////////////////////////////////////////////////////////////////
