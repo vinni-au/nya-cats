@@ -14,6 +14,7 @@
 #include <QScriptEngine>
 #include "QScriptProxy/qsproxycell.h"
 #include "mlv_define.h"
+#include <QDateTime>
 
 
 class MLV : public QObject

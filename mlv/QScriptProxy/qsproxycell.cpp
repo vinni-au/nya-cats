@@ -51,8 +51,15 @@ QScriptValue QSProxyCell::getFood()
 }
 
 void QSProxyCell::Clear()
-{
+{//сделать через млв
+//    mlv.clearCell(m_frame)
+//    NSlot* slot = m_frame->getSlotByName(SYSSTR_SLOTNAME_GAMEITEM);
+//    NFaset* go = (NFrame*)slot->getFasetByName("value")->value().toLongLong();
+//    //окружение скрипта
+//    QSProxyGameObject *proxyGO = new QSProxyGameObject(go, 0);
 
+//    QScriptValue objectGO = m_engine->newQObject(proxyGO);
+//    return objectGO;
 }
 
 int QSProxyCell::X()

@@ -12,6 +12,7 @@ MLV::MLV(NKBManager* manager, Grid* grid) :
   ,m_GameContinues(false)
   ,m_RandomBind(true)
 {
+    qsrand ( QDateTime::currentDateTime().time().msec() );
 }
 
 
