@@ -98,6 +98,7 @@ protected:
 
 	// Работа с процедурами
     void DoAction(NFrame* frameSituation);
+    Q_INVOKABLE void ShowMsg(QString msg);
 	Q_INVOKABLE void NothingToGo(NFrame* cell);
 
     // Поиск в рабочей памяти

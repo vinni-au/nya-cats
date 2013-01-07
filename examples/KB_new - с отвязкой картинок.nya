@@ -2433,7 +2433,14 @@ RightCell.X=RightCell.X-1;</proc>
 LeftCell.X=LeftCell.X+1;</proc>
         <proc name="proc_врагСверху">var y=Cell.Y;
 Cell.Y=y-1;</proc>
-        <proc name="test">Cell.getMan();</proc>
+        <proc name="test">var man = Cell.getMan();
+if(RightCell.hasGameObject("Лучник"))
+{
+      Cell.Y++;
+}
+sys.ShowMsg( man.Life);
+man.Life = 3;
+sys.ShowMsg( man.Life);</proc>
     </procs>
     <productions>
         <production name="врагслева">
@@ -3000,6 +3007,57 @@ Cell.Y=y-1;</proc>
                         </then>
                     </thens>
                 </rule>
+                <rule Name="Rule3">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка Игрока.Игровой объект.Уровень жизни</var>
+                            <sign>=</sign>
+                            <val>3</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Мало жизни</var>
+                            <sign>=</sign>
+                            <val>Нет</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule4">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка Игрока.Игровой объект.Уровень жизни</var>
+                            <sign>=</sign>
+                            <val>4</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Мало жизни</var>
+                            <sign>=</sign>
+                            <val>Нет</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule5">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка Игрока.Игровой объект.Уровень жизни</var>
+                            <sign>=</sign>
+                            <val>5</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Мало жизни</var>
+                            <sign>=</sign>
+                            <val>Нет</val>
+                        </then>
+                    </thens>
+                </rule>
             </rules>
         </production>
         <production name="многожизни">
@@ -3052,6 +3110,40 @@ Cell.Y=y-1;</proc>
                             <var>Много жизни</var>
                             <sign>=</sign>
                             <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule4">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка Игрока.Игровой объект.Уровень жизни</var>
+                            <sign>=</sign>
+                            <val>2</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Много жизни</var>
+                            <sign>=</sign>
+                            <val>Нет</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule5">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка Игрока.Игровой объект.Уровень жизни</var>
+                            <sign>=</sign>
+                            <val>1</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Много жизни</var>
+                            <sign>=</sign>
+                            <val>Нет</val>
                         </then>
                     </thens>
                 </rule>

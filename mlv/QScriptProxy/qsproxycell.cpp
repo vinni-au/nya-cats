@@ -7,33 +7,32 @@ QSProxyCell::QSProxyCell(NFrame *cell,QScriptEngine *engine,QObject *parent) :
 
 QScriptValue QSProxyCell::getMan()
 {
-
-    NFrame* man = 0;//dffd;
-
+    NSlot* slot = m_frame->getSlotByName(SYSSTR_SLOTNAME_GAMEITEM);
+    NFrame* man = (NFrame*)slot->getFasetByName("value")->value().toLongLong();
     //окружение скрипта
     QSProxyMan *proxyMan = new QSProxyMan(man, 0);
 
     QScriptValue objectMan = m_engine->newQObject(proxyMan);
     return objectMan;
-
-//    engine->globalObject().setProperty("Me", objectMan);
-
-//    //запускаем скрипт
-//    QScriptValue result = engine->evaluate(script);
-//    int res = result.toInt32();
-//    if (result.isError());
-//        qDebug() << "Script error:" << result.toString();
 }
 
-bool QSProxyCell::hasMan()
+bool QSProxyCell::hasGameObject(QString objName)
 {
-    return false;
+    NSlot* slot = m_frame->getSlotByName(SYSSTR_SLOTNAME_GAMEITEM);
+    NFrame* gameObj = (NFrame*)slot->getFasetByName("value")->value().toLongLong();
+    if(!gameObj)
+        return false;
+    NSlot* name = gameObj->getSlotByName("name");
+
+    if(!name)
+        return false;
+
+    QString str_name = name->getFasetByName("default_value")->value().toString();
+
+    return str_name==objName ? true : false;
 }
 
-bool QSProxyCell::hasFood()
-{
-    return false;
-}
+
 
 QScriptValue QSProxyCell::getFood()
 {

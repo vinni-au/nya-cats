@@ -11,10 +11,14 @@ class QSProxyMan : public QSProxy
     Q_OBJECT
 
 
+    Q_PROPERTY(int Life READ Life WRITE setLife SCRIPTABLE true)
+
 public:
     explicit QSProxyMan(NFrame *man,QScriptEngine *engine,QObject *parent = 0);
 
 
+    int     Life();
+    void    setLife(int Life);
 
 signals:
 

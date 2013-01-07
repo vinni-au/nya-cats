@@ -937,6 +937,9 @@ void  MLV::DoAction(NFrame* frameSituation)
         engine->globalObject().setProperty("BottomCell", objectCellBottom);
     }
 
+    QScriptValue system = engine->newQObject(this);
+    engine->globalObject().setProperty("sys", system);
+
     //запускаем скрипт
     QScriptValue result = engine->evaluate(script);
     int res = result.toInt32();
@@ -945,6 +948,10 @@ void  MLV::DoAction(NFrame* frameSituation)
 
 }
 
+void MLV::ShowMsg(QString msg)
+{
+    QMessageBox::information(NULL,"",msg,QMessageBox::Ok);
+}
 void MLV::NothingToGo(NFrame* cell)
 {
 
