@@ -80,7 +80,7 @@ NFrame* MLV::FindByCell(int x, int y)
     if (!cell)
         return NULL;
 
-    NFrame* frame = GetSubframe(cell, SYSSTR_FRAMENAME_GAMEITEM);
+    NFrame* frame = GetGameInst(cell);
     return frame;
 }
 
@@ -873,6 +873,7 @@ bool MLV::BindSlot(NFrame* frame, NSlot *slot, bool fillDefault)
     m_Padding -= 1;
     return retn;
 }
+
 //////////////////////////////////////////////////////////////////////////
 // РАБОТА С ПРОЦЕДУРАМИ
 void  MLV::DoAction(NFrame* frameSituation)
@@ -941,5 +942,10 @@ void  MLV::DoAction(NFrame* frameSituation)
     int res = result.toInt32();
     if (result.isError());
         qDebug() << "Script error:" << result.toString();
+
+}
+
+void MLV::NothingToGo(NFrame* cell)
+{
 
 }

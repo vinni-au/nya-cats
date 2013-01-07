@@ -13,11 +13,7 @@
 #include "core/nslot.h"
 #include "core/nfaset.h"
 #include "core/nproc.h"
-
-#define SYSSTR_FRAMENAME_IMAGE		"Изображение"
-#define SYSSTR_SLOTNAME_PIC			"Картинка"
-#define SYSSTR_SLOTNAME_ITEMTYPE	"Тип"
-#define SYSSTR_DOMAINNAME_TEAMS		"Команды"
+#include "mlv/mlv_define.h"
 
 class Visualizer : public QWidget
 {

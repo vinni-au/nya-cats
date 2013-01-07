@@ -96,7 +96,9 @@ protected:
 	NFrame* GetSubframe(NFrame* frame, QString slotName, bool findInParents = false);
 	void SetSubframe(NFrame* frame, QString slotName, NFrame* subframe, bool findInParents = false);
 
+	// Работа с процедурами
     void DoAction(NFrame* frameSituation);
+	Q_INVOKABLE void NothingToGo(NFrame* cell);
 
     // Поиск в рабочей памяти
     NFrame* FindByProtName(QString name);   // Поиск по имени прототипа
@@ -106,12 +108,11 @@ protected:
 
     // Поиск в списке ячеек
     NFrame* FindByCell(int x, int y);
+	NFrame* FindCell(int x, int y);
 
     // Поиск в кеше
     NFrame* FindInCache(QString name);
     NFrame* FindInCache(int frameId);
-
-    NFrame* FindCell(int x, int y);
 
 	bool IsContainGameItem(NFrame* cell);
 	NFrame* GetGameInst(NFrame* cell);
