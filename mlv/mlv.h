@@ -82,8 +82,8 @@ protected:
 	void FillSubSituation(NFrame* mainSit, NFrame* subSit);
 	void FillSituationByCell(NFrame* cell, NFrame* situation);
 
-	bool DoCell(NFrame* cell);
-	bool DoCell(int x, int y);
+	void DoCell(NFrame* cell);
+	void DoCell(int x, int y);
 	NFrame* BindImage(NFrame* cell);
 
     NFrame* CreateFrameInstance(QString name, bool fillDefault = true);
@@ -99,7 +99,7 @@ protected:
 	// Работа с процедурами
     void DoAction(NFrame* frameSituation);
     Q_INVOKABLE void ShowMsg(QString msg);
-	Q_INVOKABLE void NothingToGo(NFrame* cell);
+	Q_INVOKABLE void NowhereToGo(NFrame* cell);
 
     // Поиск в рабочей памяти
     NFrame* FindByProtName(QString name);   // Поиск по имени прототипа

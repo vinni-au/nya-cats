@@ -587,21 +587,21 @@ void MLV::Stop()
 }
 
 // Обрабатываем ячейку игрового поля
-bool MLV::DoCell(int x, int y)
+void MLV::DoCell(int x, int y)
 {
 	NFrame* cell = FindCell(x ,y);
-	return DoCell(cell);
+	DoCell(cell);
 }
 
-bool MLV::DoCell(NFrame* cell)
+void MLV::DoCell(NFrame* cell)
 {
 	NFrame* frame = GetGameInst(cell);
-	if (!frame) return false;
+	if (!frame) return;
 
 	// Если в ячейке не игровой объект или пусто - ничего не делаем
 	if (!m_KBManager->HasParentWithName(frame, SYSSTR_FRAMENAME_GAMEITEM) ||
 		frame->name.defValue() == SYSSTR_FRAMENAME_EMPTY)
-		return false;
+		return;
 
 	// Привязываем ситуацию и выполняем действие только для персонажа
 	if (m_KBManager->HasParentWithName(frame, SYSSTR_FRAMENAME_PERSON))
@@ -759,7 +759,7 @@ bool MLV::BindFrame(NFrame *frame, bool fillDefault, bool bindChildren)
         if (nslots[i]->isSystem())
             continue;
 
-        retn &= BindSlot(frameInst, nslots[i]);
+        retn &= BindSlot(frameInst, nslots[i], fillDefault);
         if (!retn)
             break; // если хоть один слот не привязался, завершаем перебор
     }
@@ -839,7 +839,7 @@ bool MLV::BindSlot(NFrame* frame, NSlot *slot, bool fillDefault)
         }
 
         // Вызваем привязку экземпляра
-        return BindFrame(subframe, false, false);
+        return BindFrame(subframe, fillDefault, false);
     }
 
     m_Padding += 1;
@@ -952,7 +952,11 @@ void MLV::ShowMsg(QString msg)
 {
     QMessageBox::information(NULL,"",msg,QMessageBox::Ok);
 }
-void MLV::NothingToGo(NFrame* cell)
-{
 
+void MLV::NowhereToGo(NFrame* cell)
+{
+	// Если некуда идти
+	NFrame* nowhereToGo = CreateFrameInstance(SYSSTR_FRAMENAME_NOWHERE_TOGO);
+	FillSituationByCell(cell, nowhereToGo);
+	DoAction(nowhereToGo);
 }

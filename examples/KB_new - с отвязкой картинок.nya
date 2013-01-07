@@ -2280,7 +2280,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
+                        <faset value="нечегоделать" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -2364,7 +2364,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
+                        <faset value="некудаидти" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -2450,6 +2450,9 @@ go.setSlotValue("Уровень жизни",1);
 //val = go.getSlotValue("Уровень жизни");
 //sys.ShowMsg("Уровень жизни"+val);
 </proc>
+        <proc name="нечегоделать">Cell.getMan().Life--;
+sys.ShowMsg("Мне нечего делать!");</proc>
+        <proc name="некудаидти">sys.ShowMsg("Некуда идти!");</proc>
     </procs>
     <productions>
         <production name="врагслева">
