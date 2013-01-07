@@ -7,6 +7,7 @@
 #include <QScriptEngine>
 #include "qsproxyman.h"
 #include "mlv/mlv.h"
+#include "mlv/mlv_define.h"
 
 
 class QSProxyCell : public QSProxy
