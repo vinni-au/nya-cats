@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-	m_kbManager = new NKBManager();
+    m_kbManager = new NKBManager();
 
     viz = new Visualizer(m_kbManager, this);
     QHBoxLayout *layout = new QHBoxLayout;
@@ -27,6 +27,8 @@ MainWindow::MainWindow(QWidget *parent) :
                      SLOT(runMLV(int,int)));
 
     this->setWindowState(Qt::WindowMaximized);
+
+    QObject::connect(m_kbManager,SIGNAL(sigDirtyChanged(bool)),this,SLOT(onKBDirtyChanged(bool)));
 }
 
 MainWindow::~MainWindow()
@@ -99,7 +101,7 @@ void MainWindow::on_actOpen_triggered()
                 m_kbManager->setDirty(false);//иначе все дело портит вопрос
                 //statusBar()->showMessage(QString("Открыт файл: %1").arg(esFile),2000);
                 QMessageBox::information(this,"Информация","База знаний загружена",QMessageBox::Ok);
-				viz->RedrawItems();
+                viz->RedrawItems();
             }
         }
     }
@@ -108,6 +110,7 @@ void MainWindow::on_actOpen_triggered()
 void MainWindow::on_actClose_triggered()
 {
     on_actCreate_triggered();
+    viz->RedrawItems();
 }
 
 void MainWindow::on_actSave_triggered()
@@ -206,4 +209,9 @@ void MainWindow::on_actDoStep_triggered()
     if (!m_mlv) return;
     m_mlv->Step();
     ui->mainStatusBar->clearMessage();
+}
+
+void MainWindow::onKBDirtyChanged(bool)
+{
+    viz->RedrawItems();
 }

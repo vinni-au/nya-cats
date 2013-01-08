@@ -57,6 +57,8 @@ private slots:
 
     void on_actDoStep_triggered();
 
+    void onKBDirtyChanged(bool);
+
 private:
     Ui::MainWindow *ui;
 
