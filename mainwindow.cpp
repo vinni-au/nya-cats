@@ -201,6 +201,7 @@ void MainWindow::on_actStopGame_triggered()
 {
     if (!m_mlv) return;
     m_mlv->Stop();
+	m_mlvControl->show();
 }
 
 void MainWindow::on_actDoStep_triggered()
@@ -208,6 +209,7 @@ void MainWindow::on_actDoStep_triggered()
     ui->mainStatusBar->showMessage("Идет привязка...");
     if (!m_mlv) return;
     m_mlv->Step();
+	m_mlvControl->show();
     ui->mainStatusBar->clearMessage();
 }
 

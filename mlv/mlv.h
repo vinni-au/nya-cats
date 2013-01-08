@@ -131,6 +131,14 @@ public slots:
 signals:
     void AddMsgToLog(QString msg);
     void ClearLog();
+
+	// Для работы с LineOfReasoning
+	void LOR_AddRoot(QString name);
+	void LOR_AddNextLevel(QString name);
+	void LOR_AddCurrLevel(QString name);
+	void LOR_GotoPrevLevel();
+	void LOR_SetCurrState(bool bOk);
+	void LOR_Clear();
 };
 
 #endif // MLV_H

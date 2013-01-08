@@ -14,4 +14,8 @@
         <file>visualize/meat.gif</file>
         <file>visualize/war1.gif</file>
     </qresource>
+    <qresource prefix="/mlvcontrol">
+        <file>pics/fail.jpg</file>
+        <file>pics/ok.jpg</file>
+    </qresource>
 </RCC>

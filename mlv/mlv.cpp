@@ -488,9 +488,13 @@ void MLV::UpdateCell(NFrame* cellInst, NFrame* imageFrame)
 bool MLV::Init()
 {
     m_CellFrameInsts.clear();
+	m_ItemFrameInsts.clear();
     m_WorkMemory.clear();
     m_Cache.clear();
     m_KBManager->clearExemplarIds();
+	ClearLog();
+	LOR_Clear();
+	m_Initialized = false;
 
     // Экземпляр игрового поля
     m_GameFieldInst = CreateFrameInstanceFull(SYSSTR_FRAMENAME_GAMEFIELD);
@@ -541,10 +545,12 @@ bool MLV::Init()
 void MLV::Step()
 {
     if (!m_Initialized || !m_GameContinues) return;
-    qDebug()<<"void MLV::Step()";
 
     // Для каждого нового шага чистим рабочую память.
     m_WorkMemory.clear();
+	m_Cache.clear();
+	ClearLog();
+	LOR_Clear();
 
     // Загоняем в рабочую память экземпляр игрового поля, экземпляры ячеек и игровых объектов
     m_WorkMemory.append(m_GameFieldInst);
@@ -583,7 +589,6 @@ void MLV::Start()
 
 void MLV::Stop()
 {
-    m_GameFieldInst = false;
     m_GameContinues = false;
 }
 
@@ -641,7 +646,10 @@ NFrame* MLV::BindImage(NFrame* cell)
 	NFrame* frameImage = CreateFrameInstance(SYSSTR_FRAMENAME_IMAGE, false);
 	SetSubframe(frameImage, SYSSTR_FRAMENAME_GAMEITEM, item);
 
-	BindFrame(frameImage);
+	LOR_AddRoot("Определяем изображение для '" + item->frameName().toUpper() + "'");
+	bool retn = BindFrame(frameImage);
+	LOR_SetCurrState(retn);
+
 	QList<NFrame*> images = getImageInstanceList(item);
 	return images.size() > 0 ? images[0] : NULL;
 }
@@ -658,7 +666,6 @@ NFrame* MLV::BindPerson(int x, int y)
 
 NFrame* MLV::BindPerson(NFrame* cell)
 {
-    qDebug()<<"bool MLV::BindPerson(NFrame* cell)";
     if (!cell) return NULL;
 
     NFrame* frame = GetGameInst(cell);
@@ -668,10 +675,12 @@ NFrame* MLV::BindPerson(NFrame* cell)
     AddMsgToLog(GetSpaces(m_Padding) + "Определяем ситуацию для '" + frame->frameName().toUpper() + "'");
 
     NFrame* frameSituation = CreateFrameInstance(SYSSTR_FRAMENAME_SITUATION, false);
-
 	FillSituationByCell(cell, frameSituation);
 
+	LOR_AddRoot("Определяем ситуацию для '" + frame->frameName().toUpper() + "'");
     bool retn = BindFrame(frameSituation, true);
+	LOR_SetCurrState(retn);
+
     AddMsgToLog(GetSpaces(m_Padding) + "'" + frame->frameName().toUpper() + "' - конец вывода");
     AddMsgToLog("");
 
@@ -718,12 +727,9 @@ void MLV::FillSubSituation(NFrame* mainSit, NFrame* subSit)
 // ЯДРО МВЛ: ПРИВЯЗКА ФРЕЙМА, СЛОТА
 bool MLV::BindFrame(NFrame *frame, bool fillDefault, bool bindChildren)
 {
-    qDebug()<<"bool MLV::BindFrame(NFrame *frame)";
     bool retn = true;
     if (!frame)
         return false;
-
-    qDebug()<<frame->frameName();
 
     NFrame* frameInst = NULL;
     if (frame->frameType() == FrameType::prototype)
@@ -742,19 +748,16 @@ bool MLV::BindFrame(NFrame *frame, bool fillDefault, bool bindChildren)
         // Если фрейм есть в рабочей памяти, то считаем, что он уже привязан
         if (FindByPtr(frame) != NULL)
         {
-            qDebug()<<"Frame in a work memory";
-            return true;
+			return true;
         }
     }
 
     m_Padding += 1;
     AddMsgToLog(GetSpaces(m_Padding) + "Пытаемся привязать фрейм '" + frameInst->frameName().toUpper() + "'");
+	LOR_AddNextLevel("Фрейм: '" + frameInst->frameName().toUpper() + "'");
 
     // Пытаемся привязать слоты
     QList<NSlot*> nslots = m_KBManager->GetFrameSlots(frameInst);
-
-    qDebug()<<"Slots count: "<<nslots.count();
-
     for (int i = 0; i < nslots.count(); i++)
     {
         if (nslots[i]->isSystem())
@@ -785,8 +788,8 @@ bool MLV::BindFrame(NFrame *frame, bool fillDefault, bool bindChildren)
 				if (frameInst1)
 				{
 					SetSubframe(frameInst1, SYSSTR_SLOTNAME_ISA, frameInst);
-					bool end = BindFrame(frameInst1, fillDefault);
-					if (end && !m_FullSearch)
+					retn = BindFrame(frameInst1, fillDefault);
+					if (retn && !m_FullSearch)
 						break;
 				}
 			}
@@ -802,8 +805,8 @@ bool MLV::BindFrame(NFrame *frame, bool fillDefault, bool bindChildren)
 				if (frameInst1)
 				{
 					SetSubframe(frameInst1, SYSSTR_SLOTNAME_ISA, frameInst);
-					bool end = BindFrame(frameInst1, fillDefault);
-					if (end && !m_FullSearch)
+					retn = BindFrame(frameInst1, fillDefault);
+					if (retn && !m_FullSearch)
 						break;
 				}
 				children.removeAt(randIndex);
@@ -812,18 +815,18 @@ bool MLV::BindFrame(NFrame *frame, bool fillDefault, bool bindChildren)
     }
 
     m_Padding -= 1;
+	LOR_SetCurrState(retn);
+	LOR_GotoPrevLevel();
 
     return retn;
 }
 
 bool MLV::BindSlot(NFrame* frame, NSlot *slot, bool fillDefault)
 {
-    qDebug()<<"bool MLV::BindSlot(NFrame* frame, NSlot *slot)";
     bool retn = false;
     if (!slot || !frame)
         return false;
 
-    qDebug()<<slot->name();
     // Если субфрейм
     if (slot->getSlotType() == SYSSTR_SLOTTYPE_FRAME)
     {
@@ -867,11 +870,16 @@ bool MLV::BindSlot(NFrame* frame, NSlot *slot, bool fillDefault)
     QVariant slotValue = GetSlotValue(frame, slot->name());
     retn = slot->defValue() == slotValue;
 
-    qDebug()<<slot->defValue()<<" == "<<slotValue << "    " << retn;
-
     QString str = retn? "' привязался" :"' НЕ привязался";
     AddMsgToLog(GetSpaces(m_Padding) + "Cлот '" + slot->name().toUpper() + str);
     m_Padding -= 1;
+
+	QString lorstr = "Слот: " + slot->name().toUpper() + "=" + slotValue.toString() + 
+		" (задание отсутствия: " + slot->defValue().toString() + ")";
+	LOR_AddNextLevel(lorstr);
+	LOR_SetCurrState(retn);
+	LOR_GotoPrevLevel();
+
     return retn;
 }
 

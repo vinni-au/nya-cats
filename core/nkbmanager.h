@@ -144,6 +144,7 @@ public slots:
     void onDataChanged();
 
     void setDirty(bool dirty);
+	bool getDirty() {return m_dirty;}
 
     QFile* file();
     void setFile(QFile *file);

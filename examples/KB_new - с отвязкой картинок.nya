@@ -446,50 +446,6 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Высота" name="name"/>
-                        <faset value="int" name="slot_type"/>
-                        <faset value="1" name="default_value"/>
-                        <faset value="production" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Вскарабкиваемость" name="name"/>
-                        <faset value="Логический" name="slot_type"/>
-                        <faset value="TRUE" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-            </slots>
-        </frame>
-        <frame type="-12813191" id="11" system="0">
-            <slots>
-                <slot system="1">
-                    <fasets>
-                        <faset value="name" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="Фабрика" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="is_a" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Препятствие" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
             </slots>
         </frame>
         <frame type="196713" id="12" system="0">
@@ -878,11 +834,11 @@
                 </slot>
                 <slot system="0">
                     <fasets>
-                        <faset value="Еды нет" name="name"/>
+                        <faset value="Еда есть" name="name"/>
                         <faset value="ДаНет" name="slot_type"/>
-                        <faset value="Да" name="default_value"/>
+                        <faset value="Нет" name="default_value"/>
                         <faset value="production" name="marker_type"/>
-                        <faset value="едынет" name="marker"/>
+                        <faset value="естьеда" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -922,11 +878,11 @@
                 </slot>
                 <slot system="0">
                     <fasets>
-                        <faset value="Врагов нет" name="name"/>
+                        <faset value="Есть враги" name="name"/>
                         <faset value="ДаНет" name="slot_type"/>
                         <faset value="Нет" name="default_value"/>
                         <faset value="production" name="marker_type"/>
-                        <faset value="нетврагов" name="marker"/>
+                        <faset value="естьвраги" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -981,16 +937,6 @@
                         <faset value="Мало жизни" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="qwerty" name="name"/>
-                        <faset value="" name="slot_type"/>
-                        <faset value="" name="default_value"/>
-                        <faset value="production" name="marker_type"/>
-                        <faset value="врагслева" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -1663,40 +1609,6 @@
                         <faset value="Да" name="default_value"/>
                         <faset value="production" name="marker_type"/>
                         <faset value="снизуеда" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="action" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="" name="default_value"/>
-                        <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-            </slots>
-        </frame>
-        <frame type="0" id="46" system="0">
-            <slots>
-                <slot system="1">
-                    <fasets>
-                        <faset value="name" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="situation" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="is_a" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -2413,6 +2325,50 @@
                         <faset value="Ячейка Игрока" name="name"/>
                         <faset value="frame" name="slot_type"/>
                         <faset value="Ячейка игрового поля" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
+        <frame type="0" id="70" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Изображение препятствия" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Изображение" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Тип" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Препятствие" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="определитьТипПерсонажа" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="Картинка" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="D:\Develop\nya-cats\pics\stone.png" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -3385,6 +3341,23 @@ sys.ShowMsg("Мне нечего делать!");</proc>
                         </then>
                     </thens>
                 </rule>
+                <rule Name="Rule5">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игровой объект.name</var>
+                            <sign>=</sign>
+                            <val>Препятствие</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Тип</var>
+                            <sign>=</sign>
+                            <val>Препятствие</val>
+                        </then>
+                    </thens>
+                </rule>
             </rules>
         </production>
         <production name="едынет">
@@ -3421,14 +3394,97 @@ sys.ShowMsg("Мне нечего делать!");</proc>
                         </then>
                     </thens>
                 </rule>
+                <rule Name="Rule2">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка слева.Игровой объект.name</var>
+                            <sign>=</sign>
+                            <val>Еда</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Еды нет</var>
+                            <sign>=</sign>
+                            <val>Нет</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule3">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка снизу.Игровой объект.name</var>
+                            <sign>=</sign>
+                            <val>Еда</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Еды нет</var>
+                            <sign>=</sign>
+                            <val>Нет</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule4">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка справа.Игровой объект.name</var>
+                            <sign>=</sign>
+                            <val>Еда</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Еды нет</var>
+                            <sign>=</sign>
+                            <val>Нет</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule5">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка сверху.Игровой объект.name</var>
+                            <sign>=</sign>
+                            <val>Еда</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Еды нет</var>
+                            <sign>=</sign>
+                            <val>Нет</val>
+                        </then>
+                    </thens>
+                </rule>
             </rules>
         </production>
         <production name="нетврагов">
+            <rules/>
+        </production>
+        <production name="якамень">
             <rules>
                 <rule Name="Rule1">
                     <reason></reason>
-                    <ifs/>
-                    <thens/>
+                    <ifs>
+                        <if>
+                            <var>Игровой объект.name</var>
+                            <sign>=</sign>
+                            <val>Препятствие</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Тип</var>
+                            <sign>=</sign>
+                            <val>Препятствие</val>
+                        </then>
+                    </thens>
                 </rule>
             </rules>
         </production>
@@ -3445,7 +3501,6 @@ sys.ShowMsg("Мне нечего делать!");</proc>
         <item x="137.7856339843747" title="Лучник" y="346.66201053125" id="8"/>
         <item x="213.69789953125" title="Лекарь" y="262.322033015625" id="9"/>
         <item x="-7.914253593749891" title="Препятствие" y="-140.2791598124999" id="10"/>
-        <item x="5.015956453125099" title="Фабрика" y="-56.0967067031249" id="11"/>
         <item x="389.3310052656251" title="Еда" y="-249.3060765624999" id="12"/>
         <item x="-146.7217499999999" title="Ситуация" y="279.940375" id="23"/>
         <item x="-111.4821237080801" title="Простая ситуация" y="523.7323917949589" id="24"/>
@@ -3487,6 +3542,7 @@ sys.ShowMsg("Мне нечего делать!");</proc>
         <item x="666" title="Изо лекарь мало жизни" y="509" id="67"/>
         <item x="-577" title="Нечего делать" y="-178" id="68"/>
         <item x="-576" title="Некуда идти" y="-107" id="69"/>
+        <item x="327" title="Изображение препятствия" y="200" id="70"/>
         <link sid="1" did="0" text="sub"/>
         <link sid="4" did="2" text="is-a"/>
         <link sid="3" did="2" text="is-a"/>
@@ -3497,7 +3553,6 @@ sys.ShowMsg("Мне нечего делать!");</proc>
         <link sid="9" did="6" text="is-a"/>
         <link sid="6" did="4" text="is-a"/>
         <link sid="10" did="2" text="is-a"/>
-        <link sid="11" did="10" text="is-a"/>
         <link sid="12" did="2" text="is-a"/>
         <link sid="24" did="23" text="is-a"/>
         <link sid="25" did="23" text="is-a"/>
@@ -3556,5 +3611,6 @@ sys.ShowMsg("Мне нечего делать!");</proc>
         <link sid="67" did="50" text="is-a"/>
         <link sid="1" did="68" text="sub"/>
         <link sid="42" did="26" text="is-a"/>
+        <link sid="70" did="47" text="is-a"/>
     </diagram>
 </kb>
