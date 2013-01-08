@@ -954,10 +954,19 @@ void MLV::ShowMsg(QString msg)
     QMessageBox::information(NULL,"",msg,QMessageBox::Ok);
 }
 
-void MLV::NowhereToGo(NFrame* cell)
+void MLV::NowhereToGo(QScriptValue qsvCell)
 {
 	// Если некуда идти
-	NFrame* nowhereToGo = CreateFrameInstance(SYSSTR_FRAMENAME_NOWHERE_TOGO);
-	FillSituationByCell(cell, nowhereToGo);
-	DoAction(nowhereToGo);
+
+    QSProxyCell* qspCell = qobject_cast<QSProxyCell*>( qsvCell.toQObject());
+    if(!qspCell)
+        return;
+
+    NFrame* cell = qspCell->getFrame();
+    if(!cell)
+        return;
+
+    NFrame* nowhereToGo = CreateFrameInstance(SYSSTR_FRAMENAME_NOWHERE_TOGO);
+    FillSituationByCell(cell, nowhereToGo);
+    DoAction(nowhereToGo);
 }

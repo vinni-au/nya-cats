@@ -1320,7 +1320,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
+                        <faset value="test" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -2442,13 +2442,15 @@ Cell.Y=y-1;</proc>
 //man.Life = 3;
 //sys.ShowMsg( man.Life);
 
-var go = Cell.getGameObject();
+//var go = Cell.getGameObject();
 
-var val = go.getSlotValue("Уровень жизни");
+//var val = go.getSlotValue("Уровень жизни");
 //sys.ShowMsg("Уровень жизни"+val);
-go.setSlotValue("Уровень жизни",1);
+//go.setSlotValue("Уровень жизни",1);
 //val = go.getSlotValue("Уровень жизни");
 //sys.ShowMsg("Уровень жизни"+val);
+sys.ShowMsg("Уровень жизни");
+sys.NowhereToGo(Cell);
 </proc>
         <proc name="нечегоделать">Cell.getMan().Life--;
 sys.ShowMsg("Мне нечего делать!");</proc>

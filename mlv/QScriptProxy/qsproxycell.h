@@ -27,6 +27,7 @@ public:
 
     Q_INVOKABLE void Clear();
 
+    NFrame* getFrame();
 
     int     X();
     void    setX(int X);

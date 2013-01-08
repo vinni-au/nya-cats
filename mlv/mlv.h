@@ -100,7 +100,7 @@ protected:
 	// Работа с процедурами
     void DoAction(NFrame* frameSituation);
     Q_INVOKABLE void ShowMsg(QString msg);
-	Q_INVOKABLE void NowhereToGo(NFrame* cell);
+    Q_INVOKABLE void NowhereToGo(QScriptValue qsCell);
 
     // Поиск в рабочей памяти
     NFrame* FindByProtName(QString name);   // Поиск по имени прототипа

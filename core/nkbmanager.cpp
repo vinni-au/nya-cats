@@ -4,7 +4,7 @@ NKBManager::NKBManager(QObject *parent) :
     QObject(parent)
 {
     clearExemplarIds();
-    m_dirty = false;
+    setDirty(false);
     m_file = NULL;
     m_framenetModel = NULL;
 
@@ -563,7 +563,7 @@ NKBManager::readFromXml(QFile &file)
     //диаграммы
     m_diagramElement=kbEl.firstChildElement("diagram");
     file.close();
-    m_dirty=false;
+    setDirty(false);
     emit sigDataLoaded();
 }
 
@@ -586,7 +586,7 @@ NKBManager::save()
     QTextStream stream(m_file);
     saveToXml(stream);
     m_file->close();
-    m_dirty = false;
+    setDirty(false);
 }
 bool
 NKBManager::saveAs(QString filePath)
@@ -617,7 +617,7 @@ NKBManager::Open(QString filePath)
     m_file->open(QIODevice::ReadOnly);
     readFromXml(*newFile);
     m_file->close();
-    m_dirty=false;
+    setDirty(false);
     return true;
 }
 void//todo
@@ -635,13 +635,13 @@ NKBManager::Clear()
     m_diagramElement = QDomElement();
 
     m_file = NULL;
-    m_dirty = false;
+    setDirty(false);
 }
 void
 NKBManager::onDataChanged()
 {
     qDebug()<<"NKBManager::onDataChanged()";
-    m_dirty = true;
+    setDirty(true);
 }
 
 bool//todo
@@ -664,7 +664,7 @@ bool NKBManager::reload()
         m_file->close();
     }
 
-    m_dirty = false;
+    setDirty(false);
     return true;
 }
 
@@ -728,6 +728,7 @@ NFramenetModel *NKBManager::getFrameNetModel()
 void NKBManager::setDirty(bool dirty)
 {
     this->m_dirty = dirty;
+    emit sigDirtyChanged(dirty);
 }
 
 QFile* NKBManager::file()
@@ -805,7 +806,7 @@ void NKBManager::reloadProduction(NProduction *production)
     }
 
     file()->close();
-    m_dirty=false;
+    setDirty(false);
     emit sigDataLoaded();
 }
 

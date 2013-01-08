@@ -83,3 +83,8 @@ void QSProxyCell::setY(int Y)
 {
     m_frame->GetSlotFaset("y","value")->setValue(Y);
 }
+
+NFrame* QSProxyCell::getFrame()
+{
+    return m_frame;
+}

@@ -124,6 +124,8 @@ signals:
     void sigErrorWhileValidating(QString errorText);
 
     void sigFrameNameChanged(unsigned id,QString newName);
+
+    void sigDirtyChanged(bool dirty);
 public slots:
     ///От диаграмм
     void selectFrame(unsigned id);
