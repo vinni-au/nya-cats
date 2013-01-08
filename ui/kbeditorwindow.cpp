@@ -17,8 +17,7 @@ KBEditorWindow::KBEditorWindow(NKBManager *kbManager,MLV *mlv,QWidget *parent) :
     QMenu* contextMenu = new QMenu;
     contextMenu->addAction("Добавить фрейм", ui->btnAddFrame, SLOT(click()));
     contextMenu->addAction("Добавить фрейм ситуации", ui->btnAddFrameSituation, SLOT(click()));
-
-
+    contextMenu->addAction("Добавить фрейм картинки", ui->btnAddImage, SLOT(click()));
     ui->graphicsView->setContextMenu(contextMenu);
 
     QDomElement diagramElement = m_kbManager->diagramNode().toElement();
@@ -466,4 +465,28 @@ void KBEditorWindow::on_btnAddFrameSituation_clicked()
 void KBEditorWindow::on_chbAdmin_toggled(bool checked)
 {
     m_godMode = checked;
+}
+
+void KBEditorWindow::on_btnAddImage_clicked()
+{
+    bool ok;
+    if(gameIsStarted())
+        return;
+
+    QString name = QInputDialog::getText(this, "Создать фрейм картика", "Введите имя фрейма картинка:", QLineEdit::Normal, QString(), &ok);
+
+    if (ok && !name.isEmpty()) {
+        //Выполнить запрос к менеджеру БЗ на добавление фрейма
+        if(m_kbManager->addFrameImage(name))
+        {
+            //ok
+        }
+        else
+        {
+            QMessageBox::information(this,"","Не удалось добавить фрейм",QMessageBox::Ok);
+        }
+
+
+
+    }
 }

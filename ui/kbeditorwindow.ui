@@ -35,6 +35,13 @@
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="btnAddImage">
+        <property name="text">
+         <string>Добавить картинку</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QPushButton" name="btnDeleteFrame">
         <property name="text">
          <string>Удалить фрейм</string>

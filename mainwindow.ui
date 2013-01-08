@@ -152,6 +152,9 @@
    <property name="text">
     <string>Сделать шаг</string>
    </property>
+   <property name="shortcut">
+    <string>Space</string>
+   </property>
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

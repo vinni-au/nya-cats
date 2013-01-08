@@ -51,6 +51,8 @@ private slots:
 
     void on_chbAdmin_toggled(bool checked);
 
+    void on_btnAddImage_clicked();
+
 private:
     bool gameIsStarted();
 protected:

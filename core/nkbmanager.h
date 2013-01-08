@@ -132,6 +132,7 @@ public slots:
     //
     bool addFrame(QString name);
     bool addFrameSituation(QString name);
+    bool addFrameImage(QString name);
     bool deleteFrame(unsigned id);
     //source id, destination id
     bool addIsa(unsigned sid, unsigned did);

@@ -40,10 +40,14 @@ void MainWindow::runMLV(int x, int y)
     if (!m_mlv)
         return;
 
+    ui->mainStatusBar->showMessage("Идет привязка...");
+
     m_mlvControl->ClearLog();
     m_mlvControl->show();
     m_mlv->Start(x, y);
     m_mlvControl->setWorkMemory(m_mlv->workMemory());
+
+    ui->mainStatusBar->clearMessage();
 }
 
 void MainWindow::on_actExit_triggered()
@@ -181,11 +185,13 @@ void MainWindow::on_actDomainEditor_triggered()
 
 void MainWindow::on_actStartGame_triggered()
 {
+    ui->mainStatusBar->showMessage("Идет привязка...");
     if (!m_mlv) return;
     m_mlvControl->ClearLog();
     m_mlvControl->show();
     m_mlv->Start();
     m_mlvControl->setWorkMemory(m_mlv->workMemory());
+    ui->mainStatusBar->clearMessage();
 }
 
 void MainWindow::on_actStopGame_triggered()
@@ -196,6 +202,8 @@ void MainWindow::on_actStopGame_triggered()
 
 void MainWindow::on_actDoStep_triggered()
 {
+    ui->mainStatusBar->showMessage("Идет привязка...");
     if (!m_mlv) return;
     m_mlv->Step();
+    ui->mainStatusBar->clearMessage();
 }

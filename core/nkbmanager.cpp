@@ -111,6 +111,42 @@ bool NKBManager::addFrameSituation(QString name)
     return true;
 }
 
+bool NKBManager::addFrameImage(QString name)
+{
+    if(frameExists(name))
+        return false;
+
+    NFrame *frame = new NFrame(getFreeId());
+    frame->name.setDefValue(name);
+
+
+    //у фрейма картинки есть слот Картинка (системный)
+    NSlot* slot = new NSlot();
+    slot->setHasFasetValue(false);
+    slot->setName("Картинка");
+    slot->getFasetByName("slot_type")->setValue("string");
+    //slot->getFasetByName("marker_type")->setValue("procedure");
+    slot->setSystem(true);
+    frame->addSlot(slot);
+
+    //у фрейма картинки есть слот Тип
+    slot = new NSlot();
+    slot->setHasFasetValue(false);
+    slot->setName("Тип");
+    slot->getFasetByName("slot_type")->setValue("string");
+    slot->getFasetByName("marker_type")->setValue("production");
+    slot->setSystem(false);
+    frame->addSlot(slot);
+
+
+
+    m_frames.append(frame);
+    m_framenetModel->setFrames(&m_frames);
+    emit frameAdded(frame->id(), frame->name.defValue().toString());
+    setDirty(true);
+    return true;
+}
+
 bool NKBManager::deleteFrame(unsigned id)
 {
     NFrame *frame = getFrameById(id);
