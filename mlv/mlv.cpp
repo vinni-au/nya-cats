@@ -678,7 +678,7 @@ NFrame* MLV::BindPerson(NFrame* cell)
 	FillSituationByCell(cell, frameSituation);
 
 	LOR_AddRoot("Определяем ситуацию для '" + frame->frameName().toUpper() + "'");
-    bool retn = BindFrame(frameSituation, true);
+    bool retn = BindFrame(frameSituation);
 	LOR_SetCurrState(retn);
 
     AddMsgToLog(GetSpaces(m_Padding) + "'" + frame->frameName().toUpper() + "' - конец вывода");
