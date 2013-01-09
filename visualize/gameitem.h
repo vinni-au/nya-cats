@@ -39,6 +39,7 @@ public:
 
 	void UpdatePic(QString path);
 	void UpdateBrigth(int bright);
+	void UpdateColor(QColor& col);
 };
 
 #endif // GAMEITEM_H

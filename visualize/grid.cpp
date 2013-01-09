@@ -64,7 +64,7 @@ int Grid::GetSideCount()
 
 int Grid::GetCount()
 {
-    return m_Count * m_Count;
+    return m_Count;
 }
 
 GameItem* Grid::GetGameItem(int x, int y)

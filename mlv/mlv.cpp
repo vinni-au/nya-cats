@@ -1,18 +1,19 @@
 #include "mlv.h"
 #include <QList>
 
-MLV::MLV(NKBManager* manager, Grid* grid) :
+MLV::MLV(NKBManager* manager, Visualizer* viz) :
     QObject(0)
   ,m_KBManager(manager)
-  ,m_Grid(grid)
   ,m_Initialized(false)
   ,m_InstCount(0)
   ,m_Padding(0)
   ,m_FullSearch(false)
   ,m_GameContinues(false)
   ,m_RandomBind(true)
+  ,m_Viz(viz)
 {
     qsrand ( QDateTime::currentDateTime().time().msec() );
+	m_Grid = m_Viz->GetGrid();
 }
 
 
@@ -481,9 +482,21 @@ void MLV::UpdateCell(NFrame* cellInst, NFrame* imageFrame)
 	NFrame* itemInst = GetGameInst(cellInst);
 	if (itemInst == NULL) return;
 
+	// Обновляем положение игрового объекта на игровом поле
+	int newX = GetSlotValue(cellInst, SYSSTR_SLOTNAME_X, true).toInt();
+	int newY = GetSlotValue(cellInst, SYSSTR_SLOTNAME_Y, true).toInt();
+
+	QString type = GetSlotValue(itemInst, SYSSTR_SLOTNAME_NAME, true).toString();
+	QString team = GetSlotValue(itemInst, SYSSTR_SLOTNAME_TEAM, true).toString();
+
 	Cell* cell = m_Grid->FindCellByItemFrameId(itemInst->id());
-	if (cell == NULL) // Такого по идее быть не должно тут
-		return;
+	if (cell == NULL) // Это значит что на поле нет такого игрового итема
+	{
+		cell = m_Grid->GetCell(newX, newY);
+		if (cell == NULL) return;
+		QColor* col = m_Viz->GetColorByTeam(team);
+		cell->SetGameItem(new GameItem(type, QPixmap(), team, *col, itemInst->id()));
+	}
 
 	// Обновляем картинку, фон
 	GameItem* gameItem = cell->GetGameItem();
@@ -496,10 +509,6 @@ void MLV::UpdateCell(NFrame* cellInst, NFrame* imageFrame)
 	QVariant pic = GetSlotValue(imageFrame, SYSSTR_SLOTNAME_PIC, true);
 	if (!pic.isNull())
 		gameItem->UpdatePic(pic.toString());
-
-	// Обновляем положение игрового объекта на игровом поле
-	int newX = GetSlotValue(cellInst, SYSSTR_SLOTNAME_X, true).toInt();
-	int newY = GetSlotValue(cellInst, SYSSTR_SLOTNAME_Y, true).toInt();
 
 	int oldX = cell->GetX();
 	int oldY = cell->GetY();
@@ -602,6 +611,7 @@ void MLV::Step(int x, int y)
 
 void MLV::Start(int x, int y)
 {
+	if (m_GameContinues) return;
     if (!Init()) return;
     m_GameContinues = true;
     Step(x, y);
@@ -609,9 +619,37 @@ void MLV::Start(int x, int y)
 
 void MLV::Start()
 {
+	if (m_GameContinues) return;
     if (!Init()) return;
     m_GameContinues = true;
     Step();
+}
+
+void MLV::RandomStart()
+{
+	if (m_GameContinues) return;
+	if (!Init()) return;
+	m_GameContinues = true;
+
+	// Тут случайным образом заполняем поле
+	int field = m_Grid->GetCount() * m_Grid->GetCount() / 4;
+	int count = qrand() % field;
+	for (int i = 0; i < count; i++)
+	{
+		int x = qrand() % m_Grid->GetCount();
+		int y = qrand() % m_Grid->GetCount();
+		NFrame* itemInst = FindByCell(x, y);
+		
+		// Если ячейка свободна
+		if (itemInst == NULL || itemInst->frameName() == SYSSTR_FRAMENAME_EMPTY)
+		{
+			NFrame* cellInst = FindCell(x, y);
+			NFrame* newItemInst = CreateRandGameItemInst();
+			SetSubframe(cellInst, SYSSTR_SLOTNAME_GAMEITEM, newItemInst, true);
+		}
+	}
+	
+	Step();
 }
 
 void MLV::Stop()
@@ -631,6 +669,35 @@ NFrame* MLV::CreateGameItemInst(GameItem* gameItem)
 
 	// Заполняем значения команды
 	SetSlotValue(ItemInst, SYSSTR_SLOTNAME_TEAM, gameItem->GetTeam());
+	m_ItemFrameInsts.append(ItemInst);
+	m_WorkMemory.append(ItemInst);
+	return ItemInst;
+}
+
+NFrame* MLV::CreateRandGameItemInst()
+{
+	// Выбираем случайный игровой объект
+	NFrame* gameItem = m_KBManager->GetFrameByName(SYSSTR_FRAMENAME_GAMEITEM);
+	QList<NFrame*> itemsList = m_KBManager->getFrameLeaf(gameItem);
+	int randIndex = qrand() % itemsList.size();
+	NFrame* randItem = itemsList[randIndex];
+
+	// Создаем персонажа
+	NFrame* ItemInst = CreateFrameInstanceFull(randItem->frameName());
+
+	// Если персонаж, заполняем случайную команду и случайное здоровье
+	if (m_KBManager->HasParentWithName(ItemInst, SYSSTR_FRAMENAME_PERSON))
+	{
+		QVector<QString> teamsList = m_KBManager->GetDomainValsByString(SYSSTR_DOMAINNAME_TEAMS);
+		randIndex = qrand() % teamsList.size();
+		QString randTeam = teamsList[randIndex];
+
+		// Заполняем значение команды
+		SetSlotValue(ItemInst, SYSSTR_SLOTNAME_TEAM, randTeam);
+
+		// Заполняем значение здоровье
+		SetSlotValue(ItemInst, SYSSTR_SLOTNAME_HEALTH, qrand() % 5);
+	}
 	m_ItemFrameInsts.append(ItemInst);
 	m_WorkMemory.append(ItemInst);
 	return ItemInst;
@@ -686,8 +753,14 @@ void MLV::DoVisualizerCell(Cell* cell)
 		MoveItemInst(ItemInst, CellInst);
 	}
 
-	// Обработаем ячейку
-	DoCell(CellInst);
+	// Привязываем изображение
+	NFrame* imageFrame = BindImage(CellInst);
+
+	// Если изображение привязалось, обновляем поле визуализатора
+	if (imageFrame != NULL)
+	{
+		UpdateCell(CellInst, imageFrame);
+	}
 }
 
 // Обрабатываем ячейку игрового поля

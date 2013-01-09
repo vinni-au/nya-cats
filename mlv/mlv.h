@@ -24,6 +24,7 @@ protected:
     NKBManager* m_KBManager;
     NFrame* m_CurrFrame;
     Grid* m_Grid;
+	Visualizer* m_Viz;
     NFrame* m_GameFieldInst;            // Экземпляр фрейма игрового поля
     QList<NFrame*> m_CellFrameInsts;    // Экземпляры фреймов ячеек
 	QList<NFrame*> m_ItemFrameInsts;    // Экземпляры фреймов персонажей
@@ -38,9 +39,10 @@ protected:
 	bool m_RandomBind;
 
 public:
-    MLV(NKBManager* manager, Grid* grid);
+    MLV(NKBManager* manager, Visualizer* viz);
 
     void Start();
+	void RandomStart();
     void Start(int x, int y);
     void Step();
     void Step(int x, int y);
@@ -89,6 +91,7 @@ protected:
 	void DoCell(int x, int y);
 	NFrame* BindImage(NFrame* cell);
 
+	NFrame* CreateRandGameItemInst();
 	NFrame* CreateGameItemInst(GameItem* gameItem);
     NFrame* CreateFrameInstance(QString name, bool fillDefault = true);
     NFrame* CreateFrameInstanceFull(QString name, bool fillDefault = true);

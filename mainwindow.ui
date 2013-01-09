@@ -58,6 +58,7 @@
      <string>Игра</string>
     </property>
     <addaction name="actStartGame"/>
+    <addaction name="actStartRandGame"/>
     <addaction name="actDoStep"/>
     <addaction name="actStopGame"/>
    </widget>
@@ -171,6 +172,11 @@
    </property>
    <property name="shortcut">
     <string>Space</string>
+   </property>
+  </action>
+  <action name="actStartRandGame">
+   <property name="text">
+    <string>Случайная игра</string>
    </property>
   </action>
  </widget>

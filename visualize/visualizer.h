@@ -25,10 +25,12 @@ private:
 	QRectF		m_FactoryRect;
 	NKBManager* m_KBManager;
 
+	QMap<QString, QColor*> m_ColorTeamMap;
+
 private:
 	void populateScene();
 	QRectF& GetNextPos();
-	QColor& GetNextColor();
+	QColor* GetNextColor();
 
 public:
     Visualizer(NKBManager* kbManager, QWidget *parent = 0);
@@ -36,6 +38,7 @@ public:
     void Update();
     Grid* GetGrid();
 	void RedrawItems();
+	QColor* GetColorByTeam(QString team);
 
 signals:
 

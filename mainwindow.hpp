@@ -59,6 +59,8 @@ private slots:
 
     void onKBDirtyChanged(bool);
 
+	void on_actStartRandGame_triggered();
+
 private:
     Ui::MainWindow *ui;
 

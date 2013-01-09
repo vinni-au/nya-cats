@@ -38,3 +38,8 @@ void GameItem::UpdateBrigth(int bright)
 
 	m_Bright = bright;
 }
+
+void GameItem::UpdateColor(QColor& col)
+{
+	m_Color = col;
+}

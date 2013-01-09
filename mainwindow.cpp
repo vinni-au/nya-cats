@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent) :
     layout->addWidget(viz);
     ui->centralWidget->setLayout(layout);
 
-    m_mlv = new MLV(m_kbManager, viz->GetGrid());
+    m_mlv = new MLV(m_kbManager, viz);
 	//m_mlv->SetFullSearch(true);
     m_mlvControl = new MLVControl(m_mlv);
 
@@ -213,6 +213,17 @@ void MainWindow::on_actDoStep_triggered()
     m_mlv->Step();
 	m_mlvControl->show();
     ui->mainStatusBar->clearMessage();
+}
+
+void MainWindow::on_actStartRandGame_triggered()
+{
+	ui->mainStatusBar->showMessage("Идет привязка...");
+	if (!m_mlv) return;
+	m_mlvControl->ClearLog();
+	m_mlvControl->show();
+	m_mlv->RandomStart();
+	m_mlvControl->setWorkMemory(m_mlv->workMemory());
+	ui->mainStatusBar->clearMessage();
 }
 
 void MainWindow::onKBDirtyChanged(bool)

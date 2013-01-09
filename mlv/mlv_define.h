@@ -27,6 +27,7 @@
 #define SYSSTR_SLOTNAME_BRIGTNESS	"Яркость"
 #define SYSSTR_SLOTNAME_ITEMTYPE	"Тип"
 #define SYSSTR_SLOTNAME_GAMEITEM	"Игровой объект"
+#define SYSSTR_SLOTNAME_HEALTH		"Уровень жизни"
 
 #define SYSSTR_SLOTTYPE_FRAME		"frame"
 #define SYSSTR_SLOTTYPE_PRODUCTION	"production"
