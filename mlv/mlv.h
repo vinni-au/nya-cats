@@ -74,6 +74,7 @@ protected:
     bool Init();
     void UpdateGrid();
 	void UpdateCell(NFrame* cellInst, NFrame* imageFrame);
+	void ClearWorkMem();
 
     bool BindFrame(NFrame* frame, bool fillDefault = false, bool bindChildren = true);
     bool BindSlot(NFrame* frame, NSlot* slot, bool fillDefault = false);
@@ -83,10 +84,12 @@ protected:
 	void FillSubSituation(NFrame* mainSit, NFrame* subSit);
 	void FillSituationByCell(NFrame* cell, NFrame* situation);
 
+	void MoveItemInst(NFrame* itemInst, NFrame* toCellInst);
 	void DoCell(NFrame* cell);
 	void DoCell(int x, int y);
 	NFrame* BindImage(NFrame* cell);
 
+	NFrame* CreateGameItemInst(GameItem* gameItem);
     NFrame* CreateFrameInstance(QString name, bool fillDefault = true);
     NFrame* CreateFrameInstanceFull(QString name, bool fillDefault = true);
     bool SetSlotValue(NFrame* frame, QString slotName, int value);
@@ -96,6 +99,7 @@ protected:
     QVariant GetSlotValue(NFrame* frame, QString slotName, bool findInParents = false);
 	NFrame* GetSubframe(NFrame* frame, QString slotName, bool findInParents = false);
 	void SetSubframe(NFrame* frame, QString slotName, NFrame* subframe, bool findInParents = false);
+	void AddSubframe(NFrame* frame, QString slotName, NFrame* subframe, bool findInParents = false);
 
 	// Работа с процедурами
     void DoAction(NFrame* frameSituation);
@@ -111,6 +115,7 @@ protected:
     // Поиск в списке ячеек
     NFrame* FindByCell(int x, int y);
 	NFrame* FindCell(int x, int y);
+	NFrame* FindCellByItemInst(NFrame* itemInst);
 
     // Поиск в кеше
     NFrame* FindInCache(QString name);
@@ -127,6 +132,8 @@ public slots:
     QVariant getValSlot(int frameId, QString aimVar);
     bool setValSlot(int frameId, QString aimVar, QVariant value);
     bool getGameContinues() {return m_GameContinues;}
+
+	void DoVisualizerCell(Cell* cell);
 
 signals:
     void AddMsgToLog(QString msg);

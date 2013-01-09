@@ -14,8 +14,7 @@ protected:
     QColor              m_Color;
     QList<Cell*>        m_Cells;
     QGraphicsScene*     m_Scene;
-
-    Cell* m_contextMenuCell;
+    Cell*				m_contextMenuCell;
 
 public:
     Grid(int count, QRectF &rect, QColor &color, QGraphicsScene *scene);
@@ -36,10 +35,12 @@ public:
 
 signals:
     void sigFindOutSituation(int x, int y);
+	void sigDoVisualizerCell(Cell* cell);
 
 private slots:
     void setContextMenuCell(Cell* cell);
     void findOutSituation();
+	void slotDoVisualizerCell(Cell* cell);
 };
 
 #endif // GAMEGRID_H

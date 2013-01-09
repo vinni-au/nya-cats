@@ -44,6 +44,7 @@ protected:
 
 signals:
     void contextMenuExecutedOn(Cell* cell);
+	void sigDoVisualizerCell(Cell* cell);
 };
 
 #endif // CELL_H

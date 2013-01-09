@@ -98,6 +98,22 @@ NFrame* MLV::FindCell(int x, int y)
     return NULL;
 }
 
+NFrame* MLV::FindCellByItemInst(NFrame* itemInst)
+{
+	if (itemInst == NULL)
+		return NULL;
+	for (int i = 0; i < m_CellFrameInsts.count(); i++)
+	{
+		NFrame* currInst = GetSubframe(m_CellFrameInsts[i], SYSSTR_SLOTNAME_GAMEITEM, true);
+		if (currInst == NULL) continue;
+		if (currInst->id() == itemInst->id())
+		{
+			return m_CellFrameInsts[i];
+		}
+	}
+	return NULL;
+}
+
 NFrame* MLV::FindInCache(QString name)
 {
     NFrame* frame = NULL;
@@ -223,7 +239,7 @@ bool MLV::SetSlotValue(NFrame* frame, QString slotName, QString value)
 
 QVariant MLV::GetSlotValue(NFrame* frame, QString slotName, bool findInParents)
 {
-    if (!frame)
+    if (frame == NULL || slotName.isNull())
         return QVariant();
 
     NSlot* slot = frame->getSlotByName(slotName);
@@ -253,6 +269,17 @@ NFrame* MLV::GetSubframe(NFrame* frame, QString slotName, bool findInParents)
 void MLV::SetSubframe(NFrame* frame, QString slotName, NFrame* subframe, bool findInParents)
 {
 	 SetSlotValueVariant(frame, slotName, QVariant(reinterpret_cast<long long>(subframe)), findInParents);
+}
+
+// TODO
+void MLV::AddSubframe(NFrame* frame, QString slotName, NFrame* subframe, bool findInParents)
+{
+	// Создаем слот субфрейма
+	NSlot* newSlot = new NSlot();
+	newSlot->setName(slotName);
+	frame->addSlot(newSlot);
+
+	SetSlotValueVariant(frame, slotName, QVariant(reinterpret_cast<long long>(subframe)), findInParents);
 }
 
 QList<NFrame*> MLV::getFrameLeaf(NFrame* root)
@@ -489,11 +516,9 @@ bool MLV::Init()
 {
     m_CellFrameInsts.clear();
 	m_ItemFrameInsts.clear();
-    m_WorkMemory.clear();
-    m_Cache.clear();
     m_KBManager->clearExemplarIds();
-	ClearLog();
-	LOR_Clear();
+	ClearWorkMem();
+	m_Cache.clear();
 	m_Initialized = false;
 
     // Экземпляр игрового поля
@@ -524,14 +549,12 @@ bool MLV::Init()
             }
             else
             {
-                // Создаем персонажа
-                ItemInst = CreateFrameInstanceFull(item->GetType());
-				// Сохраняем в итем игрового объекта ид экземпляра соотв. ему фрейма
-				item->SetFrameId(ItemInst->id());
-
-                // Заполняем значения команды
-                SetSlotValue(ItemInst, SYSSTR_SLOTNAME_TEAM, item->GetTeam());
-				m_ItemFrameInsts.append(ItemInst);
+				ItemInst = FindInCache(item->GetFrameId());
+				if (ItemInst == NULL)
+				{
+					// Создаем персонажа
+					ItemInst = CreateGameItemInst(item);
+				}
             }
 
             SetSubframe(CellInst, SYSSTR_FRAMENAME_GAMEITEM, ItemInst);
@@ -542,23 +565,26 @@ bool MLV::Init()
     return true;
 }
 
-void MLV::Step()
+void MLV::ClearWorkMem()
 {
-    if (!m_Initialized || !m_GameContinues) return;
-
-    // Для каждого нового шага чистим рабочую память.
-    m_WorkMemory.clear();
-	m_Cache.clear();
+	// Для каждого нового шага чистим рабочую память.
+	m_WorkMemory.clear();
 	ClearLog();
 	LOR_Clear();
 
-    // Загоняем в рабочую память экземпляр игрового поля, экземпляры ячеек и игровых объектов
-    m_WorkMemory.append(m_GameFieldInst);
-    for (int i = 0; i < m_CellFrameInsts.count(); i++)
-        m_WorkMemory.append(m_CellFrameInsts[i]);
+	// Загоняем в рабочую память экземпляр игрового поля, экземпляры ячеек и игровых объектов
+	m_WorkMemory.append(m_GameFieldInst);
+	for (int i = 0; i < m_CellFrameInsts.count(); i++)
+		m_WorkMemory.append(m_CellFrameInsts[i]);
 
-    for (int i = 0; i < m_ItemFrameInsts.count(); i++)
+	for (int i = 0; i < m_ItemFrameInsts.count(); i++)
 		m_WorkMemory.append(m_ItemFrameInsts[i]);
+}
+
+void MLV::Step()
+{
+    if (!m_Initialized || !m_GameContinues) return;
+	ClearWorkMem();
 
     // Пробегаем по всем ячейкам и обрабатывем игровые объекты в них
     for (int i = 0; i < m_CellFrameInsts.count(); i++)
@@ -570,6 +596,7 @@ void MLV::Step()
 void MLV::Step(int x, int y)
 {
     if (!m_Initialized || !m_GameContinues) return;
+	ClearWorkMem();
     DoCell(x, y);
 }
 
@@ -590,6 +617,77 @@ void MLV::Start()
 void MLV::Stop()
 {
     m_GameContinues = false;
+}
+
+NFrame* MLV::CreateGameItemInst(GameItem* gameItem)
+{
+	if (gameItem == NULL)
+		return NULL;
+
+	// Создаем персонажа
+	NFrame* ItemInst = CreateFrameInstanceFull(gameItem->GetType());
+	// Сохраняем в итем игрового объекта ид экземпляра соотв. ему фрейма
+	gameItem->SetFrameId(ItemInst->id());
+
+	// Заполняем значения команды
+	SetSlotValue(ItemInst, SYSSTR_SLOTNAME_TEAM, gameItem->GetTeam());
+	m_ItemFrameInsts.append(ItemInst);
+	m_WorkMemory.append(ItemInst);
+	return ItemInst;
+}
+
+void MLV::MoveItemInst(NFrame* itemInst, NFrame* toCellInst)
+{
+	NFrame* fromCell = FindCellByItemInst(itemInst);
+	if (fromCell != NULL)
+	{
+		NFrame* EmpryInst = CreateFrameInstanceFull(SYSSTR_FRAMENAME_EMPTY);
+		SetSubframe(fromCell, SYSSTR_FRAMENAME_GAMEITEM, EmpryInst);	
+	}
+	SetSubframe(toCellInst, SYSSTR_FRAMENAME_GAMEITEM, itemInst);
+}
+
+void MLV::DoVisualizerCell(Cell* cell)
+{
+	// Если игра еще не начата, то нужно делать полную инициализацию
+	if (!m_GameContinues) return;
+	if (cell == NULL || cell->GetGameItem() == NULL)
+		return;
+
+	ClearWorkMem();
+
+	NFrame* ItemInst = NULL;
+	GameItem* gameItem = cell->GetGameItem();
+
+	// Ищем экземпляр ячейки
+	NFrame* CellInst = FindCell(cell->GetX(), cell->GetY());
+	if (CellInst == NULL)
+	{
+		CellInst = CreateFrameInstanceFull(SYSSTR_FRAMENAME_GAMECELL);
+		if (!CellInst) return;
+		m_CellFrameInsts.append(CellInst);
+		if (gameItem == NULL)
+		{
+			NFrame* EmpryInst = CreateFrameInstanceFull(SYSSTR_FRAMENAME_EMPTY);
+			SetSubframe(CellInst, SYSSTR_FRAMENAME_GAMEITEM, EmpryInst);
+			return;
+		}
+	}
+
+	// Ищем экземпляр игрового объекта
+	ItemInst = FindInCache(gameItem->GetFrameId());
+	if (ItemInst == NULL)
+	{
+		ItemInst = CreateGameItemInst(gameItem);
+		SetSubframe(CellInst, SYSSTR_FRAMENAME_GAMEITEM, ItemInst);
+	}
+	else
+	{
+		MoveItemInst(ItemInst, CellInst);
+	}
+
+	// Обработаем ячейку
+	DoCell(CellInst);
 }
 
 // Обрабатываем ячейку игрового поля
@@ -646,7 +744,11 @@ NFrame* MLV::BindImage(NFrame* cell)
 	NFrame* frameImage = CreateFrameInstance(SYSSTR_FRAMENAME_IMAGE, false);
 	SetSubframe(frameImage, SYSSTR_FRAMENAME_GAMEITEM, item);
 
-	LOR_AddRoot("Определяем изображение для '" + item->frameName().toUpper() + "'");
+	QString x = GetSlotValue(cell, SYSSTR_SLOTNAME_X).toString();
+	QString y = GetSlotValue(cell, SYSSTR_SLOTNAME_Y).toString();
+
+	LOR_AddRoot("Определяем изображение для '" + item->frameName().toUpper() + 
+		" (" + x + "," + y + ")'");
 	bool retn = BindFrame(frameImage);
 	LOR_SetCurrState(retn);
 
@@ -677,7 +779,11 @@ NFrame* MLV::BindPerson(NFrame* cell)
     NFrame* frameSituation = CreateFrameInstance(SYSSTR_FRAMENAME_SITUATION, false);
 	FillSituationByCell(cell, frameSituation);
 
-	LOR_AddRoot("Определяем ситуацию для '" + frame->frameName().toUpper() + "'");
+	QString x = GetSlotValue(cell, SYSSTR_SLOTNAME_X).toString();
+	QString y = GetSlotValue(cell, SYSSTR_SLOTNAME_Y).toString();
+
+	LOR_AddRoot("Определяем ситуацию для '" + frame->frameName().toUpper() + 
+		" (" + x + "," + y + ")'");
     bool retn = BindFrame(frameSituation);
 	LOR_SetCurrState(retn);
 

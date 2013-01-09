@@ -1822,6 +1822,16 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Я персонаж" name="name"/>
+                        <faset value="ДаНет" name="slot_type"/>
+                        <faset value="Да" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="яперсонаж" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
             </slots>
         </frame>
         <frame type="0" id="58" system="0">
@@ -2388,7 +2398,7 @@
                     <fasets>
                         <faset value="Картинка" name="name"/>
                         <faset value="string" name="slot_type"/>
-                        <faset value="D:\Develop\nya-cats\pics\stone.png" name="default_value"/>
+                        <faset value=":/images/pics/stone.png" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -2770,15 +2780,15 @@ Cell.Y=y-1;</proc>
 //man.Life = 3;
 //sys.ShowMsg( man.Life);
 
-//var go = Cell.getGameObject();
+var go = Cell.getGameObject();
 
-//var val = go.getSlotValue("Уровень жизни");
+var val = go.getSlotValue("Уровень жизни");
 //sys.ShowMsg("Уровень жизни"+val);
-//go.setSlotValue("Уровень жизни",1);
+go.setSlotValue("Уровень жизни",1);
 //val = go.getSlotValue("Уровень жизни");
 //sys.ShowMsg("Уровень жизни"+val);
-sys.ShowMsg("Уровень жизни");
-sys.NowhereToGo(Cell);
+//sys.ShowMsg("Уровень жизни");
+//sys.NowhereToGo(Cell);
 </proc>
         <proc name="нечегоделать">Cell.getMan().Life--;
 sys.ShowMsg("Мне нечего делать!");</proc>
@@ -3239,6 +3249,80 @@ sys.ShowMsg("Мне нечего делать!");</proc>
                         </then>
                     </thens>
                 </rule>
+                <rule Name="Rule9">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка Игрока.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 1</val>
+                        </if>
+                        <if>
+                            <var>Ячейка слева.Игровой объект.Команда</var>
+                            <sign>!=</sign>
+                            <val>Команда 2</val>
+                        </if>
+                        <if>
+                            <var>Ячейка снизу.Игровой объект.Команда</var>
+                            <sign>!=</sign>
+                            <val>Команда 2</val>
+                        </if>
+                        <if>
+                            <var>Ячейка справа.Игровой объект.Команда</var>
+                            <sign>!=</sign>
+                            <val>Команда 2</val>
+                        </if>
+                        <if>
+                            <var>Ячейка сверху.Игровой объект.Команда</var>
+                            <sign>!=</sign>
+                            <val>Команда 2</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Есть враги</var>
+                            <sign>=</sign>
+                            <val>Нет</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule10">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка Игрока.Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 2</val>
+                        </if>
+                        <if>
+                            <var>Ячейка слева.Игровой объект.Команда</var>
+                            <sign>!=</sign>
+                            <val>Команда 1</val>
+                        </if>
+                        <if>
+                            <var>Ячейка снизу.Игровой объект.Команда</var>
+                            <sign>!=</sign>
+                            <val>Команда 1</val>
+                        </if>
+                        <if>
+                            <var>Ячейка справа.Игровой объект.Команда</var>
+                            <sign>!=</sign>
+                            <val>Команда 1</val>
+                        </if>
+                        <if>
+                            <var>Ячейка сверху.Игровой объект.Команда</var>
+                            <sign>!=</sign>
+                            <val>Команда 1</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Есть враги</var>
+                            <sign>=</sign>
+                            <val>Нет</val>
+                        </then>
+                    </thens>
+                </rule>
             </rules>
         </production>
         <production name="естьеда">
@@ -3308,6 +3392,38 @@ sys.ShowMsg("Мне нечего делать!");</proc>
                             <var>Еда есть</var>
                             <sign>=</sign>
                             <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule5">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка слева.Игровой объект.name</var>
+                            <sign>!=</sign>
+                            <val>Еда</val>
+                        </if>
+                        <if>
+                            <var>Ячейка справа.Игровой объект.name</var>
+                            <sign>!=</sign>
+                            <val>Еда</val>
+                        </if>
+                        <if>
+                            <var>Ячейка сверху.Игровой объект.name</var>
+                            <sign>!=</sign>
+                            <val>Еда</val>
+                        </if>
+                        <if>
+                            <var>Ячейка справа.Игровой объект.name</var>
+                            <sign>!=</sign>
+                            <val>Еда</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Еда есть</var>
+                            <sign>=</sign>
+                            <val>Нет</val>
                         </then>
                     </thens>
                 </rule>
@@ -4375,6 +4491,78 @@ sys.ShowMsg("Мне нечего делать!");</proc>
                             <var>Врага снизу нет</var>
                             <sign>=</sign>
                             <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+            </rules>
+        </production>
+        <production name="яперсонаж">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 1</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Я персонаж</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule2">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игровой объект.Команда</var>
+                            <sign>=</sign>
+                            <val>Команда 2</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Я персонаж</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule3">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игровой объект.name</var>
+                            <sign>=</sign>
+                            <val>Еда</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Я персонаж</var>
+                            <sign>=</sign>
+                            <val>Нет</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule4">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игровой объект.name</var>
+                            <sign>=</sign>
+                            <val>Препятствие</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Я персонаж</var>
+                            <sign>=</sign>
+                            <val>Нет</val>
                         </then>
                     </thens>
                 </rule>

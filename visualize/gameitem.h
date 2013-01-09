@@ -3,21 +3,6 @@
 
 #include <QtGui>
 
-enum GameItemType
-{
-    gitWarior,
-    gitHealer,
-    gitArcher,
-    gitMeat
-};
-
-enum GameTeam
-{
-    gtRed,
-    gtBlue,
-    gtNull
-};
-
 class GameItem;
 
 class GameMimeData : public QMimeData
@@ -42,7 +27,7 @@ protected:
 	int				m_Bright;
 
 public:
-    GameItem(QString type, QPixmap& pic, QString team, QColor color, int id = 0);
+    GameItem(QString type, QPixmap& pic, QString team, QColor color, int id = -1);
 	QString GetType() {return m_Type;}
 	QPixmap& GetPic() {return m_Pic;}
 	QString GetTeam() {return m_Team;}

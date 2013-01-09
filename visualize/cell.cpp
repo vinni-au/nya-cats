@@ -96,6 +96,7 @@ void Cell::dropEvent(QGraphicsSceneDragDropEvent *event)
     if (myData)
     {
         SetGameItem(myData->GetItem());
+		emit sigDoVisualizerCell(this);
     }
     update();
 }

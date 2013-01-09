@@ -138,19 +138,19 @@ NProductionMLV::ruleAccepted(Rule *rule)
             qDebug()<<"It is unknown var:"<<e->var;
             QString val = ProveAim(e->var);
             qDebug()<<"Value was got:"<<e->var<<" = "<<val;
-            if(val.isEmpty())
-            {
-                AddRuleUsed(rule->name,NProductionMLV::Rejected);
-                return false;//не удалось доказать
-            }
-            else
-            {
+//             if(val.isEmpty())
+//             {
+//                 AddRuleUsed(rule->name,NProductionMLV::Rejected);
+//                 return false;//не удалось доказать
+//             }
+//             else
+//             {
                 //добавляем переменную в список означенных переменных
                 AddVarUsed(e->var,val);
                 ConsVars.insert(e->var,val);//лишний раз
                 i--;
                 continue;
-            }
+			//}
         }
     }
 
