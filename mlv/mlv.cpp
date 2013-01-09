@@ -541,7 +541,7 @@ void MLV::ClearCell(NFrame* cellInst)
 		m_Cache.removeAll(itemInst);
 		Cell* cell = m_Grid->FindCellByItemFrameId(itemInst->id());
 		cell->SetGameItem(NULL);
-		delete itemInst;
+                //delete itemInst;
 	}
 
 	itemInst = CreateFrameInstanceFull(SYSSTR_FRAMENAME_EMPTY);

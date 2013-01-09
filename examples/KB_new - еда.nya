@@ -540,40 +540,6 @@
                 </slot>
             </slots>
         </frame>
-        <frame type="0" id="25" system="0">
-            <slots>
-                <slot system="1">
-                    <fasets>
-                        <faset value="name" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="Сложная ситуация" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="is_a" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Ситуация" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="action" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="" name="default_value"/>
-                        <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-            </slots>
-        </frame>
         <frame type="0" id="26" system="0">
             <slots>
                 <slot system="1">
@@ -618,138 +584,6 @@
                 </slot>
             </slots>
         </frame>
-        <frame type="0" id="27" system="0">
-            <slots>
-                <slot system="1">
-                    <fasets>
-                        <faset value="name" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="Есть враги" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="is_a" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Простая ситуация" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Есть враги" name="name"/>
-                        <faset value="ДаНет" name="slot_type"/>
-                        <faset value="Да" name="default_value"/>
-                        <faset value="production" name="marker_type"/>
-                        <faset value="естьвраги" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="action" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="" name="default_value"/>
-                        <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-            </slots>
-        </frame>
-        <frame type="0" id="28" system="0">
-            <slots>
-                <slot system="1">
-                    <fasets>
-                        <faset value="name" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="Мало жизни" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="is_a" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Простая ситуация" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Мало жизни" name="name"/>
-                        <faset value="ДаНет" name="slot_type"/>
-                        <faset value="Да" name="default_value"/>
-                        <faset value="production" name="marker_type"/>
-                        <faset value="маложизни" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="action" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="" name="default_value"/>
-                        <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-            </slots>
-        </frame>
-        <frame type="0" id="29" system="0">
-            <slots>
-                <slot system="1">
-                    <fasets>
-                        <faset value="name" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="Много жизни" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="is_a" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Простая ситуация" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Много жизни" name="name"/>
-                        <faset value="ДаНет" name="slot_type"/>
-                        <faset value="Да" name="default_value"/>
-                        <faset value="production" name="marker_type"/>
-                        <faset value="многожизни" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="action" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="" name="default_value"/>
-                        <faset value="procedure" name="marker_type"/>
-                        <faset value="proc_Много жизни" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-            </slots>
-        </frame>
         <frame type="0" id="30" system="0">
             <slots>
                 <slot system="1">
@@ -766,7 +600,7 @@
                     <fasets>
                         <faset value="is_a" name="name"/>
                         <faset value="frame" name="slot_type"/>
-                        <faset value="Сложная ситуация" name="default_value"/>
+                        <faset value="" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -778,46 +612,6 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Нет еды справа" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Нет еды справа" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Нет еды слева" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Нет еды слева" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Нет еды сверху" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Нет еды сверху" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Нет еды снизу" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Нет еды снизу" name="default_value"/>
-                        <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
@@ -840,7 +634,7 @@
                     <fasets>
                         <faset value="is_a" name="name"/>
                         <faset value="frame" name="slot_type"/>
-                        <faset value="Сложная ситуация" name="default_value"/>
+                        <faset value="" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -853,46 +647,6 @@
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
                         <faset value="proc_Нет врагов" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Нет врага справа" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Нет врага справа" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Нет врага слева" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Нет врага слева" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Нет врага сверху" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Нет врага сверху" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Нет врага снизу" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Нет врага снизу" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -914,7 +668,7 @@
                     <fasets>
                         <faset value="is_a" name="name"/>
                         <faset value="frame" name="slot_type"/>
-                        <faset value="Сложная ситуация" name="default_value"/>
+                        <faset value="" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -925,26 +679,6 @@
                         <faset value="Есть еда" name="name"/>
                         <faset value="frame" name="slot_type"/>
                         <faset value="Есть еда" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Есть враги" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Есть враги" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Мало жизни" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Мало жизни" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -978,7 +712,7 @@
                     <fasets>
                         <faset value="is_a" name="name"/>
                         <faset value="frame" name="slot_type"/>
-                        <faset value="Сложная ситуация" name="default_value"/>
+                        <faset value="" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -989,26 +723,6 @@
                         <faset value="Есть еда" name="name"/>
                         <faset value="frame" name="slot_type"/>
                         <faset value="Есть еда" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Есть враги" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Есть враги" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Много жизни" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Много жизни" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -1042,17 +756,7 @@
                     <fasets>
                         <faset value="is_a" name="name"/>
                         <faset value="frame" name="slot_type"/>
-                        <faset value="Сложная ситуация" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Есть враги" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Есть враги" name="default_value"/>
+                        <faset value="" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -1063,16 +767,6 @@
                         <faset value="Нет еды" name="name"/>
                         <faset value="frame" name="slot_type"/>
                         <faset value="Нет еды" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Много жизни" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Много жизни" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -1106,17 +800,7 @@
                     <fasets>
                         <faset value="is_a" name="name"/>
                         <faset value="frame" name="slot_type"/>
-                        <faset value="Сложная ситуация" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Есть враги" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Есть враги" name="default_value"/>
+                        <faset value="" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -1127,16 +811,6 @@
                         <faset value="Нет еды" name="name"/>
                         <faset value="frame" name="slot_type"/>
                         <faset value="Нет еды" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Мало жизни" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Мало жизни" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -1170,7 +844,7 @@
                     <fasets>
                         <faset value="is_a" name="name"/>
                         <faset value="frame" name="slot_type"/>
-                        <faset value="Сложная ситуация" name="default_value"/>
+                        <faset value="" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -1191,16 +865,6 @@
                         <faset value="Нет врагов" name="name"/>
                         <faset value="frame" name="slot_type"/>
                         <faset value="Нет врагов" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Мало жизни" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Мало жизни" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -1234,7 +898,7 @@
                     <fasets>
                         <faset value="is_a" name="name"/>
                         <faset value="frame" name="slot_type"/>
-                        <faset value="Сложная ситуация" name="default_value"/>
+                        <faset value="" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -1255,16 +919,6 @@
                         <faset value="Нет еды" name="name"/>
                         <faset value="frame" name="slot_type"/>
                         <faset value="Нет еды" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Много жизни" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Много жизни" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -1298,7 +952,7 @@
                     <fasets>
                         <faset value="is_a" name="name"/>
                         <faset value="frame" name="slot_type"/>
-                        <faset value="Есть враги" name="default_value"/>
+                        <faset value="" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -1342,7 +996,7 @@
                     <fasets>
                         <faset value="is_a" name="name"/>
                         <faset value="frame" name="slot_type"/>
-                        <faset value="Есть враги" name="default_value"/>
+                        <faset value="" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -1386,7 +1040,7 @@
                     <fasets>
                         <faset value="is_a" name="name"/>
                         <faset value="frame" name="slot_type"/>
-                        <faset value="Есть враги" name="default_value"/>
+                        <faset value="" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -1430,7 +1084,7 @@
                     <fasets>
                         <faset value="is_a" name="name"/>
                         <faset value="frame" name="slot_type"/>
-                        <faset value="Есть враги" name="default_value"/>
+                        <faset value="" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -2396,358 +2050,6 @@
                 </slot>
             </slots>
         </frame>
-        <frame type="0" id="71" system="0">
-            <slots>
-                <slot system="1">
-                    <fasets>
-                        <faset value="name" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="Нет еды справа" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="is_a" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Простая ситуация" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="action" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="" name="default_value"/>
-                        <faset value="procedure" name="marker_type"/>
-                        <faset value="proc_Нет еды справа" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Еды справа нет" name="name"/>
-                        <faset value="ДаНет" name="slot_type"/>
-                        <faset value="Да" name="default_value"/>
-                        <faset value="production" name="marker_type"/>
-                        <faset value="еды_справа_нет" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-            </slots>
-        </frame>
-        <frame type="0" id="72" system="0">
-            <slots>
-                <slot system="1">
-                    <fasets>
-                        <faset value="name" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="Нет еды слева" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="is_a" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Простая ситуация" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="action" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="" name="default_value"/>
-                        <faset value="procedure" name="marker_type"/>
-                        <faset value="proc_Нет еды слева" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Еды слева нет" name="name"/>
-                        <faset value="ДаНет" name="slot_type"/>
-                        <faset value="Да" name="default_value"/>
-                        <faset value="production" name="marker_type"/>
-                        <faset value="еды_слева_нет" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-            </slots>
-        </frame>
-        <frame type="0" id="73" system="0">
-            <slots>
-                <slot system="1">
-                    <fasets>
-                        <faset value="name" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="Нет еды сверху" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="is_a" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Простая ситуация" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="action" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="" name="default_value"/>
-                        <faset value="procedure" name="marker_type"/>
-                        <faset value="proc_Нет еды сверху" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Еды сверху нет" name="name"/>
-                        <faset value="ДаНет" name="slot_type"/>
-                        <faset value="Да" name="default_value"/>
-                        <faset value="production" name="marker_type"/>
-                        <faset value="еды_сверху_нет" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-            </slots>
-        </frame>
-        <frame type="0" id="74" system="0">
-            <slots>
-                <slot system="1">
-                    <fasets>
-                        <faset value="name" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="Нет еды снизу" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="is_a" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Простая ситуация" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="action" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="" name="default_value"/>
-                        <faset value="procedure" name="marker_type"/>
-                        <faset value="proc_Нет еды снизу" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Еды снизу нет" name="name"/>
-                        <faset value="ДаНет" name="slot_type"/>
-                        <faset value="Да" name="default_value"/>
-                        <faset value="production" name="marker_type"/>
-                        <faset value="еды_снизу_нет" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-            </slots>
-        </frame>
-        <frame type="0" id="75" system="0">
-            <slots>
-                <slot system="1">
-                    <fasets>
-                        <faset value="name" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="Нет врага справа" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="is_a" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Простая ситуация" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="action" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="" name="default_value"/>
-                        <faset value="procedure" name="marker_type"/>
-                        <faset value="proc_Нет врага справа" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Врага справа нет" name="name"/>
-                        <faset value="ДаНет" name="slot_type"/>
-                        <faset value="Да" name="default_value"/>
-                        <faset value="production" name="marker_type"/>
-                        <faset value="врага_справа_нет" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-            </slots>
-        </frame>
-        <frame type="0" id="76" system="0">
-            <slots>
-                <slot system="1">
-                    <fasets>
-                        <faset value="name" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="Нет врага слева" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="is_a" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Простая ситуация" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="action" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="" name="default_value"/>
-                        <faset value="procedure" name="marker_type"/>
-                        <faset value="proc_Нет врага слева" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Врага слева нет" name="name"/>
-                        <faset value="ДаНет" name="slot_type"/>
-                        <faset value="Да" name="default_value"/>
-                        <faset value="production" name="marker_type"/>
-                        <faset value="врага_слева_нет" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-            </slots>
-        </frame>
-        <frame type="0" id="77" system="0">
-            <slots>
-                <slot system="1">
-                    <fasets>
-                        <faset value="name" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="Нет врага сверху" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="is_a" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Простая ситуация" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="action" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="" name="default_value"/>
-                        <faset value="procedure" name="marker_type"/>
-                        <faset value="proc_Нет врага сверху" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Врага сверху нет" name="name"/>
-                        <faset value="ДаНет" name="slot_type"/>
-                        <faset value="Да" name="default_value"/>
-                        <faset value="production" name="marker_type"/>
-                        <faset value="врага_сверху_нет" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-            </slots>
-        </frame>
-        <frame type="0" id="78" system="0">
-            <slots>
-                <slot system="1">
-                    <fasets>
-                        <faset value="name" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="Нет врага снизу" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="is_a" name="name"/>
-                        <faset value="frame" name="slot_type"/>
-                        <faset value="Простая ситуация" name="default_value"/>
-                        <faset value="" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="1">
-                    <fasets>
-                        <faset value="action" name="name"/>
-                        <faset value="string" name="slot_type"/>
-                        <faset value="" name="default_value"/>
-                        <faset value="procedure" name="marker_type"/>
-                        <faset value="proc_Нет врага снизу" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Врага снизу нет" name="name"/>
-                        <faset value="ДаНет" name="slot_type"/>
-                        <faset value="Да" name="default_value"/>
-                        <faset value="production" name="marker_type"/>
-                        <faset value="врага_снизу_нет" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-            </slots>
-        </frame>
         <frame type="0" id="79" system="0">
             <slots>
                 <slot system="1">
@@ -3029,13 +2331,13 @@ if(life&lt;=0)
 Cell.getGameObject().setSlotValue("Уровень жизни",5);
 LeftCell.Clear();</proc>
         <proc name="proc_Еда справа">sys.ShowMsg("Еда справа. Едим ее.");
-Cell.getGameObject().setSlotValue("Уровень жизни",5);
+Cell.setSlotValue("Уровень жизни",5);
 RightCell.Clear();</proc>
         <proc name="proc_Еда сверху">sys.ShowMsg("Еда сверху. Едим ее.");
-Cell.getGameObject().setSlotValue("Уровень жизни",5);
+Cell.setSlotValue("Уровень жизни",5);
 TopCell.Clear();</proc>
         <proc name="proc_Еда снизу">sys.ShowMsg("Еда снизу. Едим ее.");
-Cell.getGameObject().setSlotValue("Уровень жизни",5);
+Cell.setSlotValue("Уровень жизни",5);
 BottomCell.Clear();</proc>
         <proc name="proc_Нет еды справа">sys.ShowMsg("Нет еды справа. Идем направо");
 Cell.X+=1;
@@ -4781,11 +4083,7 @@ RightCell.X-=1;</proc>
         <item x="389.3310052656251" title="Еда" y="-249.3060765624999" id="12"/>
         <item x="-146.7217499999999" title="Ситуация" y="279.940375" id="23"/>
         <item x="-111.4821237080801" title="Простая ситуация" y="523.7323917949589" id="24"/>
-        <item x="163.574276078125" title="Сложная ситуация" y="631.9377344531249" id="25"/>
         <item x="433.4" title="Есть еда" y="909.2108177031253" id="26"/>
-        <item x="-436.3992047812501" title="Есть враги" y="549.6936684218752" id="27"/>
-        <item x="-867.64630909375" title="Мало жизни" y="724.5477569374998" id="28"/>
-        <item x="-696.9981545468754" title="Много жизни" y="725.1977569374999" id="29"/>
         <item x="-919.1869392343749" title="Нет еды" y="1073.527966984375" id="30"/>
         <item x="-918.2279669843751" title="Нет врагов" y="1375.36490621875" id="31"/>
         <item x="-153.5" title="Есть еда и враги, мало жизни" y="1499.6" id="32"/>
@@ -4820,14 +4118,6 @@ RightCell.X-=1;</proc>
         <item x="-577" title="Нечего делать" y="-178" id="68"/>
         <item x="-577" title="Некуда идти" y="-103" id="69"/>
         <item x="327" title="Изображение препятствия" y="200" id="70"/>
-        <item x="-1100" title="Нет еды справа" y="955" id="71"/>
-        <item x="-1102" title="Нет еды слева" y="1015" id="72"/>
-        <item x="-1102" title="Нет еды сверху" y="1073" id="73"/>
-        <item x="-1102" title="Нет еды снизу" y="1132" id="74"/>
-        <item x="-1099" title="Нет врага справа" y="1278" id="75"/>
-        <item x="-1100" title="Нет врага слева" y="1343" id="76"/>
-        <item x="-1102" title="Нет врага сверху" y="1404" id="77"/>
-        <item x="-1101" title="Нет врага снизу" y="1465" id="78"/>
         <item x="-1027" title="Средне жизни" y="725" id="79"/>
         <item x="423" title="Изо мертвый мечник" y="580" id="81"/>
         <item x="567" title="Изо мертвый лучник" y="571" id="82"/>
@@ -4844,39 +4134,15 @@ RightCell.X-=1;</proc>
         <link sid="10" did="2" text="is-a"/>
         <link sid="12" did="2" text="is-a"/>
         <link sid="24" did="23" text="is-a"/>
-        <link sid="25" did="23" text="is-a"/>
-        <link sid="28" did="24" text="is-a"/>
-        <link sid="27" did="24" text="is-a"/>
-        <link sid="29" did="24" text="is-a"/>
         <link sid="26" did="24" text="is-a"/>
-        <link sid="32" did="25" text="is-a"/>
-        <link sid="33" did="25" text="is-a"/>
-        <link sid="34" did="25" text="is-a"/>
-        <link sid="35" did="25" text="is-a"/>
-        <link sid="36" did="25" text="is-a"/>
-        <link sid="37" did="25" text="is-a"/>
         <link sid="26" did="32" text="sub"/>
-        <link sid="27" did="32" text="sub"/>
-        <link sid="28" did="32" text="sub"/>
         <link sid="26" did="33" text="sub"/>
-        <link sid="27" did="33" text="sub"/>
-        <link sid="29" did="33" text="sub"/>
-        <link sid="27" did="34" text="sub"/>
         <link sid="30" did="34" text="sub"/>
-        <link sid="29" did="34" text="sub"/>
-        <link sid="27" did="35" text="sub"/>
         <link sid="30" did="35" text="sub"/>
-        <link sid="28" did="35" text="sub"/>
         <link sid="30" did="36" text="sub"/>
         <link sid="31" did="36" text="sub"/>
-        <link sid="28" did="36" text="sub"/>
         <link sid="31" did="37" text="sub"/>
         <link sid="30" did="37" text="sub"/>
-        <link sid="29" did="37" text="sub"/>
-        <link sid="39" did="27" text="is-a"/>
-        <link sid="38" did="27" text="is-a"/>
-        <link sid="41" did="27" text="is-a"/>
-        <link sid="40" did="27" text="is-a"/>
         <link sid="45" did="26" text="is-a"/>
         <link sid="43" did="26" text="is-a"/>
         <link sid="44" did="26" text="is-a"/>
@@ -4899,23 +4165,6 @@ RightCell.X-=1;</proc>
         <link sid="1" did="68" text="sub"/>
         <link sid="42" did="26" text="is-a"/>
         <link sid="70" did="47" text="is-a"/>
-        <link sid="30" did="25" text="is-a"/>
-        <link sid="31" did="25" text="is-a"/>
-        <link sid="71" did="30" text="sub"/>
-        <link sid="72" did="30" text="sub"/>
-        <link sid="73" did="30" text="sub"/>
-        <link sid="74" did="30" text="sub"/>
-        <link sid="71" did="24" text="is-a"/>
-        <link sid="72" did="24" text="is-a"/>
-        <link sid="73" did="24" text="is-a"/>
-        <link sid="74" did="24" text="is-a"/>
-        <link sid="75" did="31" text="sub"/>
-        <link sid="76" did="31" text="sub"/>
-        <link sid="77" did="31" text="sub"/>
-        <link sid="78" did="31" text="sub"/>
-        <link sid="75" did="24" text="is-a"/>
-        <link sid="76" did="24" text="is-a"/>
-        <link sid="77" did="24" text="is-a"/>
         <link sid="1" did="69" text="sub"/>
         <link sid="79" did="24" text="is-a"/>
         <link sid="81" did="55" text="is-a"/>
