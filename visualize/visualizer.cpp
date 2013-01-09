@@ -35,7 +35,7 @@ void Visualizer::populateScene()
 	
 	for (int i = 0; i < teams.count(); i++)
 	{
-		QColor* color = GetColorByTeam(teams.at(i));
+		QColor& color = GetColorByTeam(teams.at(i));
 		for (int j = 0; j < imgChildren.count(); j++)
 		{
 			NFrame* frame = imgChildren.at(j);
@@ -45,7 +45,7 @@ void Visualizer::populateScene()
 			{
 				QPixmap pic(picSlot->defValue().toString());
 				QString type = typeSlot->defValue().toString();
-				m_Scene->CreateFactory(new GameItem(type, pic, teams.at(i), *color), GetNextPos());
+				m_Scene->CreateFactory(new GameItem(type, pic, teams.at(i), color), GetNextPos());
 			}
 		}
 	}
@@ -116,15 +116,19 @@ void Visualizer::RedrawItems()
 	populateScene();
 }
 
-QColor* Visualizer::GetColorByTeam(QString team)
+QColor& Visualizer::GetColorByTeam(QString team)
 {
+	QColor* col;
 	if (team.isEmpty())
-		return new QColor();
-	QColor* col = m_ColorTeamMap[team];
+	{
+		col = new QColor();
+		return *col;
+	}
+	col = m_ColorTeamMap[team];
 	if (col == NULL)
 	{
 		col = GetNextColor();
 		m_ColorTeamMap[team] = col;
 	}
-	return col;
+	return *col;
 }

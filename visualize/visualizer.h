@@ -38,7 +38,7 @@ public:
     void Update();
     Grid* GetGrid();
 	void RedrawItems();
-	QColor* GetColorByTeam(QString team);
+	QColor& GetColorByTeam(QString team);
 
 signals:
 
