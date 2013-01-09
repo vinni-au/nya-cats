@@ -1,6 +1,6 @@
 #include "qsproxyfood.h"
 
-QSProxyFood::QSProxyFood(NFrame *food,QScriptEngine *engine,QObject *parent) :
-    QSProxy(food,engine,parent)
+QSProxyFood::QSProxyFood(NFrame *food,QScriptEngine *engine, MLV *mlv,QObject *parent) :
+    QSProxy(food,engine,mlv,parent)
 {
 }

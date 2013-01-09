@@ -111,7 +111,8 @@ HEADERS  += mainwindow.hpp \
     mlv/QScriptProxy/qsproxy.h \
     mlv/QScriptProxy/qsproxyfood.h \
     core/frame_model/nframenetmodelhierarchical.h \
-    mlv/QScriptProxy/qsproxygameobject.h
+    mlv/QScriptProxy/qsproxygameobject.h \
+    mlv/mlv_proxy_include.h
 
 FORMS    += mainwindow.ui \
     ui/frameeditorwnd.ui \

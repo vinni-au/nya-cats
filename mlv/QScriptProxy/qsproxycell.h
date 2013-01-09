@@ -3,12 +3,17 @@
 
 #include <QObject>
 #include "core/nframe.h"
-#include "qsproxy.h"
+
 #include <QScriptEngine>
+
+//#include "mlv/mlv.h"
+#include "qsproxy.h"
 #include "qsproxyman.h"
 #include "qsproxygameobject.h"
-#include "mlv/mlv.h"
 #include "mlv/mlv_define.h"
+
+//class MLV;
+
 
 
 class QSProxyCell : public QSProxy
@@ -17,7 +22,7 @@ class QSProxyCell : public QSProxy
     Q_PROPERTY(int X READ X WRITE setX SCRIPTABLE true)
     Q_PROPERTY(int Y READ Y WRITE setY SCRIPTABLE true)
 public:
-    explicit QSProxyCell(NFrame *cell,QScriptEngine *engine,QObject *parent = 0);
+    explicit QSProxyCell(NFrame *cell,QScriptEngine *engine, MLV *mlv,QObject *parent = 0);
 
     Q_INVOKABLE bool hasGameObject(QString objName);
 

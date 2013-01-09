@@ -12,10 +12,15 @@
 #include "core/production/nproductionmlv.h"
 #include <QScriptValue>
 #include <QScriptEngine>
-#include "QScriptProxy/qsproxycell.h"
+
 #include "mlv_define.h"
 #include <QDateTime>
 
+
+
+//#include "mlv_proxy_include.h"
+
+class QSProxyCell;
 
 class MLV : public QObject
 {
@@ -48,7 +53,8 @@ public:
     void Step(int x, int y);
     void Stop();
 
-	void ClearAll();
+    void ClearAll();
+    void ClearCell(NFrame* cellInst);
 
     //Для продукционного вывода
     //Функция для получения значения слота фрейма экземпляра при продукционном выводе.
@@ -78,7 +84,7 @@ protected:
     bool Init();
     void UpdateGrid();
 	void UpdateCell(NFrame* cellInst, NFrame* imageFrame);
-	void ClearCell(NFrame* cellInst);
+
 	void ClearWorkMem();
 
     bool BindFrame(NFrame* frame, bool fillDefault = false, bool bindChildren = true);

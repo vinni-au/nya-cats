@@ -1,13 +1,15 @@
 #ifndef QSPROXYGAMEOBJECT_H
 #define QSPROXYGAMEOBJECT_H
 
-#include "mlv/QScriptProxy/qsproxy.h"
+//#include "mlv/mlv.h"
+#include "qsproxy.h"
+
 
 class QSProxyGameObject : public QSProxy
 {
     Q_OBJECT
 public:
-    explicit QSProxyGameObject(NFrame *frameGameObject,QScriptEngine *engine,QObject *parent = 0);
+    explicit QSProxyGameObject(NFrame *frameGameObject,QScriptEngine *engine, MLV *mlv,QObject *parent = 0);
 
 
 

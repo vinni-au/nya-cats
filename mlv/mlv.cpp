@@ -1,5 +1,6 @@
 #include "mlv.h"
 #include <QList>
+#include "QScriptProxy/qsproxycell.h"
 
 MLV::MLV(NKBManager* manager, Visualizer* viz) :
     QObject(0)
@@ -1122,7 +1123,7 @@ void  MLV::DoAction(NFrame* frameSituation)
 
     //окружение скрипта
     NFrame *cell = GetSubframe(frameSituation, SYSSTR_SLOTNAME_CELL_GAMER, true);
-    QSProxyCell *proxyCell = new QSProxyCell(cell,engine);
+    QSProxyCell *proxyCell = new QSProxyCell(cell,engine,this);
     QScriptValue objectCell = engine->newQObject(proxyCell);
     engine->globalObject().setProperty("Cell", objectCell);
 
@@ -1130,7 +1131,7 @@ void  MLV::DoAction(NFrame* frameSituation)
     NFrame *cell_left = GetSubframe(frameSituation, SYSSTR_SLOTNAME_CELL_LEFT, true);
     if(cell_left)
     {
-        QSProxyCell *proxyCellLeft = new QSProxyCell(cell_left,engine);
+        QSProxyCell *proxyCellLeft = new QSProxyCell(cell_left,engine,this);
         QScriptValue objectCellLeft = engine->newQObject(proxyCellLeft);
         engine->globalObject().setProperty("LeftCell", objectCellLeft);
     }
@@ -1139,7 +1140,7 @@ void  MLV::DoAction(NFrame* frameSituation)
     NFrame *cell_right = GetSubframe(frameSituation, SYSSTR_SLOTNAME_CELL_RIGTH, true);
     if(cell_right)
     {
-        QSProxyCell *proxyCellRight = new QSProxyCell(cell_right,engine);
+        QSProxyCell *proxyCellRight = new QSProxyCell(cell_right,engine,this);
         QScriptValue objectCellRight = engine->newQObject(proxyCellRight);
         engine->globalObject().setProperty("RightCell", objectCellRight);
     }
@@ -1148,7 +1149,7 @@ void  MLV::DoAction(NFrame* frameSituation)
     NFrame *cell_top = GetSubframe(frameSituation, SYSSTR_SLOTNAME_CELL_TOP, true);
     if(cell_top)
     {
-        QSProxyCell *proxyCellTop = new QSProxyCell(cell_top,engine);
+        QSProxyCell *proxyCellTop = new QSProxyCell(cell_top,engine,this);
         QScriptValue objectCellTop = engine->newQObject(proxyCellTop);
         engine->globalObject().setProperty("TopCell", objectCellTop);
     }
@@ -1157,7 +1158,7 @@ void  MLV::DoAction(NFrame* frameSituation)
     NFrame *cell_bottom = GetSubframe(frameSituation, SYSSTR_SLOTNAME_CELL_BOTTOM, true);
     if(cell_bottom)
     {
-        QSProxyCell *proxyCellBottom = new QSProxyCell(cell_bottom,engine);
+        QSProxyCell *proxyCellBottom = new QSProxyCell(cell_bottom,engine,this);
         QScriptValue objectCellBottom = engine->newQObject(proxyCellBottom);
         engine->globalObject().setProperty("BottomCell", objectCellBottom);
     }

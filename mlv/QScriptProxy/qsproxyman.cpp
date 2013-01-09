@@ -1,7 +1,7 @@
 #include "qsproxyman.h"
 
-QSProxyMan::QSProxyMan(NFrame *man,QScriptEngine *engine,QObject *parent) :
-    QSProxy(man,engine,parent)
+QSProxyMan::QSProxyMan(NFrame *man,QScriptEngine *engine, MLV *mlv,QObject *parent) :
+    QSProxy(man,engine,mlv,parent)
 {
 }
 
