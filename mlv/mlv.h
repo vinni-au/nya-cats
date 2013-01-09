@@ -126,15 +126,15 @@ protected:
 
     // Поиск в списке ячеек
     NFrame* FindByCell(int x, int y);
-	NFrame* FindCell(int x, int y);
-	NFrame* FindCellByItemInst(NFrame* itemInst);
+    NFrame* FindCell(int x, int y);
+    NFrame* FindCellByItemInst(NFrame* itemInst);
 
     // Поиск в кеше
     NFrame* FindInCache(QString name);
     NFrame* FindInCache(int frameId);
 
-	bool IsContainGameItem(NFrame* cell);
-	NFrame* GetGameInst(NFrame* cell);
+    bool IsContainGameItem(NFrame* cell);
+    NFrame* GetGameInst(NFrame* cell);
 
     void InitNeighborSituation(NFrame* frameSituation, NFrame* item, QString Name);
 
@@ -152,12 +152,12 @@ signals:
     void ClearLog();
 
 	// Для работы с LineOfReasoning
-	void LOR_AddRoot(QString name);
-	void LOR_AddNextLevel(QString name);
-	void LOR_AddCurrLevel(QString name);
-	void LOR_GotoPrevLevel();
-	void LOR_SetCurrState(bool bOk);
-	void LOR_Clear();
+    void LOR_AddRoot(QString name);
+    void LOR_AddNextLevel(QString name);
+    void LOR_AddCurrLevel(QString name);
+    void LOR_GotoPrevLevel();
+    void LOR_SetCurrState(bool bOk);
+    void LOR_Clear();
 };
 
 #endif // MLV_H
