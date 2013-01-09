@@ -744,7 +744,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
+                        <faset value="proc_Много жизни" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -852,7 +852,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
+                        <faset value="proc_Нет врагов" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -1276,7 +1276,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
-                        <faset value="test" name="marker"/>
+                        <faset value="proc_Ничего нет много жизни" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -1364,7 +1364,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
+                        <faset value="proc_Враг снизу" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -1408,7 +1408,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
+                        <faset value="proc_врагСправа" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -1452,7 +1452,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
+                        <faset value="proc_Враг сверху" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -1496,7 +1496,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
+                        <faset value="proc_Еда слева" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -1540,7 +1540,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
+                        <faset value="proc_Еда справа" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -1584,7 +1584,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
+                        <faset value="proc_Еда сверху" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -1628,7 +1628,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
+                        <faset value="proc_Еда снизу" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -2424,7 +2424,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
+                        <faset value="proc_Нет еды справа" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -2468,7 +2468,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
+                        <faset value="proc_Нет еды слева" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -2512,7 +2512,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
+                        <faset value="proc_Нет еды сверху" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -2556,7 +2556,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
+                        <faset value="proc_Нет еды снизу" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -2600,7 +2600,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
+                        <faset value="proc_Нет врага справа" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -2644,7 +2644,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
+                        <faset value="proc_Нет врага слева" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -2688,7 +2688,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
+                        <faset value="proc_Нет врага сверху" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -2732,7 +2732,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
-                        <faset value="" name="marker"/>
+                        <faset value="proc_Нет врага снизу" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -2906,8 +2906,16 @@ Cell.X=Cell.X+1;
 RightCell.X = RightCell.X-1;
 
 </proc>
-        <proc name="proc_врагСправа">Cell.X=Cell.X-1;
-LeftCell.X=LeftCell.X+1;</proc>
+        <proc name="proc_врагСправа">sys.ShowMsg("Враг справа. Бьем его.");
+var life =  RightCell.getSlotValue("Уровень жизни");
+life--;
+RightCell.setSlotValue("Уровень жизни",life);
+if(life&lt;=0)
+{
+	RightCell.Clear();
+}
+
+</proc>
         <proc name="proc_врагСверху">var y=Cell.Y;
 Cell.Y=y-1;</proc>
         <proc name="test">//var man = Cell.getMan();
@@ -2935,6 +2943,125 @@ sys.ShowMsg("Мне нечего делать!");</proc>
         <proc name="proc_Есть враги нет еды много жизни">sys.ShowMsg("Есть враги нет еды много жизни. Иду вверх.");
 Cell.Y=Cell.Y-1;
 TopCell.Y = TopCell.Y+1;</proc>
+        <proc name="proc_Много жизни">sys.ShowMsg("Много жизни. Идем на пустую клетку");
+
+if(RightCell.hasGameObject("Пусто"))
+{
+Cell.X+=1;
+RightCell.X-=1;
+return;
+}
+
+if(LeftCell.hasGameObject("Пусто"))
+{
+Cell.X-=1;
+LeftCell.X+=1;
+return;
+}
+
+if(TopCell.hasGameObject("Пусто"))
+{
+Cell.Y-=1;
+TopCell.Y+=1;
+return;
+}
+
+
+if(BottomCell.hasGameObject("Пусто"))
+{
+Cell.Y+=1;
+BottomCell.Y-=1;
+return;
+}</proc>
+        <proc name="proc_Ничего нет много жизни">sys.ShowMsg("Много жизни. Идем на пустую клетку");
+
+if(RightCell.hasGameObject("Пусто"))
+{
+Cell.X+=1;
+RightCell.X-=1;
+return;
+}
+
+if(LeftCell.hasGameObject("Пусто"))
+{
+Cell.X-=1;
+LeftCell.X+=1;
+return;
+}
+
+if(TopCell.hasGameObject("Пусто"))
+{
+Cell.Y-=1;
+TopCell.Y+=1;
+return;
+}
+
+
+if(BottomCell.hasGameObject("Пусто"))
+{
+Cell.Y+=1;
+BottomCell.Y-=1;
+return;
+}</proc>
+        <proc name="proc_Нет врага снизу">sys.ShowMsg("Нет врага снизу. Идем вниз");
+
+
+
+
+if(BottomCell.hasGameObject("Пусто"))
+{
+Cell.Y+=1;
+BottomCell.Y-=1;
+return;
+}</proc>
+        <proc name="proc_Враг снизу">sys.ShowMsg("враг снизу. Иду наверх");
+Cell.Y-=1;
+TopCell.Y+= 1;</proc>
+        <proc name="proc_Враг сверху">sys.ShowMsg("Враг сверху. Бьем его.");
+var life =  TopCell.getSlotValue("Уровень жизни");
+life--;
+TopCell.setSlotValue("Уровень жизни",life);
+if(life&lt;=0)
+{
+	TopCell.Clear();
+}</proc>
+        <proc name="proc_Еда слева">sys.ShowMsg("Еда слева. Едим ее.");
+Cell.setSlotValue("Уровень жизни",5);
+LeftCell.Clear();</proc>
+        <proc name="proc_Еда справа">sys.ShowMsg("Еда справа. Едим ее.");
+Cell.setSlotValue("Уровень жизни",5);
+RightCell.Clear();</proc>
+        <proc name="proc_Еда сверху">sys.ShowMsg("Еда сверху. Едим ее.");
+Cell.setSlotValue("Уровень жизни",5);
+TopCell.Clear();</proc>
+        <proc name="proc_Еда снизу">sys.ShowMsg("Еда снизу. Едим ее.");
+Cell.setSlotValue("Уровень жизни",5);
+BottomCell.Clear();</proc>
+        <proc name="proc_Нет еды справа">sys.ShowMsg("Нет еды справа. Идем направо");
+Cell.X+=1;
+RightCell.X-=1;
+</proc>
+        <proc name="proc_Нет еды слева">sys.ShowMsg("Нет еды слева. Идем направо");
+Cell.X+=1;
+RightCell.X-=1;</proc>
+        <proc name="proc_Нет еды сверху">sys.ShowMsg("Нет еды сверху. Идем направо");
+Cell.X+=1;
+RightCell.X-=1;</proc>
+        <proc name="proc_Нет еды снизу">sys.ShowMsg("Нет еды снизу. Идем направо");
+Cell.X+=1;
+RightCell.X-=1;</proc>
+        <proc name="proc_Нет врага справа">sys.ShowMsg("Нет врага справа. Идем направо");
+Cell.X+=1;
+RightCell.X-=1;</proc>
+        <proc name="proc_Нет врага слева">sys.ShowMsg("Нет врага слева. Идем налево");
+Cell.X-=1;
+LeftCell.X+=1;</proc>
+        <proc name="proc_Нет врага сверху">sys.ShowMsg("Нет врага сверху. Идем направо");
+Cell.X+=1;
+RightCell.X-=1;</proc>
+        <proc name="proc_Нет врагов">sys.ShowMsg("Нет врагов. Идем направо");
+Cell.X+=1;
+RightCell.X-=1;</proc>
     </procs>
     <productions>
         <production name="врагслева">
