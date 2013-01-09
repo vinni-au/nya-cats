@@ -20,6 +20,16 @@ LGen2DiagramEditor::LGen2DiagramEditor(QWidget *parent, QMenu *contextMenu):
 
     QObject::connect(m_scene, SIGNAL(selectionChanged()),
                      SLOT(sceneSelectionChanged()));
+
+
+    //setSceneRect(0, 0, 800, 600);
+
+    QRectF visibleArea = mapToScene(rect()).boundingRect();
+    setCenter(visibleArea.center());
+
+    //обработка событий прокрутки скроллбаров
+    QObject::connect( this->horizontalScrollBar(),SIGNAL(sliderMoved(int)),SLOT(onScrollBar(int)));
+    QObject::connect( this->verticalScrollBar(),SIGNAL(sliderMoved(int)),SLOT(onScrollBar(int)));
 }
 
 void LGen2DiagramEditor::addNode(unsigned id, QString title)
@@ -285,4 +295,95 @@ void LGen2DiagramEditor::contextMenuEvent(QContextMenuEvent *event)
         if (m_contextMenu)
             m_contextMenu->exec(event->globalPos());
     } else QGraphicsView::contextMenuEvent(event);
+}
+//--------------------------------------------------------------------
+
+
+void LGen2DiagramEditor::mousePressEvent(QMouseEvent *mouseEvent)
+{
+    if (mouseEvent->button() == Qt::MidButton)
+    {
+        fixedPoint = mouseEvent->pos();
+        setCursor(Qt::ClosedHandCursor);
+    }
+    else
+        QGraphicsView::mousePressEvent(mouseEvent);
+}
+
+void LGen2DiagramEditor::mouseMoveEvent(QMouseEvent *mouseEvent)
+{
+
+    if(!fixedPoint.isNull())
+    {
+        //  Подсчитываем вектор смещения
+        QPointF offset = mapToScene(fixedPoint.x(),fixedPoint.y()) - mapToScene(mouseEvent->pos());
+        fixedPoint = mouseEvent->pos();
+        //  Перемещаем центр
+        setCenter(getCenter() + offset);
+
+    }
+    QGraphicsView::mouseMoveEvent(mouseEvent);
+}
+
+void LGen2DiagramEditor::mouseReleaseEvent(QMouseEvent *mouseEvent)
+{
+    if (mouseEvent->button() == Qt::MidButton)
+    {
+        fixedPoint = QPoint();
+        setCursor(Qt::ArrowCursor);
+    }
+    else
+        QGraphicsView::mouseReleaseEvent(mouseEvent);
+}
+
+
+void LGen2DiagramEditor::setCenter(const QPointF& centerPoint) {
+    //  Получаем границы видимой области в координатах сцены
+    QRectF visibleArea = mapToScene(rect()).boundingRect();
+    //  Получаем границы сцены
+    QRectF sceneBounds = sceneRect();
+    //  Подсчитываем максимальные границы, в которых должен быть центр
+//    double boundX = visibleArea.width() / 2.0;
+//    double boundY = visibleArea.height() / 2.0;
+//    double boundWidth = sceneBounds.width() - visibleArea.width();
+//    double boundHeight = sceneBounds.height() - visibleArea.height();
+
+    double boundX = sceneBounds.x()+ visibleArea.width() / 2.0;
+    double boundY = sceneBounds.y()+ visibleArea.height() / 2.0;
+    double boundWidth = sceneBounds.width() - visibleArea.width();
+    double boundHeight = sceneBounds.height() - visibleArea.height();
+
+    QRectF bounds(boundX, boundY, boundWidth, boundHeight);
+    //  Допускаем, что мы попали в границы, тогда все ок
+    center = centerPoint;
+    //  А если не попали, то корректируем центр
+    if(!bounds.contains(centerPoint))
+        if(visibleArea.contains(sceneBounds))
+        {
+            //  Случай, если видна вся сцена
+            center = sceneBounds.center();
+        }
+        else
+        {
+            //  Сдвигаем центр к нужным границам
+            if(centerPoint.x() > bounds.x() + bounds.width())
+                center.setX(bounds.x() + bounds.width());
+            else if(centerPoint.x() < bounds.x())
+                center.setX(bounds.x());
+            if(centerPoint.y() > bounds.y() + bounds.height())
+                center.setY(bounds.y() + bounds.height());
+            else if(centerPoint.y() < bounds.y())
+                center.setY(bounds.y());
+        }
+    //  Обновляем полосы прокрутки
+    centerOn(center);
+}
+QPointF LGen2DiagramEditor::getCenter()
+{
+    return center;
+}
+void LGen2DiagramEditor::onScrollBar(int i)
+{
+    QRectF visibleArea = mapToScene(rect()).boundingRect();
+    center = visibleArea.center();
 }

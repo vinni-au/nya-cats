@@ -5,6 +5,8 @@
 #include <QGraphicsView>
 #include <QDomElement>
 #include "diagramscene.hpp"
+#include <QPointF>
+#include <QScrollBar>
 
 class LGen2DiagramEditor : public QGraphicsView
 {
@@ -16,6 +18,17 @@ class LGen2DiagramEditor : public QGraphicsView
     QList<Arrow*> m_links;
 
     QMenu* m_contextMenu;
+
+    //  Центр видимой области
+
+    QPointF center;
+
+
+
+    //  Точка фиксации (для прокрутки)
+
+    QPoint fixedPoint;
+
 
 public:
     explicit LGen2DiagramEditor(QWidget *parent = 0, QMenu* contextMenu = 0);
@@ -42,11 +55,17 @@ signals:
 protected:
     virtual void contextMenuEvent(QContextMenuEvent *event);
 
+    virtual void mousePressEvent(QMouseEvent *mouseEvent);
+    virtual void mouseMoveEvent(QMouseEvent *mouseEvent);
+    virtual void mouseReleaseEvent(QMouseEvent *mouseEvent);
+    void setCenter(const QPointF& centerPoint);
+    QPointF getCenter();
 protected slots:
     void sceneSelectionChanged();
     void deleteSelectedItem();
     void deleteSelectedLink();
 
+    void onScrollBar(int i);
 public slots:
     void zoomIn();
     void zoonOut();
