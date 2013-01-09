@@ -1084,7 +1084,7 @@
                         <faset value="string" name="slot_type"/>
                         <faset value="" name="default_value"/>
                         <faset value="procedure" name="marker_type"/>
-                        <faset value="proc_Враг_слева" name="marker"/>
+                        <faset value="proc_Есть враги нет еды много жизни" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
@@ -2388,7 +2388,7 @@
                     <fasets>
                         <faset value="Картинка" name="name"/>
                         <faset value="string" name="slot_type"/>
-                        <faset value="D:\Develop\nya-cats\pics\stone.png" name="default_value"/>
+                        <faset value=":images/pics/stone.png" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -2799,9 +2799,10 @@ df
 g
 dfg
 123f</proc>
-        <proc name="proc_Враг_слева">sys.ShowMsg("враг слева");
+        <proc name="proc_Враг_слева">sys.ShowMsg("враг слева. Иду направо.");
 Cell.X=Cell.X+1;
 RightCell.X = RightCell.X-1;
+
 </proc>
         <proc name="proc_врагСправа">Cell.X=Cell.X-1;
 LeftCell.X=LeftCell.X+1;</proc>
@@ -2829,6 +2830,9 @@ Cell.Y=y-1;</proc>
         <proc name="нечегоделать">Cell.getMan().Life--;
 sys.ShowMsg("Мне нечего делать!");</proc>
         <proc name="некудаидти">sys.ShowMsg("Некуда идти!");</proc>
+        <proc name="proc_Есть враги нет еды много жизни">sys.ShowMsg("Есть враги нет еды много жизни. Иду вверх.");
+Cell.Y=Cell.Y-1;
+TopCell.Y = TopCell.Y+1;</proc>
     </procs>
     <productions>
         <production name="врагслева">
