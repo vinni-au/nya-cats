@@ -2758,6 +2758,50 @@
                 </slot>
             </slots>
         </frame>
+        <frame type="0" id="79" system="0">
+            <slots>
+                <slot system="1">
+                    <fasets>
+                        <faset value="name" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="Средне жизни" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="is_a" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Простая ситуация" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="action" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value="" name="default_value"/>
+                        <faset value="procedure" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Средне жизни" name="name"/>
+                        <faset value="ДаНет" name="slot_type"/>
+                        <faset value="Да" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="среднежизни" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+            </slots>
+        </frame>
     </frames>
     <procs>
         <proc name="234">fhgudhg
@@ -3550,7 +3594,7 @@ sys.ShowMsg("Мне нечего делать!");</proc>
                         <then>
                             <var>Много жизни</var>
                             <sign>=</sign>
-                            <val>Да</val>
+                            <val>Нет</val>
                         </then>
                     </thens>
                 </rule>
@@ -3567,7 +3611,7 @@ sys.ShowMsg("Мне нечего делать!");</proc>
                         <then>
                             <var>Много жизни</var>
                             <sign>=</sign>
-                            <val>Да</val>
+                            <val>Нет</val>
                         </then>
                     </thens>
                 </rule>
@@ -4568,6 +4612,95 @@ sys.ShowMsg("Мне нечего делать!");</proc>
                 </rule>
             </rules>
         </production>
+        <production name="среднежизни">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка слева.Игровой объект.Уровень жизни</var>
+                            <sign>=</sign>
+                            <val>1</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Средне жизни</var>
+                            <sign>=</sign>
+                            <val>Нет</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule2">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка слева.Игровой объект.Уровень жизни</var>
+                            <sign>=</sign>
+                            <val>2</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Средне жизни</var>
+                            <sign>=</sign>
+                            <val>Нет</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule3">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка слева.Игровой объект.Уровень жизни</var>
+                            <sign>=</sign>
+                            <val>3</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Средне жизни</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule4">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка слева.Игровой объект.Уровень жизни</var>
+                            <sign>=</sign>
+                            <val>4</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Средне жизни</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule5">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка слева.Игровой объект.Уровень жизни</var>
+                            <sign>=</sign>
+                            <val>5</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Средне жизни</var>
+                            <sign>=</sign>
+                            <val>Нет</val>
+                        </then>
+                    </thens>
+                </rule>
+            </rules>
+        </production>
     </productions>
     <diagram>
         <item x="-252.9" title="Игровое поле" y="-251.9" id="0"/>
@@ -4631,6 +4764,7 @@ sys.ShowMsg("Мне нечего делать!");</proc>
         <item x="-1100" title="Нет врага слева" y="1343" id="76"/>
         <item x="-1102" title="Нет врага сверху" y="1404" id="77"/>
         <item x="-1101" title="Нет врага снизу" y="1465" id="78"/>
+        <item x="-1027" title="Средне жизни" y="725" id="79"/>
         <link sid="1" did="0" text="sub"/>
         <link sid="4" did="2" text="is-a"/>
         <link sid="3" did="2" text="is-a"/>
@@ -4716,5 +4850,6 @@ sys.ShowMsg("Мне нечего делать!");</proc>
         <link sid="76" did="24" text="is-a"/>
         <link sid="77" did="24" text="is-a"/>
         <link sid="1" did="69" text="sub"/>
+        <link sid="79" did="24" text="is-a"/>
     </diagram>
 </kb>
