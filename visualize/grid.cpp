@@ -95,8 +95,8 @@ void Grid::MoveGameItemTo(int fromX, int fromY, int toX, int toY)
         if(!toCell)
             return;
 	GameItem* toItem = toCell->GetGameItem();
-	if (toItem != NULL) // Не можем перемещать итем в уже занятую клетку
-		return;
+	//if (toItem != NULL) // Не можем перемещать итем в уже занятую клетку
+	//	return;
 
 	fromCell->SetGameItem(NULL);
 	toCell->SetGameItem(fromItem);
