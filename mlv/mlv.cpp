@@ -637,6 +637,8 @@ void MLV::Step()
     {
         DoCell(m_CellFrameInsts[i]);
     }
+
+	emit WM_Set(&m_WorkMemory);
 }
 
 void MLV::Step(int x, int y)

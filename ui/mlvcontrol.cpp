@@ -27,6 +27,7 @@ MLVControl::MLVControl(MLV* mlv, QWidget *parent) :
 	connect(mlv, SIGNAL(LOR_AddCurrLevel(QString)),	SLOT(LOR_AddCurrLevel(QString)));
 	connect(mlv, SIGNAL(LOR_GotoPrevLevel()),		SLOT(LOR_GotoPrevLevel()));
 	connect(mlv, SIGNAL(LOR_Clear()),				SLOT(LOR_Clear()));
+	connect(mlv, SIGNAL(WM_Set(QList<NFrame *>*)),	SLOT(setWorkMemory(QList<NFrame*>*)));
 }
 
 MLVControl::~MLVControl()

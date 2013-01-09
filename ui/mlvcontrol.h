@@ -23,7 +23,7 @@ public:
     explicit MLVControl(MLV* mlv, QWidget *parent = 0);
     ~MLVControl();
 
-    void setWorkMemory(QList<NFrame*> *list);
+
 
 private:
     Ui::MLVControl *ui;
@@ -40,6 +40,7 @@ public slots:
 	void LOR_GotoPrevLevel();
 	void LOR_SetCurrState(bool bOk);
 	void LOR_Clear();
+	void setWorkMemory(QList<NFrame*> *list);
 };
 
 #endif // MLVCONTROL_H

@@ -158,6 +158,7 @@ signals:
     void LOR_GotoPrevLevel();
     void LOR_SetCurrState(bool bOk);
     void LOR_Clear();
+	void WM_Set(QList<NFrame *>* list);
 };
 
 #endif // MLV_H
