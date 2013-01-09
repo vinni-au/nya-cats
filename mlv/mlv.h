@@ -48,6 +48,8 @@ public:
     void Step(int x, int y);
     void Stop();
 
+	void ClearAll();
+
     //Для продукционного вывода
     //Функция для получения значения слота фрейма экземпляра при продукционном выводе.
     //frameId - id фрейма-экземпляра
@@ -76,6 +78,7 @@ protected:
     bool Init();
     void UpdateGrid();
 	void UpdateCell(NFrame* cellInst, NFrame* imageFrame);
+	void ClearCell(NFrame* cellInst);
 	void ClearWorkMem();
 
     bool BindFrame(NFrame* frame, bool fillDefault = false, bool bindChildren = true);

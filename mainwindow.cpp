@@ -103,7 +103,7 @@ void MainWindow::on_actOpen_triggered()
                 m_kbManager->setDirty(false);//иначе все дело портит вопрос
                 //statusBar()->showMessage(QString("Открыт файл: %1").arg(esFile),2000);
                 QMessageBox::information(this,"Информация","База знаний загружена",QMessageBox::Ok);
-                viz->RedrawItems();
+                m_mlv->ClearAll();
             }
         }
     }
@@ -112,7 +112,7 @@ void MainWindow::on_actOpen_triggered()
 void MainWindow::on_actClose_triggered()
 {
     on_actCreate_triggered();
-    viz->RedrawItems();
+    m_mlv->ClearAll();
 }
 
 void MainWindow::on_actSave_triggered()

@@ -476,8 +476,6 @@ void MLV::UpdateGrid()
 void MLV::UpdateCell(NFrame* cellInst, NFrame* imageFrame)
 {
 	if (cellInst == NULL) return;
-	if (!m_KBManager->HasParentWithName(imageFrame, SYSSTR_FRAMENAME_IMAGE)) return;
-	if (m_Grid == NULL) return;
 
 	NFrame* itemInst = GetGameInst(cellInst);
 	if (itemInst == NULL) return;
@@ -524,6 +522,37 @@ void MLV::UpdateCell(NFrame* cellInst, NFrame* imageFrame)
 	{
 		m_Grid->MoveGameItemTo(oldX, oldY, newX, newY);
 	}
+}
+
+
+void MLV::ClearCell(NFrame* cellInst)
+{
+	if (cellInst == NULL) return;
+
+	NFrame* itemInst = GetGameInst(cellInst);
+	if (itemInst != NULL && itemInst->frameName() == SYSSTR_FRAMENAME_EMPTY)
+		return;
+
+	if (itemInst != NULL)
+	{
+		m_WorkMemory.removeAll(itemInst);
+		m_ItemFrameInsts.removeAll(itemInst);
+		m_Cache.removeAll(itemInst);
+		Cell* cell = m_Grid->FindCellByItemFrameId(itemInst->id());
+		cell->SetGameItem(NULL);
+		delete itemInst;
+	}
+
+	itemInst = CreateFrameInstanceFull(SYSSTR_FRAMENAME_EMPTY);
+	SetSubframe(cellInst, SYSSTR_SLOTNAME_GAMEITEM, itemInst, true);
+}
+
+void MLV::ClearAll()
+{
+	for (int i = 0; i < m_CellFrameInsts.size(); i++)
+		ClearCell(m_CellFrameInsts[i]);
+
+	m_Viz->RedrawItems();
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -637,6 +666,7 @@ void MLV::RandomStart()
 	if (m_GameContinues) return;
 	if (!Init()) return;
 	m_GameContinues = true;
+	ClearAll();
 
 	// Тут случайным образом заполняем поле
 	int field = m_Grid->GetCount() * m_Grid->GetCount() / 4;
@@ -703,7 +733,7 @@ NFrame* MLV::CreateRandGameItemInst()
 		SetSlotValue(ItemInst, SYSSTR_SLOTNAME_TEAM, randTeam);
 
 		// Заполняем значение здоровье
-		SetSlotValue(ItemInst, SYSSTR_SLOTNAME_HEALTH, qrand() % 5);
+		SetSlotValue(ItemInst, SYSSTR_SLOTNAME_HEALTH, qrand() % 5 + 1);
 	}
 	m_ItemFrameInsts.append(ItemInst);
 	m_WorkMemory.append(ItemInst);
