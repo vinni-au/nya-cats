@@ -204,56 +204,6 @@
                 </slot>
                 <slot system="0">
                     <fasets>
-                        <faset value="Порог уровня активности" name="name"/>
-                        <faset value="int" name="slot_type"/>
-                        <faset value="10" name="default_value"/>
-                        <faset value="production" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Подъемная сила" name="name"/>
-                        <faset value="int" name="slot_type"/>
-                        <faset value="50" name="default_value"/>
-                        <faset value="production" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Скорость передвижения" name="name"/>
-                        <faset value="int" name="slot_type"/>
-                        <faset value="1" name="default_value"/>
-                        <faset value="production" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Уровень защиты" name="name"/>
-                        <faset value="int" name="slot_type"/>
-                        <faset value="2" name="default_value"/>
-                        <faset value="production" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
-                        <faset value="Радиус обзора" name="name"/>
-                        <faset value="int" name="slot_type"/>
-                        <faset value="1" name="default_value"/>
-                        <faset value="production" name="marker_type"/>
-                        <faset value="" name="marker"/>
-                        <faset value="same" name="inheritance_type"/>
-                    </fasets>
-                </slot>
-                <slot system="0">
-                    <fasets>
                         <faset value="Команда" name="name"/>
                         <faset value="Команды" name="slot_type"/>
                         <faset value="" name="default_value"/>
@@ -2390,6 +2340,16 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="Ячейка игрового поля" name="name"/>
+                        <faset value="frame" name="slot_type"/>
+                        <faset value="Ячейка игрового поля" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
             </slots>
         </frame>
         <frame type="0" id="70" system="0">
@@ -4473,7 +4433,7 @@ sys.ShowMsg("Мне нечего делать!");</proc>
         <item x="689" title="Изо лекарь средне жизни" y="449" id="66"/>
         <item x="666" title="Изо лекарь мало жизни" y="509" id="67"/>
         <item x="-577" title="Нечего делать" y="-178" id="68"/>
-        <item x="-576" title="Некуда идти" y="-107" id="69"/>
+        <item x="-577" title="Некуда идти" y="-103" id="69"/>
         <item x="327" title="Изображение препятствия" y="200" id="70"/>
         <item x="-1100" title="Нет еды справа" y="955" id="71"/>
         <item x="-1102" title="Нет еды слева" y="1015" id="72"/>
@@ -4567,6 +4527,6 @@ sys.ShowMsg("Мне нечего делать!");</proc>
         <link sid="75" did="24" text="is-a"/>
         <link sid="76" did="24" text="is-a"/>
         <link sid="77" did="24" text="is-a"/>
-        <link sid="78" did="24" text="is-a"/>
+        <link sid="1" did="69" text="sub"/>
     </diagram>
 </kb>
