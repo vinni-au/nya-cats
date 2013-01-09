@@ -495,7 +495,14 @@ void MLV::UpdateCell(NFrame* cellInst, NFrame* imageFrame)
 		cell = m_Grid->GetCell(newX, newY);
 		if (cell == NULL) return;
 		QColor& col = m_Viz->GetColorByTeam(team);
-		cell->SetGameItem(new GameItem(type, QPixmap(), team, col, itemInst->id()));
+
+
+                QPixmap pix;
+                QColor color = col;
+                int idd =  itemInst->id();
+
+
+                cell->SetGameItem(new GameItem(type, pix, team, color, idd));
 	}
 
 	// Обновляем картинку, фон
