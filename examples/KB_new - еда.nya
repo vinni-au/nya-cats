@@ -2328,7 +2328,13 @@ if(life&lt;=0)
 	TopCell.Clear();
 }</proc>
         <proc name="proc_Еда слева">sys.ShowMsg("Еда слева. Едим ее.");
-Cell.getGameObject().setSlotValue("Уровень жизни",5);
+
+//function add(x,y)
+//{
+//	return x+y;
+//}
+val sum = 5;//add(3,2);
+Cell.getMan().setLife(sum);
 LeftCell.Clear();</proc>
         <proc name="proc_Еда справа">sys.ShowMsg("Еда справа. Едим ее.");
 Cell.setSlotValue("Уровень жизни",5);
@@ -2337,8 +2343,17 @@ RightCell.Clear();</proc>
 Cell.setSlotValue("Уровень жизни",5);
 TopCell.Clear();</proc>
         <proc name="proc_Еда снизу">sys.ShowMsg("Еда снизу. Едим ее.");
-Cell.setSlotValue("Уровень жизни",5);
-BottomCell.Clear();</proc>
+function add(x,y)
+{
+return x+y;
+}
+Cell.getMan().Life=add(2,3);
+BottomCell.Clear();
+
+if(LeftCell.hasGameObject("Пусто1"))
+{
+sys.ShowMsg("ololo");
+}</proc>
         <proc name="proc_Нет еды справа">sys.ShowMsg("Нет еды справа. Идем направо");
 Cell.X+=1;
 RightCell.X-=1;

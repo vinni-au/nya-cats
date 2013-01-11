@@ -1197,3 +1197,8 @@ void MLV::NowhereToGo(QScriptValue qsvCell)
     FillSituationByCell(cell, nowhereToGo);
     DoAction(nowhereToGo);
 }
+
+int MLV::rand(int max)
+{
+    return qrand()%(max+1);
+}

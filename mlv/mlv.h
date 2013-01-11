@@ -117,6 +117,7 @@ protected:
     void DoAction(NFrame* frameSituation);
     Q_INVOKABLE void ShowMsg(QString msg);
     Q_INVOKABLE void NowhereToGo(QScriptValue qsCell);
+    Q_INVOKABLE int rand(int max);
 
     // Поиск в рабочей памяти
     NFrame* FindByProtName(QString name);   // Поиск по имени прототипа
