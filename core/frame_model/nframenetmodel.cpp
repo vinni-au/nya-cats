@@ -101,6 +101,12 @@ NFramenetModel::data(const QModelIndex &index, int role) const
     int column;
     int row;
 
+    NSlot* x_slot;
+    QString x_val;
+    NSlot* y_slot;
+    QString y_val;
+    QString frameName;
+
     switch(node->type)
     {
     case NFrameNode::Root:
@@ -118,7 +124,22 @@ NFramenetModel::data(const QModelIndex &index, int role) const
         if(!slotName)
             return "errSlotName";
 
-        return slotName->defValue();
+        frameName = slotName->defValue().toString();
+
+        if( frame->frameType()==FrameType::exemplar)
+        {
+            frameName.append(QString(" %1").arg(frame->id()));
+            if(frameName.contains("Ячейка игрового поля"))
+            {
+                x_slot = frame->getSlotByName("x");
+                x_val = x_slot->getFasetByName("value")->value().toString();
+                y_slot = frame->getSlotByName("y");
+                y_val = y_slot->getFasetByName("value")->value().toString();
+
+                frameName.append( (QString(" (%1, %2)")).arg(x_val).arg(y_val));
+            }
+        }
+        return frameName;
         break;
     case NFrameNode::Faset:
         column = index.column();
