@@ -9,8 +9,11 @@
 #include "core/nkbmanager.h"
 #include "mlv/mlv.h"
 #include "ui/mlvcontrol.h"
+#include "ui/proceditor.h"
 
 #define MAINWINDOWTITLE "NYA CATS"
+
+
 
 namespace Ui {
     class MainWindow;
@@ -72,6 +75,9 @@ private slots:
     void setEnabledStartRandomGame(bool enabled);
     void setEnabledStep(bool enabled);
     void setEnabledStopGame(bool enabled);
+
+    void on_actGlobalProcsEditor_triggered();
+    void onGlobalProcAdded(NProc *proc,bool newProc);
 
 private:
     Ui::MainWindow *ui;

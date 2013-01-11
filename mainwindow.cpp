@@ -310,3 +310,20 @@ void MainWindow::setEnabledStopGame(bool enabled)
     ui->actStopGame->setEnabled(enabled);
     btnStopGame->setEnabled(enabled);
 }
+
+void MainWindow::on_actGlobalProcsEditor_triggered()
+{
+    NProc *proc = new NProc();
+    proc->setProc( m_kbManager->globalProcsContext() );
+    ProcEditor *procEditor = new ProcEditor(proc,false);
+    procEditor->setWindowModality(Qt::ApplicationModal);
+    QObject::connect(procEditor,SIGNAL(sigProcAdded(NProc*,bool)),this,SLOT(onGlobalProcAdded(NProc*,bool)));
+    procEditor->show();
+}
+
+void MainWindow::onGlobalProcAdded(NProc *proc,bool newProc)
+{
+    if(m_kbManager->globalProcsContext()!=proc->proc())
+        m_kbManager->setDirty(true);
+    m_kbManager->setGlobalProcsContext( proc->proc() );
+}

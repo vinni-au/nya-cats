@@ -548,6 +548,11 @@ NKBManager::saveToXml(QTextStream &stream)
     //диаграммы
     kbEl.appendChild( m_diagramElement );
 
+    //глобальные процедуры
+    QDomElement globalProcsEl = doc.createElement("global_procs"); kbEl.appendChild(globalProcsEl);
+    QDomText text = doc.createTextNode(globalProcsContext()); globalProcsEl.appendChild(text);
+
+
     doc.save(stream,4);
 
 }
@@ -598,6 +603,13 @@ NKBManager::readFromXml(QFile &file)
     }
     //диаграммы
     m_diagramElement=kbEl.firstChildElement("diagram");
+
+    //глобальные процедуры
+    QDomElement globalProcsEl = kbEl.firstChildElement("global_procs");
+    if(!globalProcsEl.isNull())
+    {
+        setGlobalProcsContext( globalProcsEl.text() );
+    }
     file.close();
     setDirty(false);
     emit sigDataLoaded();
@@ -1524,4 +1536,14 @@ bool NKBManager::procExists(QString name)
     NProc* proc=NULL;
     proc = getProc(name);
     return proc!=NULL ? true : false;
+}
+
+QString NKBManager::globalProcsContext()
+{
+    return m_globalProcsContext;
+}
+
+void NKBManager::setGlobalProcsContext(QString context)
+{
+    m_globalProcsContext = context;
 }

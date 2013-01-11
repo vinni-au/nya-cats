@@ -1123,6 +1123,10 @@ void  MLV::DoAction(NFrame* frameSituation)
     if(script=="")
         return;
 
+    //достаем глобальный контекст
+    QString globalProcCpntext = m_KBManager->globalProcsContext();
+    script=globalProcCpntext.append(script);
+
     QScriptEngine *engine = new QScriptEngine();
 
     //окружение скрипта

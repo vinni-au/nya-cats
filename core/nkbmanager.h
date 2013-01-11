@@ -104,6 +104,9 @@ public:
     QList<NFrame*>  getAllParents(NFrame* frame);
     QStringList     getAllParentsNames(NFrame* frame);
 
+    QString globalProcsContext();
+    void    setGlobalProcsContext(QString context);
+
 private:
     NFrame  *getFrameById(int id);
     NFrame  *getFrameByName(QString name);
@@ -172,6 +175,8 @@ private:
     QFile       *m_file;                        //ссылка на файл БЗ
 
     int m_frameExemplarMaxId;
+
+    QString m_globalProcsContext;                 //глобальные процедуры в скриптах
 public:
     QDomDocument doc;
 };

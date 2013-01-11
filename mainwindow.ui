@@ -52,6 +52,7 @@
     </property>
     <addaction name="actFrameEditor"/>
     <addaction name="actDomainEditor"/>
+    <addaction name="actGlobalProcsEditor"/>
    </widget>
    <widget class="QMenu" name="menuGame">
     <property name="title">
@@ -177,6 +178,11 @@
   <action name="actStartRandGame">
    <property name="text">
     <string>Случайная игра</string>
+   </property>
+  </action>
+  <action name="actGlobalProcsEditor">
+   <property name="text">
+    <string>Редактор глобальных процедур</string>
    </property>
   </action>
  </widget>

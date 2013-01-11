@@ -2213,178 +2213,23 @@ df
 g
 dfg
 123f</proc>
-        <proc name="proc_Враг_слева">sys.ShowMsg("враг слева. Иду на свободную клетку.");
-		function GoLeft()
-		{
-			if(LeftCell.hasGameObject("Пусто"))
-			{
-				Cell.X-=1;
-				LeftCell.X+=1;
-				return true;
-			}
-			else
-				return false;
-		}
-		function GoRight()
-		{
-			if(RightCell.hasGameObject("Пусто"))
-			{
-				Cell.X+=1;
-				RightCell.X-=1;
-				return true;
-			}
-			else
-				return false;
-		}
-		function GoTop()
-		{
-			if(TopCell.hasGameObject("Пусто"))
-			{
-				Cell.Y-=1;
-				TopCell.Y+=1;
-				return true;
-			}
-			else
-				return false;
-		}
-		
-		function GoBottom()
-		{
-			if(BottomCell.hasGameObject("Пусто"))
-			{
-				Cell.Y+=1;
-				BottomCell.Y-=1;
-				return true;
-			}
-			else
-				return false;
-		}
-		function Go()
-{
-	var dirs = [];
-	while(true)
-	{
-		var r = sys.rand(3);
-		if(r==0)
-		{
-			if(GoLeft())
-				return;
-			dirs["left"]=true;	
-		}
-		else if(r==1)
-		{
-			if(GoRight())
-				return;
-			dirs["right"]=true;	
-		}
-		else if(r==2)
-		{
-			if(GoTop())
-				return;
-			dirs["top"]=true;	
-		}
-		else if(r==3)
-		{
-			if(GoBottom())
-				return;
-			dirs["bottom"]=true;	
-		}
-		
-		if(dirs["left"]&amp;&amp; dirs["right"]&amp;&amp; dirs["top"]&amp;&amp; dirs["bottom"])
-		{
-			sys.NowhereToGo(Cell);
-			return;
-		}
-	}
-}
-		
-		Go();</proc>
+        <proc name="proc_Враг_слева">
+		sys.ShowMsg("враг слева. Иду на свободную клетку.");
+		Go();
+		</proc>
         <proc name="proc_врагСправа">sys.ShowMsg("Враг справа. Бьем его.");
-var life =  RightCell.getGameObject().getSlotValue("Уровень жизни");
+var life =  RightCell.getMan().Life;
 life--;
-RightCell.getGameObject().setSlotValue("Уровень жизни",life);
+RightCell.getMan().Life=life;
 if(life&lt;=0)
 {
 	RightCell.Clear();
 }
 
 </proc>
-        <proc name="proc_врагСверху">function GoLeft()
-{
-	if(Cell.X &lt;1)
-	{
-		return false;
-	}
-	if(LeftCell.hasGameObject("Пусто"))
-	{
-		Cell.X-=1;
-		LeftCell.X+=1;
-		return true;
-	}
-	else
-		return false;
-}
-function GoRight()
-{
-	if(Cell.X > 8)
-	{
-		return false;
-	}
-	if(RightCell.hasGameObject("Пусто"))
-	{
-		Cell.X+=1;
-		RightCell.X-=1;
-		return true;
-	}
-	else
-		return false;
-}
-function GoTop()
-{
-	if(Cell.Y &lt; 1)
-	{
-		return false;
-	}
-	if(TopCell.hasGameObject("Пусто"))
-	{
-		Cell.Y-=1;
-		TopCell.Y+=1;
-		return true;
-	}
-	else
-		return false;
-}
-function GoBottom()
-{
-	if(Cell.Y > 8)
-	{
-		return false;
-	}
-	if(BottomCell.hasGameObject("Пусто"))
-	{
-		Cell.Y+=1;
-		BottomCell.Y-=1;
-		return true;
-	}
-	else
-		return false;
-}
-function Go()
-{
-	
-	if(GoLeft())
-		return;
-	if(GoRight())
-		return;
-	if(GoTop())
-		return;
-	if(GoBottom())
-		return;
-		
-	sys.NothingToGo(Cell);
-}
-
-Go();</proc>
+        <proc name="proc_врагСверху">
+		Go();
+		</proc>
         <proc name="test">//var man = Cell.getMan();
 //if(RightCell.hasGameObject("Лучник"))
 //{
@@ -2404,207 +2249,99 @@ Go();</proc>
 //sys.ShowMsg("Уровень жизни");
 //sys.NowhereToGo(Cell);
 </proc>
-        <proc name="нечегоделать">sys.ShowMsg("Мне нечего делать!");
-Cell.getMan().Life--;
-if(Cell.getMan().Life&lt;=0)
-{
-//Cell.Clear();
-return;
-}
-
-
-
-		function GoLeft()
+        <proc name="нечегоделать">
+		sys.ShowMsg("Мне нечего делать!");
+		Cell.getMan().Life--;
+		if(Cell.getMan().Life&lt;=0)
 		{
-			if(Cell.X&lt;1)
-			{
-				return false;
-			}
-			if(LeftCell.hasGameObject("Пусто"))
-			{
-				Cell.X-=1;
-				LeftCell.X+=1;
-				sys.ShowMsg("Иду налево");
-				return true;
-			}
-			else
-				return false;
+			Cell.Clear();
+			return;
 		}
-		function GoRight()
-		{
-			if(RightCell.hasGameObject("Пусто"))
-			{
-				Cell.X+=1;
-				RightCell.X-=1;
-				sys.ShowMsg("Иду направо");
-				return true;
-			}
-			else
-				return false;
-		}
-		function GoTop()
-		{
-			if(TopCell.hasGameObject("Пусто"))
-			{
-				Cell.Y-=1;
-				TopCell.Y+=1;
-				sys.ShowMsg("Иду вверх");
-				return true;
-			}
-			else
-				return false;
-		}
-		
-		function GoBottom()
-		{
-			if(BottomCell.hasGameObject("Пусто"))
-			{
-				Cell.Y+=1;
-				BottomCell.Y-=1;
-				sys.ShowMsg("Иду вниз");
-				return true;
-			}
-			else
-				return false;
-		}
-		function Go()
-		{
-			if(GoLeft())
-				return;
-			if(GoRight())
-				return;
-			if(GoTop())
-				return;
-			if(GoBottom())
-				return;
-				
-			sys.NowhereToGo(Cell);
-		}
-		
-		Go();</proc>
+		Go();
+		</proc>
         <proc name="некудаидти">sys.ShowMsg("Некуда идти!");</proc>
-        <proc name="proc_Есть враги нет еды много жизни">sys.ShowMsg("Есть враги нет еды много жизни. Иду вверх.");
-Cell.Y=Cell.Y-1;
-TopCell.Y = TopCell.Y+1;</proc>
-        <proc name="proc_Много жизни">sys.ShowMsg("Много жизни. Идем на пустую клетку");
-
-if(RightCell.hasGameObject("Пусто"))
-{
-Cell.X+=1;
-RightCell.X-=1;
-return;
-}
-
-if(LeftCell.hasGameObject("Пусто"))
-{
-Cell.X-=1;
-LeftCell.X+=1;
-return;
-}
-
-if(TopCell.hasGameObject("Пусто"))
-{
-Cell.Y-=1;
-TopCell.Y+=1;
-return;
-}
-
-
-if(BottomCell.hasGameObject("Пусто"))
-{
-Cell.Y+=1;
-BottomCell.Y-=1;
-return;
-}</proc>
-        <proc name="proc_Ничего нет много жизни">sys.ShowMsg("Много жизни. Идем на пустую клетку");
-
-if(RightCell.hasGameObject("Пусто"))
-{
-Cell.X+=1;
-RightCell.X-=1;
-return;
-}
-
-if(LeftCell.hasGameObject("Пусто"))
-{
-Cell.X-=1;
-LeftCell.X+=1;
-return;
-}
-
-if(TopCell.hasGameObject("Пусто"))
-{
-Cell.Y-=1;
-TopCell.Y+=1;
-return;
-}
-
-
-if(BottomCell.hasGameObject("Пусто"))
-{
-Cell.Y+=1;
-BottomCell.Y-=1;
-return;
-}</proc>
-        <proc name="proc_Нет врага снизу">sys.ShowMsg("Нет врага снизу. Идем вниз");
-
-
-
-
-if(BottomCell.hasGameObject("Пусто"))
-{
-Cell.Y+=1;
-BottomCell.Y-=1;
-return;
-}</proc>
-        <proc name="proc_Враг снизу">sys.ShowMsg("враг снизу. Иду наверх");
-Cell.Y-=1;
-TopCell.Y+= 1;</proc>
-        <proc name="proc_Враг сверху">sys.ShowMsg("Враг сверху. Бьем его.");
-var life =  TopCell.getSlotValue("Уровень жизни");
-life--;
-TopCell.setSlotValue("Уровень жизни",life);
-if(life&lt;=0)
-{
-	TopCell.Clear();
-}</proc>
-        <proc name="proc_Еда слева">sys.ShowMsg("Еда слева. Едим ее.");
-Cell.getGameObject().setSlotValue("Уровень жизни",5);
-LeftCell.Clear();</proc>
-        <proc name="proc_Еда справа">sys.ShowMsg("Еда справа. Едим ее.");
-Cell.getGameObject().setSlotValue("Уровень жизни",5);
-RightCell.Clear();</proc>
-        <proc name="proc_Еда сверху">sys.ShowMsg("Еда сверху. Едим ее.");
-Cell.getGameObject().setSlotValue("Уровень жизни",5);
-TopCell.Clear();</proc>
-        <proc name="proc_Еда снизу">sys.ShowMsg("Еда снизу. Едим ее.");
-Cell.getGameObject().setSlotValue("Уровень жизни",5);
-BottomCell.Clear();</proc>
-        <proc name="proc_Нет еды справа">sys.ShowMsg("Нет еды справа. Идем направо");
-Cell.X+=1;
-RightCell.X-=1;
-</proc>
-        <proc name="proc_Нет еды слева">sys.ShowMsg("Нет еды слева. Идем направо");
-Cell.X+=1;
-RightCell.X-=1;</proc>
-        <proc name="proc_Нет еды сверху">sys.ShowMsg("Нет еды сверху. Идем направо");
-Cell.X+=1;
-RightCell.X-=1;</proc>
-        <proc name="proc_Нет еды снизу">sys.ShowMsg("Нет еды снизу. Идем направо");
-Cell.X+=1;
-RightCell.X-=1;</proc>
-        <proc name="proc_Нет врага справа">sys.ShowMsg("Нет врага справа. Идем направо");
-Cell.X+=1;
-RightCell.X-=1;</proc>
-        <proc name="proc_Нет врага слева">sys.ShowMsg("Нет врага слева. Идем налево");
-Cell.X-=1;
-LeftCell.X+=1;</proc>
-        <proc name="proc_Нет врага сверху">sys.ShowMsg("Нет врага сверху. Идем направо");
-Cell.X+=1;
-RightCell.X-=1;</proc>
-        <proc name="proc_Нет врагов">sys.ShowMsg("Нет врагов. Идем направо");
-Cell.X+=1;
-RightCell.X-=1;</proc>
+        <proc name="proc_Есть враги нет еды много жизни">
+		sys.ShowMsg("Есть враги нет еды много жизни. Иду вверх.");
+		GoTop();
+		</proc>
+        <proc name="proc_Много жизни">
+		sys.ShowMsg("Много жизни. Идем на пустую клетку");
+		Go();
+		</proc>
+        <proc name="proc_Ничего нет много жизни">
+		sys.ShowMsg("Много жизни. Идем на пустую клетку");
+		Go();
+		</proc>
+        <proc name="proc_Нет врага снизу">
+		sys.ShowMsg("Нет врага снизу. Идем вниз");
+		GoBottom();
+		</proc>
+        <proc name="proc_Враг снизу">
+		sys.ShowMsg("враг снизу. Иду наверх");
+		GoTop();
+		</proc>
+        <proc name="proc_Враг сверху">
+		sys.ShowMsg("Враг сверху. Бьем его.");
+		var life =  TopCell.getSlotValue("Уровень жизни");
+		life--;
+		TopCell.setSlotValue("Уровень жизни",life);
+		if(life&lt;=0)
+		{
+			TopCell.Clear();
+		}
+		</proc>
+        <proc name="proc_Еда слева">
+		sys.ShowMsg("Еда слева. Едим ее.");
+		Cell.getMan().Life = 5;
+		LeftCell.Clear();
+		</proc>
+        <proc name="proc_Еда справа">
+		sys.ShowMsg("Еда справа. Едим ее.");
+		Cell.getMan().Life = 5;
+		RightCell.Clear();
+		</proc>
+        <proc name="proc_Еда сверху">
+		sys.ShowMsg("Еда сверху. Едим ее.");
+		Cell.getMan().Life = 5;
+		TopCell.Clear();
+		</proc>
+        <proc name="proc_Еда снизу">
+		sys.ShowMsg("Еда снизу. Едим ее.");
+		Cell.getMan().Life = 5;
+		BottomCell.Clear();
+		</proc>
+        <proc name="proc_Нет еды справа">
+		sys.ShowMsg("Нет еды справа. Идем направо");
+		GoRight();
+		</proc>
+        <proc name="proc_Нет еды слева">
+		sys.ShowMsg("Нет еды слева. Идем направо");
+		GoRight();
+		</proc>
+        <proc name="proc_Нет еды сверху">
+		sys.ShowMsg("Нет еды сверху. Идем направо");
+		GoRight();
+		</proc>
+        <proc name="proc_Нет еды снизу">
+		sys.ShowMsg("Нет еды снизу. Идем направо");
+		GoRight();
+		</proc>
+        <proc name="proc_Нет врага справа">
+		sys.ShowMsg("Нет врага справа. Идем направо");
+		GoRight();
+		</proc>
+        <proc name="proc_Нет врага слева">
+		sys.ShowMsg("Нет врага слева. Идем налево");
+		GoLeft();
+		</proc>
+        <proc name="proc_Нет врага сверху">
+		sys.ShowMsg("Нет врага сверху. Идем направо");
+		GoRight();
+		</proc>
+        <proc name="proc_Нет врагов">
+		sys.ShowMsg("Нет врагов. Идем направо");
+		GoRight();
+		</proc>
     </procs>
     <productions>
         <production name="врагслева">
@@ -4417,4 +4154,103 @@ RightCell.X-=1;</proc>
         <link sid="82" did="49" text="is-a"/>
         <link sid="83" did="50" text="is-a"/>
     </diagram>
+    <global_procs>
+function GoLeft()
+{
+	if(Cell.X &lt; 1)
+	{
+		return false;
+	}
+	if(LeftCell.hasGameObject("Пусто"))
+	{
+		Cell.X-=1;
+		LeftCell.X+=1;
+		return true;
+	}
+	else
+		return false;
+}
+function GoRight()
+{
+	if(Cell.X > 8)
+	{
+		return false;
+	}
+	if(RightCell.hasGameObject("Пусто"))
+	{
+		Cell.X+=1;
+		RightCell.X-=1;
+		return true;
+	}
+	else
+		return false;
+}
+function GoTop()
+{
+	if(Cell.Y &lt; 1)
+	{
+		return false;
+	}
+	if(TopCell.hasGameObject("Пусто"))
+	{
+		Cell.Y-=1;
+		TopCell.Y+=1;
+		return true;
+	}
+	else
+		return false;
+}
+function GoBottom()
+{
+	if(Cell.Y > 8)
+	{
+		return false;
+	}
+	if(BottomCell.hasGameObject("Пусто"))
+	{
+		Cell.Y+=1;
+		BottomCell.Y-=1;
+		return true;
+	}
+	else
+		return false;
+}
+function Go()
+{
+	var dirs = [];
+	while(true)
+	{
+		var r = sys.rand(3);
+		if(r==0)
+		{
+			if(GoLeft())
+				return;
+			dirs["left"]=true;	
+		}
+		else if(r==1)
+		{
+			if(GoRight())
+				return;
+			dirs["right"]=true;	
+		}
+		else if(r==2)
+		{
+			if(GoTop())
+				return;
+			dirs["top"]=true;	
+		}
+		else if(r==3)
+		{
+			if(GoBottom())
+				return;
+			dirs["bottom"]=true;	
+		}
+		
+		if(dirs["left"]&amp;&amp; dirs["right"]&amp;&amp; dirs["top"]&amp;&amp; dirs["bottom"])
+		{
+			sys.NowhereToGo(Cell);
+			return;
+		}
+	}
+}</global_procs>
 </kb>
