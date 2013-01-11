@@ -28,7 +28,14 @@ public:
 
     void closeEvent(QCloseEvent *event);
 protected:
-    Visualizer *viz;
+    QHBoxLayout *hlayout;
+     Visualizer *viz;
+     QVBoxLayout *vlayout;
+      QPushButton *btnStartGame;
+      QPushButton *btnStartRandomGame;
+      QPushButton *btnStep;
+      QPushButton *btnStopGame;
+
 
 private slots:
     void on_actExit_triggered();
@@ -59,7 +66,12 @@ private slots:
 
     void onKBDirtyChanged(bool);
 
-	void on_actStartRandGame_triggered();
+    void on_actStartRandGame_triggered();
+
+    void setEnabledStartGame(bool enabled);
+    void setEnabledStartRandomGame(bool enabled);
+    void setEnabledStep(bool enabled);
+    void setEnabledStopGame(bool enabled);
 
 private:
     Ui::MainWindow *ui;

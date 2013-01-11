@@ -540,6 +540,8 @@ void MLV::ClearCell(NFrame* cellInst)
 		m_ItemFrameInsts.removeAll(itemInst);
 		m_Cache.removeAll(itemInst);
 		Cell* cell = m_Grid->FindCellByItemFrameId(itemInst->id());
+                if(!cell)
+                    QMessageBox::information(NULL,"Тут падает!","Бугагашенька!!!",QMessageBox::Ok);
 		cell->SetGameItem(NULL);
                 //delete itemInst;
 	}
@@ -1178,7 +1180,8 @@ void  MLV::DoAction(NFrame* frameSituation)
 
 void MLV::ShowMsg(QString msg)
 {
-    QMessageBox::information(NULL,"",msg,QMessageBox::Ok);
+    qDebug()<<msg;
+    //QMessageBox::information(NULL,"",msg,QMessageBox::Ok);
 }
 
 void MLV::NowhereToGo(QScriptValue qsvCell)

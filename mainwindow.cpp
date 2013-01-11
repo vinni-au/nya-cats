@@ -13,10 +13,38 @@ MainWindow::MainWindow(QWidget *parent) :
 
     m_kbManager = new NKBManager();
 
-    viz = new Visualizer(m_kbManager, this);
-    QHBoxLayout *layout = new QHBoxLayout;
-    layout->addWidget(viz);
-    ui->centralWidget->setLayout(layout);
+
+    hlayout = new QHBoxLayout;
+    {
+        viz = new Visualizer(m_kbManager, this);    hlayout->addWidget(viz);
+
+
+        vlayout = new QVBoxLayout();    hlayout->addLayout(vlayout);
+        {
+            btnStartGame = new QPushButton("Начать игру");  vlayout->addWidget(btnStartGame);
+            QObject::connect(btnStartGame,SIGNAL(clicked()),SLOT(on_actStartGame_triggered()));
+
+            btnStartRandomGame = new QPushButton("Начать случайную игру");  vlayout->addWidget(btnStartRandomGame);
+            QObject::connect(btnStartRandomGame,SIGNAL(clicked()),SLOT(on_actStartRandGame_triggered()));
+
+            btnStep = new QPushButton("Сделать шаг");  vlayout->addWidget(btnStep);
+            QObject::connect(btnStep,SIGNAL(clicked()),SLOT(on_actDoStep_triggered()));
+
+            btnStopGame = new QPushButton("Закончить игру");  vlayout->addWidget(btnStopGame);
+            QObject::connect(btnStopGame,SIGNAL(clicked()),SLOT(on_actStopGame_triggered()));
+
+
+        }
+
+    }
+
+
+    ui->centralWidget->setLayout(hlayout);
+
+    setEnabledStartGame(true);
+    setEnabledStartRandomGame(true);
+    setEnabledStep(false);
+    setEnabledStopGame(false);
 
     m_mlv = new MLV(m_kbManager, viz);
 	//m_mlv->SetFullSearch(true);
@@ -189,8 +217,21 @@ void MainWindow::on_actDomainEditor_triggered()
 
 void MainWindow::on_actStartGame_triggered()
 {
+
+    setEnabledStartGame(false);
+    setEnabledStartRandomGame(false);
+    setEnabledStep(true);
+    setEnabledStopGame(true);
+
     ui->mainStatusBar->showMessage("Идет привязка...");
-    if (!m_mlv) return;
+    if (!m_mlv)
+    {
+        setEnabledStartGame(true);
+        setEnabledStartRandomGame(true);
+        setEnabledStep(false);
+        setEnabledStopGame(false);
+        return;
+    }
     m_mlvControl->ClearLog();
     m_mlvControl->show();
     m_mlv->Start();
@@ -201,7 +242,12 @@ void MainWindow::on_actStopGame_triggered()
 {
     if (!m_mlv) return;
     m_mlv->Stop();
-	m_mlvControl->show();
+    m_mlvControl->show();
+
+    setEnabledStartGame(true);
+    setEnabledStartRandomGame(true);
+    setEnabledStep(false);
+    setEnabledStopGame(false);
 }
 
 void MainWindow::on_actDoStep_triggered()
@@ -209,21 +255,58 @@ void MainWindow::on_actDoStep_triggered()
     ui->mainStatusBar->showMessage("Идет привязка...");
     if (!m_mlv) return;
     m_mlv->Step();
-	m_mlvControl->show();
+    m_mlvControl->show();
     ui->mainStatusBar->clearMessage();
 }
 
 void MainWindow::on_actStartRandGame_triggered()
 {
-	ui->mainStatusBar->showMessage("Идет привязка...");
-	if (!m_mlv) return;
-	m_mlvControl->ClearLog();
-	m_mlvControl->show();
-	m_mlv->RandomStart();
-	ui->mainStatusBar->clearMessage();
+
+    setEnabledStartGame(false);
+    setEnabledStartRandomGame(false);
+    setEnabledStep(true);
+    setEnabledStopGame(true);
+
+    ui->mainStatusBar->showMessage("Идет привязка...");
+    if (!m_mlv)
+    {
+        setEnabledStartGame(true);
+        setEnabledStartRandomGame(true);
+        setEnabledStep(false);
+        setEnabledStopGame(false);
+        return;
+    }
+    m_mlvControl->ClearLog();
+    m_mlvControl->show();
+    m_mlv->RandomStart();
+    ui->mainStatusBar->clearMessage();
 }
 
 void MainWindow::onKBDirtyChanged(bool)
 {
     viz->RedrawItems();
+}
+
+void MainWindow::setEnabledStartGame(bool enabled)
+{
+    ui->actStartGame->setEnabled(enabled);
+    btnStartGame->setEnabled(enabled);
+}
+
+void MainWindow::setEnabledStartRandomGame(bool enabled)
+{
+    ui->actStartRandGame->setEnabled(enabled);
+    btnStartRandomGame->setEnabled(enabled);
+}
+
+void MainWindow::setEnabledStep(bool enabled)
+{
+    ui->actDoStep->setEnabled(enabled);
+    btnStep->setEnabled(enabled);
+}
+
+void MainWindow::setEnabledStopGame(bool enabled)
+{
+    ui->actStopGame->setEnabled(enabled);
+    btnStopGame->setEnabled(enabled);
 }
