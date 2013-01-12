@@ -25,6 +25,7 @@ public:
 
     GameItem* GetGameItem();
 	void SetGameItem(GameItem* item);
+	void Update();
 
     void setContextMenu(QMenu* contextMenu) { m_contextMenu = contextMenu; }
 
@@ -45,6 +46,7 @@ protected:
 signals:
     void contextMenuExecutedOn(Cell* cell);
 	void sigDoVisualizerCell(Cell* cell);
+	QString sigGetInfo(int x, int y);
 };
 
 #endif // CELL_H

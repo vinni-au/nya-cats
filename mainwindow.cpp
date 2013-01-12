@@ -52,9 +52,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
     QObject::connect(viz->GetGrid(), SIGNAL(sigFindOutSituation(int,int)),
-                     SLOT(runMLV(int,int)));
+        SLOT(runMLV(int,int)));
 	QObject::connect(viz->GetGrid(), SIGNAL(sigDoVisualizerCell(Cell*)), m_mlv,
 		SLOT(DoVisualizerCell(Cell*)));
+	QObject::connect(viz->GetGrid(), SIGNAL(sigGetInfo(int,int)), m_mlv,
+		SLOT(getInfo(int,int)));
 
     this->setWindowState(Qt::WindowMaximized);
 

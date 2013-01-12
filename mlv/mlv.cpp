@@ -523,6 +523,7 @@ void MLV::UpdateCell(NFrame* cellInst, NFrame* imageFrame)
 	{
 		m_Grid->MoveGameItemTo(oldX, oldY, newX, newY);
 	}
+	cell->Update();
 }
 
 
@@ -540,10 +541,8 @@ void MLV::ClearCell(NFrame* cellInst)
 		m_ItemFrameInsts.removeAll(itemInst);
 		m_Cache.removeAll(itemInst);
 		Cell* cell = m_Grid->FindCellByItemFrameId(itemInst->id());
-                if(!cell)
-                    QMessageBox::information(NULL,"Тут падает!","Бугагашенька!!!",QMessageBox::Ok);
-		cell->SetGameItem(NULL);
-                //delete itemInst;
+        if(cell != NULL)
+			cell->SetGameItem(NULL);
 	}
 
 	itemInst = CreateFrameInstanceFull(SYSSTR_FRAMENAME_EMPTY);
@@ -803,6 +802,31 @@ void MLV::DoVisualizerCell(Cell* cell)
 	{
 		UpdateCell(CellInst, imageFrame);
 	}
+}
+
+QString MLV::getInfo(int x, int y)
+{
+	NFrame* itemInst = FindByCell(x, y);
+	QString info = "";
+	if (itemInst != NULL)
+	{
+		info = itemInst->frameName() + " (ИД: " + QString::number(itemInst->id()) + ")";
+		for (int i = 0; i < itemInst->slotCount(); i++)
+		{
+			NSlot* slot = itemInst->getSlotByIndex(i);
+			if (slot == NULL) continue;
+			if (slot->isSystem()) continue;
+			info += ("\n" + slot->name() + ": " + slot->getFasetByName("value")->getStringValue());
+		}
+
+		QList<NFrame*> images = getImageInstanceList(itemInst);
+		if (images.size() > 0)
+		{
+			info += ("\nИзображение: " + images[0]->frameName());
+		}
+	}
+
+	return info;
 }
 
 // Обрабатываем ячейку игрового поля

@@ -36,11 +36,13 @@ public:
 signals:
     void sigFindOutSituation(int x, int y);
 	void sigDoVisualizerCell(Cell* cell);
+	QString sigGetInfo(int x, int y);
 
 private slots:
     void setContextMenuCell(Cell* cell);
     void findOutSituation();
 	void slotDoVisualizerCell(Cell* cell);
+	QString slotGetInfo(int x, int y);
 };
 
 #endif // GAMEGRID_H

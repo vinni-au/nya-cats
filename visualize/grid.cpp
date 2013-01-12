@@ -26,7 +26,8 @@ Grid::Grid(int count, QRectF &rect, QColor &color, QGraphicsScene *scene) :
                              SLOT(setContextMenuCell(Cell*)));
 			QObject::connect(cell, SIGNAL(sigDoVisualizerCell(Cell*)),
 				SLOT(slotDoVisualizerCell(Cell*)));
-
+			QObject::connect(cell, SIGNAL(sigGetInfo(int, int)),
+				SLOT(slotGetInfo(int, int)));
 
             m_Cells.append(cell);
             m_Scene->addItem(cell);
@@ -142,5 +143,10 @@ void Grid::findOutSituation()
 void Grid::slotDoVisualizerCell(Cell* cell)
 {
 	emit sigDoVisualizerCell(cell);
+}
+
+QString Grid::slotGetInfo(int x, int y)
+{
+	return emit sigGetInfo(x, y);
 }
 

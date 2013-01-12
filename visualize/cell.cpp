@@ -59,6 +59,8 @@ void Cell::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
 void Cell::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
     update();
+	QString tooltip = emit sigGetInfo(m_xIndex, m_yIndex); 
+	setToolTip(tooltip);
     QGraphicsItem::hoverEnterEvent(event);
 }
 
@@ -154,6 +156,11 @@ GameItem* Cell::GetGameItem()
 void Cell::SetGameItem(GameItem* item)
 {
 	m_Item = item;
+	update();
+}
+
+void Cell::Update()
+{
 	update();
 }
 

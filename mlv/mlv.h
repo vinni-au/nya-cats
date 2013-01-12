@@ -147,6 +147,7 @@ public slots:
     bool getGameContinues() {return m_GameContinues;}
 
 	void DoVisualizerCell(Cell* cell);
+	QString getInfo(int x, int y);
 
 signals:
     void AddMsgToLog(QString msg);
