@@ -126,7 +126,9 @@ void Grid::Clear()
 	for (int i = 0; i < m_Cells.count(); i++)
 	{
 		Cell* cell = m_Cells[i];
+		GameItem* item = cell->GetGameItem();
 		cell->SetGameItem(NULL);
+		delete item;
 	}
 }
 

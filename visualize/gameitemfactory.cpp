@@ -17,7 +17,10 @@ void FactoryFrame::AddItem(GameItem* item, QRectF& rect)
 void FactoryFrame::Clear()
 {
 	for (int i = 0; i < m_FactoryList.size(); i++)
-		m_Scene->removeItem(m_FactoryList.at(i));
+	{
+		m_Scene->removeItem(m_FactoryList[i]);
+		delete m_FactoryList[i];
+	}
 	m_FactoryList.clear();
 	m_FactoryList.append(NULL);
 }

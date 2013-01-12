@@ -544,7 +544,11 @@ void MLV::ClearCell(NFrame* cellInst)
 		m_Cache.removeAll(itemInst);
 		Cell* cell = m_Grid->FindCellByItemFrameId(itemInst->id());
         if(cell != NULL)
+		{
+			GameItem* item = cell->GetGameItem();
 			cell->SetGameItem(NULL);
+			delete item;
+		}
 	}
 
 	itemInst = CreateFrameInstanceFull(SYSSTR_FRAMENAME_EMPTY);
@@ -568,6 +572,8 @@ bool MLV::Init()
     m_KBManager->clearExemplarIds();
 	ClearWorkMem();
 	m_Cache.clear();
+	for (int i = 0; i < m_Cache.size(); ++i)
+		delete m_Cache[i];
 	m_Initialized = false;
 
     // Экземпляр игрового поля
@@ -1217,7 +1223,6 @@ void  MLV::DoAction(NFrame* frameSituation)
     int res = result.toInt32();
     if (result.isError());
         qDebug() << "Script error:" << result.toString();
-
 }
 
 void MLV::ShowMsg(QString msg)
