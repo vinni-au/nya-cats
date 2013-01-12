@@ -830,8 +830,12 @@ QString MLV::getInfo(int x, int y)
 		QList<NFrame*> situations = getSituationInstanceList(FindCell(x, y));
 		if (situations.size() > 0)
 		{
-			int count = situations.size();
-			info += ("\nСитуация: " + situations[count - 1]->frameName());
+			info += "\nСитуация: ";
+			for (int i = 0; i < situations.size(); ++i)
+			{
+				if (i > 0) info += "; ";
+				info += situations[i]->frameName();
+			}
 		}
 	}
 

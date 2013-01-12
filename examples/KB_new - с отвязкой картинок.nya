@@ -5780,7 +5780,7 @@ Go();</proc>
         <item x="-436.3992047812501" title="Есть враги" y="549.6936684218752" id="27"/>
         <item x="-867.64630909375" title="Мало жизни" y="724.5477569374998" id="28"/>
         <item x="-696.9981545468754" title="Много жизни" y="725.1977569374999" id="29"/>
-        <item x="-919.1869392343749" title="Нет еды" y="1073.527966984375" id="30"/>
+        <item x="-919.1869392343749" title="Нет еды" y="1074.527966984375" id="30"/>
         <item x="-918.2279669843751" title="Нет врагов" y="1375.36490621875" id="31"/>
         <item x="-153.5" title="Есть еда и враги, мало жизни" y="1499.6" id="32"/>
         <item x="2.400000000000091" title="Есть еда и враги, много жизни" y="1499.1" id="33"/>
@@ -5916,4 +5916,103 @@ Go();</proc>
         <link sid="82" did="49" text="is-a"/>
         <link sid="83" did="50" text="is-a"/>
     </diagram>
+    <global_procs>
+function GoLeft()
+{
+	if(Cell.X &lt; 1)
+	{
+		return false;
+	}
+	if(LeftCell.hasGameObject("Пусто"))
+	{
+		Cell.X-=1;
+		LeftCell.X+=1;
+		return true;
+	}
+	else
+		return false;
+}
+function GoRight()
+{
+	if(Cell.X > 8)
+	{
+		return false;
+	}
+	if(RightCell.hasGameObject("Пусто"))
+	{
+		Cell.X+=1;
+		RightCell.X-=1;
+		return true;
+	}
+	else
+		return false;
+}
+function GoTop()
+{
+	if(Cell.Y &lt; 1)
+	{
+		return false;
+	}
+	if(TopCell.hasGameObject("Пусто"))
+	{
+		Cell.Y-=1;
+		TopCell.Y+=1;
+		return true;
+	}
+	else
+		return false;
+}
+function GoBottom()
+{
+	if(Cell.Y > 8)
+	{
+		return false;
+	}
+	if(BottomCell.hasGameObject("Пусто"))
+	{
+		Cell.Y+=1;
+		BottomCell.Y-=1;
+		return true;
+	}
+	else
+		return false;
+}
+function Go()
+{
+	var dirs = [];
+	while(true)
+	{
+		var r = sys.rand(3);
+		if(r==0)
+		{
+			if(GoLeft())
+				return;
+			dirs["left"]=true;	
+		}
+		else if(r==1)
+		{
+			if(GoRight())
+				return;
+			dirs["right"]=true;	
+		}
+		else if(r==2)
+		{
+			if(GoTop())
+				return;
+			dirs["top"]=true;	
+		}
+		else if(r==3)
+		{
+			if(GoBottom())
+				return;
+			dirs["bottom"]=true;	
+		}
+		
+		if(dirs["left"]&amp;&amp; dirs["right"]&amp;&amp; dirs["top"]&amp;&amp; dirs["bottom"])
+		{
+			sys.NowhereToGo(Cell);
+			return;
+		}
+	}
+}</global_procs>
 </kb>
