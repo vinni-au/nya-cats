@@ -3,6 +3,7 @@
         <domain Name="Команды">
             <domain_value>Команда 1</domain_value>
             <domain_value>Команда 2</domain_value>
+            <domain_value>Value1</domain_value>
         </domain>
         <domain Name="Логический">
             <domain_value>TRUE</domain_value>
@@ -1626,7 +1627,7 @@
                     <fasets>
                         <faset value="Яркость" name="name"/>
                         <faset value="int" name="slot_type"/>
-                        <faset value="40" name="default_value"/>
+                        <faset value="5" name="default_value"/>
                         <faset value="production" name="marker_type"/>
                         <faset value="яркостьвоина" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -1728,7 +1729,7 @@
                     <fasets>
                         <faset value="Яркость" name="name"/>
                         <faset value="int" name="slot_type"/>
-                        <faset value="40" name="default_value"/>
+                        <faset value="5" name="default_value"/>
                         <faset value="production" name="marker_type"/>
                         <faset value="яркостьвоина" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -1830,7 +1831,7 @@
                     <fasets>
                         <faset value="Яркость" name="name"/>
                         <faset value="int" name="slot_type"/>
-                        <faset value="40" name="default_value"/>
+                        <faset value="5" name="default_value"/>
                         <faset value="production" name="marker_type"/>
                         <faset value="яркостьвоина" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -2130,7 +2131,7 @@
                     <fasets>
                         <faset value="Яркость" name="name"/>
                         <faset value="int" name="slot_type"/>
-                        <faset value="5" name="default_value"/>
+                        <faset value="1" name="default_value"/>
                         <faset value="production" name="marker_type"/>
                         <faset value="яркостьвоина" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -2164,7 +2165,7 @@
                     <fasets>
                         <faset value="Яркость" name="name"/>
                         <faset value="int" name="slot_type"/>
-                        <faset value="5" name="default_value"/>
+                        <faset value="1" name="default_value"/>
                         <faset value="production" name="marker_type"/>
                         <faset value="яркостьвоина" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -2198,7 +2199,7 @@
                     <fasets>
                         <faset value="Яркость" name="name"/>
                         <faset value="int" name="slot_type"/>
-                        <faset value="5" name="default_value"/>
+                        <faset value="1" name="default_value"/>
                         <faset value="production" name="marker_type"/>
                         <faset value="яркостьвоина" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -3101,7 +3102,7 @@ if(life&lt;=0)
                         <then>
                             <var>Яркость</var>
                             <sign>=</sign>
-                            <val>40</val>
+                            <val>5</val>
                         </then>
                     </thens>
                 </rule>
@@ -3118,7 +3119,7 @@ if(life&lt;=0)
                         <then>
                             <var>Яркость</var>
                             <sign>=</sign>
-                            <val>40</val>
+                            <val>5</val>
                         </then>
                     </thens>
                 </rule>
@@ -3186,7 +3187,7 @@ if(life&lt;=0)
                         <then>
                             <var>Яркость</var>
                             <sign>=</sign>
-                            <val>5</val>
+                            <val>1</val>
                         </then>
                     </thens>
                 </rule>
@@ -4096,7 +4097,7 @@ if(life&lt;=0)
         <item x="-577" title="Нечего делать" y="-178" id="68"/>
         <item x="-577" title="Некуда идти" y="-103" id="69"/>
         <item x="327" title="Изображение препятствия" y="200" id="70"/>
-        <item x="-1027" title="Средне жизни" y="725" id="79"/>
+        <item x="-592" title="Средне жизни" y="864" id="79"/>
         <item x="423" title="Изо мертвый мечник" y="580" id="81"/>
         <item x="567" title="Изо мертвый лучник" y="571" id="82"/>
         <item x="711" title="Изо мертвый лекарь" y="579" id="83"/>

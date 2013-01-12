@@ -860,6 +860,7 @@ void MLV::DoCell(NFrame* cell)
 			// Если ни одна ситуация не привязалась - нечего делать
 			NFrame* nothingToDo = CreateFrameInstance(SYSSTR_FRAMENAME_NOTHING_TODO);
 			FillSituationByCell(cell, nothingToDo);
+			m_WorkMemory.append(nothingToDo);
 			DoAction(nothingToDo);
 		}
 	}
@@ -1226,6 +1227,7 @@ void MLV::NowhereToGo(QScriptValue qsvCell)
 
     NFrame* nowhereToGo = CreateFrameInstance(SYSSTR_FRAMENAME_NOWHERE_TOGO);
     FillSituationByCell(cell, nowhereToGo);
+	m_WorkMemory.append(nowhereToGo);
     DoAction(nowhereToGo);
 }
 
