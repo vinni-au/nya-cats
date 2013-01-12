@@ -309,7 +309,9 @@ QList<NFrame*> MLV::getSituationInstanceList(NFrame* cell)
 	for (int i = 0; i < m_WorkMemory.count(); i++)
 	{
 		NFrame* frame = m_WorkMemory[i];
-		if (m_KBManager->HasParentWithName(frame, SYSSTR_FRAMENAME_SITUATION) && !m_KBManager->hasChildren(frame))
+		if ((m_KBManager->HasParentWithName(frame, SYSSTR_FRAMENAME_SITUATION)
+			|| m_KBManager->HasParentWithName(frame, SYSSTR_FRAMENAME_NOTHING_TODO) 
+			|| m_KBManager->HasParentWithName(frame, SYSSTR_FRAMENAME_NOWHERE_TOGO)) && !m_KBManager->hasChildren(frame))
 		{
 			NFrame* gamerCell = GetSubframe(frame, SYSSTR_SLOTNAME_CELL_GAMER, true);
 			if (gamerCell != NULL && gamerCell->id() == cell->id())
@@ -823,6 +825,13 @@ QString MLV::getInfo(int x, int y)
 		if (images.size() > 0)
 		{
 			info += ("\nИзображение: " + images[0]->frameName());
+		}
+
+		QList<NFrame*> situations = getSituationInstanceList(FindCell(x, y));
+		if (situations.size() > 0)
+		{
+			int count = situations.size();
+			info += ("\nСитуация: " + situations[count - 1]->frameName());
 		}
 	}
 
