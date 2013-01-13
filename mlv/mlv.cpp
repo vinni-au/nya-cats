@@ -15,6 +15,12 @@ MLV::MLV(NKBManager* manager, Visualizer* viz) :
 {
     qsrand ( QDateTime::currentDateTime().time().msec() );
 	m_Grid = m_Viz->GetGrid();
+
+
+
+        m_engine = new QScriptEngine();
+
+
 }
 
 
@@ -1171,57 +1177,55 @@ void  MLV::DoAction(NFrame* frameSituation)
     QString globalProcCpntext = m_KBManager->globalProcsContext();
     script=globalProcCpntext.append(script);
 
-    QScriptEngine *engine = new QScriptEngine();
-
     //окружение скрипта
     NFrame *cell = GetSubframe(frameSituation, SYSSTR_SLOTNAME_CELL_GAMER, true);
-    QSProxyCell *proxyCell = new QSProxyCell(cell,engine,this);
-    QScriptValue objectCell = engine->newQObject(proxyCell);
-    engine->globalObject().setProperty("Cell", objectCell);
+    QSProxyCell *proxyCell = new QSProxyCell(cell,m_engine,this);
+    QScriptValue objectCell = m_engine->newQObject(proxyCell);
+    m_engine->globalObject().setProperty("Cell", objectCell);
 
     //ячейка слева
     NFrame *cell_left = GetSubframe(frameSituation, SYSSTR_SLOTNAME_CELL_LEFT, true);
     if(cell_left)
     {
-        QSProxyCell *proxyCellLeft = new QSProxyCell(cell_left,engine,this);
-        QScriptValue objectCellLeft = engine->newQObject(proxyCellLeft);
-        engine->globalObject().setProperty("LeftCell", objectCellLeft);
+        QSProxyCell *proxyCellLeft = new QSProxyCell(cell_left,m_engine,this);
+        QScriptValue objectCellLeft = m_engine->newQObject(proxyCellLeft);
+        m_engine->globalObject().setProperty("LeftCell", objectCellLeft);
     }
 
     //ячейка справа
     NFrame *cell_right = GetSubframe(frameSituation, SYSSTR_SLOTNAME_CELL_RIGTH, true);
     if(cell_right)
     {
-        QSProxyCell *proxyCellRight = new QSProxyCell(cell_right,engine,this);
-        QScriptValue objectCellRight = engine->newQObject(proxyCellRight);
-        engine->globalObject().setProperty("RightCell", objectCellRight);
+        QSProxyCell *proxyCellRight = new QSProxyCell(cell_right,m_engine,this);
+        QScriptValue objectCellRight = m_engine->newQObject(proxyCellRight);
+        m_engine->globalObject().setProperty("RightCell", objectCellRight);
     }
 
     //ячейка сверху
     NFrame *cell_top = GetSubframe(frameSituation, SYSSTR_SLOTNAME_CELL_TOP, true);
     if(cell_top)
     {
-        QSProxyCell *proxyCellTop = new QSProxyCell(cell_top,engine,this);
-        QScriptValue objectCellTop = engine->newQObject(proxyCellTop);
-        engine->globalObject().setProperty("TopCell", objectCellTop);
+        QSProxyCell *proxyCellTop = new QSProxyCell(cell_top,m_engine,this);
+        QScriptValue objectCellTop = m_engine->newQObject(proxyCellTop);
+        m_engine->globalObject().setProperty("TopCell", objectCellTop);
     }
 
     //ячейка снизу
     NFrame *cell_bottom = GetSubframe(frameSituation, SYSSTR_SLOTNAME_CELL_BOTTOM, true);
     if(cell_bottom)
     {
-        QSProxyCell *proxyCellBottom = new QSProxyCell(cell_bottom,engine,this);
-        QScriptValue objectCellBottom = engine->newQObject(proxyCellBottom);
-        engine->globalObject().setProperty("BottomCell", objectCellBottom);
+        QSProxyCell *proxyCellBottom = new QSProxyCell(cell_bottom,m_engine,this);
+        QScriptValue objectCellBottom = m_engine->newQObject(proxyCellBottom);
+        m_engine->globalObject().setProperty("BottomCell", objectCellBottom);
     }
 
-    QScriptValue system = engine->newQObject(this);
-    engine->globalObject().setProperty("sys", system);
+    QScriptValue system = m_engine->newQObject(this);
+    m_engine->globalObject().setProperty("sys", system);
 
     //запускаем скрипт
-    QScriptValue result = engine->evaluate(script);
+    QScriptValue result = m_engine->evaluate(script);
     int res = result.toInt32();
-    if (result.isError());
+    if (result.isError())
         qDebug() << "Script error:" << result.toString();
 }
 

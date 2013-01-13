@@ -43,6 +43,8 @@ protected:
     bool m_GameContinues;
 	bool m_RandomBind;
 
+    QScriptEngine* m_engine;
+
 public:
     MLV(NKBManager* manager, Visualizer* viz);
 

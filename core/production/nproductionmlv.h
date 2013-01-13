@@ -1,6 +1,8 @@
 #ifndef NPRODUCTIONMLV_H
 #define NPRODUCTIONMLV_H
 
+#define QT_NO_DEBUG_STREAM
+
 #include <QObject>
 #include "rulemodel.h"
 #include <QDebug>
