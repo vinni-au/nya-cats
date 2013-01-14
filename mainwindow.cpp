@@ -14,23 +14,23 @@ MainWindow::MainWindow(QWidget *parent) :
     m_kbManager = new NKBManager();
 
 
-    hlayout = new QHBoxLayout;
+    vlayout = new QVBoxLayout();
     {
-        viz = new Visualizer(m_kbManager, this);    hlayout->addWidget(viz);
+        viz = new Visualizer(m_kbManager, this);    vlayout->addWidget(viz);
 
 
-        vlayout = new QVBoxLayout();    hlayout->addLayout(vlayout);
+        hlayout = new QHBoxLayout;    vlayout->addLayout(hlayout);
         {
-            btnStartGame = new QPushButton("Начать игру");  vlayout->addWidget(btnStartGame);
+            btnStartGame = new QPushButton("Начать игру");  hlayout->addWidget(btnStartGame);
             QObject::connect(btnStartGame,SIGNAL(clicked()),SLOT(on_actStartGame_triggered()));
 
-            btnStartRandomGame = new QPushButton("Начать случайную игру");  vlayout->addWidget(btnStartRandomGame);
+            btnStartRandomGame = new QPushButton("Начать случайную игру");  hlayout->addWidget(btnStartRandomGame);
             QObject::connect(btnStartRandomGame,SIGNAL(clicked()),SLOT(on_actStartRandGame_triggered()));
 
-            btnStep = new QPushButton("Сделать шаг");  vlayout->addWidget(btnStep);
+            btnStep = new QPushButton("Сделать шаг");  hlayout->addWidget(btnStep);
             QObject::connect(btnStep,SIGNAL(clicked()),SLOT(on_actDoStep_triggered()));
 
-            btnStopGame = new QPushButton("Закончить игру");  vlayout->addWidget(btnStopGame);
+            btnStopGame = new QPushButton("Закончить игру");  hlayout->addWidget(btnStopGame);
             QObject::connect(btnStopGame,SIGNAL(clicked()),SLOT(on_actStopGame_triggered()));
 
 
@@ -39,7 +39,7 @@ MainWindow::MainWindow(QWidget *parent) :
     }
 
 
-    ui->centralWidget->setLayout(hlayout);
+    ui->centralWidget->setLayout(vlayout);
 
     setEnabledStartGame(true);
     setEnabledStartRandomGame(true);

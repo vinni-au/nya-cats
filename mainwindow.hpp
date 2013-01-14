@@ -31,9 +31,9 @@ public:
 
     void closeEvent(QCloseEvent *event);
 protected:
-    QHBoxLayout *hlayout;
+    QVBoxLayout *vlayout;
      Visualizer *viz;
-     QVBoxLayout *vlayout;
+     QHBoxLayout *hlayout;
       QPushButton *btnStartGame;
       QPushButton *btnStartRandomGame;
       QPushButton *btnStep;

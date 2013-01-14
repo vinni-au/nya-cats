@@ -521,7 +521,17 @@ void MLV::UpdateCell(NFrame* cellInst, NFrame* imageFrame)
 		gameItem->UpdateBrigth(bright.toInt());
 
 	QVariant pic = GetSlotValue(imageFrame, SYSSTR_SLOTNAME_PIC, true);
-	if (!pic.isNull())
+        QVariant health = GetSlotValue(itemInst, SYSSTR_SLOTNAME_HEALTH, true);
+        bool flak = false;
+        if (!health.isNull() && health.toInt() <= 0)
+        {
+            QVariant pic_dead = GetSlotValue(imageFrame, SYSSTR_SLOTNAME_PIC_DEAD, true);
+            if (!pic_dead.isNull())
+                    gameItem->UpdatePic(pic_dead.toString());
+            flak = true;
+        }
+
+        if (!pic.isNull() && !flak)
 		gameItem->UpdatePic(pic.toString());
 
 	int oldX = cell->GetX();
@@ -830,7 +840,9 @@ QString MLV::getInfo(int x, int y)
 			NSlot* slot = itemInst->getSlotByIndex(i);
 			if (slot == NULL) continue;
 			if (slot->isSystem()) continue;
-			info += ("\n" + slot->name() + ": " + slot->getFasetByName("value")->getStringValue());
+                        info += ("\n" + slot->name() + ": " + slot->getFasetByName("value")->getStringValue());
+                        if (slot->name() == SYSSTR_SLOTNAME_HEALTH)
+                            info += " (из 5)";
 		}
 
 		QList<NFrame*> images = getImageInstanceList(itemInst);
@@ -842,7 +854,7 @@ QString MLV::getInfo(int x, int y)
 		QList<NFrame*> situations = getSituationInstanceList(FindCell(x, y));
 		if (situations.size() > 0)
 		{
-			info += "\nСитуация: ";
+                        info += "\nПрошлая ситуация: ";
 			for (int i = 0; i < situations.size(); ++i)
 			{
 				if (i > 0) info += "; ";

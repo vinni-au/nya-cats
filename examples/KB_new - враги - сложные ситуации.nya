@@ -464,6 +464,16 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
+                <slot system="0">
+                    <fasets>
+                        <faset value="ПареньНеМертв" name="name"/>
+                        <faset value="ДаНет" name="slot_type"/>
+                        <faset value="Да" name="default_value"/>
+                        <faset value="production" name="marker_type"/>
+                        <faset value="янемертв" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
             </slots>
         </frame>
         <frame type="0" id="24" system="0">
@@ -1060,6 +1070,16 @@
                         <faset value="same" name="inheritance_type"/>
                     </fasets>
                 </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="Картинка мертвого" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value=":images/pics/dead.png" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
                 <slot system="0">
                     <fasets>
                         <faset value="Тип" name="name"/>
@@ -1089,6 +1109,16 @@
                         <faset value="is_a" name="name"/>
                         <faset value="frame" name="slot_type"/>
                         <faset value="Изображение персонажа" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="Картинка мертвого" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value=":images/pics/dead.png" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -1143,6 +1173,16 @@
                         <faset value="Картинка" name="name"/>
                         <faset value="string" name="slot_type"/>
                         <faset value=":images/visualize/war.gif" name="default_value"/>
+                        <faset value="" name="marker_type"/>
+                        <faset value="" name="marker"/>
+                        <faset value="same" name="inheritance_type"/>
+                    </fasets>
+                </slot>
+                <slot system="1">
+                    <fasets>
+                        <faset value="Картинка мертвого" name="name"/>
+                        <faset value="string" name="slot_type"/>
+                        <faset value=":images/pics/dead.png" name="default_value"/>
                         <faset value="" name="marker_type"/>
                         <faset value="" name="marker"/>
                         <faset value="same" name="inheritance_type"/>
@@ -1905,11 +1945,14 @@ dfg
 		</proc>
         <proc name="proc_врагСправа">sys.ShowMsg("Враг справа. Бьем его.");
 var life =  RightCell.getMan().Life;
-life--;
+if (life>0)
+{
+	life--;
+}
 RightCell.getMan().Life=life;
 if(life&lt;=0)
 {
-	RightCell.Clear();
+	//RightCell.Clear();
 }
 
 </proc>
@@ -1937,10 +1980,15 @@ if(life&lt;=0)
 </proc>
         <proc name="нечегоделать">
 		sys.ShowMsg("Мне нечего делать!");
-		Cell.getMan().Life--;
+		var life = Cell.getMan().Life;
+		if (life>0)
+		{
+			life--;
+		}
+		Cell.getMan().Life = life;
 		if(Cell.getMan().Life&lt;=0)
 		{
-			Cell.Clear();
+			//Cell.Clear();
 			return 0;
 		}
 		Go();
@@ -1969,10 +2017,15 @@ if(life&lt;=0)
         <proc name="proc_Враг сверху">
 		sys.ShowMsg("Враг сверху. Бьем его.");
 		var man = TopCell.getMan();
-		man.Life--;
+		var life = man.Life;
+		if (life>0)
+		{
+			life--;
+		}
+		man.Life = life;
 		if(man.Life&lt;=0)
 		{
-			TopCell.Clear();
+			//TopCell.Clear();
 		}
 		</proc>
         <proc name="proc_Еда слева">
@@ -2341,6 +2394,11 @@ else
                             <sign>=</sign>
                             <val>Команда 2</val>
                         </if>
+                        <if>
+                            <var>Ячейка слева.Игровой объект.Уровень жизни</var>
+                            <sign>!=</sign>
+                            <val>0</val>
+                        </if>
                     </ifs>
                     <thens>
                         <then>
@@ -2362,6 +2420,11 @@ else
                             <var>Ячейка слева.Игровой объект.Команда</var>
                             <sign>=</sign>
                             <val>Команда 1</val>
+                        </if>
+                        <if>
+                            <var>Ячейка слева.Игровой объект.Уровень жизни</var>
+                            <sign>!=</sign>
+                            <val>0</val>
                         </if>
                     </ifs>
                     <thens>
@@ -3751,6 +3814,133 @@ else
                 </rule>
             </rules>
         </production>
+        <production name="ЯМертвякПерс">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игровой объект.name</var>
+                            <sign>=</sign>
+                            <val>Мечник</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Тип</var>
+                            <sign>=</sign>
+                            <val>Мечник</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule2">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игровой объект.name</var>
+                            <sign>=</sign>
+                            <val>Лучник</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Тип</var>
+                            <sign>=</sign>
+                            <val>Лучник</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule3">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игровой объект.name</var>
+                            <sign>=</sign>
+                            <val>Лекарь</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Тип</var>
+                            <sign>=</sign>
+                            <val>Лекарь</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule4">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игровой объект.name</var>
+                            <sign>=</sign>
+                            <val>Еда</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Тип</var>
+                            <sign>=</sign>
+                            <val>Еда</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule5">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Игровой объект.name</var>
+                            <sign>=</sign>
+                            <val>Препятствие</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>Тип</var>
+                            <sign>=</sign>
+                            <val>Препятствие</val>
+                        </then>
+                    </thens>
+                </rule>
+            </rules>
+        </production>
+        <production name="янемертв">
+            <rules>
+                <rule Name="Rule1">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка Игрока.Игровой объект.Уровень жизни</var>
+                            <sign>!=</sign>
+                            <val>0</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>ПареньНеМертв</var>
+                            <sign>=</sign>
+                            <val>Да</val>
+                        </then>
+                    </thens>
+                </rule>
+                <rule Name="Rule2">
+                    <reason></reason>
+                    <ifs>
+                        <if>
+                            <var>Ячейка Игрока.Игровой объект.Уровень жизни</var>
+                            <sign>=</sign>
+                            <val>0</val>
+                        </if>
+                    </ifs>
+                    <thens>
+                        <then>
+                            <var>ПареньНеМертв</var>
+                            <sign>=</sign>
+                            <val>Нет</val>
+                        </then>
+                    </thens>
+                </rule>
+            </rules>
+        </production>
     </productions>
     <diagram>
         <item x="-561.0999999999999" title="Игровое поле" y="-245" id="0"/>
@@ -3957,10 +4147,13 @@ function KickEnemy()
 function KickEnemyRight()
 {
 	var enemy = RightCell.getMan();
-	enemy.Life--;
+	if (enemy.Life>0)
+	{
+		enemy.Life--;
+	}
 	if(enemy.Life&lt;1)
 	{
-		RightCell.Clear();
+		//RightCell.Clear();
 	}
 }
 </global_procs>

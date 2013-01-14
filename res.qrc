@@ -15,6 +15,7 @@
         <file>visualize/war1.gif</file>
         <file>pics/stone.png</file>
         <file>pics/stone1.jpg</file>
+        <file>pics/dead.png</file>
     </qresource>
     <qresource prefix="/mlvcontrol">
         <file>pics/fail.jpg</file>

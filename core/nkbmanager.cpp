@@ -129,6 +129,15 @@ bool NKBManager::addFrameImage(QString name)
     slot->setSystem(true);
     frame->addSlot(slot);
 
+    //у фрейма картинки есть слот Картинка мертвого (системный)
+    slot = new NSlot();
+    slot->setHasFasetValue(false);
+    slot->setName("Картинка мертвого");
+    slot->getFasetByName("slot_type")->setValue("string");
+    //slot->getFasetByName("marker_type")->setValue("procedure");
+    slot->setSystem(true);
+    frame->addSlot(slot);
+
     //у фрейма картинки есть слот Тип
     slot = new NSlot();
     slot->setHasFasetValue(false);
