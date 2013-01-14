@@ -1,0 +1,748 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3"/>
+<title>Nya-cats: Класс Ui_KBEditorWindow</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Nya-cats
+   &#160;<span id="projectnumber">1.00</span>
+   </div>
+   <div id="projectbrief">Nya-cats</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="hierarchy.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_ui___k_b_editor_window.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Перечисления</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Элементы перечислений</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Свойства</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Макросы</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-attribs">Открытые атрибуты</a> &#124;
+<a href="class_ui___k_b_editor_window-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс Ui_KBEditorWindow</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:Ui_KBEditorWindow:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_ui___k_b_editor_window.png" usemap="#Ui_KBEditorWindow_map" alt=""/>
+  <map id="Ui_KBEditorWindow_map" name="Ui_KBEditorWindow_map">
+<area href="class_ui_1_1_k_b_editor_window.html" alt="Ui::KBEditorWindow" shape="rect" coords="0,56,123,80"/>
+<area href="class_ui_1_1_k_b_editor_window.html" alt="Ui::KBEditorWindow" shape="rect" coords="133,56,256,80"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a5b8bf03a480f586813d588621433c928"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#a5b8bf03a480f586813d588621433c928">setupUi</a> (QMainWindow *<a class="el" href="class_k_b_editor_window.html">KBEditorWindow</a>)</td></tr>
+<tr class="separator:a5b8bf03a480f586813d588621433c928"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52a8716ca6148e32cd687229152f8f4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#a52a8716ca6148e32cd687229152f8f4c">retranslateUi</a> (QMainWindow *<a class="el" href="class_k_b_editor_window.html">KBEditorWindow</a>)</td></tr>
+<tr class="separator:a52a8716ca6148e32cd687229152f8f4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b8bf03a480f586813d588621433c928"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#a5b8bf03a480f586813d588621433c928">setupUi</a> (QMainWindow *<a class="el" href="class_k_b_editor_window.html">KBEditorWindow</a>)</td></tr>
+<tr class="separator:a5b8bf03a480f586813d588621433c928"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52a8716ca6148e32cd687229152f8f4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#a52a8716ca6148e32cd687229152f8f4c">retranslateUi</a> (QMainWindow *<a class="el" href="class_k_b_editor_window.html">KBEditorWindow</a>)</td></tr>
+<tr class="separator:a52a8716ca6148e32cd687229152f8f4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:a33648e995ef111a34be5ab4f1e13ffdc"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#a33648e995ef111a34be5ab4f1e13ffdc">centralwidget</a></td></tr>
+<tr class="separator:a33648e995ef111a34be5ab4f1e13ffdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5eddc151ee056f196c521bf91424b01"><td class="memItemLeft" align="right" valign="top">QHBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#ad5eddc151ee056f196c521bf91424b01">horizontalLayout_2</a></td></tr>
+<tr class="separator:ad5eddc151ee056f196c521bf91424b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1c6b96a436fa596babe4f2c08151277"><td class="memItemLeft" align="right" valign="top">QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#af1c6b96a436fa596babe4f2c08151277">verticalLayout</a></td></tr>
+<tr class="separator:af1c6b96a436fa596babe4f2c08151277"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42088725664d3289b49b8d9da30fed69"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#a42088725664d3289b49b8d9da30fed69">btnAddFrame</a></td></tr>
+<tr class="separator:a42088725664d3289b49b8d9da30fed69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a602a7acd3fcbd92506bbe456cbf1990d"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#a602a7acd3fcbd92506bbe456cbf1990d">btnAddFrameSituation</a></td></tr>
+<tr class="separator:a602a7acd3fcbd92506bbe456cbf1990d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb5b86d26d8140fab07f5195903ca485"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#abb5b86d26d8140fab07f5195903ca485">btnAddImage</a></td></tr>
+<tr class="separator:abb5b86d26d8140fab07f5195903ca485"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c18d58fc12ea259f4fc954f54a93432"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#a5c18d58fc12ea259f4fc954f54a93432">btnDeleteFrame</a></td></tr>
+<tr class="separator:a5c18d58fc12ea259f4fc954f54a93432"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac2b35f7b3a0226f16ce6f1b61499d89"><td class="memItemLeft" align="right" valign="top">QSpacerItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#aac2b35f7b3a0226f16ce6f1b61499d89">verticalSpacer_2</a></td></tr>
+<tr class="separator:aac2b35f7b3a0226f16ce6f1b61499d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad591fede26c397636ff4256ea3766666"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#ad591fede26c397636ff4256ea3766666">btnAddSlot</a></td></tr>
+<tr class="separator:ad591fede26c397636ff4256ea3766666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a481f0de14bf2e30ecebeadb0ce57d64f"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#a481f0de14bf2e30ecebeadb0ce57d64f">btnEditSlot</a></td></tr>
+<tr class="separator:a481f0de14bf2e30ecebeadb0ce57d64f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f877d6be4fc895777c3f74a060c863a"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#a8f877d6be4fc895777c3f74a060c863a">btnDeleteSlot</a></td></tr>
+<tr class="separator:a8f877d6be4fc895777c3f74a060c863a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcf65a985d20e96fe2c595213d2bf949"><td class="memItemLeft" align="right" valign="top">QCheckBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#afcf65a985d20e96fe2c595213d2bf949">chbAdmin</a></td></tr>
+<tr class="separator:afcf65a985d20e96fe2c595213d2bf949"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e0a2ae2d711e12245c2e49baccd123d"><td class="memItemLeft" align="right" valign="top">QSpacerItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#a6e0a2ae2d711e12245c2e49baccd123d">verticalSpacer</a></td></tr>
+<tr class="separator:a6e0a2ae2d711e12245c2e49baccd123d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef366dc0d7e8b0790a51e3ff579d0335"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#aef366dc0d7e8b0790a51e3ff579d0335">btnOk</a></td></tr>
+<tr class="separator:aef366dc0d7e8b0790a51e3ff579d0335"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe4c8b0d70f999689bf99a1467e06464"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#afe4c8b0d70f999689bf99a1467e06464">btnCancel</a></td></tr>
+<tr class="separator:afe4c8b0d70f999689bf99a1467e06464"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe95238128f24437b96c0934c30e5ac5"><td class="memItemLeft" align="right" valign="top">QSplitter *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#afe95238128f24437b96c0934c30e5ac5">splitter</a></td></tr>
+<tr class="separator:afe95238128f24437b96c0934c30e5ac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dcebb0b000397e092ee98969fcdd11e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_l_gen2_object_properties_editor.html">LGen2ObjectPropertiesEditor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#a1dcebb0b000397e092ee98969fcdd11e">treeView</a></td></tr>
+<tr class="separator:a1dcebb0b000397e092ee98969fcdd11e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3d55d32ba08d618354dfe896ce14a10"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#af3d55d32ba08d618354dfe896ce14a10">verticalLayoutWidget</a></td></tr>
+<tr class="separator:af3d55d32ba08d618354dfe896ce14a10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a105ca60bcbb2820937535f0c9e802a7f"><td class="memItemLeft" align="right" valign="top">QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#a105ca60bcbb2820937535f0c9e802a7f">verticalLayout_2</a></td></tr>
+<tr class="separator:a105ca60bcbb2820937535f0c9e802a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e7e42947f2b6f463ccec692e12b1a5e"><td class="memItemLeft" align="right" valign="top">QHBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#a6e7e42947f2b6f463ccec692e12b1a5e">horizontalLayout</a></td></tr>
+<tr class="separator:a6e7e42947f2b6f463ccec692e12b1a5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96c4ab2f7a714d1b9abbcc2b7d67d746"><td class="memItemLeft" align="right" valign="top">QToolButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#a96c4ab2f7a714d1b9abbcc2b7d67d746">btn_addIsa</a></td></tr>
+<tr class="separator:a96c4ab2f7a714d1b9abbcc2b7d67d746"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8736eaef1b1253e35b6969d3576a588b"><td class="memItemLeft" align="right" valign="top">QToolButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#a8736eaef1b1253e35b6969d3576a588b">btn_addSub</a></td></tr>
+<tr class="separator:a8736eaef1b1253e35b6969d3576a588b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4bf44d1c6b3f8d32a8fc9a2c858a323"><td class="memItemLeft" align="right" valign="top">QSpacerItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#af4bf44d1c6b3f8d32a8fc9a2c858a323">horizontalSpacer_2</a></td></tr>
+<tr class="separator:af4bf44d1c6b3f8d32a8fc9a2c858a323"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af00e55b1b56aa62b906bf792091fbf41"><td class="memItemLeft" align="right" valign="top">QToolButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#af00e55b1b56aa62b906bf792091fbf41">btn_zoomIn</a></td></tr>
+<tr class="separator:af00e55b1b56aa62b906bf792091fbf41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d5794aec7b1c0e61e580c83ae3514f6"><td class="memItemLeft" align="right" valign="top">QToolButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#a2d5794aec7b1c0e61e580c83ae3514f6">btn_zoomOut</a></td></tr>
+<tr class="separator:a2d5794aec7b1c0e61e580c83ae3514f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33846dc42e418438e208d1508041f1d0"><td class="memItemLeft" align="right" valign="top">QSpacerItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#a33846dc42e418438e208d1508041f1d0">horizontalSpacer</a></td></tr>
+<tr class="separator:a33846dc42e418438e208d1508041f1d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8317166f835d908be1f011882aacc782"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_l_gen2_diagram_editor.html">LGen2DiagramEditor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#a8317166f835d908be1f011882aacc782">graphicsView</a></td></tr>
+<tr class="separator:a8317166f835d908be1f011882aacc782"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af412d7a2faf98c007d6947ea62d0220e"><td class="memItemLeft" align="right" valign="top">QStatusBar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#af412d7a2faf98c007d6947ea62d0220e">statusbar</a></td></tr>
+<tr class="separator:af412d7a2faf98c007d6947ea62d0220e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae28bea38310432297def41d34b54bce3"><td class="memItemLeft" align="right" valign="top">QToolBar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#ae28bea38310432297def41d34b54bce3">toolBar</a></td></tr>
+<tr class="separator:ae28bea38310432297def41d34b54bce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbe21f829fbcacefabfa7f5d7c1c694e"><td class="memItemLeft" align="right" valign="top">QMenuBar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ui___k_b_editor_window.html#abbe21f829fbcacefabfa7f5d7c1c694e">menuBar</a></td></tr>
+<tr class="separator:abbe21f829fbcacefabfa7f5d7c1c694e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock">
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00035">35</a></p>
+</div><h2 class="groupheader">Методы</h2>
+<a class="anchor" id="a52a8716ca6148e32cd687229152f8f4c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ui_KBEditorWindow::retranslateUi </td>
+          <td>(</td>
+          <td class="paramtype">QMainWindow *&#160;</td>
+          <td class="paramname"><em>KBEditorWindow</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00244">244</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a52a8716ca6148e32cd687229152f8f4c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ui_KBEditorWindow::retranslateUi </td>
+          <td>(</td>
+          <td class="paramtype">QMainWindow *&#160;</td>
+          <td class="paramname"><em>KBEditorWindow</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="ui__kbeditorwindow_8h_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="ui__kbeditorwindow_8h_source.html#l00244">244</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a5b8bf03a480f586813d588621433c928"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ui_KBEditorWindow::setupUi </td>
+          <td>(</td>
+          <td class="paramtype">QMainWindow *&#160;</td>
+          <td class="paramname"><em>KBEditorWindow</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="ui__kbeditorwindow_8h_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="ui__kbeditorwindow_8h_source.html#l00069">69</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a5b8bf03a480f586813d588621433c928"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ui_KBEditorWindow::setupUi </td>
+          <td>(</td>
+          <td class="paramtype">QMainWindow *&#160;</td>
+          <td class="paramname"><em>KBEditorWindow</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00069">69</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a class="anchor" id="a96c4ab2f7a714d1b9abbcc2b7d67d746"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QToolButton * Ui_KBEditorWindow::btn_addIsa</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00058">58</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a8736eaef1b1253e35b6969d3576a588b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QToolButton * Ui_KBEditorWindow::btn_addSub</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00059">59</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af00e55b1b56aa62b906bf792091fbf41"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QToolButton * Ui_KBEditorWindow::btn_zoomIn</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00061">61</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a2d5794aec7b1c0e61e580c83ae3514f6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QToolButton * Ui_KBEditorWindow::btn_zoomOut</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00062">62</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a42088725664d3289b49b8d9da30fed69"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton * Ui_KBEditorWindow::btnAddFrame</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00041">41</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a602a7acd3fcbd92506bbe456cbf1990d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton * Ui_KBEditorWindow::btnAddFrameSituation</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00042">42</a></p>
+
+</div>
+</div>
+<a class="anchor" id="abb5b86d26d8140fab07f5195903ca485"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton * Ui_KBEditorWindow::btnAddImage</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00043">43</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ad591fede26c397636ff4256ea3766666"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton * Ui_KBEditorWindow::btnAddSlot</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00046">46</a></p>
+
+</div>
+</div>
+<a class="anchor" id="afe4c8b0d70f999689bf99a1467e06464"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton * Ui_KBEditorWindow::btnCancel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00052">52</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a5c18d58fc12ea259f4fc954f54a93432"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton * Ui_KBEditorWindow::btnDeleteFrame</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00044">44</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a8f877d6be4fc895777c3f74a060c863a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton * Ui_KBEditorWindow::btnDeleteSlot</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00048">48</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a481f0de14bf2e30ecebeadb0ce57d64f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton * Ui_KBEditorWindow::btnEditSlot</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00047">47</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aef366dc0d7e8b0790a51e3ff579d0335"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton * Ui_KBEditorWindow::btnOk</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00051">51</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a33648e995ef111a34be5ab4f1e13ffdc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWidget * Ui_KBEditorWindow::centralwidget</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00038">38</a></p>
+
+</div>
+</div>
+<a class="anchor" id="afcf65a985d20e96fe2c595213d2bf949"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QCheckBox * Ui_KBEditorWindow::chbAdmin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00049">49</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a8317166f835d908be1f011882aacc782"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_l_gen2_diagram_editor.html">LGen2DiagramEditor</a> * Ui_KBEditorWindow::graphicsView</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00064">64</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a6e7e42947f2b6f463ccec692e12b1a5e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHBoxLayout * Ui_KBEditorWindow::horizontalLayout</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00057">57</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ad5eddc151ee056f196c521bf91424b01"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHBoxLayout * Ui_KBEditorWindow::horizontalLayout_2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00039">39</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a33846dc42e418438e208d1508041f1d0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSpacerItem * Ui_KBEditorWindow::horizontalSpacer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00063">63</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af4bf44d1c6b3f8d32a8fc9a2c858a323"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSpacerItem * Ui_KBEditorWindow::horizontalSpacer_2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00060">60</a></p>
+
+</div>
+</div>
+<a class="anchor" id="abbe21f829fbcacefabfa7f5d7c1c694e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMenuBar * Ui_KBEditorWindow::menuBar</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00067">67</a></p>
+
+</div>
+</div>
+<a class="anchor" id="afe95238128f24437b96c0934c30e5ac5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSplitter * Ui_KBEditorWindow::splitter</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00053">53</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af412d7a2faf98c007d6947ea62d0220e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStatusBar * Ui_KBEditorWindow::statusbar</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00065">65</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ae28bea38310432297def41d34b54bce3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QToolBar * Ui_KBEditorWindow::toolBar</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00066">66</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a1dcebb0b000397e092ee98969fcdd11e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_l_gen2_object_properties_editor.html">LGen2ObjectPropertiesEditor</a> * Ui_KBEditorWindow::treeView</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00054">54</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af1c6b96a436fa596babe4f2c08151277"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVBoxLayout * Ui_KBEditorWindow::verticalLayout</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00040">40</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a105ca60bcbb2820937535f0c9e802a7f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVBoxLayout * Ui_KBEditorWindow::verticalLayout_2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00056">56</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af3d55d32ba08d618354dfe896ce14a10"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWidget * Ui_KBEditorWindow::verticalLayoutWidget</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00055">55</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a6e0a2ae2d711e12245c2e49baccd123d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSpacerItem * Ui_KBEditorWindow::verticalSpacer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00050">50</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aac2b35f7b3a0226f16ce6f1b61499d89"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSpacerItem * Ui_KBEditorWindow::verticalSpacer_2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html#l00045">45</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d4ecf3a5b147427fb815850ef2464b67_source.html">ui_kbeditorwindow.h</a></li>
+<li>C:/qt/nya-cats/<a class="el" href="ui__kbeditorwindow_8h_source.html">ui_kbeditorwindow.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_ui___k_b_editor_window.html">Ui_KBEditorWindow</a></li>
+    <li class="footer">Документация по Nya-cats. Последние изменения: Пн 14 Янв 2013 16:34:03. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3 </li>
+  </ul>
+</div>
+</body>
+</html>

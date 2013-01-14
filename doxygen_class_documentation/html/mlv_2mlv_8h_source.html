@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3"/>
+<title>Nya-cats: Исходный файл C:/qt/nya-cats/mlv/mlv.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Nya-cats
+   &#160;<span id="projectnumber">1.00</span>
+   </div>
+   <div id="projectbrief">Nya-cats</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('mlv_2mlv_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Перечисления</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Элементы перечислений</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Свойства</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Макросы</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">mlv.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="mlv_2mlv_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MLV_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MLV_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QDebug&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;core/nkbmanager.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;core/nframe.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;core/nslot.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;core/nfaset.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;core/nproc.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;visualize/visualizer.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;visualize/grid.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;core/production/nproductionmlv.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;QScriptValue&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;QScriptEngine&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mlv_2mlv__define_8h.html">mlv_define.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;QDateTime&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//#include &quot;mlv_proxy_include.h&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">class </span><a class="code" href="class_q_s_proxy_cell.html">QSProxyCell</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">class </span><a class="code" href="class_m_l_v.html">MLV</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="class_n_k_b_manager.html">NKBManager</a>* <a class="code" href="class_m_l_v.html#a40dbda9cf18c9320a6dd77a1c2eee55c">m_KBManager</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="class_n_frame.html">NFrame</a>* <a class="code" href="class_m_l_v.html#ab05eaaf282a569cadaba801ea0ee1456">m_CurrFrame</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="class_grid.html">Grid</a>* <a class="code" href="class_m_l_v.html#a6c8e30876aecd5e9b52f600a8e0695bb">m_Grid</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="class_visualizer.html">Visualizer</a>* <a class="code" href="class_m_l_v.html#a8758b08927879900fab300cf0308f3d0">m_Viz</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="class_n_frame.html">NFrame</a>* <a class="code" href="class_m_l_v.html#a63a445b4cd42eee3fa8367ea184812dc">m_GameFieldInst</a>;            <span class="comment">// Экземпляр фрейма игрового поля</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    QList&lt;NFrame*&gt; <a class="code" href="class_m_l_v.html#a380fecab29f4f1c9b7477432c20a059d">m_CellFrameInsts</a>;    <span class="comment">// Экземпляры фреймов ячеек</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    QList&lt;NFrame*&gt; <a class="code" href="class_m_l_v.html#a0d0deeffd2b05e34fb23f928fb715c72">m_ItemFrameInsts</a>;    <span class="comment">// Экземпляры фреймов персонажей</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    QList&lt;NFrame*&gt; <a class="code" href="class_m_l_v.html#a691429464578979437d4e91839309feb">m_WorkMemory</a>;        <span class="comment">// Рабочая память, тут хранятся фреймы, которые привязались</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    QList&lt;NFrame*&gt; <a class="code" href="class_m_l_v.html#ad3e12742cb1fb66a88eac8e754cb11cf">m_Cache</a>;             <span class="comment">// Тут хранятся ВСЕ фреймы экхемпляры</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_m_l_v.html#aacd01024aafcb9def53c4f26d8005479">m_Initialized</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_m_l_v.html#a735f5f98d1dcf3b835bfce6bb095334f">m_InstCount</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_m_l_v.html#a5a16ccfba23723ec1006b15e8b2340ea">m_Padding</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_m_l_v.html#aeb084a554bdc5dba7261c36d62e56066">m_FullSearch</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_m_l_v.html#aca8ac9338d6753139002aaf250ab3c52">m_GameContinues</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_m_l_v.html#a485912d5a675bcc1220e54b02595b929">m_RandomBind</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    QScriptEngine* <a class="code" href="class_m_l_v.html#aed0d935afd322437648f6211c03caf86">m_engine</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="class_m_l_v.html#a8be567b931d8c30ddda4e221c4da4a98">MLV</a>(<a class="code" href="class_n_k_b_manager.html">NKBManager</a>* manager, <a class="code" href="class_visualizer.html">Visualizer</a>* viz);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#ac6ae024c5256ee5be3721108ecb13b59">Start</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#a138a0608207fe1136d4ee24ac6b0d920">RandomStart</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#ac6ae024c5256ee5be3721108ecb13b59">Start</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#afde1bf4d974d5aeb86f0d70fac9757fa">Step</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#afde1bf4d974d5aeb86f0d70fac9757fa">Step</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#a4f3ea6c9e232f2f56a4c63ea9c5d1968">Stop</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#aed7d105207d48110f7b08a9a6170acbe">ClearAll</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#a63d8aba52df344e189357410e992847c">ClearCell</a>(<a class="code" href="class_n_frame.html">NFrame</a>* cellInst);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">//Для продукционного вывода</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">//Функция для получения значения слота фрейма экземпляра при продукционном выводе.</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">//frameId - id фрейма-экземпляра</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">//aimVar переменная вида slotname или slotName.SlotName.SlotName - если субфреймы</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">//return Значение целевого слота</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    QVariant <a class="code" href="class_m_l_v.html#aff1d66bd065183aee229698081e03524">getVal</a>(<span class="keywordtype">int</span> frameId, QString aimVar);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    QVariant <a class="code" href="class_m_l_v.html#aff1d66bd065183aee229698081e03524">getVal</a>(<a class="code" href="class_n_frame.html">NFrame</a>* frame, QString aimVar);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_m_l_v.html#a696b73cf6e6aa87e48d1d556fa1ada10">setVal</a>(<span class="keywordtype">int</span> frameId, QString aimVar, QVariant value);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_m_l_v.html#a696b73cf6e6aa87e48d1d556fa1ada10">setVal</a>(<a class="code" href="class_n_frame.html">NFrame</a>* frame, QString aimVar, QVariant value);</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="class_m_l_v.html#aaefc0b7c6db1be8906a8304edb824aa3">   70</a></span>&#160;    QList&lt;NFrame*&gt;* <a class="code" href="class_m_l_v.html#aaefc0b7c6db1be8906a8304edb824aa3">workMemory</a>() {<span class="keywordflow">return</span> &amp;<a class="code" href="class_m_l_v.html#a691429464578979437d4e91839309feb">m_WorkMemory</a>;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="class_m_l_v.html#a14d57e9d10b63b915eabdcc86d2223ff">   71</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_m_l_v.html#a14d57e9d10b63b915eabdcc86d2223ff">GetFullSearch</a>() {<span class="keywordflow">return</span> <a class="code" href="class_m_l_v.html#aeb084a554bdc5dba7261c36d62e56066">m_FullSearch</a>;}</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="code" href="class_m_l_v.html#ae7a3cc47774da9ccd7e8793e0fc78d8e">   72</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#ae7a3cc47774da9ccd7e8793e0fc78d8e">SetFullSearch</a>(<span class="keywordtype">bool</span> b) {<a class="code" href="class_m_l_v.html#aeb084a554bdc5dba7261c36d62e56066">m_FullSearch</a> = b;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="class_m_l_v.html#a624a51562c331c542869c34cc5ca65ed">   73</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_m_l_v.html#a624a51562c331c542869c34cc5ca65ed">GetRandomBind</a>() {<span class="keywordflow">return</span> <a class="code" href="class_m_l_v.html#a485912d5a675bcc1220e54b02595b929">m_RandomBind</a>;}</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="code" href="class_m_l_v.html#acfa5c29c7ef5944c3ad5027abb001e33">   74</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#acfa5c29c7ef5944c3ad5027abb001e33">SetRandomBind</a>(<span class="keywordtype">bool</span> b) {<a class="code" href="class_m_l_v.html#a485912d5a675bcc1220e54b02595b929">m_RandomBind</a> = b;}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_m_l_v.html#a79040a714c977065aca603fa83f4649b">isGameContinues</a>();                                 <span class="comment">//запущена ли в данный момент игра</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    QList&lt;NFrame*&gt; <a class="code" href="class_m_l_v.html#ac302cc5a59fdc9f71b3098015b442b02">getSituationInstanceList</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    QList&lt;NFrame*&gt; <a class="code" href="class_m_l_v.html#ac302cc5a59fdc9f71b3098015b442b02">getSituationInstanceList</a>(<a class="code" href="class_n_frame.html">NFrame</a>* cell);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    QList&lt;NFrame*&gt; <a class="code" href="class_m_l_v.html#a4cc1b9dd22f375cdb31fcfebcc9a2cce">getImageInstanceList</a>(<a class="code" href="class_n_frame.html">NFrame</a>* item);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    QList&lt;NFrame*&gt; <a class="code" href="class_m_l_v.html#ad6ac2ac95862831a1ea7ade5b389a730">getFrameLeaf</a>(<a class="code" href="class_n_frame.html">NFrame</a>* root);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// Тут создаются фреймы экземпляры игрового поля и персонаже.</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// В код вшиты названия! что есть очень плохо - быдло быдло</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_m_l_v.html#a9fadb85f4ade4580eaadbc4cb8902465">Init</a>();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#a73969b6eb50ddf4da02bb4979564f6a5">UpdateGrid</a>();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#a88a00eb75bd798bbbe7e64847278f16d">UpdateCell</a>(<a class="code" href="class_n_frame.html">NFrame</a>* cellInst, <a class="code" href="class_n_frame.html">NFrame</a>* imageFrame);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#a81b326651198210cd233cb51526c5096">ClearWorkMem</a>();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_m_l_v.html#ab823f68cdcf71e64ddc2ee0a1092f479">BindFrame</a>(<a class="code" href="class_n_frame.html">NFrame</a>* frame, <span class="keywordtype">bool</span> fillDefault = <span class="keyword">false</span>, <span class="keywordtype">bool</span> bindChildren = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_m_l_v.html#a2153e547db1c5a3731ba36f5bf702f1f">BindSlot</a>(<a class="code" href="class_n_frame.html">NFrame</a>* frame, <a class="code" href="class_n_slot.html">NSlot</a>* slot, <span class="keywordtype">bool</span> fillDefault = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="class_n_frame.html">NFrame</a>* <a class="code" href="class_m_l_v.html#adea35932d0cae9f6be6c9840fca7202e">BindPerson</a>(<a class="code" href="class_n_frame.html">NFrame</a>* frame);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="class_n_frame.html">NFrame</a>* <a class="code" href="class_m_l_v.html#adea35932d0cae9f6be6c9840fca7202e">BindPerson</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#adc90790ae0d69a4363c17ebdf3fc0d9e">FillSubSituation</a>(<a class="code" href="class_n_frame.html">NFrame</a>* mainSit, <a class="code" href="class_n_frame.html">NFrame</a>* subSit);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#ac0f2b7131556a8d677b33afd015177e2">FillSituationByCell</a>(<a class="code" href="class_n_frame.html">NFrame</a>* cell, <a class="code" href="class_n_frame.html">NFrame</a>* situation);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#acc5dc175421e40989d780c99fd4f45f9">MoveItemInst</a>(<a class="code" href="class_n_frame.html">NFrame</a>* itemInst, <a class="code" href="class_n_frame.html">NFrame</a>* toCellInst);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#a9db1343fcca9e9b15de5d0d3865316e4">DoCell</a>(<a class="code" href="class_n_frame.html">NFrame</a>* cell);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#a9db1343fcca9e9b15de5d0d3865316e4">DoCell</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="class_n_frame.html">NFrame</a>* <a class="code" href="class_m_l_v.html#a421debd51c10d064aa723cb645d7553e">BindImage</a>(<a class="code" href="class_n_frame.html">NFrame</a>* cell);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <a class="code" href="class_n_frame.html">NFrame</a>* <a class="code" href="class_m_l_v.html#ac858e00a6363dc5c6f927476fa95981a">CreateRandGameItemInst</a>();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="class_n_frame.html">NFrame</a>* <a class="code" href="class_m_l_v.html#afae3e14f48086b09d201bdaaeaca33c6">CreateGameItemInst</a>(<a class="code" href="class_game_item.html">GameItem</a>* gameItem);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="class_n_frame.html">NFrame</a>* <a class="code" href="class_m_l_v.html#a794cc9986b605755df84d7b3b3f70a34">CreateFrameInstance</a>(QString name, <span class="keywordtype">bool</span> fillDefault = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="class_n_frame.html">NFrame</a>* <a class="code" href="class_m_l_v.html#a692fcc6afec6b41f8e5032a09959bfb6">CreateFrameInstanceFull</a>(QString name, <span class="keywordtype">bool</span> fillDefault = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_m_l_v.html#a80ef6b7ce96400b732ce3b9c0999f210">SetSlotValue</a>(<a class="code" href="class_n_frame.html">NFrame</a>* frame, QString slotName, <span class="keywordtype">int</span> value);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_m_l_v.html#a80ef6b7ce96400b732ce3b9c0999f210">SetSlotValue</a>(<a class="code" href="class_n_frame.html">NFrame</a>* frame, QString slotName, QString value);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_m_l_v.html#a34f7bc0a28e4d1d83a11a7ed88889c00">SetSlotValueVariant</a>(<a class="code" href="class_n_frame.html">NFrame</a>* frame, QString slotName, QVariant value, <span class="keywordtype">bool</span> findInParents = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    QVariant <a class="code" href="class_m_l_v.html#afc7df83402f2aad79c3341ecf7bf3d9b">GetSlotValue</a>(<a class="code" href="class_n_frame.html">NFrame</a>* frame, QString slotName, <span class="keywordtype">bool</span> findInParents = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="class_n_frame.html">NFrame</a>* <a class="code" href="class_m_l_v.html#a0433a5133d161a2e7d1bbfbfd5c9be2d">GetSubframe</a>(<a class="code" href="class_n_frame.html">NFrame</a>* frame, QString slotName, <span class="keywordtype">bool</span> findInParents = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#ae7c32fd06c12d9249a7b0754999c9528">SetSubframe</a>(<a class="code" href="class_n_frame.html">NFrame</a>* frame, QString slotName, <a class="code" href="class_n_frame.html">NFrame</a>* subframe, <span class="keywordtype">bool</span> findInParents = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#a9daec6b5502491a800c75caa8375faf3">AddSubframe</a>(<a class="code" href="class_n_frame.html">NFrame</a>* frame, QString slotName, <a class="code" href="class_n_frame.html">NFrame</a>* subframe, <span class="keywordtype">bool</span> findInParents = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">// Работа с процедурами</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#af281c2d0815f527ecce4672d6cd78e2e">DoAction</a>(<a class="code" href="class_n_frame.html">NFrame</a>* frameSituation);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    Q_INVOKABLE <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#a4f4e9f0431201f19139e78c6ff10ac1e">ShowMsg</a>(QString msg);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    Q_INVOKABLE <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#ad69845fd910d316f15dc029ed740601a">NowhereToGo</a>(QScriptValue qsCell);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    Q_INVOKABLE <span class="keywordtype">int</span> <a class="code" href="class_m_l_v.html#a8e8f695e335fd161bed33e45fa5f5594">rand</a>(<span class="keywordtype">int</span> max);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="comment">// Поиск в рабочей памяти</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <a class="code" href="class_n_frame.html">NFrame</a>* <a class="code" href="class_m_l_v.html#ac7ef01922f36447c237495dca3e8dc98">FindByProtName</a>(QString name);   <span class="comment">// Поиск по имени прототипа</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="class_n_frame.html">NFrame</a>* <a class="code" href="class_m_l_v.html#af9fa0dd9e5e251e59f2b8a6f530f8b13">FindByInstName</a>(QString name);   <span class="comment">// Поиск по уникальному имени экземпляра</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="class_n_frame.html">NFrame</a>* <a class="code" href="class_m_l_v.html#a030776febc4494da71b892fc2ade5041">FindByPtr</a>(<a class="code" href="class_n_frame.html">NFrame</a>* framePtr);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="class_n_frame.html">NFrame</a>* <a class="code" href="class_m_l_v.html#a2c57367ca70fda0976a6e1812cfdc2fe">FindById</a>(<span class="keywordtype">int</span> frameId);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="comment">// Поиск в списке ячеек</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <a class="code" href="class_n_frame.html">NFrame</a>* <a class="code" href="class_m_l_v.html#a4882cb69ab5b9cb7287e4697346996a5">FindByCell</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <a class="code" href="class_n_frame.html">NFrame</a>* <a class="code" href="class_m_l_v.html#aa9ee3f2bdcb46f4b7def3c46cbc1e42d">FindCell</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="class_n_frame.html">NFrame</a>* <a class="code" href="class_m_l_v.html#a2480497a573b0978aa5077cbc0b7d083">FindCellByItemInst</a>(<a class="code" href="class_n_frame.html">NFrame</a>* itemInst);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="comment">// Поиск в кеше</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <a class="code" href="class_n_frame.html">NFrame</a>* <a class="code" href="class_m_l_v.html#ade7d4990f035acf0c0b81db8efbb0a67">FindInCache</a>(QString name);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <a class="code" href="class_n_frame.html">NFrame</a>* <a class="code" href="class_m_l_v.html#ade7d4990f035acf0c0b81db8efbb0a67">FindInCache</a>(<span class="keywordtype">int</span> frameId);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_m_l_v.html#ad161fff2556a08b7ee21dc1137e53dc9">IsContainGameItem</a>(<a class="code" href="class_n_frame.html">NFrame</a>* cell);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <a class="code" href="class_n_frame.html">NFrame</a>* <a class="code" href="class_m_l_v.html#a4f19e801dd8e6b5ffc0b5a15d26f72ac">GetGameInst</a>(<a class="code" href="class_n_frame.html">NFrame</a>* cell);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#a788c7c2298df06f037223864ef5ab93d">InitNeighborSituation</a>(<a class="code" href="class_n_frame.html">NFrame</a>* frameSituation, <a class="code" href="class_n_frame.html">NFrame</a>* item, QString Name);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    QString <a class="code" href="class_m_l_v.html#a3311dabe98732bc56e57aea9a0b25ba2">GetSpaces</a>(<span class="keywordtype">int</span> count);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    QVariant <a class="code" href="class_m_l_v.html#ad6333f43519659f4442a133df5a0e4b4">getValSlot</a>(<span class="keywordtype">int</span> frameId, QString aimVar);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_m_l_v.html#aecbe0684744927216a8beacd9a804fdc">setValSlot</a>(<span class="keywordtype">int</span> frameId, QString aimVar, QVariant value);</div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="code" href="class_m_l_v.html#a423c17889fa3b4cf2ec62691a1b3a283">  149</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_m_l_v.html#a423c17889fa3b4cf2ec62691a1b3a283">getGameContinues</a>() {<span class="keywordflow">return</span> <a class="code" href="class_m_l_v.html#aca8ac9338d6753139002aaf250ab3c52">m_GameContinues</a>;}</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#a259cc82d51e7f628ce0e549a4cc17df0">DoVisualizerCell</a>(<a class="code" href="class_cell.html">Cell</a>* cell);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    QString <a class="code" href="class_m_l_v.html#ab14395dc92ead24e759ea3959c0331a5">getInfo</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;signals:</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#a7e302abc856535449f9d6feb16b88078">AddMsgToLog</a>(QString msg);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#ac4ae3db23dd2ae2ba6817ed268e76c4c">ClearLog</a>();</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="comment">// Для работы с LineOfReasoning</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#ad54662236b41e8cab66a373f6a8dd646">LOR_AddRoot</a>(QString name);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#ab36a667174b44e745fb86de3bc190ee0">LOR_AddNextLevel</a>(QString name);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#ad225c51f6e0fdbd60b35971d0e49c2b5">LOR_AddCurrLevel</a>(QString name);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#a6d5c18be7d2548424387fd8db013c2c7">LOR_GotoPrevLevel</a>();</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#aac69a6733022c19775e0da704c8eee95">LOR_SetCurrState</a>(<span class="keywordtype">bool</span> bOk);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#a4b8e8c6e9e7c05e34d470a6da7d797f8">LOR_Clear</a>();</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_l_v.html#a9b9bfbf2d76472c446f0bd3449be1b6d">WM_Set</a>(QList&lt;NFrame *&gt;* list);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;};</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">#endif // MLV_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_54b422fa37699197f5927983cc31cfe5.html">mlv</a></li><li class="navelem"><a class="el" href="mlv_2mlv_8h.html">mlv.h</a></li>
+    <li class="footer">Документация по Nya-cats. Последние изменения: Пн 14 Янв 2013 16:33:53. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3 </li>
+  </ul>
+</div>
+</body>
+</html>

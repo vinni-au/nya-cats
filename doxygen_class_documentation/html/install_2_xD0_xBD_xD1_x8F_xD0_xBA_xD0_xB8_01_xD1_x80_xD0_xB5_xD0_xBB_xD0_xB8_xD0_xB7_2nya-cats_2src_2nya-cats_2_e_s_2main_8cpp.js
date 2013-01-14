@@ -1,0 +1,4 @@
+var install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya_cats_2src_2nya_cats_2_e_s_2main_8cpp =
+[
+    [ "main", "install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2src_2nya-cats_2_e_s_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97", null ]
+];

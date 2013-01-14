@@ -1,0 +1,4112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3"/>
+<title>Nya-cats: Класс NKBManager</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Nya-cats
+   &#160;<span id="projectnumber">1.00</span>
+   </div>
+   <div id="projectbrief">Nya-cats</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="hierarchy.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_n_k_b_manager.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Перечисления</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Элементы перечислений</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Свойства</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Макросы</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-slots">Открытые слоты</a> &#124;
+<a href="#signals">Сигналы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-attribs">Открытые атрибуты</a> &#124;
+<a href="class_n_k_b_manager-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс NKBManager</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="core_2nkbmanager_8h_source.html">nkbmanager.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:NKBManager:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_n_k_b_manager.png" usemap="#NKBManager_map" alt=""/>
+  <map id="NKBManager_map" name="NKBManager_map">
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
+Открытые слоты</h2></td></tr>
+<tr class="memitem:a58f8c543c1a974c713294919ba4ed7c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a58f8c543c1a974c713294919ba4ed7c9">selectFrame</a> (unsigned id)</td></tr>
+<tr class="memdesc:a58f8c543c1a974c713294919ba4ed7c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">От диаграмм  <a href="#a58f8c543c1a974c713294919ba4ed7c9"></a><br/></td></tr>
+<tr class="separator:a58f8c543c1a974c713294919ba4ed7c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fa26bf19ef75474042dcf35c860711e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a4fa26bf19ef75474042dcf35c860711e">addFrame</a> (QString name)</td></tr>
+<tr class="separator:a4fa26bf19ef75474042dcf35c860711e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee8d585bd2e45c35279ce82676e2a2ee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#aee8d585bd2e45c35279ce82676e2a2ee">addFrameSituation</a> (QString name)</td></tr>
+<tr class="separator:aee8d585bd2e45c35279ce82676e2a2ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31ef8172a7419004e5e25a7b121be8ed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a31ef8172a7419004e5e25a7b121be8ed">addFrameImage</a> (QString name)</td></tr>
+<tr class="separator:a31ef8172a7419004e5e25a7b121be8ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4eda01f30954df9407eb49aaba59613"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#af4eda01f30954df9407eb49aaba59613">deleteFrame</a> (unsigned id)</td></tr>
+<tr class="separator:af4eda01f30954df9407eb49aaba59613"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe81f8704ac3318aafb2e58bb5d6f9d7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#afe81f8704ac3318aafb2e58bb5d6f9d7">addIsa</a> (unsigned sid, unsigned did)</td></tr>
+<tr class="separator:afe81f8704ac3318aafb2e58bb5d6f9d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e3ac00052e6b19a7fb578ab707ac5b8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a1e3ac00052e6b19a7fb578ab707ac5b8">addApo</a> (unsigned sid, unsigned did)</td></tr>
+<tr class="separator:a1e3ac00052e6b19a7fb578ab707ac5b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af27ca2ea55de808d474079b1e4283dae"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#af27ca2ea55de808d474079b1e4283dae">deleteIsa</a> (unsigned sid, unsigned did)</td></tr>
+<tr class="separator:af27ca2ea55de808d474079b1e4283dae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7014324ba3528c7540b69311f3aece3b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a7014324ba3528c7540b69311f3aece3b">deleteApo</a> (unsigned sid, unsigned did)</td></tr>
+<tr class="separator:a7014324ba3528c7540b69311f3aece3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab886e89d91b53e76a4ac37c25e5fbb89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ab886e89d91b53e76a4ac37c25e5fbb89">onDataChanged</a> ()</td></tr>
+<tr class="separator:ab886e89d91b53e76a4ac37c25e5fbb89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9844119a8ce036e089e908bfd0e695f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ad9844119a8ce036e089e908bfd0e695f">setDirty</a> (bool dirty)</td></tr>
+<tr class="separator:ad9844119a8ce036e089e908bfd0e695f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43ac07911176341c82d532190a655ec7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a43ac07911176341c82d532190a655ec7">getDirty</a> ()</td></tr>
+<tr class="separator:a43ac07911176341c82d532190a655ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff795d583c83b3f0a146397ef37f4ead"><td class="memItemLeft" align="right" valign="top">QFile *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#aff795d583c83b3f0a146397ef37f4ead">file</a> ()</td></tr>
+<tr class="separator:aff795d583c83b3f0a146397ef37f4ead"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3e30f6ada9f085ffdd2d80df1a71d9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ae3e30f6ada9f085ffdd2d80df1a71d9f">setFile</a> (QFile *<a class="el" href="class_n_k_b_manager.html#aff795d583c83b3f0a146397ef37f4ead">file</a>)</td></tr>
+<tr class="separator:ae3e30f6ada9f085ffdd2d80df1a71d9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58f8c543c1a974c713294919ba4ed7c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a58f8c543c1a974c713294919ba4ed7c9">selectFrame</a> (unsigned id)</td></tr>
+<tr class="memdesc:a58f8c543c1a974c713294919ba4ed7c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">От диаграмм  <a href="#a58f8c543c1a974c713294919ba4ed7c9"></a><br/></td></tr>
+<tr class="separator:a58f8c543c1a974c713294919ba4ed7c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fa26bf19ef75474042dcf35c860711e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a4fa26bf19ef75474042dcf35c860711e">addFrame</a> (QString name)</td></tr>
+<tr class="separator:a4fa26bf19ef75474042dcf35c860711e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee8d585bd2e45c35279ce82676e2a2ee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#aee8d585bd2e45c35279ce82676e2a2ee">addFrameSituation</a> (QString name)</td></tr>
+<tr class="separator:aee8d585bd2e45c35279ce82676e2a2ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31ef8172a7419004e5e25a7b121be8ed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a31ef8172a7419004e5e25a7b121be8ed">addFrameImage</a> (QString name)</td></tr>
+<tr class="separator:a31ef8172a7419004e5e25a7b121be8ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4eda01f30954df9407eb49aaba59613"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#af4eda01f30954df9407eb49aaba59613">deleteFrame</a> (unsigned id)</td></tr>
+<tr class="separator:af4eda01f30954df9407eb49aaba59613"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe81f8704ac3318aafb2e58bb5d6f9d7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#afe81f8704ac3318aafb2e58bb5d6f9d7">addIsa</a> (unsigned sid, unsigned did)</td></tr>
+<tr class="separator:afe81f8704ac3318aafb2e58bb5d6f9d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e3ac00052e6b19a7fb578ab707ac5b8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a1e3ac00052e6b19a7fb578ab707ac5b8">addApo</a> (unsigned sid, unsigned did)</td></tr>
+<tr class="separator:a1e3ac00052e6b19a7fb578ab707ac5b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af27ca2ea55de808d474079b1e4283dae"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#af27ca2ea55de808d474079b1e4283dae">deleteIsa</a> (unsigned sid, unsigned did)</td></tr>
+<tr class="separator:af27ca2ea55de808d474079b1e4283dae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7014324ba3528c7540b69311f3aece3b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a7014324ba3528c7540b69311f3aece3b">deleteApo</a> (unsigned sid, unsigned did)</td></tr>
+<tr class="separator:a7014324ba3528c7540b69311f3aece3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab886e89d91b53e76a4ac37c25e5fbb89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ab886e89d91b53e76a4ac37c25e5fbb89">onDataChanged</a> ()</td></tr>
+<tr class="separator:ab886e89d91b53e76a4ac37c25e5fbb89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9844119a8ce036e089e908bfd0e695f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ad9844119a8ce036e089e908bfd0e695f">setDirty</a> (bool dirty)</td></tr>
+<tr class="separator:ad9844119a8ce036e089e908bfd0e695f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43ac07911176341c82d532190a655ec7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a43ac07911176341c82d532190a655ec7">getDirty</a> ()</td></tr>
+<tr class="separator:a43ac07911176341c82d532190a655ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af494491390571804f5feea3ca1b4912c"><td class="memItemLeft" align="right" valign="top">QFile *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#af494491390571804f5feea3ca1b4912c">file</a> ()</td></tr>
+<tr class="separator:af494491390571804f5feea3ca1b4912c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3e30f6ada9f085ffdd2d80df1a71d9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ae3e30f6ada9f085ffdd2d80df1a71d9f">setFile</a> (QFile *<a class="el" href="class_n_k_b_manager.html#aff795d583c83b3f0a146397ef37f4ead">file</a>)</td></tr>
+<tr class="separator:ae3e30f6ada9f085ffdd2d80df1a71d9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Сигналы</h2></td></tr>
+<tr class="memitem:ac6e48921e37b234b3d2dc915f14cfb49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ac6e48921e37b234b3d2dc915f14cfb49">frameAdded</a> (unsigned id, QString name)</td></tr>
+<tr class="separator:ac6e48921e37b234b3d2dc915f14cfb49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28db8e912575f958c549fb7d6295e09e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a28db8e912575f958c549fb7d6295e09e">frameDeleted</a> (unsigned id)</td></tr>
+<tr class="separator:a28db8e912575f958c549fb7d6295e09e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63494c7a5cc5fc242c05e69462d021e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a63494c7a5cc5fc242c05e69462d021e0">isaAdded</a> (unsigned sid, unsigned did)</td></tr>
+<tr class="separator:a63494c7a5cc5fc242c05e69462d021e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafbc1c4ae1ed589c71351e581288f365"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#aafbc1c4ae1ed589c71351e581288f365">isaDeleted</a> (unsigned sid, unsigned did)</td></tr>
+<tr class="separator:aafbc1c4ae1ed589c71351e581288f365"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15f2a89fd99b905e3974d6ae0f159d96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a15f2a89fd99b905e3974d6ae0f159d96">apoAdded</a> (unsigned sid, unsigned did)</td></tr>
+<tr class="separator:a15f2a89fd99b905e3974d6ae0f159d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabadb4a9203142f8d6196920a45b63a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#aabadb4a9203142f8d6196920a45b63a6">apoDeleted</a> (unsigned sid, unsigned did)</td></tr>
+<tr class="separator:aabadb4a9203142f8d6196920a45b63a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6096343041741b63556288d2c1828ff7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a6096343041741b63556288d2c1828ff7">sigDataLoaded</a> ()</td></tr>
+<tr class="separator:a6096343041741b63556288d2c1828ff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac49a07b739df7a3a5a2d6fc88a37fcd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ac49a07b739df7a3a5a2d6fc88a37fcd4">sigErrorWhileValidating</a> (QString errorText)</td></tr>
+<tr class="separator:ac49a07b739df7a3a5a2d6fc88a37fcd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa17a0d42f5fc86302aa53d14ece4fff0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#aa17a0d42f5fc86302aa53d14ece4fff0">sigFrameNameChanged</a> (unsigned id, QString newName)</td></tr>
+<tr class="separator:aa17a0d42f5fc86302aa53d14ece4fff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeba645328f9ada98745d0f3c8b4b5f0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#aeba645328f9ada98745d0f3c8b4b5f0d">sigDirtyChanged</a> (bool dirty)</td></tr>
+<tr class="separator:aeba645328f9ada98745d0f3c8b4b5f0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6e48921e37b234b3d2dc915f14cfb49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ac6e48921e37b234b3d2dc915f14cfb49">frameAdded</a> (unsigned id, QString name)</td></tr>
+<tr class="separator:ac6e48921e37b234b3d2dc915f14cfb49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28db8e912575f958c549fb7d6295e09e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a28db8e912575f958c549fb7d6295e09e">frameDeleted</a> (unsigned id)</td></tr>
+<tr class="separator:a28db8e912575f958c549fb7d6295e09e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63494c7a5cc5fc242c05e69462d021e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a63494c7a5cc5fc242c05e69462d021e0">isaAdded</a> (unsigned sid, unsigned did)</td></tr>
+<tr class="separator:a63494c7a5cc5fc242c05e69462d021e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafbc1c4ae1ed589c71351e581288f365"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#aafbc1c4ae1ed589c71351e581288f365">isaDeleted</a> (unsigned sid, unsigned did)</td></tr>
+<tr class="separator:aafbc1c4ae1ed589c71351e581288f365"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15f2a89fd99b905e3974d6ae0f159d96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a15f2a89fd99b905e3974d6ae0f159d96">apoAdded</a> (unsigned sid, unsigned did)</td></tr>
+<tr class="separator:a15f2a89fd99b905e3974d6ae0f159d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabadb4a9203142f8d6196920a45b63a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#aabadb4a9203142f8d6196920a45b63a6">apoDeleted</a> (unsigned sid, unsigned did)</td></tr>
+<tr class="separator:aabadb4a9203142f8d6196920a45b63a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6096343041741b63556288d2c1828ff7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a6096343041741b63556288d2c1828ff7">sigDataLoaded</a> ()</td></tr>
+<tr class="separator:a6096343041741b63556288d2c1828ff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac49a07b739df7a3a5a2d6fc88a37fcd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ac49a07b739df7a3a5a2d6fc88a37fcd4">sigErrorWhileValidating</a> (QString errorText)</td></tr>
+<tr class="separator:ac49a07b739df7a3a5a2d6fc88a37fcd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa17a0d42f5fc86302aa53d14ece4fff0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#aa17a0d42f5fc86302aa53d14ece4fff0">sigFrameNameChanged</a> (unsigned id, QString newName)</td></tr>
+<tr class="separator:aa17a0d42f5fc86302aa53d14ece4fff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeba645328f9ada98745d0f3c8b4b5f0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#aeba645328f9ada98745d0f3c8b4b5f0d">sigDirtyChanged</a> (bool dirty)</td></tr>
+<tr class="separator:aeba645328f9ada98745d0f3c8b4b5f0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a56e7491862cd961f8bf4549717248c00"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a56e7491862cd961f8bf4549717248c00">NKBManager</a> (QObject *parent=0)</td></tr>
+<tr class="separator:a56e7491862cd961f8bf4549717248c00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5c6c90cf87cb3203953eeded19455ab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ab5c6c90cf87cb3203953eeded19455ab">frameIsSystem</a> (int id)</td></tr>
+<tr class="separator:ab5c6c90cf87cb3203953eeded19455ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa33ef976e72800cf1ae99d72fef80b77"><td class="memItemLeft" align="right" valign="top">QMap&lt; unsigned, QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#aa33ef976e72800cf1ae99d72fef80b77">frameNames</a> ()</td></tr>
+<tr class="memdesc:aa33ef976e72800cf1ae99d72fef80b77"><td class="mdescLeft">&#160;</td><td class="mdescRight">От диаграмм  <a href="#aa33ef976e72800cf1ae99d72fef80b77"></a><br/></td></tr>
+<tr class="separator:aa33ef976e72800cf1ae99d72fef80b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f2a7f5e70fcbc18be6191010b2a1ca8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a7f2a7f5e70fcbc18be6191010b2a1ca8">SaveAs</a> ()</td></tr>
+<tr class="separator:a7f2a7f5e70fcbc18be6191010b2a1ca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad82d84eebc0058e559793df7c5a729c3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ad82d84eebc0058e559793df7c5a729c3">mayBeSave</a> ()</td></tr>
+<tr class="separator:ad82d84eebc0058e559793df7c5a729c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f2255844ecb473511c9d78d41710c61"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a4f2255844ecb473511c9d78d41710c61">areUsure</a> (QString quest)</td></tr>
+<tr class="separator:a4f2255844ecb473511c9d78d41710c61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab74a09e1746ecddd43a3c3dd973497d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ab74a09e1746ecddd43a3c3dd973497d2">saveToXml</a> (QTextStream &amp;stream)</td></tr>
+<tr class="separator:ab74a09e1746ecddd43a3c3dd973497d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad297868abea83e581cf39a2fe05f1d74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ad297868abea83e581cf39a2fe05f1d74">readFromXml</a> (QFile &amp;<a class="el" href="class_n_k_b_manager.html#aff795d583c83b3f0a146397ef37f4ead">file</a>)</td></tr>
+<tr class="separator:ad297868abea83e581cf39a2fe05f1d74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f4c464a44aae985ecf65a58b6a9d140"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a4f4c464a44aae985ecf65a58b6a9d140">saved</a> ()</td></tr>
+<tr class="separator:a4f4c464a44aae985ecf65a58b6a9d140"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cf07bab13b2faf35961f361716b9f1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a2cf07bab13b2faf35961f361716b9f1f">save</a> ()</td></tr>
+<tr class="separator:a2cf07bab13b2faf35961f361716b9f1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17e148e018d71da742e4a67925eca5dd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a17e148e018d71da742e4a67925eca5dd">saveAs</a> (QString filePath)</td></tr>
+<tr class="separator:a17e148e018d71da742e4a67925eca5dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35b162d0a94735b39f0259b1600395e3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a35b162d0a94735b39f0259b1600395e3">Open</a> (QString filePath)</td></tr>
+<tr class="separator:a35b162d0a94735b39f0259b1600395e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada298fb036a65df3e0c1c6ae9083b84b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ada298fb036a65df3e0c1c6ae9083b84b">Clear</a> ()</td></tr>
+<tr class="separator:ada298fb036a65df3e0c1c6ae9083b84b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a714660c9cb04a6c78f758fee819cb1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a5a714660c9cb04a6c78f758fee819cb1">isValid</a> ()</td></tr>
+<tr class="separator:a5a714660c9cb04a6c78f758fee819cb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15f1dc2a346562d2f02092fe3c75497c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a15f1dc2a346562d2f02092fe3c75497c">reload</a> ()</td></tr>
+<tr class="separator:a15f1dc2a346562d2f02092fe3c75497c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac18fa994065af86a441e14fdb44289cd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ac18fa994065af86a441e14fdb44289cd">frameExists</a> (QString name)</td></tr>
+<tr class="separator:ac18fa994065af86a441e14fdb44289cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f604142f6ba864912f6fe65d474f5d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_framenet_model.html">NFramenetModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a6f604142f6ba864912f6fe65d474f5d4">getFrameNetModel</a> ()</td></tr>
+<tr class="separator:a6f604142f6ba864912f6fe65d474f5d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e511c4b72d5c37f68e56f5c48a71477"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_domain_model.html">DomainModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a2e511c4b72d5c37f68e56f5c48a71477">getDomainModel</a> ()</td></tr>
+<tr class="separator:a2e511c4b72d5c37f68e56f5c48a71477"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66b2ef2921ef36d82f64990c5418c9c7"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a66b2ef2921ef36d82f64990c5418c9c7">getIdByIndex</a> (QModelIndex)</td></tr>
+<tr class="separator:a66b2ef2921ef36d82f64990c5418c9c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2161515ea3db6b40ed6346bd5b48352e"><td class="memItemLeft" align="right" valign="top">QDomElement&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a2161515ea3db6b40ed6346bd5b48352e">diagramNode</a> ()</td></tr>
+<tr class="separator:a2161515ea3db6b40ed6346bd5b48352e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec946a5cbd7eb0c39b49e150602b9448"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#aec946a5cbd7eb0c39b49e150602b9448">setDiagramNode</a> (QDomElement node)</td></tr>
+<tr class="separator:aec946a5cbd7eb0c39b49e150602b9448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcfa017eba3e5a205f5156a7829b6296"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#afcfa017eba3e5a205f5156a7829b6296">productionExists</a> (QString name)</td></tr>
+<tr class="separator:afcfa017eba3e5a205f5156a7829b6296"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae580a117905981065dec5e574822daaa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_production.html">NProduction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ae580a117905981065dec5e574822daaa">getProduction</a> (QString name)</td></tr>
+<tr class="separator:ae580a117905981065dec5e574822daaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a826268ead42db6e5dfc726a5ef731c21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a826268ead42db6e5dfc726a5ef731c21">reloadProduction</a> (<a class="el" href="class_n_production.html">NProduction</a> *production)</td></tr>
+<tr class="separator:a826268ead42db6e5dfc726a5ef731c21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad07acf1855fd0d24c83d1c5e650e52d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ad07acf1855fd0d24c83d1c5e650e52d7">addProduction</a> (<a class="el" href="class_n_production.html">NProduction</a> *prod)</td></tr>
+<tr class="separator:ad07acf1855fd0d24c83d1c5e650e52d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc882ed03a920d16d762274ef422cbc6"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#adc882ed03a920d16d762274ef422cbc6">getProductionNames</a> ()</td></tr>
+<tr class="separator:adc882ed03a920d16d762274ef422cbc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b62c105f1f9608647459aeef925c49f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a1b62c105f1f9608647459aeef925c49f">addProc</a> (<a class="el" href="class_n_proc.html">NProc</a> *procedure)</td></tr>
+<tr class="separator:a1b62c105f1f9608647459aeef925c49f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a514cd566b9016534886f33e86627884d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_proc.html">NProc</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a514cd566b9016534886f33e86627884d">getProc</a> (QString name)</td></tr>
+<tr class="separator:a514cd566b9016534886f33e86627884d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc9f54bd7b5a303855c552b05b0b5863"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#adc9f54bd7b5a303855c552b05b0b5863">procExists</a> (QString name)</td></tr>
+<tr class="separator:adc9f54bd7b5a303855c552b05b0b5863"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67b9c914829efb8644f341e195d5e139"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a67b9c914829efb8644f341e195d5e139">getProceduresNames</a> ()</td></tr>
+<tr class="separator:a67b9c914829efb8644f341e195d5e139"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a184cbc15229b7ab26ae7e03388ec64db"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a184cbc15229b7ab26ae7e03388ec64db">getVars</a> (QString frameName)</td></tr>
+<tr class="separator:a184cbc15229b7ab26ae7e03388ec64db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f9ef5a3d21d36319335e260eececd30"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a0f9ef5a3d21d36319335e260eececd30">getVarsWithParents</a> (QString frameName)</td></tr>
+<tr class="separator:a0f9ef5a3d21d36319335e260eececd30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93a65791d2ef4dca784f8eaf00a02162"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a93a65791d2ef4dca784f8eaf00a02162">getVarsOfSubframeWithParentsAndChildren</a> (QString frameName, bool lookForParents)</td></tr>
+<tr class="separator:a93a65791d2ef4dca784f8eaf00a02162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ca8c9ea71bf8a94d240a711c39b14b8"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a6ca8c9ea71bf8a94d240a711c39b14b8">getDomainByString</a> (QString frameName, QString str)</td></tr>
+<tr class="separator:a6ca8c9ea71bf8a94d240a711c39b14b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08f75b68643ea6625bd9908e0b022e12"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_slot.html">NSlot</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a08f75b68643ea6625bd9908e0b022e12">getSlotByString</a> (QString frameName, QString str)</td></tr>
+<tr class="separator:a08f75b68643ea6625bd9908e0b022e12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef1ac8ea0466ada9c0f4d1b028ee3153"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_slot.html">NSlot</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#aef1ac8ea0466ada9c0f4d1b028ee3153">getSlotByStringWithoutParentsAndChildren</a> (QString frameName, QString str)</td></tr>
+<tr class="separator:aef1ac8ea0466ada9c0f4d1b028ee3153"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50c0730b0fb91588252d550fa7007292"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a50c0730b0fb91588252d550fa7007292">GetFrameByName</a> (QString name)</td></tr>
+<tr class="separator:a50c0730b0fb91588252d550fa7007292"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46dba5109cfd982728d68dbd899f4409"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a46dba5109cfd982728d68dbd899f4409">GetFrameParent</a> (<a class="el" href="class_n_frame.html">NFrame</a> *frame)</td></tr>
+<tr class="separator:a46dba5109cfd982728d68dbd899f4409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe311d6347a7184f68d47b7ad8f0834d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#abe311d6347a7184f68d47b7ad8f0834d">GetFrameInstance</a> (<a class="el" href="class_n_frame.html">NFrame</a> *frame)</td></tr>
+<tr class="separator:abe311d6347a7184f68d47b7ad8f0834d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc6e2c979f58e3aee34d94e968b8e923"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#afc6e2c979f58e3aee34d94e968b8e923">GetFrameInstance</a> (QString name)</td></tr>
+<tr class="separator:afc6e2c979f58e3aee34d94e968b8e923"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a282ee71198ccb403ec86591b92201f16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a282ee71198ccb403ec86591b92201f16">GetFrameInstanceWithParents</a> (<a class="el" href="class_n_frame.html">NFrame</a> *frame)</td></tr>
+<tr class="separator:a282ee71198ccb403ec86591b92201f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54b48c7de9fd26e4c3f3e8279a8293c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a54b48c7de9fd26e4c3f3e8279a8293c8">GetFrameInstanceWithParents</a> (QString name)</td></tr>
+<tr class="separator:a54b48c7de9fd26e4c3f3e8279a8293c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f940967b82864cdd75f58be7a073557"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_n_frame.html">NFrame</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a0f940967b82864cdd75f58be7a073557">GetFrameChildren</a> (<a class="el" href="class_n_frame.html">NFrame</a> *frame)</td></tr>
+<tr class="separator:a0f940967b82864cdd75f58be7a073557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf7ba630945908e9b799bb0de6f3392d"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_n_slot.html">NSlot</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#acf7ba630945908e9b799bb0de6f3392d">GetFrameSlots</a> (<a class="el" href="class_n_frame.html">NFrame</a> *frame)</td></tr>
+<tr class="separator:acf7ba630945908e9b799bb0de6f3392d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae278de7de7b8ab41f1cb62b555fd4cd8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_slot.html">NSlot</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ae278de7de7b8ab41f1cb62b555fd4cd8">GetFrameSlot</a> (<a class="el" href="class_n_frame.html">NFrame</a> *frame, QString slotName)</td></tr>
+<tr class="separator:ae278de7de7b8ab41f1cb62b555fd4cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63b38b5ae2a0250928d21ca3cebf8126"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_domain.html">Domain</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a63b38b5ae2a0250928d21ca3cebf8126">GetSlotDomain</a> (<a class="el" href="class_n_slot.html">NSlot</a> *slot)</td></tr>
+<tr class="separator:a63b38b5ae2a0250928d21ca3cebf8126"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e268f966eceb8ec04a13a59914a7efa"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_n_faset.html">NFaset</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a9e268f966eceb8ec04a13a59914a7efa">GetSlotFasets</a> (<a class="el" href="class_n_slot.html">NSlot</a> *slot)</td></tr>
+<tr class="separator:a9e268f966eceb8ec04a13a59914a7efa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcb4a347d9fb360a929db48d951f8501"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#abcb4a347d9fb360a929db48d951f8501">HasParentWithName</a> (<a class="el" href="class_n_frame.html">NFrame</a> *frame, QString parentName)</td></tr>
+<tr class="separator:abcb4a347d9fb360a929db48d951f8501"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ca568c0555e00f9dd84fdc0a58af524"><td class="memItemLeft" align="right" valign="top">QVector&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a3ca568c0555e00f9dd84fdc0a58af524">GetDomainValsByString</a> (QString name)</td></tr>
+<tr class="separator:a3ca568c0555e00f9dd84fdc0a58af524"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab92731c5fc7e9764e5927d2239ffd547"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_n_frame.html">NFrame</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ab92731c5fc7e9764e5927d2239ffd547">getFrameLeaf</a> (<a class="el" href="class_n_frame.html">NFrame</a> *root)</td></tr>
+<tr class="separator:ab92731c5fc7e9764e5927d2239ffd547"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae254ff86b10aa51f92e2fd19f9cb997"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#aae254ff86b10aa51f92e2fd19f9cb997">getFilteredFrameList</a> (QString frameName, QString slotName)</td></tr>
+<tr class="separator:aae254ff86b10aa51f92e2fd19f9cb997"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ac0bef1856c620db1dfd050e98bab9b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a1ac0bef1856c620db1dfd050e98bab9b">slotExists</a> (QString framename, QString slotName)</td></tr>
+<tr class="separator:a1ac0bef1856c620db1dfd050e98bab9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a772f462dfe2846f503246482ea8edc2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a772f462dfe2846f503246482ea8edc2a">clearExemplarIds</a> ()</td></tr>
+<tr class="separator:a772f462dfe2846f503246482ea8edc2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe0499e50ecd4244a9bb16a0203c8e21"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_n_frame.html">NFrame</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#afe0499e50ecd4244a9bb16a0203c8e21">getAllChildren</a> (<a class="el" href="class_n_frame.html">NFrame</a> *frame)</td></tr>
+<tr class="separator:afe0499e50ecd4244a9bb16a0203c8e21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f37f7a9c49cb9a549111da69e563767"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a2f37f7a9c49cb9a549111da69e563767">getAllChildrenNames</a> (<a class="el" href="class_n_frame.html">NFrame</a> *frame)</td></tr>
+<tr class="separator:a2f37f7a9c49cb9a549111da69e563767"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59a53d4f74bd862157d47f321389f71a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a59a53d4f74bd862157d47f321389f71a">hasChildren</a> (<a class="el" href="class_n_frame.html">NFrame</a> *frame)</td></tr>
+<tr class="separator:a59a53d4f74bd862157d47f321389f71a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1072ed6037b6d68e79391a590a953e22"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_n_frame.html">NFrame</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a1072ed6037b6d68e79391a590a953e22">getAllParents</a> (<a class="el" href="class_n_frame.html">NFrame</a> *frame)</td></tr>
+<tr class="separator:a1072ed6037b6d68e79391a590a953e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacaf6d879838ec470f9f51dbb7c0668e"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#aacaf6d879838ec470f9f51dbb7c0668e">getAllParentsNames</a> (<a class="el" href="class_n_frame.html">NFrame</a> *frame)</td></tr>
+<tr class="separator:aacaf6d879838ec470f9f51dbb7c0668e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabb0fda4b520a8f8924ee0ba3cbcdef3"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#aabb0fda4b520a8f8924ee0ba3cbcdef3">globalProcsContext</a> ()</td></tr>
+<tr class="separator:aabb0fda4b520a8f8924ee0ba3cbcdef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6af1f3b03a565fa1360259b689c1fbd2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a6af1f3b03a565fa1360259b689c1fbd2">setGlobalProcsContext</a> (QString context)</td></tr>
+<tr class="separator:a6af1f3b03a565fa1360259b689c1fbd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56e7491862cd961f8bf4549717248c00"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a56e7491862cd961f8bf4549717248c00">NKBManager</a> (QObject *parent=0)</td></tr>
+<tr class="separator:a56e7491862cd961f8bf4549717248c00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5c6c90cf87cb3203953eeded19455ab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ab5c6c90cf87cb3203953eeded19455ab">frameIsSystem</a> (int id)</td></tr>
+<tr class="separator:ab5c6c90cf87cb3203953eeded19455ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65463c194db0c340544e45d76cc397bb"><td class="memItemLeft" align="right" valign="top">QMap&lt; unsigned, QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a65463c194db0c340544e45d76cc397bb">frameNames</a> ()</td></tr>
+<tr class="separator:a65463c194db0c340544e45d76cc397bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f2a7f5e70fcbc18be6191010b2a1ca8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a7f2a7f5e70fcbc18be6191010b2a1ca8">SaveAs</a> ()</td></tr>
+<tr class="separator:a7f2a7f5e70fcbc18be6191010b2a1ca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad82d84eebc0058e559793df7c5a729c3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ad82d84eebc0058e559793df7c5a729c3">mayBeSave</a> ()</td></tr>
+<tr class="separator:ad82d84eebc0058e559793df7c5a729c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f2255844ecb473511c9d78d41710c61"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a4f2255844ecb473511c9d78d41710c61">areUsure</a> (QString quest)</td></tr>
+<tr class="separator:a4f2255844ecb473511c9d78d41710c61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab74a09e1746ecddd43a3c3dd973497d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ab74a09e1746ecddd43a3c3dd973497d2">saveToXml</a> (QTextStream &amp;stream)</td></tr>
+<tr class="separator:ab74a09e1746ecddd43a3c3dd973497d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad297868abea83e581cf39a2fe05f1d74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ad297868abea83e581cf39a2fe05f1d74">readFromXml</a> (QFile &amp;<a class="el" href="class_n_k_b_manager.html#aff795d583c83b3f0a146397ef37f4ead">file</a>)</td></tr>
+<tr class="separator:ad297868abea83e581cf39a2fe05f1d74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f4c464a44aae985ecf65a58b6a9d140"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a4f4c464a44aae985ecf65a58b6a9d140">saved</a> ()</td></tr>
+<tr class="separator:a4f4c464a44aae985ecf65a58b6a9d140"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cf07bab13b2faf35961f361716b9f1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a2cf07bab13b2faf35961f361716b9f1f">save</a> ()</td></tr>
+<tr class="separator:a2cf07bab13b2faf35961f361716b9f1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17e148e018d71da742e4a67925eca5dd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a17e148e018d71da742e4a67925eca5dd">saveAs</a> (QString filePath)</td></tr>
+<tr class="separator:a17e148e018d71da742e4a67925eca5dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35b162d0a94735b39f0259b1600395e3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a35b162d0a94735b39f0259b1600395e3">Open</a> (QString filePath)</td></tr>
+<tr class="separator:a35b162d0a94735b39f0259b1600395e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada298fb036a65df3e0c1c6ae9083b84b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ada298fb036a65df3e0c1c6ae9083b84b">Clear</a> ()</td></tr>
+<tr class="separator:ada298fb036a65df3e0c1c6ae9083b84b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a714660c9cb04a6c78f758fee819cb1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a5a714660c9cb04a6c78f758fee819cb1">isValid</a> ()</td></tr>
+<tr class="separator:a5a714660c9cb04a6c78f758fee819cb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15f1dc2a346562d2f02092fe3c75497c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a15f1dc2a346562d2f02092fe3c75497c">reload</a> ()</td></tr>
+<tr class="separator:a15f1dc2a346562d2f02092fe3c75497c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac18fa994065af86a441e14fdb44289cd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ac18fa994065af86a441e14fdb44289cd">frameExists</a> (QString name)</td></tr>
+<tr class="separator:ac18fa994065af86a441e14fdb44289cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdc0464c1705e56f9a74a955e26b332d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_framenet_model.html">NFramenetModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#afdc0464c1705e56f9a74a955e26b332d">getFrameNetModel</a> ()</td></tr>
+<tr class="separator:afdc0464c1705e56f9a74a955e26b332d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab904ae6a511d057a0ca37775fbbcb337"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_domain_model.html">DomainModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ab904ae6a511d057a0ca37775fbbcb337">getDomainModel</a> ()</td></tr>
+<tr class="separator:ab904ae6a511d057a0ca37775fbbcb337"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66b2ef2921ef36d82f64990c5418c9c7"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a66b2ef2921ef36d82f64990c5418c9c7">getIdByIndex</a> (QModelIndex)</td></tr>
+<tr class="separator:a66b2ef2921ef36d82f64990c5418c9c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2161515ea3db6b40ed6346bd5b48352e"><td class="memItemLeft" align="right" valign="top">QDomElement&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a2161515ea3db6b40ed6346bd5b48352e">diagramNode</a> ()</td></tr>
+<tr class="separator:a2161515ea3db6b40ed6346bd5b48352e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec946a5cbd7eb0c39b49e150602b9448"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#aec946a5cbd7eb0c39b49e150602b9448">setDiagramNode</a> (QDomElement node)</td></tr>
+<tr class="separator:aec946a5cbd7eb0c39b49e150602b9448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcfa017eba3e5a205f5156a7829b6296"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#afcfa017eba3e5a205f5156a7829b6296">productionExists</a> (QString name)</td></tr>
+<tr class="separator:afcfa017eba3e5a205f5156a7829b6296"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfd6466ae411034d1809a12c035d402d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_production.html">NProduction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#acfd6466ae411034d1809a12c035d402d">getProduction</a> (QString name)</td></tr>
+<tr class="separator:acfd6466ae411034d1809a12c035d402d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a826268ead42db6e5dfc726a5ef731c21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a826268ead42db6e5dfc726a5ef731c21">reloadProduction</a> (<a class="el" href="class_n_production.html">NProduction</a> *production)</td></tr>
+<tr class="separator:a826268ead42db6e5dfc726a5ef731c21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad07acf1855fd0d24c83d1c5e650e52d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ad07acf1855fd0d24c83d1c5e650e52d7">addProduction</a> (<a class="el" href="class_n_production.html">NProduction</a> *prod)</td></tr>
+<tr class="separator:ad07acf1855fd0d24c83d1c5e650e52d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc882ed03a920d16d762274ef422cbc6"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#adc882ed03a920d16d762274ef422cbc6">getProductionNames</a> ()</td></tr>
+<tr class="separator:adc882ed03a920d16d762274ef422cbc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b62c105f1f9608647459aeef925c49f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a1b62c105f1f9608647459aeef925c49f">addProc</a> (<a class="el" href="class_n_proc.html">NProc</a> *procedure)</td></tr>
+<tr class="separator:a1b62c105f1f9608647459aeef925c49f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a071ffacb066852cb6a12d36c29bda8ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_proc.html">NProc</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a071ffacb066852cb6a12d36c29bda8ab">getProc</a> (QString name)</td></tr>
+<tr class="separator:a071ffacb066852cb6a12d36c29bda8ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc9f54bd7b5a303855c552b05b0b5863"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#adc9f54bd7b5a303855c552b05b0b5863">procExists</a> (QString name)</td></tr>
+<tr class="separator:adc9f54bd7b5a303855c552b05b0b5863"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67b9c914829efb8644f341e195d5e139"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a67b9c914829efb8644f341e195d5e139">getProceduresNames</a> ()</td></tr>
+<tr class="separator:a67b9c914829efb8644f341e195d5e139"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a184cbc15229b7ab26ae7e03388ec64db"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a184cbc15229b7ab26ae7e03388ec64db">getVars</a> (QString frameName)</td></tr>
+<tr class="separator:a184cbc15229b7ab26ae7e03388ec64db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f9ef5a3d21d36319335e260eececd30"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a0f9ef5a3d21d36319335e260eececd30">getVarsWithParents</a> (QString frameName)</td></tr>
+<tr class="separator:a0f9ef5a3d21d36319335e260eececd30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93a65791d2ef4dca784f8eaf00a02162"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a93a65791d2ef4dca784f8eaf00a02162">getVarsOfSubframeWithParentsAndChildren</a> (QString frameName, bool lookForParents)</td></tr>
+<tr class="separator:a93a65791d2ef4dca784f8eaf00a02162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ca8c9ea71bf8a94d240a711c39b14b8"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a6ca8c9ea71bf8a94d240a711c39b14b8">getDomainByString</a> (QString frameName, QString str)</td></tr>
+<tr class="separator:a6ca8c9ea71bf8a94d240a711c39b14b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3eaccfcb3e29c890a12c95b2aeac3468"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_slot.html">NSlot</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a3eaccfcb3e29c890a12c95b2aeac3468">getSlotByString</a> (QString frameName, QString str)</td></tr>
+<tr class="separator:a3eaccfcb3e29c890a12c95b2aeac3468"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad140753b8e9291461fb5d37960a4e69a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_slot.html">NSlot</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ad140753b8e9291461fb5d37960a4e69a">getSlotByStringWithoutParentsAndChildren</a> (QString frameName, QString str)</td></tr>
+<tr class="separator:ad140753b8e9291461fb5d37960a4e69a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73937dfe12a6e80364d9f1ed0129cc2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a73937dfe12a6e80364d9f1ed0129cc2d">GetFrameByName</a> (QString name)</td></tr>
+<tr class="separator:a73937dfe12a6e80364d9f1ed0129cc2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d7ef86057ee31dbcfcf09c8924ab9e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a5d7ef86057ee31dbcfcf09c8924ab9e4">GetFrameParent</a> (<a class="el" href="class_n_frame.html">NFrame</a> *frame)</td></tr>
+<tr class="separator:a5d7ef86057ee31dbcfcf09c8924ab9e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44fd7e67267d24f1dc290465b47733f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a44fd7e67267d24f1dc290465b47733f1">GetFrameInstance</a> (<a class="el" href="class_n_frame.html">NFrame</a> *frame)</td></tr>
+<tr class="separator:a44fd7e67267d24f1dc290465b47733f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fe642fa8d757026f3a46586f9e4cc6f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a0fe642fa8d757026f3a46586f9e4cc6f">GetFrameInstance</a> (QString name)</td></tr>
+<tr class="separator:a0fe642fa8d757026f3a46586f9e4cc6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d3ef1d1e9bf484d0d45251477a844a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a9d3ef1d1e9bf484d0d45251477a844a8">GetFrameInstanceWithParents</a> (<a class="el" href="class_n_frame.html">NFrame</a> *frame)</td></tr>
+<tr class="separator:a9d3ef1d1e9bf484d0d45251477a844a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab186d0d6955a50d94e4139c7f54b1cf4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ab186d0d6955a50d94e4139c7f54b1cf4">GetFrameInstanceWithParents</a> (QString name)</td></tr>
+<tr class="separator:ab186d0d6955a50d94e4139c7f54b1cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3f31e0048d73f053a750fa3559b7b19"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_n_frame.html">NFrame</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#aa3f31e0048d73f053a750fa3559b7b19">GetFrameChildren</a> (<a class="el" href="class_n_frame.html">NFrame</a> *frame)</td></tr>
+<tr class="separator:aa3f31e0048d73f053a750fa3559b7b19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4aef3f1050d34174c6b76d05fb1be044"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_n_slot.html">NSlot</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a4aef3f1050d34174c6b76d05fb1be044">GetFrameSlots</a> (<a class="el" href="class_n_frame.html">NFrame</a> *frame)</td></tr>
+<tr class="separator:a4aef3f1050d34174c6b76d05fb1be044"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab653b2513b224da6ee11ad37e6d2a487"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_slot.html">NSlot</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ab653b2513b224da6ee11ad37e6d2a487">GetFrameSlot</a> (<a class="el" href="class_n_frame.html">NFrame</a> *frame, QString slotName)</td></tr>
+<tr class="separator:ab653b2513b224da6ee11ad37e6d2a487"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1b15e77dc32c8f6efe8fd181a811ede"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_domain.html">Domain</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#ad1b15e77dc32c8f6efe8fd181a811ede">GetSlotDomain</a> (<a class="el" href="class_n_slot.html">NSlot</a> *slot)</td></tr>
+<tr class="separator:ad1b15e77dc32c8f6efe8fd181a811ede"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54bba8cdb56a306adedbeb60152335e8"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_n_faset.html">NFaset</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a54bba8cdb56a306adedbeb60152335e8">GetSlotFasets</a> (<a class="el" href="class_n_slot.html">NSlot</a> *slot)</td></tr>
+<tr class="separator:a54bba8cdb56a306adedbeb60152335e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcb4a347d9fb360a929db48d951f8501"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#abcb4a347d9fb360a929db48d951f8501">HasParentWithName</a> (<a class="el" href="class_n_frame.html">NFrame</a> *frame, QString parentName)</td></tr>
+<tr class="separator:abcb4a347d9fb360a929db48d951f8501"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d33af2a8aed09ba0e2fd562b3b61e52"><td class="memItemLeft" align="right" valign="top">QVector&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a7d33af2a8aed09ba0e2fd562b3b61e52">GetDomainValsByString</a> (QString name)</td></tr>
+<tr class="separator:a7d33af2a8aed09ba0e2fd562b3b61e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09a1e51861fb0b811f73b2deedb02381"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_n_frame.html">NFrame</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a09a1e51861fb0b811f73b2deedb02381">getFrameLeaf</a> (<a class="el" href="class_n_frame.html">NFrame</a> *root)</td></tr>
+<tr class="separator:a09a1e51861fb0b811f73b2deedb02381"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae254ff86b10aa51f92e2fd19f9cb997"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#aae254ff86b10aa51f92e2fd19f9cb997">getFilteredFrameList</a> (QString frameName, QString slotName)</td></tr>
+<tr class="separator:aae254ff86b10aa51f92e2fd19f9cb997"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ac0bef1856c620db1dfd050e98bab9b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a1ac0bef1856c620db1dfd050e98bab9b">slotExists</a> (QString framename, QString slotName)</td></tr>
+<tr class="separator:a1ac0bef1856c620db1dfd050e98bab9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a772f462dfe2846f503246482ea8edc2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a772f462dfe2846f503246482ea8edc2a">clearExemplarIds</a> ()</td></tr>
+<tr class="separator:a772f462dfe2846f503246482ea8edc2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca48f8112feca4c27aba876e8dc22c01"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_n_frame.html">NFrame</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#aca48f8112feca4c27aba876e8dc22c01">getAllChildren</a> (<a class="el" href="class_n_frame.html">NFrame</a> *frame)</td></tr>
+<tr class="separator:aca48f8112feca4c27aba876e8dc22c01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f37f7a9c49cb9a549111da69e563767"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a2f37f7a9c49cb9a549111da69e563767">getAllChildrenNames</a> (<a class="el" href="class_n_frame.html">NFrame</a> *frame)</td></tr>
+<tr class="separator:a2f37f7a9c49cb9a549111da69e563767"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59a53d4f74bd862157d47f321389f71a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a59a53d4f74bd862157d47f321389f71a">hasChildren</a> (<a class="el" href="class_n_frame.html">NFrame</a> *frame)</td></tr>
+<tr class="separator:a59a53d4f74bd862157d47f321389f71a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf12d389c883b62430e208f059e5858e"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_n_frame.html">NFrame</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#acf12d389c883b62430e208f059e5858e">getAllParents</a> (<a class="el" href="class_n_frame.html">NFrame</a> *frame)</td></tr>
+<tr class="separator:acf12d389c883b62430e208f059e5858e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacaf6d879838ec470f9f51dbb7c0668e"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#aacaf6d879838ec470f9f51dbb7c0668e">getAllParentsNames</a> (<a class="el" href="class_n_frame.html">NFrame</a> *frame)</td></tr>
+<tr class="separator:aacaf6d879838ec470f9f51dbb7c0668e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabb0fda4b520a8f8924ee0ba3cbcdef3"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#aabb0fda4b520a8f8924ee0ba3cbcdef3">globalProcsContext</a> ()</td></tr>
+<tr class="separator:aabb0fda4b520a8f8924ee0ba3cbcdef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6af1f3b03a565fa1360259b689c1fbd2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a6af1f3b03a565fa1360259b689c1fbd2">setGlobalProcsContext</a> (QString context)</td></tr>
+<tr class="separator:a6af1f3b03a565fa1360259b689c1fbd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:a4b4018642c7e1a8540ec763fcebaf7e7"><td class="memItemLeft" align="right" valign="top">QDomDocument&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_k_b_manager.html#a4b4018642c7e1a8540ec763fcebaf7e7">doc</a></td></tr>
+<tr class="separator:a4b4018642c7e1a8540ec763fcebaf7e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock">
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8h_source.html">nkbmanager.h</a> строка <a class="el" href="core_2nkbmanager_8h_source.html#l00019">19</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a class="anchor" id="a56e7491862cd961f8bf4549717248c00"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">NKBManager::NKBManager </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>QObject::connect(domainModel,SIGNAL(sigDomainValueChanged(QString,QString,QString)),ruleModel,SLOT(onDomainValueChanged(QString,QString,QString))); QObject::connect(domainModel,SIGNAL(sigDomainValueDeleted(QString,QString)),ruleModel,SLOT(onDomainValueDeleted(QString,QString))); QObject::connect(varModel,SIGNAL(sigVarNameChanged(QString,QString)),ruleModel,SLOT(onVarNameChanged(QString,QString)));</p>
+<p>QObject::connect(varModel,SIGNAL(sigVarDeleted(QString)),ruleModel,SLOT(onVarDeleted(QString))); QObject::connect(varModel,SIGNAL(sigVarDomainChanged(QString,QString,QString)),ruleModel,SLOT(onVarDomainChanged(QString,QString,QString))); </p>
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00003">3</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a56e7491862cd961f8bf4549717248c00"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">NKBManager::NKBManager </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="a1e3ac00052e6b19a7fb578ab707ac5b8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::addApo </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>did</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00262">262</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a1e3ac00052e6b19a7fb578ab707ac5b8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::addApo </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>did</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4fa26bf19ef75474042dcf35c860711e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::addFrame </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00068">68</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a4fa26bf19ef75474042dcf35c860711e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::addFrame </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a31ef8172a7419004e5e25a7b121be8ed"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::addFrameImage </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00114">114</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a31ef8172a7419004e5e25a7b121be8ed"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::addFrameImage </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aee8d585bd2e45c35279ce82676e2a2ee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::addFrameSituation </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aee8d585bd2e45c35279ce82676e2a2ee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::addFrameSituation </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00085">85</a></p>
+
+</div>
+</div>
+<a class="anchor" id="afe81f8704ac3318aafb2e58bb5d6f9d7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::addIsa </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>did</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00213">213</a></p>
+
+</div>
+</div>
+<a class="anchor" id="afe81f8704ac3318aafb2e58bb5d6f9d7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::addIsa </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>did</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1b62c105f1f9608647459aeef925c49f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::addProc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_proc.html">NProc</a> *&#160;</td>
+          <td class="paramname"><em>procedure</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01538">1538</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a1b62c105f1f9608647459aeef925c49f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::addProc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_proc.html">NProc</a> *&#160;</td>
+          <td class="paramname"><em>procedure</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad07acf1855fd0d24c83d1c5e650e52d7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::addProduction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_production.html">NProduction</a> *&#160;</td>
+          <td class="paramname"><em>prod</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00870">870</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ad07acf1855fd0d24c83d1c5e650e52d7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::addProduction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_production.html">NProduction</a> *&#160;</td>
+          <td class="paramname"><em>prod</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a15f2a89fd99b905e3974d6ae0f159d96"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::apoAdded </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>did</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a15f2a89fd99b905e3974d6ae0f159d96"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::apoAdded </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>did</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__nkbmanager_8cpp_source.html">moc_nkbmanager.cpp</a> строка <a class="el" href="debug_2moc__nkbmanager_8cpp_source.html#l00204">204</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aabadb4a9203142f8d6196920a45b63a6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::apoDeleted </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>did</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__nkbmanager_8cpp_source.html">moc_nkbmanager.cpp</a> строка <a class="el" href="debug_2moc__nkbmanager_8cpp_source.html#l00211">211</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aabadb4a9203142f8d6196920a45b63a6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::apoDeleted </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>did</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4f2255844ecb473511c9d78d41710c61"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::areUsure </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>quest</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4f2255844ecb473511c9d78d41710c61"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::areUsure </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>quest</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00467">467</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ada298fb036a65df3e0c1c6ae9083b84b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::Clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ada298fb036a65df3e0c1c6ae9083b84b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::Clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00681">681</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a772f462dfe2846f503246482ea8edc2a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::clearExemplarIds </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a772f462dfe2846f503246482ea8edc2a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::clearExemplarIds </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01521">1521</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a7014324ba3528c7540b69311f3aece3b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::deleteApo </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>did</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00338">338</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a7014324ba3528c7540b69311f3aece3b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::deleteApo </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>did</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af4eda01f30954df9407eb49aaba59613"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::deleteFrame </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00159">159</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af4eda01f30954df9407eb49aaba59613"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::deleteFrame </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af27ca2ea55de808d474079b1e4283dae"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::deleteIsa </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>did</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00314">314</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af27ca2ea55de808d474079b1e4283dae"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::deleteIsa </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>did</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2161515ea3db6b40ed6346bd5b48352e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDomElement NKBManager::diagramNode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00806">806</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a2161515ea3db6b40ed6346bd5b48352e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDomElement NKBManager::diagramNode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af494491390571804f5feea3ca1b4912c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QFile* NKBManager::file </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aff795d583c83b3f0a146397ef37f4ead"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QFile * NKBManager::file </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00791">791</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ac6e48921e37b234b3d2dc915f14cfb49"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::frameAdded </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac6e48921e37b234b3d2dc915f14cfb49"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::frameAdded </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__nkbmanager_8cpp_source.html">moc_nkbmanager.cpp</a> строка <a class="el" href="debug_2moc__nkbmanager_8cpp_source.html#l00176">176</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a28db8e912575f958c549fb7d6295e09e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::frameDeleted </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a28db8e912575f958c549fb7d6295e09e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::frameDeleted </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__nkbmanager_8cpp_source.html">moc_nkbmanager.cpp</a> строка <a class="el" href="debug_2moc__nkbmanager_8cpp_source.html#l00183">183</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ac18fa994065af86a441e14fdb44289cd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::frameExists </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac18fa994065af86a441e14fdb44289cd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::frameExists </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00761">761</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab5c6c90cf87cb3203953eeded19455ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::frameIsSystem </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01527">1527</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab5c6c90cf87cb3203953eeded19455ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::frameIsSystem </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa33ef976e72800cf1ae99d72fef80b77"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt; unsigned, QString &gt; NKBManager::frameNames </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>От диаграмм </p>
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00051">51</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a65463c194db0c340544e45d76cc397bb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt;unsigned, QString&gt; NKBManager::frameNames </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aca48f8112feca4c27aba876e8dc22c01"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="class_n_frame.html">NFrame</a>*&gt; NKBManager::getAllChildren </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afe0499e50ecd4244a9bb16a0203c8e21"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; <a class="el" href="class_n_frame.html">NFrame</a> * &gt; NKBManager::getAllChildren </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01310">1310</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a2f37f7a9c49cb9a549111da69e563767"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList NKBManager::getAllChildrenNames </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2f37f7a9c49cb9a549111da69e563767"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList NKBManager::getAllChildrenNames </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01322">1322</a></p>
+
+</div>
+</div>
+<a class="anchor" id="acf12d389c883b62430e208f059e5858e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="class_n_frame.html">NFrame</a>*&gt; NKBManager::getAllParents </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1072ed6037b6d68e79391a590a953e22"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; <a class="el" href="class_n_frame.html">NFrame</a> * &gt; NKBManager::getAllParents </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01339">1339</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aacaf6d879838ec470f9f51dbb7c0668e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList NKBManager::getAllParentsNames </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aacaf6d879838ec470f9f51dbb7c0668e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList NKBManager::getAllParentsNames </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01352">1352</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a43ac07911176341c82d532190a655ec7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::getDirty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8h_source.html">nkbmanager.h</a> строка <a class="el" href="core_2nkbmanager_8h_source.html#l00150">150</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a43ac07911176341c82d532190a655ec7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::getDirty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2da34ae8f2397397adf5070719254fb33_source.html">nkbmanager.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2da34ae8f2397397adf5070719254fb33_source.html#l00150">150</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a6ca8c9ea71bf8a94d240a711c39b14b8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString NKBManager::getDomainByString </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>frameName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>str</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00995">995</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a6ca8c9ea71bf8a94d240a711c39b14b8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString NKBManager::getDomainByString </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>frameName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>str</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2e511c4b72d5c37f68e56f5c48a71477"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_domain_model.html">DomainModel</a> * NKBManager::getDomainModel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00801">801</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab904ae6a511d057a0ca37775fbbcb337"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_domain_model.html">DomainModel</a>* NKBManager::getDomainModel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7d33af2a8aed09ba0e2fd562b3b61e52"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt;QString&gt; NKBManager::GetDomainValsByString </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3ca568c0555e00f9dd84fdc0a58af524"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt; QString &gt; NKBManager::GetDomainValsByString </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01254">1254</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aae254ff86b10aa51f92e2fd19f9cb997"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList NKBManager::getFilteredFrameList </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>frameName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>slotName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aae254ff86b10aa51f92e2fd19f9cb997"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList NKBManager::getFilteredFrameList </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>frameName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>slotName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01363">1363</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a50c0730b0fb91588252d550fa7007292"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_frame.html">NFrame</a> * NKBManager::GetFrameByName </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01148">1148</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a73937dfe12a6e80364d9f1ed0129cc2d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_frame.html">NFrame</a>* NKBManager::GetFrameByName </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0f940967b82864cdd75f58be7a073557"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; <a class="el" href="class_n_frame.html">NFrame</a> * &gt; NKBManager::GetFrameChildren </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01167">1167</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aa3f31e0048d73f053a750fa3559b7b19"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="class_n_frame.html">NFrame</a>*&gt; NKBManager::GetFrameChildren </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abe311d6347a7184f68d47b7ad8f0834d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_frame.html">NFrame</a> * NKBManager::GetFrameInstance </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01183">1183</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a44fd7e67267d24f1dc290465b47733f1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_frame.html">NFrame</a>* NKBManager::GetFrameInstance </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afc6e2c979f58e3aee34d94e968b8e923"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_frame.html">NFrame</a> * NKBManager::GetFrameInstance </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01190">1190</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a0fe642fa8d757026f3a46586f9e4cc6f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_frame.html">NFrame</a>* NKBManager::GetFrameInstance </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9d3ef1d1e9bf484d0d45251477a844a8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_frame.html">NFrame</a>* NKBManager::GetFrameInstanceWithParents </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a282ee71198ccb403ec86591b92201f16"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_frame.html">NFrame</a> * NKBManager::GetFrameInstanceWithParents </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01286">1286</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a54b48c7de9fd26e4c3f3e8279a8293c8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_frame.html">NFrame</a> * NKBManager::GetFrameInstanceWithParents </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01301">1301</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab186d0d6955a50d94e4139c7f54b1cf4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_frame.html">NFrame</a>* NKBManager::GetFrameInstanceWithParents </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a09a1e51861fb0b811f73b2deedb02381"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="class_n_frame.html">NFrame</a>*&gt; NKBManager::getFrameLeaf </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td>
+          <td class="paramname"><em>root</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab92731c5fc7e9764e5927d2239ffd547"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; <a class="el" href="class_n_frame.html">NFrame</a> * &gt; NKBManager::getFrameLeaf </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td>
+          <td class="paramname"><em>root</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01263">1263</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a6f604142f6ba864912f6fe65d474f5d4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_framenet_model.html">NFramenetModel</a> * NKBManager::getFrameNetModel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00774">774</a></p>
+
+</div>
+</div>
+<a class="anchor" id="afdc0464c1705e56f9a74a955e26b332d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_framenet_model.html">NFramenetModel</a>* NKBManager::getFrameNetModel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a46dba5109cfd982728d68dbd899f4409"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_frame.html">NFrame</a> * NKBManager::GetFrameParent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01161">1161</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a5d7ef86057ee31dbcfcf09c8924ab9e4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_frame.html">NFrame</a>* NKBManager::GetFrameParent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae278de7de7b8ab41f1cb62b555fd4cd8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_slot.html">NSlot</a> * NKBManager::GetFrameSlot </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>slotName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01209">1209</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab653b2513b224da6ee11ad37e6d2a487"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_slot.html">NSlot</a>* NKBManager::GetFrameSlot </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>slotName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4aef3f1050d34174c6b76d05fb1be044"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="class_n_slot.html">NSlot</a>*&gt; NKBManager::GetFrameSlots </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acf7ba630945908e9b799bb0de6f3392d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; <a class="el" href="class_n_slot.html">NSlot</a> * &gt; NKBManager::GetFrameSlots </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01198">1198</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a66b2ef2921ef36d82f64990c5418c9c7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned NKBManager::getIdByIndex </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00741">741</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a66b2ef2921ef36d82f64990c5418c9c7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned NKBManager::getIdByIndex </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a514cd566b9016534886f33e86627884d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_proc.html">NProc</a> * NKBManager::getProc </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01275">1275</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a071ffacb066852cb6a12d36c29bda8ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_proc.html">NProc</a>* NKBManager::getProc </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a67b9c914829efb8644f341e195d5e139"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList NKBManager::getProceduresNames </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a67b9c914829efb8644f341e195d5e139"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList NKBManager::getProceduresNames </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00886">886</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ae580a117905981065dec5e574822daaa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_production.html">NProduction</a> * NKBManager::getProduction </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00827">827</a></p>
+
+</div>
+</div>
+<a class="anchor" id="acfd6466ae411034d1809a12c035d402d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_production.html">NProduction</a>* NKBManager::getProduction </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adc882ed03a920d16d762274ef422cbc6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList NKBManager::getProductionNames </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00875">875</a></p>
+
+</div>
+</div>
+<a class="anchor" id="adc882ed03a920d16d762274ef422cbc6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList NKBManager::getProductionNames </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a08f75b68643ea6625bd9908e0b022e12"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_slot.html">NSlot</a> * NKBManager::getSlotByString </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>frameName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>str</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01005">1005</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a3eaccfcb3e29c890a12c95b2aeac3468"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_slot.html">NSlot</a>* NKBManager::getSlotByString </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>frameName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>str</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aef1ac8ea0466ada9c0f4d1b028ee3153"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_slot.html">NSlot</a> * NKBManager::getSlotByStringWithoutParentsAndChildren </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>frameName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>str</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01065">1065</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ad140753b8e9291461fb5d37960a4e69a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_slot.html">NSlot</a>* NKBManager::getSlotByStringWithoutParentsAndChildren </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>frameName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>str</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad1b15e77dc32c8f6efe8fd181a811ede"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_domain.html">Domain</a>* NKBManager::GetSlotDomain </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_slot.html">NSlot</a> *&#160;</td>
+          <td class="paramname"><em>slot</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a63b38b5ae2a0250928d21ca3cebf8126"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_domain.html">Domain</a> * NKBManager::GetSlotDomain </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_slot.html">NSlot</a> *&#160;</td>
+          <td class="paramname"><em>slot</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01217">1217</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a9e268f966eceb8ec04a13a59914a7efa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; <a class="el" href="class_n_faset.html">NFaset</a> * &gt; NKBManager::GetSlotFasets </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_slot.html">NSlot</a> *&#160;</td>
+          <td class="paramname"><em>slot</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01224">1224</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a54bba8cdb56a306adedbeb60152335e8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="class_n_faset.html">NFaset</a>*&gt; NKBManager::GetSlotFasets </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_slot.html">NSlot</a> *&#160;</td>
+          <td class="paramname"><em>slot</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a184cbc15229b7ab26ae7e03388ec64db"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList NKBManager::getVars </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>frameName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00910">910</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a184cbc15229b7ab26ae7e03388ec64db"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList NKBManager::getVars </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>frameName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a93a65791d2ef4dca784f8eaf00a02162"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList NKBManager::getVarsOfSubframeWithParentsAndChildren </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>frameName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>lookForParents</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00938">938</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a93a65791d2ef4dca784f8eaf00a02162"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList NKBManager::getVarsOfSubframeWithParentsAndChildren </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>frameName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>lookForParents</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0f9ef5a3d21d36319335e260eececd30"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList NKBManager::getVarsWithParents </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>frameName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0f9ef5a3d21d36319335e260eececd30"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList NKBManager::getVarsWithParents </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>frameName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00974">974</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aabb0fda4b520a8f8924ee0ba3cbcdef3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString NKBManager::globalProcsContext </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aabb0fda4b520a8f8924ee0ba3cbcdef3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString NKBManager::globalProcsContext </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01550">1550</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a59a53d4f74bd862157d47f321389f71a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::hasChildren </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a59a53d4f74bd862157d47f321389f71a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::hasChildren </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01333">1333</a></p>
+
+</div>
+</div>
+<a class="anchor" id="abcb4a347d9fb360a929db48d951f8501"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::HasParentWithName </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>parentName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abcb4a347d9fb360a929db48d951f8501"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::HasParentWithName </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>parentName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01235">1235</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a63494c7a5cc5fc242c05e69462d021e0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::isaAdded </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>did</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__nkbmanager_8cpp_source.html">moc_nkbmanager.cpp</a> строка <a class="el" href="debug_2moc__nkbmanager_8cpp_source.html#l00190">190</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a63494c7a5cc5fc242c05e69462d021e0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::isaAdded </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>did</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aafbc1c4ae1ed589c71351e581288f365"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::isaDeleted </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>did</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__nkbmanager_8cpp_source.html">moc_nkbmanager.cpp</a> строка <a class="el" href="debug_2moc__nkbmanager_8cpp_source.html#l00197">197</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aafbc1c4ae1ed589c71351e581288f365"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::isaDeleted </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>did</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5a714660c9cb04a6c78f758fee819cb1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::isValid </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5a714660c9cb04a6c78f758fee819cb1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::isValid </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00705">705</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ad82d84eebc0058e559793df7c5a729c3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::mayBeSave </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00413">413</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ad82d84eebc0058e559793df7c5a729c3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::mayBeSave </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab886e89d91b53e76a4ac37c25e5fbb89"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::onDataChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00698">698</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab886e89d91b53e76a4ac37c25e5fbb89"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::onDataChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a35b162d0a94735b39f0259b1600395e3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::Open </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>filePath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00664">664</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a35b162d0a94735b39f0259b1600395e3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::Open </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>filePath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adc9f54bd7b5a303855c552b05b0b5863"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::procExists </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adc9f54bd7b5a303855c552b05b0b5863"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::procExists </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01543">1543</a></p>
+
+</div>
+</div>
+<a class="anchor" id="afcfa017eba3e5a205f5156a7829b6296"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::productionExists </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00816">816</a></p>
+
+</div>
+</div>
+<a class="anchor" id="afcfa017eba3e5a205f5156a7829b6296"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::productionExists </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad297868abea83e581cf39a2fe05f1d74"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::readFromXml </td>
+          <td>(</td>
+          <td class="paramtype">QFile &amp;&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad297868abea83e581cf39a2fe05f1d74"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::readFromXml </td>
+          <td>(</td>
+          <td class="paramtype">QFile &amp;&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00569">569</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a15f1dc2a346562d2f02092fe3c75497c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::reload </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00711">711</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a15f1dc2a346562d2f02092fe3c75497c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::reload </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a826268ead42db6e5dfc726a5ef731c21"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::reloadProduction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_production.html">NProduction</a> *&#160;</td>
+          <td class="paramname"><em>production</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00838">838</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a826268ead42db6e5dfc726a5ef731c21"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::reloadProduction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_production.html">NProduction</a> *&#160;</td>
+          <td class="paramname"><em>production</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2cf07bab13b2faf35961f361716b9f1f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::save </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00634">634</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a2cf07bab13b2faf35961f361716b9f1f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::save </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7f2a7f5e70fcbc18be6191010b2a1ca8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::SaveAs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7f2a7f5e70fcbc18be6191010b2a1ca8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::SaveAs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00388">388</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a17e148e018d71da742e4a67925eca5dd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::saveAs </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>filePath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00649">649</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a17e148e018d71da742e4a67925eca5dd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::saveAs </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>filePath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4f4c464a44aae985ecf65a58b6a9d140"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::saved </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00628">628</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a4f4c464a44aae985ecf65a58b6a9d140"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::saved </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab74a09e1746ecddd43a3c3dd973497d2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::saveToXml </td>
+          <td>(</td>
+          <td class="paramtype">QTextStream &amp;&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab74a09e1746ecddd43a3c3dd973497d2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::saveToXml </td>
+          <td>(</td>
+          <td class="paramtype">QTextStream &amp;&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00526">526</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a58f8c543c1a974c713294919ba4ed7c9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::selectFrame </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>От диаграмм </p>
+
+</div>
+</div>
+<a class="anchor" id="a58f8c543c1a974c713294919ba4ed7c9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::selectFrame </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>От диаграмм </p>
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00063">63</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aec946a5cbd7eb0c39b49e150602b9448"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::setDiagramNode </td>
+          <td>(</td>
+          <td class="paramtype">QDomElement&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aec946a5cbd7eb0c39b49e150602b9448"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::setDiagramNode </td>
+          <td>(</td>
+          <td class="paramtype">QDomElement&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00811">811</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ad9844119a8ce036e089e908bfd0e695f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::setDirty </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>dirty</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad9844119a8ce036e089e908bfd0e695f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::setDirty </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>dirty</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00785">785</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ae3e30f6ada9f085ffdd2d80df1a71d9f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::setFile </td>
+          <td>(</td>
+          <td class="paramtype">QFile *&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l00796">796</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ae3e30f6ada9f085ffdd2d80df1a71d9f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::setFile </td>
+          <td>(</td>
+          <td class="paramtype">QFile *&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6af1f3b03a565fa1360259b689c1fbd2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::setGlobalProcsContext </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>context</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6af1f3b03a565fa1360259b689c1fbd2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::setGlobalProcsContext </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>context</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01555">1555</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a6096343041741b63556288d2c1828ff7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::sigDataLoaded </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6096343041741b63556288d2c1828ff7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::sigDataLoaded </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__nkbmanager_8cpp_source.html">moc_nkbmanager.cpp</a> строка <a class="el" href="debug_2moc__nkbmanager_8cpp_source.html#l00218">218</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aeba645328f9ada98745d0f3c8b4b5f0d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::sigDirtyChanged </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>dirty</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aeba645328f9ada98745d0f3c8b4b5f0d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::sigDirtyChanged </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>dirty</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__nkbmanager_8cpp_source.html">moc_nkbmanager.cpp</a> строка <a class="el" href="debug_2moc__nkbmanager_8cpp_source.html#l00238">238</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ac49a07b739df7a3a5a2d6fc88a37fcd4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::sigErrorWhileValidating </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>errorText</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac49a07b739df7a3a5a2d6fc88a37fcd4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::sigErrorWhileValidating </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>errorText</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__nkbmanager_8cpp_source.html">moc_nkbmanager.cpp</a> строка <a class="el" href="debug_2moc__nkbmanager_8cpp_source.html#l00224">224</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aa17a0d42f5fc86302aa53d14ece4fff0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::sigFrameNameChanged </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>newName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__nkbmanager_8cpp_source.html">moc_nkbmanager.cpp</a> строка <a class="el" href="debug_2moc__nkbmanager_8cpp_source.html#l00231">231</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aa17a0d42f5fc86302aa53d14ece4fff0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NKBManager::sigFrameNameChanged </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>newName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1ac0bef1856c620db1dfd050e98bab9b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::slotExists </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>framename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>slotName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a> строка <a class="el" href="core_2nkbmanager_8cpp_source.html#l01476">1476</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a1ac0bef1856c620db1dfd050e98bab9b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NKBManager::slotExists </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>framename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>slotName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a class="anchor" id="a4b4018642c7e1a8540ec763fcebaf7e7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDomDocument NKBManager::doc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2nkbmanager_8h_source.html">nkbmanager.h</a> строка <a class="el" href="core_2nkbmanager_8h_source.html#l00181">181</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>C:/qt/nya-cats/core/<a class="el" href="core_2nkbmanager_8h_source.html">nkbmanager.h</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/core/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2da34ae8f2397397adf5070719254fb33_source.html">nkbmanager.h</a></li>
+<li>C:/qt/nya-cats/core/<a class="el" href="core_2nkbmanager_8cpp_source.html">nkbmanager.cpp</a></li>
+<li>C:/qt/nya-cats/debug/<a class="el" href="debug_2moc__nkbmanager_8cpp_source.html">moc_nkbmanager.cpp</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/core/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_21b1f4737e6f3e2adaefbc12e24d0ee1e_source.html">nkbmanager.cpp</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/debug/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_245e4f7ddd8de4bf7c122b7b9bd37617d_source.html">moc_nkbmanager.cpp</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/release/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_202eb964924c1b686f884bd93af9b225f_source.html">moc_nkbmanager.cpp</a></li>
+<li>C:/qt/nya-cats/release/<a class="el" href="release_2moc__nkbmanager_8cpp_source.html">moc_nkbmanager.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_n_k_b_manager.html">NKBManager</a></li>
+    <li class="footer">Документация по Nya-cats. Последние изменения: Пн 14 Янв 2013 16:34:02. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3 </li>
+  </ul>
+</div>
+</body>
+</html>

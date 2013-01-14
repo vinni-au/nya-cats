@@ -1,0 +1,983 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3"/>
+<title>Nya-cats: Класс Arrow</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Nya-cats
+   &#160;<span id="projectnumber">1.00</span>
+   </div>
+   <div id="projectbrief">Nya-cats</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="hierarchy.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_arrow.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Перечисления</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Элементы перечислений</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Свойства</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Макросы</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
+<a href="class_arrow-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс Arrow</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="editor_2arrow_8hpp_source.html">arrow.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:Arrow:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_arrow.png" usemap="#Arrow_map" alt=""/>
+  <map id="Arrow_map" name="Arrow_map">
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:a38fd80d2881b5bb1668ffe6749dfc8a5"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="class_arrow.html#aebbd8d704c7916d2026432eb2a51791daa6d0f8dccf0a221116d1d09428286036">Type</a> = UserType + 2
+ }</td></tr>
+<tr class="separator:a38fd80d2881b5bb1668ffe6749dfc8a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebbd8d704c7916d2026432eb2a51791d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="class_arrow.html#aebbd8d704c7916d2026432eb2a51791daa6d0f8dccf0a221116d1d09428286036">Type</a> = UserType + 2
+ }</td></tr>
+<tr class="separator:aebbd8d704c7916d2026432eb2a51791d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a45fcbf0a667ab025d47ac0863fed5818"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#a45fcbf0a667ab025d47ac0863fed5818">Arrow</a> (<a class="el" href="class_diagram_item.html">DiagramItem</a> *<a class="el" href="class_arrow.html#aca1c4bf8681a1449b8e09af3dac9b797">startItem</a>, <a class="el" href="class_diagram_item.html">DiagramItem</a> *<a class="el" href="class_arrow.html#a363d170cfcc7db0472843a93de7e86d4">endItem</a>, QString <a class="el" href="class_arrow.html#affe6fbde77a7c8a1e9fab90a6e8dc092">text</a>=QString(), QGraphicsItem *parent=0, QGraphicsScene *scene=0)</td></tr>
+<tr class="separator:a45fcbf0a667ab025d47ac0863fed5818"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef6cfdb5dda88ef43c16b34cbd6a0b6f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#aef6cfdb5dda88ef43c16b34cbd6a0b6f">type</a> () const </td></tr>
+<tr class="separator:aef6cfdb5dda88ef43c16b34cbd6a0b6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacc85b1893fa0f1379e41afc0ebcd4b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#aacc85b1893fa0f1379e41afc0ebcd4b0">setContextMenu</a> (QMenu *menu)</td></tr>
+<tr class="separator:aacc85b1893fa0f1379e41afc0ebcd4b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a296feb427424b0f4bdc1111cdaf1b5ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#a296feb427424b0f4bdc1111cdaf1b5ca">setText</a> (QString <a class="el" href="class_arrow.html#affe6fbde77a7c8a1e9fab90a6e8dc092">text</a>)</td></tr>
+<tr class="separator:a296feb427424b0f4bdc1111cdaf1b5ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affe6fbde77a7c8a1e9fab90a6e8dc092"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#affe6fbde77a7c8a1e9fab90a6e8dc092">text</a> () const </td></tr>
+<tr class="separator:affe6fbde77a7c8a1e9fab90a6e8dc092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b15a4c7ab51e17ade465cb928ff5749"><td class="memItemLeft" align="right" valign="top">QRectF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#a3b15a4c7ab51e17ade465cb928ff5749">boundingRect</a> () const </td></tr>
+<tr class="separator:a3b15a4c7ab51e17ade465cb928ff5749"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa51a558d21cfb6bb57578b9e6a745cf3"><td class="memItemLeft" align="right" valign="top">QPainterPath&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#aa51a558d21cfb6bb57578b9e6a745cf3">shape</a> () const </td></tr>
+<tr class="separator:aa51a558d21cfb6bb57578b9e6a745cf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7e7333a213b0eb310496b6f815e1824"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#ab7e7333a213b0eb310496b6f815e1824">setColor</a> (const QColor &amp;color)</td></tr>
+<tr class="separator:ab7e7333a213b0eb310496b6f815e1824"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca1c4bf8681a1449b8e09af3dac9b797"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_diagram_item.html">DiagramItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#aca1c4bf8681a1449b8e09af3dac9b797">startItem</a> () const </td></tr>
+<tr class="separator:aca1c4bf8681a1449b8e09af3dac9b797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a363d170cfcc7db0472843a93de7e86d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_diagram_item.html">DiagramItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#a363d170cfcc7db0472843a93de7e86d4">endItem</a> () const </td></tr>
+<tr class="separator:a363d170cfcc7db0472843a93de7e86d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b3688ecfc7d32e5b9f5eb80b1dfb79f"><td class="memItemLeft" align="right" valign="top">QMenu *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#a2b3688ecfc7d32e5b9f5eb80b1dfb79f">contextMenu</a> () const </td></tr>
+<tr class="separator:a2b3688ecfc7d32e5b9f5eb80b1dfb79f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c78180ebf1b7d26cd52ce630ad9f2ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#a2c78180ebf1b7d26cd52ce630ad9f2ac">updatePosition</a> ()</td></tr>
+<tr class="separator:a2c78180ebf1b7d26cd52ce630ad9f2ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45fcbf0a667ab025d47ac0863fed5818"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#a45fcbf0a667ab025d47ac0863fed5818">Arrow</a> (<a class="el" href="class_diagram_item.html">DiagramItem</a> *<a class="el" href="class_arrow.html#aca1c4bf8681a1449b8e09af3dac9b797">startItem</a>, <a class="el" href="class_diagram_item.html">DiagramItem</a> *<a class="el" href="class_arrow.html#a363d170cfcc7db0472843a93de7e86d4">endItem</a>, QString <a class="el" href="class_arrow.html#affe6fbde77a7c8a1e9fab90a6e8dc092">text</a>=QString(), QGraphicsItem *parent=0, QGraphicsScene *scene=0)</td></tr>
+<tr class="separator:a45fcbf0a667ab025d47ac0863fed5818"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef6cfdb5dda88ef43c16b34cbd6a0b6f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#aef6cfdb5dda88ef43c16b34cbd6a0b6f">type</a> () const </td></tr>
+<tr class="separator:aef6cfdb5dda88ef43c16b34cbd6a0b6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacc85b1893fa0f1379e41afc0ebcd4b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#aacc85b1893fa0f1379e41afc0ebcd4b0">setContextMenu</a> (QMenu *menu)</td></tr>
+<tr class="separator:aacc85b1893fa0f1379e41afc0ebcd4b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a296feb427424b0f4bdc1111cdaf1b5ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#a296feb427424b0f4bdc1111cdaf1b5ca">setText</a> (QString <a class="el" href="class_arrow.html#affe6fbde77a7c8a1e9fab90a6e8dc092">text</a>)</td></tr>
+<tr class="separator:a296feb427424b0f4bdc1111cdaf1b5ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affe6fbde77a7c8a1e9fab90a6e8dc092"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#affe6fbde77a7c8a1e9fab90a6e8dc092">text</a> () const </td></tr>
+<tr class="separator:affe6fbde77a7c8a1e9fab90a6e8dc092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b15a4c7ab51e17ade465cb928ff5749"><td class="memItemLeft" align="right" valign="top">QRectF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#a3b15a4c7ab51e17ade465cb928ff5749">boundingRect</a> () const </td></tr>
+<tr class="separator:a3b15a4c7ab51e17ade465cb928ff5749"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa51a558d21cfb6bb57578b9e6a745cf3"><td class="memItemLeft" align="right" valign="top">QPainterPath&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#aa51a558d21cfb6bb57578b9e6a745cf3">shape</a> () const </td></tr>
+<tr class="separator:aa51a558d21cfb6bb57578b9e6a745cf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7e7333a213b0eb310496b6f815e1824"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#ab7e7333a213b0eb310496b6f815e1824">setColor</a> (const QColor &amp;color)</td></tr>
+<tr class="separator:ab7e7333a213b0eb310496b6f815e1824"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca1c4bf8681a1449b8e09af3dac9b797"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_diagram_item.html">DiagramItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#aca1c4bf8681a1449b8e09af3dac9b797">startItem</a> () const </td></tr>
+<tr class="separator:aca1c4bf8681a1449b8e09af3dac9b797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a363d170cfcc7db0472843a93de7e86d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_diagram_item.html">DiagramItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#a363d170cfcc7db0472843a93de7e86d4">endItem</a> () const </td></tr>
+<tr class="separator:a363d170cfcc7db0472843a93de7e86d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b3688ecfc7d32e5b9f5eb80b1dfb79f"><td class="memItemLeft" align="right" valign="top">QMenu *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#a2b3688ecfc7d32e5b9f5eb80b1dfb79f">contextMenu</a> () const </td></tr>
+<tr class="separator:a2b3688ecfc7d32e5b9f5eb80b1dfb79f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c78180ebf1b7d26cd52ce630ad9f2ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#a2c78180ebf1b7d26cd52ce630ad9f2ac">updatePosition</a> ()</td></tr>
+<tr class="separator:a2c78180ebf1b7d26cd52ce630ad9f2ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:ad6c7cb142beb5b655c95f4da437e2013"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#ad6c7cb142beb5b655c95f4da437e2013">paint</a> (QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget=0)</td></tr>
+<tr class="separator:ad6c7cb142beb5b655c95f4da437e2013"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97a599b254cc8cecd86b2955b1d37a00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#a97a599b254cc8cecd86b2955b1d37a00">contextMenuEvent</a> (QGraphicsSceneContextMenuEvent *event)</td></tr>
+<tr class="separator:a97a599b254cc8cecd86b2955b1d37a00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6c7cb142beb5b655c95f4da437e2013"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#ad6c7cb142beb5b655c95f4da437e2013">paint</a> (QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget=0)</td></tr>
+<tr class="separator:ad6c7cb142beb5b655c95f4da437e2013"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97a599b254cc8cecd86b2955b1d37a00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#a97a599b254cc8cecd86b2955b1d37a00">contextMenuEvent</a> (QGraphicsSceneContextMenuEvent *event)</td></tr>
+<tr class="separator:a97a599b254cc8cecd86b2955b1d37a00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock">
+<p>См. определение в файле <a class="el" href="editor_2arrow_8hpp_source.html">arrow.hpp</a> строка <a class="el" href="editor_2arrow_8hpp_source.html#l00009">9</a></p>
+</div><h2 class="groupheader">Перечисления</h2>
+<a class="anchor" id="a38fd80d2881b5bb1668ffe6749dfc8a5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><em><a class="anchor" id="aebbd8d704c7916d2026432eb2a51791daa6d0f8dccf0a221116d1d09428286036"></a>Type</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>См. определение в файле <a class="el" href="editor_2arrow_8hpp_source.html">arrow.hpp</a> строка <a class="el" href="editor_2arrow_8hpp_source.html#l00019">19</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aebbd8d704c7916d2026432eb2a51791d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><em><a class="anchor" id="aebbd8d704c7916d2026432eb2a51791daa6d0f8dccf0a221116d1d09428286036"></a>Type</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2445c52ded224b21889ce318359984047_source.html">arrow.hpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2445c52ded224b21889ce318359984047_source.html#l00019">19</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Конструктор(ы)</h2>
+<a class="anchor" id="a45fcbf0a667ab025d47ac0863fed5818"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Arrow::Arrow </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_diagram_item.html">DiagramItem</a> *&#160;</td>
+          <td class="paramname"><em>startItem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_diagram_item.html">DiagramItem</a> *&#160;</td>
+          <td class="paramname"><em>endItem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>text</em> = <code>QString()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QGraphicsItem *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QGraphicsScene *&#160;</td>
+          <td class="paramname"><em>scene</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2arrow_8cpp_source.html">arrow.cpp</a> строка <a class="el" href="editor_2arrow_8cpp_source.html#l00007">7</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a45fcbf0a667ab025d47ac0863fed5818"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Arrow::Arrow </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_diagram_item.html">DiagramItem</a> *&#160;</td>
+          <td class="paramname"><em>startItem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_diagram_item.html">DiagramItem</a> *&#160;</td>
+          <td class="paramname"><em>endItem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>text</em> = <code>QString()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QGraphicsItem *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QGraphicsScene *&#160;</td>
+          <td class="paramname"><em>scene</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="a3b15a4c7ab51e17ade465cb928ff5749"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRectF Arrow::boundingRect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2arrow_8cpp_source.html">arrow.cpp</a> строка <a class="el" href="editor_2arrow_8cpp_source.html#l00018">18</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a3b15a4c7ab51e17ade465cb928ff5749"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRectF Arrow::boundingRect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2b3688ecfc7d32e5b9f5eb80b1dfb79f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMenu* Arrow::contextMenu </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2arrow_8hpp_source.html">arrow.hpp</a> строка <a class="el" href="editor_2arrow_8hpp_source.html#l00047">47</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a2b3688ecfc7d32e5b9f5eb80b1dfb79f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMenu* Arrow::contextMenu </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2445c52ded224b21889ce318359984047_source.html">arrow.hpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2445c52ded224b21889ce318359984047_source.html#l00047">47</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a97a599b254cc8cecd86b2955b1d37a00"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Arrow::contextMenuEvent </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneContextMenuEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2arrow_8cpp_source.html">arrow.cpp</a> строка <a class="el" href="editor_2arrow_8cpp_source.html#l00042">42</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a97a599b254cc8cecd86b2955b1d37a00"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Arrow::contextMenuEvent </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneContextMenuEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a363d170cfcc7db0472843a93de7e86d4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_diagram_item.html">DiagramItem</a>* Arrow::endItem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2arrow_8hpp_source.html">arrow.hpp</a> строка <a class="el" href="editor_2arrow_8hpp_source.html#l00044">44</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a363d170cfcc7db0472843a93de7e86d4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_diagram_item.html">DiagramItem</a>* Arrow::endItem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2445c52ded224b21889ce318359984047_source.html">arrow.hpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2445c52ded224b21889ce318359984047_source.html#l00044">44</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ad6c7cb142beb5b655c95f4da437e2013"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Arrow::paint </td>
+          <td>(</td>
+          <td class="paramtype">QPainter *&#160;</td>
+          <td class="paramname"><em>painter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStyleOptionGraphicsItem *&#160;</td>
+          <td class="paramname"><em>option</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>widget</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad6c7cb142beb5b655c95f4da437e2013"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Arrow::paint </td>
+          <td>(</td>
+          <td class="paramtype">QPainter *&#160;</td>
+          <td class="paramname"><em>painter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStyleOptionGraphicsItem *&#160;</td>
+          <td class="paramname"><em>option</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>widget</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2arrow_8cpp_source.html">arrow.cpp</a> строка <a class="el" href="editor_2arrow_8cpp_source.html#l00050">50</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab7e7333a213b0eb310496b6f815e1824"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Arrow::setColor </td>
+          <td>(</td>
+          <td class="paramtype">const QColor &amp;&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2arrow_8hpp_source.html">arrow.hpp</a> строка <a class="el" href="editor_2arrow_8hpp_source.html#l00039">39</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab7e7333a213b0eb310496b6f815e1824"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Arrow::setColor </td>
+          <td>(</td>
+          <td class="paramtype">const QColor &amp;&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2445c52ded224b21889ce318359984047_source.html">arrow.hpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2445c52ded224b21889ce318359984047_source.html#l00039">39</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aacc85b1893fa0f1379e41afc0ebcd4b0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Arrow::setContextMenu </td>
+          <td>(</td>
+          <td class="paramtype">QMenu *&#160;</td>
+          <td class="paramname"><em>menu</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2arrow_8hpp_source.html">arrow.hpp</a> строка <a class="el" href="editor_2arrow_8hpp_source.html#l00027">27</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aacc85b1893fa0f1379e41afc0ebcd4b0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Arrow::setContextMenu </td>
+          <td>(</td>
+          <td class="paramtype">QMenu *&#160;</td>
+          <td class="paramname"><em>menu</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2445c52ded224b21889ce318359984047_source.html">arrow.hpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2445c52ded224b21889ce318359984047_source.html#l00027">27</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a296feb427424b0f4bdc1111cdaf1b5ca"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Arrow::setText </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2445c52ded224b21889ce318359984047_source.html">arrow.hpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2445c52ded224b21889ce318359984047_source.html#l00030">30</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a296feb427424b0f4bdc1111cdaf1b5ca"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Arrow::setText </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2arrow_8hpp_source.html">arrow.hpp</a> строка <a class="el" href="editor_2arrow_8hpp_source.html#l00030">30</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aa51a558d21cfb6bb57578b9e6a745cf3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPainterPath Arrow::shape </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa51a558d21cfb6bb57578b9e6a745cf3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPainterPath Arrow::shape </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2arrow_8cpp_source.html">arrow.cpp</a> строка <a class="el" href="editor_2arrow_8cpp_source.html#l00028">28</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aca1c4bf8681a1449b8e09af3dac9b797"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_diagram_item.html">DiagramItem</a>* Arrow::startItem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2arrow_8hpp_source.html">arrow.hpp</a> строка <a class="el" href="editor_2arrow_8hpp_source.html#l00042">42</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aca1c4bf8681a1449b8e09af3dac9b797"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_diagram_item.html">DiagramItem</a>* Arrow::startItem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2445c52ded224b21889ce318359984047_source.html">arrow.hpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2445c52ded224b21889ce318359984047_source.html#l00042">42</a></p>
+
+</div>
+</div>
+<a class="anchor" id="affe6fbde77a7c8a1e9fab90a6e8dc092"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Arrow::text </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2445c52ded224b21889ce318359984047_source.html">arrow.hpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2445c52ded224b21889ce318359984047_source.html#l00032">32</a></p>
+
+</div>
+</div>
+<a class="anchor" id="affe6fbde77a7c8a1e9fab90a6e8dc092"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Arrow::text </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2arrow_8hpp_source.html">arrow.hpp</a> строка <a class="el" href="editor_2arrow_8hpp_source.html#l00032">32</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aef6cfdb5dda88ef43c16b34cbd6a0b6f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Arrow::type </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2445c52ded224b21889ce318359984047_source.html">arrow.hpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2445c52ded224b21889ce318359984047_source.html#l00024">24</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aef6cfdb5dda88ef43c16b34cbd6a0b6f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Arrow::type </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2arrow_8hpp_source.html">arrow.hpp</a> строка <a class="el" href="editor_2arrow_8hpp_source.html#l00024">24</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a2c78180ebf1b7d26cd52ce630ad9f2ac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Arrow::updatePosition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2c78180ebf1b7d26cd52ce630ad9f2ac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Arrow::updatePosition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2arrow_8cpp_source.html">arrow.cpp</a> строка <a class="el" href="editor_2arrow_8cpp_source.html#l00036">36</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>C:/qt/nya-cats/editor/<a class="el" href="editor_2arrow_8hpp_source.html">arrow.hpp</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/editor/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2445c52ded224b21889ce318359984047_source.html">arrow.hpp</a></li>
+<li>C:/qt/nya-cats/editor/<a class="el" href="editor_2arrow_8cpp_source.html">arrow.cpp</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/editor/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_239a793345cd7123155c7d76c09036f7a_source.html">arrow.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_arrow.html">Arrow</a></li>
+    <li class="footer">Документация по Nya-cats. Последние изменения: Пн 14 Янв 2013 16:34:00. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3 </li>
+  </ul>
+</div>
+</body>
+</html>

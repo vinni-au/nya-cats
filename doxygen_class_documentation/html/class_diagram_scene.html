@@ -1,0 +1,1165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3"/>
+<title>Nya-cats: Класс DiagramScene</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Nya-cats
+   &#160;<span id="projectnumber">1.00</span>
+   </div>
+   <div id="projectbrief">Nya-cats</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="hierarchy.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_diagram_scene.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Перечисления</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Элементы перечислений</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Свойства</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Макросы</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#signals">Сигналы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
+<a href="class_diagram_scene-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс DiagramScene</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="editor_2diagramscene_8hpp_source.html">diagramscene.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:DiagramScene:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_diagram_scene.png" usemap="#DiagramScene_map" alt=""/>
+  <map id="DiagramScene_map" name="DiagramScene_map">
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:a77383a13f4ef28e6617558b1cd5ea52d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a77383a13f4ef28e6617558b1cd5ea52d">Mode</a> { <br/>
+&#160;&#160;<a class="el" href="class_diagram_scene.html#a77383a13f4ef28e6617558b1cd5ea52da458baa2b150e9dda79180f1f79e14f12">InsertItem</a>, 
+<a class="el" href="class_diagram_scene.html#a77383a13f4ef28e6617558b1cd5ea52dab1ceb2bd43f56745733d10e37e2dafed">InsertLine</a>, 
+<a class="el" href="class_diagram_scene.html#a77383a13f4ef28e6617558b1cd5ea52da2111e7e49440ef0e3c2dda15eb8e95cc">MoveItem</a>, 
+<a class="el" href="class_diagram_scene.html#a77383a13f4ef28e6617558b1cd5ea52da458baa2b150e9dda79180f1f79e14f12">InsertItem</a>, 
+<br/>
+&#160;&#160;<a class="el" href="class_diagram_scene.html#a77383a13f4ef28e6617558b1cd5ea52dab1ceb2bd43f56745733d10e37e2dafed">InsertLine</a>, 
+<a class="el" href="class_diagram_scene.html#a77383a13f4ef28e6617558b1cd5ea52da2111e7e49440ef0e3c2dda15eb8e95cc">MoveItem</a>
+<br/>
+ }</td></tr>
+<tr class="separator:a77383a13f4ef28e6617558b1cd5ea52d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77383a13f4ef28e6617558b1cd5ea52d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a77383a13f4ef28e6617558b1cd5ea52d">Mode</a> { <br/>
+&#160;&#160;<a class="el" href="class_diagram_scene.html#a77383a13f4ef28e6617558b1cd5ea52da458baa2b150e9dda79180f1f79e14f12">InsertItem</a>, 
+<a class="el" href="class_diagram_scene.html#a77383a13f4ef28e6617558b1cd5ea52dab1ceb2bd43f56745733d10e37e2dafed">InsertLine</a>, 
+<a class="el" href="class_diagram_scene.html#a77383a13f4ef28e6617558b1cd5ea52da2111e7e49440ef0e3c2dda15eb8e95cc">MoveItem</a>, 
+<a class="el" href="class_diagram_scene.html#a77383a13f4ef28e6617558b1cd5ea52da458baa2b150e9dda79180f1f79e14f12">InsertItem</a>, 
+<br/>
+&#160;&#160;<a class="el" href="class_diagram_scene.html#a77383a13f4ef28e6617558b1cd5ea52dab1ceb2bd43f56745733d10e37e2dafed">InsertLine</a>, 
+<a class="el" href="class_diagram_scene.html#a77383a13f4ef28e6617558b1cd5ea52da2111e7e49440ef0e3c2dda15eb8e95cc">MoveItem</a>
+<br/>
+ }</td></tr>
+<tr class="separator:a77383a13f4ef28e6617558b1cd5ea52d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Сигналы</h2></td></tr>
+<tr class="memitem:a4651bd095028566a8b76319196d13eb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a4651bd095028566a8b76319196d13eb2">arrowAdded</a> (<a class="el" href="class_arrow.html">Arrow</a> *arrow)</td></tr>
+<tr class="separator:a4651bd095028566a8b76319196d13eb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4651bd095028566a8b76319196d13eb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a4651bd095028566a8b76319196d13eb2">arrowAdded</a> (<a class="el" href="class_arrow.html">Arrow</a> *arrow)</td></tr>
+<tr class="separator:a4651bd095028566a8b76319196d13eb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a1fb0d5ee181479cbb2de281673e6f7b2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a1fb0d5ee181479cbb2de281673e6f7b2">DiagramScene</a> (QMenu *itemMenu=0, QObject *parent=0)</td></tr>
+<tr class="separator:a1fb0d5ee181479cbb2de281673e6f7b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a744ea6890f2e562192a4d3cb913c9766"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a744ea6890f2e562192a4d3cb913c9766">setMode</a> (<a class="el" href="class_diagram_scene.html#a77383a13f4ef28e6617558b1cd5ea52d">Mode</a> mode)</td></tr>
+<tr class="separator:a744ea6890f2e562192a4d3cb913c9766"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09373ee7015d49ce7ccd3cd9983193a7"><td class="memItemLeft" align="right" valign="top">QColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a09373ee7015d49ce7ccd3cd9983193a7">textColor</a> () const </td></tr>
+<tr class="separator:a09373ee7015d49ce7ccd3cd9983193a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94b68899d95483bd7f27d424c0d9d01a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a94b68899d95483bd7f27d424c0d9d01a">setTextColor</a> (QColor color)</td></tr>
+<tr class="separator:a94b68899d95483bd7f27d424c0d9d01a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48991d2fb5ae136cfefa7489aa3c8b6c"><td class="memItemLeft" align="right" valign="top">QColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a48991d2fb5ae136cfefa7489aa3c8b6c">itemColor</a> () const </td></tr>
+<tr class="separator:a48991d2fb5ae136cfefa7489aa3c8b6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f94fa5fe9f13b4eb1c0512debd689f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a1f94fa5fe9f13b4eb1c0512debd689f3">setItemColor</a> (QColor color)</td></tr>
+<tr class="separator:a1f94fa5fe9f13b4eb1c0512debd689f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f559c78fb436218c20a15bd5d9b75d7"><td class="memItemLeft" align="right" valign="top">QColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a2f559c78fb436218c20a15bd5d9b75d7">lineColor</a> () const </td></tr>
+<tr class="separator:a2f559c78fb436218c20a15bd5d9b75d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a695758bd748aa8004aeec8e642822eed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a695758bd748aa8004aeec8e642822eed">setLineColor</a> (QColor color)</td></tr>
+<tr class="separator:a695758bd748aa8004aeec8e642822eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a14e8e54b257305b09a5a5cc007d5e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a9a14e8e54b257305b09a5a5cc007d5e3">setItemMenu</a> (QMenu *menu)</td></tr>
+<tr class="separator:a9a14e8e54b257305b09a5a5cc007d5e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af13d33997cd153b2d01b8405d8e5d360"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_diagram_item.html#aeda67bf28fac9b4de77086c2bf81407b">DiagramItem::DiagramType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#af13d33997cd153b2d01b8405d8e5d360">itemType</a> () const </td></tr>
+<tr class="separator:af13d33997cd153b2d01b8405d8e5d360"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59a2ab949930f51e4db292aed2e770cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a59a2ab949930f51e4db292aed2e770cd">setItemType</a> (<a class="el" href="class_diagram_item.html#aeda67bf28fac9b4de77086c2bf81407b">DiagramItem::DiagramType</a> type)</td></tr>
+<tr class="separator:a59a2ab949930f51e4db292aed2e770cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1262695a1848999fda92750d3ed12861"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a1262695a1848999fda92750d3ed12861">addItem</a> (QGraphicsItem *item)</td></tr>
+<tr class="separator:a1262695a1848999fda92750d3ed12861"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af901e53c276b9ed597253489f2fd04cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#af901e53c276b9ed597253489f2fd04cb">removeItem</a> (QGraphicsItem *item)</td></tr>
+<tr class="separator:af901e53c276b9ed597253489f2fd04cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fb0d5ee181479cbb2de281673e6f7b2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a1fb0d5ee181479cbb2de281673e6f7b2">DiagramScene</a> (QMenu *itemMenu=0, QObject *parent=0)</td></tr>
+<tr class="separator:a1fb0d5ee181479cbb2de281673e6f7b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a744ea6890f2e562192a4d3cb913c9766"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a744ea6890f2e562192a4d3cb913c9766">setMode</a> (<a class="el" href="class_diagram_scene.html#a77383a13f4ef28e6617558b1cd5ea52d">Mode</a> mode)</td></tr>
+<tr class="separator:a744ea6890f2e562192a4d3cb913c9766"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09373ee7015d49ce7ccd3cd9983193a7"><td class="memItemLeft" align="right" valign="top">QColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a09373ee7015d49ce7ccd3cd9983193a7">textColor</a> () const </td></tr>
+<tr class="separator:a09373ee7015d49ce7ccd3cd9983193a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94b68899d95483bd7f27d424c0d9d01a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a94b68899d95483bd7f27d424c0d9d01a">setTextColor</a> (QColor color)</td></tr>
+<tr class="separator:a94b68899d95483bd7f27d424c0d9d01a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48991d2fb5ae136cfefa7489aa3c8b6c"><td class="memItemLeft" align="right" valign="top">QColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a48991d2fb5ae136cfefa7489aa3c8b6c">itemColor</a> () const </td></tr>
+<tr class="separator:a48991d2fb5ae136cfefa7489aa3c8b6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f94fa5fe9f13b4eb1c0512debd689f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a1f94fa5fe9f13b4eb1c0512debd689f3">setItemColor</a> (QColor color)</td></tr>
+<tr class="separator:a1f94fa5fe9f13b4eb1c0512debd689f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f559c78fb436218c20a15bd5d9b75d7"><td class="memItemLeft" align="right" valign="top">QColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a2f559c78fb436218c20a15bd5d9b75d7">lineColor</a> () const </td></tr>
+<tr class="separator:a2f559c78fb436218c20a15bd5d9b75d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a695758bd748aa8004aeec8e642822eed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a695758bd748aa8004aeec8e642822eed">setLineColor</a> (QColor color)</td></tr>
+<tr class="separator:a695758bd748aa8004aeec8e642822eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a14e8e54b257305b09a5a5cc007d5e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a9a14e8e54b257305b09a5a5cc007d5e3">setItemMenu</a> (QMenu *menu)</td></tr>
+<tr class="separator:a9a14e8e54b257305b09a5a5cc007d5e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af13d33997cd153b2d01b8405d8e5d360"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_diagram_item.html#aeda67bf28fac9b4de77086c2bf81407b">DiagramItem::DiagramType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#af13d33997cd153b2d01b8405d8e5d360">itemType</a> () const </td></tr>
+<tr class="separator:af13d33997cd153b2d01b8405d8e5d360"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59a2ab949930f51e4db292aed2e770cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a59a2ab949930f51e4db292aed2e770cd">setItemType</a> (<a class="el" href="class_diagram_item.html#aeda67bf28fac9b4de77086c2bf81407b">DiagramItem::DiagramType</a> type)</td></tr>
+<tr class="separator:a59a2ab949930f51e4db292aed2e770cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1262695a1848999fda92750d3ed12861"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a1262695a1848999fda92750d3ed12861">addItem</a> (QGraphicsItem *item)</td></tr>
+<tr class="separator:a1262695a1848999fda92750d3ed12861"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af901e53c276b9ed597253489f2fd04cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#af901e53c276b9ed597253489f2fd04cb">removeItem</a> (QGraphicsItem *item)</td></tr>
+<tr class="separator:af901e53c276b9ed597253489f2fd04cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:a56249136dab559afa4f840a5c92acf73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a56249136dab559afa4f840a5c92acf73">mousePressEvent</a> (QGraphicsSceneMouseEvent *mouseEvent)</td></tr>
+<tr class="separator:a56249136dab559afa4f840a5c92acf73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c0f6af69a806c55da083a110a4eb820"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a4c0f6af69a806c55da083a110a4eb820">mouseMoveEvent</a> (QGraphicsSceneMouseEvent *mouseEvent)</td></tr>
+<tr class="separator:a4c0f6af69a806c55da083a110a4eb820"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a361512439a7cf2bcd0388c78eb1bb301"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a361512439a7cf2bcd0388c78eb1bb301">mouseReleaseEvent</a> (QGraphicsSceneMouseEvent *mouseEvent)</td></tr>
+<tr class="separator:a361512439a7cf2bcd0388c78eb1bb301"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56249136dab559afa4f840a5c92acf73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a56249136dab559afa4f840a5c92acf73">mousePressEvent</a> (QGraphicsSceneMouseEvent *mouseEvent)</td></tr>
+<tr class="separator:a56249136dab559afa4f840a5c92acf73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c0f6af69a806c55da083a110a4eb820"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a4c0f6af69a806c55da083a110a4eb820">mouseMoveEvent</a> (QGraphicsSceneMouseEvent *mouseEvent)</td></tr>
+<tr class="separator:a4c0f6af69a806c55da083a110a4eb820"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a361512439a7cf2bcd0388c78eb1bb301"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_diagram_scene.html#a361512439a7cf2bcd0388c78eb1bb301">mouseReleaseEvent</a> (QGraphicsSceneMouseEvent *mouseEvent)</td></tr>
+<tr class="separator:a361512439a7cf2bcd0388c78eb1bb301"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock">
+<p>См. определение в файле <a class="el" href="editor_2diagramscene_8hpp_source.html">diagramscene.hpp</a> строка <a class="el" href="editor_2diagramscene_8hpp_source.html#l00010">10</a></p>
+</div><h2 class="groupheader">Перечисления</h2>
+<a class="anchor" id="a77383a13f4ef28e6617558b1cd5ea52d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_diagram_scene.html#a77383a13f4ef28e6617558b1cd5ea52d">DiagramScene::Mode</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a77383a13f4ef28e6617558b1cd5ea52da458baa2b150e9dda79180f1f79e14f12"></a>InsertItem</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a77383a13f4ef28e6617558b1cd5ea52dab1ceb2bd43f56745733d10e37e2dafed"></a>InsertLine</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a77383a13f4ef28e6617558b1cd5ea52da2111e7e49440ef0e3c2dda15eb8e95cc"></a>MoveItem</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a77383a13f4ef28e6617558b1cd5ea52da458baa2b150e9dda79180f1f79e14f12"></a>InsertItem</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a77383a13f4ef28e6617558b1cd5ea52dab1ceb2bd43f56745733d10e37e2dafed"></a>InsertLine</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a77383a13f4ef28e6617558b1cd5ea52da2111e7e49440ef0e3c2dda15eb8e95cc"></a>MoveItem</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>См. определение в файле <a class="el" href="editor_2diagramscene_8hpp_source.html">diagramscene.hpp</a> строка <a class="el" href="editor_2diagramscene_8hpp_source.html#l00015">15</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a77383a13f4ef28e6617558b1cd5ea52d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_diagram_scene.html#a77383a13f4ef28e6617558b1cd5ea52d">DiagramScene::Mode</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a77383a13f4ef28e6617558b1cd5ea52da458baa2b150e9dda79180f1f79e14f12"></a>InsertItem</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a77383a13f4ef28e6617558b1cd5ea52dab1ceb2bd43f56745733d10e37e2dafed"></a>InsertLine</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a77383a13f4ef28e6617558b1cd5ea52da2111e7e49440ef0e3c2dda15eb8e95cc"></a>MoveItem</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a77383a13f4ef28e6617558b1cd5ea52da458baa2b150e9dda79180f1f79e14f12"></a>InsertItem</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a77383a13f4ef28e6617558b1cd5ea52dab1ceb2bd43f56745733d10e37e2dafed"></a>InsertLine</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a77383a13f4ef28e6617558b1cd5ea52da2111e7e49440ef0e3c2dda15eb8e95cc"></a>MoveItem</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2cbe5812ddcdc227af6b4847cdc7a0dee_source.html">diagramscene.hpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2cbe5812ddcdc227af6b4847cdc7a0dee_source.html#l00015">15</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Конструктор(ы)</h2>
+<a class="anchor" id="a1fb0d5ee181479cbb2de281673e6f7b2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DiagramScene::DiagramScene </td>
+          <td>(</td>
+          <td class="paramtype">QMenu *&#160;</td>
+          <td class="paramname"><em>itemMenu</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2diagramscene_8cpp_source.html">diagramscene.cpp</a> строка <a class="el" href="editor_2diagramscene_8cpp_source.html#l00004">4</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a1fb0d5ee181479cbb2de281673e6f7b2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DiagramScene::DiagramScene </td>
+          <td>(</td>
+          <td class="paramtype">QMenu *&#160;</td>
+          <td class="paramname"><em>itemMenu</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="a1262695a1848999fda92750d3ed12861"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DiagramScene::addItem </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsItem *&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2diagramscene_8cpp_source.html">diagramscene.cpp</a> строка <a class="el" href="editor_2diagramscene_8cpp_source.html#l00077">77</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a1262695a1848999fda92750d3ed12861"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DiagramScene::addItem </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsItem *&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4651bd095028566a8b76319196d13eb2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DiagramScene::arrowAdded </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_arrow.html">Arrow</a> *&#160;</td>
+          <td class="paramname"><em>arrow</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__diagramscene_8cpp_source.html">moc_diagramscene.cpp</a> строка <a class="el" href="debug_2moc__diagramscene_8cpp_source.html#l00081">81</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a4651bd095028566a8b76319196d13eb2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DiagramScene::arrowAdded </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_arrow.html">Arrow</a> *&#160;</td>
+          <td class="paramname"><em>arrow</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a48991d2fb5ae136cfefa7489aa3c8b6c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor DiagramScene::itemColor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2diagramscene_8hpp_source.html">diagramscene.hpp</a> строка <a class="el" href="editor_2diagramscene_8hpp_source.html#l00026">26</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a48991d2fb5ae136cfefa7489aa3c8b6c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor DiagramScene::itemColor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2cbe5812ddcdc227af6b4847cdc7a0dee_source.html">diagramscene.hpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2cbe5812ddcdc227af6b4847cdc7a0dee_source.html#l00026">26</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af13d33997cd153b2d01b8405d8e5d360"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_diagram_item.html#aeda67bf28fac9b4de77086c2bf81407b">DiagramItem::DiagramType</a> DiagramScene::itemType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2diagramscene_8hpp_source.html">diagramscene.hpp</a> строка <a class="el" href="editor_2diagramscene_8hpp_source.html#l00039">39</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af13d33997cd153b2d01b8405d8e5d360"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_diagram_item.html#aeda67bf28fac9b4de77086c2bf81407b">DiagramItem::DiagramType</a> DiagramScene::itemType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2cbe5812ddcdc227af6b4847cdc7a0dee_source.html">diagramscene.hpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2cbe5812ddcdc227af6b4847cdc7a0dee_source.html#l00039">39</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a2f559c78fb436218c20a15bd5d9b75d7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor DiagramScene::lineColor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2cbe5812ddcdc227af6b4847cdc7a0dee_source.html">diagramscene.hpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2cbe5812ddcdc227af6b4847cdc7a0dee_source.html#l00031">31</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a2f559c78fb436218c20a15bd5d9b75d7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor DiagramScene::lineColor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2diagramscene_8hpp_source.html">diagramscene.hpp</a> строка <a class="el" href="editor_2diagramscene_8hpp_source.html#l00031">31</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a4c0f6af69a806c55da083a110a4eb820"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DiagramScene::mouseMoveEvent </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
+          <td class="paramname"><em>mouseEvent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2diagramscene_8cpp_source.html">diagramscene.cpp</a> строка <a class="el" href="editor_2diagramscene_8cpp_source.html#l00033">33</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a4c0f6af69a806c55da083a110a4eb820"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DiagramScene::mouseMoveEvent </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
+          <td class="paramname"><em>mouseEvent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a56249136dab559afa4f840a5c92acf73"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DiagramScene::mousePressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
+          <td class="paramname"><em>mouseEvent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2diagramscene_8cpp_source.html">diagramscene.cpp</a> строка <a class="el" href="editor_2diagramscene_8cpp_source.html#l00014">14</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a56249136dab559afa4f840a5c92acf73"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DiagramScene::mousePressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
+          <td class="paramname"><em>mouseEvent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a361512439a7cf2bcd0388c78eb1bb301"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DiagramScene::mouseReleaseEvent </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
+          <td class="paramname"><em>mouseEvent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2diagramscene_8cpp_source.html">diagramscene.cpp</a> строка <a class="el" href="editor_2diagramscene_8cpp_source.html#l00042">42</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a361512439a7cf2bcd0388c78eb1bb301"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DiagramScene::mouseReleaseEvent </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
+          <td class="paramname"><em>mouseEvent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af901e53c276b9ed597253489f2fd04cb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DiagramScene::removeItem </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsItem *&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af901e53c276b9ed597253489f2fd04cb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DiagramScene::removeItem </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsItem *&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2diagramscene_8cpp_source.html">diagramscene.cpp</a> строка <a class="el" href="editor_2diagramscene_8cpp_source.html#l00092">92</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a1f94fa5fe9f13b4eb1c0512debd689f3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DiagramScene::setItemColor </td>
+          <td>(</td>
+          <td class="paramtype">QColor&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2diagramscene_8hpp_source.html">diagramscene.hpp</a> строка <a class="el" href="editor_2diagramscene_8hpp_source.html#l00028">28</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a1f94fa5fe9f13b4eb1c0512debd689f3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DiagramScene::setItemColor </td>
+          <td>(</td>
+          <td class="paramtype">QColor&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2cbe5812ddcdc227af6b4847cdc7a0dee_source.html">diagramscene.hpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2cbe5812ddcdc227af6b4847cdc7a0dee_source.html#l00028">28</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a9a14e8e54b257305b09a5a5cc007d5e3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DiagramScene::setItemMenu </td>
+          <td>(</td>
+          <td class="paramtype">QMenu *&#160;</td>
+          <td class="paramname"><em>menu</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2diagramscene_8hpp_source.html">diagramscene.hpp</a> строка <a class="el" href="editor_2diagramscene_8hpp_source.html#l00036">36</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a9a14e8e54b257305b09a5a5cc007d5e3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DiagramScene::setItemMenu </td>
+          <td>(</td>
+          <td class="paramtype">QMenu *&#160;</td>
+          <td class="paramname"><em>menu</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2cbe5812ddcdc227af6b4847cdc7a0dee_source.html">diagramscene.hpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2cbe5812ddcdc227af6b4847cdc7a0dee_source.html#l00036">36</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a59a2ab949930f51e4db292aed2e770cd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DiagramScene::setItemType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_diagram_item.html#aeda67bf28fac9b4de77086c2bf81407b">DiagramItem::DiagramType</a>&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2cbe5812ddcdc227af6b4847cdc7a0dee_source.html">diagramscene.hpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2cbe5812ddcdc227af6b4847cdc7a0dee_source.html#l00041">41</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a59a2ab949930f51e4db292aed2e770cd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DiagramScene::setItemType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_diagram_item.html#aeda67bf28fac9b4de77086c2bf81407b">DiagramItem::DiagramType</a>&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2diagramscene_8hpp_source.html">diagramscene.hpp</a> строка <a class="el" href="editor_2diagramscene_8hpp_source.html#l00041">41</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a695758bd748aa8004aeec8e642822eed"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DiagramScene::setLineColor </td>
+          <td>(</td>
+          <td class="paramtype">QColor&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2diagramscene_8hpp_source.html">diagramscene.hpp</a> строка <a class="el" href="editor_2diagramscene_8hpp_source.html#l00033">33</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a695758bd748aa8004aeec8e642822eed"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DiagramScene::setLineColor </td>
+          <td>(</td>
+          <td class="paramtype">QColor&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2cbe5812ddcdc227af6b4847cdc7a0dee_source.html">diagramscene.hpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2cbe5812ddcdc227af6b4847cdc7a0dee_source.html#l00033">33</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a744ea6890f2e562192a4d3cb913c9766"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DiagramScene::setMode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_diagram_scene.html#a77383a13f4ef28e6617558b1cd5ea52d">Mode</a>&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2cbe5812ddcdc227af6b4847cdc7a0dee_source.html">diagramscene.hpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2cbe5812ddcdc227af6b4847cdc7a0dee_source.html#l00018">18</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a744ea6890f2e562192a4d3cb913c9766"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DiagramScene::setMode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_diagram_scene.html#a77383a13f4ef28e6617558b1cd5ea52d">Mode</a>&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2diagramscene_8hpp_source.html">diagramscene.hpp</a> строка <a class="el" href="editor_2diagramscene_8hpp_source.html#l00018">18</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a94b68899d95483bd7f27d424c0d9d01a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DiagramScene::setTextColor </td>
+          <td>(</td>
+          <td class="paramtype">QColor&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2diagramscene_8hpp_source.html">diagramscene.hpp</a> строка <a class="el" href="editor_2diagramscene_8hpp_source.html#l00023">23</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a94b68899d95483bd7f27d424c0d9d01a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DiagramScene::setTextColor </td>
+          <td>(</td>
+          <td class="paramtype">QColor&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2cbe5812ddcdc227af6b4847cdc7a0dee_source.html">diagramscene.hpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2cbe5812ddcdc227af6b4847cdc7a0dee_source.html#l00023">23</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a09373ee7015d49ce7ccd3cd9983193a7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor DiagramScene::textColor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2diagramscene_8hpp_source.html">diagramscene.hpp</a> строка <a class="el" href="editor_2diagramscene_8hpp_source.html#l00021">21</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a09373ee7015d49ce7ccd3cd9983193a7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor DiagramScene::textColor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2cbe5812ddcdc227af6b4847cdc7a0dee_source.html">diagramscene.hpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2cbe5812ddcdc227af6b4847cdc7a0dee_source.html#l00021">21</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>C:/qt/nya-cats/editor/<a class="el" href="editor_2diagramscene_8hpp_source.html">diagramscene.hpp</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/editor/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2cbe5812ddcdc227af6b4847cdc7a0dee_source.html">diagramscene.hpp</a></li>
+<li>C:/qt/nya-cats/debug/<a class="el" href="debug_2moc__diagramscene_8cpp_source.html">moc_diagramscene.cpp</a></li>
+<li>C:/qt/nya-cats/editor/<a class="el" href="editor_2diagramscene_8cpp_source.html">diagramscene.cpp</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/debug/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_21433ae6ab24a2b4f827208cd63d200ec_source.html">moc_diagramscene.cpp</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/editor/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2856c0e43cfe00050b5d2de243802e1fe_source.html">diagramscene.cpp</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/release/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2979e6b4f92a11697ec1e1725ef993818_source.html">moc_diagramscene.cpp</a></li>
+<li>C:/qt/nya-cats/release/<a class="el" href="release_2moc__diagramscene_8cpp_source.html">moc_diagramscene.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_diagram_scene.html">DiagramScene</a></li>
+    <li class="footer">Документация по Nya-cats. Последние изменения: Пн 14 Янв 2013 16:34:01. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3 </li>
+  </ul>
+</div>
+</body>
+</html>

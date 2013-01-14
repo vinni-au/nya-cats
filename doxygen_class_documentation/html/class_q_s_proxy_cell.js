@@ -1,0 +1,27 @@
+var class_q_s_proxy_cell =
+[
+    [ "QSProxyCell", "class_q_s_proxy_cell.html#a3e1f7050ccf4b13bb1b6cf358dbabdab", null ],
+    [ "QSProxyCell", "class_q_s_proxy_cell.html#a3e1f7050ccf4b13bb1b6cf358dbabdab", null ],
+    [ "Clear", "class_q_s_proxy_cell.html#ae8be3c54a60b6818f18b479f043d8cc2", null ],
+    [ "Clear", "class_q_s_proxy_cell.html#a2ee3c5c0edf4f45fdb292f95529d6d1d", null ],
+    [ "getFood", "class_q_s_proxy_cell.html#ad9d1f07da08d2ec3a569ff66da9dfeab", null ],
+    [ "getFood", "class_q_s_proxy_cell.html#af882e1b4f81781e9a5e7f7632d259372", null ],
+    [ "getFrame", "class_q_s_proxy_cell.html#ab2ef9507b51e3aba7fe5221f064bef53", null ],
+    [ "getFrame", "class_q_s_proxy_cell.html#a0081b75ad258e7622e9edcedb443804e", null ],
+    [ "getGameObject", "class_q_s_proxy_cell.html#af2f129f07a2246868c5e131387787ede", null ],
+    [ "getGameObject", "class_q_s_proxy_cell.html#adb21e9d4c3b6ac27523bb1aca966cbb3", null ],
+    [ "getMan", "class_q_s_proxy_cell.html#a51536adec175d9162d5982e54c25aeb4", null ],
+    [ "getMan", "class_q_s_proxy_cell.html#a7eda60620f635bfb4e4cadb2ad37347d", null ],
+    [ "hasGameObject", "class_q_s_proxy_cell.html#a5304c5b256857349cb799fec7d6a9dec", null ],
+    [ "hasGameObject", "class_q_s_proxy_cell.html#ac1d2499ac793e1e43c88d4cd8d24552c", null ],
+    [ "setX", "class_q_s_proxy_cell.html#a7576cd71f3be8cb7dc2aed3ad91aa55d", null ],
+    [ "setX", "class_q_s_proxy_cell.html#a7576cd71f3be8cb7dc2aed3ad91aa55d", null ],
+    [ "setY", "class_q_s_proxy_cell.html#ac3151284cd2beb078747bf807f188689", null ],
+    [ "setY", "class_q_s_proxy_cell.html#ac3151284cd2beb078747bf807f188689", null ],
+    [ "X", "class_q_s_proxy_cell.html#a920f2f16ec98bd33340bebadcf8b46b8", null ],
+    [ "X", "class_q_s_proxy_cell.html#a920f2f16ec98bd33340bebadcf8b46b8", null ],
+    [ "Y", "class_q_s_proxy_cell.html#a46faafd904db9c566737c089e523014b", null ],
+    [ "Y", "class_q_s_proxy_cell.html#a46faafd904db9c566737c089e523014b", null ],
+    [ "X", "class_q_s_proxy_cell.html#ae6330fa9338162df95b3b96b057ee37e", null ],
+    [ "Y", "class_q_s_proxy_cell.html#adaf090ab9f4a24b4ecfe7cdd2e91b8ef", null ]
+];

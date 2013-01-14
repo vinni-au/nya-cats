@@ -1,0 +1,442 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3"/>
+<title>Nya-cats: Исходный файл C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/ui/expreditor.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Nya-cats
+   &#160;<span id="projectnumber">1.00</span>
+   </div>
+   <div id="projectbrief">Nya-cats</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2f4b2b21c6702f8bc85d7188628b4fa63_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Перечисления</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Элементы перечислений</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Свойства</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Макросы</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">expreditor.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2f4b2b21c6702f8bc85d7188628b4fa63.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2dd942b39a4082595194b676143f5a5e9.html">expreditor.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;QDebug&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="code" href="class_expr_editor.html#a3757fe631cab871c36ee40f028bc8f21">    4</a></span>&#160;<a class="code" href="class_expr_editor.html#a0419ad05b21b60dc52a7773a66772b99">ExprEditor::ExprEditor</a>(<a class="code" href="class_n_k_b_manager.html">NKBManager</a>* manager,QModelIndex slotIndex,QString domain,<a class="code" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ad">TypeExpr</a> typeExpr,<a class="code" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8">TypeAction</a> typeAction,QWidget *parent) :</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    QDialog(parent)</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <a class="code" href="class_expr_editor.html#ae54595b14037fea3cb1b1c4126d8c106">m_kbManager</a> = manager;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="class_expr_editor.html#ad7865d3c9c0424a319cf937265c95a68">m_slotIndex</a> = slotIndex;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="class_expr_editor.html#ab0f7f0b4608739854185f260bf481034">m_domain</a> = domain;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    this-&gt;typeExpr=<a class="code" href="class_expr_editor.html#a1c7b9320a532938c395d2397a09169f3">typeExpr</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    this-&gt;typeAction=<a class="code" href="class_expr_editor.html#a21311ad2ed99205ae664fcc9e975aae3">typeAction</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="comment">/*QVBoxLayout **/</span><a class="code" href="class_expr_editor.html#a217e87862256514b6168f007508a2b9c">layMain</a>=<span class="keyword">new</span> QVBoxLayout();                     this-&gt;setLayout(<a class="code" href="class_expr_editor.html#a217e87862256514b6168f007508a2b9c">layMain</a>);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="comment">/*QHBoxLayout    **/</span><a class="code" href="class_expr_editor.html#a43c9a963c6e9983ee91ed192c5c3543e">layUp</a>=<span class="keyword">new</span> QHBoxLayout();                <a class="code" href="class_expr_editor.html#a217e87862256514b6168f007508a2b9c">layMain</a>-&gt;addLayout(<a class="code" href="class_expr_editor.html#a43c9a963c6e9983ee91ed192c5c3543e">layUp</a>);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="comment">/*QVBoxLayout    **/</span><a class="code" href="class_expr_editor.html#aaa0ac9cac3be15113f3197a5be126517">layVar</a>=<span class="keyword">new</span> QVBoxLayout();           <a class="code" href="class_expr_editor.html#a43c9a963c6e9983ee91ed192c5c3543e">layUp</a>-&gt;addLayout(<a class="code" href="class_expr_editor.html#aaa0ac9cac3be15113f3197a5be126517">layVar</a>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                <span class="comment">/*QLabel          **/</span><a class="code" href="class_expr_editor.html#aabb83efdb2d69adedc9622a8e165c77c">lbVar</a>=<span class="keyword">new</span> QLabel();            <a class="code" href="class_expr_editor.html#aaa0ac9cac3be15113f3197a5be126517">layVar</a>-&gt;addWidget(<a class="code" href="class_expr_editor.html#aabb83efdb2d69adedc9622a8e165c77c">lbVar</a>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                <span class="comment">/*QComboBox       **/</span><a class="code" href="class_expr_editor.html#aeba4b8d69aaeffad27becab449f597bd">cmbVar</a>=<span class="keyword">new</span> <a class="code" href="class_my_combo_box.html">MyComboBox</a>();        <a class="code" href="class_expr_editor.html#aaa0ac9cac3be15113f3197a5be126517">layVar</a>-&gt;addWidget(<a class="code" href="class_expr_editor.html#aeba4b8d69aaeffad27becab449f597bd">cmbVar</a>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                <a class="code" href="class_expr_editor.html#aaa0ac9cac3be15113f3197a5be126517">layVar</a>-&gt;addSpacerItem(<span class="keyword">new</span> QSpacerItem(0,0,QSizePolicy::Expanding,QSizePolicy::Expanding));</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="comment">/*QVBoxLayout    **/</span><a class="code" href="class_expr_editor.html#af49fb92e329600de79707e3a8e10935e">laySign</a>=<span class="keyword">new</span> QVBoxLayout();          <a class="code" href="class_expr_editor.html#a43c9a963c6e9983ee91ed192c5c3543e">layUp</a>-&gt;addLayout(<a class="code" href="class_expr_editor.html#af49fb92e329600de79707e3a8e10935e">laySign</a>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <span class="comment">/*QLabel          **/</span><a class="code" href="class_expr_editor.html#ac07bdb08a648b9b304d4630e1533227a">lbSign</a>=<span class="keyword">new</span> QLabel();           <a class="code" href="class_expr_editor.html#af49fb92e329600de79707e3a8e10935e">laySign</a>-&gt;addWidget(<a class="code" href="class_expr_editor.html#ac07bdb08a648b9b304d4630e1533227a">lbSign</a>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <span class="comment">/*QComboBox       **/</span><a class="code" href="class_expr_editor.html#a18bdcf551100de6ea18ca691c84a53c8">cmbSign</a>=<span class="keyword">new</span> QComboBox();       <a class="code" href="class_expr_editor.html#af49fb92e329600de79707e3a8e10935e">laySign</a>-&gt;addWidget(<a class="code" href="class_expr_editor.html#a18bdcf551100de6ea18ca691c84a53c8">cmbSign</a>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <a class="code" href="class_expr_editor.html#af49fb92e329600de79707e3a8e10935e">laySign</a>-&gt;addSpacerItem(<span class="keyword">new</span> QSpacerItem(0,0,QSizePolicy::Expanding,QSizePolicy::Expanding));</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="comment">/*QVBoxLayout    **/</span><a class="code" href="class_expr_editor.html#a1a466cf67dec13e1055f8182c190896d">layVal</a>=<span class="keyword">new</span> QVBoxLayout();           <a class="code" href="class_expr_editor.html#a43c9a963c6e9983ee91ed192c5c3543e">layUp</a>-&gt;addLayout(<a class="code" href="class_expr_editor.html#a1a466cf67dec13e1055f8182c190896d">layVal</a>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                <span class="comment">/*QLabel          **/</span><a class="code" href="class_expr_editor.html#ae9598d6fc354e4550a814cbb4df4cd25">lbVal</a>=<span class="keyword">new</span> QLabel();            <a class="code" href="class_expr_editor.html#a1a466cf67dec13e1055f8182c190896d">layVal</a>-&gt;addWidget(<a class="code" href="class_expr_editor.html#ae9598d6fc354e4550a814cbb4df4cd25">lbVal</a>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="comment">/*QComboBox       **/</span><a class="code" href="class_expr_editor.html#a9e1030ee464d33d43444ceaacd4173f0">cmbVal</a>=<span class="keyword">new</span> <a class="code" href="class_my_combo_box.html">MyComboBox</a>();        <a class="code" href="class_expr_editor.html#a1a466cf67dec13e1055f8182c190896d">layVal</a>-&gt;addWidget(<a class="code" href="class_expr_editor.html#a9e1030ee464d33d43444ceaacd4173f0">cmbVal</a>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <a class="code" href="class_expr_editor.html#a1a466cf67dec13e1055f8182c190896d">layVal</a>-&gt;addSpacerItem(<span class="keyword">new</span> QSpacerItem(0,0,QSizePolicy::Expanding,QSizePolicy::Expanding));</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="comment">/*QVBoxLayout    **/</span><a class="code" href="class_expr_editor.html#a639eb3e8a47bbeaef8e01ba5e267617f">layArSign</a>=<span class="keyword">new</span> QVBoxLayout();           <a class="code" href="class_expr_editor.html#a43c9a963c6e9983ee91ed192c5c3543e">layUp</a>-&gt;addLayout(<a class="code" href="class_expr_editor.html#a639eb3e8a47bbeaef8e01ba5e267617f">layArSign</a>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="comment">/*QLabel          **/</span><a class="code" href="class_expr_editor.html#ace0067a9fab8127c7935459d7080b0f3">lbArSign</a>=<span class="keyword">new</span> QLabel();            <a class="code" href="class_expr_editor.html#a639eb3e8a47bbeaef8e01ba5e267617f">layArSign</a>-&gt;addWidget(<a class="code" href="class_expr_editor.html#ace0067a9fab8127c7935459d7080b0f3">lbArSign</a>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="comment">/*QComboBox       **/</span><a class="code" href="class_expr_editor.html#a35c91b5c79863cccd08c4b9838cd3f5f">cmbArSign</a>=<span class="keyword">new</span> <a class="code" href="class_my_combo_box.html">MyComboBox</a>();        <a class="code" href="class_expr_editor.html#a639eb3e8a47bbeaef8e01ba5e267617f">layArSign</a>-&gt;addWidget(<a class="code" href="class_expr_editor.html#a35c91b5c79863cccd08c4b9838cd3f5f">cmbArSign</a>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <a class="code" href="class_expr_editor.html#a639eb3e8a47bbeaef8e01ba5e267617f">layArSign</a>-&gt;addSpacerItem(<span class="keyword">new</span> QSpacerItem(0,0,QSizePolicy::Expanding,QSizePolicy::Expanding));</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="comment">/*QVBoxLayout    **/</span><a class="code" href="class_expr_editor.html#aa2eda7fbd19ed7d24c8f9d65c6352aa0">laySummer</a>=<span class="keyword">new</span> QVBoxLayout();           <a class="code" href="class_expr_editor.html#a43c9a963c6e9983ee91ed192c5c3543e">layUp</a>-&gt;addLayout(<a class="code" href="class_expr_editor.html#aa2eda7fbd19ed7d24c8f9d65c6352aa0">laySummer</a>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="comment">/*QLabel          **/</span><a class="code" href="class_expr_editor.html#aad782302d41d1a2d096d2ae6e2350dcf">lbSummer</a>=<span class="keyword">new</span> QLabel();            <a class="code" href="class_expr_editor.html#aa2eda7fbd19ed7d24c8f9d65c6352aa0">laySummer</a>-&gt;addWidget(<a class="code" href="class_expr_editor.html#aad782302d41d1a2d096d2ae6e2350dcf">lbSummer</a>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="comment">/*QComboBox       **/</span><a class="code" href="class_expr_editor.html#a4d7acab150f50596b14169d84cc5e6c6">spbSummer</a>=<span class="keyword">new</span> QSpinBox();        <a class="code" href="class_expr_editor.html#aa2eda7fbd19ed7d24c8f9d65c6352aa0">laySummer</a>-&gt;addWidget(<a class="code" href="class_expr_editor.html#a4d7acab150f50596b14169d84cc5e6c6">spbSummer</a>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <a class="code" href="class_expr_editor.html#aa2eda7fbd19ed7d24c8f9d65c6352aa0">laySummer</a>-&gt;addSpacerItem(<span class="keyword">new</span> QSpacerItem(0,0,QSizePolicy::Expanding,QSizePolicy::Expanding));</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="comment">/*QHBoxLayout    **/</span><a class="code" href="class_expr_editor.html#a4839aedd2329ea677bf1fc9d794fb7fb">layDown</a>=<span class="keyword">new</span> QHBoxLayout();              <a class="code" href="class_expr_editor.html#a217e87862256514b6168f007508a2b9c">layMain</a>-&gt;addLayout(<a class="code" href="class_expr_editor.html#a4839aedd2329ea677bf1fc9d794fb7fb">layDown</a>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="comment">/*QPushButton   **/</span><a class="code" href="class_expr_editor.html#ad5fabd441b537dd0f7a6d224651e779e">btnAddNewExpr</a>=<span class="keyword">new</span> QPushButton();     <a class="code" href="class_expr_editor.html#a4839aedd2329ea677bf1fc9d794fb7fb">layDown</a>-&gt;addWidget(<a class="code" href="class_expr_editor.html#ad5fabd441b537dd0f7a6d224651e779e">btnAddNewExpr</a>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <a class="code" href="class_expr_editor.html#a4839aedd2329ea677bf1fc9d794fb7fb">layDown</a>-&gt;addSpacerItem(<span class="keyword">new</span> QSpacerItem(0,0,QSizePolicy::Expanding,QSizePolicy::Expanding));</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="comment">/*QPushButton   **/</span><a class="code" href="class_expr_editor.html#a8604bf3ec0dc18c57d659ab5e30cd6a3">btnOK</a>=<span class="keyword">new</span> QPushButton();             <a class="code" href="class_expr_editor.html#a4839aedd2329ea677bf1fc9d794fb7fb">layDown</a>-&gt;addWidget(<a class="code" href="class_expr_editor.html#a8604bf3ec0dc18c57d659ab5e30cd6a3">btnOK</a>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="comment">/*QPushButton   **/</span><a class="code" href="class_expr_editor.html#ab5d219b7e1f2e638cff52daca84fc51d">btnCancel</a>=<span class="keyword">new</span> QPushButton();         <a class="code" href="class_expr_editor.html#a4839aedd2329ea677bf1fc9d794fb7fb">layDown</a>-&gt;addWidget(<a class="code" href="class_expr_editor.html#ab5d219b7e1f2e638cff52daca84fc51d">btnCancel</a>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="class_expr_editor.html#a3915291eb02e7eb5204a2f07626c5b69">retranslate</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="class_expr_editor.html#a35c91b5c79863cccd08c4b9838cd3f5f">cmbArSign</a>-&gt;addItem(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="class_expr_editor.html#a35c91b5c79863cccd08c4b9838cd3f5f">cmbArSign</a>-&gt;addItem(<span class="stringliteral">&quot;+&quot;</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    QString frameName = <a class="code" href="class_expr_editor.html#ae54595b14037fea3cb1b1c4126d8c106">m_kbManager</a>-&gt;<a class="code" href="class_n_k_b_manager.html#a6f604142f6ba864912f6fe65d474f5d4">getFrameNetModel</a>()-&gt;<a class="code" href="class_n_framenet_model.html#ae164cd65113db99625d4f8d94f58d5b8">getFrameNameByIndex</a>(<a class="code" href="class_expr_editor.html#ad7865d3c9c0424a319cf937265c95a68">m_slotIndex</a>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    QStringList slots1= <a class="code" href="class_expr_editor.html#ae54595b14037fea3cb1b1c4126d8c106">m_kbManager</a>-&gt;<a class="code" href="class_n_k_b_manager.html#a0f9ef5a3d21d36319335e260eececd30">getVarsWithParents</a>(frameName);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="class_expr_editor.html#aeba4b8d69aaeffad27becab449f597bd">cmbVar</a>-&gt;addItems(slots1);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span>(typeExpr == <a class="code" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808">ExprEditor::IfExpr</a>)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        this-&gt;<a class="code" href="class_expr_editor.html#a18bdcf551100de6ea18ca691c84a53c8">cmbSign</a>-&gt;addItem(<span class="stringliteral">&quot;=&quot;</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        this-&gt;<a class="code" href="class_expr_editor.html#a18bdcf551100de6ea18ca691c84a53c8">cmbSign</a>-&gt;addItem(<span class="stringliteral">&quot;!=&quot;</span>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        this-&gt;<a class="code" href="class_expr_editor.html#a18bdcf551100de6ea18ca691c84a53c8">cmbSign</a>-&gt;addItem(<span class="stringliteral">&quot;=&quot;</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span>(typeAction == <a class="code" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f">ExprEditor::EditAction</a>)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="class_expr_editor.html#ad5fabd441b537dd0f7a6d224651e779e">btnAddNewExpr</a>-&gt;setVisible(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">if</span>(typeAction == <a class="code" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d">ExprEditor::AddAction</a>)<span class="comment">//чтобы при добавлении новой переменной показывались значения</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="class_expr_editor.html#ace6097f735f6f3828cfcfa4ab976dcb2">onCurrentVarChanged</a>(0);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">//сигналы</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    connect(<a class="code" href="class_expr_editor.html#ab5d219b7e1f2e638cff52daca84fc51d">btnCancel</a>,SIGNAL(clicked()),SLOT(<a class="code" href="class_expr_editor.html#a83f4c96905d5f7df42f1cbfe0b0d5458">onCancelClick</a>()));<span class="comment">//Cancel</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    connect(<a class="code" href="class_expr_editor.html#a8604bf3ec0dc18c57d659ab5e30cd6a3">btnOK</a>,SIGNAL(clicked()),SLOT(<a class="code" href="class_expr_editor.html#add1683227b73a387df7f92242e6f9e49">onOkClick</a>()));<span class="comment">//OK</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    connect(<a class="code" href="class_expr_editor.html#ad5fabd441b537dd0f7a6d224651e779e">btnAddNewExpr</a>,SIGNAL(clicked()),SLOT(<a class="code" href="class_expr_editor.html#a5ae8cf51b1d65c14c6581bcdb9c85027">onOkAndReturnClick</a>()));<span class="comment">//OkAndAgain</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    connect(<a class="code" href="class_expr_editor.html#aeba4b8d69aaeffad27becab449f597bd">cmbVar</a>,SIGNAL(currentIndexChanged(<span class="keywordtype">int</span>)),SLOT(<a class="code" href="class_expr_editor.html#ace6097f735f6f3828cfcfa4ab976dcb2">onCurrentVarChanged</a>(<span class="keywordtype">int</span>)));</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">//контекстное пополнение</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    connect(<a class="code" href="class_expr_editor.html#aeba4b8d69aaeffad27becab449f597bd">cmbVar</a>,SIGNAL(sigNewValueEntered(QString)),SLOT(<a class="code" href="class_expr_editor.html#a095b233f3425980f76fa2cc0a4d02ee0">onVarContextAdded</a>(QString)));</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    connect(<a class="code" href="class_expr_editor.html#a9e1030ee464d33d43444ceaacd4173f0">cmbVal</a>,SIGNAL(sigNewValueEntered(QString)),SLOT(<a class="code" href="class_expr_editor.html#a948252a9f0716401b89fbfff4b19ac49">onValueContextAdded</a>(QString)));</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<a class="code" href="class_expr_editor.html#a3915291eb02e7eb5204a2f07626c5b69">ExprEditor::retranslate</a>()</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;{</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="class_expr_editor.html#aabb83efdb2d69adedc9622a8e165c77c">lbVar</a>-&gt;setText(tr(<span class="stringliteral">&quot;Переменная&quot;</span>));</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="class_expr_editor.html#ac07bdb08a648b9b304d4630e1533227a">lbSign</a>-&gt;setText(tr(<span class="stringliteral">&quot;Знак&quot;</span>));</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="class_expr_editor.html#ae9598d6fc354e4550a814cbb4df4cd25">lbVal</a>-&gt;setText(tr(<span class="stringliteral">&quot;Значение&quot;</span>));</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <a class="code" href="class_expr_editor.html#ad5fabd441b537dd0f7a6d224651e779e">btnAddNewExpr</a>-&gt;setText(tr(<span class="stringliteral">&quot;Добавить несколько&quot;</span>));</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="class_expr_editor.html#a8604bf3ec0dc18c57d659ab5e30cd6a3">btnOK</a>-&gt;setText(tr(<span class="stringliteral">&quot;ОК&quot;</span>));</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="class_expr_editor.html#ab5d219b7e1f2e638cff52daca84fc51d">btnCancel</a>-&gt;setText(tr(<span class="stringliteral">&quot;Отмена&quot;</span>));</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_expr_editor.html#a21311ad2ed99205ae664fcc9e975aae3">typeAction</a> == <a class="code" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d">ExprEditor::AddAction</a>)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        this-&gt;setWindowTitle(tr(<span class="stringliteral">&quot;Добавить &quot;</span>));</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        this-&gt;setWindowTitle(tr(<span class="stringliteral">&quot;Редактирвать &quot;</span>));</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_expr_editor.html#a1c7b9320a532938c395d2397a09169f3">typeExpr</a> == <a class="code" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808">ExprEditor::IfExpr</a>)</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        this-&gt;setWindowTitle(windowTitle()+tr(<span class="stringliteral">&quot;условие&quot;</span>) );</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        this-&gt;setWindowTitle(windowTitle()+tr(<span class="stringliteral">&quot;заключение&quot;</span>) );</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<a class="code" href="class_expr_editor.html#ace6097f735f6f3828cfcfa4ab976dcb2">ExprEditor::onCurrentVarChanged</a>(<span class="keywordtype">int</span> inx)</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    QString frameName = <a class="code" href="class_expr_editor.html#ae54595b14037fea3cb1b1c4126d8c106">m_kbManager</a>-&gt;<a class="code" href="class_n_k_b_manager.html#a6f604142f6ba864912f6fe65d474f5d4">getFrameNetModel</a>()-&gt;<a class="code" href="class_n_framenet_model.html#ae164cd65113db99625d4f8d94f58d5b8">getFrameNameByIndex</a>( <a class="code" href="class_expr_editor.html#ad7865d3c9c0424a319cf937265c95a68">m_slotIndex</a> );</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    QString slotName = <a class="code" href="class_expr_editor.html#ae54595b14037fea3cb1b1c4126d8c106">m_kbManager</a>-&gt;<a class="code" href="class_n_k_b_manager.html#a6f604142f6ba864912f6fe65d474f5d4">getFrameNetModel</a>()-&gt;<a class="code" href="class_n_framenet_model.html#ae3b9c587968dc9651aca91d38dd6b382">getSlotFasetValue</a>( <a class="code" href="class_expr_editor.html#ad7865d3c9c0424a319cf937265c95a68">m_slotIndex</a>,<span class="stringliteral">&quot;default_value&quot;</span>  ).toString();</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    QString domain;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_expr_editor.html#aeba4b8d69aaeffad27becab449f597bd">cmbVar</a>-&gt;currentText() == slotName)</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    {<span class="comment">//домен берем из конструктора</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        domain = <a class="code" href="class_expr_editor.html#ab0f7f0b4608739854185f260bf481034">m_domain</a>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    {<span class="comment">//домен берем из сети фреймов</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        domain = <a class="code" href="class_expr_editor.html#ae54595b14037fea3cb1b1c4126d8c106">m_kbManager</a>-&gt;<a class="code" href="class_n_k_b_manager.html#a6ca8c9ea71bf8a94d240a711c39b14b8">getDomainByString</a>( frameName, <a class="code" href="class_expr_editor.html#aeba4b8d69aaeffad27becab449f597bd">cmbVar</a>-&gt;currentText()  );</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <a class="code" href="class_expr_editor.html#a35c91b5c79863cccd08c4b9838cd3f5f">cmbArSign</a>-&gt;setVisible(domain == <span class="stringliteral">&quot;int&quot;</span>);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <a class="code" href="class_expr_editor.html#a4d7acab150f50596b14169d84cc5e6c6">spbSummer</a>-&gt;setVisible(domain == <span class="stringliteral">&quot;int&quot;</span>);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">if</span>(domain.isEmpty() || domain == <span class="stringliteral">&quot;string&quot;</span> || domain == <span class="stringliteral">&quot;int&quot;</span> ||domain == <span class="stringliteral">&quot;frame&quot;</span> )</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <a class="code" href="class_expr_editor.html#a9e1030ee464d33d43444ceaacd4173f0">cmbVal</a>-&gt;setModel(<span class="keyword">new</span> QStringListModel());</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    QModelIndex domainIndex = <a class="code" href="class_expr_editor.html#ae54595b14037fea3cb1b1c4126d8c106">m_kbManager</a>-&gt;<a class="code" href="class_n_k_b_manager.html#a2e511c4b72d5c37f68e56f5c48a71477">getDomainModel</a>()-&gt;<a class="code" href="class_domain_model.html#ab6e0399356a6c9046b91fe37bdb90a9f">indexByName</a>(domain);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <a class="code" href="class_expr_editor.html#a9e1030ee464d33d43444ceaacd4173f0">cmbVal</a>-&gt;setModel(<a class="code" href="class_expr_editor.html#ae54595b14037fea3cb1b1c4126d8c106">m_kbManager</a>-&gt;<a class="code" href="class_n_k_b_manager.html#a2e511c4b72d5c37f68e56f5c48a71477">getDomainModel</a>());</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <a class="code" href="class_expr_editor.html#a9e1030ee464d33d43444ceaacd4173f0">cmbVal</a>-&gt;setRootModelIndex(domainIndex);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <a class="code" href="class_expr_editor.html#a9e1030ee464d33d43444ceaacd4173f0">cmbVal</a>-&gt;setCurrentIndex(0);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;}</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<a class="code" href="class_expr.html">Expr</a>*</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<a class="code" href="class_expr_editor.html#a2ddaedfa02379f15cebaca685b35c5cc">ExprEditor::getExpr</a>()</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;{</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="class_expr.html">Expr</a> *expr = <span class="keyword">new</span> <a class="code" href="class_expr.html">Expr</a>();</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    expr-&gt;<a class="code" href="class_expr.html#ae3f93c6eca1ca9c9f250c11d8fef0abe">var</a> = this-&gt;<a class="code" href="class_expr_editor.html#aeba4b8d69aaeffad27becab449f597bd">cmbVar</a>-&gt;currentText();</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    expr-&gt;<a class="code" href="class_expr.html#a92122d8f14e84486df0a55355d567f1f">sign</a> = this-&gt;<a class="code" href="class_expr_editor.html#a18bdcf551100de6ea18ca691c84a53c8">cmbSign</a>-&gt;currentText();</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    expr-&gt;<a class="code" href="class_expr.html#aaf68d9135f3f9146570e1bb56a2a0e09">val</a> = this-&gt;<a class="code" href="class_expr_editor.html#a9e1030ee464d33d43444ceaacd4173f0">cmbVal</a>-&gt;currentText();</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    expr-&gt;<a class="code" href="class_expr.html#a61eb93b6686f5905c3cfdd47c7fec997">arSign</a> = this-&gt;<a class="code" href="class_expr_editor.html#a35c91b5c79863cccd08c4b9838cd3f5f">cmbArSign</a>-&gt;currentText();</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    expr-&gt;<a class="code" href="class_expr.html#ac0a6b22ed02b1292a14332d2c03a534f">summer</a> = <a class="code" href="class_expr_editor.html#a4d7acab150f50596b14169d84cc5e6c6">spbSummer</a>-&gt;value();</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordflow">return</span> expr;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;}</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="keywordtype">bool</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;ExprEditor::dataIsValid()<span class="comment">//валидация</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;{</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment">//    QModelIndex varIndex = DataModels::instance()-&gt;varModel-&gt;indexByName(cmbVar-&gt;currentText().trimmed());</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">//    if(!varIndex.isValid())</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">//        return false;</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">//    QModelIndex domainInVarIndex = DataModels::instance()-&gt;varModel-&gt;index(2,0,varIndex);</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment">//    QString sDomain = DataModels::instance()-&gt;varModel-&gt;data(domainInVarIndex,Qt::DisplayRole).toString();</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="comment">//    if(DataModels::instance()-&gt;domainModel-&gt;valueExists(sDomain,cmbVal-&gt;currentText().trimmed()))</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment">//        return true;</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment">//    else</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="comment">//        return false;</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<a class="code" href="class_expr_editor.html#add1683227b73a387df7f92242e6f9e49">ExprEditor::onOkClick</a>()</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;{</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    qDebug()&lt;&lt;<span class="stringliteral">&quot;ExprEditor::onOkClick&quot;</span>;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">if</span>(!dataIsValid())</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    {</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        QMessageBox::information(<span class="keyword">this</span>,<span class="stringliteral">&quot;Ошибка!&quot;</span>,<span class="stringliteral">&quot;Ошибка во введенных данных. Возможно вручную была введена новая переменная или значение, но не подтверждено нажатием Enter.&quot;</span>);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    }</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <a class="code" href="class_expr_editor.html#a6315823c9d42e1ae65aebc327724e489">startAgain</a>=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    accept();</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;}</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<a class="code" href="class_expr_editor.html#a83f4c96905d5f7df42f1cbfe0b0d5458">ExprEditor::onCancelClick</a>()</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;{</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    qDebug()&lt;&lt;<span class="stringliteral">&quot;ExprEditor::onCancelClick&quot;</span>;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <a class="code" href="class_expr_editor.html#a6315823c9d42e1ae65aebc327724e489">startAgain</a>=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <a class="code" href="class_expr_editor.html#a78d912cdfc95b50e4dfda9620df7e14e">reject</a>();</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<a class="code" href="class_expr_editor.html#a5ae8cf51b1d65c14c6581bcdb9c85027">ExprEditor::onOkAndReturnClick</a>()</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;{</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    qDebug()&lt;&lt;<span class="stringliteral">&quot;ExprEditor::onOkAndReturnClick&quot;</span>;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">if</span>(!dataIsValid())</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    {</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        QMessageBox::information(<span class="keyword">this</span>,<span class="stringliteral">&quot;Ошибка!&quot;</span>,<span class="stringliteral">&quot;Ошибка во введенных данных. Возможно вручную была введена новая переменная или значение, но не подтверждено нажатием Enter.&quot;</span>);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    }</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <a class="code" href="class_expr_editor.html#a6315823c9d42e1ae65aebc327724e489">startAgain</a>=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    accept();</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;}</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_expr_editor.html#a78d912cdfc95b50e4dfda9620df7e14e">ExprEditor::reject</a>()</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;{</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <a class="code" href="class_expr_editor.html#a6315823c9d42e1ae65aebc327724e489">startAgain</a>=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    QDialog::reject();</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;}</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<a class="code" href="class_expr_editor.html#ab032a7dc4fae43ab58efde49668213ab">ExprEditor::selectVar</a>(QModelIndex index)</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;{</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <a class="code" href="class_expr_editor.html#aeba4b8d69aaeffad27becab449f597bd">cmbVar</a>-&gt;setCurrentIndex(index.row());</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordflow">if</span>(index.row()==0)</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <a class="code" href="class_expr_editor.html#ace6097f735f6f3828cfcfa4ab976dcb2">onCurrentVarChanged</a>(index.row());</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;}</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
+<div class="line"><a name="l00234"></a><span class="lineno"><a class="code" href="class_expr_editor.html#a50aac6d62bb0d5bea6ee6913de5b7304">  234</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_expr_editor.html#ab032a7dc4fae43ab58efde49668213ab">ExprEditor::selectVar</a>(QString var)</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;{</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keywordtype">int</span> i=<a class="code" href="class_expr_editor.html#aeba4b8d69aaeffad27becab449f597bd">cmbVar</a>-&gt;findText(var);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <a class="code" href="class_expr_editor.html#aeba4b8d69aaeffad27becab449f597bd">cmbVar</a>-&gt;setCurrentIndex(i);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;}</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<a class="code" href="class_expr_editor.html#a1958f9085ed67eb8a810c5a5e29fafcc">ExprEditor::selectSign</a>(QString sign)</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;{</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;<a class="code" href="class_expr_editor.html#a18bdcf551100de6ea18ca691c84a53c8">cmbSign</a>-&gt;count();++i)                  <span class="comment">//выбираем знак</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    {</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="class_expr_editor.html#a18bdcf551100de6ea18ca691c84a53c8">cmbSign</a>-&gt;itemText(i)==sign)</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        {</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <a class="code" href="class_expr_editor.html#a18bdcf551100de6ea18ca691c84a53c8">cmbSign</a>-&gt;setCurrentIndex(i);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        }</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    }</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;}</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<a class="code" href="class_expr_editor.html#af0eea4ef9f1cc6979c6ddbcd12b8a23d">ExprEditor::selectVal</a>(QString val)</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;{</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;<a class="code" href="class_expr_editor.html#a9e1030ee464d33d43444ceaacd4173f0">cmbVal</a>-&gt;count();++i)                  <span class="comment">//выбираем значение</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    {</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="class_expr_editor.html#a9e1030ee464d33d43444ceaacd4173f0">cmbVal</a>-&gt;itemText(i)==val)</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        {</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <a class="code" href="class_expr_editor.html#a9e1030ee464d33d43444ceaacd4173f0">cmbVal</a>-&gt;setCurrentIndex(i);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        }</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    }</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;}</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="comment">//контекстное пополнение</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<a class="code" href="class_expr_editor.html#a095b233f3425980f76fa2cc0a4d02ee0">ExprEditor::onVarContextAdded</a>(QString newVar)</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;{</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="comment">//    qDebug()&lt;&lt;&quot;ExprEditor::onVarContextAdded: &quot;&lt;&lt;newVar;</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="comment">//    if(Saver::areUsure(QString(&quot;Вы хотите добавить новую переменную  %1 ?&quot;).arg(&quot;&#39;&quot;+newVar+&quot;&#39;&quot;)))</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="comment">//    {</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="comment">//        QModelIndex varIndex = DataModels::instance()-&gt;varModel-&gt;addVariable();</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="comment">//        DataModels::instance()-&gt;varModel-&gt;setData(varIndex,newVar,Qt::EditRole);</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="comment">//        //сделать домен по-умолчанию №0</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="comment">//        QModelIndex firstDomainIndex = DataModels::instance()-&gt;domainModel-&gt;index(0,0,QModelIndex());</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="comment">//        QString domainName = DataModels::instance()-&gt;domainModel-&gt;data(firstDomainIndex,Qt::DisplayRole).toString();</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="comment">//        QModelIndex domainInVar = DataModels::instance()-&gt;varModel-&gt;index(2,0,varIndex);</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="comment">//        DataModels::instance()-&gt;varModel-&gt;setData(domainInVar,domainName,Qt::EditRole);</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="comment">//        QModelIndex askingIndex = DataModels::instance()-&gt;varModel-&gt;index(0,0,varIndex);</span></div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="comment">//        QModelIndex derivableIndex = DataModels::instance()-&gt;varModel-&gt;index(1,0,varIndex);</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="comment">//        if(this-&gt;typeExpr == ExprEditor::IfExpr)</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="comment">//        {//добавляем запрашиваемую переменную (в модели по-умолчанию)</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="comment">//            DataModels::instance()-&gt;varModel-&gt;setData(askingIndex,true,Qt::EditRole);</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="comment">//            DataModels::instance()-&gt;varModel-&gt;setData(derivableIndex,false,Qt::EditRole);</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="comment">//        }</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="comment">//        else//ThenExpr</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="comment">//        {//делаем переменную выводимой</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="comment">//            DataModels::instance()-&gt;varModel-&gt;setData(askingIndex,false,Qt::EditRole);</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="comment">//            DataModels::instance()-&gt;varModel-&gt;setData(derivableIndex,true,Qt::EditRole);</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="comment">//        }</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="comment">//        //обновить домен</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="comment">//        onCurrentVarChanged(varIndex.row());</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="comment">//    }</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;}</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<a class="code" href="class_expr_editor.html#a948252a9f0716401b89fbfff4b19ac49">ExprEditor::onValueContextAdded</a>(QString newVal)</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;{</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="comment">//    qDebug()&lt;&lt;&quot;ExprEditor::onValueContextAdded: &quot;&lt;&lt;newVal;</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="comment">//    QModelIndex varIndex = DataModels::instance()-&gt;varModel-&gt;indexByName(cmbVar-&gt;currentText().trimmed());</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="comment">//    QModelIndex domainInVarIndex = DataModels::instance()-&gt;varModel-&gt;index(2,0,varIndex);</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="comment">//    QString sDomain = DataModels::instance()-&gt;varModel-&gt;data(domainInVarIndex,Qt::DisplayRole).toString();</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="comment">//    if(sDomain.isEmpty())</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="comment">//    {</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="comment">//        QMessageBox::warning(this,&quot;Ошибка&quot;,&quot;Выберите переменную!&quot;);</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="comment">//        return;</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="comment">//    }</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="comment">//    if(Saver::areUsure(QString(&quot;Вы хотите добавить новое значение  %1 в домен %2 ?&quot;).arg(&quot;&#39;&quot;+newVal+&quot;&#39;&quot;).arg(&quot;&#39;&quot;+sDomain+&quot;&#39;&quot;)))</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="comment">//    {</span></div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="comment">//        QModelIndex domainIndex = DataModels::instance()-&gt;domainModel-&gt;indexByName(sDomain);</span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="comment">//        QModelIndex newValIndex = DataModels::instance()-&gt;domainModel-&gt;addValue(domainIndex);</span></div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="comment">//        DataModels::instance()-&gt;domainModel-&gt;setData(newValIndex,cmbVal-&gt;currentText().trimmed(),Qt::EditRole);</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="comment">//    }</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_7945a8f04e3729922298536fd68c3112.html">install</a></li><li class="navelem"><a class="el" href="dir_e1e2ba996da20cc7dbfd77ac1f1228b2.html">няки релиз</a></li><li class="navelem"><a class="el" href="dir_6eb7a72f2fcf630dd8d6fabfcab24595.html">nya-cats</a></li><li class="navelem"><a class="el" href="dir_9750a83220cb6be79319811b4d12f390.html">src</a></li><li class="navelem"><a class="el" href="dir_fc6d66ebdc26bda1005bbc6200d7d601.html">nya-cats</a></li><li class="navelem"><a class="el" href="dir_5acc5251954c4ac613e3d97dfc996c59.html">ui</a></li><li class="navelem"><a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2f4b2b21c6702f8bc85d7188628b4fa63.html">expreditor.cpp</a></li>
+    <li class="footer">Документация по Nya-cats. Последние изменения: Пн 14 Янв 2013 16:33:51. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3 </li>
+  </ul>
+</div>
+</body>
+</html>

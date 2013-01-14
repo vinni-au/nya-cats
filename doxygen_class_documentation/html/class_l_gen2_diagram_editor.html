@@ -1,0 +1,2030 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3"/>
+<title>Nya-cats: Класс LGen2DiagramEditor</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Nya-cats
+   &#160;<span id="projectnumber">1.00</span>
+   </div>
+   <div id="projectbrief">Nya-cats</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="hierarchy.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_l_gen2_diagram_editor.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Перечисления</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Элементы перечислений</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Свойства</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Макросы</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-slots">Открытые слоты</a> &#124;
+<a href="#signals">Сигналы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pro-slots">Защищенные слоты</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
+<a href="class_l_gen2_diagram_editor-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс LGen2DiagramEditor</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="editor_2lgen2diagrameditor_8hpp_source.html">lgen2diagrameditor.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:LGen2DiagramEditor:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_l_gen2_diagram_editor.png" usemap="#LGen2DiagramEditor_map" alt=""/>
+  <map id="LGen2DiagramEditor_map" name="LGen2DiagramEditor_map">
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
+Открытые слоты</h2></td></tr>
+<tr class="memitem:a0cb72258dc04d666f512f7e30f778d9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a0cb72258dc04d666f512f7e30f778d9a">zoomIn</a> ()</td></tr>
+<tr class="separator:a0cb72258dc04d666f512f7e30f778d9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9f21436ac48e8a3595397d341f16026"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#ac9f21436ac48e8a3595397d341f16026">zoonOut</a> ()</td></tr>
+<tr class="separator:ac9f21436ac48e8a3595397d341f16026"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af58ac4171cf79cf3096794900ddd0063"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#af58ac4171cf79cf3096794900ddd0063">addNode</a> (unsigned id, QString title)</td></tr>
+<tr class="separator:af58ac4171cf79cf3096794900ddd0063"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53f263f0801c2a1041e40581efce9fb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a53f263f0801c2a1041e40581efce9fb7">changeNodeTitle</a> (unsigned id, QString newtitle)</td></tr>
+<tr class="separator:a53f263f0801c2a1041e40581efce9fb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6bf36435bac8fb09a237784b9732367"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#ab6bf36435bac8fb09a237784b9732367">deleteNode</a> (unsigned id)</td></tr>
+<tr class="separator:ab6bf36435bac8fb09a237784b9732367"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36cf04e3d98c867a74081938184235e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a36cf04e3d98c867a74081938184235e3">addLink</a> (unsigned sid, unsigned did, QString title)</td></tr>
+<tr class="separator:a36cf04e3d98c867a74081938184235e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51a56384a5d1c72d671bc2de08c0d7c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a51a56384a5d1c72d671bc2de08c0d7c2">addArrow</a> (<a class="el" href="class_arrow.html">Arrow</a> *arrow)</td></tr>
+<tr class="separator:a51a56384a5d1c72d671bc2de08c0d7c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcd63edb3724d01ea24366dadfcb29b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#adcd63edb3724d01ea24366dadfcb29b7">deleteLink</a> (unsigned sid, unsigned did)</td></tr>
+<tr class="separator:adcd63edb3724d01ea24366dadfcb29b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d5f0ab3dbb8911b3aaeef5604dd2ea0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a3d5f0ab3dbb8911b3aaeef5604dd2ea0">selectNode</a> (unsigned id)</td></tr>
+<tr class="separator:a3d5f0ab3dbb8911b3aaeef5604dd2ea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bc99ad6e584b1a690322470acd04250"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a8bc99ad6e584b1a690322470acd04250">selectLink</a> (unsigned sid, unsigned did)</td></tr>
+<tr class="separator:a8bc99ad6e584b1a690322470acd04250"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cb72258dc04d666f512f7e30f778d9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a0cb72258dc04d666f512f7e30f778d9a">zoomIn</a> ()</td></tr>
+<tr class="separator:a0cb72258dc04d666f512f7e30f778d9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9f21436ac48e8a3595397d341f16026"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#ac9f21436ac48e8a3595397d341f16026">zoonOut</a> ()</td></tr>
+<tr class="separator:ac9f21436ac48e8a3595397d341f16026"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af58ac4171cf79cf3096794900ddd0063"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#af58ac4171cf79cf3096794900ddd0063">addNode</a> (unsigned id, QString title)</td></tr>
+<tr class="separator:af58ac4171cf79cf3096794900ddd0063"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53f263f0801c2a1041e40581efce9fb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a53f263f0801c2a1041e40581efce9fb7">changeNodeTitle</a> (unsigned id, QString newtitle)</td></tr>
+<tr class="separator:a53f263f0801c2a1041e40581efce9fb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6bf36435bac8fb09a237784b9732367"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#ab6bf36435bac8fb09a237784b9732367">deleteNode</a> (unsigned id)</td></tr>
+<tr class="separator:ab6bf36435bac8fb09a237784b9732367"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36cf04e3d98c867a74081938184235e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a36cf04e3d98c867a74081938184235e3">addLink</a> (unsigned sid, unsigned did, QString title)</td></tr>
+<tr class="separator:a36cf04e3d98c867a74081938184235e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51a56384a5d1c72d671bc2de08c0d7c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a51a56384a5d1c72d671bc2de08c0d7c2">addArrow</a> (<a class="el" href="class_arrow.html">Arrow</a> *arrow)</td></tr>
+<tr class="separator:a51a56384a5d1c72d671bc2de08c0d7c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcd63edb3724d01ea24366dadfcb29b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#adcd63edb3724d01ea24366dadfcb29b7">deleteLink</a> (unsigned sid, unsigned did)</td></tr>
+<tr class="separator:adcd63edb3724d01ea24366dadfcb29b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d5f0ab3dbb8911b3aaeef5604dd2ea0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a3d5f0ab3dbb8911b3aaeef5604dd2ea0">selectNode</a> (unsigned id)</td></tr>
+<tr class="separator:a3d5f0ab3dbb8911b3aaeef5604dd2ea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bc99ad6e584b1a690322470acd04250"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a8bc99ad6e584b1a690322470acd04250">selectLink</a> (unsigned sid, unsigned did)</td></tr>
+<tr class="separator:a8bc99ad6e584b1a690322470acd04250"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Сигналы</h2></td></tr>
+<tr class="memitem:a0bf89de22bfc29a8173a7fad2c3b5f64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a0bf89de22bfc29a8173a7fad2c3b5f64">frameSelected</a> (unsigned id)</td></tr>
+<tr class="separator:a0bf89de22bfc29a8173a7fad2c3b5f64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd0e3f22eae4fdebf5cfcf929c35549d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#abd0e3f22eae4fdebf5cfcf929c35549d">nodeDeleted</a> (unsigned id)</td></tr>
+<tr class="separator:abd0e3f22eae4fdebf5cfcf929c35549d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a702b5ff37129f289730f8d1000e2b90c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a702b5ff37129f289730f8d1000e2b90c">selectionCleared</a> ()</td></tr>
+<tr class="separator:a702b5ff37129f289730f8d1000e2b90c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee4667a049a8ac4151debe11501f36dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#aee4667a049a8ac4151debe11501f36dd">linkSelected</a> (unsigned, unsigned)</td></tr>
+<tr class="separator:aee4667a049a8ac4151debe11501f36dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af52587d69ba29e193303b035300f1d15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#af52587d69ba29e193303b035300f1d15">isaDeleted</a> (unsigned sid, unsigned did)</td></tr>
+<tr class="separator:af52587d69ba29e193303b035300f1d15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa226864eaa68139cf956edd986e7e3c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#aa226864eaa68139cf956edd986e7e3c5">apoDeleted</a> (unsigned sid, unsigned did)</td></tr>
+<tr class="separator:aa226864eaa68139cf956edd986e7e3c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bf89de22bfc29a8173a7fad2c3b5f64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a0bf89de22bfc29a8173a7fad2c3b5f64">frameSelected</a> (unsigned id)</td></tr>
+<tr class="separator:a0bf89de22bfc29a8173a7fad2c3b5f64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd0e3f22eae4fdebf5cfcf929c35549d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#abd0e3f22eae4fdebf5cfcf929c35549d">nodeDeleted</a> (unsigned id)</td></tr>
+<tr class="separator:abd0e3f22eae4fdebf5cfcf929c35549d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a702b5ff37129f289730f8d1000e2b90c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a702b5ff37129f289730f8d1000e2b90c">selectionCleared</a> ()</td></tr>
+<tr class="separator:a702b5ff37129f289730f8d1000e2b90c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee4667a049a8ac4151debe11501f36dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#aee4667a049a8ac4151debe11501f36dd">linkSelected</a> (unsigned, unsigned)</td></tr>
+<tr class="separator:aee4667a049a8ac4151debe11501f36dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af52587d69ba29e193303b035300f1d15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#af52587d69ba29e193303b035300f1d15">isaDeleted</a> (unsigned sid, unsigned did)</td></tr>
+<tr class="separator:af52587d69ba29e193303b035300f1d15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa226864eaa68139cf956edd986e7e3c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#aa226864eaa68139cf956edd986e7e3c5">apoDeleted</a> (unsigned sid, unsigned did)</td></tr>
+<tr class="separator:aa226864eaa68139cf956edd986e7e3c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a40da26ccba0560ab694e616a6f08ed6d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a40da26ccba0560ab694e616a6f08ed6d">LGen2DiagramEditor</a> (QWidget *parent=0, QMenu *contextMenu=0)</td></tr>
+<tr class="separator:a40da26ccba0560ab694e616a6f08ed6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b049c04ae6e881b2a7f09c015b80b5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_diagram_scene.html">DiagramScene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a2b049c04ae6e881b2a7f09c015b80b5d">scene</a> () const </td></tr>
+<tr class="separator:a2b049c04ae6e881b2a7f09c015b80b5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa52bf5def97482ffe8351075e758e7d8"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#aa52bf5def97482ffe8351075e758e7d8">selectedFrameId</a> ()</td></tr>
+<tr class="separator:aa52bf5def97482ffe8351075e758e7d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaf2dc2bfcc1e20eb299f6fceaba1e28"><td class="memItemLeft" align="right" valign="top">QDomElement&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#adaf2dc2bfcc1e20eb299f6fceaba1e28">toXML</a> (QDomDocument &amp;doc)</td></tr>
+<tr class="separator:adaf2dc2bfcc1e20eb299f6fceaba1e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e46a34bb0a4c04faeb8717f5f46dd88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a4e46a34bb0a4c04faeb8717f5f46dd88">fromXML</a> (QDomElement &amp;doc)</td></tr>
+<tr class="separator:a4e46a34bb0a4c04faeb8717f5f46dd88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d80004e61ddbe8290accd981d623fa4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a0d80004e61ddbe8290accd981d623fa4">setContextMenu</a> (QMenu *menu)</td></tr>
+<tr class="separator:a0d80004e61ddbe8290accd981d623fa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40da26ccba0560ab694e616a6f08ed6d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a40da26ccba0560ab694e616a6f08ed6d">LGen2DiagramEditor</a> (QWidget *parent=0, QMenu *contextMenu=0)</td></tr>
+<tr class="separator:a40da26ccba0560ab694e616a6f08ed6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b049c04ae6e881b2a7f09c015b80b5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_diagram_scene.html">DiagramScene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a2b049c04ae6e881b2a7f09c015b80b5d">scene</a> () const </td></tr>
+<tr class="separator:a2b049c04ae6e881b2a7f09c015b80b5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa52bf5def97482ffe8351075e758e7d8"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#aa52bf5def97482ffe8351075e758e7d8">selectedFrameId</a> ()</td></tr>
+<tr class="separator:aa52bf5def97482ffe8351075e758e7d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaf2dc2bfcc1e20eb299f6fceaba1e28"><td class="memItemLeft" align="right" valign="top">QDomElement&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#adaf2dc2bfcc1e20eb299f6fceaba1e28">toXML</a> (QDomDocument &amp;doc)</td></tr>
+<tr class="separator:adaf2dc2bfcc1e20eb299f6fceaba1e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e46a34bb0a4c04faeb8717f5f46dd88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a4e46a34bb0a4c04faeb8717f5f46dd88">fromXML</a> (QDomElement &amp;doc)</td></tr>
+<tr class="separator:a4e46a34bb0a4c04faeb8717f5f46dd88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d80004e61ddbe8290accd981d623fa4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a0d80004e61ddbe8290accd981d623fa4">setContextMenu</a> (QMenu *menu)</td></tr>
+<tr class="separator:a0d80004e61ddbe8290accd981d623fa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-slots"></a>
+Защищенные слоты</h2></td></tr>
+<tr class="memitem:a2c9cb1acb279fc342b0f0d52a7e9a6ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a2c9cb1acb279fc342b0f0d52a7e9a6ea">sceneSelectionChanged</a> ()</td></tr>
+<tr class="separator:a2c9cb1acb279fc342b0f0d52a7e9a6ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c5c9f0a756f5d43daea5680ff372e6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a6c5c9f0a756f5d43daea5680ff372e6f">deleteSelectedItem</a> ()</td></tr>
+<tr class="separator:a6c5c9f0a756f5d43daea5680ff372e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a173bbe21bb29323cc02d1aa0d0732d6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a173bbe21bb29323cc02d1aa0d0732d6a">deleteSelectedLink</a> ()</td></tr>
+<tr class="separator:a173bbe21bb29323cc02d1aa0d0732d6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55a6de001fed106a95336ad10ac08d0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a55a6de001fed106a95336ad10ac08d0d">onScrollBar</a> (int i)</td></tr>
+<tr class="separator:a55a6de001fed106a95336ad10ac08d0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c9cb1acb279fc342b0f0d52a7e9a6ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a2c9cb1acb279fc342b0f0d52a7e9a6ea">sceneSelectionChanged</a> ()</td></tr>
+<tr class="separator:a2c9cb1acb279fc342b0f0d52a7e9a6ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c5c9f0a756f5d43daea5680ff372e6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a6c5c9f0a756f5d43daea5680ff372e6f">deleteSelectedItem</a> ()</td></tr>
+<tr class="separator:a6c5c9f0a756f5d43daea5680ff372e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a173bbe21bb29323cc02d1aa0d0732d6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a173bbe21bb29323cc02d1aa0d0732d6a">deleteSelectedLink</a> ()</td></tr>
+<tr class="separator:a173bbe21bb29323cc02d1aa0d0732d6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55a6de001fed106a95336ad10ac08d0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a55a6de001fed106a95336ad10ac08d0d">onScrollBar</a> (int i)</td></tr>
+<tr class="separator:a55a6de001fed106a95336ad10ac08d0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:a2faec0c72f6946ba01fa1051b6683146"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a2faec0c72f6946ba01fa1051b6683146">contextMenuEvent</a> (QContextMenuEvent *event)</td></tr>
+<tr class="separator:a2faec0c72f6946ba01fa1051b6683146"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef19e18e3c7dbf294aa1f49a050a425d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#aef19e18e3c7dbf294aa1f49a050a425d">mousePressEvent</a> (QMouseEvent *mouseEvent)</td></tr>
+<tr class="separator:aef19e18e3c7dbf294aa1f49a050a425d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6350c542a072005a261b4f399b5d625e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a6350c542a072005a261b4f399b5d625e">mouseMoveEvent</a> (QMouseEvent *mouseEvent)</td></tr>
+<tr class="separator:a6350c542a072005a261b4f399b5d625e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7d8b8d60c7e531575e9accdeed18848"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#ad7d8b8d60c7e531575e9accdeed18848">mouseReleaseEvent</a> (QMouseEvent *mouseEvent)</td></tr>
+<tr class="separator:ad7d8b8d60c7e531575e9accdeed18848"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6f16c391a75a8bfe1c3984bd28c4aac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#ac6f16c391a75a8bfe1c3984bd28c4aac">setCenter</a> (const QPointF &amp;centerPoint)</td></tr>
+<tr class="separator:ac6f16c391a75a8bfe1c3984bd28c4aac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa3254369209858e95193a0799f6f7a5"><td class="memItemLeft" align="right" valign="top">QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#aaa3254369209858e95193a0799f6f7a5">getCenter</a> ()</td></tr>
+<tr class="separator:aaa3254369209858e95193a0799f6f7a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f957acdf750bbc9a955b3744b67700d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a2f957acdf750bbc9a955b3744b67700d">contextMenuEvent</a> (QContextMenuEvent *event)</td></tr>
+<tr class="separator:a2f957acdf750bbc9a955b3744b67700d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a406a2a17a2fddf47eedca4589d8961ce"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#a406a2a17a2fddf47eedca4589d8961ce">mousePressEvent</a> (QMouseEvent *mouseEvent)</td></tr>
+<tr class="separator:a406a2a17a2fddf47eedca4589d8961ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadaa86c465138a52483b550b39f6ee83"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#aadaa86c465138a52483b550b39f6ee83">mouseMoveEvent</a> (QMouseEvent *mouseEvent)</td></tr>
+<tr class="separator:aadaa86c465138a52483b550b39f6ee83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcfc3d8ca3150961c82e2499b297e51e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#abcfc3d8ca3150961c82e2499b297e51e">mouseReleaseEvent</a> (QMouseEvent *mouseEvent)</td></tr>
+<tr class="separator:abcfc3d8ca3150961c82e2499b297e51e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6f16c391a75a8bfe1c3984bd28c4aac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#ac6f16c391a75a8bfe1c3984bd28c4aac">setCenter</a> (const QPointF &amp;centerPoint)</td></tr>
+<tr class="separator:ac6f16c391a75a8bfe1c3984bd28c4aac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa3254369209858e95193a0799f6f7a5"><td class="memItemLeft" align="right" valign="top">QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_gen2_diagram_editor.html#aaa3254369209858e95193a0799f6f7a5">getCenter</a> ()</td></tr>
+<tr class="separator:aaa3254369209858e95193a0799f6f7a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock">
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8hpp_source.html">lgen2diagrameditor.hpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8hpp_source.html#l00011">11</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a class="anchor" id="a40da26ccba0560ab694e616a6f08ed6d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LGen2DiagramEditor::LGen2DiagramEditor </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QMenu *&#160;</td>
+          <td class="paramname"><em>contextMenu</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html">lgen2diagrameditor.cpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html#l00005">5</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a40da26ccba0560ab694e616a6f08ed6d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LGen2DiagramEditor::LGen2DiagramEditor </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QMenu *&#160;</td>
+          <td class="paramname"><em>contextMenu</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="a51a56384a5d1c72d671bc2de08c0d7c2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::addArrow </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_arrow.html">Arrow</a> *&#160;</td>
+          <td class="paramname"><em>arrow</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html">lgen2diagrameditor.cpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html#l00052">52</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a51a56384a5d1c72d671bc2de08c0d7c2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::addArrow </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_arrow.html">Arrow</a> *&#160;</td>
+          <td class="paramname"><em>arrow</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a36cf04e3d98c867a74081938184235e3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::addLink </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>did</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>title</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html">lgen2diagrameditor.cpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html#l00079">79</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a36cf04e3d98c867a74081938184235e3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::addLink </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>did</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>title</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af58ac4171cf79cf3096794900ddd0063"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::addNode </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>title</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af58ac4171cf79cf3096794900ddd0063"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::addNode </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>title</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html">lgen2diagrameditor.cpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html#l00035">35</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aa226864eaa68139cf956edd986e7e3c5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::apoDeleted </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>did</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa226864eaa68139cf956edd986e7e3c5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::apoDeleted </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>did</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__lgen2diagrameditor_8cpp_source.html">moc_lgen2diagrameditor.cpp</a> строка <a class="el" href="debug_2moc__lgen2diagrameditor_8cpp_source.html#l00167">167</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a53f263f0801c2a1041e40581efce9fb7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::changeNodeTitle </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>newtitle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html">lgen2diagrameditor.cpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html#l00045">45</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a53f263f0801c2a1041e40581efce9fb7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::changeNodeTitle </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>newtitle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2f957acdf750bbc9a955b3744b67700d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void LGen2DiagramEditor::contextMenuEvent </td>
+          <td>(</td>
+          <td class="paramtype">QContextMenuEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2faec0c72f6946ba01fa1051b6683146"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::contextMenuEvent </td>
+          <td>(</td>
+          <td class="paramtype">QContextMenuEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html">lgen2diagrameditor.cpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html#l00290">290</a></p>
+
+</div>
+</div>
+<a class="anchor" id="adcd63edb3724d01ea24366dadfcb29b7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::deleteLink </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>did</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html">lgen2diagrameditor.cpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html#l00097">97</a></p>
+
+</div>
+</div>
+<a class="anchor" id="adcd63edb3724d01ea24366dadfcb29b7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::deleteLink </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>did</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab6bf36435bac8fb09a237784b9732367"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::deleteNode </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html">lgen2diagrameditor.cpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html#l00060">60</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab6bf36435bac8fb09a237784b9732367"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::deleteNode </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6c5c9f0a756f5d43daea5680ff372e6f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::deleteSelectedItem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html">lgen2diagrameditor.cpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html#l00181">181</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a6c5c9f0a756f5d43daea5680ff372e6f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::deleteSelectedItem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a173bbe21bb29323cc02d1aa0d0732d6a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::deleteSelectedLink </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html">lgen2diagrameditor.cpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html#l00188">188</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a173bbe21bb29323cc02d1aa0d0732d6a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::deleteSelectedLink </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0bf89de22bfc29a8173a7fad2c3b5f64"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::frameSelected </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__lgen2diagrameditor_8cpp_source.html">moc_lgen2diagrameditor.cpp</a> строка <a class="el" href="debug_2moc__lgen2diagrameditor_8cpp_source.html#l00133">133</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a0bf89de22bfc29a8173a7fad2c3b5f64"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::frameSelected </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4e46a34bb0a4c04faeb8717f5f46dd88"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::fromXML </td>
+          <td>(</td>
+          <td class="paramtype">QDomElement &amp;&#160;</td>
+          <td class="paramname"><em>doc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4e46a34bb0a4c04faeb8717f5f46dd88"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::fromXML </td>
+          <td>(</td>
+          <td class="paramtype">QDomElement &amp;&#160;</td>
+          <td class="paramname"><em>doc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html">lgen2diagrameditor.cpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html#l00246">246</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aaa3254369209858e95193a0799f6f7a5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointF LGen2DiagramEditor::getCenter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html">lgen2diagrameditor.cpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html#l00381">381</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aaa3254369209858e95193a0799f6f7a5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointF LGen2DiagramEditor::getCenter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af52587d69ba29e193303b035300f1d15"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::isaDeleted </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>did</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af52587d69ba29e193303b035300f1d15"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::isaDeleted </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>did</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__lgen2diagrameditor_8cpp_source.html">moc_lgen2diagrameditor.cpp</a> строка <a class="el" href="debug_2moc__lgen2diagrameditor_8cpp_source.html#l00160">160</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aee4667a049a8ac4151debe11501f36dd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::linkSelected </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aee4667a049a8ac4151debe11501f36dd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::linkSelected </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>_t1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>_t2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__lgen2diagrameditor_8cpp_source.html">moc_lgen2diagrameditor.cpp</a> строка <a class="el" href="debug_2moc__lgen2diagrameditor_8cpp_source.html#l00153">153</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aadaa86c465138a52483b550b39f6ee83"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void LGen2DiagramEditor::mouseMoveEvent </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramname"><em>mouseEvent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6350c542a072005a261b4f399b5d625e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::mouseMoveEvent </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramname"><em>mouseEvent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html">lgen2diagrameditor.cpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html#l00313">313</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a406a2a17a2fddf47eedca4589d8961ce"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void LGen2DiagramEditor::mousePressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramname"><em>mouseEvent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aef19e18e3c7dbf294aa1f49a050a425d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::mousePressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramname"><em>mouseEvent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html">lgen2diagrameditor.cpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html#l00302">302</a></p>
+
+</div>
+</div>
+<a class="anchor" id="abcfc3d8ca3150961c82e2499b297e51e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void LGen2DiagramEditor::mouseReleaseEvent </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramname"><em>mouseEvent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad7d8b8d60c7e531575e9accdeed18848"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::mouseReleaseEvent </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramname"><em>mouseEvent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html">lgen2diagrameditor.cpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html#l00328">328</a></p>
+
+</div>
+</div>
+<a class="anchor" id="abd0e3f22eae4fdebf5cfcf929c35549d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::nodeDeleted </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abd0e3f22eae4fdebf5cfcf929c35549d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::nodeDeleted </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__lgen2diagrameditor_8cpp_source.html">moc_lgen2diagrameditor.cpp</a> строка <a class="el" href="debug_2moc__lgen2diagrameditor_8cpp_source.html#l00140">140</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a55a6de001fed106a95336ad10ac08d0d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::onScrollBar </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html">lgen2diagrameditor.cpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html#l00385">385</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a55a6de001fed106a95336ad10ac08d0d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::onScrollBar </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2b049c04ae6e881b2a7f09c015b80b5d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_diagram_scene.html">DiagramScene</a>* LGen2DiagramEditor::scene </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2e3486e5f6035621627b12dc0a65be1a5_source.html">lgen2diagrameditor.hpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2e3486e5f6035621627b12dc0a65be1a5_source.html#l00036">36</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a2b049c04ae6e881b2a7f09c015b80b5d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_diagram_scene.html">DiagramScene</a>* LGen2DiagramEditor::scene </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8hpp_source.html">lgen2diagrameditor.hpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8hpp_source.html#l00036">36</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a2c9cb1acb279fc342b0f0d52a7e9a6ea"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::sceneSelectionChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html">lgen2diagrameditor.cpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html#l00138">138</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a2c9cb1acb279fc342b0f0d52a7e9a6ea"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::sceneSelectionChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa52bf5def97482ffe8351075e758e7d8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned LGen2DiagramEditor::selectedFrameId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa52bf5def97482ffe8351075e758e7d8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned LGen2DiagramEditor::selectedFrameId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html">lgen2diagrameditor.cpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html#l00156">156</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a702b5ff37129f289730f8d1000e2b90c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::selectionCleared </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a702b5ff37129f289730f8d1000e2b90c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::selectionCleared </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__lgen2diagrameditor_8cpp_source.html">moc_lgen2diagrameditor.cpp</a> строка <a class="el" href="debug_2moc__lgen2diagrameditor_8cpp_source.html#l00147">147</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a8bc99ad6e584b1a690322470acd04250"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::selectLink </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>did</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8bc99ad6e584b1a690322470acd04250"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::selectLink </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>did</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html">lgen2diagrameditor.cpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html#l00204">204</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a3d5f0ab3dbb8911b3aaeef5604dd2ea0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::selectNode </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3d5f0ab3dbb8911b3aaeef5604dd2ea0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::selectNode </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html">lgen2diagrameditor.cpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html#l00168">168</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ac6f16c391a75a8bfe1c3984bd28c4aac"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::setCenter </td>
+          <td>(</td>
+          <td class="paramtype">const QPointF &amp;&#160;</td>
+          <td class="paramname"><em>centerPoint</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac6f16c391a75a8bfe1c3984bd28c4aac"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::setCenter </td>
+          <td>(</td>
+          <td class="paramtype">const QPointF &amp;&#160;</td>
+          <td class="paramname"><em>centerPoint</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html">lgen2diagrameditor.cpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html#l00340">340</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a0d80004e61ddbe8290accd981d623fa4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::setContextMenu </td>
+          <td>(</td>
+          <td class="paramtype">QMenu *&#160;</td>
+          <td class="paramname"><em>menu</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2e3486e5f6035621627b12dc0a65be1a5_source.html">lgen2diagrameditor.hpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2e3486e5f6035621627b12dc0a65be1a5_source.html#l00044">44</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a0d80004e61ddbe8290accd981d623fa4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::setContextMenu </td>
+          <td>(</td>
+          <td class="paramtype">QMenu *&#160;</td>
+          <td class="paramname"><em>menu</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8hpp_source.html">lgen2diagrameditor.hpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8hpp_source.html#l00044">44</a></p>
+
+</div>
+</div>
+<a class="anchor" id="adaf2dc2bfcc1e20eb299f6fceaba1e28"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDomElement LGen2DiagramEditor::toXML </td>
+          <td>(</td>
+          <td class="paramtype">QDomDocument &amp;&#160;</td>
+          <td class="paramname"><em>doc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adaf2dc2bfcc1e20eb299f6fceaba1e28"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDomElement LGen2DiagramEditor::toXML </td>
+          <td>(</td>
+          <td class="paramtype">QDomDocument &amp;&#160;</td>
+          <td class="paramname"><em>doc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html">lgen2diagrameditor.cpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html#l00219">219</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a0cb72258dc04d666f512f7e30f778d9a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::zoomIn </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0cb72258dc04d666f512f7e30f778d9a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::zoomIn </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html">lgen2diagrameditor.cpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html#l00209">209</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ac9f21436ac48e8a3595397d341f16026"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::zoonOut </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html">lgen2diagrameditor.cpp</a> строка <a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html#l00214">214</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ac9f21436ac48e8a3595397d341f16026"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LGen2DiagramEditor::zoonOut </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>C:/qt/nya-cats/editor/<a class="el" href="editor_2lgen2diagrameditor_8hpp_source.html">lgen2diagrameditor.hpp</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/editor/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2e3486e5f6035621627b12dc0a65be1a5_source.html">lgen2diagrameditor.hpp</a></li>
+<li>C:/qt/nya-cats/debug/<a class="el" href="debug_2moc__lgen2diagrameditor_8cpp_source.html">moc_lgen2diagrameditor.cpp</a></li>
+<li>C:/qt/nya-cats/editor/<a class="el" href="editor_2lgen2diagrameditor_8cpp_source.html">lgen2diagrameditor.cpp</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/debug/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2be5c11842aeaba06e575acc605a15159_source.html">moc_lgen2diagrameditor.cpp</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/editor/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2179c95f794d8968262a0556a24f7a4f8_source.html">lgen2diagrameditor.cpp</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/release/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_280b293b6e95c1701de9127eb44017afa_source.html">moc_lgen2diagrameditor.cpp</a></li>
+<li>C:/qt/nya-cats/release/<a class="el" href="release_2moc__lgen2diagrameditor_8cpp_source.html">moc_lgen2diagrameditor.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_l_gen2_diagram_editor.html">LGen2DiagramEditor</a></li>
+    <li class="footer">Документация по Nya-cats. Последние изменения: Пн 14 Янв 2013 16:34:01. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3 </li>
+  </ul>
+</div>
+</body>
+</html>

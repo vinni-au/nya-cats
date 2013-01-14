@@ -1,0 +1,1049 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3"/>
+<title>Nya-cats: Класс Grid</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Nya-cats
+   &#160;<span id="projectnumber">1.00</span>
+   </div>
+   <div id="projectbrief">Nya-cats</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="hierarchy.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_grid.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Перечисления</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Элементы перечислений</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Свойства</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Макросы</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#signals">Сигналы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pro-attribs">Защищенные данные</a> &#124;
+<a href="class_grid-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс Grid</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_211fa46df525a843ac1aaaa8f63a57983_source.html">grid.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:Grid:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_grid.png" usemap="#Grid_map" alt=""/>
+  <map id="Grid_map" name="Grid_map">
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Сигналы</h2></td></tr>
+<tr class="memitem:a581161c966eab422f6a0ee5c89141c5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#a581161c966eab422f6a0ee5c89141c5e">sigFindOutSituation</a> (int x, int y)</td></tr>
+<tr class="separator:a581161c966eab422f6a0ee5c89141c5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a8a21b179ec499898787f9350412074"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#a1a8a21b179ec499898787f9350412074">sigDoVisualizerCell</a> (<a class="el" href="class_cell.html">Cell</a> *cell)</td></tr>
+<tr class="separator:a1a8a21b179ec499898787f9350412074"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0b159e75360785b1a21d735eabf3423"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#ac0b159e75360785b1a21d735eabf3423">sigGetInfo</a> (int x, int y)</td></tr>
+<tr class="separator:ac0b159e75360785b1a21d735eabf3423"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a581161c966eab422f6a0ee5c89141c5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#a581161c966eab422f6a0ee5c89141c5e">sigFindOutSituation</a> (int x, int y)</td></tr>
+<tr class="separator:a581161c966eab422f6a0ee5c89141c5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a8a21b179ec499898787f9350412074"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#a1a8a21b179ec499898787f9350412074">sigDoVisualizerCell</a> (<a class="el" href="class_cell.html">Cell</a> *cell)</td></tr>
+<tr class="separator:a1a8a21b179ec499898787f9350412074"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0b159e75360785b1a21d735eabf3423"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#ac0b159e75360785b1a21d735eabf3423">sigGetInfo</a> (int x, int y)</td></tr>
+<tr class="separator:ac0b159e75360785b1a21d735eabf3423"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ade86a7ed28d2616b98bee6ce90486e1e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#ade86a7ed28d2616b98bee6ce90486e1e">Grid</a> (int count, QRectF &amp;rect, QColor &amp;color, QGraphicsScene *scene)</td></tr>
+<tr class="separator:ade86a7ed28d2616b98bee6ce90486e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaacd0abb210696e0d63bcb60c2bef62b"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_cell.html">Cell</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#aaacd0abb210696e0d63bcb60c2bef62b">GetCells</a> ()</td></tr>
+<tr class="separator:aaacd0abb210696e0d63bcb60c2bef62b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a823660581fb7d3e06bfb2a0cb51c4d4b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#a823660581fb7d3e06bfb2a0cb51c4d4b">GetCell</a> (int x, int y)</td></tr>
+<tr class="separator:a823660581fb7d3e06bfb2a0cb51c4d4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef800d1c5fe482616fe4b39a405010eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#aef800d1c5fe482616fe4b39a405010eb">GetCell</a> (int index)</td></tr>
+<tr class="separator:aef800d1c5fe482616fe4b39a405010eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e62412a040a2d43e44d355715dea8d6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#a9e62412a040a2d43e44d355715dea8d6">GetSideCount</a> ()</td></tr>
+<tr class="separator:a9e62412a040a2d43e44d355715dea8d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa197aeabf720e86f90c45197230b984c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#aa197aeabf720e86f90c45197230b984c">GetCount</a> ()</td></tr>
+<tr class="separator:aa197aeabf720e86f90c45197230b984c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1575c3a8902576b3fc09ca8c9b2744e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_item.html">GameItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#a1575c3a8902576b3fc09ca8c9b2744e8">GetGameItem</a> (int x, int y)</td></tr>
+<tr class="separator:a1575c3a8902576b3fc09ca8c9b2744e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7746eff0c272ac6660a84ad219830719"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_item.html">GameItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#a7746eff0c272ac6660a84ad219830719">GetGameItem</a> (int index)</td></tr>
+<tr class="separator:a7746eff0c272ac6660a84ad219830719"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a445a14b06e1cd76ac1a6f81d34b90f17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#a445a14b06e1cd76ac1a6f81d34b90f17">MoveGameItemTo</a> (int fromX, int fromY, int toX, int toY)</td></tr>
+<tr class="separator:a445a14b06e1cd76ac1a6f81d34b90f17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a825d968aa4c07d59d6683d972af88dc0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#a825d968aa4c07d59d6683d972af88dc0">FindCellByItemFrameId</a> (int id)</td></tr>
+<tr class="separator:a825d968aa4c07d59d6683d972af88dc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c093ec8e1b26ed3280c0731109937c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#a1c093ec8e1b26ed3280c0731109937c1">Clear</a> ()</td></tr>
+<tr class="separator:a1c093ec8e1b26ed3280c0731109937c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade86a7ed28d2616b98bee6ce90486e1e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#ade86a7ed28d2616b98bee6ce90486e1e">Grid</a> (int count, QRectF &amp;rect, QColor &amp;color, QGraphicsScene *scene)</td></tr>
+<tr class="separator:ade86a7ed28d2616b98bee6ce90486e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfa28b507c7c03258b1f28813e558e4a"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_cell.html">Cell</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#acfa28b507c7c03258b1f28813e558e4a">GetCells</a> ()</td></tr>
+<tr class="separator:acfa28b507c7c03258b1f28813e558e4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5232441a648eaa5bc5aaf7b608d65606"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#a5232441a648eaa5bc5aaf7b608d65606">GetCell</a> (int x, int y)</td></tr>
+<tr class="separator:a5232441a648eaa5bc5aaf7b608d65606"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afeb19dfa1fd9c1952fd535d945b66803"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#afeb19dfa1fd9c1952fd535d945b66803">GetCell</a> (int index)</td></tr>
+<tr class="separator:afeb19dfa1fd9c1952fd535d945b66803"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e62412a040a2d43e44d355715dea8d6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#a9e62412a040a2d43e44d355715dea8d6">GetSideCount</a> ()</td></tr>
+<tr class="separator:a9e62412a040a2d43e44d355715dea8d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa197aeabf720e86f90c45197230b984c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#aa197aeabf720e86f90c45197230b984c">GetCount</a> ()</td></tr>
+<tr class="separator:aa197aeabf720e86f90c45197230b984c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2c90550b4521be431bfc1980b7967a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_item.html">GameItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#aa2c90550b4521be431bfc1980b7967a5">GetGameItem</a> (int x, int y)</td></tr>
+<tr class="separator:aa2c90550b4521be431bfc1980b7967a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a097b777c2f3c45c9f75304a6fb6c6020"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_item.html">GameItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#a097b777c2f3c45c9f75304a6fb6c6020">GetGameItem</a> (int index)</td></tr>
+<tr class="separator:a097b777c2f3c45c9f75304a6fb6c6020"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a445a14b06e1cd76ac1a6f81d34b90f17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#a445a14b06e1cd76ac1a6f81d34b90f17">MoveGameItemTo</a> (int fromX, int fromY, int toX, int toY)</td></tr>
+<tr class="separator:a445a14b06e1cd76ac1a6f81d34b90f17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefcbaed899ba3fc8e063857a27e520d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#aefcbaed899ba3fc8e063857a27e520d0">FindCellByItemFrameId</a> (int id)</td></tr>
+<tr class="separator:aefcbaed899ba3fc8e063857a27e520d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c093ec8e1b26ed3280c0731109937c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#a1c093ec8e1b26ed3280c0731109937c1">Clear</a> ()</td></tr>
+<tr class="separator:a1c093ec8e1b26ed3280c0731109937c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Защищенные данные</h2></td></tr>
+<tr class="memitem:a7df62a4d6f80b779c1ffebd645ea8d2c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#a7df62a4d6f80b779c1ffebd645ea8d2c">m_Count</a></td></tr>
+<tr class="separator:a7df62a4d6f80b779c1ffebd645ea8d2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3af909c8dfab0cb7454edeedec81341b"><td class="memItemLeft" align="right" valign="top">QRectF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#a3af909c8dfab0cb7454edeedec81341b">m_Rect</a></td></tr>
+<tr class="separator:a3af909c8dfab0cb7454edeedec81341b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f0e55832f709aa7522f7bab9f1de483"><td class="memItemLeft" align="right" valign="top">QColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#a7f0e55832f709aa7522f7bab9f1de483">m_Color</a></td></tr>
+<tr class="separator:a7f0e55832f709aa7522f7bab9f1de483"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90177c957c477a3c5ae2ba1a5955ab81"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_cell.html">Cell</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#a90177c957c477a3c5ae2ba1a5955ab81">m_Cells</a></td></tr>
+<tr class="separator:a90177c957c477a3c5ae2ba1a5955ab81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdaa1adf76dce132e1dd2e8c6ad73757"><td class="memItemLeft" align="right" valign="top">QGraphicsScene *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#abdaa1adf76dce132e1dd2e8c6ad73757">m_Scene</a></td></tr>
+<tr class="separator:abdaa1adf76dce132e1dd2e8c6ad73757"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab896b4c0f770258f965f372dc9098016"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid.html#ab896b4c0f770258f965f372dc9098016">m_contextMenuCell</a></td></tr>
+<tr class="separator:ab896b4c0f770258f965f372dc9098016"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock">
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_211fa46df525a843ac1aaaa8f63a57983_source.html">grid.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_211fa46df525a843ac1aaaa8f63a57983_source.html#l00008">8</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a class="anchor" id="ade86a7ed28d2616b98bee6ce90486e1e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Grid::Grid </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QRectF &amp;&#160;</td>
+          <td class="paramname"><em>rect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QColor &amp;&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QGraphicsScene *&#160;</td>
+          <td class="paramname"><em>scene</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2adc9243bb3db247c3aef438bcd9c1dbb_source.html">grid.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2adc9243bb3db247c3aef438bcd9c1dbb_source.html#l00005">5</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ade86a7ed28d2616b98bee6ce90486e1e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Grid::Grid </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QRectF &amp;&#160;</td>
+          <td class="paramname"><em>rect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QColor &amp;&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QGraphicsScene *&#160;</td>
+          <td class="paramname"><em>scene</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="a1c093ec8e1b26ed3280c0731109937c1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grid::Clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2adc9243bb3db247c3aef438bcd9c1dbb_source.html">grid.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2adc9243bb3db247c3aef438bcd9c1dbb_source.html#l00121">121</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a1c093ec8e1b26ed3280c0731109937c1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grid::Clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a825d968aa4c07d59d6683d972af88dc0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_cell.html">Cell</a> * Grid::FindCellByItemFrameId </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2adc9243bb3db247c3aef438bcd9c1dbb_source.html">grid.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2adc9243bb3db247c3aef438bcd9c1dbb_source.html#l00106">106</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aefcbaed899ba3fc8e063857a27e520d0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_cell.html">Cell</a>* Grid::FindCellByItemFrameId </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a823660581fb7d3e06bfb2a0cb51c4d4b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_cell.html">Cell</a> * Grid::GetCell </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2adc9243bb3db247c3aef438bcd9c1dbb_source.html">grid.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2adc9243bb3db247c3aef438bcd9c1dbb_source.html#l00043">43</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a5232441a648eaa5bc5aaf7b608d65606"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_cell.html">Cell</a>* Grid::GetCell </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afeb19dfa1fd9c1952fd535d945b66803"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_cell.html">Cell</a>* Grid::GetCell </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aef800d1c5fe482616fe4b39a405010eb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_cell.html">Cell</a> * Grid::GetCell </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2adc9243bb3db247c3aef438bcd9c1dbb_source.html">grid.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2adc9243bb3db247c3aef438bcd9c1dbb_source.html#l00053">53</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aaacd0abb210696e0d63bcb60c2bef62b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; <a class="el" href="class_cell.html">Cell</a> * &gt; Grid::GetCells </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2adc9243bb3db247c3aef438bcd9c1dbb_source.html">grid.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2adc9243bb3db247c3aef438bcd9c1dbb_source.html#l00038">38</a></p>
+
+</div>
+</div>
+<a class="anchor" id="acfa28b507c7c03258b1f28813e558e4a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="class_cell.html">Cell</a>*&gt; Grid::GetCells </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa197aeabf720e86f90c45197230b984c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Grid::GetCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa197aeabf720e86f90c45197230b984c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Grid::GetCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2adc9243bb3db247c3aef438bcd9c1dbb_source.html">grid.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2adc9243bb3db247c3aef438bcd9c1dbb_source.html#l00066">66</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aa2c90550b4521be431bfc1980b7967a5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_game_item.html">GameItem</a>* Grid::GetGameItem </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1575c3a8902576b3fc09ca8c9b2744e8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_game_item.html">GameItem</a> * Grid::GetGameItem </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2adc9243bb3db247c3aef438bcd9c1dbb_source.html">grid.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2adc9243bb3db247c3aef438bcd9c1dbb_source.html#l00071">71</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a097b777c2f3c45c9f75304a6fb6c6020"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_game_item.html">GameItem</a>* Grid::GetGameItem </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7746eff0c272ac6660a84ad219830719"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_game_item.html">GameItem</a> * Grid::GetGameItem </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2adc9243bb3db247c3aef438bcd9c1dbb_source.html">grid.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2adc9243bb3db247c3aef438bcd9c1dbb_source.html#l00079">79</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a9e62412a040a2d43e44d355715dea8d6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Grid::GetSideCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9e62412a040a2d43e44d355715dea8d6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Grid::GetSideCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2adc9243bb3db247c3aef438bcd9c1dbb_source.html">grid.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2adc9243bb3db247c3aef438bcd9c1dbb_source.html#l00061">61</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a445a14b06e1cd76ac1a6f81d34b90f17"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grid::MoveGameItemTo </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fromX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fromY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>toX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>toY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2adc9243bb3db247c3aef438bcd9c1dbb_source.html">grid.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2adc9243bb3db247c3aef438bcd9c1dbb_source.html#l00088">88</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a445a14b06e1cd76ac1a6f81d34b90f17"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grid::MoveGameItemTo </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fromX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fromY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>toX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>toY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1a8a21b179ec499898787f9350412074"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grid::sigDoVisualizerCell </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_cell.html">Cell</a> *&#160;</td>
+          <td class="paramname"><em>cell</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1a8a21b179ec499898787f9350412074"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grid::sigDoVisualizerCell </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_cell.html">Cell</a> *&#160;</td>
+          <td class="paramname"><em>cell</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__grid_8cpp_source.html">moc_grid.cpp</a> строка <a class="el" href="debug_2moc__grid_8cpp_source.html#l00108">108</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a581161c966eab422f6a0ee5c89141c5e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grid::sigFindOutSituation </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a581161c966eab422f6a0ee5c89141c5e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grid::sigFindOutSituation </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__grid_8cpp_source.html">moc_grid.cpp</a> строка <a class="el" href="debug_2moc__grid_8cpp_source.html#l00101">101</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ac0b159e75360785b1a21d735eabf3423"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Grid::sigGetInfo </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac0b159e75360785b1a21d735eabf3423"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Grid::sigGetInfo </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__grid_8cpp_source.html">moc_grid.cpp</a> строка <a class="el" href="debug_2moc__grid_8cpp_source.html#l00115">115</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a class="anchor" id="a90177c957c477a3c5ae2ba1a5955ab81"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; <a class="el" href="class_cell.html">Cell</a> * &gt; Grid::m_Cells</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_211fa46df525a843ac1aaaa8f63a57983_source.html">grid.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_211fa46df525a843ac1aaaa8f63a57983_source.html#l00015">15</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a7f0e55832f709aa7522f7bab9f1de483"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor Grid::m_Color</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_211fa46df525a843ac1aaaa8f63a57983_source.html">grid.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_211fa46df525a843ac1aaaa8f63a57983_source.html#l00014">14</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab896b4c0f770258f965f372dc9098016"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_cell.html">Cell</a> * Grid::m_contextMenuCell</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_211fa46df525a843ac1aaaa8f63a57983_source.html">grid.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_211fa46df525a843ac1aaaa8f63a57983_source.html#l00017">17</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a7df62a4d6f80b779c1ffebd645ea8d2c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Grid::m_Count</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_211fa46df525a843ac1aaaa8f63a57983_source.html">grid.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_211fa46df525a843ac1aaaa8f63a57983_source.html#l00012">12</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a3af909c8dfab0cb7454edeedec81341b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRectF Grid::m_Rect</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_211fa46df525a843ac1aaaa8f63a57983_source.html">grid.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_211fa46df525a843ac1aaaa8f63a57983_source.html#l00013">13</a></p>
+
+</div>
+</div>
+<a class="anchor" id="abdaa1adf76dce132e1dd2e8c6ad73757"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QGraphicsScene * Grid::m_Scene</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_211fa46df525a843ac1aaaa8f63a57983_source.html">grid.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_211fa46df525a843ac1aaaa8f63a57983_source.html#l00016">16</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/visualize/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_211fa46df525a843ac1aaaa8f63a57983_source.html">grid.h</a></li>
+<li>C:/qt/nya-cats/visualize/<a class="el" href="visualize_2grid_8h_source.html">grid.h</a></li>
+<li>C:/qt/nya-cats/debug/<a class="el" href="debug_2moc__grid_8cpp_source.html">moc_grid.cpp</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/debug/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2f330571341973c361af9bb4d56c93114_source.html">moc_grid.cpp</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/release/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_274a1e0ccc28ac17049624f6a0147cb9d_source.html">moc_grid.cpp</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/visualize/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2adc9243bb3db247c3aef438bcd9c1dbb_source.html">grid.cpp</a></li>
+<li>C:/qt/nya-cats/release/<a class="el" href="release_2moc__grid_8cpp_source.html">moc_grid.cpp</a></li>
+<li>C:/qt/nya-cats/visualize/<a class="el" href="visualize_2grid_8cpp_source.html">grid.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_grid.html">Grid</a></li>
+    <li class="footer">Документация по Nya-cats. Последние изменения: Пн 14 Янв 2013 16:34:01. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3 </li>
+  </ul>
+</div>
+</body>
+</html>

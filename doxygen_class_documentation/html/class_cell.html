@@ -1,0 +1,1419 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3"/>
+<title>Nya-cats: Класс Cell</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Nya-cats
+   &#160;<span id="projectnumber">1.00</span>
+   </div>
+   <div id="projectbrief">Nya-cats</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="hierarchy.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_cell.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Перечисления</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Элементы перечислений</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Свойства</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Макросы</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#signals">Сигналы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
+<a href="#pro-attribs">Защищенные данные</a> &#124;
+<a href="class_cell-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс Cell</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2240c28efb4054397466e8ec288108ed0_source.html">cell.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:Cell:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_cell.png" usemap="#Cell_map" alt=""/>
+  <map id="Cell_map" name="Cell_map">
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Сигналы</h2></td></tr>
+<tr class="memitem:a2d4b967aabd621d694ddbed0b90eed00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a2d4b967aabd621d694ddbed0b90eed00">contextMenuExecutedOn</a> (<a class="el" href="class_cell.html">Cell</a> *cell)</td></tr>
+<tr class="separator:a2d4b967aabd621d694ddbed0b90eed00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af37dc27a4daa6e088c82e104d774b6a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#af37dc27a4daa6e088c82e104d774b6a1">sigDoVisualizerCell</a> (<a class="el" href="class_cell.html">Cell</a> *cell)</td></tr>
+<tr class="separator:af37dc27a4daa6e088c82e104d774b6a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a375c4e79259d402ec1e747a78c3794a3"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a375c4e79259d402ec1e747a78c3794a3">sigGetInfo</a> (int x, int y)</td></tr>
+<tr class="separator:a375c4e79259d402ec1e747a78c3794a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d4b967aabd621d694ddbed0b90eed00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a2d4b967aabd621d694ddbed0b90eed00">contextMenuExecutedOn</a> (<a class="el" href="class_cell.html">Cell</a> *cell)</td></tr>
+<tr class="separator:a2d4b967aabd621d694ddbed0b90eed00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af37dc27a4daa6e088c82e104d774b6a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#af37dc27a4daa6e088c82e104d774b6a1">sigDoVisualizerCell</a> (<a class="el" href="class_cell.html">Cell</a> *cell)</td></tr>
+<tr class="separator:af37dc27a4daa6e088c82e104d774b6a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a375c4e79259d402ec1e747a78c3794a3"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a375c4e79259d402ec1e747a78c3794a3">sigGetInfo</a> (int x, int y)</td></tr>
+<tr class="separator:a375c4e79259d402ec1e747a78c3794a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a508dbd3fd5b3b988ae2405063f787f98"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a508dbd3fd5b3b988ae2405063f787f98">Cell</a> (int xIndex, int yIndex, QRectF &amp;rect, QColor &amp;color, QMenu *contextMenu=0)</td></tr>
+<tr class="separator:a508dbd3fd5b3b988ae2405063f787f98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5b2ec915956734b2ebcccb73c3f98e8"><td class="memItemLeft" align="right" valign="top">QRectF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#ae5b2ec915956734b2ebcccb73c3f98e8">boundingRect</a> () const </td></tr>
+<tr class="separator:ae5b2ec915956734b2ebcccb73c3f98e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcbe495223f91b760fb93fa17aac991a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#afcbe495223f91b760fb93fa17aac991a">paint</a> (QPainter *painter, const QStyleOptionGraphicsItem *item, QWidget *widget)</td></tr>
+<tr class="separator:afcbe495223f91b760fb93fa17aac991a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91e44d6a6b1b4ac59babaec3cb99ea66"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a91e44d6a6b1b4ac59babaec3cb99ea66">GetX</a> ()</td></tr>
+<tr class="separator:a91e44d6a6b1b4ac59babaec3cb99ea66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67badd925fbe193a1a29557c1917e00f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a67badd925fbe193a1a29557c1917e00f">GetY</a> ()</td></tr>
+<tr class="separator:a67badd925fbe193a1a29557c1917e00f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a089646fb36ac094bb1d0b91bc01e3f7f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_item.html">GameItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a089646fb36ac094bb1d0b91bc01e3f7f">GetGameItem</a> ()</td></tr>
+<tr class="separator:a089646fb36ac094bb1d0b91bc01e3f7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2229f507e3ce9265ddbb724caecebbb8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a2229f507e3ce9265ddbb724caecebbb8">SetGameItem</a> (<a class="el" href="class_game_item.html">GameItem</a> *item)</td></tr>
+<tr class="separator:a2229f507e3ce9265ddbb724caecebbb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade6c4b34a5435bd7bf8bf244ce68cf40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#ade6c4b34a5435bd7bf8bf244ce68cf40">Update</a> ()</td></tr>
+<tr class="separator:ade6c4b34a5435bd7bf8bf244ce68cf40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b75b6f17d7fa5ed7557207e85bdd3f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a1b75b6f17d7fa5ed7557207e85bdd3f6">setContextMenu</a> (QMenu *contextMenu)</td></tr>
+<tr class="separator:a1b75b6f17d7fa5ed7557207e85bdd3f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a508dbd3fd5b3b988ae2405063f787f98"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a508dbd3fd5b3b988ae2405063f787f98">Cell</a> (int xIndex, int yIndex, QRectF &amp;rect, QColor &amp;color, QMenu *contextMenu=0)</td></tr>
+<tr class="separator:a508dbd3fd5b3b988ae2405063f787f98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5b2ec915956734b2ebcccb73c3f98e8"><td class="memItemLeft" align="right" valign="top">QRectF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#ae5b2ec915956734b2ebcccb73c3f98e8">boundingRect</a> () const </td></tr>
+<tr class="separator:ae5b2ec915956734b2ebcccb73c3f98e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcbe495223f91b760fb93fa17aac991a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#afcbe495223f91b760fb93fa17aac991a">paint</a> (QPainter *painter, const QStyleOptionGraphicsItem *item, QWidget *widget)</td></tr>
+<tr class="separator:afcbe495223f91b760fb93fa17aac991a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91e44d6a6b1b4ac59babaec3cb99ea66"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a91e44d6a6b1b4ac59babaec3cb99ea66">GetX</a> ()</td></tr>
+<tr class="separator:a91e44d6a6b1b4ac59babaec3cb99ea66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67badd925fbe193a1a29557c1917e00f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a67badd925fbe193a1a29557c1917e00f">GetY</a> ()</td></tr>
+<tr class="separator:a67badd925fbe193a1a29557c1917e00f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad805c3e20f921fc3e9729e7bb70513bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_item.html">GameItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#ad805c3e20f921fc3e9729e7bb70513bb">GetGameItem</a> ()</td></tr>
+<tr class="separator:ad805c3e20f921fc3e9729e7bb70513bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2229f507e3ce9265ddbb724caecebbb8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a2229f507e3ce9265ddbb724caecebbb8">SetGameItem</a> (<a class="el" href="class_game_item.html">GameItem</a> *item)</td></tr>
+<tr class="separator:a2229f507e3ce9265ddbb724caecebbb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade6c4b34a5435bd7bf8bf244ce68cf40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#ade6c4b34a5435bd7bf8bf244ce68cf40">Update</a> ()</td></tr>
+<tr class="separator:ade6c4b34a5435bd7bf8bf244ce68cf40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b75b6f17d7fa5ed7557207e85bdd3f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a1b75b6f17d7fa5ed7557207e85bdd3f6">setContextMenu</a> (QMenu *contextMenu)</td></tr>
+<tr class="separator:a1b75b6f17d7fa5ed7557207e85bdd3f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:ab36897c962a4425eebb00172eb7f7430"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#ab36897c962a4425eebb00172eb7f7430">contextMenuEvent</a> (QGraphicsSceneContextMenuEvent *event)</td></tr>
+<tr class="separator:ab36897c962a4425eebb00172eb7f7430"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a522f8850a2c033f29e6a5e58ea62839c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a522f8850a2c033f29e6a5e58ea62839c">hoverEnterEvent</a> (QGraphicsSceneHoverEvent *event)</td></tr>
+<tr class="separator:a522f8850a2c033f29e6a5e58ea62839c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08aae7dc656554efc9ad59f611b384a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a08aae7dc656554efc9ad59f611b384a5">hoverLeaveEvent</a> (QGraphicsSceneHoverEvent *event)</td></tr>
+<tr class="separator:a08aae7dc656554efc9ad59f611b384a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9cbc2f07f61fe3a0d68af7bd30e3cdf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#ac9cbc2f07f61fe3a0d68af7bd30e3cdf">mousePressEvent</a> (QGraphicsSceneMouseEvent *event)</td></tr>
+<tr class="separator:ac9cbc2f07f61fe3a0d68af7bd30e3cdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad24871a1e6c5245f4bd874dceb8f29de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#ad24871a1e6c5245f4bd874dceb8f29de">mouseMoveEvent</a> (QGraphicsSceneMouseEvent *event)</td></tr>
+<tr class="separator:ad24871a1e6c5245f4bd874dceb8f29de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40656cc92895bfbff1a04e41d9918e51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a40656cc92895bfbff1a04e41d9918e51">mouseReleaseEvent</a> (QGraphicsSceneMouseEvent *event)</td></tr>
+<tr class="separator:a40656cc92895bfbff1a04e41d9918e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a6f351facad6a78f38fa95faa194f96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a5a6f351facad6a78f38fa95faa194f96">dragEnterEvent</a> (QGraphicsSceneDragDropEvent *event)</td></tr>
+<tr class="separator:a5a6f351facad6a78f38fa95faa194f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6405bea25a6ac9731219f11878be7a29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a6405bea25a6ac9731219f11878be7a29">dragLeaveEvent</a> (QGraphicsSceneDragDropEvent *event)</td></tr>
+<tr class="separator:a6405bea25a6ac9731219f11878be7a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4988920897ae88a79fa8192fdd55f0b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a4988920897ae88a79fa8192fdd55f0b5">dropEvent</a> (QGraphicsSceneDragDropEvent *event)</td></tr>
+<tr class="separator:a4988920897ae88a79fa8192fdd55f0b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab36897c962a4425eebb00172eb7f7430"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#ab36897c962a4425eebb00172eb7f7430">contextMenuEvent</a> (QGraphicsSceneContextMenuEvent *event)</td></tr>
+<tr class="separator:ab36897c962a4425eebb00172eb7f7430"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a522f8850a2c033f29e6a5e58ea62839c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a522f8850a2c033f29e6a5e58ea62839c">hoverEnterEvent</a> (QGraphicsSceneHoverEvent *event)</td></tr>
+<tr class="separator:a522f8850a2c033f29e6a5e58ea62839c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08aae7dc656554efc9ad59f611b384a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a08aae7dc656554efc9ad59f611b384a5">hoverLeaveEvent</a> (QGraphicsSceneHoverEvent *event)</td></tr>
+<tr class="separator:a08aae7dc656554efc9ad59f611b384a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9cbc2f07f61fe3a0d68af7bd30e3cdf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#ac9cbc2f07f61fe3a0d68af7bd30e3cdf">mousePressEvent</a> (QGraphicsSceneMouseEvent *event)</td></tr>
+<tr class="separator:ac9cbc2f07f61fe3a0d68af7bd30e3cdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad24871a1e6c5245f4bd874dceb8f29de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#ad24871a1e6c5245f4bd874dceb8f29de">mouseMoveEvent</a> (QGraphicsSceneMouseEvent *event)</td></tr>
+<tr class="separator:ad24871a1e6c5245f4bd874dceb8f29de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40656cc92895bfbff1a04e41d9918e51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a40656cc92895bfbff1a04e41d9918e51">mouseReleaseEvent</a> (QGraphicsSceneMouseEvent *event)</td></tr>
+<tr class="separator:a40656cc92895bfbff1a04e41d9918e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a6f351facad6a78f38fa95faa194f96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a5a6f351facad6a78f38fa95faa194f96">dragEnterEvent</a> (QGraphicsSceneDragDropEvent *event)</td></tr>
+<tr class="separator:a5a6f351facad6a78f38fa95faa194f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6405bea25a6ac9731219f11878be7a29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a6405bea25a6ac9731219f11878be7a29">dragLeaveEvent</a> (QGraphicsSceneDragDropEvent *event)</td></tr>
+<tr class="separator:a6405bea25a6ac9731219f11878be7a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4988920897ae88a79fa8192fdd55f0b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a4988920897ae88a79fa8192fdd55f0b5">dropEvent</a> (QGraphicsSceneDragDropEvent *event)</td></tr>
+<tr class="separator:a4988920897ae88a79fa8192fdd55f0b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Защищенные данные</h2></td></tr>
+<tr class="memitem:a6979d1a8ade7f0a6419fcfe4cd2be8b2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a6979d1a8ade7f0a6419fcfe4cd2be8b2">m_xIndex</a></td></tr>
+<tr class="separator:a6979d1a8ade7f0a6419fcfe4cd2be8b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2307ec9f6194515d2e399a6e16dfc416"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a2307ec9f6194515d2e399a6e16dfc416">m_yIndex</a></td></tr>
+<tr class="separator:a2307ec9f6194515d2e399a6e16dfc416"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a870b275658020dc6d2cdc48beadf0b35"><td class="memItemLeft" align="right" valign="top">QRectF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a870b275658020dc6d2cdc48beadf0b35">m_Rect</a></td></tr>
+<tr class="separator:a870b275658020dc6d2cdc48beadf0b35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af039f663a38dac420bbe62c2f90c3bb5"><td class="memItemLeft" align="right" valign="top">QColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#af039f663a38dac420bbe62c2f90c3bb5">m_Color</a></td></tr>
+<tr class="separator:af039f663a38dac420bbe62c2f90c3bb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a129c84e0631f5ce92ee23c26d0a755aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_item.html">GameItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a129c84e0631f5ce92ee23c26d0a755aa">m_Item</a></td></tr>
+<tr class="separator:a129c84e0631f5ce92ee23c26d0a755aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c54c9c0080886a8bad88f957a6bb9bd"><td class="memItemLeft" align="right" valign="top">QMenu *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a3c54c9c0080886a8bad88f957a6bb9bd">m_contextMenu</a></td></tr>
+<tr class="separator:a3c54c9c0080886a8bad88f957a6bb9bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock">
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2240c28efb4054397466e8ec288108ed0_source.html">cell.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2240c28efb4054397466e8ec288108ed0_source.html#l00007">7</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a class="anchor" id="a508dbd3fd5b3b988ae2405063f787f98"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Cell::Cell </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>xIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>yIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QRectF &amp;&#160;</td>
+          <td class="paramname"><em>rect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QColor &amp;&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QMenu *&#160;</td>
+          <td class="paramname"><em>contextMenu</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html">cell.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html#l00003">3</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a508dbd3fd5b3b988ae2405063f787f98"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Cell::Cell </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>xIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>yIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QRectF &amp;&#160;</td>
+          <td class="paramname"><em>rect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QColor &amp;&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QMenu *&#160;</td>
+          <td class="paramname"><em>contextMenu</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="ae5b2ec915956734b2ebcccb73c3f98e8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRectF Cell::boundingRect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html">cell.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html#l00016">16</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ae5b2ec915956734b2ebcccb73c3f98e8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRectF Cell::boundingRect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab36897c962a4425eebb00172eb7f7430"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::contextMenuEvent </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneContextMenuEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html">cell.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html#l00167">167</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab36897c962a4425eebb00172eb7f7430"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::contextMenuEvent </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneContextMenuEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2d4b967aabd621d694ddbed0b90eed00"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::contextMenuExecutedOn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_cell.html">Cell</a> *&#160;</td>
+          <td class="paramname"><em>cell</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__cell_8cpp_source.html">moc_cell.cpp</a> строка <a class="el" href="debug_2moc__cell_8cpp_source.html#l00090">90</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a2d4b967aabd621d694ddbed0b90eed00"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::contextMenuExecutedOn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_cell.html">Cell</a> *&#160;</td>
+          <td class="paramname"><em>cell</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5a6f351facad6a78f38fa95faa194f96"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::dragEnterEvent </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneDragDropEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5a6f351facad6a78f38fa95faa194f96"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::dragEnterEvent </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneDragDropEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html">cell.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html#l00073">73</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a6405bea25a6ac9731219f11878be7a29"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::dragLeaveEvent </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneDragDropEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6405bea25a6ac9731219f11878be7a29"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::dragLeaveEvent </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneDragDropEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html">cell.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html#l00087">87</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a4988920897ae88a79fa8192fdd55f0b5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::dropEvent </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneDragDropEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html">cell.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html#l00093">93</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a4988920897ae88a79fa8192fdd55f0b5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::dropEvent </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneDragDropEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a089646fb36ac094bb1d0b91bc01e3f7f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_game_item.html">GameItem</a> * Cell::GetGameItem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html">cell.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html#l00151">151</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ad805c3e20f921fc3e9729e7bb70513bb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_game_item.html">GameItem</a>* Cell::GetGameItem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a91e44d6a6b1b4ac59babaec3cb99ea66"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Cell::GetX </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a91e44d6a6b1b4ac59babaec3cb99ea66"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Cell::GetX </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html">cell.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html#l00146">146</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a67badd925fbe193a1a29557c1917e00f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Cell::GetY </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html">cell.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html#l00141">141</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a67badd925fbe193a1a29557c1917e00f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Cell::GetY </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a522f8850a2c033f29e6a5e58ea62839c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::hoverEnterEvent </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneHoverEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html">cell.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html#l00059">59</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a522f8850a2c033f29e6a5e58ea62839c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::hoverEnterEvent </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneHoverEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a08aae7dc656554efc9ad59f611b384a5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::hoverLeaveEvent </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneHoverEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a08aae7dc656554efc9ad59f611b384a5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::hoverLeaveEvent </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneHoverEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html">cell.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html#l00067">67</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ad24871a1e6c5245f4bd874dceb8f29de"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::mouseMoveEvent </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad24871a1e6c5245f4bd874dceb8f29de"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::mouseMoveEvent </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html">cell.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html#l00112">112</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ac9cbc2f07f61fe3a0d68af7bd30e3cdf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::mousePressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac9cbc2f07f61fe3a0d68af7bd30e3cdf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::mousePressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html">cell.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html#l00106">106</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a40656cc92895bfbff1a04e41d9918e51"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::mouseReleaseEvent </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html">cell.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html#l00135">135</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a40656cc92895bfbff1a04e41d9918e51"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::mouseReleaseEvent </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afcbe495223f91b760fb93fa17aac991a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::paint </td>
+          <td>(</td>
+          <td class="paramtype">QPainter *&#160;</td>
+          <td class="paramname"><em>painter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStyleOptionGraphicsItem *&#160;</td>
+          <td class="paramname"><em>item</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>widget</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html">cell.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html#l00021">21</a></p>
+
+</div>
+</div>
+<a class="anchor" id="afcbe495223f91b760fb93fa17aac991a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::paint </td>
+          <td>(</td>
+          <td class="paramtype">QPainter *&#160;</td>
+          <td class="paramname"><em>painter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStyleOptionGraphicsItem *&#160;</td>
+          <td class="paramname"><em>item</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>widget</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1b75b6f17d7fa5ed7557207e85bdd3f6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::setContextMenu </td>
+          <td>(</td>
+          <td class="paramtype">QMenu *&#160;</td>
+          <td class="paramname"><em>contextMenu</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2240c28efb4054397466e8ec288108ed0_source.html">cell.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2240c28efb4054397466e8ec288108ed0_source.html#l00030">30</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a1b75b6f17d7fa5ed7557207e85bdd3f6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::setContextMenu </td>
+          <td>(</td>
+          <td class="paramtype">QMenu *&#160;</td>
+          <td class="paramname"><em>contextMenu</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="visualize_2cell_8h_source.html">cell.h</a> строка <a class="el" href="visualize_2cell_8h_source.html#l00030">30</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a2229f507e3ce9265ddbb724caecebbb8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::SetGameItem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game_item.html">GameItem</a> *&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2229f507e3ce9265ddbb724caecebbb8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::SetGameItem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game_item.html">GameItem</a> *&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html">cell.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html#l00156">156</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af37dc27a4daa6e088c82e104d774b6a1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::sigDoVisualizerCell </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_cell.html">Cell</a> *&#160;</td>
+          <td class="paramname"><em>cell</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af37dc27a4daa6e088c82e104d774b6a1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::sigDoVisualizerCell </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_cell.html">Cell</a> *&#160;</td>
+          <td class="paramname"><em>cell</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__cell_8cpp_source.html">moc_cell.cpp</a> строка <a class="el" href="debug_2moc__cell_8cpp_source.html#l00097">97</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a375c4e79259d402ec1e747a78c3794a3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Cell::sigGetInfo </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a375c4e79259d402ec1e747a78c3794a3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Cell::sigGetInfo </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__cell_8cpp_source.html">moc_cell.cpp</a> строка <a class="el" href="debug_2moc__cell_8cpp_source.html#l00104">104</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ade6c4b34a5435bd7bf8bf244ce68cf40"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html">cell.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html#l00162">162</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ade6c4b34a5435bd7bf8bf244ce68cf40"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cell::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a class="anchor" id="af039f663a38dac420bbe62c2f90c3bb5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor Cell::m_Color</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2240c28efb4054397466e8ec288108ed0_source.html">cell.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2240c28efb4054397466e8ec288108ed0_source.html#l00014">14</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a3c54c9c0080886a8bad88f957a6bb9bd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMenu * Cell::m_contextMenu</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2240c28efb4054397466e8ec288108ed0_source.html">cell.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2240c28efb4054397466e8ec288108ed0_source.html#l00016">16</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a129c84e0631f5ce92ee23c26d0a755aa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_game_item.html">GameItem</a> * Cell::m_Item</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2240c28efb4054397466e8ec288108ed0_source.html">cell.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2240c28efb4054397466e8ec288108ed0_source.html#l00015">15</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a870b275658020dc6d2cdc48beadf0b35"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRectF Cell::m_Rect</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2240c28efb4054397466e8ec288108ed0_source.html">cell.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2240c28efb4054397466e8ec288108ed0_source.html#l00013">13</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a6979d1a8ade7f0a6419fcfe4cd2be8b2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Cell::m_xIndex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2240c28efb4054397466e8ec288108ed0_source.html">cell.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2240c28efb4054397466e8ec288108ed0_source.html#l00011">11</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a2307ec9f6194515d2e399a6e16dfc416"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Cell::m_yIndex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2240c28efb4054397466e8ec288108ed0_source.html">cell.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2240c28efb4054397466e8ec288108ed0_source.html#l00012">12</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/visualize/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2240c28efb4054397466e8ec288108ed0_source.html">cell.h</a></li>
+<li>C:/qt/nya-cats/visualize/<a class="el" href="visualize_2cell_8h_source.html">cell.h</a></li>
+<li>C:/qt/nya-cats/debug/<a class="el" href="debug_2moc__cell_8cpp_source.html">moc_cell.cpp</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/debug/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_28ca2ba7c68c0f217794393eb1d45f2f6_source.html">moc_cell.cpp</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/release/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27599bf57c88a13b820e88892d02e93cc_source.html">moc_cell.cpp</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/visualize/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_27a4064fe97f97b4c02aa6b7cfbaadd00_source.html">cell.cpp</a></li>
+<li>C:/qt/nya-cats/release/<a class="el" href="release_2moc__cell_8cpp_source.html">moc_cell.cpp</a></li>
+<li>C:/qt/nya-cats/visualize/<a class="el" href="visualize_2cell_8cpp_source.html">cell.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_cell.html">Cell</a></li>
+    <li class="footer">Документация по Nya-cats. Последние изменения: Пн 14 Янв 2013 16:34:00. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,2746 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3"/>
+<title>Nya-cats: Класс NFramenetModel</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Nya-cats
+   &#160;<span id="projectnumber">1.00</span>
+   </div>
+   <div id="projectbrief">Nya-cats</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="hierarchy.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_n_framenet_model.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Перечисления</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Элементы перечислений</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Свойства</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Макросы</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#signals">Сигналы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
+<a href="#pro-attribs">Защищенные данные</a> &#124;
+<a href="class_n_framenet_model-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс NFramenetModel</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="core_2frame__model_2nframenetmodel_8h_source.html">nframenetmodel.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:NFramenetModel:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_n_framenet_model.png" usemap="#NFramenetModel_map" alt=""/>
+  <map id="NFramenetModel_map" name="NFramenetModel_map">
+<area href="class_n_framenet_model_hierarchical.html" alt="NFramenetModelHierarchical" shape="rect" coords="0,112,179,136"/>
+<area href="class_n_framenet_model_hierarchical.html" alt="NFramenetModelHierarchical" shape="rect" coords="189,112,368,136"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Сигналы</h2></td></tr>
+<tr class="memitem:a963afae706f70aca01bedd4d7a9ce1d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a963afae706f70aca01bedd4d7a9ce1d6">sigValueExists</a> (QModelIndex <a class="el" href="class_n_framenet_model.html#a1f68211ea7db22e99aecc6471cdd7c98">index</a>, QVariant value)</td></tr>
+<tr class="separator:a963afae706f70aca01bedd4d7a9ce1d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78c1d3a344d7f68f712ca592c88a8e24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a78c1d3a344d7f68f712ca592c88a8e24">sigDataChanged</a> ()</td></tr>
+<tr class="separator:a78c1d3a344d7f68f712ca592c88a8e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52e862eebbad7960f727c76b151c11ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a52e862eebbad7960f727c76b151c11ff">sigErrorWhileValidating</a> (QString errorText)</td></tr>
+<tr class="separator:a52e862eebbad7960f727c76b151c11ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c81756690408fbad5f8b7d953f38c30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a4c81756690408fbad5f8b7d953f38c30">sigIsaAdded</a> (QString source, QString dest)</td></tr>
+<tr class="separator:a4c81756690408fbad5f8b7d953f38c30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37102d954fe67cb1cb2596fcf4b85770"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a37102d954fe67cb1cb2596fcf4b85770">sigIsaChanged</a> (QString source, QString oldDest, QString newDest)</td></tr>
+<tr class="separator:a37102d954fe67cb1cb2596fcf4b85770"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae860f11063feddca5c9ba283a2c64438"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#ae860f11063feddca5c9ba283a2c64438">sigIsaDeleted</a> (QString source, QString dest)</td></tr>
+<tr class="separator:ae860f11063feddca5c9ba283a2c64438"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4ae207b4e997cb6f91c7d9668c49a1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#ae4ae207b4e997cb6f91c7d9668c49a1c">sigApoAdded</a> (QString source, QString dest)</td></tr>
+<tr class="separator:ae4ae207b4e997cb6f91c7d9668c49a1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08a2ec63b70b30d816f4dff1ff610a24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a08a2ec63b70b30d816f4dff1ff610a24">sigApoChanged</a> (QString oldSource, QString newSource, QString dest)</td></tr>
+<tr class="separator:a08a2ec63b70b30d816f4dff1ff610a24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55fc5874a2428837a360981e759aab9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a55fc5874a2428837a360981e759aab9f">sigApoDeleted</a> (QString source, QString dest)</td></tr>
+<tr class="separator:a55fc5874a2428837a360981e759aab9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09522d465e22f2cccce9d2a1a1486835"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a09522d465e22f2cccce9d2a1a1486835">sigFrameDeleted</a> (QString domainName)</td></tr>
+<tr class="separator:a09522d465e22f2cccce9d2a1a1486835"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1b36194bd643652b53ed479d8806aa1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#af1b36194bd643652b53ed479d8806aa1">sigFrameNameChanged</a> (QString oldName, QString newName)</td></tr>
+<tr class="separator:af1b36194bd643652b53ed479d8806aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a963afae706f70aca01bedd4d7a9ce1d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a963afae706f70aca01bedd4d7a9ce1d6">sigValueExists</a> (QModelIndex <a class="el" href="class_n_framenet_model.html#a1f68211ea7db22e99aecc6471cdd7c98">index</a>, QVariant value)</td></tr>
+<tr class="separator:a963afae706f70aca01bedd4d7a9ce1d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78c1d3a344d7f68f712ca592c88a8e24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a78c1d3a344d7f68f712ca592c88a8e24">sigDataChanged</a> ()</td></tr>
+<tr class="separator:a78c1d3a344d7f68f712ca592c88a8e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52e862eebbad7960f727c76b151c11ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a52e862eebbad7960f727c76b151c11ff">sigErrorWhileValidating</a> (QString errorText)</td></tr>
+<tr class="separator:a52e862eebbad7960f727c76b151c11ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c81756690408fbad5f8b7d953f38c30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a4c81756690408fbad5f8b7d953f38c30">sigIsaAdded</a> (QString source, QString dest)</td></tr>
+<tr class="separator:a4c81756690408fbad5f8b7d953f38c30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37102d954fe67cb1cb2596fcf4b85770"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a37102d954fe67cb1cb2596fcf4b85770">sigIsaChanged</a> (QString source, QString oldDest, QString newDest)</td></tr>
+<tr class="separator:a37102d954fe67cb1cb2596fcf4b85770"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae860f11063feddca5c9ba283a2c64438"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#ae860f11063feddca5c9ba283a2c64438">sigIsaDeleted</a> (QString source, QString dest)</td></tr>
+<tr class="separator:ae860f11063feddca5c9ba283a2c64438"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4ae207b4e997cb6f91c7d9668c49a1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#ae4ae207b4e997cb6f91c7d9668c49a1c">sigApoAdded</a> (QString source, QString dest)</td></tr>
+<tr class="separator:ae4ae207b4e997cb6f91c7d9668c49a1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08a2ec63b70b30d816f4dff1ff610a24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a08a2ec63b70b30d816f4dff1ff610a24">sigApoChanged</a> (QString oldSource, QString newSource, QString dest)</td></tr>
+<tr class="separator:a08a2ec63b70b30d816f4dff1ff610a24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55fc5874a2428837a360981e759aab9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a55fc5874a2428837a360981e759aab9f">sigApoDeleted</a> (QString source, QString dest)</td></tr>
+<tr class="separator:a55fc5874a2428837a360981e759aab9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09522d465e22f2cccce9d2a1a1486835"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a09522d465e22f2cccce9d2a1a1486835">sigFrameDeleted</a> (QString domainName)</td></tr>
+<tr class="separator:a09522d465e22f2cccce9d2a1a1486835"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1b36194bd643652b53ed479d8806aa1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#af1b36194bd643652b53ed479d8806aa1">sigFrameNameChanged</a> (QString oldName, QString newName)</td></tr>
+<tr class="separator:af1b36194bd643652b53ed479d8806aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a196741ac5dcfd845755af572f0869715"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a196741ac5dcfd845755af572f0869715">NFramenetModel</a> (QObject *<a class="el" href="class_n_framenet_model.html#a4d97227ae131e3a9ad95bbc8e93107ad">parent</a>=0)</td></tr>
+<tr class="separator:a196741ac5dcfd845755af572f0869715"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f77fac5113f412bea880c8751889450"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a1f77fac5113f412bea880c8751889450">~NFramenetModel</a> ()</td></tr>
+<tr class="separator:a1f77fac5113f412bea880c8751889450"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7241bcb22067b5ef4d589610f2884ae2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a7241bcb22067b5ef4d589610f2884ae2">setRootNode</a> (<a class="el" href="class_n_frame_node.html">NFrameNode</a> *node)</td></tr>
+<tr class="separator:a7241bcb22067b5ef4d589610f2884ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f68211ea7db22e99aecc6471cdd7c98"><td class="memItemLeft" align="right" valign="top">virtual QModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a1f68211ea7db22e99aecc6471cdd7c98">index</a> (int row, int column, const QModelIndex &amp;<a class="el" href="class_n_framenet_model.html#a4d97227ae131e3a9ad95bbc8e93107ad">parent</a>) const </td></tr>
+<tr class="separator:a1f68211ea7db22e99aecc6471cdd7c98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d97227ae131e3a9ad95bbc8e93107ad"><td class="memItemLeft" align="right" valign="top">virtual QModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a4d97227ae131e3a9ad95bbc8e93107ad">parent</a> (const QModelIndex &amp;child) const </td></tr>
+<tr class="separator:a4d97227ae131e3a9ad95bbc8e93107ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe8cef3ac67eb7d4b6864ed31e79ae3d"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#abe8cef3ac67eb7d4b6864ed31e79ae3d">rowCount</a> (const QModelIndex &amp;<a class="el" href="class_n_framenet_model.html#a4d97227ae131e3a9ad95bbc8e93107ad">parent</a>) const </td></tr>
+<tr class="separator:abe8cef3ac67eb7d4b6864ed31e79ae3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c4d465a549745292980d2e9016611aa"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a0c4d465a549745292980d2e9016611aa">columnCount</a> (const QModelIndex &amp;<a class="el" href="class_n_framenet_model.html#a4d97227ae131e3a9ad95bbc8e93107ad">parent</a>) const </td></tr>
+<tr class="separator:a0c4d465a549745292980d2e9016611aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0369f07080b76af77f15273b08bd57e"><td class="memItemLeft" align="right" valign="top">virtual QVariant&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#af0369f07080b76af77f15273b08bd57e">data</a> (const QModelIndex &amp;<a class="el" href="class_n_framenet_model.html#a1f68211ea7db22e99aecc6471cdd7c98">index</a>, int role) const </td></tr>
+<tr class="separator:af0369f07080b76af77f15273b08bd57e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c2cbe1667ed3efd2410743831a431ae"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a3c2cbe1667ed3efd2410743831a431ae">setData</a> (const QModelIndex &amp;<a class="el" href="class_n_framenet_model.html#a1f68211ea7db22e99aecc6471cdd7c98">index</a>, const QVariant &amp;value, int role)</td></tr>
+<tr class="separator:a3c2cbe1667ed3efd2410743831a431ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a740e819c63e461eb2e1a974178718974"><td class="memItemLeft" align="right" valign="top">virtual Qt::ItemFlags&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a740e819c63e461eb2e1a974178718974">flags</a> (const QModelIndex &amp;<a class="el" href="class_n_framenet_model.html#a1f68211ea7db22e99aecc6471cdd7c98">index</a>) const </td></tr>
+<tr class="separator:a740e819c63e461eb2e1a974178718974"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6336a9af3150860e1db4117c06dd46e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#ad6336a9af3150860e1db4117c06dd46e">removeRow</a> (int row, const QModelIndex &amp;<a class="el" href="class_n_framenet_model.html#a4d97227ae131e3a9ad95bbc8e93107ad">parent</a>)</td></tr>
+<tr class="separator:ad6336a9af3150860e1db4117c06dd46e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35f0185e97939304fe1213aa78755248"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a35f0185e97939304fe1213aa78755248">insertRow</a> (int row, const QModelIndex &amp;<a class="el" href="class_n_framenet_model.html#a4d97227ae131e3a9ad95bbc8e93107ad">parent</a>)</td></tr>
+<tr class="separator:a35f0185e97939304fe1213aa78755248"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad585affade64c322c1467a84376b3bcd"><td class="memItemLeft" align="right" valign="top">virtual QVariant&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#ad585affade64c322c1467a84376b3bcd">headerData</a> (int section, Qt::Orientation orientation, int role) const </td></tr>
+<tr class="separator:ad585affade64c322c1467a84376b3bcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71cf1dbf6b615efdaabea18cd283f6ee"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a71cf1dbf6b615efdaabea18cd283f6ee">setFrames</a> (QList&lt; <a class="el" href="class_n_frame.html">NFrame</a> * &gt; *<a class="el" href="class_n_framenet_model.html#a987541ddbfad876ea75f2bb861ed7797">frames</a>)</td></tr>
+<tr class="separator:a71cf1dbf6b615efdaabea18cd283f6ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af02b729f62029cb2568964f0e3cb1826"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#af02b729f62029cb2568964f0e3cb1826">getIdByIndex</a> (QModelIndex <a class="el" href="class_n_framenet_model.html#a1f68211ea7db22e99aecc6471cdd7c98">index</a>)</td></tr>
+<tr class="separator:af02b729f62029cb2568964f0e3cb1826"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37da98e117aa30527f2bda88ae69c1da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a37da98e117aa30527f2bda88ae69c1da">update</a> ()</td></tr>
+<tr class="separator:a37da98e117aa30527f2bda88ae69c1da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af636b66af1ae90d83be8e5b954079c5d"><td class="memItemLeft" align="right" valign="top">QModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#af636b66af1ae90d83be8e5b954079c5d">addSlot</a> (QModelIndex &amp;frameIndex)</td></tr>
+<tr class="separator:af636b66af1ae90d83be8e5b954079c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00687191343feaeeccde552a5ca2169f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a00687191343feaeeccde552a5ca2169f">deleteSlot</a> (QModelIndex &amp;slotIndex)</td></tr>
+<tr class="separator:a00687191343feaeeccde552a5ca2169f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed4621bece5502b1ac553118ec578b1a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#aed4621bece5502b1ac553118ec578b1a">setSlotFasetValue</a> (QModelIndex slotIndex, QString fasetName, QVariant value)</td></tr>
+<tr class="separator:aed4621bece5502b1ac553118ec578b1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3b9c587968dc9651aca91d38dd6b382"><td class="memItemLeft" align="right" valign="top">QVariant&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#ae3b9c587968dc9651aca91d38dd6b382">getSlotFasetValue</a> (QModelIndex slotIndex, QString fasetName)</td></tr>
+<tr class="separator:ae3b9c587968dc9651aca91d38dd6b382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c2a0189d70c801519e03894644e498e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a3c2a0189d70c801519e03894644e498e">isSlot</a> (QModelIndex slotIndex)</td></tr>
+<tr class="separator:a3c2a0189d70c801519e03894644e498e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a105c7c8aa68426aab62c52dedda4674e"><td class="memItemLeft" align="right" valign="top">QModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a105c7c8aa68426aab62c52dedda4674e">getFrameIndexById</a> (int id)</td></tr>
+<tr class="separator:a105c7c8aa68426aab62c52dedda4674e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedf7aee4d451c0fc7277f0cc39a56277"><td class="memItemLeft" align="right" valign="top">QModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#aedf7aee4d451c0fc7277f0cc39a56277">getSlotFasetIndex</a> (QModelIndex frameIndex, QString slotName, QString fasetName)</td></tr>
+<tr class="separator:aedf7aee4d451c0fc7277f0cc39a56277"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa61c4d7f31bed9798224665ae422f3d7"><td class="memItemLeft" align="right" valign="top">QModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#aa61c4d7f31bed9798224665ae422f3d7">getSlotFasetIndex</a> (QModelIndex slotIndex, QString fasetName)</td></tr>
+<tr class="separator:aa61c4d7f31bed9798224665ae422f3d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae164cd65113db99625d4f8d94f58d5b8"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#ae164cd65113db99625d4f8d94f58d5b8">getFrameNameByIndex</a> (QModelIndex <a class="el" href="class_n_framenet_model.html#a1f68211ea7db22e99aecc6471cdd7c98">index</a>)</td></tr>
+<tr class="separator:ae164cd65113db99625d4f8d94f58d5b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a417346c5073da08e0ec1b5df52767148"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a417346c5073da08e0ec1b5df52767148">getFasetCount</a> () const </td></tr>
+<tr class="separator:a417346c5073da08e0ec1b5df52767148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17047990c258080d6fbf62803bbb6ea6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a17047990c258080d6fbf62803bbb6ea6">frameExists</a> (QString frameName)</td></tr>
+<tr class="separator:a17047990c258080d6fbf62803bbb6ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a196741ac5dcfd845755af572f0869715"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a196741ac5dcfd845755af572f0869715">NFramenetModel</a> (QObject *<a class="el" href="class_n_framenet_model.html#a4d97227ae131e3a9ad95bbc8e93107ad">parent</a>=0)</td></tr>
+<tr class="separator:a196741ac5dcfd845755af572f0869715"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5cde685498b430229df562cfcf18d17"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#aa5cde685498b430229df562cfcf18d17">~NFramenetModel</a> ()</td></tr>
+<tr class="separator:aa5cde685498b430229df562cfcf18d17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7241bcb22067b5ef4d589610f2884ae2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a7241bcb22067b5ef4d589610f2884ae2">setRootNode</a> (<a class="el" href="class_n_frame_node.html">NFrameNode</a> *node)</td></tr>
+<tr class="separator:a7241bcb22067b5ef4d589610f2884ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a435db5232aa006fbcdac06a00b94b91a"><td class="memItemLeft" align="right" valign="top">virtual QModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a435db5232aa006fbcdac06a00b94b91a">index</a> (int row, int column, const QModelIndex &amp;<a class="el" href="class_n_framenet_model.html#a4d97227ae131e3a9ad95bbc8e93107ad">parent</a>) const </td></tr>
+<tr class="separator:a435db5232aa006fbcdac06a00b94b91a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade48ccce984d990fa9b58c5f8f6cbeab"><td class="memItemLeft" align="right" valign="top">virtual QModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#ade48ccce984d990fa9b58c5f8f6cbeab">parent</a> (const QModelIndex &amp;child) const </td></tr>
+<tr class="separator:ade48ccce984d990fa9b58c5f8f6cbeab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15dbbac3aa9317777d127de228ab0d32"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a15dbbac3aa9317777d127de228ab0d32">rowCount</a> (const QModelIndex &amp;<a class="el" href="class_n_framenet_model.html#a4d97227ae131e3a9ad95bbc8e93107ad">parent</a>) const </td></tr>
+<tr class="separator:a15dbbac3aa9317777d127de228ab0d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a289bfc920d2ec757cc76df95f71bacc0"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a289bfc920d2ec757cc76df95f71bacc0">columnCount</a> (const QModelIndex &amp;<a class="el" href="class_n_framenet_model.html#a4d97227ae131e3a9ad95bbc8e93107ad">parent</a>) const </td></tr>
+<tr class="separator:a289bfc920d2ec757cc76df95f71bacc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac302930b9ac00547b53968579cf434d2"><td class="memItemLeft" align="right" valign="top">virtual QVariant&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#ac302930b9ac00547b53968579cf434d2">data</a> (const QModelIndex &amp;<a class="el" href="class_n_framenet_model.html#a1f68211ea7db22e99aecc6471cdd7c98">index</a>, int role) const </td></tr>
+<tr class="separator:ac302930b9ac00547b53968579cf434d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39dbfd08132ee249b22e174919949799"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a39dbfd08132ee249b22e174919949799">setData</a> (const QModelIndex &amp;<a class="el" href="class_n_framenet_model.html#a1f68211ea7db22e99aecc6471cdd7c98">index</a>, const QVariant &amp;value, int role)</td></tr>
+<tr class="separator:a39dbfd08132ee249b22e174919949799"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8511a928a803c7d542436fb0f44da89"><td class="memItemLeft" align="right" valign="top">virtual Qt::ItemFlags&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#ae8511a928a803c7d542436fb0f44da89">flags</a> (const QModelIndex &amp;<a class="el" href="class_n_framenet_model.html#a1f68211ea7db22e99aecc6471cdd7c98">index</a>) const </td></tr>
+<tr class="separator:ae8511a928a803c7d542436fb0f44da89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f0f4f404d0865d00d93ab7a0f912251"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a0f0f4f404d0865d00d93ab7a0f912251">removeRow</a> (int row, const QModelIndex &amp;<a class="el" href="class_n_framenet_model.html#a4d97227ae131e3a9ad95bbc8e93107ad">parent</a>)</td></tr>
+<tr class="separator:a0f0f4f404d0865d00d93ab7a0f912251"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affb2e7f97578c0069e23d8dd65fd78c1"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#affb2e7f97578c0069e23d8dd65fd78c1">insertRow</a> (int row, const QModelIndex &amp;<a class="el" href="class_n_framenet_model.html#a4d97227ae131e3a9ad95bbc8e93107ad">parent</a>)</td></tr>
+<tr class="separator:affb2e7f97578c0069e23d8dd65fd78c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a431737b817a8035d39186bc8d84c9cdf"><td class="memItemLeft" align="right" valign="top">virtual QVariant&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a431737b817a8035d39186bc8d84c9cdf">headerData</a> (int section, Qt::Orientation orientation, int role) const </td></tr>
+<tr class="separator:a431737b817a8035d39186bc8d84c9cdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a122c9c0777c21949544bda117543b96d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a122c9c0777c21949544bda117543b96d">setFrames</a> (QList&lt; <a class="el" href="class_n_frame.html">NFrame</a> * &gt; *<a class="el" href="class_n_framenet_model.html#a987541ddbfad876ea75f2bb861ed7797">frames</a>)</td></tr>
+<tr class="separator:a122c9c0777c21949544bda117543b96d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af02b729f62029cb2568964f0e3cb1826"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#af02b729f62029cb2568964f0e3cb1826">getIdByIndex</a> (QModelIndex <a class="el" href="class_n_framenet_model.html#a1f68211ea7db22e99aecc6471cdd7c98">index</a>)</td></tr>
+<tr class="separator:af02b729f62029cb2568964f0e3cb1826"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37da98e117aa30527f2bda88ae69c1da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a37da98e117aa30527f2bda88ae69c1da">update</a> ()</td></tr>
+<tr class="separator:a37da98e117aa30527f2bda88ae69c1da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af636b66af1ae90d83be8e5b954079c5d"><td class="memItemLeft" align="right" valign="top">QModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#af636b66af1ae90d83be8e5b954079c5d">addSlot</a> (QModelIndex &amp;frameIndex)</td></tr>
+<tr class="separator:af636b66af1ae90d83be8e5b954079c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00687191343feaeeccde552a5ca2169f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a00687191343feaeeccde552a5ca2169f">deleteSlot</a> (QModelIndex &amp;slotIndex)</td></tr>
+<tr class="separator:a00687191343feaeeccde552a5ca2169f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed4621bece5502b1ac553118ec578b1a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#aed4621bece5502b1ac553118ec578b1a">setSlotFasetValue</a> (QModelIndex slotIndex, QString fasetName, QVariant value)</td></tr>
+<tr class="separator:aed4621bece5502b1ac553118ec578b1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3b9c587968dc9651aca91d38dd6b382"><td class="memItemLeft" align="right" valign="top">QVariant&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#ae3b9c587968dc9651aca91d38dd6b382">getSlotFasetValue</a> (QModelIndex slotIndex, QString fasetName)</td></tr>
+<tr class="separator:ae3b9c587968dc9651aca91d38dd6b382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c2a0189d70c801519e03894644e498e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a3c2a0189d70c801519e03894644e498e">isSlot</a> (QModelIndex slotIndex)</td></tr>
+<tr class="separator:a3c2a0189d70c801519e03894644e498e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a105c7c8aa68426aab62c52dedda4674e"><td class="memItemLeft" align="right" valign="top">QModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a105c7c8aa68426aab62c52dedda4674e">getFrameIndexById</a> (int id)</td></tr>
+<tr class="separator:a105c7c8aa68426aab62c52dedda4674e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedf7aee4d451c0fc7277f0cc39a56277"><td class="memItemLeft" align="right" valign="top">QModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#aedf7aee4d451c0fc7277f0cc39a56277">getSlotFasetIndex</a> (QModelIndex frameIndex, QString slotName, QString fasetName)</td></tr>
+<tr class="separator:aedf7aee4d451c0fc7277f0cc39a56277"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa61c4d7f31bed9798224665ae422f3d7"><td class="memItemLeft" align="right" valign="top">QModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#aa61c4d7f31bed9798224665ae422f3d7">getSlotFasetIndex</a> (QModelIndex slotIndex, QString fasetName)</td></tr>
+<tr class="separator:aa61c4d7f31bed9798224665ae422f3d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae164cd65113db99625d4f8d94f58d5b8"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#ae164cd65113db99625d4f8d94f58d5b8">getFrameNameByIndex</a> (QModelIndex <a class="el" href="class_n_framenet_model.html#a1f68211ea7db22e99aecc6471cdd7c98">index</a>)</td></tr>
+<tr class="separator:ae164cd65113db99625d4f8d94f58d5b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a417346c5073da08e0ec1b5df52767148"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a417346c5073da08e0ec1b5df52767148">getFasetCount</a> () const </td></tr>
+<tr class="separator:a417346c5073da08e0ec1b5df52767148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17047990c258080d6fbf62803bbb6ea6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a17047990c258080d6fbf62803bbb6ea6">frameExists</a> (QString frameName)</td></tr>
+<tr class="separator:a17047990c258080d6fbf62803bbb6ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:aadf51c1c769c330195e30990f2b6e83e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#aadf51c1c769c330195e30990f2b6e83e">getFreeId</a> ()</td></tr>
+<tr class="separator:aadf51c1c769c330195e30990f2b6e83e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbcad86f881b3498ba49f41ba5ba84c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_frame_node.html">NFrameNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#afbcad86f881b3498ba49f41ba5ba84c5">nodeFromIndex</a> (const QModelIndex &amp;<a class="el" href="class_n_framenet_model.html#a1f68211ea7db22e99aecc6471cdd7c98">index</a>) const </td></tr>
+<tr class="separator:afbcad86f881b3498ba49f41ba5ba84c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb5802a1365582ba0b98de41cd43a0cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#afb5802a1365582ba0b98de41cd43a0cb">getFrameByName</a> (QString name)</td></tr>
+<tr class="separator:afb5802a1365582ba0b98de41cd43a0cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadf51c1c769c330195e30990f2b6e83e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#aadf51c1c769c330195e30990f2b6e83e">getFreeId</a> ()</td></tr>
+<tr class="separator:aadf51c1c769c330195e30990f2b6e83e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97d77fba8f1a237cae4c864ef8facea5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_frame_node.html">NFrameNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a97d77fba8f1a237cae4c864ef8facea5">nodeFromIndex</a> (const QModelIndex &amp;<a class="el" href="class_n_framenet_model.html#a1f68211ea7db22e99aecc6471cdd7c98">index</a>) const </td></tr>
+<tr class="separator:a97d77fba8f1a237cae4c864ef8facea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8137d725570f589ad865d3dac4825d06"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_frame.html">NFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a8137d725570f589ad865d3dac4825d06">getFrameByName</a> (QString name)</td></tr>
+<tr class="separator:a8137d725570f589ad865d3dac4825d06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Защищенные данные</h2></td></tr>
+<tr class="memitem:a987541ddbfad876ea75f2bb861ed7797"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_n_frame.html">NFrame</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a987541ddbfad876ea75f2bb861ed7797">frames</a></td></tr>
+<tr class="separator:a987541ddbfad876ea75f2bb861ed7797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fd3a04fdbe9af48b51bcb2127ecd3db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_frame_node.html">NFrameNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a1fd3a04fdbe9af48b51bcb2127ecd3db">rootNode</a></td></tr>
+<tr class="separator:a1fd3a04fdbe9af48b51bcb2127ecd3db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0627bc30662452cac0ea20603b568cc5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a0627bc30662452cac0ea20603b568cc5">itemsIsEditable</a></td></tr>
+<tr class="separator:a0627bc30662452cac0ea20603b568cc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa96f5350f98ebdbda21fba90f599dd45"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#aa96f5350f98ebdbda21fba90f599dd45">m_simpleView</a></td></tr>
+<tr class="separator:aa96f5350f98ebdbda21fba90f599dd45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d6da5bbcf04e1a7ba9a84d7f27ef7d0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#a4d6da5bbcf04e1a7ba9a84d7f27ef7d0">m_freeId</a></td></tr>
+<tr class="separator:a4d6da5bbcf04e1a7ba9a84d7f27ef7d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd115c25070bcda88e222cc1469403ac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_framenet_model.html#acd115c25070bcda88e222cc1469403ac">m_fasetCount</a></td></tr>
+<tr class="separator:acd115c25070bcda88e222cc1469403ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock">
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8h_source.html">nframenetmodel.h</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8h_source.html#l00008">8</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a class="anchor" id="a196741ac5dcfd845755af572f0869715"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">NFramenetModel::NFramenetModel </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l00004">4</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a1f77fac5113f412bea880c8751889450"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">NFramenetModel::~NFramenetModel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l00015">15</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a196741ac5dcfd845755af572f0869715"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">NFramenetModel::NFramenetModel </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa5cde685498b430229df562cfcf18d17"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual NFramenetModel::~NFramenetModel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="af636b66af1ae90d83be8e5b954079c5d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QModelIndex NFramenetModel::addSlot </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>frameIndex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l00835">835</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af636b66af1ae90d83be8e5b954079c5d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QModelIndex NFramenetModel::addSlot </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>frameIndex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a289bfc920d2ec757cc76df95f71bacc0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int NFramenetModel::columnCount </td>
+          <td>(</td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0c4d465a549745292980d2e9016611aa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int NFramenetModel::columnCount </td>
+          <td>(</td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l00063">63</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ac302930b9ac00547b53968579cf434d2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual QVariant NFramenetModel::data </td>
+          <td>(</td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>role</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af0369f07080b76af77f15273b08bd57e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVariant NFramenetModel::data </td>
+          <td>(</td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>role</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>!!??? </p>
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l00088">88</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a00687191343feaeeccde552a5ca2169f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NFramenetModel::deleteSlot </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>slotIndex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l00860">860</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a00687191343feaeeccde552a5ca2169f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NFramenetModel::deleteSlot </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>slotIndex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a740e819c63e461eb2e1a974178718974"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Qt::ItemFlags NFramenetModel::flags </td>
+          <td>(</td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l00359">359</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ae8511a928a803c7d542436fb0f44da89"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Qt::ItemFlags NFramenetModel::flags </td>
+          <td>(</td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a17047990c258080d6fbf62803bbb6ea6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NFramenetModel::frameExists </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>frameName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a17047990c258080d6fbf62803bbb6ea6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NFramenetModel::frameExists </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>frameName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l01018">1018</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a417346c5073da08e0ec1b5df52767148"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int NFramenetModel::getFasetCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l01013">1013</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a417346c5073da08e0ec1b5df52767148"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int NFramenetModel::getFasetCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afb5802a1365582ba0b98de41cd43a0cb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_frame.html">NFrame</a> * NFramenetModel::getFrameByName </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l01028">1028</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a8137d725570f589ad865d3dac4825d06"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_frame.html">NFrame</a>* NFramenetModel::getFrameByName </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a105c7c8aa68426aab62c52dedda4674e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QModelIndex NFramenetModel::getFrameIndexById </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l00956">956</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a105c7c8aa68426aab62c52dedda4674e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QModelIndex NFramenetModel::getFrameIndexById </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae164cd65113db99625d4f8d94f58d5b8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString NFramenetModel::getFrameNameByIndex </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l01006">1006</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ae164cd65113db99625d4f8d94f58d5b8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString NFramenetModel::getFrameNameByIndex </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aadf51c1c769c330195e30990f2b6e83e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int NFramenetModel::getFreeId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aadf51c1c769c330195e30990f2b6e83e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int NFramenetModel::getFreeId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l00814">814</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af02b729f62029cb2568964f0e3cb1826"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int NFramenetModel::getIdByIndex </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l00820">820</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af02b729f62029cb2568964f0e3cb1826"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int NFramenetModel::getIdByIndex </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aedf7aee4d451c0fc7277f0cc39a56277"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QModelIndex NFramenetModel::getSlotFasetIndex </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex&#160;</td>
+          <td class="paramname"><em>frameIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>slotName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>fasetName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l00972">972</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aedf7aee4d451c0fc7277f0cc39a56277"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QModelIndex NFramenetModel::getSlotFasetIndex </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex&#160;</td>
+          <td class="paramname"><em>frameIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>slotName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>fasetName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa61c4d7f31bed9798224665ae422f3d7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QModelIndex NFramenetModel::getSlotFasetIndex </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex&#160;</td>
+          <td class="paramname"><em>slotIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>fasetName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l00988">988</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aa61c4d7f31bed9798224665ae422f3d7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QModelIndex NFramenetModel::getSlotFasetIndex </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex&#160;</td>
+          <td class="paramname"><em>slotIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>fasetName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae3b9c587968dc9651aca91d38dd6b382"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVariant NFramenetModel::getSlotFasetValue </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex&#160;</td>
+          <td class="paramname"><em>slotIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>fasetName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l00922">922</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ae3b9c587968dc9651aca91d38dd6b382"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVariant NFramenetModel::getSlotFasetValue </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex&#160;</td>
+          <td class="paramname"><em>slotIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>fasetName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad585affade64c322c1467a84376b3bcd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVariant NFramenetModel::headerData </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>section</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Qt::Orientation&#160;</td>
+          <td class="paramname"><em>orientation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>role</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l00873">873</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a431737b817a8035d39186bc8d84c9cdf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual QVariant NFramenetModel::headerData </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>section</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Qt::Orientation&#160;</td>
+          <td class="paramname"><em>orientation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>role</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1f68211ea7db22e99aecc6471cdd7c98"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QModelIndex NFramenetModel::index </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>column</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l00029">29</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a435db5232aa006fbcdac06a00b94b91a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual QModelIndex NFramenetModel::index </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>column</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a35f0185e97939304fe1213aa78755248"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NFramenetModel::insertRow </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>имя слота???? </p>
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l00429">429</a></p>
+
+</div>
+</div>
+<a class="anchor" id="affb2e7f97578c0069e23d8dd65fd78c1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool NFramenetModel::insertRow </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3c2a0189d70c801519e03894644e498e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NFramenetModel::isSlot </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex&#160;</td>
+          <td class="paramname"><em>slotIndex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l00945">945</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a3c2a0189d70c801519e03894644e498e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NFramenetModel::isSlot </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex&#160;</td>
+          <td class="paramname"><em>slotIndex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afbcad86f881b3498ba49f41ba5ba84c5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_frame_node.html">NFrameNode</a> * NFramenetModel::nodeFromIndex </td>
+          <td>(</td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l00041">41</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a97d77fba8f1a237cae4c864ef8facea5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_frame_node.html">NFrameNode</a>* NFramenetModel::nodeFromIndex </td>
+          <td>(</td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ade48ccce984d990fa9b58c5f8f6cbeab"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual QModelIndex NFramenetModel::parent </td>
+          <td>(</td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>child</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4d97227ae131e3a9ad95bbc8e93107ad"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QModelIndex NFramenetModel::parent </td>
+          <td>(</td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>child</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l00073">73</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ad6336a9af3150860e1db4117c06dd46e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NFramenetModel::removeRow </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l00370">370</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a0f0f4f404d0865d00d93ab7a0f912251"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool NFramenetModel::removeRow </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abe8cef3ac67eb7d4b6864ed31e79ae3d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int NFramenetModel::rowCount </td>
+          <td>(</td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l00054">54</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a15dbbac3aa9317777d127de228ab0d32"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int NFramenetModel::rowCount </td>
+          <td>(</td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a39dbfd08132ee249b22e174919949799"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool NFramenetModel::setData </td>
+          <td>(</td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QVariant &amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>role</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3c2cbe1667ed3efd2410743831a431ae"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NFramenetModel::setData </td>
+          <td>(</td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QVariant &amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>role</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l00168">168</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a71cf1dbf6b615efdaabea18cd283f6ee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::setFrames </td>
+          <td>(</td>
+          <td class="paramtype">QList&lt; <a class="el" href="class_n_frame.html">NFrame</a> * &gt; *&#160;</td>
+          <td class="paramname"><em>frames</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Переопределяется в <a class="el" href="class_n_framenet_model_hierarchical.html#a00ba09d71895b6ee0a52bb173eed7c26">NFramenetModelHierarchical</a> и <a class="el" href="class_n_framenet_model_hierarchical.html#a324d977d5f61e9b626a3320718e1d6cd">NFramenetModelHierarchical</a>.</p>
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l00472">472</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a122c9c0777c21949544bda117543b96d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void NFramenetModel::setFrames </td>
+          <td>(</td>
+          <td class="paramtype">QList&lt; <a class="el" href="class_n_frame.html">NFrame</a> * &gt; *&#160;</td>
+          <td class="paramname"><em>frames</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Переопределяется в <a class="el" href="class_n_framenet_model_hierarchical.html#a00ba09d71895b6ee0a52bb173eed7c26">NFramenetModelHierarchical</a> и <a class="el" href="class_n_framenet_model_hierarchical.html#a324d977d5f61e9b626a3320718e1d6cd">NFramenetModelHierarchical</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7241bcb22067b5ef4d589610f2884ae2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::setRootNode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame_node.html">NFrameNode</a> *&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l00021">21</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a7241bcb22067b5ef4d589610f2884ae2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::setRootNode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_frame_node.html">NFrameNode</a> *&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aed4621bece5502b1ac553118ec578b1a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NFramenetModel::setSlotFasetValue </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex&#160;</td>
+          <td class="paramname"><em>slotIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>fasetName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QVariant&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>faset-&gt;setValue(value); </p>
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l00892">892</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aed4621bece5502b1ac553118ec578b1a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NFramenetModel::setSlotFasetValue </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex&#160;</td>
+          <td class="paramname"><em>slotIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>fasetName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QVariant&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae4ae207b4e997cb6f91c7d9668c49a1c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::sigApoAdded </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__nframenetmodel_8cpp_source.html">moc_nframenetmodel.cpp</a> строка <a class="el" href="debug_2moc__nframenetmodel_8cpp_source.html#l00155">155</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ae4ae207b4e997cb6f91c7d9668c49a1c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::sigApoAdded </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a08a2ec63b70b30d816f4dff1ff610a24"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::sigApoChanged </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>oldSource</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>newSource</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a08a2ec63b70b30d816f4dff1ff610a24"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::sigApoChanged </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>oldSource</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>newSource</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__nframenetmodel_8cpp_source.html">moc_nframenetmodel.cpp</a> строка <a class="el" href="debug_2moc__nframenetmodel_8cpp_source.html#l00162">162</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a55fc5874a2428837a360981e759aab9f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::sigApoDeleted </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a55fc5874a2428837a360981e759aab9f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::sigApoDeleted </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__nframenetmodel_8cpp_source.html">moc_nframenetmodel.cpp</a> строка <a class="el" href="debug_2moc__nframenetmodel_8cpp_source.html#l00169">169</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a78c1d3a344d7f68f712ca592c88a8e24"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::sigDataChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a78c1d3a344d7f68f712ca592c88a8e24"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::sigDataChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__nframenetmodel_8cpp_source.html">moc_nframenetmodel.cpp</a> строка <a class="el" href="debug_2moc__nframenetmodel_8cpp_source.html#l00121">121</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a52e862eebbad7960f727c76b151c11ff"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::sigErrorWhileValidating </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>errorText</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__nframenetmodel_8cpp_source.html">moc_nframenetmodel.cpp</a> строка <a class="el" href="debug_2moc__nframenetmodel_8cpp_source.html#l00127">127</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a52e862eebbad7960f727c76b151c11ff"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::sigErrorWhileValidating </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>errorText</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a09522d465e22f2cccce9d2a1a1486835"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::sigFrameDeleted </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>domainName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a09522d465e22f2cccce9d2a1a1486835"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::sigFrameDeleted </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>domainName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__nframenetmodel_8cpp_source.html">moc_nframenetmodel.cpp</a> строка <a class="el" href="debug_2moc__nframenetmodel_8cpp_source.html#l00176">176</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af1b36194bd643652b53ed479d8806aa1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::sigFrameNameChanged </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>oldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>newName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__nframenetmodel_8cpp_source.html">moc_nframenetmodel.cpp</a> строка <a class="el" href="debug_2moc__nframenetmodel_8cpp_source.html#l00183">183</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af1b36194bd643652b53ed479d8806aa1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::sigFrameNameChanged </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>oldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>newName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4c81756690408fbad5f8b7d953f38c30"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::sigIsaAdded </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4c81756690408fbad5f8b7d953f38c30"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::sigIsaAdded </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__nframenetmodel_8cpp_source.html">moc_nframenetmodel.cpp</a> строка <a class="el" href="debug_2moc__nframenetmodel_8cpp_source.html#l00134">134</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a37102d954fe67cb1cb2596fcf4b85770"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::sigIsaChanged </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>oldDest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>newDest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a37102d954fe67cb1cb2596fcf4b85770"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::sigIsaChanged </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>oldDest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>newDest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__nframenetmodel_8cpp_source.html">moc_nframenetmodel.cpp</a> строка <a class="el" href="debug_2moc__nframenetmodel_8cpp_source.html#l00141">141</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ae860f11063feddca5c9ba283a2c64438"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::sigIsaDeleted </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae860f11063feddca5c9ba283a2c64438"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::sigIsaDeleted </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__nframenetmodel_8cpp_source.html">moc_nframenetmodel.cpp</a> строка <a class="el" href="debug_2moc__nframenetmodel_8cpp_source.html#l00148">148</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a963afae706f70aca01bedd4d7a9ce1d6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::sigValueExists </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QVariant&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__nframenetmodel_8cpp_source.html">moc_nframenetmodel.cpp</a> строка <a class="el" href="debug_2moc__nframenetmodel_8cpp_source.html#l00114">114</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a963afae706f70aca01bedd4d7a9ce1d6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::sigValueExists </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QVariant&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a37da98e117aa30527f2bda88ae69c1da"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a37da98e117aa30527f2bda88ae69c1da"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NFramenetModel::update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html#l00830">830</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a class="anchor" id="a987541ddbfad876ea75f2bb861ed7797"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; <a class="el" href="class_n_frame.html">NFrame</a> * &gt; * NFramenetModel::frames</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8h_source.html">nframenetmodel.h</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8h_source.html#l00110">110</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a0627bc30662452cac0ea20603b568cc5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NFramenetModel::itemsIsEditable</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8h_source.html">nframenetmodel.h</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8h_source.html#l00113">113</a></p>
+
+</div>
+</div>
+<a class="anchor" id="acd115c25070bcda88e222cc1469403ac"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int NFramenetModel::m_fasetCount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8h_source.html">nframenetmodel.h</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8h_source.html#l00119">119</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a4d6da5bbcf04e1a7ba9a84d7f27ef7d0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int NFramenetModel::m_freeId</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8h_source.html">nframenetmodel.h</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8h_source.html#l00117">117</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aa96f5350f98ebdbda21fba90f599dd45"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NFramenetModel::m_simpleView</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8h_source.html">nframenetmodel.h</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8h_source.html#l00115">115</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a1fd3a04fdbe9af48b51bcb2127ecd3db"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_frame_node.html">NFrameNode</a> * NFramenetModel::rootNode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="core_2frame__model_2nframenetmodel_8h_source.html">nframenetmodel.h</a> строка <a class="el" href="core_2frame__model_2nframenetmodel_8h_source.html#l00111">111</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>C:/qt/nya-cats/core/frame_model/<a class="el" href="core_2frame__model_2nframenetmodel_8h_source.html">nframenetmodel.h</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/core/frame_model/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_25fc6f84faba4cbb1114dcdeaa79b9e73_source.html">nframenetmodel.h</a></li>
+<li>C:/qt/nya-cats/core/frame_model/<a class="el" href="core_2frame__model_2nframenetmodel_8cpp_source.html">nframenetmodel.cpp</a></li>
+<li>C:/qt/nya-cats/debug/<a class="el" href="debug_2moc__nframenetmodel_8cpp_source.html">moc_nframenetmodel.cpp</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/core/frame_model/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_24af7b3cb48819b3a348491a72e92beb9_source.html">nframenetmodel.cpp</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/debug/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2a6a2ac0015d920d49535c5a38dc7bc7f_source.html">moc_nframenetmodel.cpp</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/release/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_28d3e1faf1cf28f96236aa7fe92395b00_source.html">moc_nframenetmodel.cpp</a></li>
+<li>C:/qt/nya-cats/release/<a class="el" href="release_2moc__nframenetmodel_8cpp_source.html">moc_nframenetmodel.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_n_framenet_model.html">NFramenetModel</a></li>
+    <li class="footer">Документация по Nya-cats. Последние изменения: Пн 14 Янв 2013 16:34:02. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3 </li>
+  </ul>
+</div>
+</body>
+</html>

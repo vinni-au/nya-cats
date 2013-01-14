@@ -1,0 +1,2557 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3"/>
+<title>Nya-cats: Класс ExprEditor</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Nya-cats
+   &#160;<span id="projectnumber">1.00</span>
+   </div>
+   <div id="projectbrief">Nya-cats</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="hierarchy.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_expr_editor.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Перечисления</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Элементы перечислений</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Свойства</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Макросы</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-slots">Открытые слоты</a> &#124;
+<a href="#signals">Сигналы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-attribs">Открытые атрибуты</a> &#124;
+<a href="class_expr_editor-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс ExprEditor</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_e_s_2ui_2expreditor_8h_source.html">expreditor.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:ExprEditor:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_expr_editor.png" usemap="#ExprEditor_map" alt=""/>
+  <map id="ExprEditor_map" name="ExprEditor_map">
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:a40396ae5bf9765a688e0ea69ab0e64ad"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ad">TypeExpr</a> { <br/>
+&#160;&#160;<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808">IfExpr</a>, 
+<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95">ThenExpr</a>, 
+<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808">IfExpr</a>, 
+<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95">ThenExpr</a>, 
+<br/>
+&#160;&#160;<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808">IfExpr</a>, 
+<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95">ThenExpr</a>, 
+<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808">IfExpr</a>, 
+<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95">ThenExpr</a>
+<br/>
+ }</td></tr>
+<tr class="separator:a40396ae5bf9765a688e0ea69ab0e64ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1705d866529cb7d8867be3964d778ae8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8">TypeAction</a> { <br/>
+&#160;&#160;<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d">AddAction</a>, 
+<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f">EditAction</a>, 
+<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d">AddAction</a>, 
+<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f">EditAction</a>, 
+<br/>
+&#160;&#160;<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d">AddAction</a>, 
+<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f">EditAction</a>, 
+<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d">AddAction</a>, 
+<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f">EditAction</a>
+<br/>
+ }</td></tr>
+<tr class="separator:a1705d866529cb7d8867be3964d778ae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40396ae5bf9765a688e0ea69ab0e64ad"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ad">TypeExpr</a> { <br/>
+&#160;&#160;<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808">IfExpr</a>, 
+<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95">ThenExpr</a>, 
+<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808">IfExpr</a>, 
+<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95">ThenExpr</a>, 
+<br/>
+&#160;&#160;<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808">IfExpr</a>, 
+<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95">ThenExpr</a>, 
+<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808">IfExpr</a>, 
+<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95">ThenExpr</a>
+<br/>
+ }</td></tr>
+<tr class="separator:a40396ae5bf9765a688e0ea69ab0e64ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1705d866529cb7d8867be3964d778ae8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8">TypeAction</a> { <br/>
+&#160;&#160;<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d">AddAction</a>, 
+<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f">EditAction</a>, 
+<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d">AddAction</a>, 
+<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f">EditAction</a>, 
+<br/>
+&#160;&#160;<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d">AddAction</a>, 
+<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f">EditAction</a>, 
+<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d">AddAction</a>, 
+<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f">EditAction</a>
+<br/>
+ }</td></tr>
+<tr class="separator:a1705d866529cb7d8867be3964d778ae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40396ae5bf9765a688e0ea69ab0e64ad"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ad">TypeExpr</a> { <br/>
+&#160;&#160;<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808">IfExpr</a>, 
+<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95">ThenExpr</a>, 
+<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808">IfExpr</a>, 
+<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95">ThenExpr</a>, 
+<br/>
+&#160;&#160;<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808">IfExpr</a>, 
+<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95">ThenExpr</a>, 
+<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808">IfExpr</a>, 
+<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95">ThenExpr</a>
+<br/>
+ }</td></tr>
+<tr class="separator:a40396ae5bf9765a688e0ea69ab0e64ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1705d866529cb7d8867be3964d778ae8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8">TypeAction</a> { <br/>
+&#160;&#160;<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d">AddAction</a>, 
+<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f">EditAction</a>, 
+<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d">AddAction</a>, 
+<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f">EditAction</a>, 
+<br/>
+&#160;&#160;<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d">AddAction</a>, 
+<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f">EditAction</a>, 
+<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d">AddAction</a>, 
+<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f">EditAction</a>
+<br/>
+ }</td></tr>
+<tr class="separator:a1705d866529cb7d8867be3964d778ae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40396ae5bf9765a688e0ea69ab0e64ad"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ad">TypeExpr</a> { <br/>
+&#160;&#160;<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808">IfExpr</a>, 
+<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95">ThenExpr</a>, 
+<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808">IfExpr</a>, 
+<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95">ThenExpr</a>, 
+<br/>
+&#160;&#160;<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808">IfExpr</a>, 
+<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95">ThenExpr</a>, 
+<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808">IfExpr</a>, 
+<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95">ThenExpr</a>
+<br/>
+ }</td></tr>
+<tr class="separator:a40396ae5bf9765a688e0ea69ab0e64ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1705d866529cb7d8867be3964d778ae8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8">TypeAction</a> { <br/>
+&#160;&#160;<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d">AddAction</a>, 
+<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f">EditAction</a>, 
+<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d">AddAction</a>, 
+<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f">EditAction</a>, 
+<br/>
+&#160;&#160;<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d">AddAction</a>, 
+<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f">EditAction</a>, 
+<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d">AddAction</a>, 
+<a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f">EditAction</a>
+<br/>
+ }</td></tr>
+<tr class="separator:a1705d866529cb7d8867be3964d778ae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
+Открытые слоты</h2></td></tr>
+<tr class="memitem:ace6097f735f6f3828cfcfa4ab976dcb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#ace6097f735f6f3828cfcfa4ab976dcb2">onCurrentVarChanged</a> (int inx)</td></tr>
+<tr class="separator:ace6097f735f6f3828cfcfa4ab976dcb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add1683227b73a387df7f92242e6f9e49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#add1683227b73a387df7f92242e6f9e49">onOkClick</a> ()</td></tr>
+<tr class="separator:add1683227b73a387df7f92242e6f9e49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83f4c96905d5f7df42f1cbfe0b0d5458"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a83f4c96905d5f7df42f1cbfe0b0d5458">onCancelClick</a> ()</td></tr>
+<tr class="separator:a83f4c96905d5f7df42f1cbfe0b0d5458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ae8cf51b1d65c14c6581bcdb9c85027"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a5ae8cf51b1d65c14c6581bcdb9c85027">onOkAndReturnClick</a> ()</td></tr>
+<tr class="separator:a5ae8cf51b1d65c14c6581bcdb9c85027"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78d912cdfc95b50e4dfda9620df7e14e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a78d912cdfc95b50e4dfda9620df7e14e">reject</a> ()</td></tr>
+<tr class="separator:a78d912cdfc95b50e4dfda9620df7e14e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a095b233f3425980f76fa2cc0a4d02ee0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a095b233f3425980f76fa2cc0a4d02ee0">onVarContextAdded</a> (QString newVar)</td></tr>
+<tr class="separator:a095b233f3425980f76fa2cc0a4d02ee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a948252a9f0716401b89fbfff4b19ac49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a948252a9f0716401b89fbfff4b19ac49">onValueContextAdded</a> (QString newVal)</td></tr>
+<tr class="separator:a948252a9f0716401b89fbfff4b19ac49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace6097f735f6f3828cfcfa4ab976dcb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#ace6097f735f6f3828cfcfa4ab976dcb2">onCurrentVarChanged</a> (int inx)</td></tr>
+<tr class="separator:ace6097f735f6f3828cfcfa4ab976dcb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add1683227b73a387df7f92242e6f9e49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#add1683227b73a387df7f92242e6f9e49">onOkClick</a> ()</td></tr>
+<tr class="separator:add1683227b73a387df7f92242e6f9e49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83f4c96905d5f7df42f1cbfe0b0d5458"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a83f4c96905d5f7df42f1cbfe0b0d5458">onCancelClick</a> ()</td></tr>
+<tr class="separator:a83f4c96905d5f7df42f1cbfe0b0d5458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ae8cf51b1d65c14c6581bcdb9c85027"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a5ae8cf51b1d65c14c6581bcdb9c85027">onOkAndReturnClick</a> ()</td></tr>
+<tr class="separator:a5ae8cf51b1d65c14c6581bcdb9c85027"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52172f067cd9296e95d3ced2fc6af1a5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a52172f067cd9296e95d3ced2fc6af1a5">reject</a> ()</td></tr>
+<tr class="separator:a52172f067cd9296e95d3ced2fc6af1a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a095b233f3425980f76fa2cc0a4d02ee0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a095b233f3425980f76fa2cc0a4d02ee0">onVarContextAdded</a> (QString newVar)</td></tr>
+<tr class="separator:a095b233f3425980f76fa2cc0a4d02ee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a948252a9f0716401b89fbfff4b19ac49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a948252a9f0716401b89fbfff4b19ac49">onValueContextAdded</a> (QString newVal)</td></tr>
+<tr class="separator:a948252a9f0716401b89fbfff4b19ac49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace6097f735f6f3828cfcfa4ab976dcb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#ace6097f735f6f3828cfcfa4ab976dcb2">onCurrentVarChanged</a> (int inx)</td></tr>
+<tr class="separator:ace6097f735f6f3828cfcfa4ab976dcb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add1683227b73a387df7f92242e6f9e49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#add1683227b73a387df7f92242e6f9e49">onOkClick</a> ()</td></tr>
+<tr class="separator:add1683227b73a387df7f92242e6f9e49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83f4c96905d5f7df42f1cbfe0b0d5458"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a83f4c96905d5f7df42f1cbfe0b0d5458">onCancelClick</a> ()</td></tr>
+<tr class="separator:a83f4c96905d5f7df42f1cbfe0b0d5458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ae8cf51b1d65c14c6581bcdb9c85027"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a5ae8cf51b1d65c14c6581bcdb9c85027">onOkAndReturnClick</a> ()</td></tr>
+<tr class="separator:a5ae8cf51b1d65c14c6581bcdb9c85027"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52172f067cd9296e95d3ced2fc6af1a5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a52172f067cd9296e95d3ced2fc6af1a5">reject</a> ()</td></tr>
+<tr class="separator:a52172f067cd9296e95d3ced2fc6af1a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a095b233f3425980f76fa2cc0a4d02ee0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a095b233f3425980f76fa2cc0a4d02ee0">onVarContextAdded</a> (QString newVar)</td></tr>
+<tr class="separator:a095b233f3425980f76fa2cc0a4d02ee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a948252a9f0716401b89fbfff4b19ac49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a948252a9f0716401b89fbfff4b19ac49">onValueContextAdded</a> (QString newVal)</td></tr>
+<tr class="separator:a948252a9f0716401b89fbfff4b19ac49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace6097f735f6f3828cfcfa4ab976dcb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#ace6097f735f6f3828cfcfa4ab976dcb2">onCurrentVarChanged</a> (int inx)</td></tr>
+<tr class="separator:ace6097f735f6f3828cfcfa4ab976dcb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add1683227b73a387df7f92242e6f9e49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#add1683227b73a387df7f92242e6f9e49">onOkClick</a> ()</td></tr>
+<tr class="separator:add1683227b73a387df7f92242e6f9e49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83f4c96905d5f7df42f1cbfe0b0d5458"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a83f4c96905d5f7df42f1cbfe0b0d5458">onCancelClick</a> ()</td></tr>
+<tr class="separator:a83f4c96905d5f7df42f1cbfe0b0d5458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ae8cf51b1d65c14c6581bcdb9c85027"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a5ae8cf51b1d65c14c6581bcdb9c85027">onOkAndReturnClick</a> ()</td></tr>
+<tr class="separator:a5ae8cf51b1d65c14c6581bcdb9c85027"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52172f067cd9296e95d3ced2fc6af1a5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a52172f067cd9296e95d3ced2fc6af1a5">reject</a> ()</td></tr>
+<tr class="separator:a52172f067cd9296e95d3ced2fc6af1a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a095b233f3425980f76fa2cc0a4d02ee0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a095b233f3425980f76fa2cc0a4d02ee0">onVarContextAdded</a> (QString newVar)</td></tr>
+<tr class="separator:a095b233f3425980f76fa2cc0a4d02ee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a948252a9f0716401b89fbfff4b19ac49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a948252a9f0716401b89fbfff4b19ac49">onValueContextAdded</a> (QString newVal)</td></tr>
+<tr class="separator:a948252a9f0716401b89fbfff4b19ac49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Сигналы</h2></td></tr>
+<tr class="memitem:a9287f32e4b659ea721cc64bc18431dee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a9287f32e4b659ea721cc64bc18431dee">varAdded</a> (QString varName)</td></tr>
+<tr class="separator:a9287f32e4b659ea721cc64bc18431dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26b2f380340bf8f0a3f78ea645f9fc9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a26b2f380340bf8f0a3f78ea645f9fc9d">valAdded</a> (QString varName, QString value)</td></tr>
+<tr class="separator:a26b2f380340bf8f0a3f78ea645f9fc9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9287f32e4b659ea721cc64bc18431dee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a9287f32e4b659ea721cc64bc18431dee">varAdded</a> (QString varName)</td></tr>
+<tr class="separator:a9287f32e4b659ea721cc64bc18431dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26b2f380340bf8f0a3f78ea645f9fc9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a26b2f380340bf8f0a3f78ea645f9fc9d">valAdded</a> (QString varName, QString value)</td></tr>
+<tr class="separator:a26b2f380340bf8f0a3f78ea645f9fc9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9287f32e4b659ea721cc64bc18431dee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a9287f32e4b659ea721cc64bc18431dee">varAdded</a> (QString varName)</td></tr>
+<tr class="separator:a9287f32e4b659ea721cc64bc18431dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26b2f380340bf8f0a3f78ea645f9fc9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a26b2f380340bf8f0a3f78ea645f9fc9d">valAdded</a> (QString varName, QString value)</td></tr>
+<tr class="separator:a26b2f380340bf8f0a3f78ea645f9fc9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9287f32e4b659ea721cc64bc18431dee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a9287f32e4b659ea721cc64bc18431dee">varAdded</a> (QString varName)</td></tr>
+<tr class="separator:a9287f32e4b659ea721cc64bc18431dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26b2f380340bf8f0a3f78ea645f9fc9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a26b2f380340bf8f0a3f78ea645f9fc9d">valAdded</a> (QString varName, QString value)</td></tr>
+<tr class="separator:a26b2f380340bf8f0a3f78ea645f9fc9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a0419ad05b21b60dc52a7773a66772b99"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a0419ad05b21b60dc52a7773a66772b99">ExprEditor</a> (<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ad">TypeExpr</a> <a class="el" href="class_expr_editor.html#a1c7b9320a532938c395d2397a09169f3">typeExpr</a>, <a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8">TypeAction</a> <a class="el" href="class_expr_editor.html#a21311ad2ed99205ae664fcc9e975aae3">typeAction</a>, QWidget *parent=0)</td></tr>
+<tr class="separator:a0419ad05b21b60dc52a7773a66772b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3915291eb02e7eb5204a2f07626c5b69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a3915291eb02e7eb5204a2f07626c5b69">retranslate</a> ()</td></tr>
+<tr class="separator:a3915291eb02e7eb5204a2f07626c5b69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ddaedfa02379f15cebaca685b35c5cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_expr.html">Expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a2ddaedfa02379f15cebaca685b35c5cc">getExpr</a> ()</td></tr>
+<tr class="separator:a2ddaedfa02379f15cebaca685b35c5cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab032a7dc4fae43ab58efde49668213ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#ab032a7dc4fae43ab58efde49668213ab">selectVar</a> (QModelIndex index)</td></tr>
+<tr class="separator:ab032a7dc4fae43ab58efde49668213ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1958f9085ed67eb8a810c5a5e29fafcc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a1958f9085ed67eb8a810c5a5e29fafcc">selectSign</a> (QString sign)</td></tr>
+<tr class="separator:a1958f9085ed67eb8a810c5a5e29fafcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0eea4ef9f1cc6979c6ddbcd12b8a23d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#af0eea4ef9f1cc6979c6ddbcd12b8a23d">selectVal</a> (QString val)</td></tr>
+<tr class="separator:af0eea4ef9f1cc6979c6ddbcd12b8a23d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0419ad05b21b60dc52a7773a66772b99"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a0419ad05b21b60dc52a7773a66772b99">ExprEditor</a> (<a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ad">TypeExpr</a> <a class="el" href="class_expr_editor.html#a1c7b9320a532938c395d2397a09169f3">typeExpr</a>, <a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8">TypeAction</a> <a class="el" href="class_expr_editor.html#a21311ad2ed99205ae664fcc9e975aae3">typeAction</a>, QWidget *parent=0)</td></tr>
+<tr class="separator:a0419ad05b21b60dc52a7773a66772b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3915291eb02e7eb5204a2f07626c5b69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a3915291eb02e7eb5204a2f07626c5b69">retranslate</a> ()</td></tr>
+<tr class="separator:a3915291eb02e7eb5204a2f07626c5b69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a868afd2650e2162833ccc0d517e03c31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_expr.html">Expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a868afd2650e2162833ccc0d517e03c31">getExpr</a> ()</td></tr>
+<tr class="separator:a868afd2650e2162833ccc0d517e03c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab032a7dc4fae43ab58efde49668213ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#ab032a7dc4fae43ab58efde49668213ab">selectVar</a> (QModelIndex index)</td></tr>
+<tr class="separator:ab032a7dc4fae43ab58efde49668213ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1958f9085ed67eb8a810c5a5e29fafcc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a1958f9085ed67eb8a810c5a5e29fafcc">selectSign</a> (QString sign)</td></tr>
+<tr class="separator:a1958f9085ed67eb8a810c5a5e29fafcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0eea4ef9f1cc6979c6ddbcd12b8a23d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#af0eea4ef9f1cc6979c6ddbcd12b8a23d">selectVal</a> (QString val)</td></tr>
+<tr class="separator:af0eea4ef9f1cc6979c6ddbcd12b8a23d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3757fe631cab871c36ee40f028bc8f21"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a3757fe631cab871c36ee40f028bc8f21">ExprEditor</a> (<a class="el" href="class_n_k_b_manager.html">NKBManager</a> *manager, QModelIndex slotIndex, QString domain, <a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ad">TypeExpr</a> <a class="el" href="class_expr_editor.html#a1c7b9320a532938c395d2397a09169f3">typeExpr</a>, <a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8">TypeAction</a> <a class="el" href="class_expr_editor.html#a21311ad2ed99205ae664fcc9e975aae3">typeAction</a>, QWidget *parent=0)</td></tr>
+<tr class="separator:a3757fe631cab871c36ee40f028bc8f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3915291eb02e7eb5204a2f07626c5b69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a3915291eb02e7eb5204a2f07626c5b69">retranslate</a> ()</td></tr>
+<tr class="separator:a3915291eb02e7eb5204a2f07626c5b69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a868afd2650e2162833ccc0d517e03c31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_expr.html">Expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a868afd2650e2162833ccc0d517e03c31">getExpr</a> ()</td></tr>
+<tr class="separator:a868afd2650e2162833ccc0d517e03c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab032a7dc4fae43ab58efde49668213ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#ab032a7dc4fae43ab58efde49668213ab">selectVar</a> (QModelIndex index)</td></tr>
+<tr class="separator:ab032a7dc4fae43ab58efde49668213ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50aac6d62bb0d5bea6ee6913de5b7304"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a50aac6d62bb0d5bea6ee6913de5b7304">selectVar</a> (QString var)</td></tr>
+<tr class="separator:a50aac6d62bb0d5bea6ee6913de5b7304"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1958f9085ed67eb8a810c5a5e29fafcc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a1958f9085ed67eb8a810c5a5e29fafcc">selectSign</a> (QString sign)</td></tr>
+<tr class="separator:a1958f9085ed67eb8a810c5a5e29fafcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0eea4ef9f1cc6979c6ddbcd12b8a23d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#af0eea4ef9f1cc6979c6ddbcd12b8a23d">selectVal</a> (QString val)</td></tr>
+<tr class="separator:af0eea4ef9f1cc6979c6ddbcd12b8a23d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3757fe631cab871c36ee40f028bc8f21"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a3757fe631cab871c36ee40f028bc8f21">ExprEditor</a> (<a class="el" href="class_n_k_b_manager.html">NKBManager</a> *manager, QModelIndex slotIndex, QString domain, <a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ad">TypeExpr</a> <a class="el" href="class_expr_editor.html#a1c7b9320a532938c395d2397a09169f3">typeExpr</a>, <a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8">TypeAction</a> <a class="el" href="class_expr_editor.html#a21311ad2ed99205ae664fcc9e975aae3">typeAction</a>, QWidget *parent=0)</td></tr>
+<tr class="separator:a3757fe631cab871c36ee40f028bc8f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3915291eb02e7eb5204a2f07626c5b69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a3915291eb02e7eb5204a2f07626c5b69">retranslate</a> ()</td></tr>
+<tr class="separator:a3915291eb02e7eb5204a2f07626c5b69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a868afd2650e2162833ccc0d517e03c31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_expr.html">Expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a868afd2650e2162833ccc0d517e03c31">getExpr</a> ()</td></tr>
+<tr class="separator:a868afd2650e2162833ccc0d517e03c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab032a7dc4fae43ab58efde49668213ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#ab032a7dc4fae43ab58efde49668213ab">selectVar</a> (QModelIndex index)</td></tr>
+<tr class="separator:ab032a7dc4fae43ab58efde49668213ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50aac6d62bb0d5bea6ee6913de5b7304"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a50aac6d62bb0d5bea6ee6913de5b7304">selectVar</a> (QString var)</td></tr>
+<tr class="separator:a50aac6d62bb0d5bea6ee6913de5b7304"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1958f9085ed67eb8a810c5a5e29fafcc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a1958f9085ed67eb8a810c5a5e29fafcc">selectSign</a> (QString sign)</td></tr>
+<tr class="separator:a1958f9085ed67eb8a810c5a5e29fafcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0eea4ef9f1cc6979c6ddbcd12b8a23d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#af0eea4ef9f1cc6979c6ddbcd12b8a23d">selectVal</a> (QString val)</td></tr>
+<tr class="separator:af0eea4ef9f1cc6979c6ddbcd12b8a23d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:a1c7b9320a532938c395d2397a09169f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ad">TypeExpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a1c7b9320a532938c395d2397a09169f3">typeExpr</a></td></tr>
+<tr class="separator:a1c7b9320a532938c395d2397a09169f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21311ad2ed99205ae664fcc9e975aae3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8">TypeAction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a21311ad2ed99205ae664fcc9e975aae3">typeAction</a></td></tr>
+<tr class="separator:a21311ad2ed99205ae664fcc9e975aae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6315823c9d42e1ae65aebc327724e489"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a6315823c9d42e1ae65aebc327724e489">startAgain</a></td></tr>
+<tr class="separator:a6315823c9d42e1ae65aebc327724e489"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a217e87862256514b6168f007508a2b9c"><td class="memItemLeft" align="right" valign="top">QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a217e87862256514b6168f007508a2b9c">layMain</a></td></tr>
+<tr class="separator:a217e87862256514b6168f007508a2b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43c9a963c6e9983ee91ed192c5c3543e"><td class="memItemLeft" align="right" valign="top">QHBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a43c9a963c6e9983ee91ed192c5c3543e">layUp</a></td></tr>
+<tr class="separator:a43c9a963c6e9983ee91ed192c5c3543e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa0ac9cac3be15113f3197a5be126517"><td class="memItemLeft" align="right" valign="top">QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#aaa0ac9cac3be15113f3197a5be126517">layVar</a></td></tr>
+<tr class="separator:aaa0ac9cac3be15113f3197a5be126517"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabb83efdb2d69adedc9622a8e165c77c"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#aabb83efdb2d69adedc9622a8e165c77c">lbVar</a></td></tr>
+<tr class="separator:aabb83efdb2d69adedc9622a8e165c77c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeba4b8d69aaeffad27becab449f597bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_my_combo_box.html">MyComboBox</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#aeba4b8d69aaeffad27becab449f597bd">cmbVar</a></td></tr>
+<tr class="separator:aeba4b8d69aaeffad27becab449f597bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af49fb92e329600de79707e3a8e10935e"><td class="memItemLeft" align="right" valign="top">QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#af49fb92e329600de79707e3a8e10935e">laySign</a></td></tr>
+<tr class="separator:af49fb92e329600de79707e3a8e10935e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac07bdb08a648b9b304d4630e1533227a"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#ac07bdb08a648b9b304d4630e1533227a">lbSign</a></td></tr>
+<tr class="separator:ac07bdb08a648b9b304d4630e1533227a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18bdcf551100de6ea18ca691c84a53c8"><td class="memItemLeft" align="right" valign="top">QComboBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a18bdcf551100de6ea18ca691c84a53c8">cmbSign</a></td></tr>
+<tr class="separator:a18bdcf551100de6ea18ca691c84a53c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a466cf67dec13e1055f8182c190896d"><td class="memItemLeft" align="right" valign="top">QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a1a466cf67dec13e1055f8182c190896d">layVal</a></td></tr>
+<tr class="separator:a1a466cf67dec13e1055f8182c190896d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9598d6fc354e4550a814cbb4df4cd25"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#ae9598d6fc354e4550a814cbb4df4cd25">lbVal</a></td></tr>
+<tr class="separator:ae9598d6fc354e4550a814cbb4df4cd25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e1030ee464d33d43444ceaacd4173f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_my_combo_box.html">MyComboBox</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a9e1030ee464d33d43444ceaacd4173f0">cmbVal</a></td></tr>
+<tr class="separator:a9e1030ee464d33d43444ceaacd4173f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4839aedd2329ea677bf1fc9d794fb7fb"><td class="memItemLeft" align="right" valign="top">QHBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a4839aedd2329ea677bf1fc9d794fb7fb">layDown</a></td></tr>
+<tr class="separator:a4839aedd2329ea677bf1fc9d794fb7fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5fabd441b537dd0f7a6d224651e779e"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#ad5fabd441b537dd0f7a6d224651e779e">btnAddNewExpr</a></td></tr>
+<tr class="separator:ad5fabd441b537dd0f7a6d224651e779e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8604bf3ec0dc18c57d659ab5e30cd6a3"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a8604bf3ec0dc18c57d659ab5e30cd6a3">btnOK</a></td></tr>
+<tr class="separator:a8604bf3ec0dc18c57d659ab5e30cd6a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5d219b7e1f2e638cff52daca84fc51d"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#ab5d219b7e1f2e638cff52daca84fc51d">btnCancel</a></td></tr>
+<tr class="separator:ab5d219b7e1f2e638cff52daca84fc51d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae54595b14037fea3cb1b1c4126d8c106"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_k_b_manager.html">NKBManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#ae54595b14037fea3cb1b1c4126d8c106">m_kbManager</a></td></tr>
+<tr class="separator:ae54595b14037fea3cb1b1c4126d8c106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7865d3c9c0424a319cf937265c95a68"><td class="memItemLeft" align="right" valign="top">QModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#ad7865d3c9c0424a319cf937265c95a68">m_slotIndex</a></td></tr>
+<tr class="separator:ad7865d3c9c0424a319cf937265c95a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0f7f0b4608739854185f260bf481034"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#ab0f7f0b4608739854185f260bf481034">m_domain</a></td></tr>
+<tr class="separator:ab0f7f0b4608739854185f260bf481034"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a639eb3e8a47bbeaef8e01ba5e267617f"><td class="memItemLeft" align="right" valign="top">QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a639eb3e8a47bbeaef8e01ba5e267617f">layArSign</a></td></tr>
+<tr class="separator:a639eb3e8a47bbeaef8e01ba5e267617f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace0067a9fab8127c7935459d7080b0f3"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#ace0067a9fab8127c7935459d7080b0f3">lbArSign</a></td></tr>
+<tr class="separator:ace0067a9fab8127c7935459d7080b0f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35c91b5c79863cccd08c4b9838cd3f5f"><td class="memItemLeft" align="right" valign="top">QComboBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a35c91b5c79863cccd08c4b9838cd3f5f">cmbArSign</a></td></tr>
+<tr class="separator:a35c91b5c79863cccd08c4b9838cd3f5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2eda7fbd19ed7d24c8f9d65c6352aa0"><td class="memItemLeft" align="right" valign="top">QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#aa2eda7fbd19ed7d24c8f9d65c6352aa0">laySummer</a></td></tr>
+<tr class="separator:aa2eda7fbd19ed7d24c8f9d65c6352aa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad782302d41d1a2d096d2ae6e2350dcf"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#aad782302d41d1a2d096d2ae6e2350dcf">lbSummer</a></td></tr>
+<tr class="separator:aad782302d41d1a2d096d2ae6e2350dcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d7acab150f50596b14169d84cc5e6c6"><td class="memItemLeft" align="right" valign="top">QSpinBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_expr_editor.html#a4d7acab150f50596b14169d84cc5e6c6">spbSummer</a></td></tr>
+<tr class="separator:a4d7acab150f50596b14169d84cc5e6c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock">
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8h_source.html">expreditor.h</a> строка <a class="el" href="_e_s_2ui_2expreditor_8h_source.html#l00017">17</a></p>
+</div><h2 class="groupheader">Перечисления</h2>
+<a class="anchor" id="a1705d866529cb7d8867be3964d778ae8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8">ExprEditor::TypeAction</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d"></a>AddAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f"></a>EditAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d"></a>AddAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f"></a>EditAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d"></a>AddAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f"></a>EditAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d"></a>AddAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f"></a>EditAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8h_source.html">expreditor.h</a> строка <a class="el" href="_e_s_2ui_2expreditor_8h_source.html#l00022">22</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a1705d866529cb7d8867be3964d778ae8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8">ExprEditor::TypeAction</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d"></a>AddAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f"></a>EditAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d"></a>AddAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f"></a>EditAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d"></a>AddAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f"></a>EditAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d"></a>AddAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f"></a>EditAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_21df67f5940896a00c12a3b015dd49850_source.html">expreditor.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_21df67f5940896a00c12a3b015dd49850_source.html#l00022">22</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a1705d866529cb7d8867be3964d778ae8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8">ExprEditor::TypeAction</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d"></a>AddAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f"></a>EditAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d"></a>AddAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f"></a>EditAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d"></a>AddAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f"></a>EditAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d"></a>AddAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f"></a>EditAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>См. определение в файле <a class="el" href="ui_2expreditor_8h_source.html">expreditor.h</a> строка <a class="el" href="ui_2expreditor_8h_source.html#l00024">24</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a1705d866529cb7d8867be3964d778ae8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8">ExprEditor::TypeAction</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d"></a>AddAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f"></a>EditAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d"></a>AddAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f"></a>EditAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d"></a>AddAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f"></a>EditAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8a49477c6c9c40badbacebc1324058435d"></a>AddAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1705d866529cb7d8867be3964d778ae8ae65a1a1fdf2b9f4d642f92314c54549f"></a>EditAction</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2dd942b39a4082595194b676143f5a5e9_source.html">expreditor.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2dd942b39a4082595194b676143f5a5e9_source.html#l00024">24</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ad"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ad">ExprEditor::TypeExpr</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808"></a>IfExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95"></a>ThenExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808"></a>IfExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95"></a>ThenExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808"></a>IfExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95"></a>ThenExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808"></a>IfExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95"></a>ThenExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8h_source.html">expreditor.h</a> строка <a class="el" href="_e_s_2ui_2expreditor_8h_source.html#l00021">21</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ad"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ad">ExprEditor::TypeExpr</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808"></a>IfExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95"></a>ThenExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808"></a>IfExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95"></a>ThenExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808"></a>IfExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95"></a>ThenExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808"></a>IfExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95"></a>ThenExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_21df67f5940896a00c12a3b015dd49850_source.html">expreditor.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_21df67f5940896a00c12a3b015dd49850_source.html#l00021">21</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ad"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ad">ExprEditor::TypeExpr</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808"></a>IfExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95"></a>ThenExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808"></a>IfExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95"></a>ThenExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808"></a>IfExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95"></a>ThenExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808"></a>IfExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95"></a>ThenExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>См. определение в файле <a class="el" href="ui_2expreditor_8h_source.html">expreditor.h</a> строка <a class="el" href="ui_2expreditor_8h_source.html#l00023">23</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ad"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ad">ExprEditor::TypeExpr</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808"></a>IfExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95"></a>ThenExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808"></a>IfExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95"></a>ThenExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808"></a>IfExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95"></a>ThenExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada3122d96516765f82a871fef1ac852808"></a>IfExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a40396ae5bf9765a688e0ea69ab0e64ada43fbeb52f98a98ff33d6dfd598649e95"></a>ThenExpr</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2dd942b39a4082595194b676143f5a5e9_source.html">expreditor.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2dd942b39a4082595194b676143f5a5e9_source.html#l00023">23</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Конструктор(ы)</h2>
+<a class="anchor" id="a0419ad05b21b60dc52a7773a66772b99"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ExprEditor::ExprEditor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ad">TypeExpr</a>&#160;</td>
+          <td class="paramname"><em>typeExpr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8">TypeAction</a>&#160;</td>
+          <td class="paramname"><em>typeAction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html">expreditor.cpp</a> строка <a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html#l00004">4</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a0419ad05b21b60dc52a7773a66772b99"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ExprEditor::ExprEditor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ad">TypeExpr</a>&#160;</td>
+          <td class="paramname"><em>typeExpr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8">TypeAction</a>&#160;</td>
+          <td class="paramname"><em>typeAction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3757fe631cab871c36ee40f028bc8f21"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ExprEditor::ExprEditor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_k_b_manager.html">NKBManager</a> *&#160;</td>
+          <td class="paramname"><em>manager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QModelIndex&#160;</td>
+          <td class="paramname"><em>slotIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>domain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ad">TypeExpr</a>&#160;</td>
+          <td class="paramname"><em>typeExpr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8">TypeAction</a>&#160;</td>
+          <td class="paramname"><em>typeAction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>this-&gt;cmbVar-&gt;setModel(<a class="el" href="class_data_models.html#a74f2fd552ed97d41d543fe8ad5c2b88e">DataModels::instance()</a>-&gt;varModel); </p>
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2f4b2b21c6702f8bc85d7188628b4fa63_source.html">expreditor.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2f4b2b21c6702f8bc85d7188628b4fa63_source.html#l00004">4</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a3757fe631cab871c36ee40f028bc8f21"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ExprEditor::ExprEditor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_n_k_b_manager.html">NKBManager</a> *&#160;</td>
+          <td class="paramname"><em>manager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QModelIndex&#160;</td>
+          <td class="paramname"><em>slotIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>domain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ad">TypeExpr</a>&#160;</td>
+          <td class="paramname"><em>typeExpr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8">TypeAction</a>&#160;</td>
+          <td class="paramname"><em>typeAction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="a2ddaedfa02379f15cebaca685b35c5cc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_expr.html">Expr</a> * ExprEditor::getExpr </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html">expreditor.cpp</a> строка <a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html#l00128">128</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a868afd2650e2162833ccc0d517e03c31"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_expr.html">Expr</a>* ExprEditor::getExpr </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a868afd2650e2162833ccc0d517e03c31"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_expr.html">Expr</a>* ExprEditor::getExpr </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a868afd2650e2162833ccc0d517e03c31"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_expr.html">Expr</a>* ExprEditor::getExpr </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a83f4c96905d5f7df42f1cbfe0b0d5458"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::onCancelClick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html">expreditor.cpp</a> строка <a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html#l00168">168</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a83f4c96905d5f7df42f1cbfe0b0d5458"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::onCancelClick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a83f4c96905d5f7df42f1cbfe0b0d5458"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::onCancelClick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a83f4c96905d5f7df42f1cbfe0b0d5458"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::onCancelClick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ace6097f735f6f3828cfcfa4ab976dcb2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::onCurrentVarChanged </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>inx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html">expreditor.cpp</a> строка <a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html#l00100">100</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ace6097f735f6f3828cfcfa4ab976dcb2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::onCurrentVarChanged </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>inx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ace6097f735f6f3828cfcfa4ab976dcb2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::onCurrentVarChanged </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>inx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ace6097f735f6f3828cfcfa4ab976dcb2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::onCurrentVarChanged </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>inx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5ae8cf51b1d65c14c6581bcdb9c85027"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::onOkAndReturnClick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html">expreditor.cpp</a> строка <a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html#l00175">175</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a5ae8cf51b1d65c14c6581bcdb9c85027"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::onOkAndReturnClick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5ae8cf51b1d65c14c6581bcdb9c85027"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::onOkAndReturnClick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5ae8cf51b1d65c14c6581bcdb9c85027"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::onOkAndReturnClick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="add1683227b73a387df7f92242e6f9e49"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::onOkClick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html">expreditor.cpp</a> строка <a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html#l00155">155</a></p>
+
+</div>
+</div>
+<a class="anchor" id="add1683227b73a387df7f92242e6f9e49"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::onOkClick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="add1683227b73a387df7f92242e6f9e49"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::onOkClick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="add1683227b73a387df7f92242e6f9e49"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::onOkClick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a948252a9f0716401b89fbfff4b19ac49"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::onValueContextAdded </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>newVal</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html">expreditor.cpp</a> строка <a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html#l00259">259</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a948252a9f0716401b89fbfff4b19ac49"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::onValueContextAdded </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>newVal</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a948252a9f0716401b89fbfff4b19ac49"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::onValueContextAdded </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>newVal</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a948252a9f0716401b89fbfff4b19ac49"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::onValueContextAdded </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>newVal</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a095b233f3425980f76fa2cc0a4d02ee0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::onVarContextAdded </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>newVar</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a095b233f3425980f76fa2cc0a4d02ee0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::onVarContextAdded </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>newVar</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html">expreditor.cpp</a> строка <a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html#l00226">226</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a095b233f3425980f76fa2cc0a4d02ee0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::onVarContextAdded </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>newVar</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a095b233f3425980f76fa2cc0a4d02ee0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::onVarContextAdded </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>newVar</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a78d912cdfc95b50e4dfda9620df7e14e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::reject </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html">expreditor.cpp</a> строка <a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html#l00186">186</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a52172f067cd9296e95d3ced2fc6af1a5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ExprEditor::reject </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a52172f067cd9296e95d3ced2fc6af1a5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ExprEditor::reject </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a52172f067cd9296e95d3ced2fc6af1a5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ExprEditor::reject </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3915291eb02e7eb5204a2f07626c5b69"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::retranslate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html">expreditor.cpp</a> строка <a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html#l00072">72</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a3915291eb02e7eb5204a2f07626c5b69"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::retranslate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3915291eb02e7eb5204a2f07626c5b69"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::retranslate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3915291eb02e7eb5204a2f07626c5b69"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::retranslate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1958f9085ed67eb8a810c5a5e29fafcc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::selectSign </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>sign</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html">expreditor.cpp</a> строка <a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html#l00199">199</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a1958f9085ed67eb8a810c5a5e29fafcc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::selectSign </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>sign</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1958f9085ed67eb8a810c5a5e29fafcc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::selectSign </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>sign</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1958f9085ed67eb8a810c5a5e29fafcc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::selectSign </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>sign</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af0eea4ef9f1cc6979c6ddbcd12b8a23d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::selectVal </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html">expreditor.cpp</a> строка <a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html#l00211">211</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af0eea4ef9f1cc6979c6ddbcd12b8a23d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::selectVal </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af0eea4ef9f1cc6979c6ddbcd12b8a23d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::selectVal </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af0eea4ef9f1cc6979c6ddbcd12b8a23d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::selectVal </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab032a7dc4fae43ab58efde49668213ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::selectVar </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html">expreditor.cpp</a> строка <a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html#l00192">192</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab032a7dc4fae43ab58efde49668213ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::selectVar </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab032a7dc4fae43ab58efde49668213ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::selectVar </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab032a7dc4fae43ab58efde49668213ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::selectVar </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a50aac6d62bb0d5bea6ee6913de5b7304"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::selectVar </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>var</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a50aac6d62bb0d5bea6ee6913de5b7304"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::selectVar </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>var</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2f4b2b21c6702f8bc85d7188628b4fa63_source.html">expreditor.cpp</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2f4b2b21c6702f8bc85d7188628b4fa63_source.html#l00234">234</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a26b2f380340bf8f0a3f78ea645f9fc9d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::valAdded </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>varName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a26b2f380340bf8f0a3f78ea645f9fc9d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::valAdded </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>varName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__expreditor_8cpp_source.html">moc_expreditor.cpp</a> строка <a class="el" href="debug_2moc__expreditor_8cpp_source.html#l00111">111</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a26b2f380340bf8f0a3f78ea645f9fc9d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::valAdded </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>varName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a26b2f380340bf8f0a3f78ea645f9fc9d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::valAdded </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>varName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9287f32e4b659ea721cc64bc18431dee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::varAdded </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>varName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="debug_2moc__expreditor_8cpp_source.html">moc_expreditor.cpp</a> строка <a class="el" href="debug_2moc__expreditor_8cpp_source.html#l00104">104</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a9287f32e4b659ea721cc64bc18431dee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::varAdded </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>varName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9287f32e4b659ea721cc64bc18431dee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::varAdded </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>varName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9287f32e4b659ea721cc64bc18431dee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExprEditor::varAdded </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>varName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a class="anchor" id="ad5fabd441b537dd0f7a6d224651e779e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton * ExprEditor::btnAddNewExpr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8h_source.html">expreditor.h</a> строка <a class="el" href="_e_s_2ui_2expreditor_8h_source.html#l00066">66</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab5d219b7e1f2e638cff52daca84fc51d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton * ExprEditor::btnCancel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8h_source.html">expreditor.h</a> строка <a class="el" href="_e_s_2ui_2expreditor_8h_source.html#l00068">68</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a8604bf3ec0dc18c57d659ab5e30cd6a3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton * ExprEditor::btnOK</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8h_source.html">expreditor.h</a> строка <a class="el" href="_e_s_2ui_2expreditor_8h_source.html#l00067">67</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a35c91b5c79863cccd08c4b9838cd3f5f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QComboBox * ExprEditor::cmbArSign</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2dd942b39a4082595194b676143f5a5e9_source.html">expreditor.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2dd942b39a4082595194b676143f5a5e9_source.html#l00074">74</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a18bdcf551100de6ea18ca691c84a53c8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QComboBox * ExprEditor::cmbSign</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8h_source.html">expreditor.h</a> строка <a class="el" href="_e_s_2ui_2expreditor_8h_source.html#l00061">61</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a9e1030ee464d33d43444ceaacd4173f0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_my_combo_box.html">MyComboBox</a> * ExprEditor::cmbVal</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8h_source.html">expreditor.h</a> строка <a class="el" href="_e_s_2ui_2expreditor_8h_source.html#l00064">64</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aeba4b8d69aaeffad27becab449f597bd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_my_combo_box.html">MyComboBox</a> * ExprEditor::cmbVar</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8h_source.html">expreditor.h</a> строка <a class="el" href="_e_s_2ui_2expreditor_8h_source.html#l00058">58</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a639eb3e8a47bbeaef8e01ba5e267617f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVBoxLayout * ExprEditor::layArSign</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2dd942b39a4082595194b676143f5a5e9_source.html">expreditor.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2dd942b39a4082595194b676143f5a5e9_source.html#l00072">72</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a4839aedd2329ea677bf1fc9d794fb7fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHBoxLayout * ExprEditor::layDown</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8h_source.html">expreditor.h</a> строка <a class="el" href="_e_s_2ui_2expreditor_8h_source.html#l00065">65</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a217e87862256514b6168f007508a2b9c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVBoxLayout * ExprEditor::layMain</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8h_source.html">expreditor.h</a> строка <a class="el" href="_e_s_2ui_2expreditor_8h_source.html#l00054">54</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af49fb92e329600de79707e3a8e10935e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVBoxLayout * ExprEditor::laySign</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8h_source.html">expreditor.h</a> строка <a class="el" href="_e_s_2ui_2expreditor_8h_source.html#l00059">59</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aa2eda7fbd19ed7d24c8f9d65c6352aa0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVBoxLayout * ExprEditor::laySummer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2dd942b39a4082595194b676143f5a5e9_source.html">expreditor.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2dd942b39a4082595194b676143f5a5e9_source.html#l00075">75</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a43c9a963c6e9983ee91ed192c5c3543e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHBoxLayout * ExprEditor::layUp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8h_source.html">expreditor.h</a> строка <a class="el" href="_e_s_2ui_2expreditor_8h_source.html#l00055">55</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a1a466cf67dec13e1055f8182c190896d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVBoxLayout * ExprEditor::layVal</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8h_source.html">expreditor.h</a> строка <a class="el" href="_e_s_2ui_2expreditor_8h_source.html#l00062">62</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aaa0ac9cac3be15113f3197a5be126517"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVBoxLayout * ExprEditor::layVar</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8h_source.html">expreditor.h</a> строка <a class="el" href="_e_s_2ui_2expreditor_8h_source.html#l00056">56</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ace0067a9fab8127c7935459d7080b0f3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLabel * ExprEditor::lbArSign</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2dd942b39a4082595194b676143f5a5e9_source.html">expreditor.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2dd942b39a4082595194b676143f5a5e9_source.html#l00073">73</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ac07bdb08a648b9b304d4630e1533227a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLabel * ExprEditor::lbSign</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8h_source.html">expreditor.h</a> строка <a class="el" href="_e_s_2ui_2expreditor_8h_source.html#l00060">60</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aad782302d41d1a2d096d2ae6e2350dcf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLabel * ExprEditor::lbSummer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2dd942b39a4082595194b676143f5a5e9_source.html">expreditor.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2dd942b39a4082595194b676143f5a5e9_source.html#l00076">76</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ae9598d6fc354e4550a814cbb4df4cd25"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLabel * ExprEditor::lbVal</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8h_source.html">expreditor.h</a> строка <a class="el" href="_e_s_2ui_2expreditor_8h_source.html#l00063">63</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aabb83efdb2d69adedc9622a8e165c77c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLabel * ExprEditor::lbVar</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8h_source.html">expreditor.h</a> строка <a class="el" href="_e_s_2ui_2expreditor_8h_source.html#l00057">57</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab0f7f0b4608739854185f260bf481034"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ExprEditor::m_domain</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2dd942b39a4082595194b676143f5a5e9_source.html">expreditor.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2dd942b39a4082595194b676143f5a5e9_source.html#l00054">54</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ae54595b14037fea3cb1b1c4126d8c106"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_n_k_b_manager.html">NKBManager</a> * ExprEditor::m_kbManager</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2dd942b39a4082595194b676143f5a5e9_source.html">expreditor.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2dd942b39a4082595194b676143f5a5e9_source.html#l00052">52</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ad7865d3c9c0424a319cf937265c95a68"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QModelIndex ExprEditor::m_slotIndex</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2dd942b39a4082595194b676143f5a5e9_source.html">expreditor.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2dd942b39a4082595194b676143f5a5e9_source.html#l00053">53</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a4d7acab150f50596b14169d84cc5e6c6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSpinBox * ExprEditor::spbSummer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2dd942b39a4082595194b676143f5a5e9_source.html">expreditor.h</a> строка <a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2dd942b39a4082595194b676143f5a5e9_source.html#l00077">77</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a6315823c9d42e1ae65aebc327724e489"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ExprEditor::startAgain</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8h_source.html">expreditor.h</a> строка <a class="el" href="_e_s_2ui_2expreditor_8h_source.html#l00051">51</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a21311ad2ed99205ae664fcc9e975aae3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_expr_editor.html#a1705d866529cb7d8867be3964d778ae8">TypeAction</a> ExprEditor::typeAction</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8h_source.html">expreditor.h</a> строка <a class="el" href="_e_s_2ui_2expreditor_8h_source.html#l00050">50</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a1c7b9320a532938c395d2397a09169f3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_expr_editor.html#a40396ae5bf9765a688e0ea69ab0e64ad">TypeExpr</a> ExprEditor::typeExpr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_e_s_2ui_2expreditor_8h_source.html">expreditor.h</a> строка <a class="el" href="_e_s_2ui_2expreditor_8h_source.html#l00049">49</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>C:/qt/nya-cats/ES/ui/<a class="el" href="_e_s_2ui_2expreditor_8h_source.html">expreditor.h</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/ES/ui/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_21df67f5940896a00c12a3b015dd49850_source.html">expreditor.h</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/ui/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2dd942b39a4082595194b676143f5a5e9_source.html">expreditor.h</a></li>
+<li>C:/qt/nya-cats/ui/<a class="el" href="ui_2expreditor_8h_source.html">expreditor.h</a></li>
+<li>C:/qt/nya-cats/debug/<a class="el" href="debug_2moc__expreditor_8cpp_source.html">moc_expreditor.cpp</a></li>
+<li>C:/qt/nya-cats/ES/ui/<a class="el" href="_e_s_2ui_2expreditor_8cpp_source.html">expreditor.cpp</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/debug/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_293720ab1a389e5353d54091c85f9e9e0_source.html">moc_expreditor.cpp</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/ES/ui/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2c1172638096957674403eacc6369f8b2_source.html">expreditor.cpp</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/release/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2d817f1ba49358bf3ea9367329a73cb03_source.html">moc_expreditor.cpp</a></li>
+<li>C:/qt/nya-cats/install/няки релиз/nya-cats/src/nya-cats/ui/<a class="el" href="install_2_xD0_xBD_xD1_x8F_xD0_xBA_xD0_xB8_01_xD1_x80_xD0_xB5_xD0_xBB_xD0_xB8_xD0_xB7_2nya-cats_2f4b2b21c6702f8bc85d7188628b4fa63_source.html">expreditor.cpp</a></li>
+<li>C:/qt/nya-cats/release/<a class="el" href="release_2moc__expreditor_8cpp_source.html">moc_expreditor.cpp</a></li>
+<li>C:/qt/nya-cats/ui/<a class="el" href="ui_2expreditor_8cpp_source.html">expreditor.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_expr_editor.html">ExprEditor</a></li>
+    <li class="footer">Документация по Nya-cats. Последние изменения: Пн 14 Янв 2013 16:34:01. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3 </li>
+  </ul>
+</div>
+</body>
+</html>
