@@ -14,13 +14,15 @@
 //Сериализация в xml
 
 
+/**
+  @class NFaset
+  Класс для представления фасета
+  */
 class NFaset : public QObject
 {
-
-
     Q_OBJECT
     Q_PROPERTY(QString name READ name WRITE setName SCRIPTABLE true)//имя
-    Q_PROPERTY(QVariant value READ value WRITE setValue SCRIPTABLE true)//имя
+    Q_PROPERTY(QVariant value READ value WRITE setValue SCRIPTABLE true)//значение
 
 public:
     explicit NFaset(QObject *parent = 0);
@@ -50,7 +52,6 @@ signals:
 public slots:
 
 private:
-
     QString m_name;         //имя фасета
     QVariant m_value;       //значение фасета
 

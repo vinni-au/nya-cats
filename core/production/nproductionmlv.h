@@ -12,6 +12,11 @@
 
 //sigVarUse - сигнал о том, какая переменная(слот) получила значение
 
+/**
+  @class NProductionMLV
+  Класс-движок логического вывода на продукциях
+  */
+
 class MLV;
 
 class NProductionMLV : public QObject

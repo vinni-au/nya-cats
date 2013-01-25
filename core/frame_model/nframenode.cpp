@@ -2,7 +2,7 @@
 
 
 NFrameNode::NFrameNode(Type type,NFrame *frame,bool createBackLink,NFrameNode *parent) :
-    QObject(NULL)
+    QObject(parent)
 {
     this->type=type;
     this->frame=frame;

@@ -4,6 +4,10 @@
 #include <QObject>
 #include <QStringList>
 
+/**
+  @class Validator
+  Класс для функций валидации
+  */
 
 class Validator : public QObject
 {

@@ -107,8 +107,8 @@ void MLVControl::LOR_Clear()
 
 void MLVControl::setWorkMemory(QList<NFrame *> *list)
 {
-	QList<NFrame *> *listNull = new QList<NFrame *>(); 
-    QList<NFrame*> toRemove;
+//	QList<NFrame *> *listNull = new QList<NFrame *>();
+//    QList<NFrame*> toRemove;
 //    for (int i = 0; i < list->count(); ++i) {
 //        NFrame* frame = (*list)[i];
 //        QString name = frame->name.defValue().toString();

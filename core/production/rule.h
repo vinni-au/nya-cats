@@ -6,11 +6,17 @@
 #include <QList>
 #include "expr.h"
 
+
+/**
+  @class Rule
+  Класс для представления продукционного правила
+  */
 class Rule : public QObject
 {
     Q_OBJECT
 public:
     explicit Rule(QObject *parent = 0);
+    ~Rule();
 
 signals:
 

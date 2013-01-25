@@ -59,6 +59,8 @@ NProductionMLV::ProveAim(QString aimVar)
         {
             qDebug()<<"Rule rejected: "<<nextRule->name;
         }
+
+        delete fireRules;
     }
 }
 

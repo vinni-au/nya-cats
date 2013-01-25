@@ -13,6 +13,11 @@
 
 #include "../validator.h"
 
+/**
+  @class DomainModel
+  Класс модели для доменов
+  */
+
 class DomainModel : public QAbstractItemModel
 {
     Q_OBJECT

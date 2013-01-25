@@ -7,3 +7,10 @@ Rule::Rule(QObject *parent) :
     this->reason="";
 
 }
+
+Rule::~Rule()
+{
+    qDeleteAll(predicate);
+    qDeleteAll(conclusion);
+}
+

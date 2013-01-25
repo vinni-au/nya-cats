@@ -5,6 +5,11 @@
 #include "nframenode.h"
 #include "core/nframe.h"
 
+/**
+  @class NFramenetModel
+  Модель фреймов
+  */
+
 class NFramenetModel : public QAbstractItemModel
 {
     Q_OBJECT
@@ -30,7 +35,6 @@ public:
 
     virtual QVariant headerData(int section, Qt::Orientation orientation, int role) const;
 
-    //virtual Qt::DropActions supportedDropActions() const;
     //мои
     virtual void setFrames( QList<NFrame*> *frames);
 
@@ -46,28 +50,11 @@ public:
 
     bool isSlot(QModelIndex slotIndex);
 
-    //QModelIndex getIndexOfSlot(int frameId,QString slotName);//для обновления данных в модели
-
     QModelIndex getFrameIndexById(int id);
     QModelIndex getSlotFasetIndex(QModelIndex frameIndex,QString slotName,QString fasetName);
     QModelIndex getSlotFasetIndex(QModelIndex slotIndex,QString fasetName);
-    //QModelIndex addDomain();
-    //void editDomain(QModelIndex domain,QString newName);
-    //void deleteDomain(QModelIndex domain);
-   // bool domainExists(QString domainName);
-
-    //QModelIndex addValue(QModelIndex domainIndex);
-    //void deleteValue(QModelIndex valueIndex);
-    //bool valueExists(QString domainName,QString value);
-    //bool valueExists(Domain *domain,QString value);
-
-    //QModelIndex indexByName(QString domain);
-
     //QDomElement toXml(QDomDocument& doc);
     //void fromXml(QDomElement &domains);
-
-    //bool isValid();
-    //void setItemsIsEditable(bool isEditable);
 
     QString getFrameNameByIndex(QModelIndex index);
 
@@ -93,17 +80,10 @@ signals:
     void sigFrameDeleted(QString domainName);
 
     void sigFrameNameChanged(QString oldName,QString newName);
-public:
-    //void moveBefore(QModelIndex sourceInx,QModelIndex destInx);
-    //QStringList mimeTypes() const;
-    //QMimeData *mimeData(const QModelIndexList &indexes) const;
-    //bool dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent);
 public slots:
 
 protected:
     NFrameNode* nodeFromIndex(const QModelIndex& index) const;
-    //QString generateNewUniqueDomainName();
-    //QString generateNewUniqueDomainValue(Domain* domain);
 
     NFrame* getFrameByName(QString name);
 protected:
@@ -111,9 +91,9 @@ protected:
     NFrameNode *rootNode;
 
     bool itemsIsEditable;
-
+    /// Режим отображения, при котором сокращено количество столбцов
     bool m_simpleView;
-
+    /// Текущий последний занятый id
     int m_freeId;
 
     int m_fasetCount;

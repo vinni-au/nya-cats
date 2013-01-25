@@ -202,6 +202,7 @@ void NKBManager::deleteLinks(int id)
                 if(slot->getFasetByName("slot_type")->value()=="frame")
                 {
                     frame->removeSlot(slot);
+                    delete slot;
                 }
             }
         }
@@ -655,6 +656,11 @@ NKBManager::saveAs(QString filePath)
 //        qDebug()<<"Такой файл уже существует";
 //        return false;
 //    }
+    if(m_file!=NULL)
+    {
+        if(m_file!=newFile)
+            delete m_file;
+    }
     m_file = newFile;
     save();
     return true;
@@ -668,8 +674,15 @@ NKBManager::Open(QString filePath)
     if(!newFile->exists())//если нет такого файла
     {
         qDebug()<<"Нет такого файла";
+        delete newFile;
         return false;
     }
+    if(m_file!=NULL)
+    {
+        if(m_file!=newFile)
+            delete m_file;
+    }
+
     this->m_file = newFile;
     m_file->open(QIODevice::ReadOnly);
     readFromXml(*newFile);
@@ -681,8 +694,14 @@ void//todo
 NKBManager::Clear()
 {
     m_domainModel.setDomains(new QList<Domain*>());
+
+    qDeleteAll(m_frames);
     m_frames.clear();
+
+    qDeleteAll(m_productions);
     m_productions.clear();
+
+    qDeleteAll(m_procs);
     m_procs.clear();
 
     if(m_framenetModel)
@@ -691,6 +710,10 @@ NKBManager::Clear()
     }
     m_diagramElement = QDomElement();
 
+    if(m_file!=NULL)
+    {
+        delete m_file;
+    }
     m_file = NULL;
     setDirty(false);
 }
@@ -775,7 +798,7 @@ NFramenetModel *NKBManager::getFrameNetModel()
 {
     if(!m_framenetModel)
     {
-        m_framenetModel = new NFramenetModel();
+        m_framenetModel = new NFramenetModel(this);
         m_framenetModel->setFrames(&m_frames);
         connect(m_framenetModel,SIGNAL(sigDataChanged()),SLOT(onDataChanged()));
     }

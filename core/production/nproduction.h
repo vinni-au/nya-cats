@@ -7,12 +7,18 @@
 //Продукционная программка
 //будет содержать модель для правил RuleModel
 
+/**
+  @class NProduction
+  Класс для представления продукций
+  */
+
 class NProduction : public QObject
 {
     Q_OBJECT
 public:
     explicit NProduction(QObject *parent = 0);
 
+    /// @function getModel получает модель правил из продукции
     RuleModel* getModel();
 
     //сериализация

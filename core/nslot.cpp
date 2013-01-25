@@ -165,7 +165,7 @@ void NSlot::setHasFasetValue(bool b)
     {
         if(!faset)
         {
-            faset = new NFaset("value");
+            faset = new NFaset("value",this);
             faset->setValue("");
             m_fasets.append(faset);
         }

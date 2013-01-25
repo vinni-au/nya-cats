@@ -15,8 +15,11 @@ enum FRAME_TYPE
 };
 }
 
-//Фрейм
-//
+/**
+  @class NFrame
+  Фрейм
+*/
+
 class NFrame : public QObject
 {
     Q_OBJECT
@@ -65,9 +68,12 @@ public slots:
 
 private:
     QList<NSlot*> m_slots;
+    /// id фрейма
     int m_id;
+    /// Тип фрейма
     FrameType::FRAME_TYPE m_type;
 
+    /// Признак системности фрейма
     bool m_system;
 public:
     NSlot name;

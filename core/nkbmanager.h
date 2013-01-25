@@ -14,8 +14,11 @@
 #include "production/nproduction.h"
 #include "./frame_model/nframenetmodel.h"
 
-//Менеджер базы знаний
-//Управляет базой знаний через апи. Создание фреймов, слотов. Сохранение. Загрузка БЗ.
+/**
+  @class NKBManager
+  Менеджер базы знаний
+  Управляет базой знаний через апи. Создание фреймов, слотов. Сохранение. Загрузка БЗ.
+*/
 class NKBManager : public QObject
 {
     Q_OBJECT

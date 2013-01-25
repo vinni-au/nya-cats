@@ -1,16 +1,20 @@
 #include "domainmodel.h"
 #include <QDebug>
 
+///Конструктор
 DomainModel::DomainModel(QObject *parent) :
     QAbstractItemModel(parent)
 {
-    rootNode=new DomainNode(DomainNode::Root,NULL,NULL);
+    rootNode=new DomainNode(DomainNode::Root,NULL,this);
+    domains = new QList<Domain*>();
     itemsIsEditable = true;
 }
+///Деструктор
 DomainModel::~DomainModel()
 {
     delete rootNode;
 }
+///Устанавливает корневую вершину
 void
 DomainModel::setRootNode(DomainNode *node)
 {
@@ -18,6 +22,7 @@ DomainModel::setRootNode(DomainNode *node)
     rootNode=node;
     reset();
 }
+///Получает индекс
 QModelIndex
 DomainModel::index(int row, int column, const QModelIndex &parent) const
 {
@@ -29,6 +34,7 @@ DomainModel::index(int row, int column, const QModelIndex &parent) const
         return QModelIndex();
     return createIndex(row,0,childNode);
 }
+///Получает вершину модели из индекса
 DomainNode*
 DomainModel::nodeFromIndex(const QModelIndex &index) const
 {
@@ -41,6 +47,7 @@ DomainModel::nodeFromIndex(const QModelIndex &index) const
         return rootNode;
     }
 }
+///Возвращает количество строк в элементе
 int
 DomainModel::rowCount(const QModelIndex &parent) const
 {
@@ -51,11 +58,13 @@ DomainModel::rowCount(const QModelIndex &parent) const
         return 0;
     return parentNode->children.count();
 }
+///Возвращает количество столбцов в элементе (для таблиц)
 int
 DomainModel::columnCount(const QModelIndex &parent) const
 {
     return 1;
 }
+///Возвращает индекс родителя
 QModelIndex
 DomainModel::parent(const QModelIndex &child) const
 {
@@ -71,6 +80,7 @@ DomainModel::parent(const QModelIndex &child) const
     int row=grandParentNode->children.indexOf(parentNode);
     return createIndex(row,0,parentNode);
 }
+///Получает данные по индексу
 QVariant
 DomainModel::data(const QModelIndex &index, int role) const
 {
@@ -112,6 +122,7 @@ DomainModel::data(const QModelIndex &index, int role) const
     }
     return QVariant();
 }
+///Устанавливает значение по индексу
 bool
 DomainModel::setData(const QModelIndex &index, const QVariant &value, int role)
 {
@@ -167,6 +178,8 @@ DomainModel::setData(const QModelIndex &index, const QVariant &value, int role)
     }
     return false;
 }
+
+///Флаги
 Qt::ItemFlags
 DomainModel::flags(const QModelIndex &index) const
 {
@@ -177,6 +190,7 @@ DomainModel::flags(const QModelIndex &index) const
         flag|= Qt::ItemIsEditable;
     return flag;
 }
+///Удаляет строку по индексу
 bool
 DomainModel::removeRow(int row, const QModelIndex &parent)
 {
@@ -197,6 +211,10 @@ DomainModel::removeRow(int row, const QModelIndex &parent)
            // domains->remove(inx);
             domains->removeAt(inx);
             parentNode->children.removeAt(row);//delete?
+
+            delete domain;
+            delete node;
+
             emit sigDataChanged();
             break;
         case DomainNode::DomainName:    //удаляем значения
@@ -230,7 +248,7 @@ DomainModel::insertRow(int row, const QModelIndex &parent)
         switch(parentNode->type)
         {
         case DomainNode::Root://добавляем домены
-            newDomain = new Domain(generateNewUniqueDomainName());
+            newDomain = new Domain(generateNewUniqueDomainName(),this);
             node=new DomainNode(DomainNode::DomainName,newDomain,true,rootNode);
             //this->domains->append(newDomain);
             domains->insert(row,newDomain);
@@ -252,14 +270,22 @@ DomainModel::insertRow(int row, const QModelIndex &parent)
 }
 
 void
-DomainModel::setDomains( QList<Domain *> *domains )
+DomainModel::setDomains(QList<Domain *> *domains)
 {
     qDebug()<<"DomainModel::setDomains";
     //здесь делаем разбор списка доменов
     //строим на основе списка дерево DomainNode
     //this->domains->clear();//хотя может надо удалить?
 
+    if(this->domains!=domains)
+    {
+        qDeleteAll(*(this->domains));
+        this->domains->clear();
+        delete this->domains;
+    }
     this->domains=domains;
+
+    qDeleteAll(rootNode->children);
     rootNode->children.clear();
 
 
@@ -492,7 +518,7 @@ DomainModel::fromXml(QDomElement &domains)
     while(!domain.isNull())
     {
         //домен
-        Domain* d = new Domain(domain.attribute("Name"));
+        Domain* d = new Domain(domain.attribute("Name"),this);
         ds->append(d);
 
         QDomElement domain_value = domain.firstChild().toElement();

@@ -114,7 +114,7 @@ void NFrame::fromXml(QDomElement &frame)
         }
         else
         {//добавить слот
-            NSlot *newSlot = new NSlot();
+            NSlot *newSlot = new NSlot(this);
             newSlot->fromXml(slotEl);
             this->m_slots.append(newSlot);
         }
@@ -137,28 +137,40 @@ NSlot* NFrame::getSlotByIndex(int inx)
 }
 void NFrame::addSlot(NSlot *slot)
 {
+    slot->setParent(this);
     this->m_slots.append(slot);
 }
 
 void NFrame::insertSlot(int row,NSlot *slot)
 {
    // if(row>-1 && row <m_slots.count())
-        m_slots.insert(row,slot);
+    slot->setParent(this);
+    m_slots.insert(row,slot);
    //// else
    //     qDebug()<<"Не могу вставить слота во фрейм";
 }
 
 void NFrame::removeSlot(int row)
 {
-
     if(row>-1 && row <m_slots.count())
+    {
+        NSlot* slot = m_slots.at(row);
+        if(slot->name()!="name" && slot->name()!="is_a")
+        {
+            delete slot;
+        }
+
         m_slots.removeAt(row);
+    }
     else
         qDebug()<<"Не могу удалить слота во фрейм";
-
 }
 void NFrame::removeSlot(NSlot *slot)
 {
+    if(slot->name()!="name" && slot->name()!="is_a")
+    {
+        delete slot;
+    }
     m_slots.removeOne(slot);
 }
 
@@ -166,7 +178,9 @@ void NFrame::removeSlot(QString name)
 {
     NSlot* slot = getSlotByName(name);
     if (slot)
+    {
         removeSlot(slot);
+    }
 }
 
 int NFrame::getSlotIndexByName(QString name)
@@ -258,10 +272,6 @@ void NFrame::merge(NFrame *frame)
 bool NFrame::hasSlot(QString slotName)
 {
     NSlot *slot = getSlotByName(slotName);
-//    if(slot)
-//        return true;
-//    else
-//        return false;
     return slot!=NULL;
 }
 

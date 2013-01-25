@@ -4,6 +4,11 @@
 #include <QObject>
 #include "rule.h"
 
+
+/**
+  @class RuleNode
+  Класс для вершины модели правил
+  */
 class RuleNode : public QObject
 {
     Q_OBJECT

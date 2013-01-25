@@ -11,6 +11,10 @@
 #include "../validator.h"
 #include <QMimeData>
 
+/**
+  @class RuleModel
+  Модель продукционных правил
+  */
 
 class RuleModel : public QAbstractItemModel
 {

@@ -2,7 +2,7 @@
 
 
 RuleNode::RuleNode(Type type,Rule *rule,bool createBackLink,RuleNode *parent) :
-    QObject(NULL)
+    QObject(parent)
 {
     this->type=type;
     this->rule=rule;

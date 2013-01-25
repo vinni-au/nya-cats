@@ -4,7 +4,10 @@
 #include <QObject>
 #include <QDomDocument>
 
-//Процедура на qScript
+/**
+  @class NProc
+  Класс для Процедуры на qScript
+*/
 class NProc : public QObject
 {
     Q_OBJECT
@@ -26,6 +29,7 @@ signals:
 public slots:
 
 private:
+    ///Текст процедуры
     QString m_proc;
 
     QString m_name;

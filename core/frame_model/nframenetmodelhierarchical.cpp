@@ -4,6 +4,10 @@ NFramenetModelHierarchical::NFramenetModelHierarchical(QObject *parent) :
     NFramenetModel(parent)
 {
 }
+NFramenetModelHierarchical::~NFramenetModelHierarchical()
+{
+    delete rootNode;
+}
 
 void
 NFramenetModelHierarchical::setFrames( QList<NFrame *> *frames )
@@ -19,7 +23,18 @@ NFramenetModelHierarchical::setFrames( QList<NFrame *> *frames )
         m_fasetCount = frames->at(0)->getSlotByName("name")->fasetCount();
     }
 
+    if(this->frames!=frames)
+    {
+        //if(this->frames->count()==0)//нельзя удалять, т.к. передается указатель на РП
+        //{
+        //    qDeleteAll(*(this->frames));
+        //    this->frames->clear();
+        //}
+        //delete this->frames;
+    }
+
     this->frames = frames;
+    qDeleteAll(rootNode->children);
     rootNode->children.clear();
 
 

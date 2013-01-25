@@ -6,6 +6,7 @@ NFramenetModel::NFramenetModel(QObject *parent) :
 {
     rootNode=new NFrameNode(NFrameNode::Root,NULL,NULL);
     itemsIsEditable = true;
+    frames = new QList<NFrame*>();
 
     m_freeId = -1;
     frames=NULL;
@@ -20,7 +21,8 @@ NFramenetModel::~NFramenetModel()
 void
 NFramenetModel::setRootNode(NFrameNode *node)
 {
-    delete rootNode;
+    if(rootNode!=node)
+        delete rootNode;
     rootNode=node;
     reset();
 }
@@ -387,6 +389,10 @@ NFramenetModel::removeRow(int row, const QModelIndex &parent)
            // domains->remove(inx);
             frames->removeAt(inx);
             parentNode->children.removeAt(row);//delete?
+
+            delete frame;
+            delete node;
+
             emit sigDataChanged();
             break;
         case NFrameNode::FrameName:    //удаляем слоты
@@ -409,6 +415,7 @@ NFramenetModel::removeRow(int row, const QModelIndex &parent)
             }
 
             parentNode->children.removeAt(row);
+            delete node;
             //emit sigDomainValueDeleted(domain->name, domain->values.at(row));    //сигнал об удалении значения
 
 
@@ -477,12 +484,26 @@ NFramenetModel::setFrames( QList<NFrame *> *frames )
 
     //this->frames->clear();
 
+
+
     if(frames->count()>0)
     {
         m_fasetCount = frames->at(0)->getSlotByName("name")->fasetCount();
     }
 
+    if(this->frames!=frames)
+    {
+        if(frames->count()>0)
+        {
+            qDeleteAll(*(this->frames));
+            this->frames->clear();
+        }
+        delete this->frames;//? Статичное поле?
+    }
+
     this->frames = frames;
+
+    qDeleteAll(rootNode->children);
     rootNode->children.clear();
 
     NFrame *frame;

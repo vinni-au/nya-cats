@@ -10,6 +10,7 @@ RuleModel::RuleModel(QObject *parent) :
 RuleModel::~RuleModel()
 {
     delete rootNode;
+    delete rules;
 }
 void
 RuleModel::setRootNode(RuleNode *node)
@@ -170,12 +171,14 @@ RuleModel::setData(const QModelIndex &index, const QVariant &value, int role)
             return true;
             break;
         case RuleNode::RulePredicate://утечка
+            delete rule->predicate.at(index.row());//внимание!
             rule->predicate.replace(index.row(),(Expr*)value.toUInt());
             emit dataChanged(index,index);
             emit sigDataChanged();
             return true;
             break;
         case RuleNode::RuleConclusion:
+            delete rule->conclusion.at(index.row());//внимание!
             rule->conclusion.replace(index.row(),(Expr*)value.toUInt());
             emit dataChanged(index,index);
             emit sigDataChanged();
@@ -211,12 +214,20 @@ RuleModel::removeRow(int row, const QModelIndex &parent)
             inx = rules->indexOf(rule);
             rules->removeAt(inx);
             parentNode->children.removeAt(row);//delete?
+
+            delete rule;
+            delete node;
+
             emit sigDataChanged();
             break;
         case RuleNode::RulePredicateHead://удаляем условия
             parentNode->children.removeAt(row);
 
             rule=node->rule;
+
+            delete node;
+            delete rule->predicate.at(row);
+
             rule->predicate.removeAt(row);
             emit sigDataChanged();
             break;
@@ -224,6 +235,10 @@ RuleModel::removeRow(int row, const QModelIndex &parent)
             parentNode->children.removeAt(row);
 
             rule=node->rule;
+
+            delete node;
+            delete rule->conclusion.at(row);
+
             rule->conclusion.removeAt(row);
             emit sigDataChanged();
             break;
@@ -293,8 +308,18 @@ RuleModel::setRules(QList<Rule *> *rules)
 {
     qDebug()<<"RuleModel::setRules";
 
-    this->rules=rules;
+    //освобождаем память
+    if(this->rules!=rules)
+    {
+        qDeleteAll(*(this->rules));
+        this->rules->clear();
+        delete this->rules;
+    }
+    qDeleteAll(rootNode->children);
     rootNode->children.clear();
+
+    this->rules=rules;
+
 
     Rule *rule;
     Expr *expr;

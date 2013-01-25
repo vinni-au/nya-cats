@@ -3,6 +3,13 @@
 
 #include <QObject>
 
+/**
+  @class Expr
+  Класс выражения типа
+переменная = значение
+переменная != значение
+  */
+
 class Expr : public QObject
 {
     Q_OBJECT

@@ -1,7 +1,7 @@
 #include "domainnode.h"
 
 DomainNode::DomainNode(Type type,Domain *domain,bool createBackLink,DomainNode *parent) :
-    QObject(NULL)
+    QObject(parent)
 {
     this->type=type;
     this->domain=domain;
@@ -25,4 +25,5 @@ DomainNode::~DomainNode()
     }
 
     qDeleteAll(this->children);
+    this->children.clear();
 }
