@@ -1,6 +1,6 @@
 #include "mainwindow.hpp"
 #include "ui_mainwindow.h"
-#include "ui/kbeditorwindow.hpp"
+
 
 
 #include <QtGui>
@@ -61,11 +61,15 @@ MainWindow::MainWindow(QWidget *parent) :
     this->setWindowState(Qt::WindowMaximized);
 
     QObject::connect(m_kbManager,SIGNAL(sigDirtyChanged(bool)),this,SLOT(onKBDirtyChanged(bool)));
+
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete m_kbManager;
+    delete m_mlv;
+    delete m_mlvControl;
 }
 
 void MainWindow::runMLV(int x, int y)
@@ -97,8 +101,8 @@ void MainWindow::on_actAbout_triggered()
 
 void MainWindow::on_actFrameEditor_triggered()
 {
-    KBEditorWindow* wnd = new KBEditorWindow(m_kbManager,m_mlv,this);
-    wnd->show();
+    m_kbEditorWindow.reset(new KBEditorWindow(m_kbManager,m_mlv,this));
+    m_kbEditorWindow->show();
 }
 
 void MainWindow::on_actCreate_triggered()
@@ -206,6 +210,7 @@ MainWindow::closeEvent(QCloseEvent *event)
     if(m_kbManager->mayBeSave())
     {
         event->accept();
+        m_mlvControl->close();
     }
     else
         event->ignore();
@@ -213,14 +218,12 @@ MainWindow::closeEvent(QCloseEvent *event)
 
 void MainWindow::on_actDomainEditor_triggered()
 {
-    DomainWnd *wnd = new DomainWnd(m_kbManager,this);
-    //wnd->setWindowModality(Qt::WindowModal);
-    wnd->show();
+    m_domainWindow.reset(new DomainWnd(m_kbManager,this));
+    m_domainWindow->show();
 }
 
 void MainWindow::on_actStartGame_triggered()
 {
-
     setEnabledStartGame(false);
     setEnabledStartRandomGame(false);
     setEnabledStep(true);
@@ -264,7 +267,6 @@ void MainWindow::on_actDoStep_triggered()
 
 void MainWindow::on_actStartRandGame_triggered()
 {
-
     setEnabledStartGame(false);
     setEnabledStartRandomGame(false);
     setEnabledStep(true);
@@ -316,12 +318,13 @@ void MainWindow::setEnabledStopGame(bool enabled)
 
 void MainWindow::on_actGlobalProcsEditor_triggered()
 {
-    NProc *proc = new NProc();
+    NProc *proc = new NProc();//утечка
     proc->setProc( m_kbManager->globalProcsContext() );
-    ProcEditor *procEditor = new ProcEditor(proc,false);
-    procEditor->setWindowModality(Qt::ApplicationModal);
-    QObject::connect(procEditor,SIGNAL(sigProcAdded(NProc*,bool)),this,SLOT(onGlobalProcAdded(NProc*,bool)));
-    procEditor->show();
+
+    m_procEditorWnd.reset(new ProcEditor(proc,false));
+    m_procEditorWnd->setWindowModality(Qt::ApplicationModal);
+    QObject::connect(m_procEditorWnd.data(),SIGNAL(sigProcAdded(NProc*,bool)),this,SLOT(onGlobalProcAdded(NProc*,bool)));
+    m_procEditorWnd->show();
 }
 
 void MainWindow::onGlobalProcAdded(NProc *proc,bool newProc)
@@ -329,4 +332,5 @@ void MainWindow::onGlobalProcAdded(NProc *proc,bool newProc)
     if(m_kbManager->globalProcsContext()!=proc->proc())
         m_kbManager->setDirty(true);
     m_kbManager->setGlobalProcsContext( proc->proc() );
+    delete proc;
 }

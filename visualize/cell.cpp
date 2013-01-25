@@ -128,6 +128,7 @@ void Cell::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 
     drag->exec();
     setCursor(Qt::OpenHandCursor);
+
     m_Item = NULL;
     update();
 }

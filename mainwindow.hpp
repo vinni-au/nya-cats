@@ -10,6 +10,8 @@
 #include "mlv/mlv.h"
 #include "ui/mlvcontrol.h"
 #include "ui/proceditor.h"
+#include "ui/kbeditorwindow.hpp"
+#include <QScopedPointer>
 
 #define MAINWINDOWTITLE "NYA CATS"
 
@@ -18,6 +20,11 @@
 namespace Ui {
     class MainWindow;
 }
+
+/**
+  @class MainWindow
+  Класс главного окна с игровым полем
+  */
 
 class MainWindow : public QMainWindow
 {
@@ -86,6 +93,9 @@ private:
     MLV* m_mlv;
     MLVControl* m_mlvControl;
 
+    QScopedPointer<KBEditorWindow> m_kbEditorWindow;
+    QScopedPointer<DomainWnd>   m_domainWindow;
+    QScopedPointer<ProcEditor>  m_procEditorWnd;
 
 };
 

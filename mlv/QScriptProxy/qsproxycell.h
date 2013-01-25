@@ -14,7 +14,10 @@
 
 //class MLV;
 
-
+/**
+  @class QSProxyCell
+  Класс обертка для фрейма Ячейка игрового поля для использования в скриптах
+  */
 
 class QSProxyCell : public QSProxy
 {

@@ -19,12 +19,12 @@ public:
 class GameItem
 {
 protected:
-    QPixmap         m_Pic;
-	QColor			m_Color;
-    QString         m_Team;
-	QString			m_Type;
-    int				m_FrameId;
-	int				m_Bright;
+    QPixmap     m_Pic;
+    QColor      m_Color;
+    QString     m_Team;
+    QString     m_Type;
+    int		m_FrameId;
+    int		m_Bright;
 
 public:
     GameItem(QString type, QPixmap& pic, QString team, QColor color, int id = -1);

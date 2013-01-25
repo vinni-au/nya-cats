@@ -13,6 +13,11 @@ namespace Ui {
     class KBEditorWindow;
 }
 
+/**
+  @class KBEditorWindow
+  Редактор фремов базы знаний
+  */
+
 class KBEditorWindow : public QMainWindow
 {
     Q_OBJECT

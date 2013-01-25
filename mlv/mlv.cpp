@@ -640,8 +640,8 @@ void MLV::ClearWorkMem()
 {
 	// Для каждого нового шага чистим рабочую память.
 	m_WorkMemory.clear();
-	ClearLog();
-	LOR_Clear();
+        emit ClearLog();
+        emit LOR_Clear();
 
 	// Загоняем в рабочую память экземпляр игрового поля, экземпляры ячеек и игровых объектов
 	m_WorkMemory.append(m_GameFieldInst);

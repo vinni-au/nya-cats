@@ -7,6 +7,11 @@
 #include <QScriptEngine>
 //#include "mlv/mlv.h"
 
+/**
+  @class QSProxyMan
+  Класс обертка для фрейма Персонаж для использования в скриптах
+  */
+
 class QSProxyMan : public QSProxy
 {
     Q_OBJECT

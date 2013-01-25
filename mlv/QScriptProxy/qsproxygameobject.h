@@ -4,6 +4,10 @@
 //#include "mlv/mlv.h"
 #include "qsproxy.h"
 
+/**
+  @class QSProxyGameObject
+  Класс обертка для фрейма игровой объект для использования в скриптах
+  */
 
 class QSProxyGameObject : public QSProxy
 {

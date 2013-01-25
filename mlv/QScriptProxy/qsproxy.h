@@ -8,6 +8,11 @@
 
 //class MLV;
 
+/**
+  @class QSProxy
+  Класс обертка для фрейма для использования в скриптах
+  */
+
 class QSProxy : public QObject
 {
     Q_OBJECT

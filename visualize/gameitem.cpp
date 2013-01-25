@@ -27,8 +27,9 @@ GameItem::GameItem(QString type, QPixmap& pic, QString team, QColor color, int i
 
 void GameItem::UpdatePic(QString path)
 {
-	QPixmap *pic = new QPixmap(path);
-	m_Pic = *pic;
+//	QPixmap *pic = new QPixmap(path);
+//	m_Pic = *pic;
+        m_Pic = QPixmap(path);
 }
 
 void GameItem::UpdateBrigth(int bright)
