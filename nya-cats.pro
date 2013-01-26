@@ -3,6 +3,9 @@
 # Project created by QtCreator 2012-03-08T16:40:25
 #
 #-------------------------------------------------
+#для профайлера
+#QMAKE_CXXFLAGS_DEBUG += -pg
+#QMAKE_LFLAGS_DEBUG += -pg
 
 QT       += core gui xml script
 

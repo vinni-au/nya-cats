@@ -20,6 +20,17 @@ int main(int argc, char *argv[])
         qDebug()<<"Переводы не загружены";
     }
     MainWindow w;
+
+    QFile stylesFile("style.css");
+    if(stylesFile.exists())
+    {
+        if(stylesFile.open(QFile::ReadOnly))
+        {
+            QTextStream stream(&stylesFile);
+            w.setStyleSheet(stream.readAll());
+        }
+
+    }
     w.show();
 
     return a.exec();
