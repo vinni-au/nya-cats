@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
     }
     MainWindow w;
 
-    QFile stylesFile("style.css");
+    QFile stylesFile("style.qss");
     if(stylesFile.exists())
     {
         if(stylesFile.open(QFile::ReadOnly))
