@@ -587,9 +587,9 @@ bool MLV::Init()
 	m_ItemFrameInsts.clear();
     m_KBManager->clearExemplarIds();
 	ClearWorkMem();
-	m_Cache.clear();
 	for (int i = 0; i < m_Cache.size(); ++i)
 		delete m_Cache[i];
+	m_Cache.clear();
 	m_Initialized = false;
 
     // Экземпляр игрового поля
